@@ -66,6 +66,8 @@ h2{font-family:var(--display);font-weight:400;font-size:22px;margin:0;text-wrap:
 .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .empty{border:1.5px dashed var(--line);border-radius:12px;padding:22px 18px;color:var(--muted);text-align:center;display:grid;gap:6px}
 .empty strong{color:var(--fg);font-weight:600}
+.pairwith{display:grid;gap:6px;font-size:14px;font-weight:600}
+.pairwith select{font:inherit;font-weight:400;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--fg);width:100%}
 .minigrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(105px,1fr));gap:8px;padding:8px 0 4px}
 .minigrid.three{grid-template-columns:repeat(3,1fr)}
 .mini{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:0;overflow:hidden;cursor:pointer;text-align:left;display:flex;flex-direction:column;min-width:0;color:var(--fg)}
@@ -305,7 +307,7 @@ function deriveW(){const {liked,disliked}=ratingLists(),N=liked.length+disliked.
   const p=liked.length/N,c={};
   const add=(key,i)=>{const P=key.split(",").map(byId).filter(Boolean);for(const k of Stylist.features(P,"Everyday")){if(k.startsWith("it:"))continue;(c[k]=c[k]||[0,0])[i]++;}};
   liked.forEach(k=>add(k,0));disliked.forEach(k=>add(k,1));
-  for(const k in c)w[k]=Math.round((c[k][0]-(c[k][0]+c[k][1])*p)*100)/100;return w;}
+  for(const k in c){const n=c[k][0]+c[k][1];w[k]=Math.round((c[k][0]-n*p)/Math.sqrt(n+4)*100)/100;}return w;}
 function tasteW(){const w={...(D.taste&&D.taste.w||{})},r=deriveW();for(const k in r)w[k]=(w[k]||0)+r[k];return w;}
 function ratedCount(){const r=ratingLists();return r.liked.length+r.disliked.length;}
 function tasteN(){return ratedCount()+((D.taste&&D.taste.n)||0);}
@@ -317,13 +319,14 @@ function vStyle(){
   const a=S.anchor&&byId(S.anchor);
   if(!a)return pickGrid();
   const season=S.sSeason||currentSeason();
-  const res=window.Stylist?Stylist.suggest(a,D.items,{occ:S.sOcc,season,seed:S.seed,count:6,W:tasteW(),n:tasteN(),rules:useRules,exclude:allDisliked().concat(ratingLists().liked,S.rated||[])}):[];
+  const res=window.Stylist?Stylist.suggest(a,D.items,{occ:S.sOcc,season,seed:S.seed,count:6,W:tasteW(),n:tasteN(),rules:useRules,exclude:allDisliked().concat(ratingLists().liked,S.rated||[]),shown:S.shownFor===a.id?(S.shown||[]):[],with:S.withFor===a.id?S.with:null}):[];
   S.lastRes=res.map((r,k)=>({key:r.key,id:"g"+S.seed+"-"+k,name:r.set?"The matching set":"With the "+a.name.replace(/^(Gingham|Stripe|Dots) No\. \d+: /,"").toLowerCase(),itemIds:r.pieces.map(p=>p.id),occasions:[S.sOcc],why:r.why}));
   const offSeason=a.seasons&&a.seasons.length&&!a.seasons.includes(season);
   return `<div class="panel" style="grid-template-columns:96px 1fr;align-items:center">
    <div class="tile" style="aspect-ratio:1/1;border-radius:10px"><img src="${esc(a.img)}" alt=""></div>
    <div style="display:grid;gap:6px;min-width:0"><span class="status">Styling</span><strong style="font-family:var(--display);font-weight:400;font-size:19px;line-height:1.2">${esc(a.name)}</strong>
    <div class="row"><button class="iconbtn" type="button" id="changeAnchor">Choose another piece</button></div></div></div>
+  <label class="pairwith"><span>Pair it with</span><select id="pairWith"><option value="">Anything (let the app choose)</option>${CATS.filter(([k])=>!["accessories"].includes(k)).map(([k,v])=>{const L=arrange(D.items.filter(i=>i.category===k&&i.id!==a.id));return L.length?`<optgroup label="${esc(v)}">${L.map(i=>`<option value="${esc(i.id)}" ${S.withFor===a.id&&S.with===i.id?"selected":""}>${esc(i.name)}</option>`).join("")}</optgroup>`:"";}).join("")}</select></label>
   <div class="chips" role="group" aria-label="Occasion">${["Everyday","Lunch out","Dinner out","Smart casual","Travel","Holiday","Special occasion"].map(o=>`<button class="chip" data-socc="${o}" aria-pressed="${S.sOcc===o}">${o}</button>`).join("")}</div>
   <div class="chips" role="group" aria-label="Season">${SEASONS.map(x=>`<button class="chip" data-sseason="${x}" aria-pressed="${season===x}">${x}${x===currentSeason()?" (now)":""}</button>`).join("")}</div>
   <div class="panel" style="gap:8px"><div class="status">${tasteN()?`Learning from ${ratedCount()} of your rating${ratedCount()===1?"":"s"} and ${(D.taste&&D.taste.n)||0} inspiration looks. Keep tapping Like or Not for me and the ideas will get closer to your taste.`:"No rules yet. Tap Like or Not for me on each idea and the app learns your taste."}</div>
@@ -398,7 +401,7 @@ function copyText(o){
   return `Please add this outfit to my wardrobe app.\nName: ${o.name}\nItems: ${(o.itemIds||[]).map(id=>{const it=byId(id);return it?`${it.name} (${it.id})`:id;}).join(", ")}\nOccasions: ${(o.occasions||[]).join(", ")||"none set"}`;
 }
 
-document.addEventListener("change",e=>{if(e.target.id==="useRules"){useRules=e.target.checked;LS.set("useRules",useRules);render();}});
+document.addEventListener("change",e=>{if(e.target.id==="pairWith"){S.with=e.target.value||null;S.withFor=S.anchor;S.seed=1;S.shown=[];render();return;}if(e.target.id==="useRules"){useRules=e.target.checked;LS.set("useRules",useRules);render();}});
 document.addEventListener("input",e=>{if(e.target.id==="sq"){S.q=e.target.value;const pos=e.target.selectionStart;render();const el=$("#sq");if(el){el.focus();el.setSelectionRange(pos,pos);}}});
 document.addEventListener("click",async e=>{
   const t=e.target.closest("button");if(!t)return;
@@ -408,7 +411,7 @@ document.addEventListener("click",async e=>{
   if(t.dataset.pickcat){S.pickCat=t.dataset.pickcat;render();return;}
   if(t.dataset.socc){S.sOcc=t.dataset.socc;S.seed=1;render();return;}
   if(t.dataset.sseason){S.sSeason=t.dataset.sseason;S.seed=1;render();return;}
-  if(t.id==="more"){S.seed++;render();window.scrollTo(0,0);return;}
+  if(t.id==="more"){if(S.shownFor!==S.anchor){S.shownFor=S.anchor;S.shown=[];}S.shown=S.shown.concat(...S.lastRes.map(o=>o.itemIds));S.seed++;render();window.scrollTo(0,0);return;}
   if(t.dataset.like){const o=S.lastRes[+t.dataset.like];rate(o,1);S.rated=(S.rated||[]).concat(o.key);
     mine=mine.concat({id:"m"+Date.now(),name:o.name,itemIds:o.itemIds,occasions:o.occasions,why:o.why});LS.set("mine",mine);render();return;}
   if(t.dataset.nope){const o=S.lastRes[+t.dataset.nope];rate(o,-1);S.rated=(S.rated||[]).concat(o.key);render();return;}

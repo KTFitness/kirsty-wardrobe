@@ -172,13 +172,17 @@ function hairTip(pieces){const t=pieces.find(p=>p.category==="dresses")||pieces.
 
 function suggest(anchor,items,ctx){
   const W=ctx.W||{};ctx.W=W;ctx.n=ctx.n||0;
-  const SC=(p,c)=>{const r=ctx.rules?score(p,c):{s:0,best:null,patNote:null};r.s+=learned(p,c)+hemScore(p);return r;};
-  const E=ctx.rules?1:2.5/Math.sqrt(1+ctx.n/6)+0.6;
+  const seen={};(ctx.shown||[]).forEach(id=>seen[id]=(seen[id]||0)+1);
+  const fresh=p=>p.reduce((t,x)=>t-(x.id!==anchor.id&&!['shoes','bags','accessories'].includes(x.category)?Math.min(seen[x.id]||0,4)*3:0),0);
+  const SC=(p,c)=>{const r=ctx.rules?score(p,c):{s:0,best:null,patNote:null};r.s+=learned(p,c)+hemScore(p)+fresh(p);return r;};
+  const E=ctx.rules?1:Math.max(1.3,2.5/Math.sqrt(1+ctx.n/6)+0.6);
   const season=ctx.season,rnd=mulberry(ctx.seed||1);const excl=new Set(ctx.exclude||[]);
   const pool=items.filter(i=>i.id!==anchor.id&&inSeason(i,season));
   const by=c=>pool.filter(i=>c.includes(i.category));
-  const tops=by(["tops","knitwear"]).filter(i=>!isWarmLayer(i)),bottoms=by(["skirts","trousers","shorts"]),dresses=by(["dresses"]);
-  const shoes=by(["shoes"]),layers=pool.filter(isWarmLayer),unders=pool.filter(isUnder),bags=by(["bags"]);
+  let tops=by(["tops","knitwear"]).filter(i=>!isWarmLayer(i)),bottoms=by(["skirts","trousers","shorts"]),dresses=by(["dresses"]);
+  let shoes=by(["shoes"]),layers=pool.filter(isWarmLayer),unders=pool.filter(isUnder),bags=by(["bags"]);
+  const WI=ctx.with?items.find(i=>i.id===ctx.with&&i.id!==anchor.id):null;let forceLayer=false;
+  if(WI){const c=WI.category;if(isWarmLayer(WI)){layers=[WI];forceLayer=true;}else if(c==="tops"||c==="knitwear")tops=[WI];else if(["skirts","trousers","shorts"].includes(c)){bottoms=[WI];dresses=[];}else if(c==="dresses"){dresses=[WI];bottoms=[];}else if(c==="shoes")shoes=[WI];else if(c==="bags")bags=[WI];}
   const cool=season==="Autumn"||season==="Winter";
   let cores=[];
   const ac=anchor.category;
@@ -191,11 +195,15 @@ function suggest(anchor,items,ctx){
   else{
     for(const d of dresses)cores.push([d,anchor]);
     const ts=tops.map(t=>[t,SC([t,anchor],ctx).s]).sort((a,b)=>b[1]-a[1]).slice(0,18).map(x=>x[0]);
-    const bs=bottoms.map(t=>[t,SC([t,anchor],ctx).s]).sort((a,b)=>b[1]-a[1]).slice(0,14).map(x=>x[0]);
+    const bs=bottoms.map(t=>[t,SC([t,anchor],ctx).s]).sort((a,b)=>b[1]-a[1]).map(x=>x[0]);
     for(const t of ts)for(const b of bs)cores.push([t,b,anchor]);
   }
   // pre-score cores, keep best
-  cores=cores.map(c=>({c,s:SC(c,ctx).s+(rnd()*E)*1.2})).sort((a,b)=>b.s-a.s).slice(0,80).map(x=>x.c);
+  {const sc=cores.map(c=>({c,s:SC(c,ctx).s+(rnd()*E)*1.2})).sort((a,b)=>b.s-a.s);
+   const gk=c=>{const x=c.find(p=>p!==anchor&&['skirts','trousers','shorts','dresses'].includes(p.category))||c.find(p=>p!==anchor);return x?x.id:'';};
+   const per={},keep=[];for(const x of sc){const k=gk(x.c);if(!WI&&(per[k]||0)>=3)continue;per[k]=(per[k]||0)+1;keep.push(x);}
+   const firsts=new Set();const top=keep.filter(x=>{const k=gk(x.c);if(firsts.has(k))return false;firsts.add(k);return true;});
+   cores=[...new Set(top.concat(keep.slice(0,120)))].map(x=>x.c);}
   const results=[];
   for(const core of cores){
     let pieces=core.slice();
@@ -204,8 +212,8 @@ function suggest(anchor,items,ctx){
       const u=unders.filter(u=>!pieces.includes(u)).map(u=>[u,SC(pieces.concat(u),ctx).s]).sort((a,b)=>b[1]-a[1])[0];
       if(u)pieces.push(u[0]);
     }
-    const needLayer=cool&&!pieces.some(isWarmLayer)&&(pieces.some(sleeveless)||season==="Winter"||pieces.some(p=>p.category==="dresses"));
-    if(needLayer&&layers.length){const L=layers.filter(l=>!pieces.includes(l)).map(l=>[l,SC(pieces.concat(l),ctx).s+(rnd()*E)*0.8]).sort((a,b)=>b[1]-a[1])[0];if(L)pieces.push(L[0]);}
+    const needLayer=forceLayer||cool&&!pieces.some(isWarmLayer)&&(pieces.some(sleeveless)||season==="Winter"||pieces.some(p=>p.category==="dresses"));
+    if(needLayer&&layers.length&&!(forceLayer&&pieces.includes(WI))){const L=layers.filter(l=>!pieces.includes(l)).map(l=>[l,SC(pieces.concat(l),ctx).s+(rnd()*E)*0.8]).sort((a,b)=>b[1]-a[1])[0];if(L)pieces.push(L[0]);}
     let alts=[];
     if(!pieces.some(p=>p.category==="shoes")&&shoes.length){
       const sh=shoes.map(x=>[x,SC(pieces.concat(x),ctx).s+(rnd()*E)*1.0]).sort((a,b)=>b[1]-a[1]);if(sh[0])pieces.push(sh[0][0]);alts=sh.slice(1,3).map(x=>x[0]);}
@@ -219,31 +227,40 @@ function suggest(anchor,items,ctx){
   if(anchor.setWith){const mate=items.find(i=>i.id===anchor.setWith);
     if(mate){let pieces=[anchor,mate];const sh=shoes.map(x=>[x,SC(pieces.concat(x),ctx).s]).sort((a,b)=>b[1]-a[1])[0];if(sh)pieces.push(sh[0]);
       const sc=SC(pieces,ctx);out.push({pieces,s:99,best:sc.best,patNote:sc.patNote,set:true});used[mate.id]=2;}}
-  let basicOnly=0,mixes=0;const seenKey=new Set();
+  let basicOnly=0,mixes=0;const seenKey=new Set(),bfam={};
+  const bottomFam=r=>{const b=r.pieces.find(p=>p!==anchor&&p!==WI&&['skirts','trousers','shorts'].includes(p.category));return b?(mainFams(b)[0]||'x'):null;};
   const want=ctx.count||6;
   const hasBasic=r=>r.pieces.some(p=>p!==anchor&&p.basic&&p.category!=="shoes");
+  const botOf=r=>r.pieces.find(p=>p!==anchor&&['skirts','trousers','shorts','dresses','tops','knitwear'].includes(p.category)&&(['skirts','trousers','shorts','dresses'].includes(anchor.category)?['tops','knitwear'].includes(p.category):!['tops','knitwear'].includes(p.category)));
+  const wild=[];if(!WI){const fams=new Set(),bestPer=new Map();for(const r of results){const b=botOf(r);if(b&&!bestPer.has(b.id))bestPer.set(b.id,r);}
+    const cand=[...bestPer.values()].map(r=>[r,rnd()]).sort((x,y)=>x[1]-y[1]).map(x=>x[0]);for(const r of cand){if(wild.length>=3)break;if(excl.has(r.pieces.map(p=>p.id).sort().join(",")))continue;const b=botOf(r);if(!b||seen[b.id])continue;const f=mainFams(b)[0];if(fams.has(f)||f==='denim'||f==='white')continue;fams.add(f);wild.push(r);}}
+  const mainWant=want-wild.length;
   for(const r of results){
-    if(out.length>=want)break;
+    if(out.length>=mainWant)break;
+    if(wild.includes(r))continue;
     if(excl.has(r.pieces.map(p=>p.id).sort().join(",")))continue;
-    const mains=r.pieces.filter(p=>p!==anchor&&p.category!=="shoes"&&p.category!=="bags");
+    const mains=r.pieces.filter(p=>p!==anchor&&p!==WI&&p.category!=="shoes"&&p.category!=="bags");
     const key=mains.length?null:r.pieces.map(p=>p.id).sort().join(",");
     if(key){if(seenKey.has(key))continue;seenKey.add(key);}
     if(mains.some(p=>(used[p.id]||0)>=1))continue;
+    const bf=bottomFam(r);if(bf&&(bfam[bf]||0)>=2)continue;
     if(r.patNote){if(mixes>=3)continue;mixes++;}
     if(out.length===want-1&&!out.some(hasBasic)&&!hasBasic(r))continue;
     const allBasic=mains.every(p=>p.basic);
     if(allBasic&&basicOnly>=2)continue;
     if(allBasic)basicOnly++;
-    mains.forEach(p=>used[p.id]=(used[p.id]||0)+1);
+    mains.forEach(p=>used[p.id]=(used[p.id]||0)+1);if(bf)bfam[bf]=(bfam[bf]||0)+1;
     const sh=r.pieces.find(p=>p.category==="shoes"&&p!==anchor);
     if(sh){used["shoe:"+sh.id]=(used["shoe:"+sh.id]||0)+1;
       if(used["shoe:"+sh.id]>2&&r.alts&&r.alts.length){const alt=r.alts.find(a=>(used["shoe:"+a.id]||0)<2);
         if(alt){r.pieces=r.pieces.map(p=>p===sh?alt:p);used["shoe:"+sh.id]--;used["shoe:"+alt.id]=(used["shoe:"+alt.id]||0)+1;const sc=SC(r.pieces,ctx);r.best=sc.best;r.patNote=sc.patNote;}}}
     out.push(r);
   }
+  for(const r of wild){const b=botOf(r);if(out.some(o=>o.pieces.includes(b)))continue;out.push(r);}
   if(out.length<want){const have=new Set(out.map(o=>o.pieces.map(p=>p.id).sort().join(",")));
     for(const r of results){if(out.length>=want)break;const k=r.pieces.map(p=>p.id).sort().join(",");if(have.has(k))continue;
-      const mains=r.pieces.filter(p=>p!==anchor&&p.category!=="shoes"&&p.category!=="bags");if(mains.some(p=>(used[p.id]||0)>=2))continue;
+      const mains=r.pieces.filter(p=>p!==anchor&&p!==WI&&p.category!=="shoes"&&p.category!=="bags");if(mains.some(p=>(used[p.id]||0)>=2))continue;
+      const bf=bottomFam(r);if(bf&&(bfam[bf]||0)>=3)continue;if(bf)bfam[bf]=(bfam[bf]||0)+1;
       mains.forEach(p=>used[p.id]=(used[p.id]||0)+1);have.add(k);out.push(r);}}
   out.forEach(o=>{const lr=lreasons(o,anchor,ctx,items);o.why=(ctx.rules&&/fresh|different/.test(lr))?reasons(o,anchor,ctx):lr;o.key=o.pieces.map(p=>p.id).sort().join(",");o.tips=[hemTip(o.pieces),hairTip(o.pieces)].filter(Boolean);});
   return out;
