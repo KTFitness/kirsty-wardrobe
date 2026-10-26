@@ -740,6 +740,26 @@
    ]
   },
   {
+   "id": "red-denim-jacket",
+   "name": "Red denim jacket",
+   "category": "outerwear",
+   "colours": [
+    "red"
+   ],
+   "pattern": "solid",
+   "fabric": "denim",
+   "seasons": [
+    "Spring",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Classic trucker shape, chest flap pockets, silver buttons. Picture is a crop of the listing photo.",
+   "img": "img/red-denim-jacket.webp",
+   "_f": [
+    "red"
+   ]
+  },
+  {
    "id": "navy-stripe-long-sleeve-top",
    "name": "Navy and white stripe long-sleeve top",
    "category": "tops",
@@ -2115,6 +2135,22 @@
    ]
   },
   {
+   "id": "uniqlo-light-blue-turtleneck",
+   "name": "Uniqlo light blue Heattech fleece turtleneck",
+   "category": "tops",
+   "colours": [
+    "light blue"
+   ],
+   "pattern": "solid",
+   "fabric": "Heattech fleece",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Fitted long-sleeve turtleneck. Good for layering under vests and shirts. Picture is a crop of the listing photo.",
+   "img": "img/light-blue-heattech-turtleneck.webp"
+  },
+  {
    "id": "black-mock-neck-long-sleeve",
    "name": "Black mock-neck long-sleeve top",
    "category": "tops",
@@ -2184,6 +2220,28 @@
    "img": "img/red-a-line-midi-skirt.webp",
    "_f": [
     "red"
+   ]
+  },
+  {
+   "id": "black-big-spot-tie-skirt",
+   "name": "Black big-spot tie-waist skirt",
+   "category": "skirts",
+   "colours": [
+    "black",
+    "white"
+   ],
+   "pattern": "large polka dot",
+   "fabric": "woven, fibre unknown",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Full A-line midi with a self-tie waist. Picture is a crop of the listing photo.",
+   "img": "img/black-big-spot-tie-skirt.webp",
+   "_f": [
+    "black",
+    "white"
    ]
   },
   {
@@ -2708,20 +2766,22 @@
   },
   {
    "id": "basic-red-sneakers",
-   "name": "Red sneakers",
+   "name": "Red Adidas Samba",
    "category": "shoes",
    "colours": [
-    "red"
+    "red",
+    "white",
+    "gum"
    ],
    "pattern": "solid",
-   "fabric": "",
+   "fabric": "leather and suede",
    "seasons": [
     "Spring",
     "Summer",
     "Autumn"
    ],
-   "notes": "Basic you already own. Drawn picture.",
-   "img": "img/basics/basic-red-sneakers.svg",
+   "notes": "Red with white stripes, gum sole. Your photo.",
+   "img": "img/red-adidas-samba.webp",
    "basic": true,
    "shape": "sneaker",
    "_f": [
@@ -3055,7 +3115,7 @@
   },
   {
    "id": "basic-red-cardigan",
-   "name": "Red cardigan",
+   "name": "Red cardigan with gold buttons",
    "category": "knitwear",
    "colours": [
     "red"
@@ -3067,8 +3127,8 @@
     "Winter",
     "Spring"
    ],
-   "notes": "Basic you already own. Drawn picture.",
-   "img": "img/basics/basic-red-cardigan.svg",
+   "notes": "Crew neck, raglan sleeves, gold buttons. Your photo.",
+   "img": "img/red-gold-button-cardigan.webp",
    "basic": true,
    "shape": "cardigan",
    "_f": [
@@ -4327,14 +4387,13 @@
    "img": "img/inspo/inspo-46.webp",
    "summary": "Red denim jacket over a pink knit, your check skirt, red Mary Jane flats, canvas tote.",
    "itemIds": [
-    "red-double-breasted-blazer",
+    "red-denim-jacket",
     "cos-pink-funnel-neck-sweat",
     "gorman-check-skirt",
     "basic-red-ballet-flats",
     "basic-tan-crossbody"
    ],
    "missing": [
-    "Red denim jacket (your red blazer is the stand-in)",
     "Canvas tote"
    ],
    "createdAt": 45
@@ -4419,12 +4478,12 @@
    "summary": "Red and white stripe shirt half-tucked, black big-spot midi skirt with tie waist, red Mary Janes, red bag, silver hoops. Swap in black boots or loafers for cooler days.",
    "itemIds": [
     "red-cotton-shirt",
+    "black-big-spot-tie-skirt",
     "basic-red-ballet-flats",
     "basic-black-crossbody"
    ],
    "missing": [
     "Red and white stripe shirt (your red shirt is the stand-in)",
-    "Black big-spot midi skirt",
     "Red shoulder bag"
    ],
    "createdAt": 50
@@ -4436,12 +4495,12 @@
    "summary": "The same stripe shirt and spot skirt with red sneakers and white socks, or white sneakers.",
    "itemIds": [
     "red-cotton-shirt",
+    "black-big-spot-tie-skirt",
     "basic-red-sneakers",
     "basic-black-crossbody"
    ],
    "missing": [
     "Red and white stripe shirt (your red shirt is the stand-in)",
-    "Black big-spot midi skirt",
     "Red shoulder bag"
    ],
    "createdAt": 51
@@ -4453,11 +4512,12 @@
    "summary": "Crisp white long-sleeve shirt tucked into a navy big-spot tie-waist skirt, white canvas sneakers. (Goondiwindi Cotton)",
    "itemIds": [
     "basic-white-linen-shirt",
+    "black-big-spot-tie-skirt",
     "basic-white-sneakers",
     "basic-tan-crossbody"
    ],
    "missing": [
-    "Navy big-spot midi skirt"
+    "Navy spot skirt (your black spot skirt is the stand-in)"
    ],
    "createdAt": 52
   },
@@ -4468,11 +4528,12 @@
    "summary": "Rust-orange puff-sleeve blouse tucked into a navy big-spot full skirt, red bow sandals. (Boden Isabella skirt)",
    "itemIds": [
     "orange-gingham-ricrac-blouse",
+    "black-big-spot-tie-skirt",
     "basic-red-ballet-flats",
     "basic-tan-crossbody"
    ],
    "missing": [
-    "Navy big-spot midi skirt",
+    "Navy spot skirt (your black spot skirt is the stand-in)",
     "Plain rust-orange blouse (your orange gingham blouse is the stand-in)",
     "Red heeled sandals"
    ],
@@ -4485,12 +4546,13 @@
    "summary": "Red and cream stripe jacket over a navy big-spot midi skirt, red pointed flats, tan bag.",
    "itemIds": [
     "red-stripe-cropped-jacket",
+    "black-big-spot-tie-skirt",
     "basic-white-tee",
     "basic-red-ballet-flats",
     "basic-tan-crossbody"
    ],
    "missing": [
-    "Navy big-spot midi skirt"
+    "Navy spot skirt (your black spot skirt is the stand-in)"
    ],
    "createdAt": 54
   },
@@ -4517,7 +4579,7 @@
    "ip:basic-green-cardigan|basic-white-linen-shirt": 0.5,
    "cp:green+white": 2,
    "ip:basic-black-dress-pants|basic-white-linen-shirt": 0.5,
-   "cp:black+white": 4,
+   "cp:black+white": 6.5,
    "ip:basic-black-loafers|basic-white-linen-shirt": 0.5,
    "ip:basic-black-crossbody|basic-white-linen-shirt": 0.5,
    "it:basic-green-cardigan": 0.5,
@@ -4527,13 +4589,13 @@
    "ip:basic-black-crossbody|basic-green-cardigan": 0.5,
    "it:basic-black-dress-pants": 0.5,
    "ip:basic-black-dress-pants|basic-black-loafers": 0.5,
-   "cp:black+black": 4,
+   "cp:black+black": 5,
    "ip:basic-black-crossbody|basic-black-dress-pants": 0.5,
    "it:basic-black-loafers": 1.5,
    "ip:basic-black-crossbody|basic-black-loafers": 0.5,
    "it:basic-black-crossbody": 3,
    "pat:plain+plain+plain": 4.5,
-   "so:Everyday|flats": 13,
+   "so:Everyday|flats": 14.5,
    "it:basic-black-turtleneck": 0.5,
    "ip:basic-black-turtleneck|basic-blue-straight-jeans-cropped": 0.5,
    "cp:black+denim": 4,
@@ -4571,7 +4633,7 @@
    "cp:navy+pink": 0.5,
    "cp:navy+white": 1.5,
    "cp:pink+white": 5,
-   "cp:white+white": 9,
+   "cp:white+white": 10,
    "it:basic-black-midi-skirt": 0.5,
    "ip:basic-black-midi-skirt|basic-denim-jacket": 0.5,
    "ip:adidas-gazelle-pink|basic-black-midi-skirt": 0.5,
@@ -4581,12 +4643,12 @@
    "cp:denim+pink": 1,
    "it:adidas-gazelle-pink": 2,
    "pat:plain+plain+stripe": 3.5,
-   "so:Everyday|sneakers": 12.5,
+   "so:Everyday|sneakers": 11,
    "it:gorman-red-strawberry-shirt": 1,
    "ip:basic-blue-wide-jeans|gorman-red-strawberry-shirt": 1,
    "cp:denim+red": 4,
    "ip:basic-black-kitten-heels|gorman-red-strawberry-shirt": 0.5,
-   "cp:black+red": 2.5,
+   "cp:black+red": 3.5,
    "it:basic-blue-wide-jeans": 3,
    "ip:basic-black-kitten-heels|basic-blue-wide-jeans": 0.5,
    "it:basic-black-kitten-heels": 1,
@@ -4607,7 +4669,7 @@
    "ip:basic-black-crossbody|basic-black-flats": 0.5,
    "ip:basic-black-tank|basic-denim-jacket": 0.5,
    "ip:basic-black-tank|basic-tan-sandals": 0.5,
-   "cp:black+tan": 2.5,
+   "cp:black+tan": 4,
    "ip:basic-black-tank|basic-tan-crossbody": 0.5,
    "ip:basic-black-bamboo-wide-crop|basic-denim-jacket": 0.5,
    "ip:basic-black-bamboo-wide-crop|basic-tan-sandals": 0.5,
@@ -4622,7 +4684,7 @@
    "cp:navy+tan": 0.5,
    "it:basic-black-wide-linen-pants": 1,
    "ip:basic-black-wide-linen-pants|basic-tan-sandals": 0.5,
-   "pat:plain+stripe": 4.5,
+   "pat:plain+stripe": 4,
    "ip:basic-denim-jacket|navy-stripe-long-sleeve-top": 0.5,
    "ip:basic-black-wide-linen-pants|basic-denim-jacket": 0.5,
    "ip:basic-denim-jacket|basic-white-sneakers": 1.5,
@@ -4657,7 +4719,7 @@
    "ip:basic-blue-straight-jeans|cos-navy-stripe-tee-magenta-collar": 0.5,
    "ip:basic-red-ballet-flats|cos-navy-stripe-tee-magenta-collar": 0.5,
    "cp:navy+red": 1,
-   "cp:red+white": 9.5,
+   "cp:red+white": 10.5,
    "it:basic-blue-straight-jeans": 0.5,
    "ip:basic-blue-straight-jeans|basic-red-ballet-flats": 0.5,
    "it:basic-red-ballet-flats": 4.5,
@@ -4800,7 +4862,7 @@
    "cp:black+sky": 0.5,
    "ip:cream-mock-neck-long-sleeve|pink-boucle-mini-skirt": 0.5,
    "ip:basic-black-knee-boots-flat|cream-mock-neck-long-sleeve": 0.5,
-   "cp:black+cream": 0.5,
+   "cp:black+cream": 1,
    "it:pink-boucle-mini-skirt": 0.5,
    "ip:basic-black-knee-boots-flat|pink-boucle-mini-skirt": 0.5,
    "ip:basic-tan-crossbody|pink-boucle-mini-skirt": 0.5,
@@ -4940,11 +5002,11 @@
    "ip:basic-white-flats|basic-white-tank": 0.5,
    "ip:basic-tan-crossbody|basic-white-tank": 0.5,
    "ip:basic-white-flats|gorman-check-skirt": 0.5,
-   "it:red-double-breasted-blazer": 0.5,
-   "ip:cos-pink-funnel-neck-sweat|red-double-breasted-blazer": 0.5,
-   "ip:gorman-check-skirt|red-double-breasted-blazer": 0.5,
-   "ip:basic-red-ballet-flats|red-double-breasted-blazer": 0.5,
-   "ip:basic-tan-crossbody|red-double-breasted-blazer": 0.5,
+   "it:red-denim-jacket": 0.5,
+   "ip:cos-pink-funnel-neck-sweat|red-denim-jacket": 0.5,
+   "ip:gorman-check-skirt|red-denim-jacket": 0.5,
+   "ip:basic-red-ballet-flats|red-denim-jacket": 0.5,
+   "ip:basic-tan-crossbody|red-denim-jacket": 0.5,
    "ip:cos-pink-funnel-neck-sweat|gorman-check-skirt": 0.5,
    "ip:basic-red-ballet-flats|cos-pink-funnel-neck-sweat": 0.5,
    "ip:basic-red-ballet-flats|gorman-check-skirt": 0.5,
@@ -4979,29 +5041,42 @@
    "ip:basic-blue-straight-jeans-cropped|cream-mock-neck-long-sleeve": 0.5,
    "ip:basic-white-sneakers|cream-mock-neck-long-sleeve": 0.5,
    "ip:basic-blue-straight-jeans-cropped|basic-white-sneakers": 0.5,
+   "ip:black-big-spot-tie-skirt|red-cotton-shirt": 1,
    "ip:basic-red-ballet-flats|red-cotton-shirt": 0.5,
    "ip:basic-black-crossbody|red-cotton-shirt": 1,
+   "it:black-big-spot-tie-skirt": 2.5,
+   "ip:basic-red-ballet-flats|black-big-spot-tie-skirt": 1.5,
+   "ip:basic-black-crossbody|black-big-spot-tie-skirt": 1,
    "ip:basic-black-crossbody|basic-red-ballet-flats": 0.5,
-   "pat:plain": 1.5,
+   "pat:dot+plain": 1.5,
+   "ip:basic-red-sneakers|black-big-spot-tie-skirt": 0.5,
    "ip:basic-black-crossbody|basic-red-sneakers": 0.5,
+   "ip:basic-white-linen-shirt|black-big-spot-tie-skirt": 0.5,
    "ip:basic-white-linen-shirt|basic-white-sneakers": 0.5,
    "ip:basic-tan-crossbody|basic-white-linen-shirt": 0.5,
+   "ip:basic-white-sneakers|black-big-spot-tie-skirt": 0.5,
+   "ip:basic-tan-crossbody|black-big-spot-tie-skirt": 1.5,
    "it:orange-gingham-ricrac-blouse": 0.5,
+   "ip:black-big-spot-tie-skirt|orange-gingham-ricrac-blouse": 0.5,
+   "cp:black+orange": 1,
+   "cp:orange+white": 0.5,
    "ip:basic-red-ballet-flats|orange-gingham-ricrac-blouse": 0.5,
    "cp:orange+red": 0.5,
    "ip:basic-tan-crossbody|orange-gingham-ricrac-blouse": 0.5,
    "cp:orange+tan": 0.5,
-   "pat:check": 0.5,
+   "pat:check+dot": 0.5,
    "it:red-stripe-cropped-jacket": 0.5,
+   "ip:black-big-spot-tie-skirt|red-stripe-cropped-jacket": 0.5,
    "ip:basic-white-tee|red-stripe-cropped-jacket": 0.5,
    "ip:basic-red-ballet-flats|red-stripe-cropped-jacket": 0.5,
    "ip:basic-tan-crossbody|red-stripe-cropped-jacket": 0.5,
+   "ip:basic-white-tee|black-big-spot-tie-skirt": 0.5,
    "ip:basic-red-ballet-flats|basic-white-tee": 0.5,
+   "pat:dot+plain+stripe": 0.5,
    "it:white-linen-orange-embroidered-shirt": 0.5,
    "ip:pink-wide-leg-sailor-trousers|white-linen-orange-embroidered-shirt": 0.5,
    "cp:orange+pink": 0.5,
    "ip:basic-black-knee-boots-heel|white-linen-orange-embroidered-shirt": 0.5,
-   "cp:black+orange": 0.5,
    "ip:basic-black-knee-boots-heel|pink-wide-leg-sailor-trousers": 0.5,
    "it:basic-black-knee-boots-heel": 0.5,
    "so:Everyday|heeled boots": 0.5
