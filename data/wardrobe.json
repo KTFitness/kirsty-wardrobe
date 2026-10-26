@@ -947,6 +947,28 @@
    "img": "img/ghanda-green-check-cardigan.webp"
   },
   {
+   "id": "boden-green-crochet-cardigan",
+   "name": "Boden green crochet cardigan jacket",
+   "category": "knitwear",
+   "colours": [
+    "green",
+    "cream"
+   ],
+   "pattern": "crochet granny-square check",
+   "fabric": "cotton crochet",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Collared, cropped, tortoiseshell buttons. Works as a light jacket. Picture is a crop of the listing photo.",
+   "img": "img/boden-green-crochet-jacket.webp",
+   "_f": [
+    "green",
+    "cream"
+   ]
+  },
+  {
    "id": "blue-broderie-scallop-top",
    "name": "Blue broderie scallop top",
    "category": "tops",
@@ -2419,7 +2441,10 @@
    "notes": "Fitted crew neck, raglan cap sleeves. Your photo.",
    "img": "img/white-fitted-tee.webp",
    "basic": true,
-   "shape": "tee"
+   "shape": "tee",
+   "_f": [
+    "white"
+   ]
   },
   {
    "id": "basic-black-tee",
@@ -9478,6 +9503,23 @@
    ],
    "liked": true,
    "why": "You liked this in Style me."
+  },
+  {
+   "id": "liked-boden-crochet",
+   "name": "Crochet jacket, white tee and wide jeans",
+   "itemIds": [
+    "boden-green-crochet-cardigan",
+    "basic-white-fitted-tee",
+    "basic-blue-wide-jeans",
+    "basic-tan-flats",
+    "mimco-raffia-clutch"
+   ],
+   "occasions": [
+    "Everyday",
+    "Lunch out"
+   ],
+   "liked": true,
+   "why": "The Boden look you liked."
   }
  ],
  "inspo": [
@@ -13533,6 +13575,25 @@
     "White strappy sandals"
    ],
    "createdAt": 250
+  },
+  {
+   "id": "i252",
+   "name": "Boden: crochet jacket, white tee, wide jeans",
+   "img": "img/inspo/inspo-252.webp",
+   "summary": "Your green crochet jacket over a white tee, light wide-leg jeans, brown leather thong sandals, straw shoulder bag, layered gold necklaces.",
+   "itemIds": [
+    "boden-green-crochet-cardigan",
+    "basic-white-fitted-tee",
+    "basic-blue-wide-jeans",
+    "basic-tan-flats",
+    "mimco-raffia-clutch"
+   ],
+   "missing": [
+    "Brown leather thong sandals (your tan slides are the stand-in)",
+    "Straw shoulder bag (your raffia clutch is the stand-in)",
+    "Layered gold necklaces"
+   ],
+   "createdAt": 251
   }
  ],
  "taste": {
@@ -13922,7 +13983,8 @@
     "basic-tan-crossbody,basic-tan-flats,dots-3-pin-dot-shell,navy-rope-trim-mini-skirt",
     "basic-tan-crossbody,basic-tan-flats,dots-3-pin-dot-shell,ecru-wrap-mini-skirt",
     "basic-tan-crossbody,basic-tan-flats,dots-3-pin-dot-shell,green-textured-mini-skirt",
-    "basic-blue-wide-jeans,basic-tan-crossbody,basic-tan-flats,dots-3-pin-dot-shell"
+    "basic-blue-wide-jeans,basic-tan-crossbody,basic-tan-flats,dots-3-pin-dot-shell",
+    "basic-blue-wide-jeans,basic-white-fitted-tee,boden-green-crochet-cardigan"
    ],
    "disliked": [
     "basic-black-crossbody,basic-tan-flats,gorman-check-skirt,green-breton-long-sleeve,magenta-vneck-knit-vest",
@@ -14198,13 +14260,13 @@
     "basic-tan-crossbody,basic-tan-flats,dots-3-pin-dot-shell,pink-folk-print-shorts",
     "basic-tan-crossbody,basic-tan-flats,dots-3-pin-dot-shell,floral-wide-leg-trousers"
    ],
-   "n": 657,
+   "n": 658,
    "savedAt": "2026-10-26"
   },
   "w": {
    "it:basic-white-linen-shirt": 3.45,
    "ip:basic-green-cardigan|basic-white-linen-shirt": 0.36,
-   "cp:green+white": 2.4,
+   "cp:green+white": 2.52,
    "ip:basic-black-dress-pants|basic-white-linen-shirt": 0.65,
    "cp:black+white": 6.16,
    "ip:basic-black-loafers|basic-white-linen-shirt": 0.65,
@@ -14222,7 +14284,7 @@
    "ip:basic-black-crossbody|basic-black-loafers": 0.65,
    "it:basic-black-crossbody": 4.34,
    "pat:plain+plain+plain": 5.38,
-   "so:Everyday|flats": 8.66,
+   "so:Everyday|flats": 8.69,
    "it:basic-black-turtleneck": 1.13,
    "ip:basic-black-turtleneck|basic-blue-straight-jeans-cropped": 0.36,
    "cp:black+denim": 3.8,
@@ -14232,23 +14294,23 @@
    "pat:plain+plain": 6.36,
    "it:alessandra-colour-block-jumper": 0.36,
    "ip:alessandra-colour-block-jumper|basic-white-tee": 0.36,
-   "cp:tan+white": 7.47,
-   "cp:cream+white": 2.14,
+   "cp:tan+white": 7.51,
+   "cp:cream+white": 2.27,
    "ip:alessandra-colour-block-jumper|basic-blue-straight-jeans-cropped": 0.36,
-   "cp:denim+tan": 5.38,
-   "cp:cream+denim": 1.13,
+   "cp:denim+tan": 5.44,
+   "cp:cream+denim": 1.33,
    "ip:alessandra-colour-block-jumper|basic-tan-flats": 0.36,
-   "cp:tan+tan": 4.69,
-   "cp:cream+tan": 2,
+   "cp:tan+tan": 4.76,
+   "cp:cream+tan": 2.14,
    "ip:alessandra-colour-block-jumper|basic-tan-crossbody": 0.36,
    "it:basic-white-tee": 4.76,
    "ip:basic-blue-straight-jeans-cropped|basic-white-tee": 1.52,
-   "cp:denim+white": 6.7,
+   "cp:denim+white": 6.75,
    "ip:basic-tan-flats|basic-white-tee": 1.85,
    "ip:basic-tan-crossbody|basic-white-tee": 3.07,
    "ip:basic-blue-straight-jeans-cropped|basic-tan-flats": 0.91,
    "ip:basic-blue-straight-jeans-cropped|basic-tan-crossbody": 1.52,
-   "it:basic-tan-flats": 5.67,
+   "it:basic-tan-flats": 5.73,
    "ip:basic-tan-crossbody|basic-tan-flats": 3.27,
    "it:basic-tan-crossbody": 6.51,
    "it:cos-navy-stripe-tee-magenta-collar": 2.52,
@@ -14276,7 +14338,7 @@
    "cp:denim+red": 3.96,
    "ip:basic-black-kitten-heels|gorman-red-strawberry-shirt": 0.36,
    "cp:black+red": 2.75,
-   "it:basic-blue-wide-jeans": 4.69,
+   "it:basic-blue-wide-jeans": 4.76,
    "ip:basic-black-kitten-heels|basic-blue-wide-jeans": 0.36,
    "it:basic-black-kitten-heels": 0.91,
    "so:Everyday|heeled boots": 2.4,
@@ -14348,7 +14410,7 @@
    "it:basic-red-ballet-flats": 3.17,
    "it:gorman-green-rib-tank": 1.52,
    "ip:basic-denim-jacket|gorman-green-rib-tank": 0.91,
-   "cp:denim+green": 1.69,
+   "cp:denim+green": 1.85,
    "ip:basic-black-straight-jeans-cropped|gorman-green-rib-tank": 0.91,
    "ip:basic-black-sneakers|gorman-green-rib-tank": 0.91,
    "ip:basic-black-straight-jeans-cropped|basic-denim-jacket": 0.65,
@@ -14408,7 +14470,7 @@
    "ip:green-breton-long-sleeve|pink-cord-wide-leg-trousers": 0.36,
    "ip:adidas-gazelle-pink|green-breton-long-sleeve": 0.36,
    "ip:basic-tan-crossbody|green-breton-long-sleeve": 0.91,
-   "cp:green+tan": 2.27,
+   "cp:green+tan": 2.4,
    "it:pink-cord-wide-leg-trousers": 0.36,
    "ip:adidas-gazelle-pink|pink-cord-wide-leg-trousers": 0.36,
    "ip:basic-tan-crossbody|pink-cord-wide-leg-trousers": 0.36,
@@ -14456,8 +14518,8 @@
    "it:green-topstitched-midi-skirt": 0.36,
    "ip:basic-tan-flats|green-topstitched-midi-skirt": 0.36,
    "ip:green-topstitched-midi-skirt|mimco-raffia-clutch": 0.36,
-   "ip:basic-tan-flats|mimco-raffia-clutch": 1.52,
-   "it:mimco-raffia-clutch": 2.86,
+   "ip:basic-tan-flats|mimco-raffia-clutch": 1.69,
+   "it:mimco-raffia-clutch": 2.97,
    "pat:floral+plain": 0.91,
    "ip:cos-pink-funnel-neck-sweat|pink-tulip-knit-vest": 0.36,
    "cp:coral+red": 0.91,
@@ -14539,7 +14601,7 @@
    "ip:basic-denim-skirt|basic-white-flats": 0.36,
    "ip:basic-denim-skirt|mimco-raffia-clutch": 0.36,
    "ip:basic-white-flats|mimco-raffia-clutch": 0.65,
-   "pat:check+plain+plain": 0.91,
+   "pat:check+plain+plain": 1.13,
    "ip:basic-denim-shorts|marcs-pink-gingham-tank": 0.36,
    "ip:basic-black-knee-boots-flat|marcs-pink-gingham-tank": 0.36,
    "cp:black+coral": 0.36,
@@ -14648,7 +14710,7 @@
    "ip:gorman-red-strawberry-shirt|mimco-raffia-clutch": 0.36,
    "ip:basic-blue-wide-jeans|basic-tan-belt": 1.13,
    "ip:basic-blue-wide-jeans|basic-red-ballet-flats": 1.33,
-   "ip:basic-blue-wide-jeans|mimco-raffia-clutch": 0.91,
+   "ip:basic-blue-wide-jeans|mimco-raffia-clutch": 1.13,
    "ip:basic-red-ballet-flats|basic-tan-belt": 0.36,
    "ip:basic-tan-belt|mimco-raffia-clutch": 0.36,
    "ip:basic-red-ballet-flats|mimco-raffia-clutch": 0.36,
@@ -14970,7 +15032,7 @@
    "ip:basic-tan-flats|black-big-spot-tie-skirt": 0.36,
    "ip:basic-black-wide-linen-pants|basic-white-tee": 0.36,
    "ip:basic-black-flats|basic-black-wide-linen-pants": 0.65,
-   "ip:basic-blue-wide-jeans|basic-tan-flats": 1.52,
+   "ip:basic-blue-wide-jeans|basic-tan-flats": 1.69,
    "ip:basic-black-midi-skirt|gorman-denim-lace-up-top": 0.36,
    "ip:basic-black-flats|gorman-denim-lace-up-top": 0.36,
    "ip:basic-black-flats|basic-black-midi-skirt": 0.65,
@@ -15153,9 +15215,18 @@
    "ip:basic-black-flats|basic-white-wide-jeans": 0.36,
    "ip:basic-blue-straight-jeans-cropped|sass-rust-cord-jacket": 0.36,
    "ip:green-linen-shirt|zara-white-sleeveless-knit": 0.36,
-   "ip:basic-blue-wide-jeans|green-linen-shirt": 0.36
+   "ip:basic-blue-wide-jeans|green-linen-shirt": 0.36,
+   "it:boden-green-crochet-cardigan": 0.36,
+   "ip:basic-white-fitted-tee|boden-green-crochet-cardigan": 0.36,
+   "ip:basic-blue-wide-jeans|boden-green-crochet-cardigan": 0.36,
+   "ip:basic-tan-flats|boden-green-crochet-cardigan": 0.36,
+   "ip:boden-green-crochet-cardigan|mimco-raffia-clutch": 0.36,
+   "it:basic-white-fitted-tee": 0.36,
+   "ip:basic-blue-wide-jeans|basic-white-fitted-tee": 0.36,
+   "ip:basic-tan-flats|basic-white-fitted-tee": 0.36,
+   "ip:basic-white-fitted-tee|mimco-raffia-clutch": 0.36
   },
-  "n": 251,
-  "source": "251 inspiration photos, 26 Oct 2026"
+  "n": 252,
+  "source": "252 inspiration photos, 26 Oct 2026"
  }
 }
