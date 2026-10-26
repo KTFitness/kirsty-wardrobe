@@ -60,7 +60,7 @@ const OCC={"Everyday":1.6,"Lunch out":2.1,"Dinner out":2.7,"Smart casual":2.5,"T
 const sleeveless=it=>/sleeveless|tank|halter|vest|cami|strapless|racer/.test(lc(it));
 const isVest=it=>it.category==="knitwear"&&/vest/.test(lc(it));
 const isWarmLayer=it=>it.category==="outerwear"||(it.category==="knitwear"&&/cardigan/.test(lc(it)));
-const isUnder=it=>(it.category==="tops"||it.category==="knitwear")&&/basic-white-tee|basic-black-tee|basic-white-linen|basic-black-turtleneck|mock-neck|stripe long-sleeve|breton long-sleeve|navy-stripe-long/.test(it.id+" "+lc(it))&&!sleeveless(it);
+const isUnder=it=>(it.category==="tops"||it.category==="knitwear")&&/basic-white-tee|basic-black-tee|basic-grey-tee|basic-white-linen|basic-black-turtleneck|mock-neck|stripe long-sleeve|breton long-sleeve|navy-stripe-long/.test(it.id+" "+lc(it))&&!sleeveless(it);
 const inSeason=(it,season)=>!it.seasons||!it.seasons.length||it.seasons.includes(season);
 const short=it=>it.name.replace(/^(Gingham|Stripe|Dots) No\. \d+: /,"").replace(/^(Gorman|Boden|Zara|COS|Sportsgirl|Ghanda|Marcs|Sass|Alessandra|Country Road|Mimco|Witchery|New Look|M&S|Primark) /,"").replace(/^./,c=>c.toLowerCase());
 
@@ -134,7 +134,7 @@ function features(pieces,occ){
 const FW={it:0.4,ip:2,cp:1,pat:1,so:1.2};
 function learned(pieces,ctx){let s=0;for(const k of features(pieces,ctx.occ)){const w=ctx.W[k];if(w)s+=w*(FW[k.slice(0,k.indexOf(":"))]||1);}return s;}
 function lreasons(o,anchor,ctx,items){
-  const top=features(o.pieces,ctx.occ).map(k=>[k,(ctx.W[k]||0)*(FW[k.slice(0,k.indexOf(":"))]||1)]).filter(x=>x[1]>0&&!x[0].startsWith("it:")).sort((a,b)=>b[1]-a[1]).slice(0,2);
+  const top=features(o.pieces,ctx.occ).map(k=>[k,(ctx.W[k]||0)*(FW[k.slice(0,k.indexOf(":"))]||1)]).filter(x=>x[1]>0&&!x[0].startsWith("it:")&&!(x[0].startsWith("ip:")&&x[0].slice(3).split("|").some(id=>{const it=items.find(i=>i.id===id);return !it||["shoes","bags","accessories"].includes(it.category);}))).sort((a,b)=>b[1]-a[1]).slice(0,2);
   const nm=id=>{const it=items.find(i=>i.id===id);return it?short(it):"that piece";};
   const out=top.map(([k])=>{const v=k.slice(k.indexOf(":")+1);
     if(k.startsWith("ip:")){const [a,b]=v.split("|");return `You liked the ${nm(a)} with the ${nm(b)} before.`;}
@@ -185,7 +185,7 @@ function suggest(anchor,items,ctx){
     let alts=[];
     if(!pieces.some(p=>p.category==="shoes")&&shoes.length){
       const sh=shoes.map(x=>[x,SC(pieces.concat(x),ctx).s+(rnd()*E)*1.0]).sort((a,b)=>b[1]-a[1]);if(sh[0])pieces.push(sh[0][0]);alts=sh.slice(1,3).map(x=>x[0]);}
-    if(bags.length&&!pieces.some(p=>p.category==="bags")&&!cool&&["Lunch out","Dinner out","Holiday","Special occasion"].includes(ctx.occ)){
+    if(bags.length&&!pieces.some(p=>p.category==="bags")){
       const bg=bags.map(x=>[x,SC(pieces.concat(x),ctx).s]).sort((a,b)=>b[1]-a[1])[0];if(bg&&bg[1]>-1)pieces.push(bg[0]);}
     const sc=SC(pieces,ctx);
     results.push({pieces,alts,s:sc.s+(rnd()*E)*0.6,best:sc.best,patNote:sc.patNote});

@@ -117,40 +117,6 @@
    "img": "img/marcs-pink-gingham-tank.webp"
   },
   {
-   "id": "vneck-stripe-flutter-top",
-   "name": "Blue stripe V-neck flutter top",
-   "category": "tops",
-   "colours": [
-    "blue",
-    "white"
-   ],
-   "pattern": "fine stripe",
-   "fabric": "unsure",
-   "seasons": [
-    "Spring",
-    "Summer"
-   ],
-   "notes": "Collared V-neck, flutter sleeves, straight hem. The first stripe top you showed me.",
-   "img": "img/vneck-stripe-flutter-top.webp"
-  },
-  {
-   "id": "stripe-1-seersucker-ruffle",
-   "name": "Stripe No. 1: seersucker ruffle-collar top",
-   "category": "tops",
-   "colours": [
-    "pale blue",
-    "white"
-   ],
-   "pattern": "fine stripe seersucker",
-   "fabric": "probably cotton seersucker",
-   "seasons": [
-    "Spring",
-    "Summer"
-   ],
-   "notes": "Shaped waist with gentle flare, ruffle collar, flutter sleeves, button front",
-   "img": "img/stripe-1-seersucker-ruffle.webp"
-  },
-  {
    "id": "stripe-2-smocked-tank",
    "name": "Stripe No. 2: smocked stripe tank",
    "category": "tops",
@@ -168,127 +134,6 @@
    "img": "img/stripe-2-smocked-tank.webp"
   },
   {
-   "id": "stripe-3-off-shoulder",
-   "name": "Stripe No. 3: off-shoulder puff-sleeve top",
-   "category": "tops",
-   "colours": [
-    "grey-blue",
-    "white"
-   ],
-   "pattern": "pinstripe",
-   "fabric": "unsure",
-   "seasons": [
-    "Spring",
-    "Summer"
-   ],
-   "notes": "Off-shoulder, puff sleeves, loose",
-   "img": "img/stripe-3-off-shoulder.webp"
-  },
-  {
-   "id": "stripe-4-ruffle-popover",
-   "name": "Stripe No. 4: ruffle-collar popover",
-   "category": "tops",
-   "colours": [
-    "pale blue",
-    "white"
-   ],
-   "pattern": "pinstripe",
-   "fabric": "unsure",
-   "seasons": [
-    "Spring",
-    "Summer"
-   ],
-   "notes": "Ruffle stand collar, ruffle armholes, half placket. Tuck in.",
-   "img": "img/stripe-4-ruffle-popover.webp"
-  },
-  {
-   "id": "stripe-6-vila-ruffle",
-   "name": "Stripe No. 6: Vila ruffle top",
-   "category": "tops",
-   "colours": [
-    "navy-teal",
-    "white"
-   ],
-   "pattern": "stripe",
-   "fabric": "unsure",
-   "seasons": [
-    "Spring",
-    "Summer"
-   ],
-   "notes": "Ruffle shoulders, split neck",
-   "img": "img/stripe-6-vila-ruffle.webp"
-  },
-  {
-   "id": "stripe-7-wyse-puff",
-   "name": "Stripe No. 7: Wyse puff-sleeve shirt",
-   "category": "tops",
-   "colours": [
-    "blue",
-    "white"
-   ],
-   "pattern": "stripe",
-   "fabric": "unsure",
-   "seasons": [
-    "Spring",
-    "Summer",
-    "Autumn"
-   ],
-   "notes": "Three-quarter puff sleeves, ruffle collar and cuffs",
-   "img": "img/stripe-7-wyse-puff.webp"
-  },
-  {
-   "id": "stripe-8-off-shoulder-crop",
-   "name": "Stripe No. 8: cropped off-shoulder top",
-   "category": "tops",
-   "colours": [
-    "blue",
-    "white"
-   ],
-   "pattern": "wide irregular stripe",
-   "fabric": "unsure",
-   "seasons": [
-    "Spring",
-    "Summer"
-   ],
-   "notes": "Cropped, off-shoulder, puff sleeves",
-   "img": "img/stripe-8-off-shoulder-crop.webp"
-  },
-  {
-   "id": "stripe-9-aqua-horizontal",
-   "name": "Stripe No. 9: aqua horizontal stripe top",
-   "category": "tops",
-   "colours": [
-    "aqua blue",
-    "white"
-   ],
-   "pattern": "horizontal stripe",
-   "fabric": "unsure",
-   "seasons": [
-    "Spring",
-    "Summer"
-   ],
-   "notes": "Sleeveless, ruffle V collar, button front",
-   "img": "img/stripe-9-aqua-horizontal.webp"
-  },
-  {
-   "id": "stripe-10-long-sleeve-peplum",
-   "name": "Stripe No. 10: long-sleeve peplum top",
-   "category": "tops",
-   "colours": [
-    "blue",
-    "white"
-   ],
-   "pattern": "stripe",
-   "fabric": "unsure",
-   "seasons": [
-    "Autumn",
-    "Spring",
-    "Winter"
-   ],
-   "notes": "Ruffle high neck, elastic waist with ruffle peplum, long sleeves",
-   "img": "img/stripe-10-long-sleeve-peplum.webp"
-  },
-  {
    "id": "gingham-1-sleeveless-pockets",
    "name": "Gingham No. 1: sleeveless gingham shirt",
    "category": "tops",
@@ -304,77 +149,6 @@
    ],
    "notes": "Sleeveless, patch pockets, button front. Picture cut from a worn photo, so the shape is rough.",
    "img": "img/gingham-1-sleeveless-pockets.webp"
-  },
-  {
-   "id": "gingham-2-yellow-blue-tee",
-   "name": "Gingham No. 2: yellow gingham tee, blue sleeves",
-   "category": "tops",
-   "colours": [
-    "butter yellow",
-    "sky blue",
-    "white"
-   ],
-   "pattern": "gingham",
-   "fabric": "jersey, fibre unknown",
-   "seasons": [
-    "Spring",
-    "Summer"
-   ],
-   "notes": "Boat neck with shoulder buttons, contrast gingham sleeves",
-   "img": "img/gingham-2-yellow-blue-tee.webp"
-  },
-  {
-   "id": "gingham-4-oversized-shirt",
-   "name": "Gingham No. 4: oversized textured gingham shirt",
-   "category": "tops",
-   "colours": [
-    "blue",
-    "white"
-   ],
-   "pattern": "textured gingham",
-   "fabric": "unsure",
-   "seasons": [
-    "Spring",
-    "Summer",
-    "Autumn"
-   ],
-   "notes": "Long sleeves. Earmarked to remake into a short-sleeve or sleeveless ruffle shirt.",
-   "img": "img/gingham-4-oversized-shirt.webp"
-  },
-  {
-   "id": "gingham-5-zara-micro-check",
-   "name": "Gingham No. 5: Zara sleeveless micro-check shirt",
-   "category": "tops",
-   "colours": [
-    "sky blue",
-    "white"
-   ],
-   "pattern": "micro gingham",
-   "fabric": "unsure",
-   "seasons": [
-    "Spring",
-    "Summer"
-   ],
-   "notes": "Sleeveless, size S, US$45.90 tag",
-   "img": "img/gingham-5-zara-micro-check.webp"
-  },
-  {
-   "id": "gingham-6-ms-long-sleeve",
-   "name": "Gingham No. 6: M&S gingham shirt",
-   "category": "tops",
-   "colours": [
-    "blue",
-    "white"
-   ],
-   "pattern": "gingham",
-   "fabric": "possibly viscose",
-   "seasons": [
-    "Spring",
-    "Summer",
-    "Autumn"
-   ],
-   "notes": "Long sleeves, classic collar. Possible remake base.",
-   "img": "img/gingham-6-ms-long-sleeve.webp"
   },
   {
    "id": "gingham-7-seersucker-camp",
@@ -411,57 +185,6 @@
    "img": "img/ms-green-stripe-tee.webp"
   },
   {
-   "id": "red-waffle-stripe-tank",
-   "name": "Red waffle stripe tank",
-   "category": "knitwear",
-   "colours": [
-    "deep red",
-    "white"
-   ],
-   "pattern": "wide horizontal stripe",
-   "fabric": "waffle knit, fibre unknown",
-   "seasons": [
-    "Spring",
-    "Summer"
-   ],
-   "notes": "Crew neck, sleeveless, ribbed binding",
-   "img": "img/red-waffle-stripe-tank.webp"
-  },
-  {
-   "id": "primark-red-rib-tank",
-   "name": "Primark red rib stripe tank",
-   "category": "knitwear",
-   "colours": [
-    "tomato red",
-    "white"
-   ],
-   "pattern": "fine horizontal stripe",
-   "fabric": "rib knit, fibre unknown",
-   "seasons": [
-    "Spring",
-    "Summer"
-   ],
-   "notes": "Crew neck, sleeveless, size S",
-   "img": "img/primark-red-rib-tank.webp"
-  },
-  {
-   "id": "dots-2-light-blue-ruffle",
-   "name": "Dots No. 2: light blue dot ruffle top",
-   "category": "tops",
-   "colours": [
-    "light blue",
-    "white"
-   ],
-   "pattern": "medium polka dot",
-   "fabric": "probably slub jersey",
-   "seasons": [
-    "Spring",
-    "Summer"
-   ],
-   "notes": "Ruffle collar and armholes, button front",
-   "img": "img/dots-2-light-blue-ruffle.webp"
-  },
-  {
    "id": "dots-3-pin-dot-shell",
    "name": "Dots No. 3: mid blue pin-dot shell",
    "category": "tops",
@@ -477,22 +200,6 @@
    ],
    "notes": "Ruffle neck, sleeveless, short and fitted. Works with all three bottoms.",
    "img": "img/dots-3-pin-dot-shell.webp"
-  },
-  {
-   "id": "cornflower-twist-sleeve-top",
-   "name": "Cornflower twist-sleeve top",
-   "category": "tops",
-   "colours": [
-    "cornflower blue"
-   ],
-   "pattern": "solid",
-   "fabric": "unsure",
-   "seasons": [
-    "Autumn",
-    "Spring"
-   ],
-   "notes": "Boxy, boat neck, back zip, three-quarter sleeves with knot detail",
-   "img": "img/cornflower-twist-sleeve-top.webp"
   },
   {
    "id": "navy-dot-smocked-tank",
@@ -2800,6 +2507,509 @@
    "img": "img/basics/basic-green-sneakers.svg",
    "basic": true,
    "shape": "sneaker"
+  },
+  {
+   "id": "basic-tan-sandals",
+   "name": "Tan sandals",
+   "category": "shoes",
+   "colours": [
+    "tan"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-tan-sandals.svg",
+   "basic": true,
+   "shape": "sandal"
+  },
+  {
+   "id": "basic-black-loafers",
+   "name": "Black loafers",
+   "category": "shoes",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-black-loafers.svg",
+   "basic": true,
+   "shape": "loafer"
+  },
+  {
+   "id": "basic-red-ballet-flats",
+   "name": "Red ballet flats",
+   "category": "shoes",
+   "colours": [
+    "red"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-red-ballet-flats.svg",
+   "basic": true,
+   "shape": "ballet"
+  },
+  {
+   "id": "basic-black-crossbody",
+   "name": "Black crossbody bag",
+   "category": "bags",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-black-crossbody.svg",
+   "basic": true,
+   "shape": "crossbody"
+  },
+  {
+   "id": "basic-tan-crossbody",
+   "name": "Tan crossbody bag",
+   "category": "bags",
+   "colours": [
+    "tan"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-tan-crossbody.svg",
+   "basic": true,
+   "shape": "crossbody"
+  },
+  {
+   "id": "basic-tan-belt",
+   "name": "Tan belt",
+   "category": "accessories",
+   "colours": [
+    "tan"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-tan-belt.svg",
+   "basic": true,
+   "shape": "belt"
+  },
+  {
+   "id": "basic-black-belt",
+   "name": "Black belt",
+   "category": "accessories",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-black-belt.svg",
+   "basic": true,
+   "shape": "belt"
+  },
+  {
+   "id": "basic-white-belt",
+   "name": "White belt",
+   "category": "accessories",
+   "colours": [
+    "white"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-white-belt.svg",
+   "basic": true,
+   "shape": "belt"
+  },
+  {
+   "id": "basic-red-white-stripe-belt",
+   "name": "Red and white striped belt",
+   "category": "accessories",
+   "colours": [
+    "red",
+    "white"
+   ],
+   "pattern": "stripe",
+   "fabric": "",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-red-white-stripe-belt.svg",
+   "basic": true,
+   "shape": "belt"
+  },
+  {
+   "id": "basic-patterned-belts",
+   "name": "Floral and patterned belts (several)",
+   "category": "accessories",
+   "colours": [
+    "multicolour"
+   ],
+   "pattern": "assorted floral and pattern",
+   "fabric": "",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-patterned-belts.svg",
+   "basic": true,
+   "shape": "belt"
+  },
+  {
+   "id": "basic-denim-jacket",
+   "name": "Denim jacket",
+   "category": "outerwear",
+   "colours": [
+    "denim blue"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-denim-jacket.svg",
+   "basic": true,
+   "shape": "jacket"
+  },
+  {
+   "id": "basic-black-blazer",
+   "name": "Black blazer",
+   "category": "outerwear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-black-blazer.svg",
+   "basic": true,
+   "shape": "blazer"
+  },
+  {
+   "id": "basic-grey-marle-jumper",
+   "name": "Grey marle jumper",
+   "category": "knitwear",
+   "colours": [
+    "grey"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-grey-marle-jumper.svg",
+   "basic": true,
+   "shape": "jumper"
+  },
+  {
+   "id": "basic-green-cardigan",
+   "name": "Green cardigan",
+   "category": "knitwear",
+   "colours": [
+    "green"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-green-cardigan.svg",
+   "basic": true,
+   "shape": "cardigan"
+  },
+  {
+   "id": "basic-red-cardigan",
+   "name": "Red cardigan",
+   "category": "knitwear",
+   "colours": [
+    "red"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-red-cardigan.svg",
+   "basic": true,
+   "shape": "cardigan"
+  },
+  {
+   "id": "basic-pink-cardigan",
+   "name": "Pink cardigan",
+   "category": "knitwear",
+   "colours": [
+    "pink"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-pink-cardigan.svg",
+   "basic": true,
+   "shape": "cardigan"
+  },
+  {
+   "id": "basic-black-cardigan",
+   "name": "Black cardigan",
+   "category": "knitwear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-black-cardigan.svg",
+   "basic": true,
+   "shape": "cardigan"
+  },
+  {
+   "id": "basic-grey-cardigan",
+   "name": "Grey cardigan",
+   "category": "knitwear",
+   "colours": [
+    "grey"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-grey-cardigan.svg",
+   "basic": true,
+   "shape": "cardigan"
+  },
+  {
+   "id": "basic-white-cardigan",
+   "name": "White cardigan",
+   "category": "knitwear",
+   "colours": [
+    "white"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-white-cardigan.svg",
+   "basic": true,
+   "shape": "cardigan"
+  },
+  {
+   "id": "basic-denim-shorts",
+   "name": "Denim shorts",
+   "category": "shorts",
+   "colours": [
+    "denim blue"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-denim-shorts.svg",
+   "basic": true,
+   "shape": "shorts"
+  },
+  {
+   "id": "basic-denim-skirt",
+   "name": "Denim skirt",
+   "category": "skirts",
+   "colours": [
+    "denim blue"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-denim-skirt.svg",
+   "basic": true,
+   "shape": "miniskirt"
+  },
+  {
+   "id": "basic-black-midi-skirt",
+   "name": "Black midi skirt",
+   "category": "skirts",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-black-midi-skirt.svg",
+   "basic": true,
+   "shape": "midi"
+  },
+  {
+   "id": "basic-black-leggings",
+   "name": "Black leggings",
+   "category": "trousers",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-black-leggings.svg",
+   "basic": true,
+   "shape": "leggings"
+  },
+  {
+   "id": "basic-grey-tee",
+   "name": "Grey T-shirt",
+   "category": "tops",
+   "colours": [
+    "grey"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-grey-tee.svg",
+   "basic": true,
+   "shape": "tee"
+  },
+  {
+   "id": "basic-white-tank",
+   "name": "White tank",
+   "category": "tops",
+   "colours": [
+    "white"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-white-tank.svg",
+   "basic": true,
+   "shape": "tank"
+  },
+  {
+   "id": "basic-black-tank",
+   "name": "Black tank",
+   "category": "tops",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-black-tank.svg",
+   "basic": true,
+   "shape": "tank"
   }
  ],
  "outfits": [
@@ -2856,18 +3066,6 @@
    "why": "From your lookbook picks. Worn out, the ruffle hem sits on the waistband; flat sandals."
   },
   {
-   "id": "o5",
-   "name": "Popover and picnic check",
-   "itemIds": [
-    "stripe-4-ruffle-popover",
-    "gorman-check-skirt"
-   ],
-   "occasions": [
-    "Lunch out"
-   ],
-   "why": "From your lookbook picks. Fine stripe against jumbo check. Tuck it in; red Mary Janes or loafers and a straw bag."
-  },
-  {
    "id": "o6",
    "name": "Gingham on gingham",
    "itemIds": [
@@ -2918,18 +3116,6 @@
    "why": "From your lookbook picks. The smocking blurs the stripe into texture, so nothing fights."
   },
   {
-   "id": "o10",
-   "name": "Popover and stripe",
-   "itemIds": [
-    "stripe-4-ruffle-popover",
-    "gorman-striped-skirt"
-   ],
-   "occasions": [
-    "Lunch out"
-   ],
-   "why": "From your lookbook picks. Tucked; keep accessories away from navy."
-  },
-  {
    "id": "o11",
    "name": "Check against stripe",
    "itemIds": [
@@ -2953,18 +3139,6 @@
     "Smart casual"
    ],
    "why": "From your lookbook picks. Close to the skirt's cornflower; the pin dots read as texture."
-  },
-  {
-   "id": "o13",
-   "name": "Cornflower tonal",
-   "itemIds": [
-    "cornflower-twist-sleeve-top",
-    "gorman-striped-skirt"
-   ],
-   "occasions": [
-    "Smart casual"
-   ],
-   "why": "From your lookbook picks. Tonal with the blue stripes; add tan or mustard shoes for surprise. Good for autumn."
   },
   {
    "id": "o14",
@@ -3003,18 +3177,6 @@
     "Holiday"
    ],
    "why": "From your lookbook picks. Relaxed and cropped; white trainers."
-  },
-  {
-   "id": "o17",
-   "name": "Soft blue dots",
-   "itemIds": [
-    "dots-2-light-blue-ruffle",
-    "boden-helena-chinos"
-   ],
-   "occasions": [
-    "Everyday"
-   ],
-   "why": "From your lookbook picks. Pastel on pastel, gentle rather than punchy."
   },
   {
    "id": "o18",
