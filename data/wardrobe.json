@@ -2380,7 +2380,7 @@
   },
   {
    "id": "basic-white-tee",
-   "name": "White crew-neck T-shirt",
+   "name": "White relaxed T-shirt",
    "category": "tops",
    "colours": [
     "white"
@@ -2459,8 +2459,8 @@
     "Autumn",
     "Winter"
    ],
-   "notes": "Basic you already own. Drawn picture.",
-   "img": "img/basics/basic-white-linen-shirt.svg",
+   "notes": "Relaxed fit, long sleeves you can roll. Your photo.",
+   "img": "img/white-linen-shirt.webp",
    "basic": true,
    "shape": "linen",
    "_f": [
@@ -2503,8 +2503,8 @@
     "Winter",
     "Spring"
    ],
-   "notes": "Basic you own. Drawn picture.",
-   "img": "img/basics/basic-pale-pink-ls-tee.svg",
+   "notes": "Fitted rib, crew neck. Your photo.",
+   "img": "img/pale-pink-ls-tee.webp",
    "basic": true,
    "shape": "ls",
    "_f": [
@@ -3341,7 +3341,7 @@
   },
   {
    "id": "basic-grey-marle-jumper",
-   "name": "Grey marle jumper",
+   "name": "Grey marle crew-neck jumper",
    "category": "knitwear",
    "colours": [
     "grey"
@@ -3352,8 +3352,8 @@
     "Autumn",
     "Winter"
    ],
-   "notes": "Basic you already own. Drawn picture.",
-   "img": "img/basics/basic-grey-marle-jumper.svg",
+   "notes": "Soft brushed knit, crew neck. Your photo.",
+   "img": "img/grey-crew-jumper.webp",
    "basic": true,
    "shape": "jumper",
    "_f": [
@@ -3361,11 +3361,29 @@
    ]
   },
   {
+   "pattern": "solid",
+   "fabric": "",
+   "basic": true,
+   "notes": "Brushed knit, relaxed fit, split cuffs. Your photo.",
+   "id": "basic-grey-turtleneck-jumper",
+   "name": "Grey marle turtleneck jumper",
+   "category": "knitwear",
+   "colours": [
+    "grey marle"
+   ],
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "img": "img/grey-turtleneck-jumper.webp",
+   "shape": "turtle"
+  },
+  {
    "id": "basic-green-cardigan",
    "name": "Green cardigan",
    "category": "knitwear",
    "colours": [
-    "green"
+    "emerald green"
    ],
    "pattern": "solid",
    "fabric": "",
@@ -3374,8 +3392,8 @@
     "Winter",
     "Spring"
    ],
-   "notes": "Basic you already own. Drawn picture.",
-   "img": "img/basics/basic-green-cardigan.svg",
+   "notes": "Crew neck, raglan sleeves, mismatched multicolour buttons. Your photo.",
+   "img": "img/green-cardigan.webp",
    "basic": true,
    "shape": "cardigan",
    "_f": [
@@ -3409,7 +3427,7 @@
    "name": "Pink cardigan",
    "category": "knitwear",
    "colours": [
-    "pink"
+    "bubblegum pink"
    ],
    "pattern": "solid",
    "fabric": "",
@@ -3418,17 +3436,17 @@
     "Winter",
     "Spring"
    ],
-   "notes": "Basic you already own. Drawn picture.",
-   "img": "img/basics/basic-pink-cardigan.svg",
+   "notes": "Relaxed crew-neck cardigan, fluffy knit. Your photo.",
+   "img": "img/pink-cardigan.webp",
    "basic": true,
    "shape": "cardigan"
   },
   {
    "id": "basic-black-cardigan",
-   "name": "Black cardigan",
+   "name": "Charcoal cardigan",
    "category": "knitwear",
    "colours": [
-    "black"
+    "charcoal"
    ],
    "pattern": "solid",
    "fabric": "",
@@ -3437,8 +3455,8 @@
     "Winter",
     "Spring"
    ],
-   "notes": "Basic you already own. Drawn picture.",
-   "img": "img/basics/basic-black-cardigan.svg",
+   "notes": "Fine knit, crew neck, dark buttons. Your photo.",
+   "img": "img/charcoal-cardigan.webp",
    "basic": true,
    "shape": "cardigan",
    "_f": [
@@ -3481,13 +3499,32 @@
     "Winter",
     "Spring"
    ],
-   "notes": "Basic you already own. Drawn picture.",
-   "img": "img/basics/basic-white-cardigan.svg",
+   "notes": "Fine knit, crew neck. Your photo.",
+   "img": "img/white-cardigan.webp",
    "basic": true,
    "shape": "cardigan",
    "_f": [
     "white"
    ]
+  },
+  {
+   "pattern": "solid",
+   "fabric": "",
+   "basic": true,
+   "notes": "Fine knit, crew neck. Your photo.",
+   "id": "basic-yellow-cardigan",
+   "name": "Yellow cardigan",
+   "category": "knitwear",
+   "colours": [
+    "mustard yellow"
+   ],
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "img": "img/yellow-cardigan.webp",
+   "shape": "cardigan"
   },
   {
    "id": "basic-denim-shorts",
@@ -3599,6 +3636,46 @@
    "_f": [
     "grey"
    ]
+  },
+  {
+   "pattern": "solid",
+   "fabric": "",
+   "basic": true,
+   "notes": "Your photo.",
+   "id": "basic-black-relaxed-tee",
+   "name": "Black relaxed T-shirt",
+   "category": "tops",
+   "colours": [
+    "black"
+   ],
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "img": "img/black-relaxed-tee.webp",
+   "shape": "tee"
+  },
+  {
+   "pattern": "solid",
+   "fabric": "",
+   "basic": true,
+   "notes": "Your photo.",
+   "id": "basic-grey-relaxed-tee",
+   "name": "Grey marle relaxed T-shirt",
+   "category": "tops",
+   "colours": [
+    "grey marle"
+   ],
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "img": "img/grey-relaxed-tee.webp",
+   "shape": "tee"
   },
   {
    "id": "basic-black-wide-linen-pants",
