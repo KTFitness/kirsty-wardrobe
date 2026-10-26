@@ -463,7 +463,11 @@
     "Winter"
    ],
    "notes": "Pale pink suede, white stripes, gum sole",
-   "img": "img/adidas-gazelle-pink.webp"
+   "img": "img/adidas-gazelle-pink.webp",
+   "_f": [
+    "pink",
+    "white"
+   ]
   },
   {
    "id": "sass-rust-cord-jacket",
@@ -498,7 +502,10 @@
     "Spring"
    ],
    "notes": "Chore shape, patch pockets, press studs",
-   "img": "img/gorman-green-cord-jacket.webp"
+   "img": "img/gorman-green-cord-jacket.webp",
+   "_f": [
+    "forest"
+   ]
   },
   {
    "id": "magenta-vneck-knit-vest",
@@ -533,7 +540,10 @@
     "Spring"
    ],
    "notes": "High waist, five-pocket, wide cropped leg",
-   "img": "img/green-wide-leg-cords.webp"
+   "img": "img/green-wide-leg-cords.webp",
+   "_f": [
+    "mint"
+   ]
   },
   {
    "id": "pink-petal-collar-jacket",
@@ -707,7 +717,11 @@
     "Winter"
    ],
    "notes": "Fitted crew neck, long sleeves",
-   "img": "img/navy-stripe-long-sleeve-top.webp"
+   "img": "img/navy-stripe-long-sleeve-top.webp",
+   "_f": [
+    "navy",
+    "white"
+   ]
   },
   {
    "id": "orange-knit-tank",
@@ -1319,7 +1333,12 @@
     "Autumn"
    ],
    "notes": "Fitted short sleeves",
-   "img": "img/cos-navy-stripe-tee-magenta-collar.webp"
+   "img": "img/cos-navy-stripe-tee-magenta-collar.webp",
+   "_f": [
+    "navy",
+    "white",
+    "pink"
+   ]
   },
   {
    "id": "red-cotton-shirt",
@@ -1500,7 +1519,10 @@
     "Autumn"
    ],
    "notes": "Crew neck, fitted, size 8",
-   "img": "img/gorman-green-rib-tank.webp"
+   "img": "img/gorman-green-rib-tank.webp",
+   "_f": [
+    "green"
+   ]
   },
   {
    "id": "gorman-denim-lace-up-top",
@@ -1591,7 +1613,12 @@
     "Spring"
    ],
    "notes": "Crew neck, pink hem band. Picture is a crop of the listing photo.",
-   "img": "img/alessandra-colour-block-jumper.webp"
+   "img": "img/alessandra-colour-block-jumper.webp",
+   "_f": [
+    "tan",
+    "cream",
+    "pink"
+   ]
   },
   {
    "id": "gorman-red-strawberry-shirt",
@@ -1608,7 +1635,11 @@
     "Summer"
    ],
    "notes": "Short sleeves, camp-style",
-   "img": "img/gorman-red-strawberry-shirt.webp"
+   "img": "img/gorman-red-strawberry-shirt.webp",
+   "_f": [
+    "red",
+    "white"
+   ]
   },
   {
    "id": "pink-rib-knit-tank",
@@ -1936,7 +1967,10 @@
     "Winter"
    ],
    "notes": "Crew neck, extended shoulders",
-   "img": "img/zara-black-sleeveless-knit.webp"
+   "img": "img/zara-black-sleeveless-knit.webp",
+   "_f": [
+    "black"
+   ]
   },
   {
    "id": "cream-mock-neck-long-sleeve",
@@ -2042,7 +2076,10 @@
    "notes": "Basic you already own. Drawn picture.",
    "img": "img/basics/basic-white-tee.svg",
    "basic": true,
-   "shape": "tee"
+   "shape": "tee",
+   "_f": [
+    "white"
+   ]
   },
   {
    "id": "basic-black-tee",
@@ -2062,7 +2099,10 @@
    "notes": "Basic you already own. Drawn picture.",
    "img": "img/basics/basic-black-tee.svg",
    "basic": true,
-   "shape": "tee"
+   "shape": "tee",
+   "_f": [
+    "black"
+   ]
   },
   {
    "id": "basic-white-linen-shirt",
@@ -2082,7 +2122,10 @@
    "notes": "Basic you already own. Drawn picture.",
    "img": "img/basics/basic-white-linen-shirt.svg",
    "basic": true,
-   "shape": "linen"
+   "shape": "linen",
+   "_f": [
+    "white"
+   ]
   },
   {
    "id": "basic-black-turtleneck",
@@ -2100,7 +2143,10 @@
    "notes": "Basic you already own. Drawn picture.",
    "img": "img/basics/basic-black-turtleneck.svg",
    "basic": true,
-   "shape": "turtle"
+   "shape": "turtle",
+   "_f": [
+    "black"
+   ]
   },
   {
    "id": "basic-blue-wide-jeans",
@@ -2120,7 +2166,10 @@
    "notes": "Basic you already own. Drawn picture.",
    "img": "img/basics/basic-blue-wide-jeans.svg",
    "basic": true,
-   "shape": "wide"
+   "shape": "wide",
+   "_f": [
+    "denim"
+   ]
   },
   {
    "id": "basic-white-wide-jeans",
@@ -2159,7 +2208,10 @@
    "notes": "Basic you already own. Drawn picture.",
    "img": "img/basics/basic-blue-straight-jeans.svg",
    "basic": true,
-   "shape": "straight"
+   "shape": "straight",
+   "_f": [
+    "denim"
+   ]
   },
   {
    "id": "basic-blue-straight-jeans-cropped",
@@ -2178,7 +2230,10 @@
    "notes": "Basic you already own. Drawn picture.",
    "img": "img/basics/basic-blue-straight-jeans-cropped.svg",
    "basic": true,
-   "shape": "cropped"
+   "shape": "cropped",
+   "_f": [
+    "denim"
+   ]
   },
   {
    "id": "basic-black-straight-jeans",
@@ -2218,7 +2273,10 @@
    "notes": "Basic you already own. Drawn picture.",
    "img": "img/basics/basic-black-straight-jeans-cropped.svg",
    "basic": true,
-   "shape": "cropped"
+   "shape": "cropped",
+   "_f": [
+    "black"
+   ]
   },
   {
    "id": "basic-white-straight-jeans",
@@ -2275,7 +2333,10 @@
    "notes": "Basic you already own. Drawn picture.",
    "img": "img/basics/basic-black-dress-pants.svg",
    "basic": true,
-   "shape": "trousers"
+   "shape": "trousers",
+   "_f": [
+    "black"
+   ]
   },
   {
    "id": "basic-black-docs",
@@ -2314,7 +2375,10 @@
    "notes": "Basic you already own. Drawn picture.",
    "img": "img/basics/basic-black-kitten-heels.svg",
    "basic": true,
-   "shape": "kitten"
+   "shape": "kitten",
+   "_f": [
+    "black"
+   ]
   },
   {
    "id": "basic-tan-kitten-heels",
@@ -2354,7 +2418,10 @@
    "notes": "Basic you already own. Drawn picture.",
    "img": "img/basics/basic-black-flats.svg",
    "basic": true,
-   "shape": "flat"
+   "shape": "flat",
+   "_f": [
+    "black"
+   ]
   },
   {
    "id": "basic-white-flats",
@@ -2392,7 +2459,10 @@
    "notes": "Basic you already own. Drawn picture.",
    "img": "img/basics/basic-tan-flats.svg",
    "basic": true,
-   "shape": "flat"
+   "shape": "flat",
+   "_f": [
+    "tan"
+   ]
   },
   {
    "id": "basic-black-knee-boots-flat",
@@ -2448,7 +2518,10 @@
    "notes": "Basic you already own. Drawn picture.",
    "img": "img/basics/basic-white-sneakers.svg",
    "basic": true,
-   "shape": "sneaker"
+   "shape": "sneaker",
+   "_f": [
+    "white"
+   ]
   },
   {
    "id": "basic-black-sneakers",
@@ -2468,7 +2541,10 @@
    "notes": "Basic you already own. Drawn picture.",
    "img": "img/basics/basic-black-sneakers.svg",
    "basic": true,
-   "shape": "sneaker"
+   "shape": "sneaker",
+   "_f": [
+    "black"
+   ]
   },
   {
    "id": "basic-red-sneakers",
@@ -2487,7 +2563,10 @@
    "notes": "Basic you already own. Drawn picture.",
    "img": "img/basics/basic-red-sneakers.svg",
    "basic": true,
-   "shape": "sneaker"
+   "shape": "sneaker",
+   "_f": [
+    "red"
+   ]
   },
   {
    "id": "basic-green-sneakers",
@@ -2525,7 +2604,10 @@
    "notes": "Basic you already own. Drawn picture.",
    "img": "img/basics/basic-tan-sandals.svg",
    "basic": true,
-   "shape": "sandal"
+   "shape": "sandal",
+   "_f": [
+    "tan"
+   ]
   },
   {
    "id": "basic-black-loafers",
@@ -2545,7 +2627,10 @@
    "notes": "Basic you already own. Drawn picture.",
    "img": "img/basics/basic-black-loafers.svg",
    "basic": true,
-   "shape": "loafer"
+   "shape": "loafer",
+   "_f": [
+    "black"
+   ]
   },
   {
    "id": "basic-red-ballet-flats",
@@ -2564,7 +2649,10 @@
    "notes": "Basic you already own. Drawn picture.",
    "img": "img/basics/basic-red-ballet-flats.svg",
    "basic": true,
-   "shape": "ballet"
+   "shape": "ballet",
+   "_f": [
+    "red"
+   ]
   },
   {
    "id": "basic-black-crossbody",
@@ -2584,7 +2672,10 @@
    "notes": "Basic you already own. Drawn picture.",
    "img": "img/basics/basic-black-crossbody.svg",
    "basic": true,
-   "shape": "crossbody"
+   "shape": "crossbody",
+   "_f": [
+    "black"
+   ]
   },
   {
    "id": "basic-tan-crossbody",
@@ -2604,7 +2695,10 @@
    "notes": "Basic you already own. Drawn picture.",
    "img": "img/basics/basic-tan-crossbody.svg",
    "basic": true,
-   "shape": "crossbody"
+   "shape": "crossbody",
+   "_f": [
+    "tan"
+   ]
   },
   {
    "id": "basic-tan-belt",
@@ -2722,7 +2816,10 @@
    "notes": "Basic you already own. Drawn picture.",
    "img": "img/basics/basic-denim-jacket.svg",
    "basic": true,
-   "shape": "jacket"
+   "shape": "jacket",
+   "_f": [
+    "denim"
+   ]
   },
   {
    "id": "basic-black-blazer",
@@ -2760,7 +2857,10 @@
    "notes": "Basic you already own. Drawn picture.",
    "img": "img/basics/basic-grey-marle-jumper.svg",
    "basic": true,
-   "shape": "jumper"
+   "shape": "jumper",
+   "_f": [
+    "grey"
+   ]
   },
   {
    "id": "basic-green-cardigan",
@@ -2779,7 +2879,10 @@
    "notes": "Basic you already own. Drawn picture.",
    "img": "img/basics/basic-green-cardigan.svg",
    "basic": true,
-   "shape": "cardigan"
+   "shape": "cardigan",
+   "_f": [
+    "green"
+   ]
   },
   {
    "id": "basic-red-cardigan",
@@ -2798,7 +2901,10 @@
    "notes": "Basic you already own. Drawn picture.",
    "img": "img/basics/basic-red-cardigan.svg",
    "basic": true,
-   "shape": "cardigan"
+   "shape": "cardigan",
+   "_f": [
+    "red"
+   ]
   },
   {
    "id": "basic-pink-cardigan",
@@ -2931,7 +3037,10 @@
    "notes": "Basic you already own. Drawn picture.",
    "img": "img/basics/basic-black-midi-skirt.svg",
    "basic": true,
-   "shape": "midi"
+   "shape": "midi",
+   "_f": [
+    "black"
+   ]
   },
   {
    "id": "basic-black-leggings",
@@ -2989,7 +3098,10 @@
    "notes": "Basic you already own. Drawn picture.",
    "img": "img/basics/basic-white-tank.svg",
    "basic": true,
-   "shape": "tank"
+   "shape": "tank",
+   "_f": [
+    "white"
+   ]
   },
   {
    "id": "basic-black-tank",
@@ -3009,7 +3121,10 @@
    "notes": "Basic you already own. Drawn picture.",
    "img": "img/basics/basic-black-tank.svg",
    "basic": true,
-   "shape": "tank"
+   "shape": "tank",
+   "_f": [
+    "black"
+   ]
   }
  ],
  "outfits": [
@@ -3230,5 +3345,442 @@
    "why": "Wear as the matching set."
   }
  ],
- "inspo": []
+ "inspo": [
+  {
+   "id": "i1",
+   "name": "Green jumper and white shirt",
+   "img": "img/inspo/inspo-01.webp",
+   "summary": "Green crew jumper over a white shirt, slim black trousers, black loafers.",
+   "itemIds": [
+    "basic-white-linen-shirt",
+    "basic-green-cardigan",
+    "basic-black-dress-pants",
+    "basic-black-loafers",
+    "basic-black-crossbody"
+   ],
+   "missing": [
+    "Green crew-neck jumper (the green cardigan buttoned up is the stand-in)",
+    "Black wool coat"
+   ],
+   "createdAt": 0
+  },
+  {
+   "id": "i2",
+   "name": "Black turtleneck and jeans",
+   "img": "img/inspo/inspo-02.webp",
+   "summary": "Ribbed black turtleneck, cuffed straight blue jeans, black horsebit loafers.",
+   "itemIds": [
+    "basic-black-turtleneck",
+    "basic-blue-straight-jeans-cropped",
+    "basic-black-loafers"
+   ],
+   "missing": [],
+   "createdAt": 1
+  },
+  {
+   "id": "i3",
+   "name": "Taupe knit and white tee",
+   "img": "img/inspo/inspo-03.webp",
+   "summary": "Oversized taupe knit over a white tee, light straight jeans, taupe loafers and tote.",
+   "itemIds": [
+    "alessandra-colour-block-jumper",
+    "basic-white-tee",
+    "basic-blue-straight-jeans-cropped",
+    "basic-tan-flats",
+    "basic-tan-crossbody"
+   ],
+   "missing": [
+    "Taupe suede loafers",
+    "Structured tote bag"
+   ],
+   "createdAt": 2
+  },
+  {
+   "id": "i4",
+   "name": "Stripes, black midi and pink Gazelles",
+   "img": "img/inspo/inspo-04.webp",
+   "summary": "Striped top under a denim jacket, black midi skirt, pink Gazelles.",
+   "itemIds": [
+    "cos-navy-stripe-tee-magenta-collar",
+    "basic-black-midi-skirt",
+    "basic-denim-jacket",
+    "adidas-gazelle-pink"
+   ],
+   "missing": [
+    "Pink and cream striped tote"
+   ],
+   "createdAt": 3
+  },
+  {
+   "id": "i5",
+   "name": "Red embroidered blouse and wide jeans",
+   "img": "img/inspo/inspo-05.webp",
+   "summary": "Red blouse with white embroidery, wide-leg blue jeans, black heeled sandals.",
+   "itemIds": [
+    "gorman-red-strawberry-shirt",
+    "basic-blue-wide-jeans",
+    "basic-black-kitten-heels"
+   ],
+   "missing": [
+    "Black strappy heeled sandals"
+   ],
+   "createdAt": 4
+  },
+  {
+   "id": "i6",
+   "name": "Layered tanks and black wide-legs",
+   "img": "img/inspo/inspo-06.webp",
+   "summary": "Black tank over a white tank, black wide cropped trousers, black slides.",
+   "itemIds": [
+    "basic-black-tank",
+    "basic-white-tank",
+    "basic-black-dress-pants",
+    "basic-black-flats",
+    "basic-black-crossbody"
+   ],
+   "missing": [
+    "Black wide-leg cropped trousers"
+   ],
+   "createdAt": 5
+  },
+  {
+   "id": "i7",
+   "name": "Black jumpsuit and denim jacket",
+   "img": "img/inspo/inspo-07.webp",
+   "summary": "Black cropped wide-leg jumpsuit, denim jacket, tan slides and tan bag.",
+   "itemIds": [
+    "basic-black-tank",
+    "basic-black-dress-pants",
+    "basic-denim-jacket",
+    "basic-tan-sandals",
+    "basic-tan-crossbody"
+   ],
+   "missing": [
+    "Black culotte jumpsuit"
+   ],
+   "createdAt": 6
+  },
+  {
+   "id": "i8",
+   "name": "Sleeveless stripes and black wide-legs",
+   "img": "img/inspo/inspo-08.webp",
+   "summary": "Sleeveless striped mock-neck top, black wide tie-waist trousers, embroidered mules.",
+   "itemIds": [
+    "navy-stripe-long-sleeve-top",
+    "basic-black-dress-pants",
+    "basic-tan-sandals"
+   ],
+   "missing": [
+    "Sleeveless black and white stripe top",
+    "Black wide-leg linen trousers",
+    "Embroidered mules"
+   ],
+   "createdAt": 7
+  },
+  {
+   "id": "i9",
+   "name": "Breton, denim and Converse",
+   "img": "img/inspo/inspo-09.webp",
+   "summary": "Denim jacket over a Breton top, black wide trousers, white sneakers.",
+   "itemIds": [
+    "basic-denim-jacket",
+    "navy-stripe-long-sleeve-top",
+    "basic-black-dress-pants",
+    "basic-white-sneakers",
+    "basic-black-crossbody"
+   ],
+   "missing": [
+    "Black wide-leg trousers"
+   ],
+   "createdAt": 8
+  },
+  {
+   "id": "i10",
+   "name": "All-black, sleeveless",
+   "img": "img/inspo/inspo-10.webp",
+   "summary": "Black sleeveless top, black wide cropped trousers, black loafers.",
+   "itemIds": [
+    "zara-black-sleeveless-knit",
+    "basic-black-dress-pants",
+    "basic-black-loafers"
+   ],
+   "missing": [
+    "Black wide-leg cropped trousers"
+   ],
+   "createdAt": 9
+  },
+  {
+   "id": "i11",
+   "name": "Camo pants and denim",
+   "img": "img/inspo/inspo-11.webp",
+   "summary": "Denim jacket over a grey knit, camo trousers, white platform sneakers, tan crossbody.",
+   "itemIds": [
+    "basic-denim-jacket",
+    "basic-grey-marle-jumper",
+    "green-wide-leg-cords",
+    "basic-white-sneakers",
+    "basic-tan-crossbody"
+   ],
+   "missing": [
+    "Camo trousers"
+   ],
+   "createdAt": 10
+  },
+  {
+   "id": "i12",
+   "name": "Breton with a red collar",
+   "img": "img/inspo/inspo-12.webp",
+   "summary": "Black and white stripe tee with a red collar, straight jeans, red pointed flats.",
+   "itemIds": [
+    "cos-navy-stripe-tee-magenta-collar",
+    "basic-blue-straight-jeans",
+    "basic-red-ballet-flats"
+   ],
+   "missing": [
+    "Pointed red flats (your ballet flats are close)"
+   ],
+   "createdAt": 11
+  },
+  {
+   "id": "i13",
+   "name": "Olive tank, four ways",
+   "img": "img/inspo/inspo-13.webp",
+   "summary": "Olive tank with a denim jacket or cream overshirt, black or blue jeans, sneakers.",
+   "itemIds": [
+    "gorman-green-rib-tank",
+    "basic-denim-jacket",
+    "basic-black-straight-jeans-cropped",
+    "basic-black-sneakers"
+   ],
+   "missing": [
+    "Olive tank",
+    "Cream overshirt"
+   ],
+   "createdAt": 12
+  },
+  {
+   "id": "i14",
+   "name": "Red cardigan and wide jeans",
+   "img": "img/inspo/inspo-14.webp",
+   "summary": "Red cardigan buttoned as a top, wide-leg patch-pocket jeans, red sneakers.",
+   "itemIds": [
+    "basic-red-cardigan",
+    "basic-blue-wide-jeans",
+    "basic-red-sneakers"
+   ],
+   "missing": [],
+   "createdAt": 13
+  },
+  {
+   "id": "i15",
+   "name": "White tank and dark wide jeans",
+   "img": "img/inspo/inspo-15.webp",
+   "summary": "White rib tank, dark wide-leg jeans, white sneakers.",
+   "itemIds": [
+    "basic-white-tank",
+    "basic-blue-wide-jeans",
+    "basic-white-sneakers"
+   ],
+   "missing": [],
+   "createdAt": 14
+  },
+  {
+   "id": "i16",
+   "name": "Olive jacket and cuffed jeans",
+   "img": "img/inspo/inspo-16.webp",
+   "summary": "Olive utility jacket over a dark tee, cuffed light jeans, black heeled mules, big tote.",
+   "itemIds": [
+    "gorman-green-cord-jacket",
+    "basic-black-tee",
+    "basic-blue-straight-jeans-cropped",
+    "basic-black-kitten-heels",
+    "basic-black-crossbody"
+   ],
+   "missing": [
+    "Olive utility jacket",
+    "Large tote bag"
+   ],
+   "createdAt": 15
+  }
+ ],
+ "taste": {
+  "w": {
+   "it:basic-white-linen-shirt": 0.5,
+   "ip:basic-green-cardigan|basic-white-linen-shirt": 0.5,
+   "cp:green+white": 0.5,
+   "ip:basic-black-dress-pants|basic-white-linen-shirt": 0.5,
+   "cp:black+white": 3,
+   "ip:basic-black-loafers|basic-white-linen-shirt": 0.5,
+   "ip:basic-black-crossbody|basic-white-linen-shirt": 0.5,
+   "it:basic-green-cardigan": 0.5,
+   "ip:basic-black-dress-pants|basic-green-cardigan": 0.5,
+   "cp:black+green": 1,
+   "ip:basic-black-loafers|basic-green-cardigan": 0.5,
+   "ip:basic-black-crossbody|basic-green-cardigan": 0.5,
+   "it:basic-black-dress-pants": 3,
+   "ip:basic-black-dress-pants|basic-black-loafers": 1,
+   "cp:black+black": 4,
+   "ip:basic-black-crossbody|basic-black-dress-pants": 1.5,
+   "it:basic-black-loafers": 1.5,
+   "ip:basic-black-crossbody|basic-black-loafers": 0.5,
+   "it:basic-black-crossbody": 2,
+   "pat:plain+plain+plain": 3.5,
+   "so:Everyday|flats": 4,
+   "it:basic-black-turtleneck": 0.5,
+   "ip:basic-black-turtleneck|basic-blue-straight-jeans-cropped": 0.5,
+   "cp:black+denim": 3.5,
+   "ip:basic-black-loafers|basic-black-turtleneck": 0.5,
+   "it:basic-blue-straight-jeans-cropped": 1.5,
+   "ip:basic-black-loafers|basic-blue-straight-jeans-cropped": 0.5,
+   "pat:plain+plain": 2.5,
+   "it:alessandra-colour-block-jumper": 0.5,
+   "ip:alessandra-colour-block-jumper|basic-white-tee": 0.5,
+   "cp:tan+white": 1.5,
+   "cp:cream+white": 0.5,
+   "ip:alessandra-colour-block-jumper|basic-blue-straight-jeans-cropped": 0.5,
+   "cp:denim+tan": 1.5,
+   "cp:cream+denim": 0.5,
+   "ip:alessandra-colour-block-jumper|basic-tan-flats": 0.5,
+   "cp:tan+tan": 1,
+   "cp:cream+tan": 0.5,
+   "ip:alessandra-colour-block-jumper|basic-tan-crossbody": 0.5,
+   "it:basic-white-tee": 0.5,
+   "ip:basic-blue-straight-jeans-cropped|basic-white-tee": 0.5,
+   "cp:denim+white": 3.5,
+   "ip:basic-tan-flats|basic-white-tee": 0.5,
+   "ip:basic-tan-crossbody|basic-white-tee": 0.5,
+   "ip:basic-blue-straight-jeans-cropped|basic-tan-flats": 0.5,
+   "ip:basic-blue-straight-jeans-cropped|basic-tan-crossbody": 0.5,
+   "it:basic-tan-flats": 0.5,
+   "ip:basic-tan-crossbody|basic-tan-flats": 0.5,
+   "it:basic-tan-crossbody": 1.5,
+   "it:cos-navy-stripe-tee-magenta-collar": 1,
+   "ip:basic-black-midi-skirt|cos-navy-stripe-tee-magenta-collar": 0.5,
+   "cp:black+navy": 1.5,
+   "ip:basic-denim-jacket|cos-navy-stripe-tee-magenta-collar": 0.5,
+   "cp:denim+navy": 1.5,
+   "ip:adidas-gazelle-pink|cos-navy-stripe-tee-magenta-collar": 0.5,
+   "cp:navy+pink": 0.5,
+   "cp:navy+white": 1,
+   "cp:pink+white": 0.5,
+   "cp:white+white": 1.5,
+   "it:basic-black-midi-skirt": 0.5,
+   "ip:basic-black-midi-skirt|basic-denim-jacket": 0.5,
+   "ip:adidas-gazelle-pink|basic-black-midi-skirt": 0.5,
+   "cp:black+pink": 0.5,
+   "it:basic-denim-jacket": 2.5,
+   "ip:adidas-gazelle-pink|basic-denim-jacket": 0.5,
+   "cp:denim+pink": 0.5,
+   "it:adidas-gazelle-pink": 0.5,
+   "pat:plain+plain+stripe": 1,
+   "so:Everyday|sneakers": 3,
+   "it:gorman-red-strawberry-shirt": 0.5,
+   "ip:basic-blue-wide-jeans|gorman-red-strawberry-shirt": 0.5,
+   "cp:denim+red": 1.5,
+   "ip:basic-black-kitten-heels|gorman-red-strawberry-shirt": 0.5,
+   "cp:black+red": 0.5,
+   "it:basic-blue-wide-jeans": 1.5,
+   "ip:basic-black-kitten-heels|basic-blue-wide-jeans": 0.5,
+   "it:basic-black-kitten-heels": 1,
+   "so:Everyday|kitten heels": 1,
+   "it:basic-black-tank": 1,
+   "ip:basic-black-tank|basic-white-tank": 0.5,
+   "ip:basic-black-dress-pants|basic-black-tank": 1,
+   "ip:basic-black-flats|basic-black-tank": 0.5,
+   "ip:basic-black-crossbody|basic-black-tank": 0.5,
+   "it:basic-white-tank": 1,
+   "ip:basic-black-dress-pants|basic-white-tank": 0.5,
+   "ip:basic-black-flats|basic-white-tank": 0.5,
+   "ip:basic-black-crossbody|basic-white-tank": 0.5,
+   "ip:basic-black-dress-pants|basic-black-flats": 0.5,
+   "it:basic-black-flats": 0.5,
+   "ip:basic-black-crossbody|basic-black-flats": 0.5,
+   "ip:basic-black-tank|basic-denim-jacket": 0.5,
+   "ip:basic-black-tank|basic-tan-sandals": 0.5,
+   "cp:black+tan": 1,
+   "ip:basic-black-tank|basic-tan-crossbody": 0.5,
+   "ip:basic-black-dress-pants|basic-denim-jacket": 1,
+   "ip:basic-black-dress-pants|basic-tan-sandals": 1,
+   "ip:basic-black-dress-pants|basic-tan-crossbody": 0.5,
+   "ip:basic-denim-jacket|basic-tan-sandals": 0.5,
+   "ip:basic-denim-jacket|basic-tan-crossbody": 1,
+   "it:basic-tan-sandals": 1,
+   "ip:basic-tan-crossbody|basic-tan-sandals": 0.5,
+   "it:navy-stripe-long-sleeve-top": 1,
+   "ip:basic-black-dress-pants|navy-stripe-long-sleeve-top": 1,
+   "ip:basic-tan-sandals|navy-stripe-long-sleeve-top": 0.5,
+   "cp:navy+tan": 0.5,
+   "pat:plain+stripe": 1,
+   "ip:basic-denim-jacket|navy-stripe-long-sleeve-top": 0.5,
+   "ip:basic-denim-jacket|basic-white-sneakers": 1,
+   "ip:basic-black-crossbody|basic-denim-jacket": 0.5,
+   "ip:basic-white-sneakers|navy-stripe-long-sleeve-top": 0.5,
+   "ip:basic-black-crossbody|navy-stripe-long-sleeve-top": 0.5,
+   "ip:basic-black-dress-pants|basic-white-sneakers": 0.5,
+   "it:basic-white-sneakers": 1.5,
+   "ip:basic-black-crossbody|basic-white-sneakers": 0.5,
+   "it:zara-black-sleeveless-knit": 0.5,
+   "ip:basic-black-dress-pants|zara-black-sleeveless-knit": 0.5,
+   "ip:basic-black-loafers|zara-black-sleeveless-knit": 0.5,
+   "ip:basic-denim-jacket|basic-grey-marle-jumper": 0.5,
+   "cp:denim+grey": 0.5,
+   "ip:basic-denim-jacket|green-wide-leg-cords": 0.5,
+   "cp:denim+mint": 0.5,
+   "it:basic-grey-marle-jumper": 0.5,
+   "ip:basic-grey-marle-jumper|green-wide-leg-cords": 0.5,
+   "cp:grey+mint": 0.5,
+   "ip:basic-grey-marle-jumper|basic-white-sneakers": 0.5,
+   "cp:grey+white": 0.5,
+   "ip:basic-grey-marle-jumper|basic-tan-crossbody": 0.5,
+   "cp:grey+tan": 0.5,
+   "it:green-wide-leg-cords": 0.5,
+   "ip:basic-white-sneakers|green-wide-leg-cords": 0.5,
+   "cp:mint+white": 0.5,
+   "ip:basic-tan-crossbody|green-wide-leg-cords": 0.5,
+   "cp:mint+tan": 0.5,
+   "ip:basic-tan-crossbody|basic-white-sneakers": 0.5,
+   "ip:basic-blue-straight-jeans|cos-navy-stripe-tee-magenta-collar": 0.5,
+   "ip:basic-red-ballet-flats|cos-navy-stripe-tee-magenta-collar": 0.5,
+   "cp:navy+red": 0.5,
+   "cp:red+white": 0.5,
+   "it:basic-blue-straight-jeans": 0.5,
+   "ip:basic-blue-straight-jeans|basic-red-ballet-flats": 0.5,
+   "it:basic-red-ballet-flats": 0.5,
+   "it:gorman-green-rib-tank": 0.5,
+   "ip:basic-denim-jacket|gorman-green-rib-tank": 0.5,
+   "cp:denim+green": 0.5,
+   "ip:basic-black-straight-jeans-cropped|gorman-green-rib-tank": 0.5,
+   "ip:basic-black-sneakers|gorman-green-rib-tank": 0.5,
+   "ip:basic-black-straight-jeans-cropped|basic-denim-jacket": 0.5,
+   "ip:basic-black-sneakers|basic-denim-jacket": 0.5,
+   "it:basic-black-straight-jeans-cropped": 0.5,
+   "ip:basic-black-sneakers|basic-black-straight-jeans-cropped": 0.5,
+   "it:basic-black-sneakers": 0.5,
+   "it:basic-red-cardigan": 0.5,
+   "ip:basic-blue-wide-jeans|basic-red-cardigan": 0.5,
+   "ip:basic-red-cardigan|basic-red-sneakers": 0.5,
+   "cp:red+red": 0.5,
+   "ip:basic-blue-wide-jeans|basic-red-sneakers": 0.5,
+   "it:basic-red-sneakers": 0.5,
+   "ip:basic-blue-wide-jeans|basic-white-tank": 0.5,
+   "ip:basic-white-sneakers|basic-white-tank": 0.5,
+   "ip:basic-blue-wide-jeans|basic-white-sneakers": 0.5,
+   "it:gorman-green-cord-jacket": 0.5,
+   "ip:basic-black-tee|gorman-green-cord-jacket": 0.5,
+   "cp:black+forest": 0.5,
+   "ip:basic-blue-straight-jeans-cropped|gorman-green-cord-jacket": 0.5,
+   "cp:denim+forest": 0.5,
+   "ip:basic-black-kitten-heels|gorman-green-cord-jacket": 0.5,
+   "ip:basic-black-crossbody|gorman-green-cord-jacket": 0.5,
+   "it:basic-black-tee": 0.5,
+   "ip:basic-black-tee|basic-blue-straight-jeans-cropped": 0.5,
+   "ip:basic-black-kitten-heels|basic-black-tee": 0.5,
+   "ip:basic-black-crossbody|basic-black-tee": 0.5,
+   "ip:basic-black-kitten-heels|basic-blue-straight-jeans-cropped": 0.5,
+   "ip:basic-black-crossbody|basic-blue-straight-jeans-cropped": 0.5,
+   "ip:basic-black-crossbody|basic-black-kitten-heels": 0.5
+  },
+  "n": 16,
+  "source": "16 inspiration photos, 26 Oct 2026"
+ }
 }
