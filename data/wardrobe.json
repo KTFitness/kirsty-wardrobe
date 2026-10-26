@@ -1,18 +1,773 @@
 {
-  "updated": "2026-10-26",
-  "occasions": ["Everyday", "Lunch out", "Dinner out", "Travel", "Smart casual", "Holiday", "Special occasion"],
-  "items": [
-    {"id": "gorman-check-skirt", "name": "Gorman check skirt", "category": "skirts", "colours": ["tomato red", "bubblegum pink", "sky blue"], "pattern": "jumbo gingham check", "fabric": "probably cotton twill", "seasons": ["Spring", "Summer", "Autumn"], "notes": "A-line midi, patch pockets, tonal topstitching", "img": "img/check-skirt.png"},
-    {"id": "gorman-striped-skirt", "name": "Gorman striped skirt", "category": "skirts", "colours": ["tomato red", "cornflower blue"], "pattern": "wide vertical stripe", "fabric": "probably cotton twill", "seasons": ["Spring", "Summer", "Autumn"], "notes": "Straight midi, jeans-style pockets, front slit. Picture is redrawn from your photo.", "img": "img/striped-skirt.png"},
-    {"id": "boden-helena-chinos", "name": "Boden Helena chinos", "category": "trousers", "colours": ["mint green"], "pattern": "solid", "fabric": "cotton chino", "seasons": ["Spring", "Summer", "Autumn"], "notes": "Slim straight ankle length. Picture colour adjusted towards the brighter mint you see in person.", "img": "img/mint-chinos.png"},
-    {"id": "boden-red-gingham-shirt", "name": "Boden red gingham ruffle shirt", "category": "tops", "colours": ["red", "white"], "pattern": "small gingham", "fabric": "probably linen or cotton", "seasons": ["Spring", "Summer"], "notes": "Sleeveless, ruffles at collar, placket and armholes", "img": "img/boden-red-gingham.png"},
-    {"id": "orange-gingham-ricrac-blouse", "name": "Orange gingham ric-rac blouse", "category": "tops", "colours": ["orange", "white", "green trim"], "pattern": "gingham seersucker with ric-rac trim", "fabric": "probably cotton seersucker", "seasons": ["Spring", "Summer"], "notes": "Cropped, rounded collar, puff sleeves, patch pockets", "img": "img/orange-gingham-blouse.png"},
-    {"id": "marcs-pink-gingham-tank", "name": "Marcs pink gingham knit tank", "category": "knitwear", "colours": ["salmon pink", "white"], "pattern": "gingham", "fabric": "knit, fibre unknown", "seasons": ["Spring", "Summer"], "notes": "Fitted, ribbed neck, armholes and hem", "img": "img/marcs-pink-gingham-tank.png"}
-  ],
-  "outfits": [
-    {"id": "o1", "name": "Seventies sorbet", "itemIds": ["orange-gingham-ricrac-blouse", "boden-helena-chinos"], "occasions": ["Everyday", "Lunch out"], "seasons": ["Spring", "Summer"], "why": "Orange and mint brighten each other, and the green ric-rac ties the two together. Wear the blouse out; it ends right at the waistband. Tan or white shoes and a straw bag."},
-    {"id": "o2", "name": "Coral and mint", "itemIds": ["marcs-pink-gingham-tank", "boden-helena-chinos"], "occasions": ["Everyday", "Holiday"], "seasons": ["Spring", "Summer"], "why": "Coral is one of mint's best partners. The fitted tank sits neatly at the waist worn out. Silver or white trainers."},
-    {"id": "o3", "name": "Check meets stripe", "itemIds": ["boden-red-gingham-shirt", "gorman-striped-skirt"], "occasions": ["Lunch out", "Smart casual"], "seasons": ["Spring", "Summer"], "why": "A small check against a wide stripe is a different pattern type and scale, and the red links them. Check the two reds match in daylight. Tuck the shirt in; tan loafers."}
-  ],
-  "inspo": []
+ "updated": "2026-10-26",
+ "occasions": [
+  "Everyday",
+  "Lunch out",
+  "Dinner out",
+  "Travel",
+  "Smart casual",
+  "Holiday",
+  "Special occasion"
+ ],
+ "items": [
+  {
+   "id": "gorman-check-skirt",
+   "name": "Gorman check skirt",
+   "category": "skirts",
+   "colours": [
+    "tomato red",
+    "bubblegum pink",
+    "sky blue"
+   ],
+   "pattern": "jumbo gingham check",
+   "fabric": "probably cotton twill",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "A-line midi, patch pockets, tonal topstitching",
+   "img": "img/gorman-check-skirt.webp"
+  },
+  {
+   "id": "gorman-striped-skirt",
+   "name": "Gorman striped skirt",
+   "category": "skirts",
+   "colours": [
+    "tomato red",
+    "cornflower blue"
+   ],
+   "pattern": "wide vertical stripe",
+   "fabric": "probably cotton twill",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Straight midi, jeans-style pockets, front slit. Picture is redrawn from your photo.",
+   "img": "img/gorman-striped-skirt.webp"
+  },
+  {
+   "id": "boden-helena-chinos",
+   "name": "Boden Helena chinos",
+   "category": "trousers",
+   "colours": [
+    "mint green"
+   ],
+   "pattern": "solid",
+   "fabric": "cotton chino",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Slim straight ankle length. Picture colour adjusted towards the brighter mint you see in person.",
+   "img": "img/boden-helena-chinos.webp"
+  },
+  {
+   "id": "boden-red-gingham-shirt",
+   "name": "Boden red gingham ruffle shirt",
+   "category": "tops",
+   "colours": [
+    "red",
+    "white"
+   ],
+   "pattern": "small gingham",
+   "fabric": "probably linen or cotton",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Sleeveless, ruffles at collar, placket and armholes",
+   "img": "img/boden-red-gingham-shirt.webp"
+  },
+  {
+   "id": "orange-gingham-ricrac-blouse",
+   "name": "Orange gingham ric-rac blouse",
+   "category": "tops",
+   "colours": [
+    "orange",
+    "white",
+    "green trim"
+   ],
+   "pattern": "gingham seersucker, ric-rac trim",
+   "fabric": "probably cotton seersucker",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Cropped, rounded collar, puff sleeves, patch pockets",
+   "img": "img/orange-gingham-ricrac-blouse.webp"
+  },
+  {
+   "id": "marcs-pink-gingham-tank",
+   "name": "Marcs pink gingham knit tank",
+   "category": "knitwear",
+   "colours": [
+    "salmon pink",
+    "white"
+   ],
+   "pattern": "gingham",
+   "fabric": "knit, fibre unknown",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Fitted, ribbed neck, armholes and hem",
+   "img": "img/marcs-pink-gingham-tank.webp"
+  },
+  {
+   "id": "vneck-stripe-flutter-top",
+   "name": "Blue stripe V-neck flutter top",
+   "category": "tops",
+   "colours": [
+    "blue",
+    "white"
+   ],
+   "pattern": "fine stripe",
+   "fabric": "unsure",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Collared V-neck, flutter sleeves, straight hem. The first stripe top you showed me.",
+   "img": "img/vneck-stripe-flutter-top.webp"
+  },
+  {
+   "id": "stripe-1-seersucker-ruffle",
+   "name": "Stripe No. 1: seersucker ruffle-collar top",
+   "category": "tops",
+   "colours": [
+    "pale blue",
+    "white"
+   ],
+   "pattern": "fine stripe seersucker",
+   "fabric": "probably cotton seersucker",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Shaped waist with gentle flare, ruffle collar, flutter sleeves, button front",
+   "img": "img/stripe-1-seersucker-ruffle.webp"
+  },
+  {
+   "id": "stripe-2-smocked-tank",
+   "name": "Stripe No. 2: smocked stripe tank",
+   "category": "tops",
+   "colours": [
+    "blue",
+    "white"
+   ],
+   "pattern": "fine stripe, smocked",
+   "fabric": "unsure",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Smocked body, ruffle hem. Works with all three bottoms.",
+   "img": "img/stripe-2-smocked-tank.webp"
+  },
+  {
+   "id": "stripe-3-off-shoulder",
+   "name": "Stripe No. 3: off-shoulder puff-sleeve top",
+   "category": "tops",
+   "colours": [
+    "grey-blue",
+    "white"
+   ],
+   "pattern": "pinstripe",
+   "fabric": "unsure",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Off-shoulder, puff sleeves, loose",
+   "img": "img/stripe-3-off-shoulder.webp"
+  },
+  {
+   "id": "stripe-4-ruffle-popover",
+   "name": "Stripe No. 4: ruffle-collar popover",
+   "category": "tops",
+   "colours": [
+    "pale blue",
+    "white"
+   ],
+   "pattern": "pinstripe",
+   "fabric": "unsure",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Ruffle stand collar, ruffle armholes, half placket. Tuck in.",
+   "img": "img/stripe-4-ruffle-popover.webp"
+  },
+  {
+   "id": "stripe-6-vila-ruffle",
+   "name": "Stripe No. 6: Vila ruffle top",
+   "category": "tops",
+   "colours": [
+    "navy-teal",
+    "white"
+   ],
+   "pattern": "stripe",
+   "fabric": "unsure",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Ruffle shoulders, split neck",
+   "img": "img/stripe-6-vila-ruffle.webp"
+  },
+  {
+   "id": "stripe-7-wyse-puff",
+   "name": "Stripe No. 7: Wyse puff-sleeve shirt",
+   "category": "tops",
+   "colours": [
+    "blue",
+    "white"
+   ],
+   "pattern": "stripe",
+   "fabric": "unsure",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Three-quarter puff sleeves, ruffle collar and cuffs",
+   "img": "img/stripe-7-wyse-puff.webp"
+  },
+  {
+   "id": "stripe-8-off-shoulder-crop",
+   "name": "Stripe No. 8: cropped off-shoulder top",
+   "category": "tops",
+   "colours": [
+    "blue",
+    "white"
+   ],
+   "pattern": "wide irregular stripe",
+   "fabric": "unsure",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Cropped, off-shoulder, puff sleeves",
+   "img": "img/stripe-8-off-shoulder-crop.webp"
+  },
+  {
+   "id": "stripe-9-aqua-horizontal",
+   "name": "Stripe No. 9: aqua horizontal stripe top",
+   "category": "tops",
+   "colours": [
+    "aqua blue",
+    "white"
+   ],
+   "pattern": "horizontal stripe",
+   "fabric": "unsure",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Sleeveless, ruffle V collar, button front",
+   "img": "img/stripe-9-aqua-horizontal.webp"
+  },
+  {
+   "id": "stripe-10-long-sleeve-peplum",
+   "name": "Stripe No. 10: long-sleeve peplum top",
+   "category": "tops",
+   "colours": [
+    "blue",
+    "white"
+   ],
+   "pattern": "stripe",
+   "fabric": "unsure",
+   "seasons": [
+    "Autumn",
+    "Spring",
+    "Winter"
+   ],
+   "notes": "Ruffle high neck, elastic waist with ruffle peplum, long sleeves",
+   "img": "img/stripe-10-long-sleeve-peplum.webp"
+  },
+  {
+   "id": "gingham-1-sleeveless-pockets",
+   "name": "Gingham No. 1: sleeveless gingham shirt",
+   "category": "tops",
+   "colours": [
+    "blue",
+    "white"
+   ],
+   "pattern": "mid gingham",
+   "fabric": "unsure",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Sleeveless, patch pockets, button front. Picture cut from a worn photo, so the shape is rough.",
+   "img": "img/gingham-1-sleeveless-pockets.webp"
+  },
+  {
+   "id": "gingham-2-yellow-blue-tee",
+   "name": "Gingham No. 2: yellow gingham tee, blue sleeves",
+   "category": "tops",
+   "colours": [
+    "butter yellow",
+    "sky blue",
+    "white"
+   ],
+   "pattern": "gingham",
+   "fabric": "jersey, fibre unknown",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Boat neck with shoulder buttons, contrast gingham sleeves",
+   "img": "img/gingham-2-yellow-blue-tee.webp"
+  },
+  {
+   "id": "gingham-4-oversized-shirt",
+   "name": "Gingham No. 4: oversized textured gingham shirt",
+   "category": "tops",
+   "colours": [
+    "blue",
+    "white"
+   ],
+   "pattern": "textured gingham",
+   "fabric": "unsure",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Long sleeves. Earmarked to remake into a short-sleeve or sleeveless ruffle shirt.",
+   "img": "img/gingham-4-oversized-shirt.webp"
+  },
+  {
+   "id": "gingham-5-zara-micro-check",
+   "name": "Gingham No. 5: Zara sleeveless micro-check shirt",
+   "category": "tops",
+   "colours": [
+    "sky blue",
+    "white"
+   ],
+   "pattern": "micro gingham",
+   "fabric": "unsure",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Sleeveless, size S, US$45.90 tag",
+   "img": "img/gingham-5-zara-micro-check.webp"
+  },
+  {
+   "id": "gingham-6-ms-long-sleeve",
+   "name": "Gingham No. 6: M&S gingham shirt",
+   "category": "tops",
+   "colours": [
+    "blue",
+    "white"
+   ],
+   "pattern": "gingham",
+   "fabric": "possibly viscose",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Long sleeves, classic collar. Possible remake base.",
+   "img": "img/gingham-6-ms-long-sleeve.webp"
+  },
+  {
+   "id": "gingham-7-seersucker-camp",
+   "name": "Gingham No. 7: cropped seersucker camp shirt",
+   "category": "tops",
+   "colours": [
+    "sky blue",
+    "white"
+   ],
+   "pattern": "gingham seersucker",
+   "fabric": "probably cotton seersucker",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Camp collar, short sleeves, patch pockets, cropped",
+   "img": "img/gingham-7-seersucker-camp.webp"
+  },
+  {
+   "id": "ms-green-stripe-tee",
+   "name": "M&S green stripe tee",
+   "category": "tops",
+   "colours": [
+    "jade green",
+    "white"
+   ],
+   "pattern": "horizontal stripe",
+   "fabric": "jersey, fibre unknown",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Boxy crew-neck tee",
+   "img": "img/ms-green-stripe-tee.webp"
+  },
+  {
+   "id": "red-waffle-stripe-tank",
+   "name": "Red waffle stripe tank",
+   "category": "knitwear",
+   "colours": [
+    "deep red",
+    "white"
+   ],
+   "pattern": "wide horizontal stripe",
+   "fabric": "waffle knit, fibre unknown",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Crew neck, sleeveless, ribbed binding",
+   "img": "img/red-waffle-stripe-tank.webp"
+  },
+  {
+   "id": "primark-red-rib-tank",
+   "name": "Primark red rib stripe tank",
+   "category": "knitwear",
+   "colours": [
+    "tomato red",
+    "white"
+   ],
+   "pattern": "fine horizontal stripe",
+   "fabric": "rib knit, fibre unknown",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Crew neck, sleeveless, size S",
+   "img": "img/primark-red-rib-tank.webp"
+  },
+  {
+   "id": "dots-2-light-blue-ruffle",
+   "name": "Dots No. 2: light blue dot ruffle top",
+   "category": "tops",
+   "colours": [
+    "light blue",
+    "white"
+   ],
+   "pattern": "medium polka dot",
+   "fabric": "probably slub jersey",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Ruffle collar and armholes, button front",
+   "img": "img/dots-2-light-blue-ruffle.webp"
+  },
+  {
+   "id": "dots-3-pin-dot-shell",
+   "name": "Dots No. 3: mid blue pin-dot shell",
+   "category": "tops",
+   "colours": [
+    "mid blue",
+    "white"
+   ],
+   "pattern": "pin dot",
+   "fabric": "unsure",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Ruffle neck, sleeveless, short and fitted. Works with all three bottoms.",
+   "img": "img/dots-3-pin-dot-shell.webp"
+  },
+  {
+   "id": "cornflower-twist-sleeve-top",
+   "name": "Cornflower twist-sleeve top",
+   "category": "tops",
+   "colours": [
+    "cornflower blue"
+   ],
+   "pattern": "solid",
+   "fabric": "unsure",
+   "seasons": [
+    "Autumn",
+    "Spring"
+   ],
+   "notes": "Boxy, boat neck, back zip, three-quarter sleeves with knot detail",
+   "img": "img/cornflower-twist-sleeve-top.webp"
+  },
+  {
+   "id": "navy-dot-smocked-tank",
+   "name": "Navy dot smocked tank",
+   "category": "tops",
+   "colours": [
+    "navy",
+    "white"
+   ],
+   "pattern": "polka dot, smocked",
+   "fabric": "unsure",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Smocked bodice, ruffle peplum hem",
+   "img": "img/navy-dot-smocked-tank.webp"
+  },
+  {
+   "id": "newlook-pink-seersucker-ruffle",
+   "name": "New Look pink seersucker ruffle top",
+   "category": "tops",
+   "colours": [
+    "pink",
+    "white"
+   ],
+   "pattern": "small windowpane check seersucker",
+   "fabric": "unsure, check the side-seam label",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Ruffle high neck, flutter cap sleeves, back button, UK 10",
+   "img": "img/newlook-pink-seersucker-ruffle.webp"
+  }
+ ],
+ "outfits": [
+  {
+   "id": "o1",
+   "name": "Seventies sorbet",
+   "itemIds": [
+    "orange-gingham-ricrac-blouse",
+    "boden-helena-chinos"
+   ],
+   "occasions": [
+    "Everyday",
+    "Lunch out"
+   ],
+   "why": "Orange and mint brighten each other, and the green ric-rac ties them together. Wear the blouse out. Tan or white shoes and a straw bag."
+  },
+  {
+   "id": "o2",
+   "name": "Coral and mint",
+   "itemIds": [
+    "marcs-pink-gingham-tank",
+    "boden-helena-chinos"
+   ],
+   "occasions": [
+    "Everyday",
+    "Holiday"
+   ],
+   "why": "Coral is one of mint's best partners. The fitted tank sits neatly at the waist worn out."
+  },
+  {
+   "id": "o3",
+   "name": "Check meets stripe",
+   "itemIds": [
+    "boden-red-gingham-shirt",
+    "gorman-striped-skirt"
+   ],
+   "occasions": [
+    "Lunch out",
+    "Smart casual"
+   ],
+   "why": "Small check against wide stripe, linked by the red. Check the two reds match in daylight. Tuck the shirt in; tan loafers."
+  },
+  {
+   "id": "o4",
+   "name": "Smocked and checked",
+   "itemIds": [
+    "stripe-2-smocked-tank",
+    "gorman-check-skirt"
+   ],
+   "occasions": [
+    "Everyday",
+    "Lunch out"
+   ],
+   "why": "From your lookbook picks. Worn out, the ruffle hem sits on the waistband; flat sandals."
+  },
+  {
+   "id": "o5",
+   "name": "Popover and picnic check",
+   "itemIds": [
+    "stripe-4-ruffle-popover",
+    "gorman-check-skirt"
+   ],
+   "occasions": [
+    "Lunch out"
+   ],
+   "why": "From your lookbook picks. Fine stripe against jumbo check. Tuck it in; red Mary Janes or loafers and a straw bag."
+  },
+  {
+   "id": "o6",
+   "name": "Gingham on gingham",
+   "itemIds": [
+    "gingham-1-sleeveless-pockets",
+    "gorman-check-skirt"
+   ],
+   "occasions": [
+    "Everyday"
+   ],
+   "why": "From your lookbook picks. Tucked; the smaller check keeps it deliberate."
+  },
+  {
+   "id": "o7",
+   "name": "Camp shirt and check",
+   "itemIds": [
+    "gingham-7-seersucker-camp",
+    "gorman-check-skirt"
+   ],
+   "occasions": [
+    "Everyday",
+    "Holiday"
+   ],
+   "why": "From your lookbook picks. Cropped, so it sits at the waistband worn out and toughens the sweet skirt."
+  },
+  {
+   "id": "o8",
+   "name": "Pin dots and check",
+   "itemIds": [
+    "dots-3-pin-dot-shell",
+    "gorman-check-skirt"
+   ],
+   "occasions": [
+    "Lunch out"
+   ],
+   "why": "From your lookbook picks. Small dots give strong scale contrast against the jumbo check."
+  },
+  {
+   "id": "o9",
+   "name": "Smocked stripes",
+   "itemIds": [
+    "stripe-2-smocked-tank",
+    "gorman-striped-skirt"
+   ],
+   "occasions": [
+    "Everyday",
+    "Lunch out"
+   ],
+   "why": "From your lookbook picks. The smocking blurs the stripe into texture, so nothing fights."
+  },
+  {
+   "id": "o10",
+   "name": "Popover and stripe",
+   "itemIds": [
+    "stripe-4-ruffle-popover",
+    "gorman-striped-skirt"
+   ],
+   "occasions": [
+    "Lunch out"
+   ],
+   "why": "From your lookbook picks. Tucked; keep accessories away from navy."
+  },
+  {
+   "id": "o11",
+   "name": "Check against stripe",
+   "itemIds": [
+    "gingham-1-sleeveless-pockets",
+    "gorman-striped-skirt"
+   ],
+   "occasions": [
+    "Everyday"
+   ],
+   "why": "From your lookbook picks. Check against stripe, with the blue echoing the cornflower."
+  },
+  {
+   "id": "o12",
+   "name": "Pin dots and stripes",
+   "itemIds": [
+    "dots-3-pin-dot-shell",
+    "gorman-striped-skirt"
+   ],
+   "occasions": [
+    "Lunch out",
+    "Smart casual"
+   ],
+   "why": "From your lookbook picks. Close to the skirt's cornflower; the pin dots read as texture."
+  },
+  {
+   "id": "o13",
+   "name": "Cornflower tonal",
+   "itemIds": [
+    "cornflower-twist-sleeve-top",
+    "gorman-striped-skirt"
+   ],
+   "occasions": [
+    "Smart casual"
+   ],
+   "why": "From your lookbook picks. Tonal with the blue stripes; add tan or mustard shoes for surprise. Good for autumn."
+  },
+  {
+   "id": "o14",
+   "name": "Mint and smocking",
+   "itemIds": [
+    "stripe-2-smocked-tank",
+    "boden-helena-chinos"
+   ],
+   "occasions": [
+    "Everyday"
+   ],
+   "why": "From your lookbook picks. Volume on top, neat trousers below."
+  },
+  {
+   "id": "o15",
+   "name": "Gingham and mint",
+   "itemIds": [
+    "gingham-1-sleeveless-pockets",
+    "boden-helena-chinos"
+   ],
+   "occasions": [
+    "Everyday",
+    "Holiday"
+   ],
+   "why": "From your lookbook picks. Blue and mint, fresh and coastal."
+  },
+  {
+   "id": "o16",
+   "name": "Camp shirt and mint",
+   "itemIds": [
+    "gingham-7-seersucker-camp",
+    "boden-helena-chinos"
+   ],
+   "occasions": [
+    "Everyday",
+    "Holiday"
+   ],
+   "why": "From your lookbook picks. Relaxed and cropped; white trainers."
+  },
+  {
+   "id": "o17",
+   "name": "Soft blue dots",
+   "itemIds": [
+    "dots-2-light-blue-ruffle",
+    "boden-helena-chinos"
+   ],
+   "occasions": [
+    "Everyday"
+   ],
+   "why": "From your lookbook picks. Pastel on pastel, gentle rather than punchy."
+  },
+  {
+   "id": "o18",
+   "name": "Pin dots and mint",
+   "itemIds": [
+    "dots-3-pin-dot-shell",
+    "boden-helena-chinos"
+   ],
+   "occasions": [
+    "Lunch out"
+   ],
+   "why": "From your lookbook picks. Deeper blue gives the mint more contrast."
+  },
+  {
+   "id": "o19",
+   "name": "Navy and mint",
+   "itemIds": [
+    "navy-dot-smocked-tank",
+    "boden-helena-chinos"
+   ],
+   "occasions": [
+    "Everyday",
+    "Lunch out"
+   ],
+   "why": "From your lookbook picks. Navy makes mint look crisp; the peplum keeps it relaxed. Straw bag."
+  }
+ ],
+ "inspo": []
 }
