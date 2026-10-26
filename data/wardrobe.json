@@ -3018,7 +3018,7 @@
   },
   {
    "id": "basic-white-sneakers",
-   "name": "White sneakers",
+   "name": "White leather sneakers",
    "category": "shoes",
    "colours": [
     "white"
@@ -3031,8 +3031,8 @@
     "Autumn",
     "Winter"
    ],
-   "notes": "Basic you already own. Drawn picture.",
-   "img": "img/basics/basic-white-sneakers.svg",
+   "notes": "Your photo.",
+   "img": "img/white-sneakers.webp",
    "basic": true,
    "shape": "sneaker",
    "_f": [
@@ -3041,21 +3041,23 @@
   },
   {
    "id": "basic-black-sneakers",
-   "name": "Black sneakers",
+   "name": "Black Adidas sneakers",
    "category": "shoes",
    "colours": [
-    "black"
+    "black",
+    "white",
+    "gum"
    ],
    "pattern": "solid",
-   "fabric": "",
+   "fabric": "suede",
    "seasons": [
     "Spring",
     "Summer",
     "Autumn",
     "Winter"
    ],
-   "notes": "Basic you already own. Drawn picture.",
-   "img": "img/basics/basic-black-sneakers.svg",
+   "notes": "Your photo.",
+   "img": "img/black-adidas-sneakers.webp",
    "basic": true,
    "shape": "sneaker",
    "_f": [
@@ -3180,7 +3182,7 @@
   },
   {
    "id": "basic-black-crossbody",
-   "name": "Black crossbody bag",
+   "name": "Black crossbody bag with tassel",
    "category": "bags",
    "colours": [
     "black"
@@ -3193,8 +3195,8 @@
     "Autumn",
     "Winter"
    ],
-   "notes": "Basic you already own. Drawn picture.",
-   "img": "img/basics/basic-black-crossbody.svg",
+   "notes": "Your photo.",
+   "img": "img/black-crossbody-bag.webp",
    "basic": true,
    "shape": "crossbody",
    "_f": [
@@ -3577,8 +3579,8 @@
     "Spring",
     "Summer"
    ],
-   "notes": "Basic you already own. Drawn picture.",
-   "img": "img/basics/basic-denim-shorts.svg",
+   "notes": "Your photo.",
+   "img": "img/denim-shorts.webp",
    "basic": true,
    "shape": "shorts",
    "_f": [
@@ -3587,7 +3589,7 @@
   },
   {
    "id": "basic-denim-skirt",
-   "name": "Denim skirt",
+   "name": "Denim mini skirt",
    "category": "skirts",
    "colours": [
     "denim blue"
@@ -3599,8 +3601,8 @@
     "Summer",
     "Autumn"
    ],
-   "notes": "Basic you already own. Drawn picture.",
-   "img": "img/basics/basic-denim-skirt.svg",
+   "notes": "Your photo.",
+   "img": "img/denim-mini-skirt.webp",
    "basic": true,
    "shape": "miniskirt",
    "_f": [
@@ -3608,8 +3610,47 @@
    ]
   },
   {
+   "pattern": "solid",
+   "fabric": "denim",
+   "basic": true,
+   "notes": "Panelled front, raw hem. Your photo.",
+   "id": "basic-denim-maxi-skirt",
+   "name": "Denim maxi skirt",
+   "category": "skirts",
+   "colours": [
+    "mid-blue denim"
+   ],
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "img": "img/denim-maxi-skirt.webp",
+   "shape": "maxi"
+  },
+  {
+   "pattern": "solid",
+   "fabric": "denim",
+   "basic": true,
+   "notes": "Your photo.",
+   "id": "basic-white-denim-mini",
+   "name": "White denim mini skirt",
+   "category": "skirts",
+   "colours": [
+    "white"
+   ],
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "img": "img/white-denim-mini-skirt.webp",
+   "shape": "mini"
+  },
+  {
    "id": "basic-black-midi-skirt",
-   "name": "Black midi skirt",
+   "name": "Black A-line midi skirt",
    "category": "skirts",
    "colours": [
     "black"
@@ -3622,8 +3663,8 @@
     "Autumn",
     "Winter"
    ],
-   "notes": "Basic you already own. Drawn picture.",
-   "img": "img/basics/basic-black-midi-skirt.svg",
+   "notes": "Your photo.",
+   "img": "img/black-midi-skirt.webp",
    "basic": true,
    "shape": "midi",
    "_f": [
