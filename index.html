@@ -66,6 +66,17 @@ h2{font-family:var(--display);font-weight:400;font-size:22px;margin:0;text-wrap:
 .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .empty{border:1.5px dashed var(--line);border-radius:12px;padding:22px 18px;color:var(--muted);text-align:center;display:grid;gap:6px}
 .empty strong{color:var(--fg);font-weight:600}
+.minigrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(105px,1fr));gap:8px;padding:8px 0 4px}
+.minigrid.three{grid-template-columns:repeat(3,1fr)}
+.mini{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:0;overflow:hidden;cursor:pointer;text-align:left;display:flex;flex-direction:column;min-width:0;color:var(--fg)}
+.mini .collage{padding:4px;gap:2px}
+.mini span{font-size:11.5px;line-height:1.25;padding:5px 7px 7px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.grp{background:var(--surface);border:1px solid var(--line);border-radius:12px;margin:0 0 8px;padding:0 10px}
+.grphead{all:unset;box-sizing:border-box;width:100%;display:flex;align-items:center;gap:10px;padding:9px 0;cursor:pointer}
+.grphead img{width:42px;height:42px;object-fit:contain;background:var(--tile);border-radius:8px}
+.grphead .gn{flex:1;font-weight:600;font-size:14.5px;line-height:1.25}
+.grphead .chev{color:var(--muted);font-size:13px}
+h3 .n,.grphead .n{font-size:12px;color:var(--muted);background:var(--tile);border-radius:99px;padding:2px 8px;font-weight:600}
 .ogrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
 .ocard{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
 .collage{background:var(--tile);display:grid;grid-template-columns:2fr 1fr;gap:4px;padding:8px;aspect-ratio:1/1;max-width:100%}
@@ -147,7 +158,7 @@ const S={anchor:null,sOcc:"Everyday",sSeason:null,seed:1,pickCat:"all",q:"",tab:
 const LS={get(k,d){try{const v=localStorage.getItem("kw:"+k);return v?JSON.parse(v):d;}catch(e){return d;}},
   set(k,v){try{localStorage.setItem("kw:"+k,JSON.stringify(v));}catch(e){}}};
 let taste=LS.get("taste",{w:{},n:0,liked:[],disliked:[]}),useRules=LS.get("useRules",false);
-let favs=LS.get("favs",[]),hidden=LS.get("hidden",[]),mine=LS.get("mine",[]),gone=LS.get("gone",[]);
+let unliked=LS.get("unliked",[]),favs=LS.get("favs",[]),hidden=LS.get("hidden",[]),mine=LS.get("mine",[]),gone=LS.get("gone",[]);
 S.sort=LS.get("sort","colour");
 function applyGone(){D.items=(D.all||[]).filter(i=>!gone.includes(i.id));}
 
@@ -170,15 +181,13 @@ function collage(ids){
 }
 function tipsFor(ids){const P=ids.map(byId).filter(Boolean);if(!window.Stylist||!Stylist.hemTip)return "";return [Stylist.hemTip(P),Stylist.hairTip(P)].filter(Boolean).map(t=>`<p class="tip">${esc(t)}</p>`).join("");}
 function outfitCard(o,extra=""){
-  const fav=favs.includes(o.id);
   return `<article class="ocard">${collage(o.itemIds||[])}<div class="meta">
   <div class="nm">${esc(o.name||"Untitled outfit")}</div>
   <div class="tags">${(o.occasions||[]).map(x=>`<span class="tag">${esc(x)}</span>`).join("")}${o.mine?'<span class="tag mine">Built on this phone</span>':o.liked?'<span class="tag mine">You liked this</span>':""}</div>
   ${o.why?`<p class="why">${esc(o.why)}</p>`:""}
   ${tipsFor(o.itemIds||[])}
-  <div class="row"><button class="fav" type="button" data-fav="${esc(o.id)}" aria-pressed="${fav}">${fav?"♥ Favourite":"♡ Favourite"}</button>
-  ${o.mine?`<button class="iconbtn" type="button" data-copy="${esc(o.id)}">${S.copied===o.id?"Copied":"Copy for Claude"}</button><button class="iconbtn" type="button" data-delmine="${esc(o.id)}">Delete</button>`
-          :`<button class="iconbtn" type="button" data-hide="${esc(o.id)}">Hide</button>`}${extra}</div></div></article>`;
+  <div class="row">${isLiked(o)?`<button class="fav" type="button" data-unlike="${esc(o.id)}" aria-pressed="true">♥ Liked</button>`:`<button class="fav" type="button" data-likeo="${esc(o.id)}" aria-pressed="false">♡ Like</button>`}
+  ${o.mine?`<button class="iconbtn" type="button" data-copy="${esc(o.id)}">${S.copied===o.id?"Copied":"Copy for Claude"}</button>`:""}${!isLiked(o)&&!o.mine&&!o.liked?`<button class="iconbtn" type="button" data-hide="${esc(o.id)}">Hide</button>`:""}${extra}</div></div></article>`;
 }
 
 
@@ -221,23 +230,37 @@ function vWardrobe(){
   <div class="grid">${list.map(i=>`<button type="button" class="card" data-item="${esc(i.id)}"><div class="tile"><img src="${esc(i.img)}" alt="" loading="lazy"></div>
   <div class="meta"><span class="nm">${esc(i.name)}</span><span class="ct">${esc(CATNAME[i.category]||i.category)}</span></div></button>`).join("")}</div>`;
 }
+
+function rng(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+function isLiked(o){return !!(o.mine||(o.liked&&!unliked.includes(o.id))||favs.includes(o.id));}
+function keyPiece(o){const P=(o.itemIds||[]).map(byId).filter(Boolean);
+  return P.find(i=>i.category==="dresses")||P.find(i=>!i.basic&&["skirts","trousers","shorts"].includes(i.category))||P.find(i=>["skirts","trousers","shorts"].includes(i.category))||P.find(i=>!["shoes","bags","accessories"].includes(i.category))||P[0];}
+function topOf(o,k){const P=(o.itemIds||[]).map(byId).filter(Boolean);return P.find(i=>i!==k&&!i.basic&&["tops","knitwear"].includes(i.category))||P.find(i=>i!==k&&["tops","knitwear","outerwear"].includes(i.category));}
+function fitsSeason(o,se){return (o.itemIds||[]).every(id=>{const it=byId(id);return !it||!it.seasons||!it.seasons.length||it.seasons.includes(se);});}
+function miniTile(o){const k=keyPiece(o),t=topOf(o,k);return `<button type="button" class="mini" data-open="${esc(o.id)}">${collage(o.itemIds||[])}<span>${esc(t?t.name.replace(/^(Gingham|Stripe|Dots) No\. \d+: /,""):o.name)}</span></button>`;}
 function vOutfits(){
-  const all=allOutfits();
-  const shown=all.slice().sort((a,b)=>(b.mine?2:b.liked?1:0)-(a.mine?2:a.liked?1:0)).filter(o=>!hidden.includes(o.id))
-    .filter(o=>S.occ==="all"||(S.occ==="fav"?favs.includes(o.id):(o.occasions||[]).includes(S.occ)))
-    .filter(o=>S.season==="any"||!o.seasons||!o.seasons.length||o.seasons.includes(S.season)||(o.itemIds||[]).every(id=>{const it=byId(id);return !it||!it.seasons||it.seasons.includes(S.season);}));
-  const occs=D.occasions.filter(x=>all.some(o=>(o.occasions||[]).includes(x)));
+  const all=allOutfits().filter(o=>!hidden.includes(o.id));
+  const liked=all.filter(isLiked),ideas=all.filter(o=>!isLiked(o)&&!o.liked);
+  const se=currentSeason();
+  const pool=liked.filter(o=>fitsSeason(o,se));
+  let today=[];if(pool.length){const r=rng(Number(new Date().toISOString().slice(0,10).replace(/-/g,''))+(S.todaySeed||0)*7919);const p=pool.slice();while(today.length<3&&p.length)today.push(p.splice(Math.floor(r()*p.length),1)[0]);}
+  const groups={};for(const o of liked){const k=keyPiece(o);const id=k?k.id:"other";(groups[id]=groups[id]||{item:k,list:[]}).list.push(o);}
+  const G=Object.values(groups).sort((x,y)=>y.list.length-x.list.length);
+  for(const g of G)g.list.sort((x,y)=>{const a=topOf(x,g.item),b=topOf(y,g.item);return (a?colRank(a):99)-(b?colRank(b):99)||(a&&b?a.name.localeCompare(b.name):0);});
+  S.openG=S.openG||{};
   return `<h2>Outfits</h2>
-  <div class="chips" role="group" aria-label="Filter by occasion">
-   <button class="chip" data-occ="all" aria-pressed="${S.occ==="all"}">All</button>
-   <button class="chip" data-occ="fav" aria-pressed="${S.occ==="fav"}">♥ Favourites<span class="n">${favs.length}</span></button>
-   ${occs.map(x=>`<button class="chip" data-occ="${esc(x)}" aria-pressed="${S.occ===x}">${esc(x)}</button>`).join("")}</div>
-  <div class="chips" role="group" aria-label="Filter by season">
-   <button class="chip" data-season="any" aria-pressed="${S.season==="any"}">Any season</button>
-   ${SEASONS.map(s=>`<button class="chip" data-season="${s}" aria-pressed="${S.season===s}">${s}${s===currentSeason()?" (now)":""}</button>`).join("")}</div>
   <div class="row"><button class="btn" type="button" data-tab="style">Style a piece</button><button class="btn ghost" type="button" data-tab="build">Build your own</button><button class="btn ghost" type="button" id="surprise">Surprise me</button></div>
   ${S.surprise?`<div class="ogrid">${outfitCard(S.surprise,`<button class="iconbtn" type="button" id="keepSurprise">Keep</button>`)}</div>`:""}
-  ${shown.length?`<div class="ogrid">${shown.map(o=>outfitCard(o)).join("")}</div>`:`<div class="empty"><strong>Nothing here yet</strong><span>Try another filter, build one yourself, or ask Claude in chat for ideas.</span></div>`}
+  <section class="panel today"><div><h3 style="margin:0">What to wear today</h3><p class="lede" style="margin:4px 0 0">Three of your liked outfits that suit ${se.toLowerCase()}.</p></div>
+   ${today.length?`<div class="minigrid three">${today.map(miniTile).join("")}</div><div class="row"><button class="btn ghost" type="button" id="todayMore">Show me three others</button></div>`
+     :`<p class="lede">Like a few outfits in Style me and they'll show up here.</p>`}</section>
+  <h3 style="margin:22px 0 4px">Your liked outfits <span class="n">${liked.length}</span></h3>
+  <p class="lede" style="margin:0 0 10px">Grouped by the main piece. Tap a group to open it, then tap an outfit to see it full size.</p>
+  ${G.map(g=>{const id=g.item?g.item.id:"other",open=!!S.openG[id];return `<div class="grp${open?" open":""}"><button type="button" class="grphead" data-grp="${esc(id)}" aria-expanded="${open}">
+    ${g.item?`<img src="${esc(g.item.img)}" alt="">`:""}<span class="gn">${esc(g.item?g.item.name:"Other")}</span><span class="n">${g.list.length}</span><span class="chev">${open?"▾":"▸"}</span></button>
+    ${open?`<div class="minigrid">${g.list.map(miniTile).join("")}</div>`:""}</div>`;}).join("")}
+  ${ideas.length?`<div class="grp${S.openG.__ideas?" open":""}"><button type="button" class="grphead" data-grp="__ideas" aria-expanded="${!!S.openG.__ideas}"><span class="gn">Ideas from Claude</span><span class="n">${ideas.length}</span><span class="chev">${S.openG.__ideas?"▾":"▸"}</span></button>
+    ${S.openG.__ideas?`<div class="minigrid">${ideas.map(miniTile).join("")}</div>`:""}</div>`:""}
   ${hidden.length?`<div class="row"><button class="iconbtn" type="button" id="unhide">Show ${hidden.length} hidden outfit${hidden.length===1?"":"s"}</button></div>`:""}`;
 }
 function vBuild(){
@@ -303,7 +326,7 @@ function vStyle(){
    ${likedFor(a)}`
    :`<div class="empty"><strong>No outfits for this season and occasion</strong><span>Try another season or occasion.</span></div>`}`;
 }
-function likedFor(a){const L=allOutfits().filter(o=>(o.mine||o.liked)&&(o.itemIds||[]).includes(a.id)).reverse();if(!L.length)return "";
+function likedFor(a){const L=allOutfits().filter(o=>isLiked(o)&&(o.itemIds||[]).includes(a.id)).reverse();if(!L.length)return "";
   return `<h3 style="margin:22px 0 6px">You've liked ${L.length} outfit${L.length===1?"":"s"} with the ${esc(a.name)}</h3>
   <p class="lede" style="margin-top:0">These are saved in the Outfits tab too. Ideas you've rated don't come back here, so new ones can take their place.</p>
   <div class="ogrid">${L.map(o=>outfitCard(o)).join("")}</div>`;}
@@ -331,6 +354,7 @@ function render(){
 }
 
 const sheet=$("#sheet"),sheetBody=$("#sheetBody");
+function refreshOpen(id){if(!sheet.open||!sheetBody.querySelector(`[data-unlike="${id}"],[data-likeo="${id}"]`))return;const o=allOutfits().find(x=>x.id===id);if(o)sheetBody.innerHTML=`<div class="sheet-head"><h2>Outfit</h2><button class="iconbtn" type="button" data-close>Close</button></div>${outfitCard(o)}`;else sheet.close();}
 sheet.addEventListener("click",e=>{if(e.target===sheet)sheet.close();});
 function openItem(id){const it=byId(id);if(!it)return;
   const inO=allOutfits().filter(o=>(o.itemIds||[]).includes(id));
@@ -403,6 +427,12 @@ document.addEventListener("click",async e=>{
     try{await navigator.clipboard.writeText(txt);S.copied="gone";render();setTimeout(()=>{S.copied="";render();},2500);}
     catch(err){sheetBody.innerHTML=`<div class="sheet-head"><h2>Copy this</h2><button class="iconbtn" type="button" data-close>Close</button></div><textarea rows="8" style="width:100%" readonly>${esc(txt)}</textarea>`;if(!sheet.open)sheet.showModal();sheetBody.querySelector("textarea").select();}
     return;}
+  if(t.dataset.grp){S.openG=S.openG||{};S.openG[t.dataset.grp]=!S.openG[t.dataset.grp];render();return;}
+  if(t.id==="todayMore"){S.todaySeed=(S.todaySeed||0)+1;render();return;}
+  if(t.dataset.open){const o=allOutfits().find(x=>x.id===t.dataset.open);if(o){sheetBody.innerHTML=`<div class="sheet-head"><h2>Outfit</h2><button class="iconbtn" type="button" data-close>Close</button></div>${outfitCard(o)}`;if(!sheet.open)sheet.showModal();}return;}
+  if(t.dataset.likeo){const id=t.dataset.likeo;unliked=unliked.filter(x=>x!==id);LS.set("unliked",unliked);const o=allOutfits().find(x=>x.id===id);if(o&&!o.liked&&!o.mine&&!favs.includes(id)){favs=favs.concat(id);LS.set("favs",favs);}refreshOpen(id);render();return;}
+  if(t.dataset.unlike){const id=t.dataset.unlike;const o=allOutfits().find(x=>x.id===id);if(!o)return;
+    if(o.mine){mine=mine.filter(x=>x.id!==id);LS.set("mine",mine);}else if(o.liked){unliked=unliked.concat(id);LS.set("unliked",unliked);}favs=favs.filter(x=>x!==id);LS.set("favs",favs);refreshOpen(id);render();return;}
   if(t.dataset.fav){const id=t.dataset.fav;favs=favs.includes(id)?favs.filter(x=>x!==id):favs.concat(id);LS.set("favs",favs);render();return;}
   if(t.dataset.hide){hidden=hidden.concat(t.dataset.hide);LS.set("hidden",hidden);render();return;}
   if(t.id==="unhide"){hidden=[];LS.set("hidden",hidden);render();return;}
