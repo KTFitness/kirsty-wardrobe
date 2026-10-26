@@ -969,6 +969,57 @@
    ]
   },
   {
+   "pattern": "solid",
+   "notes": "Collared, cropped, patch pockets, button front. Picture is a crop of the listing photo.",
+   "id": "uniqlo-brown-knit-jacket",
+   "name": "Uniqlo brown knit cardigan jacket",
+   "category": "knitwear",
+   "colours": [
+    "camel brown"
+   ],
+   "fabric": "milano rib knit",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "img": "img/uniqlo-brown-knit-jacket.webp"
+  },
+  {
+   "pattern": "solid",
+   "notes": "Collared, cropped, patch pockets, button front. Picture is a crop of the listing photo.",
+   "id": "uniqlo-black-knit-jacket",
+   "name": "Uniqlo black knit cardigan jacket",
+   "category": "knitwear",
+   "colours": [
+    "black"
+   ],
+   "fabric": "milano rib knit",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "img": "img/uniqlo-black-knit-jacket.webp"
+  },
+  {
+   "pattern": "solid",
+   "notes": "Collared, cropped, patch pockets, button front. Picture is a crop of the listing photo.",
+   "id": "uniqlo-blue-knit-jacket",
+   "name": "Uniqlo blue knit cardigan jacket",
+   "category": "knitwear",
+   "colours": [
+    "cobalt blue"
+   ],
+   "fabric": "milano rib knit",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "img": "img/uniqlo-blue-knit-jacket.webp"
+  },
+  {
    "id": "blue-broderie-scallop-top",
    "name": "Blue broderie scallop top",
    "category": "tops",
@@ -1349,6 +1400,24 @@
    "_f": [
     "white"
    ]
+  },
+  {
+   "pattern": "solid with contrast trim",
+   "notes": "Long sleeves, black collar, placket and cuffs. Picture is a crop of the listing photo.",
+   "id": "uniqlo-white-shirt-black-trim",
+   "name": "Uniqlo white shirt with black trim",
+   "category": "tops",
+   "colours": [
+    "white",
+    "black"
+   ],
+   "fabric": "crepe, probably",
+   "seasons": [
+    "Spring",
+    "Autumn",
+    "Winter"
+   ],
+   "img": "img/uniqlo-white-shirt-black-trim.webp"
   },
   {
    "id": "chambray-shirt",
@@ -2301,7 +2370,129 @@
     "Winter"
    ],
    "notes": "Fitted long-sleeve turtleneck. Good for layering under vests and shirts. Picture is a crop of the listing photo.",
-   "img": "img/light-blue-heattech-turtleneck.webp"
+   "img": "img/uniqlo-light-blue-fleece-turtleneck.webp"
+  },
+  {
+   "pattern": "solid",
+   "notes": "Picture is a crop of the listing photo.",
+   "id": "uniqlo-white-fleece-turtleneck",
+   "name": "Uniqlo white fleece turtleneck",
+   "category": "tops",
+   "colours": [
+    "off-white"
+   ],
+   "fabric": "Heattech fleece",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "img": "img/uniqlo-white-fleece-turtleneck.webp"
+  },
+  {
+   "pattern": "solid",
+   "notes": "Picture is a crop of the listing photo.",
+   "id": "uniqlo-charcoal-fleece-turtleneck",
+   "name": "Uniqlo charcoal fleece turtleneck",
+   "category": "tops",
+   "colours": [
+    "charcoal grey"
+   ],
+   "fabric": "Heattech fleece",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "img": "img/uniqlo-charcoal-fleece-turtleneck.webp"
+  },
+  {
+   "pattern": "solid",
+   "notes": "Elbow sleeves, four-button placket.",
+   "id": "uniqlo-black-knit-polo",
+   "name": "Uniqlo black knit polo",
+   "category": "knitwear",
+   "colours": [
+    "black"
+   ],
+   "fabric": "fine knit",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "img": "img/uniqlo-black-knit-polo.webp"
+  },
+  {
+   "pattern": "solid",
+   "notes": "Fitted, short sleeves, slightly cropped. Picture is a crop of the listing photo.",
+   "id": "uniqlo-yellow-knit-polo",
+   "name": "Uniqlo butter yellow knit polo",
+   "category": "knitwear",
+   "colours": [
+    "butter yellow"
+   ],
+   "fabric": "fine knit",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "img": "img/uniqlo-yellow-knit-polo.webp"
+  },
+  {
+   "pattern": "solid",
+   "notes": "Boxy, cropped, elbow sleeves. Matches the blue knit skirt. Picture is a crop of the listing photo.",
+   "id": "uniqlo-blue-knit-tee",
+   "name": "Uniqlo blue boxy knit tee",
+   "category": "knitwear",
+   "colours": [
+    "cobalt blue"
+   ],
+   "fabric": "milano rib knit",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "img": "img/uniqlo-blue-knit-tee.webp",
+   "setWith": "uniqlo-blue-knit-skirt"
+  },
+  {
+   "pattern": "solid",
+   "notes": "Boxy, cropped, elbow sleeves. Matches the black knit skirt. Picture is a crop of the listing photo.",
+   "id": "uniqlo-black-knit-tee",
+   "name": "Uniqlo black boxy knit tee",
+   "category": "knitwear",
+   "colours": [
+    "black"
+   ],
+   "fabric": "milano rib knit",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "img": "img/uniqlo-black-knit-tee.webp",
+   "setWith": "uniqlo-black-knit-skirt"
+  },
+  {
+   "pattern": "solid",
+   "notes": "Boxy, cropped, elbow sleeves. Matches the brown knit skirt. Picture is a crop of the listing photo.",
+   "id": "uniqlo-brown-knit-tee",
+   "name": "Uniqlo brown boxy knit tee",
+   "category": "knitwear",
+   "colours": [
+    "camel brown"
+   ],
+   "fabric": "milano rib knit",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "img": "img/uniqlo-brown-knit-tee.webp",
+   "setWith": "uniqlo-brown-knit-skirt"
   },
   {
    "id": "black-mock-neck-long-sleeve",
@@ -2377,6 +2568,63 @@
    "_f": [
     "red"
    ]
+  },
+  {
+   "pattern": "solid",
+   "notes": "Elastic waist, A-line midi. Matches the blue boxy knit tee. Picture is a crop of the listing photo.",
+   "id": "uniqlo-blue-knit-skirt",
+   "name": "Uniqlo blue knit flare midi skirt",
+   "category": "skirts",
+   "colours": [
+    "cobalt blue"
+   ],
+   "fabric": "milano rib knit",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "img": "img/uniqlo-blue-knit-skirt.webp",
+   "setWith": "uniqlo-blue-knit-tee"
+  },
+  {
+   "pattern": "solid",
+   "notes": "Elastic waist, A-line midi. Matches the black boxy knit tee. Picture is a crop of the listing photo.",
+   "id": "uniqlo-black-knit-skirt",
+   "name": "Uniqlo black knit flare midi skirt",
+   "category": "skirts",
+   "colours": [
+    "black"
+   ],
+   "fabric": "milano rib knit",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "img": "img/uniqlo-black-knit-skirt.webp",
+   "setWith": "uniqlo-black-knit-tee"
+  },
+  {
+   "pattern": "solid",
+   "notes": "Elastic waist, A-line midi. Matches the brown boxy knit tee. Picture is a crop of the listing photo.",
+   "id": "uniqlo-brown-knit-skirt",
+   "name": "Uniqlo brown knit flare midi skirt",
+   "category": "skirts",
+   "colours": [
+    "camel brown"
+   ],
+   "fabric": "milano rib knit",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "img": "img/uniqlo-brown-knit-skirt.webp",
+   "setWith": "uniqlo-brown-knit-tee"
   },
   {
    "id": "black-big-spot-tie-skirt",
@@ -2538,19 +2786,19 @@
   },
   {
    "id": "basic-black-turtleneck",
-   "name": "Black turtleneck jumper",
+   "name": "Uniqlo black fleece turtleneck",
    "category": "knitwear",
    "colours": [
     "black"
    ],
    "pattern": "solid",
-   "fabric": "",
+   "fabric": "Heattech fleece",
    "seasons": [
     "Autumn",
     "Winter"
    ],
-   "notes": "Stand-in photo of a similar piece. Send your own to replace it.",
-   "img": "img/black-turtleneck.webp",
+   "notes": "Relaxed fleece turtleneck. Picture is a crop of the listing photo.",
+   "img": "img/uniqlo-black-fleece-turtleneck.webp",
    "basic": true,
    "shape": "turtle",
    "_f": [
