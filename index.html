@@ -170,7 +170,7 @@ const S={anchor:null,sOcc:"Everyday",sSeason:null,seed:1,pickCat:"all",q:"",tab:
 const LS={get(k,d){try{const v=localStorage.getItem("kw:"+k);return v?JSON.parse(v):d;}catch(e){return d;}},
   set(k,v){try{localStorage.setItem("kw:"+k,JSON.stringify(v));}catch(e){}}};
 let taste=LS.get("taste",{w:{},n:0,liked:[],disliked:[]}),useRules=LS.get("useRules",false);
-let unliked=LS.get("unliked",[]),favs=LS.get("favs",[]),hidden=LS.get("hidden",[]),mine=LS.get("mine",[]),gone=LS.get("gone",[]);
+let fin=LS.get("finish",{}),unliked=LS.get("unliked",[]),favs=LS.get("favs",[]),hidden=LS.get("hidden",[]),mine=LS.get("mine",[]),gone=LS.get("gone",[]);
 S.sort=LS.get("sort","colour");
 function applyGone(){D.items=(D.all||[]).filter(i=>!gone.includes(i.id));}
 
@@ -180,7 +180,12 @@ const ALIAS={"basic-tan-sandals":"basic-tan-flats","basic-white-tank":"zara-whit
 const byId=id=>D.items.find(i=>i.id===(ALIAS[id]||id));
 function currentSeason(){const m=new Date().getMonth();return m===11||m<2?"Summer":m<5?"Autumn":m<8?"Winter":"Spring";}
 const okey=o=>(o.itemIds||[]).map(id=>ALIAS[id]||id).sort().join(",");
-const allOutfits=()=>{const mk=new Set(mine.map(okey));return D.outfits.filter(o=>!(o.liked&&mk.has(okey(o)))).map(o=>({...o,mine:false})).concat(mine.map(o=>({...o,mine:true}))).filter(o=>!(o.itemIds||[]).some(id=>gone.includes(id)));};
+const ACC=["shoes","bags","accessories"];
+const ckey=o=>(o.itemIds||[]).map(id=>ALIAS[id]||id).filter(id=>{const it=byId(id);return it&&!ACC.includes(it.category);}).sort().join(",");
+const applyFin=o=>{const f=fin[o.id];if(!f)return o;let ids=(o.itemIds||[]).filter(id=>{const it=byId(id);return !(it&&((f.shoes!==undefined&&it.category==="shoes")||(f.bag!==undefined&&it.category==="bags")));});if(f.shoes)ids.push(f.shoes);if(f.bag)ids.push(f.bag);return {...o,itemIds:ids};};
+const allOutfits=()=>{const L=mine.map(o=>({...o,mine:true})).concat(D.outfits.map(o=>({...o,mine:false})));const seen=new Set(),out=[];
+  for(const o of L){if((o.itemIds||[]).some(id=>gone.includes(id)))continue;const liked=o.mine||o.liked;if(liked){const k=ckey(o);if(seen.has(k))continue;seen.add(k);}out.push(applyFin(o));}
+  return out.filter(o=>!o.mine).filter(o=>!o.liked).concat(out.filter(o=>o.liked&&!o.mine),out.filter(o=>o.mine));};
 
 function collage(ids,hero){
   const order=["outerwear","tops","knitwear","dresses","skirts","trousers","shorts"],body=["tops","knitwear","dresses","skirts","trousers","shorts"];
@@ -205,6 +210,7 @@ function outfitCard(o,extra="",hero){
   ${o.why?`<p class="why">${esc(o.why)}</p>`:""}
   ${tipsFor(o.itemIds||[])}
   <div class="row">${isLiked(o)?`<button class="fav" type="button" data-unlike="${esc(o.id)}" aria-pressed="true">♥ Liked</button>`:`<button class="fav" type="button" data-likeo="${esc(o.id)}" aria-pressed="false">♡ Like</button>`}
+  ${isLiked(o)?`<button class="iconbtn" type="button" data-finish="${esc(o.id)}">${(o.itemIds||[]).some(id=>{const it=byId(id);return it&&it.category==="shoes";})?"Change shoes & bag":"Add shoes & bag"}</button>`:""}
   ${isBuilt(o)?`<button class="iconbtn" type="button" data-editb="${esc(o.id)}">Edit</button><button class="iconbtn" type="button" data-delb="${esc(o.id)}">Delete</button>`:""}${!isLiked(o)&&!o.mine&&!o.liked?`<button class="iconbtn" type="button" data-hide="${esc(o.id)}">Hide</button>`:""}${extra}</div></div></article>`;
 }
 
@@ -342,7 +348,7 @@ function vStyle(){
   const a=S.anchor&&byId(S.anchor);
   if(!a)return pickGrid();
   const season=S.sSeason||currentSeason();
-  const res=window.Stylist?Stylist.suggest(a,D.items,{occ:S.sOcc,season,seed:S.seed,count:6,W:tasteW(),n:tasteN(),rules:useRules,exclude:ratingLists().liked.concat(S.rated||[]),excludeCore:allDisliked().map(k=>Stylist.coreKey(k.split(",").map(byId).filter(Boolean))),shown:S.shownFor===a.id?(S.shown||[]):[],with:S.withFor===a.id?S.with:null}):[];
+  const res=window.Stylist?Stylist.suggest(a,D.items,{occ:S.sOcc,season,seed:S.seed,count:6,W:tasteW(),n:tasteN(),rules:useRules,noAccessories:true,exclude:[],excludeCore:allDisliked().concat(ratingLists().liked,S.rated||[]).map(k=>Stylist.coreKey(k.split(",").map(byId).filter(Boolean))),shown:S.shownFor===a.id?(S.shown||[]):[],with:S.withFor===a.id?S.with:null}):[];
   S.lastRes=res.map((r,k)=>({key:r.key,id:"g"+S.seed+"-"+k,name:r.set?"The matching set":"With the "+a.name.replace(/^(Gingham|Stripe|Dots) No\. \d+: /,"").toLowerCase(),itemIds:r.pieces.map(p=>p.id),occasions:[S.sOcc],why:r.why}));
   const offSeason=a.seasons&&a.seasons.length&&!a.seasons.includes(season);
   return `<div class="panel" style="grid-template-columns:96px 1fr;align-items:center">
@@ -370,6 +376,17 @@ function likedFor(a){const L=allOutfits().filter(o=>isLiked(o)&&(o.itemIds||[]).
 function nopedFor(a){const keys=[...new Set(allDisliked().filter(k=>k.split(",").includes(a.id)).reverse())];if(!keys.length)return "";const open=!!(S.openG&&S.openG["nope:"+a.id]);
   return `<div class="grp${open?" open":""}" style="margin-top:18px"><button type="button" class="grphead" data-grp="nope:${esc(a.id)}" aria-expanded="${open}"><span class="gn">Changed your mind? Outfits you said Not for me to</span><span class="n">${keys.length}</span><span class="chev">${open?"▾":"▸"}</span></button>
   ${open?`<div class="minigrid">${keys.map(k=>`<div class="mini" style="cursor:default">${collage(k.split(","),a.id)}<button class="btn" type="button" data-relike="${esc(k)}" style="margin:6px;padding:7px 8px;font-size:13px">Like instead</button></div>`).join("")}</div>`:""}</div>`;}
+function openFinish(id){const o=allOutfits().find(x=>x.id===id);if(!o)return;S.finId=id;
+  const cur=(o.itemIds||[]).map(byId).filter(Boolean),curShoe=cur.find(i=>i.category==="shoes"),curBag=cur.find(i=>i.category==="bags");
+  const r=Stylist.finish(cur,D.items,{occ:o.occasions&&o.occasions[0]||"Everyday",season:currentSeason(),W:tasteW(),rules:useRules});
+  const tile=(i,attr,on)=>`<button type="button" class="card pick" ${attr}="${esc(i.id)}" aria-pressed="${on}"><div class="tile"><img src="${esc(i.img)}" alt="" loading="lazy"></div><div class="meta"><span class="ct">${esc(i.name)}</span></div></button>`;
+  sheetBody.innerHTML=`<div class="sheet-head"><h2>Shoes &amp; bag</h2><button class="iconbtn" type="button" data-close>Close</button></div>
+   ${collage(o.itemIds||[],keyPiece(o)&&keyPiece(o).id)}
+   <p class="lede" style="margin:0">Best matches first. Tap one to choose it.</p>
+   <h3 style="margin:4px 0">Shoes</h3><div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:8px">${r.shoes.map(i=>tile(i,"data-fshoe",curShoe===i)).join("")}</div>
+   <h3 style="margin:4px 0">Bag</h3><div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:8px">${r.bags.map(i=>tile(i,"data-fbag",curBag===i)).join("")}<button type="button" class="card pick" data-fbag="" aria-pressed="${!curBag}"><div class="tile" style="display:grid;place-items:center;font-size:13px">No bag</div></button></div>
+   <div class="row"><button class="btn" type="button" data-findone>Done</button></div>`;
+  if(!sheet.open)sheet.showModal();}
 function vInspo(){
   return `<h2>Inspiration</h2>
   <p class="lede">Send an inspiration photo to Claude in chat. It will recreate the look from your wardrobe and add it here, with a note of anything you'd need to buy.</p>
@@ -441,12 +458,15 @@ document.addEventListener("click",async e=>{
   if(t.id==="more"){if(S.shownFor!==S.anchor){S.shownFor=S.anchor;S.shown=[];}S.shown=S.shown.concat(...S.lastRes.map(o=>o.itemIds));S.seed++;render();window.scrollTo(0,0);return;}
   if(t.dataset.like){const o=S.lastRes[+t.dataset.like];rate(o,1);S.rated=(S.rated||[]).concat(o.key);
     mine=mine.concat({id:"m"+Date.now(),name:o.name,itemIds:o.itemIds,occasions:o.occasions,why:o.why});LS.set("mine",mine);render();return;}
+  if(t.dataset.finish){openFinish(t.dataset.finish);return;}
+  if(t.dataset.fshoe!==undefined||t.dataset.fbag!==undefined){const id=S.finId;const f=fin[id]||{};if(t.dataset.fshoe!==undefined)f.shoes=t.dataset.fshoe||null;if(t.dataset.fbag!==undefined)f.bag=t.dataset.fbag||null;fin[id]=f;LS.set("finish",fin);openFinish(id);render();return;}
+  if(t.dataset.findone!==undefined){const o=allOutfits().find(x=>x.id===S.finId);if(o){sheetBody.innerHTML=`<div class="sheet-head"><h2>Outfit</h2><button class="iconbtn" type="button" data-close>Close</button></div>${outfitCard(o)}`;}return;}
   if(t.dataset.relike){const k=t.dataset.relike;taste.undone=(taste.undone||[]).concat(k);taste.liked.push(k);
     const ids=k.split(",");const a=byId(S.anchor);mine=mine.concat({id:"m"+Date.now(),name:"With the "+(a?a.name.toLowerCase():"outfit"),itemIds:ids,occasions:[S.sOcc],why:"You changed your mind and liked this."});LS.set("mine",mine);LS.set("taste",taste);render();return;}
   if(t.dataset.nope){const o=S.lastRes[+t.dataset.nope];rate(o,-1);S.rated=(S.rated||[]).concat(o.key);render();return;}
   if(t.id==="resetTaste"){if(!t.dataset.armed){t.dataset.armed="1";t.textContent="Tap again to forget everything it learned";return;}
     taste={w:{},n:0,liked:[],disliked:[],ignoreSaved:true};LS.set("taste",taste);S.rated=[];render();return;}
-  if(t.id==="copyTaste"){const txt="Please save my wardrobe taste into the app:\n"+JSON.stringify({...taste,built:mine.filter(isBuilt),hidden});
+  if(t.id==="copyTaste"){const txt="Please save my wardrobe taste into the app:\n"+JSON.stringify({...taste,built:mine.filter(isBuilt),hidden,finish:fin});
     try{await navigator.clipboard.writeText(txt);S.copied="taste";render();setTimeout(()=>{S.copied="";render();},2500);}
     catch(err){sheetBody.innerHTML=`<div class="sheet-head"><h2>Copy this</h2><button class="iconbtn" type="button" data-close>Close</button></div><textarea rows="8" style="width:100%" readonly>${esc(txt)}</textarea>`;if(!sheet.open)sheet.showModal();sheetBody.querySelector("textarea").select();}
     return;}

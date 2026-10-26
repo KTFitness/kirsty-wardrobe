@@ -217,16 +217,16 @@ function suggest(anchor,items,ctx){
     const needLayer=forceLayer||cool&&!pieces.some(isWarmLayer)&&(pieces.some(sleeveless)||season==="Winter"||pieces.some(p=>p.category==="dresses"));
     if(needLayer&&layers.length&&!(forceLayer&&pieces.includes(WI))){const L=layers.filter(l=>!pieces.includes(l)).map(l=>[l,SC(pieces.concat(l),ctx).s+(rnd()*E)*0.8]).sort((a,b)=>b[1]-a[1])[0];if(L)pieces.push(L[0]);}
     let alts=[];
-    if(!pieces.some(p=>p.category==="shoes")&&shoes.length){
+    if(!ctx.noAccessories&&!pieces.some(p=>p.category==="shoes")&&shoes.length){
       const sh=shoes.map(x=>[x,SC(pieces.concat(x),ctx).s+(rnd()*E)*1.0]).sort((a,b)=>b[1]-a[1]);if(sh[0])pieces.push(sh[0][0]);alts=sh.slice(1,3).map(x=>x[0]);}
-    if(bags.length&&!pieces.some(p=>p.category==="bags")){
+    if(!ctx.noAccessories&&bags.length&&!pieces.some(p=>p.category==="bags")){
       const bg=bags.map(x=>[x,SC(pieces.concat(x),ctx).s]).sort((a,b)=>b[1]-a[1])[0];if(bg&&bg[1]>-1)pieces.push(bg[0]);}
     const sc=SC(pieces,ctx);
     results.push({pieces,alts,s:sc.s+(rnd()*E)*0.6,best:sc.best,patNote:sc.patNote});
   }
   results.sort((a,b)=>b.s-a.s);
   const kOf=ps=>ps.map(p=>p.id).sort().join(",");
-  for(const r of results){if(!excl0.has(kOf(r.pieces))||exCore.has(coreKey(r.pieces)))continue;
+  if(!ctx.noAccessories)for(const r of results){if(!excl0.has(kOf(r.pieces))||exCore.has(coreKey(r.pieces)))continue;
     const sh=r.pieces.find(p=>p.category==="shoes"&&p!==anchor),bg=r.pieces.find(p=>p.category==="bags"&&p!==anchor);
     const shoeAlts=shoes.filter(x=>x!==sh).map(x=>[x,SC(r.pieces.map(p=>p===sh?x:p),ctx).s]).sort((a,b)=>b[1]-a[1]).map(x=>x[0]);
     let done=false;for(const x of shoeAlts){const ps=r.pieces.map(p=>p===sh?x:p);if(!excl0.has(kOf(ps))){r.pieces=ps;r.variant=true;done=true;break;}}
@@ -274,5 +274,12 @@ function suggest(anchor,items,ctx){
   return out;
 }
 function mulberry(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
-window.Stylist={coreKey:ps=>ps.filter(p=>!["shoes","bags","accessories"].includes(p.category)).map(p=>p.id).sort().join(","),suggest,features,families,pkind,formality,hemTip,hairTip};
+
+function finish(pieces,items,ctx){ctx=ctx||{};ctx.W=ctx.W||{};const season=ctx.season;
+  const base=pieces.filter(p=>!["shoes","bags"].includes(p.category));
+  const sc=ps=>(ctx.rules?score(ps,ctx).s:0)+learned(ps,ctx)+hemScore(ps);
+  const shoes=items.filter(i=>i.category==="shoes"&&inSeason(i,season)).map(x=>[x,sc(base.concat(x))]).sort((a,b)=>b[1]-a[1]).map(x=>x[0]);
+  const best=shoes[0];const bags=items.filter(i=>i.category==="bags").map(x=>[x,sc(base.concat(best?[best,x]:[x]))]).sort((a,b)=>b[1]-a[1]).map(x=>x[0]);
+  return {shoes,bags};}
+window.Stylist={finish,coreKey:ps=>ps.filter(p=>!["shoes","bags","accessories"].includes(p.category)).map(p=>p.id).sort().join(","),suggest,features,families,pkind,formality,hemTip,hairTip};
 })();
