@@ -3125,6 +3125,51 @@
    "_f": [
     "black"
    ]
+  },
+  {
+   "id": "basic-black-wide-linen-pants",
+   "name": "Black wide-leg linen pants (several pairs)",
+   "category": "trousers",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "linen",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-black-wide-linen-pants.svg",
+   "basic": true,
+   "shape": "wide",
+   "_f": [
+    "black"
+   ]
+  },
+  {
+   "id": "basic-black-bamboo-wide-crop",
+   "name": "Black bamboo wide-leg pants, above ankle",
+   "category": "trousers",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "bamboo",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-black-bamboo-wide-crop.svg",
+   "basic": true,
+   "shape": "widecrop",
+   "_f": [
+    "black"
+   ]
   }
  ],
  "outfits": [
@@ -3434,13 +3479,11 @@
    "itemIds": [
     "basic-black-tank",
     "basic-white-tank",
-    "basic-black-dress-pants",
+    "basic-black-bamboo-wide-crop",
     "basic-black-flats",
     "basic-black-crossbody"
    ],
-   "missing": [
-    "Black wide-leg cropped trousers"
-   ],
+   "missing": [],
    "createdAt": 5
   },
   {
@@ -3450,7 +3493,7 @@
    "summary": "Black cropped wide-leg jumpsuit, denim jacket, tan slides and tan bag.",
    "itemIds": [
     "basic-black-tank",
-    "basic-black-dress-pants",
+    "basic-black-bamboo-wide-crop",
     "basic-denim-jacket",
     "basic-tan-sandals",
     "basic-tan-crossbody"
@@ -3467,12 +3510,11 @@
    "summary": "Sleeveless striped mock-neck top, black wide tie-waist trousers, embroidered mules.",
    "itemIds": [
     "navy-stripe-long-sleeve-top",
-    "basic-black-dress-pants",
+    "basic-black-wide-linen-pants",
     "basic-tan-sandals"
    ],
    "missing": [
     "Sleeveless black and white stripe top",
-    "Black wide-leg linen trousers",
     "Embroidered mules"
    ],
    "createdAt": 7
@@ -3485,13 +3527,11 @@
    "itemIds": [
     "basic-denim-jacket",
     "navy-stripe-long-sleeve-top",
-    "basic-black-dress-pants",
+    "basic-black-wide-linen-pants",
     "basic-white-sneakers",
     "basic-black-crossbody"
    ],
-   "missing": [
-    "Black wide-leg trousers"
-   ],
+   "missing": [],
    "createdAt": 8
   },
   {
@@ -3501,12 +3541,10 @@
    "summary": "Black sleeveless top, black wide cropped trousers, black loafers.",
    "itemIds": [
     "zara-black-sleeveless-knit",
-    "basic-black-dress-pants",
+    "basic-black-bamboo-wide-crop",
     "basic-black-loafers"
    ],
-   "missing": [
-    "Black wide-leg cropped trousers"
-   ],
+   "missing": [],
    "createdAt": 9
   },
   {
@@ -3617,10 +3655,10 @@
    "cp:black+green": 1,
    "ip:basic-black-loafers|basic-green-cardigan": 0.5,
    "ip:basic-black-crossbody|basic-green-cardigan": 0.5,
-   "it:basic-black-dress-pants": 3,
-   "ip:basic-black-dress-pants|basic-black-loafers": 1,
+   "it:basic-black-dress-pants": 0.5,
+   "ip:basic-black-dress-pants|basic-black-loafers": 0.5,
    "cp:black+black": 4,
-   "ip:basic-black-crossbody|basic-black-dress-pants": 1.5,
+   "ip:basic-black-crossbody|basic-black-dress-pants": 0.5,
    "it:basic-black-loafers": 1.5,
    "ip:basic-black-crossbody|basic-black-loafers": 0.5,
    "it:basic-black-crossbody": 2,
@@ -3685,43 +3723,50 @@
    "so:Everyday|kitten heels": 1,
    "it:basic-black-tank": 1,
    "ip:basic-black-tank|basic-white-tank": 0.5,
-   "ip:basic-black-dress-pants|basic-black-tank": 1,
+   "ip:basic-black-bamboo-wide-crop|basic-black-tank": 1,
    "ip:basic-black-flats|basic-black-tank": 0.5,
    "ip:basic-black-crossbody|basic-black-tank": 0.5,
    "it:basic-white-tank": 1,
-   "ip:basic-black-dress-pants|basic-white-tank": 0.5,
+   "ip:basic-black-bamboo-wide-crop|basic-white-tank": 0.5,
    "ip:basic-black-flats|basic-white-tank": 0.5,
    "ip:basic-black-crossbody|basic-white-tank": 0.5,
-   "ip:basic-black-dress-pants|basic-black-flats": 0.5,
+   "it:basic-black-bamboo-wide-crop": 1.5,
+   "ip:basic-black-bamboo-wide-crop|basic-black-flats": 0.5,
+   "ip:basic-black-bamboo-wide-crop|basic-black-crossbody": 0.5,
    "it:basic-black-flats": 0.5,
    "ip:basic-black-crossbody|basic-black-flats": 0.5,
    "ip:basic-black-tank|basic-denim-jacket": 0.5,
    "ip:basic-black-tank|basic-tan-sandals": 0.5,
    "cp:black+tan": 1,
    "ip:basic-black-tank|basic-tan-crossbody": 0.5,
-   "ip:basic-black-dress-pants|basic-denim-jacket": 1,
-   "ip:basic-black-dress-pants|basic-tan-sandals": 1,
-   "ip:basic-black-dress-pants|basic-tan-crossbody": 0.5,
+   "ip:basic-black-bamboo-wide-crop|basic-denim-jacket": 0.5,
+   "ip:basic-black-bamboo-wide-crop|basic-tan-sandals": 0.5,
+   "ip:basic-black-bamboo-wide-crop|basic-tan-crossbody": 0.5,
    "ip:basic-denim-jacket|basic-tan-sandals": 0.5,
    "ip:basic-denim-jacket|basic-tan-crossbody": 1,
    "it:basic-tan-sandals": 1,
    "ip:basic-tan-crossbody|basic-tan-sandals": 0.5,
    "it:navy-stripe-long-sleeve-top": 1,
-   "ip:basic-black-dress-pants|navy-stripe-long-sleeve-top": 1,
+   "ip:basic-black-wide-linen-pants|navy-stripe-long-sleeve-top": 1,
    "ip:basic-tan-sandals|navy-stripe-long-sleeve-top": 0.5,
    "cp:navy+tan": 0.5,
+   "it:basic-black-wide-linen-pants": 1,
+   "ip:basic-black-wide-linen-pants|basic-tan-sandals": 0.5,
    "pat:plain+stripe": 1,
    "ip:basic-denim-jacket|navy-stripe-long-sleeve-top": 0.5,
+   "ip:basic-black-wide-linen-pants|basic-denim-jacket": 0.5,
    "ip:basic-denim-jacket|basic-white-sneakers": 1,
    "ip:basic-black-crossbody|basic-denim-jacket": 0.5,
    "ip:basic-white-sneakers|navy-stripe-long-sleeve-top": 0.5,
    "ip:basic-black-crossbody|navy-stripe-long-sleeve-top": 0.5,
-   "ip:basic-black-dress-pants|basic-white-sneakers": 0.5,
+   "ip:basic-black-wide-linen-pants|basic-white-sneakers": 0.5,
+   "ip:basic-black-crossbody|basic-black-wide-linen-pants": 0.5,
    "it:basic-white-sneakers": 1.5,
    "ip:basic-black-crossbody|basic-white-sneakers": 0.5,
    "it:zara-black-sleeveless-knit": 0.5,
-   "ip:basic-black-dress-pants|zara-black-sleeveless-knit": 0.5,
+   "ip:basic-black-bamboo-wide-crop|zara-black-sleeveless-knit": 0.5,
    "ip:basic-black-loafers|zara-black-sleeveless-knit": 0.5,
+   "ip:basic-black-bamboo-wide-crop|basic-black-loafers": 0.5,
    "ip:basic-denim-jacket|basic-grey-marle-jumper": 0.5,
    "cp:denim+grey": 0.5,
    "ip:basic-denim-jacket|green-wide-leg-cords": 0.5,
