@@ -2218,7 +2218,7 @@
     "Autumn",
     "Winter"
    ],
-   "notes": "Crew neck, extended shoulders",
+   "notes": "Fitted, crew neck. Your everyday white tank.",
    "img": "img/zara-white-sleeveless-knit.webp",
    "_f": [
     "white"
@@ -2239,7 +2239,7 @@
     "Autumn",
     "Winter"
    ],
-   "notes": "Crew neck, extended shoulders",
+   "notes": "Fitted, crew neck. Your everyday black tank.",
    "img": "img/zara-black-sleeveless-knit.webp",
    "_f": [
     "black"
@@ -2393,8 +2393,8 @@
     "Autumn",
     "Winter"
    ],
-   "notes": "Basic you own. Your photo.",
-   "img": "img/white-crew-tee.webp",
+   "notes": "Your photo.",
+   "img": "img/white-tee-plain.webp",
    "basic": true,
    "shape": "tee",
    "_f": [
@@ -2504,8 +2504,8 @@
     "Autumn",
     "Winter"
    ],
-   "notes": "Basic you already own. Drawn picture.",
-   "img": "img/basics/basic-black-turtleneck.svg",
+   "notes": "Stand-in photo of a similar piece. Send your own to replace it.",
+   "img": "img/black-turtleneck.webp",
    "basic": true,
    "shape": "turtle",
    "_f": [
@@ -2595,8 +2595,8 @@
     "Autumn",
     "Winter"
    ],
-   "notes": "Basic you already own. Drawn picture.",
-   "img": "img/basics/basic-blue-straight-jeans.svg",
+   "notes": "Stand-in photo of a similar piece. Send your own to replace it.",
+   "img": "img/blue-straight-jeans-full.webp",
    "basic": true,
    "shape": "straight",
    "_f": [
@@ -2617,8 +2617,8 @@
     "Summer",
     "Autumn"
    ],
-   "notes": "Basic you already own. Drawn picture.",
-   "img": "img/basics/basic-blue-straight-jeans-cropped.svg",
+   "notes": "Stand-in photo of a similar piece. Send your own to replace it.",
+   "img": "img/blue-straight-jeans-cuffed.webp",
    "basic": true,
    "shape": "cropped",
    "_f": [
@@ -2928,8 +2928,8 @@
     "Winter",
     "Spring"
    ],
-   "notes": "Basic you own. Drawn picture.",
-   "img": "img/basics/basic-black-ankle-boots-flat.svg",
+   "notes": "Stand-in photo of a similar piece. Send your own to replace it.",
+   "img": "img/black-chunky-ankle-boots.webp",
    "basic": true,
    "shape": "ankle",
    "_f": [
@@ -3090,8 +3090,8 @@
     "Autumn",
     "Winter"
    ],
-   "notes": "Basic you already own. Drawn picture.",
-   "img": "img/basics/basic-black-loafers.svg",
+   "notes": "Stand-in photo of a similar piece. Send your own to replace it.",
+   "img": "img/black-loafers.webp",
    "basic": true,
    "shape": "loafer",
    "_f": [
@@ -3288,8 +3288,8 @@
     "Winter",
     "Spring"
    ],
-   "notes": "Basic you already own. Drawn picture.",
-   "img": "img/basics/basic-denim-jacket.svg",
+   "notes": "Stand-in photo of a similar piece. Send your own to replace it.",
+   "img": "img/denim-jacket.webp",
    "basic": true,
    "shape": "jacket",
    "_f": [
@@ -3578,51 +3578,6 @@
    "shape": "tee",
    "_f": [
     "grey"
-   ]
-  },
-  {
-   "id": "basic-white-tank",
-   "name": "White tank",
-   "category": "tops",
-   "colours": [
-    "white"
-   ],
-   "pattern": "solid",
-   "fabric": "",
-   "seasons": [
-    "Spring",
-    "Summer",
-    "Autumn"
-   ],
-   "notes": "Basic you already own. Drawn picture.",
-   "img": "img/basics/basic-white-tank.svg",
-   "basic": true,
-   "shape": "tank",
-   "_f": [
-    "white"
-   ]
-  },
-  {
-   "id": "basic-black-tank",
-   "name": "Black tank",
-   "category": "tops",
-   "colours": [
-    "black"
-   ],
-   "pattern": "solid",
-   "fabric": "",
-   "seasons": [
-    "Spring",
-    "Summer",
-    "Autumn",
-    "Winter"
-   ],
-   "notes": "Basic you already own. Drawn picture.",
-   "img": "img/basics/basic-black-tank.svg",
-   "basic": true,
-   "shape": "tank",
-   "_f": [
-    "black"
    ]
   },
   {
@@ -3976,8 +3931,8 @@
    "img": "img/inspo/inspo-06.webp",
    "summary": "Black tank over a white tank, black wide cropped trousers, black slides.",
    "itemIds": [
-    "basic-black-tank",
-    "basic-white-tank",
+    "zara-black-sleeveless-knit",
+    "zara-white-sleeveless-knit",
     "basic-black-bamboo-wide-crop",
     "basic-black-flats",
     "basic-black-crossbody"
@@ -3991,7 +3946,7 @@
    "img": "img/inspo/inspo-07.webp",
    "summary": "Black cropped wide-leg jumpsuit, denim jacket, tan slides and tan bag.",
    "itemIds": [
-    "basic-black-tank",
+    "zara-black-sleeveless-knit",
     "basic-black-bamboo-wide-crop",
     "basic-denim-jacket",
     "basic-tan-sandals",
@@ -4114,7 +4069,7 @@
    "img": "img/inspo/inspo-15.webp",
    "summary": "White rib tank, dark wide-leg jeans, white sneakers.",
    "itemIds": [
-    "basic-white-tank",
+    "zara-white-sleeveless-knit",
     "basic-blue-wide-jeans",
     "basic-white-sneakers"
    ],
@@ -4634,7 +4589,7 @@
    "img": "img/inspo/inspo-45.webp",
    "summary": "White rib tank tucked in, your check skirt, blue gingham sandals, denim shoulder bag.",
    "itemIds": [
-    "basic-white-tank",
+    "zara-white-sleeveless-knit",
     "gorman-check-skirt",
     "basic-white-flats",
     "basic-tan-crossbody"
@@ -4945,7 +4900,7 @@
    "summary": "Fitted denim jacket over a white rib tank, dark flared jeans, white strappy sandals.",
    "itemIds": [
     "basic-denim-jacket",
-    "basic-white-tank",
+    "zara-white-sleeveless-knit",
     "basic-blue-wide-jeans",
     "basic-white-flats"
    ],
@@ -5851,7 +5806,7 @@
    "img": "img/inspo/inspo-118.webp",
    "summary": "Brown and cream stripe cardigan, black lace cami, white full midi skirt, white sneakers, black woven bag.",
    "itemIds": [
-    "basic-black-tank",
+    "zara-black-sleeveless-knit",
     "basic-white-sneakers",
     "basic-black-crossbody"
    ],
@@ -5884,7 +5839,7 @@
    "img": "img/inspo/inspo-120.webp",
    "summary": "Brown and cream stripe cardigan, white V-neck tank, olive wide trousers, black woven flats, straw tote.",
    "itemIds": [
-    "basic-white-tank",
+    "zara-white-sleeveless-knit",
     "green-wide-leg-cords",
     "basic-black-flats",
     "mimco-raffia-clutch"
@@ -5920,7 +5875,7 @@
    "summary": "Chunky cream cardigan, white tank, olive wide trousers, cream sneakers, straw tote.",
    "itemIds": [
     "basic-white-cardigan",
-    "basic-white-tank",
+    "zara-white-sleeveless-knit",
     "green-wide-leg-cords",
     "basic-white-sneakers",
     "mimco-raffia-clutch"
@@ -5936,7 +5891,7 @@
    "img": "img/inspo/inspo-123.webp",
    "summary": "Navy cable cardigan, white tank, olive wide trousers, brown suede bag, brown mesh flats.",
    "itemIds": [
-    "basic-white-tank",
+    "zara-white-sleeveless-knit",
     "green-wide-leg-cords",
     "basic-tan-flats",
     "basic-tan-crossbody"
@@ -6054,7 +6009,7 @@
    "img": "img/inspo/inspo-130.webp",
    "summary": "Taupe cardigan with orange stripes and gold buttons, white tank, barrel jeans, tan loafers.",
    "itemIds": [
-    "basic-white-tank",
+    "zara-white-sleeveless-knit",
     "basic-blue-wide-jeans",
     "basic-tan-flats"
    ],
@@ -6170,7 +6125,7 @@
    "img": "img/inspo/inspo-137.webp",
    "summary": "Navy button waistcoat as a top, beige full midi skirt, butter yellow flats, brown clutch.",
    "itemIds": [
-    "basic-black-tank",
+    "zara-black-sleeveless-knit",
     "basic-tan-crossbody"
    ],
    "missing": [
@@ -7013,7 +6968,7 @@
    "summary": "Chambray shirt open over a white tank, black leggings, black slide sandals, black crossbody.",
    "itemIds": [
     "chambray-shirt",
-    "basic-white-tank",
+    "zara-white-sleeveless-knit",
     "basic-black-leggings",
     "basic-black-flats",
     "basic-black-crossbody"
@@ -7028,7 +6983,7 @@
    "summary": "Light denim shirt open over a white rib tank, pink stripe paperbag shorts, white platform sneakers.",
    "itemIds": [
     "chambray-shirt",
-    "basic-white-tank",
+    "zara-white-sleeveless-knit",
     "pink-folk-print-shorts",
     "basic-white-sneakers"
    ],
@@ -7089,7 +7044,7 @@
    "img": "img/inspo/inspo-195.webp",
    "summary": "White rib tank with black trim, light baggy jeans, white pointed boots.",
    "itemIds": [
-    "basic-white-tank",
+    "zara-white-sleeveless-knit",
     "basic-blue-wide-jeans"
    ],
    "missing": [
@@ -7644,7 +7599,7 @@
    "summary": "Navy double-breasted blazer over a white top, cuffed light jeans, gold sandals, clutch.",
    "itemIds": [
     "boden-navy-military-jacket",
-    "basic-white-tank",
+    "zara-white-sleeveless-knit",
     "basic-blue-straight-jeans-cropped",
     "basic-tan-kitten-heels",
     "basic-tan-crossbody"
@@ -7662,7 +7617,7 @@
    "summary": "Pink tweed jacket over a white top, brown belt, ripped boyfriend jeans, nude heels, tan backpack.",
    "itemIds": [
     "pink-petal-collar-jacket",
-    "basic-white-tank",
+    "zara-white-sleeveless-knit",
     "basic-blue-straight-jeans-cropped",
     "basic-tan-belt",
     "basic-tan-kitten-heels",
@@ -7886,7 +7841,7 @@
    "summary": "Green linen shirt worn open over a white tank, light wide jeans, wooden bead necklace, nude pointed flats.",
    "itemIds": [
     "green-linen-shirt",
-    "basic-white-tank",
+    "zara-white-sleeveless-knit",
     "basic-blue-wide-jeans",
     "basic-tan-flats"
    ],
@@ -7901,7 +7856,7 @@
    "img": "img/inspo/inspo-249.webp",
    "summary": "Fitted rib racer tank, mocha wide-leg trackpants, chunky slides.",
    "itemIds": [
-    "basic-white-tank",
+    "zara-white-sleeveless-knit",
     "basic-tan-sandals"
    ],
    "missing": [
@@ -8024,24 +7979,24 @@
    "ip:basic-black-kitten-heels|basic-blue-wide-jeans": 0.5,
    "it:basic-black-kitten-heels": 1.5,
    "so:Everyday|kitten heels": 9,
-   "it:basic-black-tank": 2,
-   "ip:basic-black-tank|basic-white-tank": 0.5,
-   "ip:basic-black-bamboo-wide-crop|basic-black-tank": 1,
-   "ip:basic-black-flats|basic-black-tank": 0.5,
-   "ip:basic-black-crossbody|basic-black-tank": 1,
-   "it:basic-white-tank": 7.5,
-   "ip:basic-black-bamboo-wide-crop|basic-white-tank": 0.5,
-   "ip:basic-black-flats|basic-white-tank": 1.5,
-   "ip:basic-black-crossbody|basic-white-tank": 1,
+   "it:zara-black-sleeveless-knit": 5,
+   "ip:zara-black-sleeveless-knit|zara-white-sleeveless-knit": 0.5,
+   "ip:basic-black-bamboo-wide-crop|zara-black-sleeveless-knit": 1.5,
+   "ip:basic-black-flats|zara-black-sleeveless-knit": 0.5,
+   "ip:basic-black-crossbody|zara-black-sleeveless-knit": 1.5,
+   "it:zara-white-sleeveless-knit": 10,
+   "ip:basic-black-bamboo-wide-crop|zara-white-sleeveless-knit": 0.5,
+   "ip:basic-black-flats|zara-white-sleeveless-knit": 2,
+   "ip:basic-black-crossbody|zara-white-sleeveless-knit": 2,
    "it:basic-black-bamboo-wide-crop": 2,
    "ip:basic-black-bamboo-wide-crop|basic-black-flats": 0.5,
    "ip:basic-black-bamboo-wide-crop|basic-black-crossbody": 0.5,
    "it:basic-black-flats": 12.5,
    "ip:basic-black-crossbody|basic-black-flats": 5.5,
-   "ip:basic-black-tank|basic-denim-jacket": 0.5,
-   "ip:basic-black-tank|basic-tan-sandals": 0.5,
+   "ip:basic-denim-jacket|zara-black-sleeveless-knit": 0.5,
+   "ip:basic-tan-sandals|zara-black-sleeveless-knit": 1,
    "cp:black+tan": 11,
-   "ip:basic-black-tank|basic-tan-crossbody": 1,
+   "ip:basic-tan-crossbody|zara-black-sleeveless-knit": 2,
    "ip:basic-black-bamboo-wide-crop|basic-denim-jacket": 0.5,
    "ip:basic-black-bamboo-wide-crop|basic-tan-sandals": 0.5,
    "ip:basic-black-bamboo-wide-crop|basic-tan-crossbody": 0.5,
@@ -8066,8 +8021,6 @@
    "ip:basic-black-crossbody|basic-black-wide-linen-pants": 1,
    "it:basic-white-sneakers": 25.5,
    "ip:basic-black-crossbody|basic-white-sneakers": 1.5,
-   "it:zara-black-sleeveless-knit": 3,
-   "ip:basic-black-bamboo-wide-crop|zara-black-sleeveless-knit": 0.5,
    "ip:basic-black-loafers|zara-black-sleeveless-knit": 0.5,
    "ip:basic-black-bamboo-wide-crop|basic-black-loafers": 0.5,
    "ip:basic-denim-jacket|basic-grey-marle-jumper": 0.5,
@@ -8110,8 +8063,8 @@
    "cp:red+red": 11,
    "ip:basic-blue-wide-jeans|basic-red-sneakers": 2,
    "it:basic-red-sneakers": 3.5,
-   "ip:basic-blue-wide-jeans|basic-white-tank": 2.5,
-   "ip:basic-white-sneakers|basic-white-tank": 1.5,
+   "ip:basic-blue-wide-jeans|zara-white-sleeveless-knit": 2.5,
+   "ip:basic-white-sneakers|zara-white-sleeveless-knit": 1.5,
    "ip:basic-blue-wide-jeans|basic-white-sneakers": 3.5,
    "it:gorman-green-cord-jacket": 4.5,
    "ip:basic-black-tee|gorman-green-cord-jacket": 0.5,
@@ -8359,7 +8312,6 @@
    "ip:gorman-striped-skirt|zara-black-sleeveless-knit": 0.5,
    "cp:black+blue": 0.5,
    "ip:basic-tan-flats|zara-black-sleeveless-knit": 0.5,
-   "ip:basic-tan-crossbody|zara-black-sleeveless-knit": 1,
    "ip:basic-tan-flats|gorman-striped-skirt": 0.5,
    "ip:basic-white-tee|daisy-print-linen-shirt": 0.5,
    "cp:white+yellow": 0.5,
@@ -8369,9 +8321,9 @@
    "ip:basic-red-sneakers|red-cotton-shirt": 1,
    "ip:basic-tan-crossbody|red-cotton-shirt": 0.5,
    "ip:basic-red-sneakers|basic-tan-crossbody": 0.5,
-   "ip:basic-white-tank|gorman-check-skirt": 0.5,
-   "ip:basic-white-flats|basic-white-tank": 1,
-   "ip:basic-tan-crossbody|basic-white-tank": 2,
+   "ip:gorman-check-skirt|zara-white-sleeveless-knit": 0.5,
+   "ip:basic-white-flats|zara-white-sleeveless-knit": 1,
+   "ip:basic-tan-crossbody|zara-white-sleeveless-knit": 2.5,
    "ip:basic-white-flats|gorman-check-skirt": 1,
    "it:red-denim-jacket": 0.5,
    "ip:cos-pink-funnel-neck-sweat|red-denim-jacket": 0.5,
@@ -8480,7 +8432,7 @@
    "ip:basic-white-wide-jeans|chambray-shirt": 1.5,
    "ip:basic-tan-flats|chambray-shirt": 2,
    "ip:basic-tan-flats|basic-white-wide-jeans": 2,
-   "ip:basic-denim-jacket|basic-white-tank": 0.5,
+   "ip:basic-denim-jacket|zara-white-sleeveless-knit": 0.5,
    "ip:basic-blue-wide-jeans|basic-denim-jacket": 1,
    "cp:denim+denim": 3,
    "ip:basic-denim-jacket|basic-white-flats": 1,
@@ -8692,10 +8644,10 @@
    "ip:basic-tan-flats|brown-mock-neck-long-sleeve": 0.5,
    "cp:brown+tan": 0.5,
    "ip:basic-tan-crossbody|brown-mock-neck-long-sleeve": 0.5,
-   "ip:basic-black-tank|basic-white-sneakers": 0.5,
+   "ip:basic-white-sneakers|zara-black-sleeveless-knit": 1,
    "ip:basic-denim-jacket|mimco-raffia-clutch": 1,
-   "ip:basic-white-tank|green-wide-leg-cords": 1.5,
-   "ip:basic-white-tank|mimco-raffia-clutch": 1,
+   "ip:green-wide-leg-cords|zara-white-sleeveless-knit": 1.5,
+   "ip:mimco-raffia-clutch|zara-white-sleeveless-knit": 1,
    "ip:basic-black-flats|green-wide-leg-cords": 1,
    "cp:black+mint": 1,
    "ip:green-wide-leg-cords|mimco-raffia-clutch": 1.5,
@@ -8706,11 +8658,11 @@
    "ip:basic-white-tee|green-wide-leg-cords": 0.5,
    "ip:basic-black-crossbody|green-wide-leg-cords": 0.5,
    "it:basic-white-cardigan": 0.5,
-   "ip:basic-white-cardigan|basic-white-tank": 0.5,
+   "ip:basic-white-cardigan|zara-white-sleeveless-knit": 0.5,
    "ip:basic-white-cardigan|green-wide-leg-cords": 0.5,
    "ip:basic-white-cardigan|basic-white-sneakers": 0.5,
    "ip:basic-white-cardigan|mimco-raffia-clutch": 0.5,
-   "ip:basic-tan-flats|basic-white-tank": 1.5,
+   "ip:basic-tan-flats|zara-white-sleeveless-knit": 1.5,
    "ip:basic-grey-cardigan|green-wide-leg-cords": 0.5,
    "ip:green-wide-leg-cords|stripe-2-smocked-tank": 0.5,
    "cp:blue+mint": 0.5,
@@ -8724,9 +8676,8 @@
    "ip:basic-white-straight-jeans-cropped|mimco-raffia-clutch": 0.5,
    "ip:basic-black-belt|basic-blue-straight-jeans": 0.5,
    "ip:basic-black-belt|basic-white-sneakers": 0.5,
-   "it:zara-white-sleeveless-knit": 2.5,
    "ip:black-big-spot-tie-skirt|zara-white-sleeveless-knit": 0.5,
-   "ip:basic-tan-sandals|zara-white-sleeveless-knit": 1,
+   "ip:basic-tan-sandals|zara-white-sleeveless-knit": 1.5,
    "ip:basic-tan-sandals|black-big-spot-tie-skirt": 0.5,
    "ip:basic-black-wide-linen-pants|basic-white-tee": 0.5,
    "ip:basic-black-flats|basic-black-wide-linen-pants": 1,
@@ -8814,11 +8765,7 @@
    "ip:basic-black-flats|charcoal-velvet-skirt": 0.5,
    "ip:basic-black-crossbody|charcoal-velvet-skirt": 0.5,
    "ip:basic-white-wide-jeans|zara-black-sleeveless-knit": 0.5,
-   "ip:basic-white-sneakers|zara-black-sleeveless-knit": 0.5,
-   "ip:basic-tan-crossbody|zara-white-sleeveless-knit": 0.5,
    "ip:basic-black-wide-linen-pants|zara-white-sleeveless-knit": 0.5,
-   "ip:basic-black-flats|zara-white-sleeveless-knit": 0.5,
-   "ip:basic-black-crossbody|zara-white-sleeveless-knit": 1,
    "ip:basic-black-midi-skirt|basic-black-tee": 0.5,
    "ip:basic-black-ankle-boots-flat|basic-black-tee": 0.5,
    "ip:basic-black-ankle-boots-flat|basic-black-midi-skirt": 0.5,
@@ -8851,11 +8798,11 @@
    "ip:basic-black-crossbody|guns-n-roses-band-tee": 0.5,
    "ip:basic-black-leggings|basic-white-sneakers": 0.5,
    "ip:basic-black-crossbody|basic-black-leggings": 1,
-   "ip:basic-white-tank|chambray-shirt": 1,
-   "ip:basic-black-leggings|basic-white-tank": 0.5,
+   "ip:chambray-shirt|zara-white-sleeveless-knit": 1,
+   "ip:basic-black-leggings|zara-white-sleeveless-knit": 0.5,
    "ip:basic-black-flats|basic-black-leggings": 0.5,
    "ip:chambray-shirt|pink-folk-print-shorts": 0.5,
-   "ip:basic-white-tank|pink-folk-print-shorts": 0.5,
+   "ip:pink-folk-print-shorts|zara-white-sleeveless-knit": 0.5,
    "ip:basic-white-sneakers|pink-folk-print-shorts": 0.5,
    "ip:basic-grey-marle-jumper|gorman-green-cord-jacket": 1,
    "cp:forest+grey": 1,
@@ -8899,36 +8846,33 @@
    "ip:basic-denim-shorts|basic-red-sneakers": 0.5,
    "ip:basic-blue-straight-jeans-cropped|basic-tan-kitten-heels": 2,
    "ip:basic-blue-straight-jeans-cropped|zara-black-sleeveless-knit": 0.5,
-   "ip:basic-black-crossbody|zara-black-sleeveless-knit": 0.5,
    "it:basic-grey-tee": 0.5,
    "ip:basic-blue-straight-jeans-cropped|basic-grey-tee": 0.5,
    "ip:basic-black-blazer|basic-black-tee": 0.5,
    "ip:basic-black-blazer|basic-blue-straight-jeans-cropped": 0.5,
    "ip:basic-black-blazer|basic-black-sneakers": 0.5,
    "ip:basic-black-blazer|basic-black-crossbody": 0.5,
-   "ip:basic-white-tank|boden-navy-military-jacket": 0.5,
+   "ip:boden-navy-military-jacket|zara-white-sleeveless-knit": 0.5,
    "ip:basic-blue-straight-jeans-cropped|boden-navy-military-jacket": 0.5,
    "ip:basic-tan-kitten-heels|boden-navy-military-jacket": 0.5,
    "ip:basic-tan-crossbody|boden-navy-military-jacket": 0.5,
-   "ip:basic-blue-straight-jeans-cropped|basic-white-tank": 1,
-   "ip:basic-tan-kitten-heels|basic-white-tank": 1,
-   "ip:basic-white-tank|pink-petal-collar-jacket": 0.5,
+   "ip:basic-blue-straight-jeans-cropped|zara-white-sleeveless-knit": 1,
+   "ip:basic-tan-kitten-heels|zara-white-sleeveless-knit": 1,
+   "ip:pink-petal-collar-jacket|zara-white-sleeveless-knit": 0.5,
    "ip:basic-blue-straight-jeans-cropped|pink-petal-collar-jacket": 0.5,
    "ip:basic-tan-belt|pink-petal-collar-jacket": 0.5,
    "ip:basic-tan-kitten-heels|pink-petal-collar-jacket": 0.5,
    "ip:basic-tan-crossbody|pink-petal-collar-jacket": 0.5,
-   "ip:basic-tan-belt|basic-white-tank": 0.5,
+   "ip:basic-tan-belt|zara-white-sleeveless-knit": 0.5,
    "ip:basic-blue-straight-jeans-cropped|basic-tan-belt": 0.5,
    "ip:basic-blue-straight-jeans-cropped|basic-red-ballet-flats": 1,
    "ip:basic-white-flats|guns-n-roses-band-tee": 0.5,
    "pat:print": 0.5,
    "ip:basic-black-flats|basic-white-wide-jeans": 0.5,
-   "ip:basic-tan-sandals|zara-black-sleeveless-knit": 0.5,
    "ip:basic-blue-straight-jeans-cropped|sass-rust-cord-jacket": 0.5,
-   "ip:basic-white-tank|green-linen-shirt": 0.5,
+   "ip:green-linen-shirt|zara-white-sleeveless-knit": 0.5,
    "ip:basic-blue-wide-jeans|green-linen-shirt": 0.5,
-   "ip:basic-tan-flats|green-linen-shirt": 0.5,
-   "ip:basic-tan-sandals|basic-white-tank": 0.5
+   "ip:basic-tan-flats|green-linen-shirt": 0.5
   },
   "n": 251,
   "source": "251 inspiration photos, 26 Oct 2026"
