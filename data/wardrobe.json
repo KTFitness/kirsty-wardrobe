@@ -1017,6 +1017,374 @@
    ],
    "notes": "Boat neck, sleeveless",
    "img": "img/orange-knit-tank.webp"
+  },
+  {
+   "id": "green-topstitched-midi-skirt",
+   "name": "Green topstitched midi skirt",
+   "category": "skirts",
+   "colours": [
+    "emerald green",
+    "white stitching"
+   ],
+   "pattern": "solid, contrast topstitching",
+   "fabric": "cotton drill, probably",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "A-line panelled midi. Picture is a crop of the listing photo.",
+   "img": "img/green-topstitched-midi-skirt.webp"
+  },
+  {
+   "id": "zara-red-stripe-halter-knit",
+   "name": "Zara red micro-stripe halter knit",
+   "category": "knitwear",
+   "colours": [
+    "red",
+    "white"
+   ],
+   "pattern": "micro stripe",
+   "fabric": "fine knit, fibre unknown",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Racer-cut halter neck, solid red trim",
+   "img": "img/zara-red-stripe-halter-knit.webp"
+  },
+  {
+   "id": "zara-cream-green-stripe-tee",
+   "name": "Zara cream and green stripe long-sleeve tee",
+   "category": "tops",
+   "colours": [
+    "cream",
+    "bottle green"
+   ],
+   "pattern": "Breton stripe",
+   "fabric": "cotton jersey, probably",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Boxy, dropped shoulder. Picture is a crop of the listing photo.",
+   "img": "img/zara-cream-green-stripe-tee.webp"
+  },
+  {
+   "id": "orange-stripe-halter-top",
+   "name": "Orange stripe draped halter top",
+   "category": "tops",
+   "colours": [
+    "orange",
+    "white"
+   ],
+   "pattern": "diagonal stripe",
+   "fabric": "satin, fibre unknown",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "High halter neck, wrap-drape front, bare back. Picture is a crop of the listing photo.",
+   "img": "img/orange-stripe-halter-top.webp"
+  },
+  {
+   "id": "cos-orange-stripe-tee",
+   "name": "COS orange stripe tee",
+   "category": "tops",
+   "colours": [
+    "orange",
+    "white"
+   ],
+   "pattern": "fine stripe, solid orange neckband",
+   "fabric": "cotton jersey, probably",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Boxy short sleeves",
+   "img": "img/cos-orange-stripe-tee.webp"
+  },
+  {
+   "id": "ghanda-green-check-cardigan",
+   "name": "Ghanda green checkerboard knit cardigan",
+   "category": "knitwear",
+   "colours": [
+    "apple green",
+    "oatmeal"
+   ],
+   "pattern": "checkerboard",
+   "fabric": "knit, fibre unknown",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Polo collar, green buttons, cropped",
+   "img": "img/ghanda-green-check-cardigan.webp"
+  },
+  {
+   "id": "blue-broderie-scallop-top",
+   "name": "Blue broderie scallop top",
+   "category": "tops",
+   "colours": [
+    "cornflower blue"
+   ],
+   "pattern": "broderie anglaise",
+   "fabric": "cotton, probably",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Elbow sleeves, scalloped hems, back button",
+   "img": "img/blue-broderie-scallop-top.webp"
+  },
+  {
+   "id": "pale-blue-cutwork-puff-shirt",
+   "name": "Pale blue cutwork puff-sleeve shirt",
+   "category": "tops",
+   "colours": [
+    "pale blue",
+    "white"
+   ],
+   "pattern": "cutwork embroidery",
+   "fabric": "cotton, probably",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Collared, puff sleeves, button front",
+   "img": "img/pale-blue-cutwork-puff-shirt.webp"
+  },
+  {
+   "id": "mint-broderie-shirt",
+   "name": "Mint broderie long-sleeve shirt",
+   "category": "tops",
+   "colours": [
+    "mint",
+    "white"
+   ],
+   "pattern": "broderie anglaise",
+   "fabric": "cotton, probably",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Collared, balloon sleeves with deep cuffs. Picture is a crop of the listing photo.",
+   "img": "img/mint-broderie-shirt.webp"
+  },
+  {
+   "id": "green-crochet-polo",
+   "name": "Green crochet polo",
+   "category": "knitwear",
+   "colours": [
+    "green"
+   ],
+   "pattern": "open bobble crochet",
+   "fabric": "cotton crochet, probably",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Short sleeves, polo collar, scalloped hem. Picture is a crop of the listing photo.",
+   "img": "img/green-crochet-polo.webp"
+  },
+  {
+   "id": "green-stripe-fitted-tee",
+   "name": "Green stripe fitted tee",
+   "category": "tops",
+   "colours": [
+    "green",
+    "white"
+   ],
+   "pattern": "Breton stripe",
+   "fabric": "jersey, fibre unknown",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Fitted, cap sleeves. Picture is a crop of the listing photo.",
+   "img": "img/green-stripe-fitted-tee.webp"
+  },
+  {
+   "id": "sportsgirl-green-gingham-tee",
+   "name": "Sportsgirl green gingham tee",
+   "category": "tops",
+   "colours": [
+    "green",
+    "white"
+   ],
+   "pattern": "gingham",
+   "fabric": "textured knit, fibre unknown",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Boxy crew neck",
+   "img": "img/sportsgirl-green-gingham-tee.webp"
+  },
+  {
+   "id": "green-linen-shirt",
+   "name": "Green linen shirt",
+   "category": "tops",
+   "colours": [
+    "kelly green"
+   ],
+   "pattern": "solid",
+   "fabric": "linen, probably",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Relaxed, roll-tab sleeves, curved hem. Picture is a crop of the listing photo.",
+   "img": "img/green-linen-shirt.webp"
+  },
+  {
+   "id": "green-geometric-knit-polo",
+   "name": "Green geometric knit polo",
+   "category": "knitwear",
+   "colours": [
+    "green",
+    "blue",
+    "cream"
+   ],
+   "pattern": "geometric jacquard",
+   "fabric": "knit, fibre unknown",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Cropped, open blue collar. Picture is a crop of the listing photo.",
+   "img": "img/green-geometric-knit-polo.webp"
+  },
+  {
+   "id": "cobalt-linen-crop-shirt",
+   "name": "Cobalt linen cropped shirt",
+   "category": "tops",
+   "colours": [
+    "cobalt blue"
+   ],
+   "pattern": "solid",
+   "fabric": "linen blend, probably",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "V-neck, chest pocket, horn buttons. Picture is a crop of the listing photo.",
+   "img": "img/cobalt-linen-crop-shirt.webp"
+  },
+  {
+   "id": "pink-green-stripe-knit-tee",
+   "name": "Pink and green stripe knit tee",
+   "category": "knitwear",
+   "colours": [
+    "pale pink",
+    "green"
+   ],
+   "pattern": "stripe with braid motif",
+   "fabric": "fine knit, fibre unknown",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Short sleeves, ribbed hems. Picture is a crop of the listing photo.",
+   "img": "img/pink-green-stripe-knit-tee.webp"
+  },
+  {
+   "id": "red-mock-neck-top",
+   "name": "Red mock-neck long-sleeve top",
+   "category": "tops",
+   "colours": [
+    "red"
+   ],
+   "pattern": "solid",
+   "fabric": "jersey, fibre unknown",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Fitted, centre front seam",
+   "img": "img/red-mock-neck-top.webp"
+  },
+  {
+   "id": "etoile-colour-block-sweatshirt",
+   "name": "Étoile colour-block sweatshirt",
+   "category": "knitwear",
+   "colours": [
+    "pale blue",
+    "pink",
+    "grey"
+   ],
+   "pattern": "colour block, embroidered lettering",
+   "fabric": "cotton fleece, probably",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Striped rib cuffs and hem",
+   "img": "img/etoile-colour-block-sweatshirt.webp"
+  },
+  {
+   "id": "black-pink-trim-shift-dress",
+   "name": "Black shift dress with pink trim",
+   "category": "dresses",
+   "colours": [
+    "black",
+    "hot pink"
+   ],
+   "pattern": "colour-block trim",
+   "fabric": "knit, fibre unknown",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Long sleeves, mock neck, A-line mini. Picture is a crop of the listing photo.",
+   "img": "img/black-pink-trim-shift-dress.webp"
+  },
+  {
+   "id": "red-blue-stripe-knit-vest",
+   "name": "Red and blue stripe knit vest",
+   "category": "knitwear",
+   "colours": [
+    "red",
+    "sky blue"
+   ],
+   "pattern": "wide stripe",
+   "fabric": "fluffy knit, fibre unknown",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Crew neck, side splits",
+   "img": "img/red-blue-stripe-knit-vest.webp"
+  },
+  {
+   "id": "pink-tulip-knit-vest",
+   "name": "Pink tulip knit vest",
+   "category": "knitwear",
+   "colours": [
+    "pink",
+    "red",
+    "green"
+   ],
+   "pattern": "tulip intarsia",
+   "fabric": "knit, fibre unknown",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Crew neck, cropped",
+   "img": "img/pink-tulip-knit-vest.webp"
   }
  ],
  "outfits": [
