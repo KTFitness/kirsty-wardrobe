@@ -2592,8 +2592,8 @@
     "Summer",
     "Autumn"
    ],
-   "notes": "Basic you already own. Drawn picture.",
-   "img": "img/basics/basic-white-wide-jeans.svg",
+   "notes": "Your photo.",
+   "img": "img/white-wide-jeans.webp",
    "basic": true,
    "shape": "wide",
    "_f": [
@@ -2660,8 +2660,8 @@
     "Autumn",
     "Winter"
    ],
-   "notes": "Basic you already own. Drawn picture.",
-   "img": "img/basics/basic-black-straight-jeans.svg",
+   "notes": "Your photo.",
+   "img": "img/black-straight-jeans-full.webp",
    "basic": true,
    "shape": "straight",
    "_f": [
@@ -2670,7 +2670,7 @@
   },
   {
    "id": "basic-black-straight-jeans-cropped",
-   "name": "Black straight jeans, ankle crop",
+   "name": "Black jeans, ankle crop",
    "category": "trousers",
    "colours": [
     "black denim"
@@ -2683,8 +2683,8 @@
     "Autumn",
     "Winter"
    ],
-   "notes": "Basic you already own. Drawn picture.",
-   "img": "img/basics/basic-black-straight-jeans-cropped.svg",
+   "notes": "Your photo.",
+   "img": "img/black-wide-crop-jeans.webp",
    "basic": true,
    "shape": "cropped",
    "_f": [
@@ -2705,8 +2705,8 @@
     "Summer",
     "Autumn"
    ],
-   "notes": "Basic you already own. Drawn picture.",
-   "img": "img/basics/basic-white-straight-jeans.svg",
+   "notes": "Your photo.",
+   "img": "img/white-straight-jeans-full.webp",
    "basic": true,
    "shape": "straight",
    "_f": [
@@ -2726,8 +2726,8 @@
     "Spring",
     "Summer"
    ],
-   "notes": "Basic you already own. Drawn picture.",
-   "img": "img/basics/basic-white-straight-jeans-cropped.svg",
+   "notes": "Your photo.",
+   "img": "img/white-straight-jeans-crop.webp",
    "basic": true,
    "shape": "cropped",
    "_f": [
@@ -2736,7 +2736,7 @@
   },
   {
    "id": "basic-black-dress-pants",
-   "name": "Black dress pants",
+   "name": "Black pleated trousers",
    "category": "trousers",
    "colours": [
     "black"
@@ -2749,8 +2749,8 @@
     "Autumn",
     "Winter"
    ],
-   "notes": "Basic you already own. Drawn picture.",
-   "img": "img/basics/basic-black-dress-pants.svg",
+   "notes": "Your photo.",
+   "img": "img/black-dress-pants.webp",
    "basic": true,
    "shape": "trousers",
    "_f": [
@@ -2771,8 +2771,8 @@
     "Winter",
     "Spring"
    ],
-   "notes": "Basic you already own. Drawn picture.",
-   "img": "img/basics/basic-black-docs.svg",
+   "notes": "Your photo.",
+   "img": "img/black-docs.webp",
    "basic": true,
    "shape": "docs",
    "_f": [
@@ -2781,7 +2781,7 @@
   },
   {
    "id": "basic-black-kitten-heels",
-   "name": "Black kitten heels",
+   "name": "Black open-toe heeled mules",
    "category": "shoes",
    "colours": [
     "black"
@@ -2794,8 +2794,8 @@
     "Autumn",
     "Winter"
    ],
-   "notes": "Basic you already own. Drawn picture.",
-   "img": "img/basics/basic-black-kitten-heels.svg",
+   "notes": "Your photo.",
+   "img": "img/black-mule-heels.webp",
    "basic": true,
    "shape": "kitten",
    "_f": [
@@ -2804,7 +2804,7 @@
   },
   {
    "id": "basic-tan-kitten-heels",
-   "name": "Tan kitten heels",
+   "name": "Tan suede kitten-heel mules",
    "category": "shoes",
    "colours": [
     "tan"
@@ -2817,8 +2817,8 @@
     "Autumn",
     "Winter"
    ],
-   "notes": "Basic you already own. Drawn picture.",
-   "img": "img/basics/basic-tan-kitten-heels.svg",
+   "notes": "Your photo.",
+   "img": "img/tan-kitten-mules.webp",
    "basic": true,
    "shape": "kitten",
    "_f": [
@@ -2827,7 +2827,7 @@
   },
   {
    "id": "basic-black-flats",
-   "name": "Black slides / flats",
+   "name": "Black slides",
    "category": "shoes",
    "colours": [
     "black"
@@ -2840,8 +2840,8 @@
     "Autumn",
     "Winter"
    ],
-   "notes": "Basic you already own. Drawn picture.",
-   "img": "img/basics/basic-black-flats.svg",
+   "notes": "Your photo.",
+   "img": "img/black-slides.webp",
    "basic": true,
    "shape": "flat",
    "_f": [
@@ -2850,7 +2850,7 @@
   },
   {
    "id": "basic-white-flats",
-   "name": "White slides / flats",
+   "name": "White leather slides",
    "category": "shoes",
    "colours": [
     "white"
@@ -2862,8 +2862,8 @@
     "Summer",
     "Autumn"
    ],
-   "notes": "Basic you already own. Drawn picture.",
-   "img": "img/basics/basic-white-flats.svg",
+   "notes": "Your photo.",
+   "img": "img/white-slides.webp",
    "basic": true,
    "shape": "flat",
    "_f": [
@@ -2872,7 +2872,7 @@
   },
   {
    "id": "basic-tan-flats",
-   "name": "Tan slides / flats",
+   "name": "Tan leather slides",
    "category": "shoes",
    "colours": [
     "tan"
@@ -2884,8 +2884,8 @@
     "Summer",
     "Autumn"
    ],
-   "notes": "Basic you already own. Drawn picture.",
-   "img": "img/basics/basic-tan-flats.svg",
+   "notes": "Your photo.",
+   "img": "img/tan-leather-slides.webp",
    "basic": true,
    "shape": "flat",
    "_f": [
@@ -2905,8 +2905,8 @@
     "Autumn",
     "Winter"
    ],
-   "notes": "Basic you already own. Drawn picture.",
-   "img": "img/basics/basic-black-knee-boots-flat.svg",
+   "notes": "Your photo.",
+   "img": "img/black-flat-knee-boots.webp",
    "basic": true,
    "shape": "kneeflat",
    "_f": [
@@ -2936,7 +2936,7 @@
   },
   {
    "id": "basic-black-ankle-boots-flat",
-   "name": "Black flat ankle boots (round and pointed toe)",
+   "name": "Black low-heel square-toe ankle boots",
    "category": "shoes",
    "colours": [
     "black"
@@ -2948,8 +2948,8 @@
     "Winter",
     "Spring"
    ],
-   "notes": "Stand-in photo of a similar piece. Send your own to replace it.",
-   "img": "img/black-chunky-ankle-boots.webp",
+   "notes": "Your photo.",
+   "img": "img/black-square-toe-ankle-boots.webp",
    "basic": true,
    "shape": "ankle",
    "_f": [
@@ -2958,7 +2958,7 @@
   },
   {
    "id": "basic-black-ankle-boots-heel",
-   "name": "Black heeled ankle boots (round and pointed toe)",
+   "name": "Black pointed heeled ankle boots",
    "category": "shoes",
    "colours": [
     "black"
@@ -2970,13 +2970,51 @@
     "Winter",
     "Spring"
    ],
-   "notes": "Basic you own. Drawn picture.",
-   "img": "img/basics/basic-black-ankle-boots-heel.svg",
+   "notes": "Your photo.",
+   "img": "img/black-pointed-heel-ankle-boots.webp",
    "basic": true,
    "shape": "ankleheel",
    "_f": [
     "black"
    ]
+  },
+  {
+   "pattern": "solid",
+   "fabric": "",
+   "basic": true,
+   "notes": "Your photo.",
+   "id": "basic-black-block-heel-ankle-boots",
+   "name": "Black block-heel ankle boots",
+   "category": "shoes",
+   "colours": [
+    "black"
+   ],
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "img": "img/black-block-heel-ankle-boots.webp",
+   "shape": "ankleheel"
+  },
+  {
+   "pattern": "solid",
+   "fabric": "",
+   "basic": true,
+   "notes": "Your photo.",
+   "id": "basic-black-slim-heel-ankle-boots",
+   "name": "Black slim-heel ankle boots",
+   "category": "shoes",
+   "colours": [
+    "black"
+   ],
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "img": "img/black-slim-heel-ankle-boots.webp",
+   "shape": "ankleheel"
   },
   {
    "id": "basic-white-sneakers",
@@ -3606,8 +3644,8 @@
     "Winter",
     "Spring"
    ],
-   "notes": "Basic you already own. Drawn picture.",
-   "img": "img/basics/basic-black-leggings.svg",
+   "notes": "Your photo.",
+   "img": "img/black-leggings.webp",
    "basic": true,
    "shape": "leggings",
    "_f": [
@@ -3679,7 +3717,7 @@
   },
   {
    "id": "basic-black-wide-linen-pants",
-   "name": "Black wide-leg linen pants (several pairs)",
+   "name": "Black wide-leg linen drawstring pants",
    "category": "trousers",
    "colours": [
     "black"
@@ -3691,13 +3729,31 @@
     "Summer",
     "Autumn"
    ],
-   "notes": "Basic you already own. Drawn picture.",
-   "img": "img/basics/basic-black-wide-linen-pants.svg",
+   "notes": "Your photo.",
+   "img": "img/black-linen-drawstring-pants.webp",
    "basic": true,
    "shape": "wide",
    "_f": [
     "black"
    ]
+  },
+  {
+   "pattern": "solid",
+   "fabric": "linen",
+   "basic": true,
+   "notes": "Your photo.",
+   "id": "basic-white-wide-linen-pants",
+   "name": "White wide-leg linen drawstring pants",
+   "category": "trousers",
+   "colours": [
+    "white"
+   ],
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "img": "img/white-linen-drawstring-pants.webp",
+   "shape": "wide"
   },
   {
    "id": "basic-black-bamboo-wide-crop",
@@ -8018,7 +8074,7 @@
    "ip:basic-black-crossbody|basic-black-loafers": 1,
    "it:basic-black-crossbody": 16.5,
    "pat:plain+plain+plain": 24.5,
-   "so:Everyday|flats": 63,
+   "so:Everyday|flats": 60.5,
    "it:basic-black-turtleneck": 2,
    "ip:basic-black-turtleneck|basic-blue-straight-jeans-cropped": 0.5,
    "cp:black+denim": 13,
@@ -8075,7 +8131,7 @@
    "it:basic-blue-wide-jeans": 19,
    "ip:basic-black-kitten-heels|basic-blue-wide-jeans": 0.5,
    "it:basic-black-kitten-heels": 1.5,
-   "so:Everyday|kitten heels": 9,
+   "so:Everyday|heeled boots": 7,
    "it:zara-black-sleeveless-knit": 5,
    "ip:zara-black-sleeveless-knit|zara-white-sleeveless-knit": 0.5,
    "ip:basic-black-bamboo-wide-crop|zara-black-sleeveless-knit": 1.5,
@@ -8499,7 +8555,6 @@
    "ip:basic-black-knee-boots-heel|white-linen-orange-embroidered-shirt": 0.5,
    "ip:basic-black-knee-boots-heel|pink-wide-leg-sailor-trousers": 0.5,
    "it:basic-black-knee-boots-heel": 1,
-   "so:Everyday|heeled boots": 3,
    "it:pink-green-knit-tee": 1,
    "ip:pink-green-knit-tee|red-a-line-midi-skirt": 0.5,
    "ip:basic-white-sneakers|pink-green-knit-tee": 0.5,
@@ -8670,6 +8725,7 @@
    "ip:basic-black-wide-jeans|basic-tan-crossbody": 2,
    "it:basic-tan-kitten-heels": 7.5,
    "ip:basic-tan-crossbody|basic-tan-kitten-heels": 3.5,
+   "so:Everyday|kitten heels": 7.5,
    "ip:basic-white-tee|gorman-green-cord-jacket": 1,
    "ip:basic-blue-straight-jeans|gorman-green-cord-jacket": 1,
    "ip:basic-tan-flats|gorman-green-cord-jacket": 2,
