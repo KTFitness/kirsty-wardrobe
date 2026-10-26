@@ -118,8 +118,39 @@ function reasons(o,anchor,ctx){
   return r.slice(0,3).join(" ");
 }
 
+
+/* ---- learning from Kirsty's likes and dislikes ---- */
+function shoeType(it){const s=lc(it);if(/kitten/.test(s))return "kitten heels";if(/heeled knee|heel/.test(s))return "heeled boots";if(/knee/.test(s))return "knee boots";
+  if(/doc/.test(s))return "Docs";if(/sneaker|gazelle/.test(s))return "sneakers";return "flats";}
+function features(pieces,occ){
+  const f=[];const P=pieces;
+  for(let i=0;i<P.length;i++){f.push("it:"+P[i].id);
+    for(let j=i+1;j<P.length;j++){const [a,b]=[P[i].id,P[j].id].sort();f.push("ip:"+a+"|"+b);
+      for(const x of mainFams(P[i]))for(const y of mainFams(P[j]))if(x&&y)f.push("cp:"+[x,y].sort().join("+"));}}
+  const cl=P.filter(p=>p.category!=="shoes"&&p.category!=="bags");
+  const ks=cl.map(p=>pkind(p)||"plain").sort();f.push("pat:"+ks.join("+"));
+  const sh=P.find(p=>p.category==="shoes");if(sh)f.push("so:"+occ+"|"+shoeType(sh));
+  return [...new Set(f)];}
+const FW={it:0.4,ip:2,cp:1,pat:1,so:1.2};
+function learned(pieces,ctx){let s=0;for(const k of features(pieces,ctx.occ)){const w=ctx.W[k];if(w)s+=w*(FW[k.slice(0,k.indexOf(":"))]||1);}return s;}
+function lreasons(o,anchor,ctx,items){
+  const top=features(o.pieces,ctx.occ).map(k=>[k,(ctx.W[k]||0)*(FW[k.slice(0,k.indexOf(":"))]||1)]).filter(x=>x[1]>0&&!x[0].startsWith("it:")).sort((a,b)=>b[1]-a[1]).slice(0,2);
+  const nm=id=>{const it=items.find(i=>i.id===id);return it?short(it):"that piece";};
+  const out=top.map(([k])=>{const v=k.slice(k.indexOf(":")+1);
+    if(k.startsWith("ip:")){const [a,b]=v.split("|");return `You liked the ${nm(a)} with the ${nm(b)} before.`;}
+    if(k.startsWith("cp:")){const [a,b]=v.split("+");return a===b?`You've liked outfits with lots of ${NAME[a]||a}.`:`You've liked ${NAME[a]||a} with ${NAME[b]||b}.`;}
+    if(k.startsWith("pat:")){const ks=v.split("+").filter(x=>x!=="plain");return ks.length>1?`You've liked mixing ${ks.map(x=>KIND[x]||x).join(" and ")}.`:ks.length?`You've liked ${KIND[ks[0]]||ks[0]} with plain pieces.`:"You've liked keeping it plain.";}
+    if(k.startsWith("so:")){const [oc,t]=v.split("|");return `You've liked ${t} for ${oc.toLowerCase()}.`;}
+    return null;}).filter(Boolean);
+  if(o.set)out.unshift("Worn as the matching set.");
+  if(!out.length)return ctx.n<8?"A fresh combination. Tell me what you think.":"Something different to try.";
+  return out.join(" ");}
+
 function suggest(anchor,items,ctx){
-  const season=ctx.season,rnd=mulberry(ctx.seed||1);
+  const W=ctx.W||{};ctx.W=W;ctx.n=ctx.n||0;
+  const SC=(p,c)=>{const r=ctx.rules?score(p,c):{s:0,best:null,patNote:null};r.s+=learned(p,c);return r;};
+  const E=ctx.rules?1:2.5/Math.sqrt(1+ctx.n/6)+0.6;
+  const season=ctx.season,rnd=mulberry(ctx.seed||1);const excl=new Set(ctx.exclude||[]);
   const pool=items.filter(i=>i.id!==anchor.id&&inSeason(i,season));
   const by=c=>pool.filter(i=>c.includes(i.category));
   const tops=by(["tops","knitwear"]).filter(i=>!isWarmLayer(i)),bottoms=by(["skirts","trousers","shorts"]),dresses=by(["dresses"]);
@@ -135,40 +166,41 @@ function suggest(anchor,items,ctx){
     if(!cool)for(const u of unders.filter(u=>/linen|tee/.test(u.id)))cores.push([anchor]);}
   else{
     for(const d of dresses)cores.push([d,anchor]);
-    const ts=tops.map(t=>[t,score([t,anchor],ctx).s]).sort((a,b)=>b[1]-a[1]).slice(0,18).map(x=>x[0]);
-    const bs=bottoms.map(t=>[t,score([t,anchor],ctx).s]).sort((a,b)=>b[1]-a[1]).slice(0,14).map(x=>x[0]);
+    const ts=tops.map(t=>[t,SC([t,anchor],ctx).s]).sort((a,b)=>b[1]-a[1]).slice(0,18).map(x=>x[0]);
+    const bs=bottoms.map(t=>[t,SC([t,anchor],ctx).s]).sort((a,b)=>b[1]-a[1]).slice(0,14).map(x=>x[0]);
     for(const t of ts)for(const b of bs)cores.push([t,b,anchor]);
   }
   // pre-score cores, keep best
-  cores=cores.map(c=>({c,s:score(c,ctx).s+rnd()*1.2})).sort((a,b)=>b.s-a.s).slice(0,80).map(x=>x.c);
+  cores=cores.map(c=>({c,s:SC(c,ctx).s+(rnd()*E)*1.2})).sort((a,b)=>b.s-a.s).slice(0,80).map(x=>x.c);
   const results=[];
   for(const core of cores){
     let pieces=core.slice();
     const top=pieces.find(p=>p.category==="tops"||p.category==="knitwear");
     if(top&&isVest(top)&&(cool||season==="Spring")){
-      const u=unders.filter(u=>!pieces.includes(u)).map(u=>[u,score(pieces.concat(u),ctx).s]).sort((a,b)=>b[1]-a[1])[0];
+      const u=unders.filter(u=>!pieces.includes(u)).map(u=>[u,SC(pieces.concat(u),ctx).s]).sort((a,b)=>b[1]-a[1])[0];
       if(u)pieces.push(u[0]);
     }
     const needLayer=cool&&!pieces.some(isWarmLayer)&&(pieces.some(sleeveless)||season==="Winter"||pieces.some(p=>p.category==="dresses"));
-    if(needLayer&&layers.length){const L=layers.filter(l=>!pieces.includes(l)).map(l=>[l,score(pieces.concat(l),ctx).s+rnd()*0.8]).sort((a,b)=>b[1]-a[1])[0];if(L)pieces.push(L[0]);}
+    if(needLayer&&layers.length){const L=layers.filter(l=>!pieces.includes(l)).map(l=>[l,SC(pieces.concat(l),ctx).s+(rnd()*E)*0.8]).sort((a,b)=>b[1]-a[1])[0];if(L)pieces.push(L[0]);}
     let alts=[];
     if(!pieces.some(p=>p.category==="shoes")&&shoes.length){
-      const sh=shoes.map(x=>[x,score(pieces.concat(x),ctx).s+rnd()*1.0]).sort((a,b)=>b[1]-a[1]);if(sh[0])pieces.push(sh[0][0]);alts=sh.slice(1,3).map(x=>x[0]);}
+      const sh=shoes.map(x=>[x,SC(pieces.concat(x),ctx).s+(rnd()*E)*1.0]).sort((a,b)=>b[1]-a[1]);if(sh[0])pieces.push(sh[0][0]);alts=sh.slice(1,3).map(x=>x[0]);}
     if(bags.length&&!pieces.some(p=>p.category==="bags")&&!cool&&["Lunch out","Dinner out","Holiday","Special occasion"].includes(ctx.occ)){
-      const bg=bags.map(x=>[x,score(pieces.concat(x),ctx).s]).sort((a,b)=>b[1]-a[1])[0];if(bg&&bg[1]>-1)pieces.push(bg[0]);}
-    const sc=score(pieces,ctx);
-    results.push({pieces,alts,s:sc.s+rnd()*0.6,best:sc.best,patNote:sc.patNote});
+      const bg=bags.map(x=>[x,SC(pieces.concat(x),ctx).s]).sort((a,b)=>b[1]-a[1])[0];if(bg&&bg[1]>-1)pieces.push(bg[0]);}
+    const sc=SC(pieces,ctx);
+    results.push({pieces,alts,s:sc.s+(rnd()*E)*0.6,best:sc.best,patNote:sc.patNote});
   }
   results.sort((a,b)=>b.s-a.s);
   const out=[],used={};
   if(anchor.setWith){const mate=items.find(i=>i.id===anchor.setWith);
-    if(mate){let pieces=[anchor,mate];const sh=shoes.map(x=>[x,score(pieces.concat(x),ctx).s]).sort((a,b)=>b[1]-a[1])[0];if(sh)pieces.push(sh[0]);
-      const sc=score(pieces,ctx);out.push({pieces,s:99,best:sc.best,patNote:sc.patNote,set:true});used[mate.id]=2;}}
+    if(mate){let pieces=[anchor,mate];const sh=shoes.map(x=>[x,SC(pieces.concat(x),ctx).s]).sort((a,b)=>b[1]-a[1])[0];if(sh)pieces.push(sh[0]);
+      const sc=SC(pieces,ctx);out.push({pieces,s:99,best:sc.best,patNote:sc.patNote,set:true});used[mate.id]=2;}}
   let basicOnly=0,mixes=0;const seenKey=new Set();
   const want=ctx.count||6;
   const hasBasic=r=>r.pieces.some(p=>p!==anchor&&p.basic&&p.category!=="shoes");
   for(const r of results){
     if(out.length>=want)break;
+    if(excl.has(r.pieces.map(p=>p.id).sort().join(",")))continue;
     const mains=r.pieces.filter(p=>p!==anchor&&p.category!=="shoes"&&p.category!=="bags");
     const key=mains.length?null:r.pieces.map(p=>p.id).sort().join(",");
     if(key){if(seenKey.has(key))continue;seenKey.add(key);}
@@ -182,16 +214,16 @@ function suggest(anchor,items,ctx){
     const sh=r.pieces.find(p=>p.category==="shoes"&&p!==anchor);
     if(sh){used["shoe:"+sh.id]=(used["shoe:"+sh.id]||0)+1;
       if(used["shoe:"+sh.id]>2&&r.alts&&r.alts.length){const alt=r.alts.find(a=>(used["shoe:"+a.id]||0)<2);
-        if(alt){r.pieces=r.pieces.map(p=>p===sh?alt:p);used["shoe:"+sh.id]--;used["shoe:"+alt.id]=(used["shoe:"+alt.id]||0)+1;const sc=score(r.pieces,ctx);r.best=sc.best;r.patNote=sc.patNote;}}}
+        if(alt){r.pieces=r.pieces.map(p=>p===sh?alt:p);used["shoe:"+sh.id]--;used["shoe:"+alt.id]=(used["shoe:"+alt.id]||0)+1;const sc=SC(r.pieces,ctx);r.best=sc.best;r.patNote=sc.patNote;}}}
     out.push(r);
   }
   if(out.length<want){const have=new Set(out.map(o=>o.pieces.map(p=>p.id).sort().join(",")));
     for(const r of results){if(out.length>=want)break;const k=r.pieces.map(p=>p.id).sort().join(",");if(have.has(k))continue;
       const mains=r.pieces.filter(p=>p!==anchor&&p.category!=="shoes"&&p.category!=="bags");if(mains.some(p=>(used[p.id]||0)>=2))continue;
       mains.forEach(p=>used[p.id]=(used[p.id]||0)+1);have.add(k);out.push(r);}}
-  out.forEach(o=>{o.why=reasons(o,anchor,ctx);});
+  out.forEach(o=>{const lr=lreasons(o,anchor,ctx,items);o.why=(ctx.rules&&/fresh|different/.test(lr))?reasons(o,anchor,ctx):lr;o.key=o.pieces.map(p=>p.id).sort().join(",");});
   return out;
 }
 function mulberry(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
-window.Stylist={suggest,families,pkind,formality};
+window.Stylist={suggest,features,families,pkind,formality};
 })();

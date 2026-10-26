@@ -141,6 +141,7 @@ const S={anchor:null,sOcc:"Everyday",sSeason:null,seed:1,pickCat:"all",q:"",tab:
 /* phone-only storage: favourites, hidden outfits, outfits built here */
 const LS={get(k,d){try{const v=localStorage.getItem("kw:"+k);return v?JSON.parse(v):d;}catch(e){return d;}},
   set(k,v){try{localStorage.setItem("kw:"+k,JSON.stringify(v));}catch(e){}}};
+let taste=LS.get("taste",{w:{},n:0,liked:[],disliked:[]}),useRules=LS.get("useRules",false);
 let favs=LS.get("favs",[]),hidden=LS.get("hidden",[]),mine=LS.get("mine",[]),gone=LS.get("gone",[]);
 function applyGone(){D.items=(D.all||[]).filter(i=>!gone.includes(i.id));}
 
@@ -227,12 +228,17 @@ function pickGrid(){
   <button class="chip" data-pickcat="basics" aria-pressed="${S.pickCat==="basics"}">Basics</button></div>
   ${own.length?`<div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:9px">${own.map(i=>`<button type="button" class="card" data-anchor="${esc(i.id)}"><div class="tile"><img src="${esc(i.img)}" alt="" loading="lazy"></div><div class="meta"><span class="nm" style="font-size:13px">${esc(i.name)}</span></div></button>`).join("")}</div>`:`<div class="empty"><span>Nothing matches that search.</span></div>`}`;
 }
+function tasteW(){const w={...(D.taste&&D.taste.w||{})};for(const k in taste.w)w[k]=(w[k]||0)+taste.w[k];return w;}
+function tasteN(){return taste.n+((D.taste&&D.taste.n)||0);}
+function rate(o,v){const pieces=o.itemIds.map(byId).filter(Boolean);
+  for(const k of Stylist.features(pieces,S.sOcc))taste.w[k]=Math.round(((taste.w[k]||0)+v)*100)/100;
+  taste.n++;(v>0?taste.liked:taste.disliked).push(o.key);LS.set("taste",taste);}
 function vStyle(){
   const a=S.anchor&&byId(S.anchor);
   if(!a)return pickGrid();
   const season=S.sSeason||currentSeason();
-  const res=window.Stylist?Stylist.suggest(a,D.items,{occ:S.sOcc,season,seed:S.seed,count:6}):[];
-  S.lastRes=res.map((r,k)=>({id:"g"+S.seed+"-"+k,name:r.set?"The matching set":"With the "+a.name.replace(/^(Gingham|Stripe|Dots) No\. \d+: /,"").toLowerCase(),itemIds:r.pieces.map(p=>p.id),occasions:[S.sOcc],why:r.why}));
+  const res=window.Stylist?Stylist.suggest(a,D.items,{occ:S.sOcc,season,seed:S.seed,count:6,W:tasteW(),n:tasteN(),rules:useRules,exclude:taste.disliked.concat(S.rated||[])}):[];
+  S.lastRes=res.map((r,k)=>({key:r.key,id:"g"+S.seed+"-"+k,name:r.set?"The matching set":"With the "+a.name.replace(/^(Gingham|Stripe|Dots) No\. \d+: /,"").toLowerCase(),itemIds:r.pieces.map(p=>p.id),occasions:[S.sOcc],why:r.why}));
   const offSeason=a.seasons&&a.seasons.length&&!a.seasons.includes(season);
   return `<div class="panel" style="grid-template-columns:96px 1fr;align-items:center">
    <div class="tile" style="aspect-ratio:1/1;border-radius:10px"><img src="${esc(a.img)}" alt=""></div>
@@ -240,10 +246,13 @@ function vStyle(){
    <div class="row"><button class="iconbtn" type="button" id="changeAnchor">Choose another piece</button></div></div></div>
   <div class="chips" role="group" aria-label="Occasion">${["Everyday","Lunch out","Dinner out","Smart casual","Travel","Holiday","Special occasion"].map(o=>`<button class="chip" data-socc="${o}" aria-pressed="${S.sOcc===o}">${o}</button>`).join("")}</div>
   <div class="chips" role="group" aria-label="Season">${SEASONS.map(x=>`<button class="chip" data-sseason="${x}" aria-pressed="${season===x}">${x}${x===currentSeason()?" (now)":""}</button>`).join("")}</div>
+  <div class="panel" style="gap:8px"><div class="status">${tasteN()?`Learning from ${tasteN()} rating${tasteN()===1?"":"s"}. Keep tapping Like or Not for me and the ideas will get closer to your taste.`:"No rules yet. Tap Like or Not for me on each idea and the app learns your taste."}</div>
+   <div class="row"><label class="checks" style="font-size:14px"><label><input type="checkbox" id="useRules" ${useRules?"checked":""}> Use my style notes as a head start</label></label></div>
+   <div class="row">${tasteN()?`<button class="iconbtn" type="button" id="copyTaste">${S.copied==="taste"?"Copied":"Copy my taste for Claude"}</button><button class="iconbtn" type="button" id="resetTaste">Start learning again</button>`:""}</div></div>
   ${offSeason?`<div class="notice">This piece is usually a ${esc(a.seasons.join("/").toLowerCase())} piece, so these are stretch ideas.</div>`:""}
   ${S.lastRes.length?`<div class="ogrid">${S.lastRes.map((o,k)=>`<article class="ocard">${collage(o.itemIds)}<div class="meta"><div class="nm">${k===0&&res[0].set?"The matching set":"Idea "+(k+1)}</div>
    <p class="why">${esc(o.why)}</p><p class="why" style="font-size:12px">${esc(o.itemIds.map(id=>byId(id).name).join(" · "))}</p>
-   <div class="row"><button class="btn" type="button" data-savegen="${k}">${S.savedGen&&S.savedGen.includes(o.id)?"Saved":"Save"}</button><button class="iconbtn" type="button" data-copygen="${k}">${S.copied===o.id?"Copied":"Copy for Claude"}</button></div></div></article>`).join("")}</div>
+   <div class="row"><button class="btn" type="button" data-like="${k}">Like</button><button class="btn ghost" type="button" data-nope="${k}">Not for me</button><button class="iconbtn" type="button" data-copygen="${k}">${S.copied===o.id?"Copied":"Copy for Claude"}</button></div></div></article>`).join("")}</div>
    <div class="row"><button class="btn ghost" type="button" id="more">Show me different ideas</button></div>`
    :`<div class="empty"><strong>No outfits for this season and occasion</strong><span>Try another season or occasion.</span></div>`}`;
 }
@@ -299,6 +308,7 @@ function copyText(o){
   return `Please add this outfit to my wardrobe app.\nName: ${o.name}\nItems: ${(o.itemIds||[]).map(id=>{const it=byId(id);return it?`${it.name} (${it.id})`:id;}).join(", ")}\nOccasions: ${(o.occasions||[]).join(", ")||"none set"}`;
 }
 
+document.addEventListener("change",e=>{if(e.target.id==="useRules"){useRules=e.target.checked;LS.set("useRules",useRules);render();}});
 document.addEventListener("input",e=>{if(e.target.id==="sq"){S.q=e.target.value;const pos=e.target.selectionStart;render();const el=$("#sq");if(el){el.focus();el.setSelectionRange(pos,pos);}}});
 document.addEventListener("click",async e=>{
   const t=e.target.closest("button");if(!t)return;
@@ -309,6 +319,15 @@ document.addEventListener("click",async e=>{
   if(t.dataset.socc){S.sOcc=t.dataset.socc;S.seed=1;render();return;}
   if(t.dataset.sseason){S.sSeason=t.dataset.sseason;S.seed=1;render();return;}
   if(t.id==="more"){S.seed++;render();window.scrollTo(0,0);return;}
+  if(t.dataset.like){const o=S.lastRes[+t.dataset.like];rate(o,1);S.rated=(S.rated||[]).concat(o.key);
+    mine=mine.concat({id:"m"+Date.now(),name:o.name,itemIds:o.itemIds,occasions:o.occasions,why:o.why});LS.set("mine",mine);render();return;}
+  if(t.dataset.nope){const o=S.lastRes[+t.dataset.nope];rate(o,-1);S.rated=(S.rated||[]).concat(o.key);render();return;}
+  if(t.id==="resetTaste"){if(!t.dataset.armed){t.dataset.armed="1";t.textContent="Tap again to forget everything it learned";return;}
+    taste={w:{},n:0,liked:[],disliked:[]};LS.set("taste",taste);S.rated=[];render();return;}
+  if(t.id==="copyTaste"){const txt="Please save my wardrobe taste into the app:\n"+JSON.stringify(taste);
+    try{await navigator.clipboard.writeText(txt);S.copied="taste";render();setTimeout(()=>{S.copied="";render();},2500);}
+    catch(err){sheetBody.innerHTML=`<div class="sheet-head"><h2>Copy this</h2><button class="iconbtn" type="button" data-close>Close</button></div><textarea rows="8" style="width:100%" readonly>${esc(txt)}</textarea>`;if(!sheet.open)sheet.showModal();sheetBody.querySelector("textarea").select();}
+    return;}
   if(t.dataset.savegen){const o=S.lastRes[+t.dataset.savegen];S.savedGen=S.savedGen||[];if(!S.savedGen.includes(o.id)){mine=mine.concat({id:"m"+Date.now(),name:o.name,itemIds:o.itemIds,occasions:o.occasions,why:o.why});LS.set("mine",mine);S.savedGen.push(o.id);}render();return;}
   if(t.dataset.copygen){const o=S.lastRes[+t.dataset.copygen];const txt=copyText(o);
     try{await navigator.clipboard.writeText(txt);S.copied=o.id;render();setTimeout(()=>{S.copied="";render();},2500);}
@@ -348,7 +367,7 @@ document.addEventListener("click",async e=>{
 });
 
 fetch("data/wardrobe.json",{cache:"no-cache"}).then(r=>{if(!r.ok)throw new Error(r.status);return r.json();}).then(j=>{
-  D.all=j.items||[];applyGone();D.outfits=j.outfits||[];D.inspo=j.inspo||[];D.occasions=j.occasions||[];D.updated=j.updated||"";
+  D.all=j.items||[];D.taste=j.taste||null;applyGone();D.outfits=j.outfits||[];D.inspo=j.inspo||[];D.occasions=j.occasions||[];D.updated=j.updated||"";
   if(D.updated){const d=new Date(D.updated+"T00:00:00");$("#updated").textContent="Updated "+d.toLocaleDateString("en-AU",{day:"numeric",month:"short",year:"numeric"});}
   render();
 }).catch(()=>{$("#view").innerHTML=`<div class="notice">Couldn't load the wardrobe list. Check your connection and reopen the app.</div>`;});
