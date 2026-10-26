@@ -233,7 +233,7 @@ function suggest(anchor,items,ctx){
     if(!done&&bg)for(const x of bags.filter(x=>x!==bg)){const ps=r.pieces.map(p=>p===bg?x:p);if(!excl0.has(kOf(ps))){r.pieces=ps;r.variant=true;break;}}}
   const out=[],used={};
   if(anchor.setWith){const mate=items.find(i=>i.id===anchor.setWith);
-    if(mate){let pieces=[anchor,mate];const sh=shoes.map(x=>[x,SC(pieces.concat(x),ctx).s]).sort((a,b)=>b[1]-a[1])[0];if(sh)pieces.push(sh[0]);
+    if(mate){let pieces=[anchor,mate];const sh=ctx.noAccessories?null:shoes.map(x=>[x,SC(pieces.concat(x),ctx).s]).sort((a,b)=>b[1]-a[1])[0];if(sh)pieces.push(sh[0]);
       const sc=SC(pieces,ctx);out.push({pieces,s:99,best:sc.best,patNote:sc.patNote,set:true});used[mate.id]=2;}}
   let basicOnly=0,mixes=0;const seenKey=new Set(),bfam={};
   const bottomFam=r=>{const b=r.pieces.find(p=>p!==anchor&&p!==WI&&['skirts','trousers','shorts'].includes(p.category));return b?(mainFams(b)[0]||'x'):null;};
