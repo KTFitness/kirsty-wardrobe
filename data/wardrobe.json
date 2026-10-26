@@ -1,0 +1,18 @@
+{
+  "updated": "2026-10-26",
+  "occasions": ["Everyday", "Lunch out", "Dinner out", "Travel", "Smart casual", "Holiday", "Special occasion"],
+  "items": [
+    {"id": "gorman-check-skirt", "name": "Gorman check skirt", "category": "skirts", "colours": ["tomato red", "bubblegum pink", "sky blue"], "pattern": "jumbo gingham check", "fabric": "probably cotton twill", "seasons": ["Spring", "Summer", "Autumn"], "notes": "A-line midi, patch pockets, tonal topstitching", "img": "img/check-skirt.png"},
+    {"id": "gorman-striped-skirt", "name": "Gorman striped skirt", "category": "skirts", "colours": ["tomato red", "cornflower blue"], "pattern": "wide vertical stripe", "fabric": "probably cotton twill", "seasons": ["Spring", "Summer", "Autumn"], "notes": "Straight midi, jeans-style pockets, front slit. Picture is redrawn from your photo.", "img": "img/striped-skirt.png"},
+    {"id": "boden-helena-chinos", "name": "Boden Helena chinos", "category": "trousers", "colours": ["mint green"], "pattern": "solid", "fabric": "cotton chino", "seasons": ["Spring", "Summer", "Autumn"], "notes": "Slim straight ankle length. Picture colour adjusted towards the brighter mint you see in person.", "img": "img/mint-chinos.png"},
+    {"id": "boden-red-gingham-shirt", "name": "Boden red gingham ruffle shirt", "category": "tops", "colours": ["red", "white"], "pattern": "small gingham", "fabric": "probably linen or cotton", "seasons": ["Spring", "Summer"], "notes": "Sleeveless, ruffles at collar, placket and armholes", "img": "img/boden-red-gingham.png"},
+    {"id": "orange-gingham-ricrac-blouse", "name": "Orange gingham ric-rac blouse", "category": "tops", "colours": ["orange", "white", "green trim"], "pattern": "gingham seersucker with ric-rac trim", "fabric": "probably cotton seersucker", "seasons": ["Spring", "Summer"], "notes": "Cropped, rounded collar, puff sleeves, patch pockets", "img": "img/orange-gingham-blouse.png"},
+    {"id": "marcs-pink-gingham-tank", "name": "Marcs pink gingham knit tank", "category": "knitwear", "colours": ["salmon pink", "white"], "pattern": "gingham", "fabric": "knit, fibre unknown", "seasons": ["Spring", "Summer"], "notes": "Fitted, ribbed neck, armholes and hem", "img": "img/marcs-pink-gingham-tank.png"}
+  ],
+  "outfits": [
+    {"id": "o1", "name": "Seventies sorbet", "itemIds": ["orange-gingham-ricrac-blouse", "boden-helena-chinos"], "occasions": ["Everyday", "Lunch out"], "seasons": ["Spring", "Summer"], "why": "Orange and mint brighten each other, and the green ric-rac ties the two together. Wear the blouse out; it ends right at the waistband. Tan or white shoes and a straw bag."},
+    {"id": "o2", "name": "Coral and mint", "itemIds": ["marcs-pink-gingham-tank", "boden-helena-chinos"], "occasions": ["Everyday", "Holiday"], "seasons": ["Spring", "Summer"], "why": "Coral is one of mint's best partners. The fitted tank sits neatly at the waist worn out. Silver or white trainers."},
+    {"id": "o3", "name": "Check meets stripe", "itemIds": ["boden-red-gingham-shirt", "gorman-striped-skirt"], "occasions": ["Lunch out", "Smart casual"], "seasons": ["Spring", "Summer"], "why": "A small check against a wide stripe is a different pattern type and scale, and the red links them. Check the two reds match in daylight. Tuck the shirt in; tan loafers."}
+  ],
+  "inspo": []
+}

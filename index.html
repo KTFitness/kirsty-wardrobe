@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Kirsty's Wardrobe</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Wardrobe">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#f3f5f8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141922" media="(prefers-color-scheme: dark)">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Rethink+Sans:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: a phone-first closet. Sticky header, one scrolling view per tab, bottom tab bar. Items sit on tiles like garments on a rail. */
+:root{
+  --bg:#f3f5f8; --surface:#ffffff; --tile:#eef0ec; --fg:#1d2430; --muted:#5d6878; --line:#dbe1ea;
+  --tomato:#d8392f; --sky:#9cc3e6; --mint:#86c79c; --pink:#f2a7c3; --butter:#f3de8a;
+  --accent:#d8392f; --accent-fg:#ffffff;
+  --display:"Gloock", Georgia, "Times New Roman", serif;
+  --body:"Rethink Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root{
+  --bg:#141922; --surface:#1d2430; --tile:#2a3240; --fg:#eef1f6; --muted:#a3adbc; --line:#2e3746;
+  --tomato:#ff6b5f; --sky:#8fb9e0; --mint:#7fc497; --pink:#f0a7c0; --butter:#e9d27c;
+  --accent:#ff6b5f; --accent-fg:#141922; color-scheme:dark}}
+[hidden]{display:none!important}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.45;-webkit-tap-highlight-color:transparent;
+  padding-top:env(safe-area-inset-top,0px)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+button,input,select,textarea{font:inherit;color:inherit}
+img{max-width:100%}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);
+  padding-block:12px 10px;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));
+  display:flex;align-items:flex-end;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line)}
+header.top h1{font-family:var(--display);font-weight:400;font-size:26px;margin:0;line-height:1.1}
+header.top .sub{font-size:12px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+header.top .upd{font-size:12px;color:var(--muted);text-align:right}
+main{max-width:980px;margin:0 auto;padding-block:16px calc(96px + env(safe-area-inset-bottom,0px));
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));
+  display:grid;gap:18px}
+h2{font-family:var(--display);font-weight:400;font-size:22px;margin:0;text-wrap:balance}
+.lede{color:var(--muted);margin:0;max-width:62ch}
+.notice{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--butter);border-radius:10px;padding:12px 14px;color:var(--muted);font-size:14px}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 13px;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap}
+.chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.chip .n{font-variant-numeric:tabular-nums;opacity:.6;margin-left:4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;min-width:0;cursor:pointer;text-align:left;padding:0}
+.tile{background:var(--tile);aspect-ratio:4/5;display:grid;place-items:center;max-width:100%;overflow:hidden}
+.tile img{width:100%;height:100%;object-fit:contain;padding:8px;display:block}
+.card .meta{padding:9px 11px 11px;display:grid;gap:2px;min-width:0}
+.card .nm{font-weight:600;font-size:14px;line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card .ct{font-size:12px;color:var(--muted)}
+.btn{border:none;border-radius:10px;padding:10px 15px;font-weight:600;cursor:pointer;background:var(--accent);color:var(--accent-fg)}
+.btn.ghost{background:var(--surface);color:var(--fg);border:1px solid var(--line)}
+.btn.danger{background:transparent;color:var(--tomato);border:1px solid var(--tomato)}
+.btn:disabled{opacity:.5;cursor:default}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.empty{border:1.5px dashed var(--line);border-radius:12px;padding:22px 18px;color:var(--muted);text-align:center;display:grid;gap:6px}
+.empty strong{color:var(--fg);font-weight:600}
+.ogrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.ocard{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.collage{background:var(--tile);display:grid;grid-template-columns:2fr 1fr;gap:4px;padding:8px;aspect-ratio:1/1;max-width:100%}
+.collage.solo{grid-template-columns:1fr}
+.collage .main,.collage .side{display:grid;gap:4px;grid-auto-rows:1fr;min-height:0}
+.collage img{width:100%;height:100%;object-fit:contain;min-height:0;display:block}
+.collage .gone{display:grid;place-items:center;font-size:12px;color:var(--muted)}
+.ocard .meta{padding:11px 13px 13px;display:grid;gap:7px}
+.ocard .nm{font-family:var(--display);font-size:18px;line-height:1.2}
+.ocard .why{font-size:13px;color:var(--muted);margin:0}
+.tags{display:flex;gap:5px;flex-wrap:wrap}
+.tag{font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:3px 8px;border-radius:999px;background:var(--tile);color:var(--muted)}
+.tag.mine{background:transparent;border:1px solid var(--line)}
+.fav{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 11px;font-size:13px;font-weight:600;cursor:pointer}
+.fav[aria-pressed="true"]{background:var(--pink);border-color:var(--pink);color:#1d2430}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;display:grid;gap:12px}
+label.f{display:grid;gap:5px;font-size:13px;font-weight:600;color:var(--muted)}
+label.f input{font-weight:400;font-size:16px;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:10px 11px;width:100%;min-width:0}
+.checks{display:flex;gap:6px;flex-wrap:wrap}
+.checks label{display:flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:6px 11px;font-size:14px;font-weight:500;color:var(--fg);cursor:pointer;background:var(--bg)}
+.checks input{accent-color:var(--accent)}
+.status{font-size:14px;color:var(--muted)}
+.preview{background:var(--tile);border-radius:12px;max-height:360px;display:grid;place-items:center;overflow:hidden}
+.preview img{max-height:360px;max-width:100%;object-fit:contain;display:block}
+dl.facts{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:0;font-size:14px}
+dl.facts dt{color:var(--muted);font-weight:600}
+dl.facts dd{margin:0}
+.missing{margin:0;padding-left:18px;color:var(--muted);font-size:14px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+nav.tabs{position:fixed;left:0;right:0;bottom:0;z-index:6;background:var(--surface);border-top:1px solid var(--line);
+  padding-bottom:max(8px, env(safe-area-inset-bottom, 0px));padding-top:6px;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));
+  display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
+nav.tabs button{border:none;background:none;padding:8px 4px;border-radius:10px;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;display:grid;justify-items:center;gap:3px}
+nav.tabs button .dot{width:22px;height:4px;border-radius:2px;background:transparent}
+nav.tabs button[aria-current="page"]{color:var(--fg)}
+nav.tabs button[aria-current="page"] .dot{background:var(--accent)}
+dialog.sheet{border:none;padding:0;background:var(--surface);color:var(--fg);width:min(640px,100%);max-width:100%;max-height:92vh;border-radius:16px 16px 0 0;margin:auto auto 0;overflow:auto}
+@media (min-width:700px){dialog.sheet{border-radius:16px;margin:auto}}
+dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
+.sheet-in{padding:16px max(16px, env(safe-area-inset-right, 0px)) max(20px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));display:grid;gap:14px}
+.sheet-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.iconbtn{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 12px;font-size:13px;font-weight:600;cursor:pointer}
+.pick{position:relative}
+.pick[aria-pressed="true"]{outline:3px solid var(--accent);outline-offset:-3px}
+.pick[aria-pressed="true"]::after{content:"✓";position:absolute;top:6px;right:8px;background:var(--accent);color:var(--accent-fg);width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:700}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (prefers-reduced-motion:no-preference){.card:active{transform:scale(.98)}.card{transition:transform .15s ease}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div><div class="sub" id="countline">Wardrobe</div><h1>Kirsty's Wardrobe</h1></div>
+  <div class="upd" id="updated"></div>
+</header>
+<main id="view"><div class="empty"><strong>Loading your wardrobe…</strong></div></main>
+<nav class="tabs" aria-label="Sections">
+  <button type="button" data-tab="wardrobe" aria-current="page"><span class="dot"></span>Wardrobe</button>
+  <button type="button" data-tab="outfits"><span class="dot"></span>Outfits</button>
+  <button type="button" data-tab="build"><span class="dot"></span>Build</button>
+  <button type="button" data-tab="inspo"><span class="dot"></span>Inspo</button>
+</nav>
+<dialog class="sheet" id="sheet"><div class="sheet-in" id="sheetBody"></div></dialog>
+
+<script>
+const CATS=[["tops","Tops"],["knitwear","Knitwear"],["dresses","Dresses"],["skirts","Skirts"],["trousers","Trousers"],["shorts","Shorts"],["outerwear","Jackets & coats"],["shoes","Shoes"],["bags","Bags"],["accessories","Accessories"]];
+const CATNAME=Object.fromEntries(CATS);
+const SEASONS=["Spring","Summer","Autumn","Winter"];
+const TOPS=["tops","knitwear"],BOTTOMS=["skirts","trousers","shorts"];
+const D={items:[],outfits:[],inspo:[],occasions:[],updated:""};
+const S={tab:"wardrobe",cat:"all",occ:"all",season:"any",surprise:null,build:{itemIds:[],name:"",occasions:[]},copied:""};
+
+/* phone-only storage: favourites, hidden outfits, outfits built here */
+const LS={get(k,d){try{const v=localStorage.getItem("kw:"+k);return v?JSON.parse(v):d;}catch(e){return d;}},
+  set(k,v){try{localStorage.setItem("kw:"+k,JSON.stringify(v));}catch(e){}}};
+let favs=LS.get("favs",[]),hidden=LS.get("hidden",[]),mine=LS.get("mine",[]);
+
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const $=s=>document.querySelector(s);
+const byId=id=>D.items.find(i=>i.id===id);
+function currentSeason(){const m=new Date().getMonth();return m===11||m<2?"Summer":m<5?"Autumn":m<8?"Winter":"Spring";}
+const allOutfits=()=>D.outfits.map(o=>({...o,mine:false})).concat(mine.map(o=>({...o,mine:true})));
+
+function collage(ids){
+  const main=[],side=[];
+  ids.map(byId).forEach(it=>{if(!it){main.push(null);return;}(["tops","knitwear","dresses","skirts","trousers","shorts"].includes(it.category)?main:side).push(it);});
+  const order=["tops","knitwear","dresses","skirts","trousers","shorts"];
+  main.sort((a,b)=>(a?order.indexOf(a.category):9)-(b?order.indexOf(b.category):9));
+  const cell=it=>it?`<img src="${esc(it.img)}" alt="${esc(it.name)}" loading="lazy">`:`<div class="gone">Item no longer in wardrobe</div>`;
+  if(!side.length)return `<div class="collage solo"><div class="main">${main.map(cell).join("")}</div></div>`;
+  return `<div class="collage"><div class="main">${main.map(cell).join("")}</div><div class="side">${side.map(cell).join("")}</div></div>`;
+}
+function outfitCard(o,extra=""){
+  const fav=favs.includes(o.id);
+  return `<article class="ocard">${collage(o.itemIds||[])}<div class="meta">
+  <div class="nm">${esc(o.name||"Untitled outfit")}</div>
+  <div class="tags">${(o.occasions||[]).map(x=>`<span class="tag">${esc(x)}</span>`).join("")}${o.mine?'<span class="tag mine">Built on this phone</span>':""}</div>
+  ${o.why?`<p class="why">${esc(o.why)}</p>`:""}
+  <div class="row"><button class="fav" type="button" data-fav="${esc(o.id)}" aria-pressed="${fav}">${fav?"♥ Favourite":"♡ Favourite"}</button>
+  ${o.mine?`<button class="iconbtn" type="button" data-copy="${esc(o.id)}">${S.copied===o.id?"Copied":"Copy for Claude"}</button><button class="iconbtn" type="button" data-delmine="${esc(o.id)}">Delete</button>`
+          :`<button class="iconbtn" type="button" data-hide="${esc(o.id)}">Hide</button>`}${extra}</div></div></article>`;
+}
+
+function vWardrobe(){
+  if(!D.items.length)return `<h2>Your clothes</h2><div class="empty"><strong>No clothes yet</strong><span>Send photos to Claude in chat and they'll appear here.</span></div>`;
+  const counts={};D.items.forEach(i=>counts[i.category]=(counts[i.category]||0)+1);
+  const list=D.items.filter(i=>S.cat==="all"||i.category===S.cat)
+    .sort((a,b)=>CATS.findIndex(c=>c[0]===a.category)-CATS.findIndex(c=>c[0]===b.category)||a.name.localeCompare(b.name));
+  return `<h2>Your clothes</h2>
+  <div class="chips" role="group" aria-label="Filter by type"><button class="chip" data-cat="all" aria-pressed="${S.cat==="all"}">All<span class="n">${D.items.length}</span></button>
+  ${CATS.filter(([k])=>counts[k]).map(([k,v])=>`<button class="chip" data-cat="${k}" aria-pressed="${S.cat===k}">${v}<span class="n">${counts[k]}</span></button>`).join("")}</div>
+  <div class="grid">${list.map(i=>`<button type="button" class="card" data-item="${esc(i.id)}"><div class="tile"><img src="${esc(i.img)}" alt="" loading="lazy"></div>
+  <div class="meta"><span class="nm">${esc(i.name)}</span><span class="ct">${esc(CATNAME[i.category]||i.category)}</span></div></button>`).join("")}</div>`;
+}
+function vOutfits(){
+  const all=allOutfits();
+  const shown=all.filter(o=>!hidden.includes(o.id))
+    .filter(o=>S.occ==="all"||(S.occ==="fav"?favs.includes(o.id):(o.occasions||[]).includes(S.occ)))
+    .filter(o=>S.season==="any"||!o.seasons||!o.seasons.length||o.seasons.includes(S.season)||(o.itemIds||[]).every(id=>{const it=byId(id);return !it||!it.seasons||it.seasons.includes(S.season);}));
+  const occs=D.occasions.filter(x=>all.some(o=>(o.occasions||[]).includes(x)));
+  return `<h2>Outfits</h2>
+  <div class="chips" role="group" aria-label="Filter by occasion">
+   <button class="chip" data-occ="all" aria-pressed="${S.occ==="all"}">All</button>
+   <button class="chip" data-occ="fav" aria-pressed="${S.occ==="fav"}">♥ Favourites<span class="n">${favs.length}</span></button>
+   ${occs.map(x=>`<button class="chip" data-occ="${esc(x)}" aria-pressed="${S.occ===x}">${esc(x)}</button>`).join("")}</div>
+  <div class="chips" role="group" aria-label="Filter by season">
+   <button class="chip" data-season="any" aria-pressed="${S.season==="any"}">Any season</button>
+   ${SEASONS.map(s=>`<button class="chip" data-season="${s}" aria-pressed="${S.season===s}">${s}${s===currentSeason()?" (now)":""}</button>`).join("")}</div>
+  <div class="row"><button class="btn" type="button" id="surprise">Surprise me</button><span class="status">A random top and bottom for the season.</span></div>
+  ${S.surprise?`<div class="ogrid">${outfitCard(S.surprise,`<button class="iconbtn" type="button" id="keepSurprise">Keep</button>`)}</div>`:""}
+  ${shown.length?`<div class="ogrid">${shown.map(o=>outfitCard(o)).join("")}</div>`:`<div class="empty"><strong>Nothing here yet</strong><span>Try another filter, build one yourself, or ask Claude in chat for ideas.</span></div>`}
+  ${hidden.length?`<div class="row"><button class="iconbtn" type="button" id="unhide">Show ${hidden.length} hidden outfit${hidden.length===1?"":"s"}</button></div>`:""}`;
+}
+function vBuild(){
+  const b=S.build;
+  return `<h2>Build an outfit</h2>
+  <p class="lede">Tap items to put an outfit together. It saves on this phone; tap Copy for Claude and paste it into chat to make it permanent.</p>
+  <div class="panel">${b.itemIds.length?collage(b.itemIds):`<div class="empty"><span>Pick items below.</span></div>`}
+  <label class="f">Name<input id="bName" value="${esc(b.name)}" placeholder="e.g. Sorbet Sunday"></label>
+  <div class="checks">${D.occasions.map(o=>`<label><input type="checkbox" data-bocc value="${esc(o)}" ${b.occasions.includes(o)?"checked":""}>${esc(o)}</label>`).join("")}</div>
+  <div class="row"><button class="btn" type="button" id="bSave" ${b.itemIds.length?"":"disabled"}>Save outfit</button>${b.itemIds.length?`<button class="btn ghost" type="button" id="bClear">Start again</button>`:""}</div></div>
+  ${CATS.filter(([k])=>D.items.some(i=>i.category===k)).map(([k,v])=>`<h2 style="font-size:18px">${v}</h2>
+  <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:8px">${D.items.filter(i=>i.category===k).map(i=>`<button type="button" class="card pick" data-pick="${esc(i.id)}" aria-pressed="${b.itemIds.includes(i.id)}"><div class="tile"><img src="${esc(i.img)}" alt="${esc(i.name)}" loading="lazy"></div></button>`).join("")}</div>`).join("")}`;
+}
+function vInspo(){
+  return `<h2>Inspiration</h2>
+  <p class="lede">Send an inspiration photo to Claude in chat. It will recreate the look from your wardrobe and add it here, with a note of anything you'd need to buy.</p>
+  ${D.inspo.length?`<div class="ogrid">${D.inspo.map(p=>`<article class="ocard"><div class="two" style="background:var(--tile);padding:6px">
+   <div class="tile" style="aspect-ratio:1/1"><img src="${esc(p.img)}" alt="Inspiration photo" loading="lazy"></div>${collage(p.itemIds||[])}</div>
+   <div class="meta"><div class="nm">${esc(p.name||"Inspired look")}</div><p class="why">${esc(p.summary||"")}</p>
+   ${p.missing&&p.missing.length?`<div><strong style="font-size:13px">To get closer</strong><ul class="missing">${p.missing.map(m=>`<li>${esc(m)}</li>`).join("")}</ul></div>`:""}</div></article>`).join("")}</div>`
+   :`<div class="empty"><strong>No inspiration looks yet</strong><span>Your first one will appear here.</span></div>`}`;
+}
+
+function render(){
+  if(S.tab==="build"&&$("#bName"))S.build.name=$("#bName").value;
+  const sx=window.scrollY;
+  $("#view").innerHTML=S.tab==="wardrobe"?vWardrobe():S.tab==="outfits"?vOutfits():S.tab==="build"?vBuild():vInspo();
+  document.querySelectorAll("nav.tabs button").forEach(b=>{if(b.dataset.tab===S.tab)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current");});
+  $("#countline").textContent=`${D.items.length} items · ${allOutfits().length} outfits`;
+  window.scrollTo(0,sx);
+}
+
+const sheet=$("#sheet"),sheetBody=$("#sheetBody");
+sheet.addEventListener("click",e=>{if(e.target===sheet)sheet.close();});
+function openItem(id){const it=byId(id);if(!it)return;
+  const inO=allOutfits().filter(o=>(o.itemIds||[]).includes(id));
+  sheetBody.innerHTML=`<div class="sheet-head"><h2>${esc(it.name)}</h2><button class="iconbtn" type="button" data-close>Close</button></div>
+  <div class="preview"><img src="${esc(it.img)}" alt="${esc(it.name)}"></div>
+  <dl class="facts"><dt>Type</dt><dd>${esc(CATNAME[it.category]||it.category)}</dd>
+  ${it.colours&&it.colours.length?`<dt>Colours</dt><dd>${esc(it.colours.join(", "))}</dd>`:""}
+  ${it.pattern?`<dt>Pattern</dt><dd>${esc(it.pattern)}</dd>`:""}${it.fabric?`<dt>Fabric</dt><dd>${esc(it.fabric)}</dd>`:""}
+  ${it.seasons&&it.seasons.length?`<dt>Seasons</dt><dd>${esc(it.seasons.join(", "))}</dd>`:""}${it.notes?`<dt>Notes</dt><dd>${esc(it.notes)}</dd>`:""}</dl>
+  <p class="status">In ${inO.length} outfit${inO.length===1?"":"s"}${inO.length?": "+esc(inO.map(o=>o.name).join(", ")):""}.</p>
+  <div class="row"><button class="btn" type="button" data-buildwith="${esc(id)}">Build an outfit with this</button></div>`;
+  if(!sheet.open)sheet.showModal();}
+
+function surprise(){
+  const season=S.season==="any"?currentSeason():S.season;
+  const ok=i=>!i.seasons||!i.seasons.length||i.seasons.includes(season);
+  const dresses=D.items.filter(i=>i.category==="dresses"&&ok(i));
+  const tops=D.items.filter(i=>TOPS.includes(i.category)&&ok(i)),bottoms=D.items.filter(i=>BOTTOMS.includes(i.category)&&ok(i));
+  const pick=a=>a[Math.floor(Math.random()*a.length)];
+  let ids=[];
+  if(dresses.length&&(!tops.length||!bottoms.length||Math.random()<dresses.length/(dresses.length+tops.length)))ids=[pick(dresses).id];
+  else if(tops.length&&bottoms.length)ids=[pick(tops).id,pick(bottoms).id];
+  const shoes=D.items.filter(i=>i.category==="shoes"&&ok(i)),bags=D.items.filter(i=>i.category==="bags");
+  if(ids.length&&shoes.length)ids.push(pick(shoes).id);
+  if(ids.length&&bags.length)ids.push(pick(bags).id);
+  S.surprise=ids.length?{id:"s"+Date.now(),name:"Random pick for "+season,itemIds:ids,occasions:[],why:"Picked at random from what suits the season. Your call whether it works.",mine:true,temp:true}:null;
+}
+
+function copyText(o){
+  return `Please add this outfit to my wardrobe app.\nName: ${o.name}\nItems: ${(o.itemIds||[]).map(id=>{const it=byId(id);return it?`${it.name} (${it.id})`:id;}).join(", ")}\nOccasions: ${(o.occasions||[]).join(", ")||"none set"}`;
+}
+
+document.addEventListener("click",async e=>{
+  const t=e.target.closest("button");if(!t)return;
+  if(t.dataset.tab){S.tab=t.dataset.tab;render();window.scrollTo(0,0);return;}
+  if(t.dataset.cat){S.cat=t.dataset.cat;render();return;}
+  if(t.dataset.occ){S.occ=t.dataset.occ;render();return;}
+  if(t.dataset.season){S.season=t.dataset.season;render();return;}
+  if(t.dataset.item){openItem(t.dataset.item);return;}
+  if(t.hasAttribute("data-close")){sheet.close();return;}
+  if(t.dataset.buildwith){S.build={itemIds:[t.dataset.buildwith],name:"",occasions:[]};sheet.close();S.tab="build";render();window.scrollTo(0,0);return;}
+  if(t.dataset.fav){const id=t.dataset.fav;favs=favs.includes(id)?favs.filter(x=>x!==id):favs.concat(id);LS.set("favs",favs);render();return;}
+  if(t.dataset.hide){hidden=hidden.concat(t.dataset.hide);LS.set("hidden",hidden);render();return;}
+  if(t.id==="unhide"){hidden=[];LS.set("hidden",hidden);render();return;}
+  if(t.dataset.delmine){if(!t.dataset.armed){t.dataset.armed="1";t.textContent="Tap again to delete";return;}
+    mine=mine.filter(o=>o.id!==t.dataset.delmine);LS.set("mine",mine);render();return;}
+  if(t.dataset.copy){const o=allOutfits().find(x=>x.id===t.dataset.copy);const txt=copyText(o);
+    try{await navigator.clipboard.writeText(txt);S.copied=o.id;render();setTimeout(()=>{S.copied="";render();},2500);}
+    catch(err){sheetBody.innerHTML=`<div class="sheet-head"><h2>Copy this</h2><button class="iconbtn" type="button" data-close>Close</button></div><textarea rows="6" style="width:100%" readonly>${esc(txt)}</textarea>`;if(!sheet.open)sheet.showModal();sheetBody.querySelector("textarea").select();}
+    return;}
+  if(t.id==="surprise"){surprise();render();return;}
+  if(t.id==="keepSurprise"){const o=S.surprise;S.surprise=null;S.build={itemIds:o.itemIds.slice(),name:"",occasions:[]};S.tab="build";render();window.scrollTo(0,0);return;}
+  if(t.dataset.pick){S.build.name=$("#bName").value;S.build.occasions=[...document.querySelectorAll("input[data-bocc]:checked")].map(x=>x.value);
+    const a=S.build.itemIds,i=a.indexOf(t.dataset.pick);if(i>=0)a.splice(i,1);else a.push(t.dataset.pick);render();return;}
+  if(t.id==="bClear"){S.build={itemIds:[],name:"",occasions:[]};render();return;}
+  if(t.id==="bSave"){const name=$("#bName").value.trim()||"My outfit";const occ=[...document.querySelectorAll("input[data-bocc]:checked")].map(x=>x.value);
+    mine=mine.concat({id:"m"+Date.now(),name,itemIds:S.build.itemIds.slice(),occasions:occ,why:""});LS.set("mine",mine);
+    S.build={itemIds:[],name:"",occasions:[]};S.tab="outfits";S.occ="all";render();window.scrollTo(0,0);return;}
+});
+
+fetch("data/wardrobe.json",{cache:"no-cache"}).then(r=>{if(!r.ok)throw new Error(r.status);return r.json();}).then(j=>{
+  D.items=j.items||[];D.outfits=j.outfits||[];D.inspo=j.inspo||[];D.occasions=j.occasions||[];D.updated=j.updated||"";
+  if(D.updated){const d=new Date(D.updated+"T00:00:00");$("#updated").textContent="Updated "+d.toLocaleDateString("en-AU",{day:"numeric",month:"short",year:"numeric"});}
+  render();
+}).catch(()=>{$("#view").innerHTML=`<div class="notice">Couldn't load the wardrobe list. Check your connection and reopen the app.</div>`;});
+</script>
+</body>
+</html>
