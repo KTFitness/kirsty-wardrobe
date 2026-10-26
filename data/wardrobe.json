@@ -1740,6 +1740,378 @@
    ],
    "notes": "A-line mini",
    "img": "img/green-leopard-mini-skirt.webp"
+  },
+  {
+   "id": "navy-rope-trim-crop-top",
+   "name": "Navy rope-trim crop top",
+   "category": "tops",
+   "colours": [
+    "navy",
+    "cream"
+   ],
+   "pattern": "solid with rope trim",
+   "fabric": "cotton, probably",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Sleeveless, boxy, cropped. Matches the navy rope-trim skirt.",
+   "img": "img/navy-rope-trim-crop-top.webp"
+  },
+  {
+   "id": "navy-rope-trim-mini-skirt",
+   "name": "Navy rope-trim mini skirt",
+   "category": "skirts",
+   "colours": [
+    "navy",
+    "cream"
+   ],
+   "pattern": "solid with rope trim",
+   "fabric": "cotton, probably",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "A-line mini, rope-edged pockets. Matches the navy rope-trim top.",
+   "img": "img/navy-rope-trim-mini-skirt.webp"
+  },
+  {
+   "id": "gorman-green-rib-tank",
+   "name": "Gorman green rib knit tank",
+   "category": "knitwear",
+   "colours": [
+    "green"
+   ],
+   "pattern": "rib",
+   "fabric": "knit, fibre unknown",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Crew neck, fitted, size 8",
+   "img": "img/gorman-green-rib-tank.webp"
+  },
+  {
+   "id": "gorman-denim-lace-up-top",
+   "name": "Gorman denim lace-up top",
+   "category": "tops",
+   "colours": [
+    "dark denim",
+    "cream rope"
+   ],
+   "pattern": "solid",
+   "fabric": "denim, probably cotton",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Sleeveless, rope lacing with tassels",
+   "img": "img/gorman-denim-lace-up-top.webp"
+  },
+  {
+   "id": "white-linen-orange-embroidered-shirt",
+   "name": "White linen shirt with orange embroidery",
+   "category": "tops",
+   "colours": [
+    "white",
+    "orange",
+    "green"
+   ],
+   "pattern": "orange and leaf embroidery",
+   "fabric": "linen",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Short sleeves, patch pockets, gold buttons. Picture is a crop of the listing photo.",
+   "img": "img/white-linen-orange-embroidered-shirt.webp"
+  },
+  {
+   "id": "red-linen-button-vest",
+   "name": "Red linen button-front vest",
+   "category": "tops",
+   "colours": [
+    "red"
+   ],
+   "pattern": "solid",
+   "fabric": "linen, probably",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Longline, crew neck, welt pockets. Picture is a crop of the listing photo.",
+   "img": "img/red-linen-button-vest.webp"
+  },
+  {
+   "id": "rust-track-jacket",
+   "name": "Rust track jacket",
+   "category": "outerwear",
+   "colours": [
+    "rust",
+    "white",
+    "black"
+   ],
+   "pattern": "side stripes",
+   "fabric": "jersey, fibre unknown",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Funnel neck, zip front",
+   "img": "img/rust-track-jacket.webp"
+  },
+  {
+   "id": "alessandra-colour-block-jumper",
+   "name": "Alessandra colour-block jumper",
+   "category": "knitwear",
+   "colours": [
+    "oatmeal",
+    "cream",
+    "pink"
+   ],
+   "pattern": "colour block",
+   "fabric": "cotton knit, probably",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Crew neck, pink hem band. Picture is a crop of the listing photo.",
+   "img": "img/alessandra-colour-block-jumper.webp"
+  },
+  {
+   "id": "gorman-red-strawberry-shirt",
+   "name": "Gorman red strawberry embroidered shirt",
+   "category": "tops",
+   "colours": [
+    "red",
+    "white"
+   ],
+   "pattern": "strawberry embroidery",
+   "fabric": "cotton linen, probably",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Short sleeves, camp-style",
+   "img": "img/gorman-red-strawberry-shirt.webp"
+  },
+  {
+   "id": "pink-rib-knit-tank",
+   "name": "Pink rib knit tank",
+   "category": "knitwear",
+   "colours": [
+    "hot pink"
+   ],
+   "pattern": "rib",
+   "fabric": "knit, fibre unknown",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Crew neck, fitted. Picture is a crop of the listing photo.",
+   "img": "img/pink-rib-knit-tank.webp"
+  },
+  {
+   "id": "lilac-lobster-print-skirt",
+   "name": "Lilac lobster-print mini skirt",
+   "category": "skirts",
+   "colours": [
+    "lilac",
+    "orange"
+   ],
+   "pattern": "lobster print",
+   "fabric": "cotton, probably",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Straight mini",
+   "img": "img/lilac-lobster-print-skirt.webp"
+  },
+  {
+   "id": "cream-rib-tank",
+   "name": "Cream rib tank",
+   "category": "tops",
+   "colours": [
+    "cream"
+   ],
+   "pattern": "fine rib",
+   "fabric": "cotton jersey, probably",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "High crew neck. Picture is a crop of the listing photo.",
+   "img": "img/cream-rib-tank.webp"
+  },
+  {
+   "id": "country-road-white-tank",
+   "name": "Country Road white tank",
+   "category": "tops",
+   "colours": [
+    "white"
+   ],
+   "pattern": "solid",
+   "fabric": "jersey, fibre unknown",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Racer-cut, size S. Picture is a crop of the listing photo.",
+   "img": "img/country-road-white-tank.webp"
+  },
+  {
+   "id": "white-mock-neck-tank",
+   "name": "White mock-neck tank",
+   "category": "tops",
+   "colours": [
+    "white"
+   ],
+   "pattern": "fine rib",
+   "fabric": "cotton jersey, probably",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Mock neck, cropped. Picture is a crop of the listing photo.",
+   "img": "img/white-mock-neck-tank.webp"
+  },
+  {
+   "id": "ecru-wrap-mini-skirt",
+   "name": "Ecru wrap mini skirt",
+   "category": "skirts",
+   "colours": [
+    "ecru"
+   ],
+   "pattern": "solid",
+   "fabric": "cotton drill, probably",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Wrap front, big patch pocket, button. Picture is a crop of the listing photo.",
+   "img": "img/ecru-wrap-mini-skirt.webp"
+  },
+  {
+   "id": "mimco-raffia-clutch",
+   "name": "Mimco raffia clutch",
+   "category": "bags",
+   "colours": [
+    "natural",
+    "tan"
+   ],
+   "pattern": "chunky raffia weave",
+   "fabric": "raffia with leather frame",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Frame clutch",
+   "img": "img/mimco-raffia-clutch.webp"
+  },
+  {
+   "id": "black-rose-print-midi-dress",
+   "name": "Black rose-print midi dress",
+   "category": "dresses",
+   "colours": [
+    "black",
+    "red",
+    "pink",
+    "green"
+   ],
+   "pattern": "scattered roses",
+   "fabric": "linen, probably",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "V-neck, sleeveless, front split. Picture is a crop of the listing photo.",
+   "img": "img/black-rose-print-midi-dress.webp"
+  },
+  {
+   "id": "black-appliqué-cutout-dress",
+   "name": "Black floral appliqué cut-out dress",
+   "category": "dresses",
+   "colours": [
+    "black"
+   ],
+   "pattern": "3D floral appliqué",
+   "fabric": "linen, probably",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Sleeveless, side cut-outs, asymmetric midi skirt. Looks like a top and skirt but is one piece. Picture is a crop of the listing photo.",
+   "img": "img/black-appliqué-cutout-dress.webp"
+  },
+  {
+   "id": "witchery-green-flutter-maxi",
+   "name": "Green flutter-sleeve maxi dress",
+   "category": "dresses",
+   "colours": [
+    "kelly green"
+   ],
+   "pattern": "solid",
+   "fabric": "crepe, fibre unknown",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Deep V, flutter sleeves, A-line maxi",
+   "img": "img/witchery-green-flutter-maxi.webp"
+  },
+  {
+   "id": "daisy-print-linen-shirt",
+   "name": "Daisy print shirt with ric-rac trim",
+   "category": "tops",
+   "colours": [
+    "pale lemon",
+    "green",
+    "yellow"
+   ],
+   "pattern": "daisy print",
+   "fabric": "linen, probably",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Short sleeves, ric-rac edges. Matches the daisy wrap skirt. Picture is a crop of the listing photo.",
+   "img": "img/daisy-print-linen-shirt.webp"
+  },
+  {
+   "id": "daisy-print-wrap-skirt",
+   "name": "Daisy print wrap mini skirt",
+   "category": "skirts",
+   "colours": [
+    "pale lemon",
+    "green",
+    "yellow"
+   ],
+   "pattern": "daisy print",
+   "fabric": "linen, probably",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Wrap front with buttons, ric-rac hem. Matches the daisy shirt. Picture is a crop of the listing photo.",
+   "img": "img/daisy-print-wrap-skirt.webp"
   }
  ],
  "outfits": [
@@ -1980,6 +2352,32 @@
     "Lunch out"
    ],
    "why": "From your lookbook picks. Navy makes mint look crisp; the peplum keeps it relaxed. Straw bag."
+  },
+  {
+   "id": "o20",
+   "name": "Navy rope-trim set",
+   "itemIds": [
+    "navy-rope-trim-crop-top",
+    "navy-rope-trim-mini-skirt"
+   ],
+   "occasions": [
+    "Everyday",
+    "Holiday"
+   ],
+   "why": "Wear as the matching set. Tan sandals and a straw bag."
+  },
+  {
+   "id": "o21",
+   "name": "Daisy set",
+   "itemIds": [
+    "daisy-print-linen-shirt",
+    "daisy-print-wrap-skirt"
+   ],
+   "occasions": [
+    "Lunch out",
+    "Holiday"
+   ],
+   "why": "Wear as the matching set."
   }
  ],
  "inspo": []
