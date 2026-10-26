@@ -225,6 +225,12 @@ function suggest(anchor,items,ctx){
     results.push({pieces,alts,s:sc.s+(rnd()*E)*0.6,best:sc.best,patNote:sc.patNote});
   }
   results.sort((a,b)=>b.s-a.s);
+  const kOf=ps=>ps.map(p=>p.id).sort().join(",");
+  for(const r of results){if(!excl0.has(kOf(r.pieces))||exCore.has(coreKey(r.pieces)))continue;
+    const sh=r.pieces.find(p=>p.category==="shoes"&&p!==anchor),bg=r.pieces.find(p=>p.category==="bags"&&p!==anchor);
+    const shoeAlts=shoes.filter(x=>x!==sh).map(x=>[x,SC(r.pieces.map(p=>p===sh?x:p),ctx).s]).sort((a,b)=>b[1]-a[1]).map(x=>x[0]);
+    let done=false;for(const x of shoeAlts){const ps=r.pieces.map(p=>p===sh?x:p);if(!excl0.has(kOf(ps))){r.pieces=ps;r.variant=true;done=true;break;}}
+    if(!done&&bg)for(const x of bags.filter(x=>x!==bg)){const ps=r.pieces.map(p=>p===bg?x:p);if(!excl0.has(kOf(ps))){r.pieces=ps;r.variant=true;break;}}}
   const out=[],used={};
   if(anchor.setWith){const mate=items.find(i=>i.id===anchor.setWith);
     if(mate){let pieces=[anchor,mate];const sh=shoes.map(x=>[x,SC(pieces.concat(x),ctx).s]).sort((a,b)=>b[1]-a[1])[0];if(sh)pieces.push(sh[0]);
@@ -264,7 +270,7 @@ function suggest(anchor,items,ctx){
       const mains=r.pieces.filter(p=>p!==anchor&&p!==WI&&p.category!=="shoes"&&p.category!=="bags");if(mains.some(p=>(used[p.id]||0)>=2))continue;
       const bf=bottomFam(r);if(bf&&(bfam[bf]||0)>=3)continue;if(bf)bfam[bf]=(bfam[bf]||0)+1;
       mains.forEach(p=>used[p.id]=(used[p.id]||0)+1);have.add(k);out.push(r);}}
-  out.forEach(o=>{const lr=lreasons(o,anchor,ctx,items);o.why=(ctx.rules&&/fresh|different/.test(lr))?reasons(o,anchor,ctx):lr;o.key=o.pieces.map(p=>p.id).sort().join(",");o.tips=[hemTip(o.pieces),hairTip(o.pieces)].filter(Boolean);});
+  out.forEach(o=>{const lr=lreasons(o,anchor,ctx,items);o.why=(ctx.rules&&/fresh|different/.test(lr))?reasons(o,anchor,ctx):lr;if(o.variant)o.why="A variation on one you liked: same clothes, different shoes or bag.";o.key=o.pieces.map(p=>p.id).sort().join(",");o.tips=[hemTip(o.pieces),hairTip(o.pieces)].filter(Boolean);});
   return out;
 }
 function mulberry(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
