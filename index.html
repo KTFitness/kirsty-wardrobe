@@ -81,8 +81,11 @@ h3 .n,.grphead .n{font-size:12px;color:var(--muted);background:var(--tile);borde
 .ocard{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
 .collage{background:var(--tile);display:grid;grid-template-columns:2fr 1fr;gap:4px;padding:8px;aspect-ratio:1/1;max-width:100%}
 .collage.solo{grid-template-columns:1fr}
-.collage .main,.collage .side{display:grid;gap:4px;grid-auto-rows:1fr;min-height:0}
-.collage img{width:100%;height:100%;object-fit:contain;min-height:0;display:block}
+.collage{overflow:hidden}
+.collage .main,.collage .side{display:grid;gap:4px;min-height:0;min-width:0;overflow:hidden}
+.collage .cl{position:relative;min-height:0;min-width:0;overflow:hidden}
+.collage .cl.hero{background:rgba(255,255,255,.35);border-radius:6px}
+.collage img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block}
 .collage .gone{display:grid;place-items:center;font-size:12px;color:var(--muted)}
 .ocard .meta{padding:11px 13px 13px;display:grid;gap:7px}
 .ocard .nm{font-family:var(--display);font-size:18px;line-height:1.2}
@@ -170,18 +173,24 @@ function currentSeason(){const m=new Date().getMonth();return m===11||m<2?"Summe
 const okey=o=>(o.itemIds||[]).map(id=>ALIAS[id]||id).sort().join(",");
 const allOutfits=()=>{const mk=new Set(mine.map(okey));return D.outfits.filter(o=>!(o.liked&&mk.has(okey(o)))).map(o=>({...o,mine:false})).concat(mine.map(o=>({...o,mine:true}))).filter(o=>!(o.itemIds||[]).some(id=>gone.includes(id)));};
 
-function collage(ids){
+function collage(ids,hero){
+  const order=["outerwear","tops","knitwear","dresses","skirts","trousers","shorts"],body=["tops","knitwear","dresses","skirts","trousers","shorts"];
+  const items=ids.map(byId);let H=hero?items.find(it=>it&&it.id===(ALIAS[hero]||hero)):null;
+  if(H&&["shoes","bags","accessories"].includes(H.category)===false&&!body.includes(H.category)&&H.category!=="outerwear")H=null;
   const main=[],side=[];
-  ids.map(byId).forEach(it=>{if(!it){main.push(null);return;}(["tops","knitwear","dresses","skirts","trousers","shorts"].includes(it.category)?main:side).push(it);});
-  const order=["tops","knitwear","dresses","skirts","trousers","shorts"];
+  items.forEach(it=>{if(it===H)return;if(!it){main.push(null);return;}(body.includes(it.category)?main:side).push(it);});
   main.sort((a,b)=>(a?order.indexOf(a.category):9)-(b?order.indexOf(b.category):9));
-  const cell=it=>it?`<img src="${esc(it.img)}" alt="${esc(it.name)}" loading="lazy">`:`<div class="gone">Item no longer in wardrobe</div>`;
-  if(!side.length)return `<div class="collage solo"><div class="main">${main.map(cell).join("")}</div></div>`;
-  return `<div class="collage"><div class="main">${main.map(cell).join("")}</div><div class="side">${side.map(cell).join("")}</div></div>`;
+  if(H&&["shoes","bags","accessories"].includes(H.category)){side.unshift(H);H=null;}
+  const cell=(it,big)=>`<div class="cl${big?" hero":""}">${it?`<img src="${esc(it.img)}" alt="${esc(it.name)}" loading="lazy">`:`<div class="gone">Item no longer in wardrobe</div>`}</div>`;
+  const mainCells=(H?[cell(H,true)]:[]).concat(main.map(x=>cell(x)));
+  const rows=(H?["2fr"]:[]).concat(main.map(()=>"1fr")).join(" ")||"1fr";
+  const mainHtml=`<div class="main" style="grid-template-rows:${rows}">${mainCells.join("")}</div>`;
+  if(!side.length)return `<div class="collage solo">${mainHtml}</div>`;
+  return `<div class="collage">${mainHtml}<div class="side" style="grid-template-rows:repeat(${side.length},1fr)">${side.map(x=>cell(x)).join("")}</div></div>`;
 }
 function tipsFor(ids){const P=ids.map(byId).filter(Boolean);if(!window.Stylist||!Stylist.hemTip)return "";return [Stylist.hemTip(P),Stylist.hairTip(P)].filter(Boolean).map(t=>`<p class="tip">${esc(t)}</p>`).join("");}
-function outfitCard(o,extra=""){
-  return `<article class="ocard">${collage(o.itemIds||[])}<div class="meta">
+function outfitCard(o,extra="",hero){
+  const kp=hero?{id:hero}:keyPiece(o);return `<article class="ocard">${collage(o.itemIds||[],kp&&kp.id)}<div class="meta">
   <div class="nm">${esc(o.name||"Untitled outfit")}</div>
   <div class="tags">${(o.occasions||[]).map(x=>`<span class="tag">${esc(x)}</span>`).join("")}${o.mine?'<span class="tag mine">Built on this phone</span>':o.liked?'<span class="tag mine">You liked this</span>':""}</div>
   ${o.why?`<p class="why">${esc(o.why)}</p>`:""}
@@ -237,7 +246,7 @@ function keyPiece(o){const P=(o.itemIds||[]).map(byId).filter(Boolean);
   return P.find(i=>i.category==="dresses")||P.find(i=>!i.basic&&["skirts","trousers","shorts"].includes(i.category))||P.find(i=>["skirts","trousers","shorts"].includes(i.category))||P.find(i=>!["shoes","bags","accessories"].includes(i.category))||P[0];}
 function topOf(o,k){const P=(o.itemIds||[]).map(byId).filter(Boolean);return P.find(i=>i!==k&&!i.basic&&["tops","knitwear"].includes(i.category))||P.find(i=>i!==k&&["tops","knitwear","outerwear"].includes(i.category));}
 function fitsSeason(o,se){return (o.itemIds||[]).every(id=>{const it=byId(id);return !it||!it.seasons||!it.seasons.length||it.seasons.includes(se);});}
-function miniTile(o){const k=keyPiece(o),t=topOf(o,k);return `<button type="button" class="mini" data-open="${esc(o.id)}">${collage(o.itemIds||[])}<span>${esc(t?t.name.replace(/^(Gingham|Stripe|Dots) No\. \d+: /,""):o.name)}</span></button>`;}
+function miniTile(o){const k=keyPiece(o),t=topOf(o,k);return `<button type="button" class="mini" data-open="${esc(o.id)}">${collage(o.itemIds||[],k&&k.id)}<span>${esc(t?t.name.replace(/^(Gingham|Stripe|Dots) No\. \d+: /,""):o.name)}</span></button>`;}
 function vOutfits(){
   const all=allOutfits().filter(o=>!hidden.includes(o.id));
   const liked=all.filter(isLiked),ideas=all.filter(o=>!isLiked(o)&&!o.liked);
@@ -319,8 +328,8 @@ function vStyle(){
    <div class="row"><label class="checks" style="font-size:14px"><label><input type="checkbox" id="useRules" ${useRules?"checked":""}> Use my style notes as a head start</label></label></div>
    <div class="row">${tasteN()?`<button class="iconbtn" type="button" id="copyTaste">${S.copied==="taste"?"Copied":"Copy my taste for Claude"}</button><button class="iconbtn" type="button" id="resetTaste">Start learning again</button>`:""}</div></div>
   ${offSeason?`<div class="notice">This piece is usually a ${esc(a.seasons.join("/").toLowerCase())} piece, so these are stretch ideas.</div>`:""}
-  ${S.lastRes.length?`<div class="ogrid">${S.lastRes.map((o,k)=>`<article class="ocard">${collage(o.itemIds)}<div class="meta"><div class="nm">${k===0&&res[0].set?"The matching set":"Idea "+(k+1)}</div>
-   <p class="why">${esc(o.why)}</p><p class="why" style="font-size:12px">${esc(o.itemIds.map(id=>byId(id).name).join(" · "))}</p>
+  ${S.lastRes.length?`<div class="ogrid">${S.lastRes.map((o,k)=>`<article class="ocard">${collage(o.itemIds,a.id)}<div class="meta"><div class="nm">${k===0&&res[0].set?"The matching set":"Idea "+(k+1)}</div>
+   <p class="why">${esc(o.why)}</p><p class="why" style="font-size:12px">${esc([a.id].concat(o.itemIds.filter(id=>id!==a.id)).map(id=>byId(id)).filter(Boolean).map(i=>i.name).join(" · "))}</p>
    <div class="row"><button class="btn" type="button" data-like="${k}">Like</button><button class="btn ghost" type="button" data-nope="${k}">Not for me</button><button class="iconbtn" type="button" data-copygen="${k}">${S.copied===o.id?"Copied":"Copy for Claude"}</button></div></div></article>`).join("")}</div>
    <div class="row"><button class="btn ghost" type="button" id="more">Show me different ideas</button></div>
    ${likedFor(a)}`
@@ -329,7 +338,7 @@ function vStyle(){
 function likedFor(a){const L=allOutfits().filter(o=>isLiked(o)&&(o.itemIds||[]).includes(a.id)).reverse();if(!L.length)return "";
   return `<h3 style="margin:22px 0 6px">You've liked ${L.length} outfit${L.length===1?"":"s"} with the ${esc(a.name)}</h3>
   <p class="lede" style="margin-top:0">These are saved in the Outfits tab too. Ideas you've rated don't come back here, so new ones can take their place.</p>
-  <div class="ogrid">${L.map(o=>outfitCard(o)).join("")}</div>`;}
+  <div class="ogrid">${L.map(o=>outfitCard(o,"",a.id)).join("")}</div>`;}
 function vInspo(){
   return `<h2>Inspiration</h2>
   <p class="lede">Send an inspiration photo to Claude in chat. It will recreate the look from your wardrobe and add it here, with a note of anything you'd need to buy.</p>
