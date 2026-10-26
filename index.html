@@ -172,7 +172,7 @@ function outfitCard(o,extra=""){
   const fav=favs.includes(o.id);
   return `<article class="ocard">${collage(o.itemIds||[])}<div class="meta">
   <div class="nm">${esc(o.name||"Untitled outfit")}</div>
-  <div class="tags">${(o.occasions||[]).map(x=>`<span class="tag">${esc(x)}</span>`).join("")}${o.mine?'<span class="tag mine">Built on this phone</span>':""}</div>
+  <div class="tags">${(o.occasions||[]).map(x=>`<span class="tag">${esc(x)}</span>`).join("")}${o.mine?'<span class="tag mine">Built on this phone</span>':o.liked?'<span class="tag mine">You liked this</span>':""}</div>
   ${o.why?`<p class="why">${esc(o.why)}</p>`:""}
   ${tipsFor(o.itemIds||[])}
   <div class="row"><button class="fav" type="button" data-fav="${esc(o.id)}" aria-pressed="${fav}">${fav?"♥ Favourite":"♡ Favourite"}</button>
@@ -222,7 +222,7 @@ function vWardrobe(){
 }
 function vOutfits(){
   const all=allOutfits();
-  const shown=all.filter(o=>!hidden.includes(o.id))
+  const shown=all.slice().sort((a,b)=>(b.mine?2:b.liked?1:0)-(a.mine?2:a.liked?1:0)).filter(o=>!hidden.includes(o.id))
     .filter(o=>S.occ==="all"||(S.occ==="fav"?favs.includes(o.id):(o.occasions||[]).includes(S.occ)))
     .filter(o=>S.season==="any"||!o.seasons||!o.seasons.length||o.seasons.includes(S.season)||(o.itemIds||[]).every(id=>{const it=byId(id);return !it||!it.seasons||it.seasons.includes(S.season);}));
   const occs=D.occasions.filter(x=>all.some(o=>(o.occasions||[]).includes(x)));
@@ -302,10 +302,10 @@ function vStyle(){
    ${likedFor(a)}`
    :`<div class="empty"><strong>No outfits for this season and occasion</strong><span>Try another season or occasion.</span></div>`}`;
 }
-function likedFor(a){const L=mine.filter(o=>(o.itemIds||[]).includes(a.id));if(!L.length)return "";
+function likedFor(a){const L=allOutfits().filter(o=>(o.mine||o.liked)&&(o.itemIds||[]).includes(a.id)).reverse();if(!L.length)return "";
   return `<h3 style="margin:22px 0 6px">You've liked ${L.length} outfit${L.length===1?"":"s"} with the ${esc(a.name)}</h3>
   <p class="lede" style="margin-top:0">These are saved in the Outfits tab too. Ideas you've rated don't come back here, so new ones can take their place.</p>
-  <div class="ogrid">${L.slice().reverse().map(o=>outfitCard(o)).join("")}</div>`;}
+  <div class="ogrid">${L.map(o=>outfitCard(o)).join("")}</div>`;}
 function vInspo(){
   return `<h2>Inspiration</h2>
   <p class="lede">Send an inspiration photo to Claude in chat. It will recreate the look from your wardrobe and add it here, with a note of anything you'd need to buy.</p>
