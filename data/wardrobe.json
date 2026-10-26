@@ -2402,8 +2402,28 @@
    ]
   },
   {
+   "id": "basic-white-fitted-tee",
+   "name": "White fitted T-shirt",
+   "category": "tops",
+   "colours": [
+    "white"
+   ],
+   "pattern": "solid",
+   "fabric": "cotton rib, probably",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Fitted crew neck, raglan cap sleeves. Your photo.",
+   "img": "img/white-fitted-tee.webp",
+   "basic": true,
+   "shape": "tee"
+  },
+  {
    "id": "basic-black-tee",
-   "name": "Black T-shirt",
+   "name": "Black fitted T-shirt",
    "category": "tops",
    "colours": [
     "black"
@@ -2416,8 +2436,8 @@
     "Autumn",
     "Winter"
    ],
-   "notes": "Basic you already own. Drawn picture.",
-   "img": "img/basics/basic-black-tee.svg",
+   "notes": "Fitted crew neck, short sleeves. Your photo.",
+   "img": "img/black-fitted-tee.webp",
    "basic": true,
    "shape": "tee",
    "_f": [
@@ -3559,10 +3579,10 @@
   },
   {
    "id": "basic-grey-tee",
-   "name": "Grey T-shirt",
+   "name": "Grey marle fitted T-shirt",
    "category": "tops",
    "colours": [
-    "grey"
+    "grey marle"
    ],
    "pattern": "solid",
    "fabric": "",
@@ -3572,8 +3592,8 @@
     "Autumn",
     "Winter"
    ],
-   "notes": "Basic you already own. Drawn picture.",
-   "img": "img/basics/basic-grey-tee.svg",
+   "notes": "Fitted crew neck, raglan cap sleeves. Your photo.",
+   "img": "img/grey-fitted-tee.webp",
    "basic": true,
    "shape": "tee",
    "_f": [
