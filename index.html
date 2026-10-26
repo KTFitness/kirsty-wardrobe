@@ -261,8 +261,20 @@ function pickGrid(){
   <button class="chip" data-pickcat="basics" aria-pressed="${S.pickCat==="basics"}">Basics</button></div>
   ${own.length?`<div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:9px">${own.map(i=>`<button type="button" class="card" data-anchor="${esc(i.id)}"><div class="tile"><img src="${esc(i.img)}" alt="" loading="lazy"></div><div class="meta"><span class="nm" style="font-size:13px">${esc(i.name)}</span></div></button>`).join("")}</div>`:`<div class="empty"><span>Nothing matches that search.</span></div>`}`;
 }
-function tasteW(){const w={...(D.taste&&D.taste.w||{})};for(const k in taste.w)w[k]=(w[k]||0)+taste.w[k];return w;}
-function tasteN(){return taste.n+((D.taste&&D.taste.n)||0);}
+/* Ratings are turned into weights by comparing each feature's like rate with the overall like rate,
+   so things that appear in nearly every rated outfit (the same shoes, the same bag) carry no weight. */
+function ratingLists(){const sv=(D.taste&&D.taste.saved)||{liked:[],disliked:[],n:0};
+  if(taste.ignoreSaved||(taste.n>=sv.n&&taste.liked.length>=sv.liked.length))return {liked:taste.liked,disliked:taste.disliked};
+  return {liked:sv.liked.concat(taste.liked),disliked:sv.disliked.concat(taste.disliked)};}
+function deriveW(){const {liked,disliked}=ratingLists(),N=liked.length+disliked.length,w={};if(!N||!window.Stylist)return w;
+  const p=liked.length/N,c={};
+  const add=(key,i)=>{const P=key.split(",").map(byId).filter(Boolean);for(const k of Stylist.features(P,"Everyday")){(c[k]=c[k]||[0,0])[i]++;}};
+  liked.forEach(k=>add(k,0));disliked.forEach(k=>add(k,1));
+  for(const k in c)w[k]=Math.round((c[k][0]-(c[k][0]+c[k][1])*p)*100)/100;return w;}
+function tasteW(){const w={...(D.taste&&D.taste.w||{})},r=deriveW();for(const k in r)w[k]=(w[k]||0)+r[k];return w;}
+function ratedCount(){const r=ratingLists();return r.liked.length+r.disliked.length;}
+function tasteN(){return ratedCount()+((D.taste&&D.taste.n)||0);}
+function allDisliked(){return ratingLists().disliked;}
 function rate(o,v){const pieces=o.itemIds.map(byId).filter(Boolean);
   for(const k of Stylist.features(pieces,S.sOcc))taste.w[k]=Math.round(((taste.w[k]||0)+v)*100)/100;
   taste.n++;(v>0?taste.liked:taste.disliked).push(o.key);LS.set("taste",taste);}
@@ -270,7 +282,7 @@ function vStyle(){
   const a=S.anchor&&byId(S.anchor);
   if(!a)return pickGrid();
   const season=S.sSeason||currentSeason();
-  const res=window.Stylist?Stylist.suggest(a,D.items,{occ:S.sOcc,season,seed:S.seed,count:6,W:tasteW(),n:tasteN(),rules:useRules,exclude:taste.disliked.concat(S.rated||[])}):[];
+  const res=window.Stylist?Stylist.suggest(a,D.items,{occ:S.sOcc,season,seed:S.seed,count:6,W:tasteW(),n:tasteN(),rules:useRules,exclude:allDisliked().concat(S.rated||[])}):[];
   S.lastRes=res.map((r,k)=>({key:r.key,id:"g"+S.seed+"-"+k,name:r.set?"The matching set":"With the "+a.name.replace(/^(Gingham|Stripe|Dots) No\. \d+: /,"").toLowerCase(),itemIds:r.pieces.map(p=>p.id),occasions:[S.sOcc],why:r.why}));
   const offSeason=a.seasons&&a.seasons.length&&!a.seasons.includes(season);
   return `<div class="panel" style="grid-template-columns:96px 1fr;align-items:center">
@@ -279,7 +291,7 @@ function vStyle(){
    <div class="row"><button class="iconbtn" type="button" id="changeAnchor">Choose another piece</button></div></div></div>
   <div class="chips" role="group" aria-label="Occasion">${["Everyday","Lunch out","Dinner out","Smart casual","Travel","Holiday","Special occasion"].map(o=>`<button class="chip" data-socc="${o}" aria-pressed="${S.sOcc===o}">${o}</button>`).join("")}</div>
   <div class="chips" role="group" aria-label="Season">${SEASONS.map(x=>`<button class="chip" data-sseason="${x}" aria-pressed="${season===x}">${x}${x===currentSeason()?" (now)":""}</button>`).join("")}</div>
-  <div class="panel" style="gap:8px"><div class="status">${tasteN()?`Learning from ${tasteN()} rating${tasteN()===1?"":"s"}. Keep tapping Like or Not for me and the ideas will get closer to your taste.`:"No rules yet. Tap Like or Not for me on each idea and the app learns your taste."}</div>
+  <div class="panel" style="gap:8px"><div class="status">${tasteN()?`Learning from ${ratedCount()} of your rating${ratedCount()===1?"":"s"} and ${(D.taste&&D.taste.n)||0} inspiration looks. Keep tapping Like or Not for me and the ideas will get closer to your taste.`:"No rules yet. Tap Like or Not for me on each idea and the app learns your taste."}</div>
    <div class="row"><label class="checks" style="font-size:14px"><label><input type="checkbox" id="useRules" ${useRules?"checked":""}> Use my style notes as a head start</label></label></div>
    <div class="row">${tasteN()?`<button class="iconbtn" type="button" id="copyTaste">${S.copied==="taste"?"Copied":"Copy my taste for Claude"}</button><button class="iconbtn" type="button" id="resetTaste">Start learning again</button>`:""}</div></div>
   ${offSeason?`<div class="notice">This piece is usually a ${esc(a.seasons.join("/").toLowerCase())} piece, so these are stretch ideas.</div>`:""}
@@ -360,7 +372,7 @@ document.addEventListener("click",async e=>{
     mine=mine.concat({id:"m"+Date.now(),name:o.name,itemIds:o.itemIds,occasions:o.occasions,why:o.why});LS.set("mine",mine);render();return;}
   if(t.dataset.nope){const o=S.lastRes[+t.dataset.nope];rate(o,-1);S.rated=(S.rated||[]).concat(o.key);render();return;}
   if(t.id==="resetTaste"){if(!t.dataset.armed){t.dataset.armed="1";t.textContent="Tap again to forget everything it learned";return;}
-    taste={w:{},n:0,liked:[],disliked:[]};LS.set("taste",taste);S.rated=[];render();return;}
+    taste={w:{},n:0,liked:[],disliked:[],ignoreSaved:true};LS.set("taste",taste);S.rated=[];render();return;}
   if(t.id==="copyTaste"){const txt="Please save my wardrobe taste into the app:\n"+JSON.stringify(taste);
     try{await navigator.clipboard.writeText(txt);S.copied="taste";render();setTimeout(()=>{S.copied="";render();},2500);}
     catch(err){sheetBody.innerHTML=`<div class="sheet-head"><h2>Copy this</h2><button class="iconbtn" type="button" data-close>Close</button></div><textarea rows="8" style="width:100%" readonly>${esc(txt)}</textarea>`;if(!sheet.open)sheet.showModal();sheetBody.querySelector("textarea").select();}

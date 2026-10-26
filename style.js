@@ -134,7 +134,8 @@ function features(pieces,occ){
 const FW={it:0.4,ip:2,cp:1,pat:1,so:1.2};
 function learned(pieces,ctx){let s=0;for(const k of features(pieces,ctx.occ)){const w=ctx.W[k];if(w)s+=w*(FW[k.slice(0,k.indexOf(":"))]||1);}return s;}
 function lreasons(o,anchor,ctx,items){
-  const top=features(o.pieces,ctx.occ).map(k=>[k,(ctx.W[k]||0)*(FW[k.slice(0,k.indexOf(":"))]||1)]).filter(x=>x[1]>0&&!x[0].startsWith("it:")&&!(x[0].startsWith("ip:")&&x[0].slice(3).split("|").some(id=>{const it=items.find(i=>i.id===id);return !it||["shoes","bags","accessories"].includes(it.category);}))).sort((a,b)=>b[1]-a[1]).slice(0,2);
+  const cf=new Set(o.pieces.filter(p=>!["shoes","bags","accessories"].includes(p.category)).flatMap(p=>mainFams(p)));
+  const top=features(o.pieces,ctx.occ).map(k=>[k,(ctx.W[k]||0)*(FW[k.slice(0,k.indexOf(":"))]||1)]).filter(x=>x[1]>0&&!x[0].startsWith("it:")&&!x[0].startsWith("so:")&&!(x[0].startsWith("cp:")&&x[0].slice(3).split("+").some(c=>!cf.has(c)))&&!(x[0].startsWith("ip:")&&x[0].slice(3).split("|").some(id=>{const it=items.find(i=>i.id===id);return !it||["shoes","bags","accessories"].includes(it.category);}))).sort((a,b)=>b[1]-a[1]).slice(0,2);
   const nm=id=>{const it=items.find(i=>i.id===id);return it?short(it):"that piece";};
   const out=top.map(([k])=>{const v=k.slice(k.indexOf(":")+1);
     if(k.startsWith("ip:")){const [a,b]=v.split("|");return `You liked the ${nm(a)} with the ${nm(b)} before.`;}
