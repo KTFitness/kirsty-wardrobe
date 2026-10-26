@@ -3336,7 +3336,7 @@
   },
   {
    "id": "basic-black-blazer",
-   "name": "Black blazer",
+   "name": "Keepers black blazer",
    "category": "outerwear",
    "colours": [
     "black"
@@ -3349,7 +3349,7 @@
     "Autumn",
     "Winter"
    ],
-   "notes": "Single button, ruched sleeves you can push up. Your photo (cropped, not cut out).",
+   "notes": "Single button, ruched three-quarter sleeves, cotton sateen. Your photo.",
    "img": "img/black-blazer.webp",
    "basic": true,
    "shape": "blazer",
