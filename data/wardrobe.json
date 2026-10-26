@@ -1385,6 +1385,361 @@
    ],
    "notes": "Crew neck, cropped",
    "img": "img/pink-tulip-knit-vest.webp"
+  },
+  {
+   "id": "pink-cord-wide-leg-trousers",
+   "name": "Pink cord wide-leg trousers",
+   "category": "trousers",
+   "colours": [
+    "dusty rose"
+   ],
+   "pattern": "cord",
+   "fabric": "cotton corduroy, probably",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Patch front pockets, wide leg. Picture is a crop of the listing photo.",
+   "img": "img/pink-cord-wide-leg-trousers.webp"
+  },
+  {
+   "id": "cos-green-knit-tank",
+   "name": "COS green knit tank",
+   "category": "knitwear",
+   "colours": [
+    "kelly green"
+   ],
+   "pattern": "solid",
+   "fabric": "fine knit, fibre unknown",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Crew neck, sleeveless, size S. Picture is a crop of the listing photo.",
+   "img": "img/cos-green-knit-tank.webp"
+  },
+  {
+   "id": "pale-blue-tipped-knit-tank",
+   "name": "Pale blue knit tank with white trim",
+   "category": "knitwear",
+   "colours": [
+    "pale blue",
+    "white"
+   ],
+   "pattern": "solid with contrast trim",
+   "fabric": "fine knit, fibre unknown",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Crew neck, racer armholes. Picture is a crop of the listing photo.",
+   "img": "img/pale-blue-tipped-knit-tank.webp"
+  },
+  {
+   "id": "pink-boucle-mini-skirt",
+   "name": "Pink bouclé mini skirt",
+   "category": "skirts",
+   "colours": [
+    "bubblegum pink"
+   ],
+   "pattern": "bouclé",
+   "fabric": "wool blend, probably",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Straight mini, panel seams",
+   "img": "img/pink-boucle-mini-skirt.webp"
+  },
+  {
+   "id": "white-linen-batwing-shirt",
+   "name": "White linen batwing shirt",
+   "category": "tops",
+   "colours": [
+    "white"
+   ],
+   "pattern": "solid",
+   "fabric": "linen, probably",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Cropped, dolman sleeves with tabs. Picture is a crop of the listing photo.",
+   "img": "img/white-linen-batwing-shirt.webp"
+  },
+  {
+   "id": "cos-green-rib-cardigan",
+   "name": "COS green rib cardigan",
+   "category": "knitwear",
+   "colours": [
+    "emerald green"
+   ],
+   "pattern": "rib",
+   "fabric": "knit, fibre unknown",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Shirt collar, fitted, button front",
+   "img": "img/cos-green-rib-cardigan.webp"
+  },
+  {
+   "id": "embroidered-wide-leg-jeans",
+   "name": "Wide-leg jeans with cross-stitch trim",
+   "category": "trousers",
+   "colours": [
+    "mid-blue denim",
+    "multicolour stitching"
+   ],
+   "pattern": "cross-stitch trim",
+   "fabric": "denim, probably cotton",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "High waist, cropped wide leg, coloured cross-stitch at pockets and hem. Picture is a crop of the listing photo.",
+   "img": "img/embroidered-wide-leg-jeans.webp"
+  },
+  {
+   "id": "denim-zip-jumpsuit",
+   "name": "Denim zip-front jumpsuit",
+   "category": "dresses",
+   "colours": [
+    "dark denim"
+   ],
+   "pattern": "solid",
+   "fabric": "stretch denim, probably",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Short sleeves, collar, zip front, patch pockets, straight leg. Picture is a crop of the listing photo.",
+   "img": "img/denim-zip-jumpsuit.webp"
+  },
+  {
+   "id": "cos-pink-funnel-neck-sweat",
+   "name": "COS pink funnel-neck top",
+   "category": "knitwear",
+   "colours": [
+    "hot coral pink"
+   ],
+   "pattern": "solid",
+   "fabric": "heavy jersey, probably cotton",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Boxy, funnel neck, cuffed sleeves",
+   "img": "img/cos-pink-funnel-neck-sweat.webp"
+  },
+  {
+   "id": "boden-navy-military-jacket",
+   "name": "Boden navy military jacket",
+   "category": "outerwear",
+   "colours": [
+    "navy",
+    "cream piping"
+   ],
+   "pattern": "solid with braid trim",
+   "fabric": "jersey or ponte, unsure",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Stand collar, epaulettes, red spot lining",
+   "img": "img/boden-navy-military-jacket.webp"
+  },
+  {
+   "id": "pink-green-knit-tee",
+   "name": "Pink and green geometric knit tee",
+   "category": "knitwear",
+   "colours": [
+    "pink",
+    "green"
+   ],
+   "pattern": "small geometric jacquard",
+   "fabric": "knit, fibre unknown",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Short puff sleeves, ribbed trims",
+   "img": "img/pink-green-knit-tee.webp"
+  },
+  {
+   "id": "boden-embroidered-flower-tee",
+   "name": "Boden embroidered flower tee",
+   "category": "tops",
+   "colours": [
+    "white",
+    "multicolour"
+   ],
+   "pattern": "flower embroidery band",
+   "fabric": "cotton slub, probably",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Crew neck, blue neck binding, UK 10",
+   "img": "img/boden-embroidered-flower-tee.webp"
+  },
+  {
+   "id": "cos-navy-stripe-tee-magenta-collar",
+   "name": "COS navy stripe tee with magenta collar",
+   "category": "tops",
+   "colours": [
+    "navy",
+    "white",
+    "magenta"
+   ],
+   "pattern": "Breton stripe",
+   "fabric": "cotton jersey, probably",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Fitted short sleeves",
+   "img": "img/cos-navy-stripe-tee-magenta-collar.webp"
+  },
+  {
+   "id": "red-cotton-shirt",
+   "name": "Red cotton shirt",
+   "category": "tops",
+   "colours": [
+    "tomato red"
+   ],
+   "pattern": "solid",
+   "fabric": "cotton poplin, probably",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Two chest pockets, roll-tab sleeves. Picture is a crop of the listing photo.",
+   "img": "img/red-cotton-shirt.webp"
+  },
+  {
+   "id": "guns-n-roses-band-tee",
+   "name": "Guns N' Roses band tee",
+   "category": "tops",
+   "colours": [
+    "washed black",
+    "multicolour print"
+   ],
+   "pattern": "graphic print",
+   "fabric": "cotton, probably",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Faded vintage look",
+   "img": "img/guns-n-roses-band-tee.webp"
+  },
+  {
+   "id": "red-daisy-pocket-knit-vest",
+   "name": "Red knit vest with daisy pockets",
+   "category": "knitwear",
+   "colours": [
+    "red",
+    "pink"
+   ],
+   "pattern": "blanket-stitch trim, daisy appliqué",
+   "fabric": "knit, fibre unknown",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "V-neck, button front, patch pockets. Picture is a crop of the listing photo.",
+   "img": "img/red-daisy-pocket-knit-vest.webp"
+  },
+  {
+   "id": "pink-folk-print-shorts",
+   "name": "Pink folk-print shorts",
+   "category": "shorts",
+   "colours": [
+    "pink",
+    "red",
+    "teal",
+    "yellow"
+   ],
+   "pattern": "large folk floral",
+   "fabric": "linen, probably",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "High waist, side pockets",
+   "img": "img/pink-folk-print-shorts.webp"
+  },
+  {
+   "id": "blue-tile-print-shorts",
+   "name": "Blue tile-print shorts",
+   "category": "shorts",
+   "colours": [
+    "cornflower blue",
+    "pink",
+    "white"
+   ],
+   "pattern": "medallion tile print",
+   "fabric": "cotton sateen, probably",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Flat front, side zip",
+   "img": "img/blue-tile-print-shorts.webp"
+  },
+  {
+   "id": "lilac-rib-knit-tank",
+   "name": "Lilac rib knit tank",
+   "category": "knitwear",
+   "colours": [
+    "lilac"
+   ],
+   "pattern": "rib",
+   "fabric": "knit, fibre unknown",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Crew neck, fitted. Picture is a crop of the listing photo.",
+   "img": "img/lilac-rib-knit-tank.webp"
+  },
+  {
+   "id": "green-leopard-mini-skirt",
+   "name": "Green leopard-print mini skirt",
+   "category": "skirts",
+   "colours": [
+    "emerald green",
+    "black",
+    "cream"
+   ],
+   "pattern": "leopard spots",
+   "fabric": "cotton twill, probably",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "A-line mini",
+   "img": "img/green-leopard-mini-skirt.webp"
   }
  ],
  "outfits": [
