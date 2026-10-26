@@ -141,13 +141,14 @@ const CATNAME=Object.fromEntries(CATS);
 const SEASONS=["Spring","Summer","Autumn","Winter"];
 const TOPS=["tops","knitwear"],BOTTOMS=["skirts","trousers","shorts"];
 const D={items:[],outfits:[],inspo:[],occasions:[],updated:""};
-const S={anchor:null,sOcc:"Everyday",sSeason:null,seed:1,pickCat:"all",q:"",tab:"wardrobe",cat:"all",occ:"all",season:"any",surprise:null,build:{itemIds:[],name:"",occasions:[]},copied:""};
+const S={anchor:null,sOcc:"Everyday",sSeason:null,seed:1,pickCat:"all",q:"",tab:"wardrobe",cat:"all",sort:"colour",occ:"all",season:"any",surprise:null,build:{itemIds:[],name:"",occasions:[]},copied:""};
 
 /* phone-only storage: favourites, hidden outfits, outfits built here */
 const LS={get(k,d){try{const v=localStorage.getItem("kw:"+k);return v?JSON.parse(v):d;}catch(e){return d;}},
   set(k,v){try{localStorage.setItem("kw:"+k,JSON.stringify(v));}catch(e){}}};
 let taste=LS.get("taste",{w:{},n:0,liked:[],disliked:[]}),useRules=LS.get("useRules",false);
 let favs=LS.get("favs",[]),hidden=LS.get("hidden",[]),mine=LS.get("mine",[]),gone=LS.get("gone",[]);
+S.sort=LS.get("sort","colour");
 function applyGone(){D.items=(D.all||[]).filter(i=>!gone.includes(i.id));}
 
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -179,12 +180,35 @@ function outfitCard(o,extra=""){
           :`<button class="iconbtn" type="button" data-hide="${esc(o.id)}">Hide</button>`}${extra}</div></div></article>`;
 }
 
+
+const COL_ORDER=["white","cream","tan","brown","grey","black","denim","navy","blue","sky","lilac","pink","red","coral","orange","yellow","green","mint","forest","multi"];
+const PAT_ORDER=[null,"stripe","check","dot","floral","print","animal"];
+function itxt(i){return (i.name+" "+(i.notes||"").replace(/(picture|stand-in photo|your photo)[^.]*\./gi,"")+" "+(i.shape||"")).toLowerCase();}
+function colRank(i){const f=(window.Stylist?Stylist.families(i):[])[0];const k=COL_ORDER.indexOf(f);return k<0?COL_ORDER.length:k;}
+function patRank(i){const k=PAT_ORDER.indexOf(window.Stylist?Stylist.pkind(i):null);return k<0?PAT_ORDER.length:k;}
+function lenRank(i){const t=itxt(i),c=i.category;
+  if(["tops","knitwear","outerwear"].includes(c)){
+    const nm=i.name.toLowerCase();
+    if(/sleeveless/.test(t)||/tank|halter|vest|cami|bustier|crop top/.test(nm))return 0;
+    if(/three-quarter|3\/4|elbow/.test(t))return 2;
+    if(/long-sleeve|long sleeve|long balloon|turtleneck|jumper|cardigan|sweat|funnel|blazer|jacket|coat/.test(t)||c==="outerwear")return 3;
+    return 1;}
+  if(c==="shorts")return 0;
+  if(/mini/.test(t))return 1;
+  if(/knee/.test(t))return 2;
+  if(/midi/.test(t))return 3;
+  if(/crop|ankle|above ankle|widecrop/.test(t))return 4;
+  if(/maxi|full length|full-length|leggings/.test(t)||c==="trousers")return 5;
+  return 3;}
+const SORTS={colour:[colRank,lenRank,patRank],length:[lenRank,colRank,patRank],pattern:[patRank,colRank,lenRank]};
+function arrange(list){const fs=SORTS[S.sort]||SORTS.colour;const ci=i=>CATS.findIndex(c=>c[0]===i.category);
+  return list.slice().sort((a,b)=>ci(a)-ci(b)||fs[0](a)-fs[0](b)||fs[1](a)-fs[1](b)||fs[2](a)-fs[2](b)||a.name.localeCompare(b.name));}
 function vWardrobe(){
   if(!D.items.length)return `<h2>Your clothes</h2><div class="empty"><strong>No clothes yet</strong><span>Send photos to Claude in chat and they'll appear here.</span></div>`;
-  const own=D.items.filter(i=>!i.basic),nb=D.items.length-own.length;
+  const own=D.items,nb=D.items.filter(i=>i.basic).length;
   const counts={};own.forEach(i=>counts[i.category]=(counts[i.category]||0)+1);
-  const list=(S.cat==="basics"?D.items.filter(i=>i.basic):own.filter(i=>S.cat==="all"||i.category===S.cat))
-    .sort((a,b)=>CATS.findIndex(c=>c[0]===a.category)-CATS.findIndex(c=>c[0]===b.category)||a.name.localeCompare(b.name));
+  const list=arrange(S.cat==="basics"?D.items.filter(i=>i.basic):own.filter(i=>S.cat==="all"||i.category===S.cat));
+  const lenLabel=S.cat==="tops"||S.cat==="knitwear"||S.cat==="outerwear"?"Sleeve length":S.cat==="trousers"||S.cat==="skirts"||S.cat==="shorts"||S.cat==="dresses"?"Length":"Length";
   const goneItems=(D.all||[]).filter(i=>gone.includes(i.id));
   const goneBox=goneItems.length?`<div class="panel"><div class="status">${goneItems.length} item${goneItems.length===1?"":"s"} removed on this phone. Copy the list and paste it into chat so Claude removes ${goneItems.length===1?"it":"them"} for good.</div>
    <div class="row"><button class="btn ghost" type="button" id="copyGone">${S.copied==="gone"?"Copied":"Copy list for Claude"}</button><button class="iconbtn" type="button" id="toggleGone">${S.showGone?"Hide removed":"Show removed"}</button></div>
@@ -192,6 +216,7 @@ function vWardrobe(){
   return `<h2>Your clothes</h2>${goneBox}
   <div class="chips" role="group" aria-label="Filter by type"><button class="chip" data-cat="all" aria-pressed="${S.cat==="all"}">All<span class="n">${own.length}</span></button>
   ${CATS.filter(([k])=>counts[k]).map(([k,v])=>`<button class="chip" data-cat="${k}" aria-pressed="${S.cat===k}">${v}<span class="n">${counts[k]}</span></button>`).join("")}${nb?`<button class="chip" data-cat="basics" aria-pressed="${S.cat==="basics"}">Basics<span class="n">${nb}</span></button>`:""}</div>
+  <div class="chips" role="group" aria-label="Arrange by"><span class="ct" style="align-self:center;margin-right:4px;white-space:nowrap">Sort</span>${[["colour","Colour"],["length",lenLabel],["pattern","Pattern"]].map(([k,v])=>`<button class="chip" data-sort="${k}" aria-pressed="${(S.sort||"colour")===k}">${v}</button>`).join("")}</div>
   <div class="grid">${list.map(i=>`<button type="button" class="card" data-item="${esc(i.id)}"><div class="tile"><img src="${esc(i.img)}" alt="" loading="lazy"></div>
   <div class="meta"><span class="nm">${esc(i.name)}</span><span class="ct">${esc(CATNAME[i.category]||i.category)}</span></div></button>`).join("")}</div>`;
 }
@@ -346,6 +371,7 @@ document.addEventListener("click",async e=>{
     catch(err){sheetBody.innerHTML=`<div class="sheet-head"><h2>Copy this</h2><button class="iconbtn" type="button" data-close>Close</button></div><textarea rows="6" style="width:100%" readonly>${esc(txt)}</textarea>`;if(!sheet.open)sheet.showModal();sheetBody.querySelector("textarea").select();}
     return;}
   if(t.dataset.cat){S.cat=t.dataset.cat;render();return;}
+  if(t.dataset.sort){S.sort=t.dataset.sort;LS.set("sort",S.sort);render();return;}
   if(t.dataset.occ){S.occ=t.dataset.occ;render();return;}
   if(t.dataset.season){S.season=t.dataset.season;render();return;}
   if(t.dataset.item){openItem(t.dataset.item);return;}

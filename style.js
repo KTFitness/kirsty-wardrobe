@@ -148,7 +148,7 @@ function lreasons(o,anchor,ctx,items){
 
 
 /* ---- jeans length guide and hair-by-neckline guide ---- */
-function hem(it){if(it.category!=="trousers"||/legging/.test(it.id))return null;const s=(it.id+" "+it.name+" "+(it.notes||"")+" "+(it.shape||"")).toLowerCase();
+function hem(it){if(it.category!=="trousers"||/legging/.test(it.id))return null;const s=(it.id+" "+it.name+" "+(it.notes||"").replace(/(picture|stand-in photo|your photo)[^.]*\./gi,"")+" "+(it.shape||"")).toLowerCase();
   return /crop|ankle|widecrop|above ankle/.test(s)?"crop":"full";}
 function shoeKind(it){const s=lc(it);if(/loafer/.test(s))return "loafer";if(/ballet|flats|slides|mary jane/.test(s))return "flat";if(/kitten|heel/.test(s)&&!/boot/.test(s))return "heel";
   if(/boot|doc/.test(s))return "boot";if(/sneaker|gazelle|samba/.test(s))return "sneaker";if(/sandal/.test(s))return "sandal";return null;}
