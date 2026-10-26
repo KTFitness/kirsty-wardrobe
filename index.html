@@ -76,6 +76,11 @@ h2{font-family:var(--display);font-weight:400;font-size:22px;margin:0;text-wrap:
 .ocard .meta{padding:11px 13px 13px;display:grid;gap:7px}
 .ocard .nm{font-family:var(--display);font-size:18px;line-height:1.2}
 .ocard .why{font-size:13px;color:var(--muted);margin:0}
+.ocard .tip{font-size:12.5px;margin:0;padding:6px 9px;border-radius:8px;background:var(--tile)}
+.guides{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px;margin:0 0 22px}
+.guides figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.guides img{width:100%;display:block}
+.guides figcaption{padding:9px 12px;font-size:13px;color:var(--muted)}
 .tags{display:flex;gap:5px;flex-wrap:wrap}
 .tag{font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:3px 8px;border-radius:999px;background:var(--tile);color:var(--muted)}
 .tag.mine{background:transparent;border:1px solid var(--line)}
@@ -160,12 +165,14 @@ function collage(ids){
   if(!side.length)return `<div class="collage solo"><div class="main">${main.map(cell).join("")}</div></div>`;
   return `<div class="collage"><div class="main">${main.map(cell).join("")}</div><div class="side">${side.map(cell).join("")}</div></div>`;
 }
+function tipsFor(ids){const P=ids.map(byId).filter(Boolean);if(!window.Stylist||!Stylist.hemTip)return "";return [Stylist.hemTip(P),Stylist.hairTip(P)].filter(Boolean).map(t=>`<p class="tip">${esc(t)}</p>`).join("");}
 function outfitCard(o,extra=""){
   const fav=favs.includes(o.id);
   return `<article class="ocard">${collage(o.itemIds||[])}<div class="meta">
   <div class="nm">${esc(o.name||"Untitled outfit")}</div>
   <div class="tags">${(o.occasions||[]).map(x=>`<span class="tag">${esc(x)}</span>`).join("")}${o.mine?'<span class="tag mine">Built on this phone</span>':""}</div>
   ${o.why?`<p class="why">${esc(o.why)}</p>`:""}
+  ${tipsFor(o.itemIds||[])}
   <div class="row"><button class="fav" type="button" data-fav="${esc(o.id)}" aria-pressed="${fav}">${fav?"♥ Favourite":"♡ Favourite"}</button>
   ${o.mine?`<button class="iconbtn" type="button" data-copy="${esc(o.id)}">${S.copied===o.id?"Copied":"Copy for Claude"}</button><button class="iconbtn" type="button" data-delmine="${esc(o.id)}">Delete</button>`
           :`<button class="iconbtn" type="button" data-hide="${esc(o.id)}">Hide</button>`}${extra}</div></div></article>`;
@@ -259,6 +266,10 @@ function vStyle(){
 function vInspo(){
   return `<h2>Inspiration</h2>
   <p class="lede">Send an inspiration photo to Claude in chat. It will recreate the look from your wardrobe and add it here, with a note of anything you'd need to buy.</p>
+  <h3 style="margin:6px 0 10px">Style guides</h3>
+  <div class="guides"><figure><img src="img/guides/jeans-length.webp" alt="Jeans length guide: which hem suits sneakers, heels, loafers, ballet flats and boots" loading="lazy"><figcaption>Jeans length. Style me now leans to loafers or flats with cropped trousers, and sneakers, heels or boots with full length. If an outfit breaks the rule, its card tells you what to change.</figcaption></figure>
+  <figure><img src="img/guides/hair-neckline.webp" alt="Hairstyles to suit each neckline" loading="lazy"><figcaption>Hair by neckline. Outfit cards now show a hair tip when the top has one of these necklines.</figcaption></figure></div>
+  <h3 style="margin:6px 0 10px">Looks</h3>
   ${D.inspo.length?`<div class="ogrid">${D.inspo.map(p=>`<article class="ocard"><div class="two" style="background:var(--tile);padding:6px">
    <div class="tile" style="aspect-ratio:1/1"><img src="${esc(p.img)}" alt="Inspiration photo" loading="lazy"></div>${collage(p.itemIds||[])}</div>
    <div class="meta"><div class="nm">${esc(p.name||"Inspired look")}</div><p class="why">${esc(p.summary||"")}</p>

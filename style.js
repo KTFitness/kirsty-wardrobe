@@ -146,9 +146,32 @@ function lreasons(o,anchor,ctx,items){
   if(!out.length)return ctx.n<8?"A fresh combination. Tell me what you think.":"Something different to try.";
   return out.join(" ");}
 
+
+/* ---- jeans length guide and hair-by-neckline guide ---- */
+function hem(it){if(it.category!=="trousers"||/legging/.test(it.id))return null;const s=(it.id+" "+it.name+" "+(it.notes||"")+" "+(it.shape||"")).toLowerCase();
+  return /crop|ankle|widecrop|above ankle/.test(s)?"crop":"full";}
+function shoeKind(it){const s=lc(it);if(/loafer/.test(s))return "loafer";if(/ballet|flats|slides|mary jane/.test(s))return "flat";if(/kitten|heel/.test(s)&&!/boot/.test(s))return "heel";
+  if(/boot|doc/.test(s))return "boot";if(/sneaker|gazelle|samba/.test(s))return "sneaker";if(/sandal/.test(s))return "sandal";return null;}
+function hemScore(pieces){const t=pieces.find(p=>hem(p)),sh=pieces.find(p=>p.category==="shoes");if(!t||!sh)return 0;const h=hem(t),k=shoeKind(sh);
+  if(h==="crop")return k==="loafer"||k==="flat"||k==="sandal"?0.5:k==="boot"?-0.8:0;
+  return k==="sneaker"||k==="heel"||k==="boot"?0.4:k==="loafer"||k==="flat"?-0.9:0;}
+function hemTip(pieces){const t=pieces.find(p=>hem(p)),sh=pieces.find(p=>p.category==="shoes");if(!t||!sh)return "";const h=hem(t),k=shoeKind(sh);
+  if(h==="crop"&&k==="boot")return "Jeans length: a cropped hem leaves a gap over boots. Loafers or ballet flats suit this length better.";
+  if(h==="full"&&(k==="flat"||k==="loafer"))return "Jeans length: a full-length hem can swamp flats. Cuff it to the ankle, or swap to sneakers, heels or boots.";
+  return "";}
+function hairTip(pieces){const t=pieces.find(p=>p.category==="dresses")||pieces.find(p=>(p.category==="tops"||p.category==="knitwear")&&!isWarmLayer(p));if(!t)return "";
+  const s=(t.name+" "+(t.notes||"")).toLowerCase();
+  if(/halter/.test(s))return "Hair: high ponytail or top knot.";
+  if(/turtle|mock-neck|mock neck|funnel|stand collar|high neck/.test(s))return "Hair: sleek ponytail or low bun.";
+  if(/one-shoulder|off-shoulder|strapless|bandeau/.test(s))return "Hair: low bun or soft waves.";
+  if(/v-neck|deep v|wrap/.test(s))return "Hair: loose waves or a high ponytail.";
+  if(/square neck|sweetheart/.test(s))return "Hair: half-up or soft curls.";
+  if(/boat|bateau/.test(s))return "Hair: low bun.";
+  return "";}
+
 function suggest(anchor,items,ctx){
   const W=ctx.W||{};ctx.W=W;ctx.n=ctx.n||0;
-  const SC=(p,c)=>{const r=ctx.rules?score(p,c):{s:0,best:null,patNote:null};r.s+=learned(p,c);return r;};
+  const SC=(p,c)=>{const r=ctx.rules?score(p,c):{s:0,best:null,patNote:null};r.s+=learned(p,c)+hemScore(p);return r;};
   const E=ctx.rules?1:2.5/Math.sqrt(1+ctx.n/6)+0.6;
   const season=ctx.season,rnd=mulberry(ctx.seed||1);const excl=new Set(ctx.exclude||[]);
   const pool=items.filter(i=>i.id!==anchor.id&&inSeason(i,season));
@@ -221,9 +244,9 @@ function suggest(anchor,items,ctx){
     for(const r of results){if(out.length>=want)break;const k=r.pieces.map(p=>p.id).sort().join(",");if(have.has(k))continue;
       const mains=r.pieces.filter(p=>p!==anchor&&p.category!=="shoes"&&p.category!=="bags");if(mains.some(p=>(used[p.id]||0)>=2))continue;
       mains.forEach(p=>used[p.id]=(used[p.id]||0)+1);have.add(k);out.push(r);}}
-  out.forEach(o=>{const lr=lreasons(o,anchor,ctx,items);o.why=(ctx.rules&&/fresh|different/.test(lr))?reasons(o,anchor,ctx):lr;o.key=o.pieces.map(p=>p.id).sort().join(",");});
+  out.forEach(o=>{const lr=lreasons(o,anchor,ctx,items);o.why=(ctx.rules&&/fresh|different/.test(lr))?reasons(o,anchor,ctx):lr;o.key=o.pieces.map(p=>p.id).sort().join(",");o.tips=[hemTip(o.pieces),hairTip(o.pieces)].filter(Boolean);});
   return out;
 }
 function mulberry(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
-window.Stylist={suggest,features,families,pkind,formality};
+window.Stylist={suggest,features,families,pkind,formality,hemTip,hairTip};
 })();
