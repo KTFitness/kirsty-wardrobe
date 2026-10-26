@@ -60,7 +60,7 @@ const OCC={"Everyday":1.6,"Lunch out":2.1,"Dinner out":2.7,"Smart casual":2.5,"T
 const sleeveless=it=>/sleeveless|tank|halter|vest|cami|strapless|racer/.test(lc(it));
 const isVest=it=>it.category==="knitwear"&&/vest/.test(lc(it));
 const isWarmLayer=it=>it.category==="outerwear"||(it.category==="knitwear"&&/cardigan/.test(lc(it)));
-const isUnder=it=>(it.category==="tops"||it.category==="knitwear")&&/basic-white-tee|basic-black-tee|basic-grey-tee|basic-white-linen|basic-black-turtleneck|mock-neck|stripe long-sleeve|breton long-sleeve|navy-stripe-long/.test(it.id+" "+lc(it))&&!sleeveless(it);
+const isUnder=it=>(it.category==="tops"||it.category==="knitwear")&&/basic-white-tee|basic-black-tee|basic-grey-tee|basic-white-ls-crew|basic-pale-pink-ls|basic-white-linen|basic-black-turtleneck|mock-neck|stripe long-sleeve|breton long-sleeve|navy-stripe-long/.test(it.id+" "+lc(it))&&!sleeveless(it);
 const inSeason=(it,season)=>!it.seasons||!it.seasons.length||it.seasons.includes(season);
 const short=it=>it.name.replace(/^(Gingham|Stripe|Dots) No\. \d+: /,"").replace(/^(Gorman|Boden|Zara|COS|Sportsgirl|Ghanda|Marcs|Sass|Alessandra|Country Road|Mimco|Witchery|New Look|M&S|Primark) /,"").replace(/^./,c=>c.toLowerCase());
 
