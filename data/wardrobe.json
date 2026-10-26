@@ -3358,6 +3358,44 @@
    ]
   },
   {
+   "category": "outerwear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "wool blend, probably",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "basic": true,
+   "shape": "blazer",
+   "id": "basic-black-tailored-blazer",
+   "name": "Black tailored two-button blazer",
+   "notes": "Fitted, notch lapels, flap pockets. The smartest of your blazers. Your photo.",
+   "img": "img/black-tailored-blazer.webp"
+  },
+  {
+   "category": "outerwear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "wool blend, probably",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "basic": true,
+   "shape": "blazer",
+   "id": "basic-black-oversized-blazer",
+   "name": "Black oversized blazer",
+   "notes": "Relaxed longline cut, single button. Your photo (cropped, not cut out).",
+   "img": "img/black-oversized-blazer.webp"
+  },
+  {
    "id": "basic-grey-marle-jumper",
    "name": "Grey marle crew-neck jumper",
    "category": "knitwear",
