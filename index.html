@@ -282,7 +282,7 @@ function vStyle(){
   const a=S.anchor&&byId(S.anchor);
   if(!a)return pickGrid();
   const season=S.sSeason||currentSeason();
-  const res=window.Stylist?Stylist.suggest(a,D.items,{occ:S.sOcc,season,seed:S.seed,count:6,W:tasteW(),n:tasteN(),rules:useRules,exclude:allDisliked().concat(S.rated||[])}):[];
+  const res=window.Stylist?Stylist.suggest(a,D.items,{occ:S.sOcc,season,seed:S.seed,count:6,W:tasteW(),n:tasteN(),rules:useRules,exclude:allDisliked().concat(ratingLists().liked,S.rated||[])}):[];
   S.lastRes=res.map((r,k)=>({key:r.key,id:"g"+S.seed+"-"+k,name:r.set?"The matching set":"With the "+a.name.replace(/^(Gingham|Stripe|Dots) No\. \d+: /,"").toLowerCase(),itemIds:r.pieces.map(p=>p.id),occasions:[S.sOcc],why:r.why}));
   const offSeason=a.seasons&&a.seasons.length&&!a.seasons.includes(season);
   return `<div class="panel" style="grid-template-columns:96px 1fr;align-items:center">
@@ -298,9 +298,14 @@ function vStyle(){
   ${S.lastRes.length?`<div class="ogrid">${S.lastRes.map((o,k)=>`<article class="ocard">${collage(o.itemIds)}<div class="meta"><div class="nm">${k===0&&res[0].set?"The matching set":"Idea "+(k+1)}</div>
    <p class="why">${esc(o.why)}</p><p class="why" style="font-size:12px">${esc(o.itemIds.map(id=>byId(id).name).join(" · "))}</p>
    <div class="row"><button class="btn" type="button" data-like="${k}">Like</button><button class="btn ghost" type="button" data-nope="${k}">Not for me</button><button class="iconbtn" type="button" data-copygen="${k}">${S.copied===o.id?"Copied":"Copy for Claude"}</button></div></div></article>`).join("")}</div>
-   <div class="row"><button class="btn ghost" type="button" id="more">Show me different ideas</button></div>`
+   <div class="row"><button class="btn ghost" type="button" id="more">Show me different ideas</button></div>
+   ${likedFor(a)}`
    :`<div class="empty"><strong>No outfits for this season and occasion</strong><span>Try another season or occasion.</span></div>`}`;
 }
+function likedFor(a){const L=mine.filter(o=>(o.itemIds||[]).includes(a.id));if(!L.length)return "";
+  return `<h3 style="margin:22px 0 6px">You've liked ${L.length} outfit${L.length===1?"":"s"} with the ${esc(a.name)}</h3>
+  <p class="lede" style="margin-top:0">These are saved in the Outfits tab too. Ideas you've rated don't come back here, so new ones can take their place.</p>
+  <div class="ogrid">${L.slice().reverse().map(o=>outfitCard(o)).join("")}</div>`;}
 function vInspo(){
   return `<h2>Inspiration</h2>
   <p class="lede">Send an inspiration photo to Claude in chat. It will recreate the look from your wardrobe and add it here, with a note of anything you'd need to buy.</p>
