@@ -73,6 +73,12 @@ h2{font-family:var(--display);font-weight:400;font-size:22px;margin:0;text-wrap:
 .mini{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:0;overflow:hidden;cursor:pointer;text-align:left;display:flex;flex-direction:column;min-width:0;color:var(--fg)}
 .mini .collage{padding:4px;gap:2px}
 .mini span{font-size:11.5px;line-height:1.25;padding:5px 7px 7px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.catsec{margin:0 0 10px}
+.cathead{all:unset;box-sizing:border-box;width:100%;display:flex;align-items:center;gap:10px;padding:12px 14px;cursor:pointer;background:var(--tile);border-radius:12px;margin:0 0 8px}
+.cathead .gn{flex:1;font-family:var(--display);font-size:18px}
+.cathead .chev{color:var(--muted)}
+.cathead .n{font-size:12px;color:var(--muted);background:var(--surface);border-radius:99px;padding:2px 8px;font-weight:600}
+.catsec .grp{margin-left:10px}
 .grp{background:var(--surface);border:1px solid var(--line);border-radius:12px;margin:0 0 8px;padding:0 10px}
 .grphead{all:unset;box-sizing:border-box;width:100%;display:flex;align-items:center;gap:10px;padding:9px 0;cursor:pointer}
 .grphead img{width:42px;height:42px;object-fit:contain;background:var(--tile);border-radius:8px}
@@ -266,10 +272,12 @@ function vOutfits(){
    ${today.length?`<div class="minigrid three">${today.map(miniTile).join("")}</div><div class="row"><button class="btn ghost" type="button" id="todayMore">Show me three others</button></div>`
      :`<p class="lede">Like a few outfits in Style me and they'll show up here.</p>`}</section>
   <h3 style="margin:22px 0 4px">Your liked outfits <span class="n">${liked.length}</span></h3>
-  <p class="lede" style="margin:0 0 10px">Grouped by the main piece. Tap a group to open it, then tap an outfit to see it full size.</p>
-  ${G.map(g=>{const id=g.item?g.item.id:"other",open=!!S.openG[id];return `<div class="grp${open?" open":""}"><button type="button" class="grphead" data-grp="${esc(id)}" aria-expanded="${open}">
+  <p class="lede" style="margin:0 0 10px">Grouped by type, then by the main piece. Tap to open a section, then a piece, then an outfit to see it full size.</p>
+  ${CATS.map(([ck,cv])=>[ck,cv,G.filter(g=>(g.item?g.item.category:"other")===ck)]).concat([["other","Other",G.filter(g=>!g.item||!CATS.some(c=>c[0]===g.item.category))]]).filter(x=>x[2].length).map(([ck,cv,gs])=>{const co=!!S.openG["cat:"+ck];const tot=gs.reduce((t,g)=>t+g.list.length,0);
+   return `<div class="catsec"><button type="button" class="cathead" data-grp="cat:${esc(ck)}" aria-expanded="${co}"><span class="gn">${esc(cv)}</span><span class="n">${tot}</span><span class="chev">${co?"▾":"▸"}</span></button>
+   ${co?gs.map(g=>{const id=g.item?g.item.id:"other",open=!!S.openG[id];return `<div class="grp${open?" open":""}"><button type="button" class="grphead" data-grp="${esc(id)}" aria-expanded="${open}">
     ${g.item?`<img src="${esc(g.item.img)}" alt="">`:""}<span class="gn">${esc(g.item?g.item.name:"Other")}</span><span class="n">${g.list.length}</span><span class="chev">${open?"▾":"▸"}</span></button>
-    ${open?`<div class="minigrid">${g.list.map(miniTile).join("")}</div>`:""}</div>`;}).join("")}
+    ${open?`<div class="minigrid">${g.list.map(miniTile).join("")}</div>`:""}</div>`;}).join(""):""}</div>`;}).join("")}
   ${ideas.length?`<div class="grp${S.openG.__ideas?" open":""}"><button type="button" class="grphead" data-grp="__ideas" aria-expanded="${!!S.openG.__ideas}"><span class="gn">Ideas from Claude</span><span class="n">${ideas.length}</span><span class="chev">${S.openG.__ideas?"▾":"▸"}</span></button>
     ${S.openG.__ideas?`<div class="minigrid">${ideas.map(miniTile).join("")}</div>`:""}</div>`:""}
   ${hidden.length?`<div class="row"><button class="iconbtn" type="button" id="unhide">Show ${hidden.length} hidden outfit${hidden.length===1?"":"s"}</button></div>`:""}`;
