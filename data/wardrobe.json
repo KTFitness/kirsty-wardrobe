@@ -527,6 +527,163 @@
    ],
    "notes": "Ruffle high neck, flutter cap sleeves, back button, UK 10",
    "img": "img/newlook-pink-seersucker-ruffle.webp"
+  },
+  {
+   "id": "boden-blue-dot-ruffle-top",
+   "name": "Boden blue spot ruffle top",
+   "category": "tops",
+   "colours": [
+    "chambray blue",
+    "white"
+   ],
+   "pattern": "medium polka dot",
+   "fabric": "probably slub jersey",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Ruffle stand collar and armholes, button front. Looks like the same style as Dots No. 2, so one may be a duplicate.",
+   "img": "img/boden-blue-dot-ruffle-top.webp"
+  },
+  {
+   "id": "pink-wide-leg-sailor-trousers",
+   "name": "Pink wide-leg sailor trousers",
+   "category": "trousers",
+   "colours": [
+    "dusty pink"
+   ],
+   "pattern": "solid",
+   "fabric": "cotton twill or denim, unsure",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "High waist, two-button fly, patch front pockets, cropped wide leg",
+   "img": "img/pink-wide-leg-sailor-trousers.webp"
+  },
+  {
+   "id": "red-stripe-cropped-jacket",
+   "name": "Red stripe cropped denim jacket",
+   "category": "outerwear",
+   "colours": [
+    "red",
+    "cream"
+   ],
+   "pattern": "wide vertical stripe",
+   "fabric": "denim, probably cotton",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Collarless, patch chest pockets, brass buttons, cropped",
+   "img": "img/red-stripe-cropped-jacket.webp"
+  },
+  {
+   "id": "denim-daisy-button-shirt",
+   "name": "Denim short-sleeve shirt with daisy buttons",
+   "category": "tops",
+   "colours": [
+    "mid-blue denim"
+   ],
+   "pattern": "solid",
+   "fabric": "denim, probably cotton",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Collared, patch chest pockets, gold flower buttons",
+   "img": "img/denim-daisy-button-shirt.webp"
+  },
+  {
+   "id": "black-multi-spot-swing-dress",
+   "name": "Black multi-spot swing dress",
+   "category": "dresses",
+   "colours": [
+    "black",
+    "multicolour spots"
+   ],
+   "pattern": "large scattered spots, some metallic",
+   "fabric": "jersey or ponte, unsure",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Sleeveless, mock neck, back zip, A-line",
+   "img": "img/black-multi-spot-swing-dress.webp"
+  },
+  {
+   "id": "black-topstitch-pinafore-dress",
+   "name": "Black topstitched maxi dress",
+   "category": "dresses",
+   "colours": [
+    "black",
+    "white topstitching"
+   ],
+   "pattern": "solid with contrast stitching",
+   "fabric": "probably cotton poplin",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Square neck, wide straps, long A-line skirt. Layer a shirt or tee under it.",
+   "img": "img/black-topstitch-pinafore-dress.webp"
+  },
+  {
+   "id": "pink-cord-chore-jacket",
+   "name": "Pink wide-wale cord jacket",
+   "category": "outerwear",
+   "colours": [
+    "dusty pink"
+   ],
+   "pattern": "corduroy",
+   "fabric": "cotton corduroy",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Chore-jacket shape, big patch pockets, press-stud front",
+   "img": "img/pink-cord-chore-jacket.webp"
+  },
+  {
+   "id": "pink-embroidered-peasant-blouse",
+   "name": "Pink embroidered peasant blouse",
+   "category": "tops",
+   "colours": [
+    "hot pink",
+    "green"
+   ],
+   "pattern": "leaf embroidery",
+   "fabric": "probably cotton",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "V placket, embroidered yoke and sleeves, long balloon sleeves",
+   "img": "img/pink-embroidered-peasant-blouse.webp"
+  },
+  {
+   "id": "green-textured-mini-skirt",
+   "name": "Green textured skirt",
+   "category": "skirts",
+   "colours": [
+    "emerald green"
+   ],
+   "pattern": "textured weave",
+   "fabric": "probably cotton pique",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Gathered at waist, side pockets, above the knee",
+   "img": "img/green-textured-mini-skirt.webp"
   }
  ],
  "outfits": [
