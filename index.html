@@ -314,7 +314,7 @@ function ratingLists0(){const sv=(D.taste&&D.taste.saved)||{liked:[],disliked:[]
   return {liked:sv.liked.concat(taste.liked),disliked:sv.disliked.concat(taste.disliked)};}
 function deriveW(){const {liked,disliked}=ratingLists(),N=liked.length+disliked.length,w={};if(!N||!window.Stylist)return w;
   const p=liked.length/N,c={};
-  const add=(key,i)=>{const P=key.split(",").map(byId).filter(Boolean);for(const k of Stylist.features(P,"Everyday")){if(k.startsWith("it:"))continue;(c[k]=c[k]||[0,0])[i]++;}};
+  const add=(key,i)=>{let P=key.split(",").map(byId).filter(Boolean);if(i===1)P=P.filter(x=>!["shoes","bags","accessories"].includes(x.category));for(const k of Stylist.features(P,"Everyday")){if(k.startsWith("it:"))continue;(c[k]=c[k]||[0,0])[i]++;}};
   liked.forEach(k=>add(k,0));disliked.forEach(k=>add(k,1));
   for(const k in c){const n=c[k][0]+c[k][1];w[k]=Math.round((c[k][0]-n*p)/Math.sqrt(n+4)*100)/100;}return w;}
 function tasteW(){const w={...(D.taste&&D.taste.w||{})},r=deriveW();for(const k in r)w[k]=(w[k]||0)+r[k];return w;}
@@ -328,7 +328,7 @@ function vStyle(){
   const a=S.anchor&&byId(S.anchor);
   if(!a)return pickGrid();
   const season=S.sSeason||currentSeason();
-  const res=window.Stylist?Stylist.suggest(a,D.items,{occ:S.sOcc,season,seed:S.seed,count:6,W:tasteW(),n:tasteN(),rules:useRules,exclude:allDisliked().concat(ratingLists().liked,S.rated||[]),shown:S.shownFor===a.id?(S.shown||[]):[],with:S.withFor===a.id?S.with:null}):[];
+  const res=window.Stylist?Stylist.suggest(a,D.items,{occ:S.sOcc,season,seed:S.seed,count:6,W:tasteW(),n:tasteN(),rules:useRules,exclude:ratingLists().liked.concat(S.rated||[]),excludeCore:allDisliked().map(k=>Stylist.coreKey(k.split(",").map(byId).filter(Boolean))),shown:S.shownFor===a.id?(S.shown||[]):[],with:S.withFor===a.id?S.with:null}):[];
   S.lastRes=res.map((r,k)=>({key:r.key,id:"g"+S.seed+"-"+k,name:r.set?"The matching set":"With the "+a.name.replace(/^(Gingham|Stripe|Dots) No\. \d+: /,"").toLowerCase(),itemIds:r.pieces.map(p=>p.id),occasions:[S.sOcc],why:r.why}));
   const offSeason=a.seasons&&a.seasons.length&&!a.seasons.includes(season);
   return `<div class="panel" style="grid-template-columns:96px 1fr;align-items:center">

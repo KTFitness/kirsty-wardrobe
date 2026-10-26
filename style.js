@@ -176,7 +176,9 @@ function suggest(anchor,items,ctx){
   const fresh=p=>p.reduce((t,x)=>t-(x.id!==anchor.id&&!['shoes','bags','accessories'].includes(x.category)?Math.min(seen[x.id]||0,4)*3:0),0);
   const SC=(p,c)=>{const r=ctx.rules?score(p,c):{s:0,best:null,patNote:null};r.s+=learned(p,c)+hemScore(p)+fresh(p);return r;};
   const E=ctx.rules?1:Math.max(1.3,2.5/Math.sqrt(1+ctx.n/6)+0.6);
-  const season=ctx.season,rnd=mulberry(ctx.seed||1);const excl=new Set(ctx.exclude||[]);
+  const season=ctx.season,rnd=mulberry(ctx.seed||1);const excl0=new Set(ctx.exclude||[]),exCore=new Set(ctx.excludeCore||[]);
+  const coreKey=ps=>ps.filter(p=>!["shoes","bags","accessories"].includes(p.category)).map(p=>p.id).sort().join(",");
+  const excl={has:k=>{if(excl0.has(k))return true;const ps=k.split(",").map(id=>items.find(i=>i.id===id)).filter(Boolean);return exCore.has(coreKey(ps));}};
   const pool=items.filter(i=>i.id!==anchor.id&&inSeason(i,season));
   const by=c=>pool.filter(i=>c.includes(i.category));
   let tops=by(["tops","knitwear"]).filter(i=>!isWarmLayer(i)),bottoms=by(["skirts","trousers","shorts"]),dresses=by(["dresses"]);
@@ -258,7 +260,7 @@ function suggest(anchor,items,ctx){
   }
   for(const r of wild){const b=botOf(r);if(out.some(o=>o.pieces.includes(b)))continue;out.push(r);}
   if(out.length<want){const have=new Set(out.map(o=>o.pieces.map(p=>p.id).sort().join(",")));
-    for(const r of results){if(out.length>=want)break;const k=r.pieces.map(p=>p.id).sort().join(",");if(have.has(k))continue;
+    for(const r of results){if(out.length>=want)break;const k=r.pieces.map(p=>p.id).sort().join(",");if(have.has(k)||excl.has(k))continue;
       const mains=r.pieces.filter(p=>p!==anchor&&p!==WI&&p.category!=="shoes"&&p.category!=="bags");if(mains.some(p=>(used[p.id]||0)>=2))continue;
       const bf=bottomFam(r);if(bf&&(bfam[bf]||0)>=3)continue;if(bf)bfam[bf]=(bfam[bf]||0)+1;
       mains.forEach(p=>used[p.id]=(used[p.id]||0)+1);have.add(k);out.push(r);}}
@@ -266,5 +268,5 @@ function suggest(anchor,items,ctx){
   return out;
 }
 function mulberry(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
-window.Stylist={suggest,features,families,pkind,formality,hemTip,hairTip};
+window.Stylist={coreKey:ps=>ps.filter(p=>!["shoes","bags","accessories"].includes(p.category)).map(p=>p.id).sort().join(","),suggest,features,families,pkind,formality,hemTip,hairTip};
 })();
