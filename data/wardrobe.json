@@ -684,6 +684,339 @@
    ],
    "notes": "Gathered at waist, side pockets, above the knee",
    "img": "img/green-textured-mini-skirt.webp"
+  },
+  {
+   "id": "blue-spot-chino-shorts",
+   "name": "Blue spot chino shorts",
+   "category": "shorts",
+   "colours": [
+    "cornflower blue",
+    "white"
+   ],
+   "pattern": "large polka dot",
+   "fabric": "cotton chino, probably",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Mid-length, slant pockets, button fly",
+   "img": "img/blue-spot-chino-shorts.webp"
+  },
+  {
+   "id": "navy-red-stripe-halter-knit",
+   "name": "Navy and red stripe halter knit top",
+   "category": "knitwear",
+   "colours": [
+    "navy",
+    "red",
+    "cream"
+   ],
+   "pattern": "block and fine stripes",
+   "fabric": "fine knit, fibre unknown",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Halter neck with cream binding, cropped. Picture is a crop of the listing photo.",
+   "img": "img/navy-red-stripe-halter-knit.webp"
+  },
+  {
+   "id": "green-flower-wool-mini",
+   "name": "Green flower mini skirt",
+   "category": "skirts",
+   "colours": [
+    "apple green",
+    "dark brown"
+   ],
+   "pattern": "large flower jacquard",
+   "fabric": "probably wool blend",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Straight mini, fuzzy jacquard flowers. Picture is a crop of the listing photo.",
+   "img": "img/green-flower-wool-mini.webp"
+  },
+  {
+   "id": "adidas-gazelle-pink",
+   "name": "Adidas Gazelle Indoor, pink",
+   "category": "shoes",
+   "colours": [
+    "pale pink",
+    "white",
+    "gum"
+   ],
+   "pattern": "three stripes",
+   "fabric": "suede",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Pale pink suede, white stripes, gum sole",
+   "img": "img/adidas-gazelle-pink.webp"
+  },
+  {
+   "id": "sass-rust-cord-jacket",
+   "name": "Sass rust cord jacket",
+   "category": "outerwear",
+   "colours": [
+    "rust",
+    "cinnamon"
+   ],
+   "pattern": "chunky cord",
+   "fabric": "cord, fibre unknown",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Cropped, flap chest pockets, press studs",
+   "img": "img/sass-rust-cord-jacket.webp"
+  },
+  {
+   "id": "gorman-green-cord-jacket",
+   "name": "Gorman green cord jacket",
+   "category": "outerwear",
+   "colours": [
+    "bottle green"
+   ],
+   "pattern": "wide-wale cord",
+   "fabric": "cotton corduroy",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Chore shape, patch pockets, press studs",
+   "img": "img/gorman-green-cord-jacket.webp"
+  },
+  {
+   "id": "magenta-vneck-knit-vest",
+   "name": "Magenta V-neck knit vest",
+   "category": "knitwear",
+   "colours": [
+    "magenta"
+   ],
+   "pattern": "solid",
+   "fabric": "fine knit, possibly merino",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Fitted, V-neck, ribbed hem",
+   "img": "img/magenta-vneck-knit-vest.webp"
+  },
+  {
+   "id": "green-wide-leg-cords",
+   "name": "Green wide-leg cord trousers",
+   "category": "trousers",
+   "colours": [
+    "sage green"
+   ],
+   "pattern": "wide-wale cord",
+   "fabric": "cotton corduroy",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "High waist, five-pocket, wide cropped leg",
+   "img": "img/green-wide-leg-cords.webp"
+  },
+  {
+   "id": "pink-petal-collar-jacket",
+   "name": "Pink linen jacket with petal collar",
+   "category": "outerwear",
+   "colours": [
+    "hot pink"
+   ],
+   "pattern": "solid with petal trim",
+   "fabric": "probably linen",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Cropped three-quarter sleeves, petal collar and petal buttons",
+   "img": "img/pink-petal-collar-jacket.webp"
+  },
+  {
+   "id": "black-velvet-blazer",
+   "name": "Black velvet blazer",
+   "category": "outerwear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "velvet with grosgrain trim",
+   "fabric": "cotton velvet, probably",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Fitted, two buttons, ribbon-trimmed collar and pockets",
+   "img": "img/black-velvet-blazer.webp"
+  },
+  {
+   "id": "green-breton-long-sleeve",
+   "name": "Green Breton long-sleeve tee",
+   "category": "tops",
+   "colours": [
+    "kelly green",
+    "white"
+   ],
+   "pattern": "horizontal stripe",
+   "fabric": "cotton jersey, probably",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Boxy crew neck, long sleeves",
+   "img": "img/green-breton-long-sleeve.webp"
+  },
+  {
+   "id": "cream-tee-pink-collar",
+   "name": "Cream knit tee with pink collar",
+   "category": "knitwear",
+   "colours": [
+    "cream",
+    "pink"
+   ],
+   "pattern": "solid with contrast neckband",
+   "fabric": "fine knit, fibre unknown",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Short sleeves, fitted. Picture is a crop of the seller's selfie.",
+   "img": "img/cream-tee-pink-collar.webp"
+  },
+  {
+   "id": "green-tee-pink-collar",
+   "name": "Green knit tee with pink collar",
+   "category": "knitwear",
+   "colours": [
+    "green",
+    "pale pink"
+   ],
+   "pattern": "solid with contrast neckband",
+   "fabric": "fine knit, fibre unknown",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Short sleeves, fitted. Picture is a crop of the seller's selfie.",
+   "img": "img/green-tee-pink-collar.webp"
+  },
+  {
+   "id": "charcoal-velvet-skirt",
+   "name": "Charcoal velvet skirt",
+   "category": "skirts",
+   "colours": [
+    "charcoal"
+   ],
+   "pattern": "solid",
+   "fabric": "cotton velvet, probably",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "A-line, above knee, side pockets, back zip",
+   "img": "img/charcoal-velvet-skirt.webp"
+  },
+  {
+   "id": "pale-blue-knit-vest",
+   "name": "Pale blue knit vest",
+   "category": "knitwear",
+   "colours": [
+    "pale blue"
+   ],
+   "pattern": "solid with contrast stitch trim",
+   "fabric": "cotton knit, probably",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Crew neck, side splits, ribbed hem",
+   "img": "img/pale-blue-knit-vest.webp"
+  },
+  {
+   "id": "red-moss-stitch-jumper",
+   "name": "Red textured jumper",
+   "category": "knitwear",
+   "colours": [
+    "tomato red"
+   ],
+   "pattern": "moss stitch",
+   "fabric": "cotton knit, probably",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Crew neck, cropped, long sleeves",
+   "img": "img/red-moss-stitch-jumper.webp"
+  },
+  {
+   "id": "red-double-breasted-blazer",
+   "name": "Red double-breasted blazer",
+   "category": "outerwear",
+   "colours": [
+    "tomato red"
+   ],
+   "pattern": "solid, navy spot lining",
+   "fabric": "unsure",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Peak lapels, black buttons",
+   "img": "img/red-double-breasted-blazer.webp"
+  },
+  {
+   "id": "navy-stripe-long-sleeve-top",
+   "name": "Navy and white stripe long-sleeve top",
+   "category": "tops",
+   "colours": [
+    "navy",
+    "white"
+   ],
+   "pattern": "fine horizontal stripe",
+   "fabric": "jersey, fibre unknown",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Fitted crew neck, long sleeves",
+   "img": "img/navy-stripe-long-sleeve-top.webp"
+  },
+  {
+   "id": "orange-knit-tank",
+   "name": "Orange knit tank",
+   "category": "knitwear",
+   "colours": [
+    "orange"
+   ],
+   "pattern": "solid",
+   "fabric": "boucle knit, fibre unknown",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Boat neck, sleeveless",
+   "img": "img/orange-knit-tank.webp"
   }
  ],
  "outfits": [
