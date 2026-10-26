@@ -2481,8 +2481,8 @@
     "Winter",
     "Spring"
    ],
-   "notes": "Basic you own. Drawn picture.",
-   "img": "img/basics/basic-white-ls-crew.svg",
+   "notes": "Fitted rib, crew neck. Your photo.",
+   "img": "img/white-ls-crew-tee.webp",
    "basic": true,
    "shape": "ls",
    "_f": [
@@ -2915,7 +2915,7 @@
   },
   {
    "id": "basic-black-knee-boots-heel",
-   "name": "Black heeled knee-high boots",
+   "name": "Black kitten-heel knee-high boots",
    "category": "shoes",
    "colours": [
     "black"
@@ -2926,8 +2926,8 @@
     "Autumn",
     "Winter"
    ],
-   "notes": "Basic you already own. Drawn picture.",
-   "img": "img/basics/basic-black-knee-boots-heel.svg",
+   "notes": "Square toe, slim kitten heel. Your photo.",
+   "img": "img/black-heeled-knee-boots.webp",
    "basic": true,
    "shape": "kneeheel",
    "_f": [
@@ -3811,8 +3811,8 @@
     "Autumn",
     "Winter"
    ],
-   "notes": "Basic you already own. Drawn picture.",
-   "img": "img/basics/basic-black-bamboo-wide-crop.svg",
+   "notes": "High waist, wide cropped leg, side pockets. Your photo.",
+   "img": "img/black-bamboo-wide-crop.webp",
    "basic": true,
    "shape": "widecrop",
    "_f": [
