@@ -1402,24 +1402,6 @@
    ]
   },
   {
-   "pattern": "solid with contrast trim",
-   "notes": "Long sleeves, black collar, placket and cuffs. Picture is a crop of the listing photo.",
-   "id": "uniqlo-white-shirt-black-trim",
-   "name": "Uniqlo white shirt with black trim",
-   "category": "tops",
-   "colours": [
-    "white",
-    "black"
-   ],
-   "fabric": "crepe, probably",
-   "seasons": [
-    "Spring",
-    "Autumn",
-    "Winter"
-   ],
-   "img": "img/uniqlo-white-shirt-black-trim.webp"
-  },
-  {
    "id": "chambray-shirt",
    "name": "Chambray shirt",
    "category": "tops",
@@ -1985,6 +1967,24 @@
    "img": "img/cream-rib-tank.webp"
   },
   {
+   "pattern": "solid",
+   "notes": "Open collar, V neck, short cuffed sleeves, boxy. Matches the brown linen mini skirt. Picture is a crop of the listing photo.",
+   "id": "brown-linen-popover-top",
+   "name": "Brown linen popover shirt",
+   "category": "tops",
+   "colours": [
+    "chocolate brown"
+   ],
+   "fabric": "linen",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "img": "img/brown-linen-popover-top.webp",
+   "setWith": "brown-linen-mini-skirt"
+  },
+  {
    "id": "country-road-white-tank",
    "name": "Country Road white tank",
    "category": "tops",
@@ -2039,6 +2039,24 @@
    ],
    "notes": "Wrap front, big patch pocket, button. Picture is a crop of the listing photo.",
    "img": "img/ecru-wrap-mini-skirt.webp"
+  },
+  {
+   "pattern": "solid",
+   "notes": "Straight mini, centre seams. Matches the brown linen popover shirt. Picture is a crop of the listing photo.",
+   "id": "brown-linen-mini-skirt",
+   "name": "Brown linen mini skirt",
+   "category": "skirts",
+   "colours": [
+    "chocolate brown"
+   ],
+   "fabric": "linen",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "img": "img/brown-linen-mini-skirt.webp",
+   "setWith": "brown-linen-popover-top"
   },
   {
    "id": "mimco-raffia-clutch",
@@ -3029,6 +3047,25 @@
    "_f": [
     "black"
    ]
+  },
+  {
+   "pattern": "solid",
+   "notes": "High waist, pressed crease, tapered ankle length. Picture is a crop of the listing photo.",
+   "id": "uniqlo-black-tapered-trousers",
+   "name": "Uniqlo black tapered ankle trousers",
+   "category": "trousers",
+   "colours": [
+    "black"
+   ],
+   "fabric": "smart stretch",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "img": "img/uniqlo-black-tapered-trousers.webp",
+   "shape": "crop"
   },
   {
    "id": "basic-black-docs",
