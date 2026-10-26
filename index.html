@@ -156,7 +156,8 @@ const $=s=>document.querySelector(s);
 const ALIAS={"basic-tan-sandals":"basic-tan-flats","basic-white-tank":"zara-white-sleeveless-knit","basic-black-tank":"zara-black-sleeveless-knit"};
 const byId=id=>D.items.find(i=>i.id===(ALIAS[id]||id));
 function currentSeason(){const m=new Date().getMonth();return m===11||m<2?"Summer":m<5?"Autumn":m<8?"Winter":"Spring";}
-const allOutfits=()=>D.outfits.map(o=>({...o,mine:false})).concat(mine.map(o=>({...o,mine:true}))).filter(o=>!(o.itemIds||[]).some(id=>gone.includes(id)));
+const okey=o=>(o.itemIds||[]).map(id=>ALIAS[id]||id).sort().join(",");
+const allOutfits=()=>{const mk=new Set(mine.map(okey));return D.outfits.filter(o=>!(o.liked&&mk.has(okey(o)))).map(o=>({...o,mine:false})).concat(mine.map(o=>({...o,mine:true}))).filter(o=>!(o.itemIds||[]).some(id=>gone.includes(id)));};
 
 function collage(ids){
   const main=[],side=[];
