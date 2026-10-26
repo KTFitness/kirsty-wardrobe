@@ -740,7 +740,7 @@
   },
   {
    "id": "adidas-gazelle-pink",
-   "name": "Adidas Gazelle Indoor, pink",
+   "name": "Pink Adidas Gazelles",
    "category": "shoes",
    "colours": [
     "pale pink",
@@ -1756,7 +1756,8 @@
     "Summer"
    ],
    "notes": "Sleeveless, boxy, cropped. Matches the navy rope-trim skirt.",
-   "img": "img/navy-rope-trim-crop-top.webp"
+   "img": "img/navy-rope-trim-crop-top.webp",
+   "setWith": "navy-rope-trim-mini-skirt"
   },
   {
    "id": "navy-rope-trim-mini-skirt",
@@ -1774,7 +1775,8 @@
     "Autumn"
    ],
    "notes": "A-line mini, rope-edged pockets. Matches the navy rope-trim top.",
-   "img": "img/navy-rope-trim-mini-skirt.webp"
+   "img": "img/navy-rope-trim-mini-skirt.webp",
+   "setWith": "navy-rope-trim-crop-top"
   },
   {
    "id": "gorman-green-rib-tank",
@@ -2093,7 +2095,8 @@
     "Summer"
    ],
    "notes": "Short sleeves, ric-rac edges. Matches the daisy wrap skirt. Picture is a crop of the listing photo.",
-   "img": "img/daisy-print-linen-shirt.webp"
+   "img": "img/daisy-print-linen-shirt.webp",
+   "setWith": "daisy-print-wrap-skirt"
   },
   {
    "id": "daisy-print-wrap-skirt",
@@ -2111,7 +2114,692 @@
     "Summer"
    ],
    "notes": "Wrap front with buttons, ric-rac hem. Matches the daisy shirt. Picture is a crop of the listing photo.",
-   "img": "img/daisy-print-wrap-skirt.webp"
+   "img": "img/daisy-print-wrap-skirt.webp",
+   "setWith": "daisy-print-linen-shirt"
+  },
+  {
+   "id": "coral-ombre-denim-shirt",
+   "name": "Coral ombré denim cropped shirt",
+   "category": "tops",
+   "colours": [
+    "coral",
+    "peach"
+   ],
+   "pattern": "ombré dye",
+   "fabric": "denim, probably cotton",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Short sleeves, gold pebble buttons. Matches the coral ombré skirt. Picture is a crop of the listing photo.",
+   "img": "img/coral-ombre-denim-shirt.webp",
+   "setWith": "coral-ombre-denim-skirt"
+  },
+  {
+   "id": "coral-ombre-denim-skirt",
+   "name": "Coral ombré denim button skirt",
+   "category": "skirts",
+   "colours": [
+    "peach",
+    "coral"
+   ],
+   "pattern": "ombré dye",
+   "fabric": "denim, probably cotton",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Button-through, five-pocket. Matches the coral ombré shirt. Picture is a crop of the listing photo.",
+   "img": "img/coral-ombre-denim-skirt.webp",
+   "setWith": "coral-ombre-denim-shirt"
+  },
+  {
+   "id": "floral-halter-wrap-top",
+   "name": "Painterly floral halter wrap top",
+   "category": "tops",
+   "colours": [
+    "cream",
+    "pink",
+    "orange",
+    "green"
+   ],
+   "pattern": "large painterly floral",
+   "fabric": "linen blend, probably",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Halter neck, side tie. Matches the floral wide-leg trousers. Picture is a crop of the listing photo.",
+   "img": "img/floral-halter-wrap-top.webp",
+   "setWith": "floral-wide-leg-trousers"
+  },
+  {
+   "id": "floral-wide-leg-trousers",
+   "name": "Painterly floral wide-leg trousers",
+   "category": "trousers",
+   "colours": [
+    "cream",
+    "pink",
+    "orange",
+    "green"
+   ],
+   "pattern": "large painterly floral",
+   "fabric": "linen blend, probably",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Elastic waist, wide leg. Matches the floral halter top. Picture is a crop of the listing photo.",
+   "img": "img/floral-wide-leg-trousers.webp",
+   "setWith": "floral-halter-wrap-top"
+  },
+  {
+   "id": "zara-white-sleeveless-knit",
+   "name": "White sleeveless fitted knit top",
+   "category": "tops",
+   "colours": [
+    "white"
+   ],
+   "pattern": "solid",
+   "fabric": "fine knit, fibre unknown",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Crew neck, extended shoulders",
+   "img": "img/zara-white-sleeveless-knit.webp"
+  },
+  {
+   "id": "zara-black-sleeveless-knit",
+   "name": "Black sleeveless fitted knit top",
+   "category": "tops",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "fine knit, fibre unknown",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Crew neck, extended shoulders",
+   "img": "img/zara-black-sleeveless-knit.webp"
+  },
+  {
+   "id": "cream-mock-neck-long-sleeve",
+   "name": "Cream mock-neck long-sleeve top",
+   "category": "tops",
+   "colours": [
+    "cream"
+   ],
+   "pattern": "fine rib",
+   "fabric": "jersey, fibre unknown",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Fitted, mock neck",
+   "img": "img/cream-mock-neck-long-sleeve.webp"
+  },
+  {
+   "id": "black-mock-neck-long-sleeve",
+   "name": "Black mock-neck long-sleeve top",
+   "category": "tops",
+   "colours": [
+    "black"
+   ],
+   "pattern": "fine rib",
+   "fabric": "jersey, fibre unknown",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Fitted, mock neck",
+   "img": "img/black-mock-neck-long-sleeve.webp"
+  },
+  {
+   "id": "red-sleeveless-knit",
+   "name": "Red sleeveless fitted knit top",
+   "category": "tops",
+   "colours": [
+    "red"
+   ],
+   "pattern": "solid",
+   "fabric": "fine knit, fibre unknown",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Crew neck, extended shoulders",
+   "img": "img/red-sleeveless-knit.webp"
+  },
+  {
+   "id": "brown-mock-neck-long-sleeve",
+   "name": "Chocolate mock-neck long-sleeve top",
+   "category": "tops",
+   "colours": [
+    "chocolate brown"
+   ],
+   "pattern": "fine rib",
+   "fabric": "jersey, fibre unknown",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Fitted, mock neck",
+   "img": "img/brown-mock-neck-long-sleeve.webp"
+  },
+  {
+   "id": "red-a-line-midi-skirt",
+   "name": "Red A-line midi skirt",
+   "category": "skirts",
+   "colours": [
+    "red"
+   ],
+   "pattern": "solid",
+   "fabric": "cotton sateen, probably",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Panelled, full A-line",
+   "img": "img/red-a-line-midi-skirt.webp"
+  },
+  {
+   "id": "basic-white-tee",
+   "name": "White T-shirt",
+   "category": "tops",
+   "colours": [
+    "white"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-white-tee.svg",
+   "basic": true,
+   "shape": "tee"
+  },
+  {
+   "id": "basic-black-tee",
+   "name": "Black T-shirt",
+   "category": "tops",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-black-tee.svg",
+   "basic": true,
+   "shape": "tee"
+  },
+  {
+   "id": "basic-white-linen-shirt",
+   "name": "White linen long-sleeve shirt",
+   "category": "tops",
+   "colours": [
+    "white"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-white-linen-shirt.svg",
+   "basic": true,
+   "shape": "linen"
+  },
+  {
+   "id": "basic-black-turtleneck",
+   "name": "Black turtleneck jumper",
+   "category": "knitwear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-black-turtleneck.svg",
+   "basic": true,
+   "shape": "turtle"
+  },
+  {
+   "id": "basic-blue-wide-jeans",
+   "name": "Blue wide-leg jeans",
+   "category": "trousers",
+   "colours": [
+    "denim blue"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-blue-wide-jeans.svg",
+   "basic": true,
+   "shape": "wide"
+  },
+  {
+   "id": "basic-white-wide-jeans",
+   "name": "White wide-leg jeans",
+   "category": "trousers",
+   "colours": [
+    "white denim"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-white-wide-jeans.svg",
+   "basic": true,
+   "shape": "wide"
+  },
+  {
+   "id": "basic-blue-straight-jeans",
+   "name": "Blue straight jeans, full length",
+   "category": "trousers",
+   "colours": [
+    "denim blue"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-blue-straight-jeans.svg",
+   "basic": true,
+   "shape": "straight"
+  },
+  {
+   "id": "basic-blue-straight-jeans-cropped",
+   "name": "Blue straight jeans, ankle crop",
+   "category": "trousers",
+   "colours": [
+    "denim blue"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-blue-straight-jeans-cropped.svg",
+   "basic": true,
+   "shape": "cropped"
+  },
+  {
+   "id": "basic-black-straight-jeans",
+   "name": "Black straight jeans, full length",
+   "category": "trousers",
+   "colours": [
+    "black denim"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-black-straight-jeans.svg",
+   "basic": true,
+   "shape": "straight"
+  },
+  {
+   "id": "basic-black-straight-jeans-cropped",
+   "name": "Black straight jeans, ankle crop",
+   "category": "trousers",
+   "colours": [
+    "black denim"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-black-straight-jeans-cropped.svg",
+   "basic": true,
+   "shape": "cropped"
+  },
+  {
+   "id": "basic-white-straight-jeans",
+   "name": "White straight jeans, full length",
+   "category": "trousers",
+   "colours": [
+    "white denim"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-white-straight-jeans.svg",
+   "basic": true,
+   "shape": "straight"
+  },
+  {
+   "id": "basic-white-straight-jeans-cropped",
+   "name": "White straight jeans, ankle crop",
+   "category": "trousers",
+   "colours": [
+    "white denim"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-white-straight-jeans-cropped.svg",
+   "basic": true,
+   "shape": "cropped"
+  },
+  {
+   "id": "basic-black-dress-pants",
+   "name": "Black dress pants",
+   "category": "trousers",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-black-dress-pants.svg",
+   "basic": true,
+   "shape": "trousers"
+  },
+  {
+   "id": "basic-black-docs",
+   "name": "Black Doc Martens",
+   "category": "shoes",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-black-docs.svg",
+   "basic": true,
+   "shape": "docs"
+  },
+  {
+   "id": "basic-black-kitten-heels",
+   "name": "Black kitten heels",
+   "category": "shoes",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-black-kitten-heels.svg",
+   "basic": true,
+   "shape": "kitten"
+  },
+  {
+   "id": "basic-tan-kitten-heels",
+   "name": "Tan kitten heels",
+   "category": "shoes",
+   "colours": [
+    "tan"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-tan-kitten-heels.svg",
+   "basic": true,
+   "shape": "kitten"
+  },
+  {
+   "id": "basic-black-flats",
+   "name": "Black slides / flats",
+   "category": "shoes",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-black-flats.svg",
+   "basic": true,
+   "shape": "flat"
+  },
+  {
+   "id": "basic-white-flats",
+   "name": "White slides / flats",
+   "category": "shoes",
+   "colours": [
+    "white"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-white-flats.svg",
+   "basic": true,
+   "shape": "flat"
+  },
+  {
+   "id": "basic-tan-flats",
+   "name": "Tan slides / flats",
+   "category": "shoes",
+   "colours": [
+    "tan"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-tan-flats.svg",
+   "basic": true,
+   "shape": "flat"
+  },
+  {
+   "id": "basic-black-knee-boots-flat",
+   "name": "Black flat knee-high boots",
+   "category": "shoes",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-black-knee-boots-flat.svg",
+   "basic": true,
+   "shape": "kneeflat"
+  },
+  {
+   "id": "basic-black-knee-boots-heel",
+   "name": "Black heeled knee-high boots",
+   "category": "shoes",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-black-knee-boots-heel.svg",
+   "basic": true,
+   "shape": "kneeheel"
+  },
+  {
+   "id": "basic-white-sneakers",
+   "name": "White sneakers",
+   "category": "shoes",
+   "colours": [
+    "white"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-white-sneakers.svg",
+   "basic": true,
+   "shape": "sneaker"
+  },
+  {
+   "id": "basic-black-sneakers",
+   "name": "Black sneakers",
+   "category": "shoes",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-black-sneakers.svg",
+   "basic": true,
+   "shape": "sneaker"
+  },
+  {
+   "id": "basic-red-sneakers",
+   "name": "Red sneakers",
+   "category": "shoes",
+   "colours": [
+    "red"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-red-sneakers.svg",
+   "basic": true,
+   "shape": "sneaker"
+  },
+  {
+   "id": "basic-green-sneakers",
+   "name": "Green sneakers",
+   "category": "shoes",
+   "colours": [
+    "green"
+   ],
+   "pattern": "solid",
+   "fabric": "",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Basic you already own. Drawn picture.",
+   "img": "img/basics/basic-green-sneakers.svg",
+   "basic": true,
+   "shape": "sneaker"
   }
  ],
  "outfits": [
