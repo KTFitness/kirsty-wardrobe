@@ -1454,6 +1454,25 @@
    ]
   },
   {
+   "id": "pink-penguin-print-skirt",
+   "name": "Pink penguin print A-line skirt",
+   "category": "skirts",
+   "colours": [
+    "hot pink",
+    "black",
+    "white"
+   ],
+   "pattern": "novelty penguin print",
+   "fabric": "cotton canvas",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Above-knee A-line, big patch pockets, belt loops. Picture is a crop of your photo.",
+   "img": "img/pink-penguin-print-skirt.webp"
+  },
+  {
    "id": "white-linen-batwing-shirt",
    "name": "White linen batwing shirt",
    "category": "tops",
@@ -1746,6 +1765,22 @@
     "red",
     "yellow"
    ]
+  },
+  {
+   "id": "pink-chino-shorts",
+   "name": "Pink chino shorts",
+   "category": "shorts",
+   "colours": [
+    "bubblegum pink"
+   ],
+   "pattern": "solid",
+   "fabric": "cotton chino",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Mid-thigh, slant pockets, zip fly. Your photo.",
+   "img": "img/pink-chino-shorts.webp"
   },
   {
    "id": "blue-tile-print-shorts",

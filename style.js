@@ -44,7 +44,7 @@ function pkind(it){const p=String(it.pattern||"").toLowerCase();if(/^solid/.test
   if(/stripe|breton/.test(p))return "stripe"; if(/gingham|check|windowpane|checker/.test(p))return "check";
   if(/leopard/.test(p))return "animal"; if(/dot|spot/.test(p))return "dot";
   if(/floral|flower|daisy|rose|tulip|folk/.test(p))return "floral";
-  if(/print|tile|geometric|jacquard|medallion|lobster|graphic/.test(p))return "print";
+  if(/print|penguin|tile|geometric|jacquard|medallion|lobster|graphic/.test(p))return "print";
   return null;}
 const KIND={stripe:"stripes",check:"check",animal:"leopard",dot:"spots",floral:"florals",print:"print"};
 function pscale(it){const p=lc(it);if(/micro|fine|small|pin /.test(p))return 1;if(/jumbo|wide|large|big|bold/.test(p))return 3;return 2;}
