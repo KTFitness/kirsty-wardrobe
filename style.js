@@ -41,7 +41,7 @@ const lc=it=>(it.name+" "+(it.notes||"")+" "+(it.pattern||"")).toLowerCase();
 function families(it){if(!it._f){const s=new Set();(it.colours||[]).forEach(c=>{const f=fam(c);if(f)s.add(f);});it._f=[...s];}return it._f;}
 function mainFams(it){return families(it).slice(0,2);}
 function pkind(it){const p=String(it.pattern||"").toLowerCase();if(/^solid/.test(p))return null;
-  if(/stripe|breton/.test(p))return "stripe"; if(/gingham|check|windowpane|checker/.test(p))return "check";
+  if(/stripe|breton/.test(p))return "stripe"; if(/gingham|check|tartan|plaid|windowpane|checker/.test(p))return "check";
   if(/leopard/.test(p))return "animal"; if(/dot|spot/.test(p))return "dot";
   if(/floral|flower|daisy|rose|tulip|folk/.test(p))return "floral";
   if(/print|penguin|tile|geometric|jacquard|medallion|lobster|graphic/.test(p))return "print";

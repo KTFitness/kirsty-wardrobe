@@ -1783,6 +1783,22 @@
    "img": "img/pink-chino-shorts.webp"
   },
   {
+   "id": "white-denim-shorts",
+   "name": "White denim shorts",
+   "category": "shorts",
+   "colours": [
+    "white"
+   ],
+   "pattern": "solid",
+   "fabric": "denim",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Mid-length, double-button waist, frayed hem. Your photo.",
+   "img": "img/white-denim-shorts.webp"
+  },
+  {
    "id": "blue-tile-print-shorts",
    "name": "Blue tile-print shorts",
    "category": "shorts",
@@ -4448,6 +4464,308 @@
    "_f": [
     "black"
    ]
+  },
+  {
+   "id": "green-bird-print-a-line-skirt",
+   "name": "Green bird and flower print A-line skirt",
+   "category": "skirts",
+   "colours": [
+    "emerald green",
+    "forest green"
+   ],
+   "pattern": "tonal bird and flower print",
+   "fabric": "cotton twill",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Knee length, purple waist binding. Your photo.",
+   "img": "img/green-bird-print-a-line-skirt.webp"
+  },
+  {
+   "id": "black-cream-tweed-mini-skirt",
+   "name": "Black and cream tweed mini skirt",
+   "category": "skirts",
+   "colours": [
+    "cream",
+    "black"
+   ],
+   "pattern": "boucle tweed",
+   "fabric": "tweed",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Straight mini, piped welt pockets. Your photo.",
+   "img": "img/black-cream-tweed-mini-skirt.webp"
+  },
+  {
+   "id": "orange-cord-buckle-kilt-skirt",
+   "name": "Orange cord kilt skirt with buckles",
+   "category": "skirts",
+   "colours": [
+    "burnt orange"
+   ],
+   "pattern": "solid",
+   "fabric": "wide-wale corduroy",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Front pleats, two leather buckle straps. Your photo.",
+   "img": "img/orange-cord-buckle-kilt-skirt.webp"
+  },
+  {
+   "id": "yellow-wool-a-line-mini",
+   "name": "Yellow wool A-line mini",
+   "category": "skirts",
+   "colours": [
+    "mustard yellow"
+   ],
+   "pattern": "solid",
+   "fabric": "wool felt",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "High waist, big patch pockets. Your photo.",
+   "img": "img/yellow-wool-a-line-mini.webp"
+  },
+  {
+   "id": "orange-textured-wrap-mini",
+   "name": "Orange textured wrap mini skirt",
+   "category": "skirts",
+   "colours": [
+    "tangerine orange"
+   ],
+   "pattern": "solid textured",
+   "fabric": "quilted jacquard",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Wrap front, bound edges. Your photo.",
+   "img": "img/orange-textured-wrap-mini.webp"
+  },
+  {
+   "id": "black-linen-paperbag-skirt",
+   "name": "Black linen paperbag skirt",
+   "category": "skirts",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "linen",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Elastic paperbag waist, patch pockets, above knee. Your photo.",
+   "img": "img/black-linen-paperbag-skirt.webp"
+  },
+  {
+   "id": "black-cream-stripe-knit-pencil-skirt",
+   "name": "Black and cream stripe knit pencil skirt",
+   "category": "skirts",
+   "colours": [
+    "black",
+    "cream"
+   ],
+   "pattern": "breton stripe",
+   "fabric": "stretch knit",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Fitted, pull-on, above knee. Peter Morrissey. Your photo.",
+   "img": "img/black-cream-stripe-knit-pencil-skirt.webp"
+  },
+  {
+   "id": "black-white-spot-pencil-skirt",
+   "name": "Black and white spot knit pencil skirt",
+   "category": "skirts",
+   "colours": [
+    "black",
+    "white"
+   ],
+   "pattern": "polka dot",
+   "fabric": "stretch knit",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Fitted, pull-on, above knee. Peter Morrissey. Your photo.",
+   "img": "img/black-white-spot-pencil-skirt.webp"
+  },
+  {
+   "id": "pink-denim-mini-skirt",
+   "name": "Pink denim mini skirt",
+   "category": "skirts",
+   "colours": [
+    "dusty pink"
+   ],
+   "pattern": "solid",
+   "fabric": "denim",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Five-pocket, raw step hem, side splits. Your photo.",
+   "img": "img/pink-denim-mini-skirt.webp"
+  },
+  {
+   "id": "grey-stripe-flower-applique-skirt",
+   "name": "Grey stripe skirt with flower appliqué",
+   "category": "skirts",
+   "colours": [
+    "grey",
+    "cream",
+    "brown"
+   ],
+   "pattern": "wide stripe with floral appliqué",
+   "fabric": "cotton canvas",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Straight above-knee, big appliqué sunflowers. Your photo.",
+   "img": "img/grey-stripe-flower-applique-skirt.webp"
+  },
+  {
+   "id": "navy-plaid-button-mini-skirt",
+   "name": "Navy plaid mini skirt with buttons",
+   "category": "skirts",
+   "colours": [
+    "navy",
+    "cream",
+    "grey"
+   ],
+   "pattern": "tartan check",
+   "fabric": "suiting",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Wrap front, two buttons at waist, bias yoke. Your photo.",
+   "img": "img/navy-plaid-button-mini-skirt.webp"
+  },
+  {
+   "id": "camel-a-line-mini-skirt",
+   "name": "Camel A-line mini skirt",
+   "category": "skirts",
+   "colours": [
+    "camel"
+   ],
+   "pattern": "solid",
+   "fabric": "suiting crepe",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Darted, above knee. Your photo.",
+   "img": "img/camel-a-line-mini-skirt.webp"
+  },
+  {
+   "id": "black-a-line-mini-skirt",
+   "name": "Black A-line mini skirt",
+   "category": "skirts",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "suiting crepe",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Darted, above knee. Your photo.",
+   "img": "img/black-a-line-mini-skirt.webp"
+  },
+  {
+   "id": "dusty-pink-a-line-mini-skirt",
+   "name": "Dusty pink A-line mini skirt",
+   "category": "skirts",
+   "colours": [
+    "dusty pink"
+   ],
+   "pattern": "solid",
+   "fabric": "suiting crepe",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Darted, above knee. Your photo.",
+   "img": "img/dusty-pink-a-line-mini-skirt.webp"
+  },
+  {
+   "id": "black-wool-pocket-mini-skirt",
+   "name": "Black wool mini skirt with patch pockets",
+   "category": "skirts",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "wool felt",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "A-line, big patch pockets, centre seam. Your photo.",
+   "img": "img/black-wool-pocket-mini-skirt.webp"
+  },
+  {
+   "id": "tan-cord-a-line-mini-skirt",
+   "name": "Tan cord A-line mini skirt",
+   "category": "skirts",
+   "colours": [
+    "tan"
+   ],
+   "pattern": "solid",
+   "fabric": "wide-wale corduroy",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Chevron cord panels, above knee. Your photo.",
+   "img": "img/tan-cord-a-line-mini-skirt.webp"
+  },
+  {
+   "id": "white-denim-wrap-mini-skirt",
+   "name": "White denim wrap mini skirt",
+   "category": "skirts",
+   "colours": [
+    "white"
+   ],
+   "pattern": "solid",
+   "fabric": "denim",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Wrap front, tortoiseshell buttons, contrast stitching. Your photo.",
+   "img": "img/white-denim-wrap-mini-skirt.webp"
   },
   {
    "id": "basic-black-leggings",
