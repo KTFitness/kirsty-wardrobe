@@ -155,10 +155,10 @@ dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
 </header>
 <main id="view"><div class="empty"><strong>Loading your wardrobe…</strong></div></main>
 <nav class="tabs" aria-label="Sections">
-  <button type="button" data-tab="wardrobe" aria-current="page"><span class="dot"></span>Wardrobe</button>
+  <button type="button" data-tab="outfits" aria-current="page"><span class="dot"></span>Outfits</button>
   <button type="button" data-tab="style"><span class="dot"></span>Style me</button>
-  <button type="button" data-tab="outfits"><span class="dot"></span>Outfits</button>
   <button type="button" data-tab="inspo"><span class="dot"></span>Inspo</button>
+  <button type="button" data-tab="wardrobe"><span class="dot"></span>Wardrobe</button>
 </nav>
 <dialog class="sheet" id="sheet"><div class="sheet-in" id="sheetBody"></div></dialog>
 
@@ -170,7 +170,7 @@ const dcat=i=>i&&i.category==="trousers"&&/jean/.test((i.id+" "+i.name).toLowerC
 const SEASONS=["Spring","Summer","Autumn","Winter"];
 const TOPS=["tops","knitwear"],BOTTOMS=["skirts","trousers","shorts"];
 const D={items:[],outfits:[],inspo:[],occasions:[],updated:""};
-const S={anchor:null,sOcc:"Everyday",sSeason:null,seed:1,pickCat:"all",q:"",tab:"wardrobe",cat:"all",sort:"colour",occ:"all",season:"any",surprise:null,build:{itemIds:[],name:"",occasions:[]},copied:""};
+const S={anchor:null,sOcc:"Everyday",sSeason:null,seed:1,pickCat:"all",q:"",tab:"outfits",cat:"all",sort:"colour",occ:"all",season:"any",surprise:null,build:{itemIds:[],name:"",occasions:[]},copied:""};
 
 /* phone-only storage: favourites, hidden outfits, outfits built here */
 const LS={get(k,d){try{const v=localStorage.getItem("kw:"+k);return v?JSON.parse(v):d;}catch(e){return d;}},
