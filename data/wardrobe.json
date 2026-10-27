@@ -1348,7 +1348,8 @@
    ],
    "pattern": "broderie flower cutwork",
    "fabric": "cotton broderie",
-   "notes": "Puff sleeves, shift mini, red flowers showing through the cutwork. Picture is a crop of the Gorman listing photo."
+   "notes": "Puff sleeves, shift mini, red flowers showing through the cutwork. Picture is a crop of the Gorman listing photo.",
+   "img": "img/gorman-peek-a-bloom-shift-dress.webp"
   },
   {
    "seasons": [
@@ -1367,7 +1368,8 @@
    ],
    "pattern": "bright floral border print",
    "fabric": "linen",
-   "notes": "Collared, puff sleeves, swing mini, border-print hem. Picture is a crop of the Gorman listing photo."
+   "notes": "Collared, puff sleeves, swing mini, border-print hem. Picture is a crop of the Gorman listing photo.",
+   "img": "img/gorman-floral-border-shirt-dress.webp"
   },
   {
    "seasons": [
@@ -1385,7 +1387,8 @@
    ],
    "pattern": "embroidered floral and lattice print",
    "fabric": "linen blend",
-   "notes": "Sleeveless A-line mini, purple flowers in a snake vase, lattice hem. Picture is a crop of the Gorman listing photo."
+   "notes": "Sleeveless A-line mini, purple flowers in a snake vase, lattice hem. Picture is a crop of the Gorman listing photo.",
+   "img": "img/gorman-serpents-bloom-shift-dress.webp"
   },
   {
    "id": "red-blue-stripe-knit-vest",
@@ -2766,7 +2769,8 @@
    ],
    "pattern": "zebra and floral print",
    "fabric": "linen",
-   "notes": "Sleeveless shell, ric-rac and cutout hem trim. Picture is a crop of the Gorman listing photo."
+   "notes": "Sleeveless shell, ric-rac and cutout hem trim. Picture is a crop of the Gorman listing photo.",
+   "img": "img/gorman-zebra-floral-linen-tank.webp"
   },
   {
    "seasons": [
@@ -4493,7 +4497,8 @@
    ],
    "pattern": "embroidered motifs",
    "fabric": "denim",
-   "notes": "Wrap-front mini, fish, cactus and sun embroidery, white loop-stitch trim. Picture is a crop of the Gorman listing photo."
+   "notes": "Wrap-front mini, fish, cactus and sun embroidery, white loop-stitch trim. Picture is a crop of the Gorman listing photo.",
+   "img": "img/gorman-gone-fishing-denim-mini.webp"
   },
   {
    "pattern": "solid",
