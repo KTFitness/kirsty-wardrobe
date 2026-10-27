@@ -68,6 +68,8 @@ h2{font-family:var(--display);font-weight:400;font-size:22px;margin:0;text-wrap:
 .empty strong{color:var(--fg);font-weight:600}
 .pairwith{display:grid;gap:6px;font-size:14px;font-weight:600}
 .pairwith select,.pairwith input{font:inherit;font-weight:400;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--fg);width:100%}
+.wx{display:flex;gap:12px;align-items:center;margin-top:6px;font-size:14px}
+.wxt{font-family:var(--display);font-size:30px;line-height:1;min-width:52px}
 .minigrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(105px,1fr));gap:8px;padding:8px 0 4px}
 .minigrid.three{grid-template-columns:repeat(3,1fr)}
 .mini{cursor:pointer;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:0;overflow:hidden;cursor:pointer;text-align:left;display:flex;flex-direction:column;min-width:0;color:var(--fg)}
@@ -181,6 +183,15 @@ const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&
 const $=s=>document.querySelector(s);
 const ALIAS={"basic-tan-sandals":"basic-tan-flats","basic-white-tank":"zara-white-sleeveless-knit","basic-black-tank":"zara-black-sleeveless-knit"};
 const byId=id=>D.items.find(i=>i.id===(ALIAS[id]||id));
+const WX_CODES={0:"sunny",1:"mostly sunny",2:"partly cloudy",3:"cloudy",45:"foggy",48:"foggy",51:"drizzle",53:"drizzle",55:"drizzle",61:"light rain",63:"rain",65:"heavy rain",80:"showers",81:"showers",82:"heavy showers",95:"storms",96:"storms",99:"storms"};
+function wxSeason(w){const t=w.max;return t>=26?"Summer":t>=20?"Spring":t>=15?"Autumn":"Winter";}
+function todaySeason(){return S.wx?wxSeason(S.wx):currentSeason();}
+function wxRain(){return !!(S.wx&&(S.wx.rain>=50||[51,53,55,61,63,65,80,81,82,95,96,99].includes(S.wx.code)));}
+function wxLine(){if(!S.wx)return "";const w=S.wx;const d=WX_CODES[w.code]||"";const feel={Summer:"a hot day",Spring:"a warm day",Autumn:"a mild day",Winter:"a cool day"}[wxSeason(w)];
+  return `<div class="wx"><span class="wxt">${Math.round(w.max)}°</span><span>Today in West Beach: ${esc(d)}, ${Math.round(w.min)} to ${Math.round(w.max)}°C${w.rain>=30?`, ${w.rain}% chance of rain`:""}.<br><span class="lede" style="font-size:13px">Showing pieces for ${feel}${wxRain()?", with a layer and closed shoes for the rain":""}.</span></span></div>`;}
+function loadWx(){try{const c=JSON.parse(localStorage.getItem("kw:wx")||"null");if(c&&c.day===new Date().toDateString()){S.wx=c;}}catch(e){}
+  if(S.wx)return;fetch("https://api.open-meteo.com/v1/forecast?latitude=-34.95&longitude=138.50&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,weather_code&timezone=Australia%2FAdelaide&forecast_days=1")
+  .then(r=>r.json()).then(j=>{const d=j.daily;S.wx={day:new Date().toDateString(),max:d.temperature_2m_max[0],min:d.temperature_2m_min[0],rain:d.precipitation_probability_max[0]||0,code:d.weather_code[0]};try{localStorage.setItem("kw:wx",JSON.stringify(S.wx));}catch(e){}render();}).catch(()=>{});}
 function currentSeason(){const m=new Date().getMonth();return m===11||m<2?"Summer":m<5?"Autumn":m<8?"Winter":"Spring";}
 const okey=o=>(o.itemIds||[]).map(id=>ALIAS[id]||id).sort().join(",");
 const ACC=["shoes","bags","accessories"];
@@ -269,7 +280,7 @@ function miniTile(o){const k=keyPiece(o),t=topOf(o,k);return `<div role="button"
 function vOutfits(){
   const all=allOutfits().filter(o=>!hidden.includes(o.id));
   const liked=all.filter(isLiked),ideas=all.filter(o=>!isLiked(o)&&!o.liked);
-  const se=currentSeason();
+  const se=todaySeason();
   const pool=liked.filter(o=>fitsSeason(o,se));
   let today=[];if(pool.length){const r=rng(Number(new Date().toISOString().slice(0,10).replace(/-/g,''))+(S.todaySeed||0)*7919);const p=pool.slice();while(today.length<3&&p.length)today.push(p.splice(Math.floor(r()*p.length),1)[0]);}
   const groups={};for(const o of liked){const k=keyPiece(o);const id=k?k.id:"other";(groups[id]=groups[id]||{item:k,list:[]}).list.push(o);}
@@ -279,7 +290,7 @@ function vOutfits(){
   return `<h2>Outfits</h2>
   <div class="row"><button class="btn" type="button" data-tab="style">Style a piece</button><button class="btn ghost" type="button" data-tab="build">Build your own</button><button class="btn ghost" type="button" id="surprise">Surprise me</button></div>
   ${S.surprise?`<div class="ogrid">${outfitCard(S.surprise,`<button class="iconbtn" type="button" id="keepSurprise">Edit in Build</button>`)}</div>`:""}
-  <section class="panel today"><div><h3 style="margin:0">What to wear today</h3><p class="lede" style="margin:4px 0 0">Three of your liked outfits that suit ${se.toLowerCase()}.</p></div>
+  <section class="panel today"><div><h3 style="margin:0">What to wear today</h3>${S.wx?wxLine():`<p class="lede" style="margin:4px 0 0">Three of your liked outfits that suit ${se.toLowerCase()}.</p>`}</div>
    ${today.length?`<div class="minigrid three">${today.map(miniTile).join("")}</div><div class="row"><button class="btn ghost" type="button" id="todayMore">Show me three others</button></div>`
      :`<p class="lede">Like a few outfits in Style me and they'll show up here.</p>`}</section>
   ${(()=>{const B=all.filter(isBuilt).reverse();if(!B.length)return "";const open=!!S.openG.__built;return `<h3 style="margin:22px 0 8px">Built by you <span class="n">${B.length}</span></h3>
@@ -351,8 +362,8 @@ function rate(o,v){const pieces=o.itemIds.map(byId).filter(Boolean);
 function vStyle(){
   const a=S.anchor&&byId(S.anchor);
   if(!a)return pickGrid();
-  const season=S.sSeason||currentSeason();
-  const res=window.Stylist?Stylist.suggest(a,D.items,{occ:S.sOcc,season,seed:S.seed,count:6,W:tasteW(),n:tasteN(),rules:useRules,noAccessories:true,exclude:[],excludeCore:allDisliked().concat(ratingLists().liked,S.rated||[]).map(k=>Stylist.coreKey(k.split(",").map(byId).filter(Boolean))),shown:S.shownFor===a.id?(S.shown||[]):[],with:S.withFor===a.id?S.with:null}):[];
+  const season=S.sSeason||todaySeason();
+  const res=window.Stylist?Stylist.suggest(a,D.items,{occ:S.sOcc,season,rain:!S.sSeason&&wxRain(),seed:S.seed,count:6,W:tasteW(),n:tasteN(),rules:useRules,noAccessories:true,exclude:[],excludeCore:allDisliked().concat(ratingLists().liked,S.rated||[]).map(k=>Stylist.coreKey(k.split(",").map(byId).filter(Boolean))),shown:S.shownFor===a.id?(S.shown||[]):[],with:S.withFor===a.id?S.with:null}):[];
   S.lastRes=res.map((r,k)=>({key:r.key,id:"g"+S.seed+"-"+k,name:r.set?"The matching set":"With the "+a.name.replace(/^(Gingham|Stripe|Dots) No\. \d+: /,"").toLowerCase(),itemIds:r.pieces.map(p=>p.id),occasions:[S.sOcc],why:r.why}));
   const offSeason=a.seasons&&a.seasons.length&&!a.seasons.includes(season);
   return `<div class="panel" style="grid-template-columns:96px 1fr;align-items:center">
@@ -361,7 +372,8 @@ function vStyle(){
    <div class="row"><button class="iconbtn" type="button" id="changeAnchor">Choose another piece</button></div></div></div>
   <label class="pairwith"><span>Pair it with</span><select id="pairWith"><option value="">Anything (let the app choose)</option>${CATS.filter(([k])=>!["accessories"].includes(k)).map(([k,v])=>{const L=arrange(D.items.filter(i=>i.category===k&&i.id!==a.id));return L.length?`<optgroup label="${esc(v)}">${L.map(i=>`<option value="${esc(i.id)}" ${S.withFor===a.id&&S.with===i.id?"selected":""}>${esc(i.name)}</option>`).join("")}</optgroup>`:"";}).join("")}</select></label>
   <div class="chips" role="group" aria-label="Occasion">${["Everyday","Lunch out","Dinner out","Smart casual","Travel","Holiday","Special occasion"].map(o=>`<button class="chip" data-socc="${o}" aria-pressed="${S.sOcc===o}">${o}</button>`).join("")}</div>
-  <div class="chips" role="group" aria-label="Season">${SEASONS.map(x=>`<button class="chip" data-sseason="${x}" aria-pressed="${season===x}">${x}${x===currentSeason()?" (now)":""}</button>`).join("")}</div>
+  ${!S.sSeason&&S.wx?wxLine():""}
+  <div class="chips" role="group" aria-label="Season">${SEASONS.map(x=>`<button class="chip" data-sseason="${x}" aria-pressed="${season===x}">${x}${x===todaySeason()?(S.wx?" (today)":" (now)"):""}</button>`).join("")}</div>
   <div class="panel" style="gap:8px"><div class="status">${tasteN()?`Learning from ${ratedCount()} of your rating${ratedCount()===1?"":"s"} and ${(D.taste&&D.taste.n)||0} inspiration looks. Keep tapping Like or Not for me and the ideas will get closer to your taste.`:"No rules yet. Tap Like or Not for me on each idea and the app learns your taste."}</div>
    <div class="row"><label class="checks" style="font-size:14px"><label><input type="checkbox" id="useRules" ${useRules?"checked":""}> Use my style notes as a head start</label></label></div>
    <div class="row">${tasteN()?`<button class="iconbtn" type="button" id="copyTaste">${S.copied==="taste"?"Copied":"Copy my taste for Claude"}</button><button class="iconbtn" type="button" id="resetTaste">Start learning again</button>`:""}</div></div>
@@ -382,7 +394,7 @@ function nopedFor(a){const keys=[...new Set(allDisliked().filter(k=>k.split(",")
   ${open?`<div class="minigrid">${keys.map(k=>`<div class="mini" style="cursor:default">${collage(k.split(","),a.id)}<button class="btn" type="button" data-relike="${esc(k)}" style="margin:6px;padding:7px 8px;font-size:13px">Like instead</button></div>`).join("")}</div>`:""}</div>`;}
 function openFinish(id){const o=allOutfits().find(x=>x.id===id);if(!o)return;S.finId=id;
   const cur=(o.itemIds||[]).map(byId).filter(Boolean),curShoe=cur.find(i=>i.category==="shoes"),curBag=cur.find(i=>i.category==="bags");
-  const r=Stylist.finish(cur,D.items,{occ:o.occasions&&o.occasions[0]||"Everyday",season:currentSeason(),W:tasteW(),rules:useRules});
+  const r=Stylist.finish(cur,D.items,{occ:o.occasions&&o.occasions[0]||"Everyday",season:todaySeason(),rain:wxRain(),W:tasteW(),rules:useRules});
   const tile=(i,attr,on)=>`<button type="button" class="card pick" ${attr}="${esc(i.id)}" aria-pressed="${on}"><div class="tile"><img src="${esc(i.img)}" alt="" loading="lazy"></div><div class="meta"><span class="ct">${esc(i.name)}</span></div></button>`;
   sheetBody.innerHTML=`<div class="sheet-head"><h2>Shoes &amp; bag</h2><button class="iconbtn" type="button" data-close>Close</button></div>
    ${collage(o.itemIds||[],keyPiece(o)&&keyPiece(o).id)}
@@ -447,7 +459,7 @@ function openItem(id){const it=byId(id);if(!it)return;
   if(!sheet.open)sheet.showModal();}
 
 function surprise(){
-  const season=S.season==="any"?currentSeason():S.season;
+  const season=S.season==="any"?todaySeason():S.season;
   const ok=i=>!i.seasons||!i.seasons.length||i.seasons.includes(season);
   const pool=D.items.filter(i=>["tops","dresses","skirts","trousers","shorts"].includes(i.category)&&ok(i));
   const ex=allDisliked().concat(ratingLists().liked).map(k=>Stylist.coreKey(k.split(",").map(byId).filter(Boolean)));
@@ -473,7 +485,7 @@ document.addEventListener("click",async e=>{
   if(t.dataset.bsec){S.build.name=($("#bName")||{}).value||S.build.name;S.bOpen=S.bOpen||{};S.bOpen[t.dataset.bsec]=!S.bOpen[t.dataset.bsec];render();return;}
   if(t.dataset.pickcat){S.pickCat=t.dataset.pickcat;render();return;}
   if(t.dataset.socc){S.sOcc=t.dataset.socc;S.seed=1;render();return;}
-  if(t.dataset.sseason){S.sSeason=t.dataset.sseason;S.seed=1;render();return;}
+  if(t.dataset.sseason){S.sSeason=(S.wx&&t.dataset.sseason===todaySeason())?null:t.dataset.sseason;S.seed=1;render();return;}
   if(t.id==="more"){if(S.shownFor!==S.anchor){S.shownFor=S.anchor;S.shown=[];}S.shown=S.shown.concat(...S.lastRes.map(o=>o.itemIds));S.seed++;render();window.scrollTo(0,0);return;}
   if(t.dataset.like){const o=S.lastRes[+t.dataset.like];rate(o,1);S.rated=(S.rated||[]).concat(o.key);
     mine=mine.concat({id:"m"+Date.now(),name:o.name,itemIds:o.itemIds,occasions:o.occasions,why:o.why});LS.set("mine",mine);render();return;}
@@ -554,7 +566,7 @@ document.addEventListener("click",async e=>{
 fetch("data/wardrobe.json",{cache:"no-cache"}).then(r=>{if(!r.ok)throw new Error(r.status);return r.json();}).then(j=>{
   D.all=j.items||[];D.taste=j.taste||null;applyGone();D.outfits=j.outfits||[];D.inspo=j.inspo||[];D.occasions=j.occasions||[];D.updated=j.updated||"";
   if(D.updated){const d=new Date(D.updated+"T00:00:00");$("#updated").textContent="Updated "+d.toLocaleDateString("en-AU",{day:"numeric",month:"short",year:"numeric"});}
-  render();
+  render();loadWx();
 }).catch(()=>{$("#view").innerHTML=`<div class="notice">Couldn't load the wardrobe list. Check your connection and reopen the app.</div>`;});
 </script>
 </body>

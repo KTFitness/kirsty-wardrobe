@@ -214,7 +214,7 @@ function suggest(anchor,items,ctx){
       const u=unders.filter(u=>!pieces.includes(u)).map(u=>[u,SC(pieces.concat(u),ctx).s]).sort((a,b)=>b[1]-a[1])[0];
       if(u)pieces.push(u[0]);
     }
-    const needLayer=forceLayer||cool&&!pieces.some(isWarmLayer)&&(pieces.some(sleeveless)||season==="Winter"||pieces.some(p=>p.category==="dresses"));
+    const needLayer=forceLayer||(ctx.rain&&!pieces.some(isWarmLayer))||cool&&!pieces.some(isWarmLayer)&&(pieces.some(sleeveless)||season==="Winter"||pieces.some(p=>p.category==="dresses"));
     if(needLayer&&layers.length&&!(forceLayer&&pieces.includes(WI))){const L=layers.filter(l=>!pieces.includes(l)).map(l=>[l,SC(pieces.concat(l),ctx).s+(rnd()*E)*0.8]).sort((a,b)=>b[1]-a[1])[0];if(L)pieces.push(L[0]);}
     let alts=[];
     if(!ctx.noAccessories&&!pieces.some(p=>p.category==="shoes")&&shoes.length){
@@ -277,7 +277,8 @@ function mulberry(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a
 
 function finish(pieces,items,ctx){ctx=ctx||{};ctx.W=ctx.W||{};const season=ctx.season;
   const base=pieces.filter(p=>!["shoes","bags"].includes(p.category));
-  const sc=ps=>(ctx.rules?score(ps,ctx).s:0)+learned(ps,ctx)+hemScore(ps);
+  const wet=sh=>{if(!ctx.rain)return 0;const t=lc(sh);if(/slide|sandal|flat|ballet|mule|suede|gazelle|samba/.test(t))return -3;if(/boot|doc|loafer|sneaker/.test(t))return 1.5;return 0;};
+  const sc=ps=>(ctx.rules?score(ps,ctx).s:0)+learned(ps,ctx)+hemScore(ps)+ps.reduce((t,x)=>t+(x.category==="shoes"?wet(x):0),0);
   const shoes=items.filter(i=>i.category==="shoes"&&inSeason(i,season)).map(x=>[x,sc(base.concat(x))]).sort((a,b)=>b[1]-a[1]).map(x=>x[0]);
   const best=shoes[0];const bags=items.filter(i=>i.category==="bags").map(x=>[x,sc(base.concat(best?[best,x]:[x]))]).sort((a,b)=>b[1]-a[1]).map(x=>x[0]);
   return {shoes,bags};}
