@@ -95,6 +95,24 @@
    ]
   },
   {
+   "notes": "Crew neck, back keyhole button, side splits. Your photo.",
+   "id": "red-gingham-sleeveless-top",
+   "name": "Red gingham sleeveless shell top",
+   "category": "tops",
+   "colours": [
+    "red",
+    "white"
+   ],
+   "pattern": "small gingham",
+   "fabric": "cotton",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "img": "img/red-gingham-sleeveless-top.webp"
+  },
+  {
    "id": "red-white-stripe-ruffle-top",
    "name": "Red and white stripe ruffle-collar top",
    "category": "tops",
@@ -872,7 +890,7 @@
     "Spring",
     "Summer"
    ],
-   "notes": "Racer-cut halter neck, solid red trim",
+   "notes": "Racer-cut halter neck, solid red trim. Your photo.",
    "img": "img/zara-red-stripe-halter-knit.webp"
   },
   {
@@ -927,6 +945,25 @@
    ],
    "notes": "Boxy short sleeves",
    "img": "img/cos-orange-stripe-tee.webp"
+  },
+  {
+   "notes": "Crew neck, short sleeves, regular fit. Your photo.",
+   "id": "brown-stripe-tee",
+   "name": "Chocolate and white stripe tee",
+   "category": "tops",
+   "colours": [
+    "chocolate brown",
+    "white"
+   ],
+   "pattern": "breton stripe",
+   "fabric": "cotton jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "img": "img/brown-stripe-tee.webp"
   },
   {
    "id": "ghanda-green-check-cardigan",
@@ -1223,6 +1260,23 @@
    "_f": [
     "red"
    ]
+  },
+  {
+   "notes": "Crew neck, short sleeves, cropped, lettuce hem. Your photo.",
+   "id": "red-knit-tee",
+   "name": "Red fine-rib knit tee",
+   "category": "knitwear",
+   "colours": [
+    "tomato red"
+   ],
+   "pattern": "solid",
+   "fabric": "fine rib knit",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "img": "img/red-knit-tee.webp"
   },
   {
    "id": "etoile-colour-block-sweatshirt",
@@ -2544,8 +2598,25 @@
     "Autumn",
     "Winter"
    ],
-   "notes": "Crew neck, extended shoulders",
+   "notes": "Crew neck, extended shoulders, fitted. Your photo.",
    "img": "img/red-sleeveless-knit.webp"
+  },
+  {
+   "notes": "Crew neck, extended shoulders, fitted. Your photo.",
+   "id": "brown-sleeveless-fitted-top",
+   "name": "Chocolate sleeveless fitted top",
+   "category": "tops",
+   "colours": [
+    "chocolate brown"
+   ],
+   "pattern": "solid",
+   "fabric": "cotton jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "img": "img/brown-sleeveless-fitted-top.webp"
   },
   {
    "id": "brown-mock-neck-long-sleeve",
