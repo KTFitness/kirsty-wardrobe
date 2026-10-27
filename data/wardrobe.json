@@ -1316,6 +1316,24 @@
    "img": "img/black-pink-trim-shift-dress.webp"
   },
   {
+   "fabric": "suiting crepe",
+   "id": "keepers-black-wrap-dress",
+   "name": "Keepers black sleeveless wrap-front dress",
+   "category": "dresses",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "img": "img/keepers-black-wrap-dress.webp",
+   "notes": "Boat neck, empire seam, wrap skirt with side tab and buckle. Your photo."
+  },
+  {
    "id": "red-blue-stripe-knit-vest",
    "name": "Red and blue stripe knit vest",
    "category": "knitwear",
@@ -2447,6 +2465,151 @@
    ]
   },
   {
+   "fabric": "jacquard jersey",
+   "id": "black-quilted-collar-top",
+   "name": "Black textured top with roll collar",
+   "category": "tops",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid textured diamond knit",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "img": "img/black-quilted-collar-top.webp",
+   "notes": "Short sleeves, wide roll collar, darted. Photo shows the back. Your photo."
+  },
+  {
+   "fabric": "cotton rib",
+   "id": "anko-black-tank-grey-trim",
+   "name": "Anko black rib tank with grey trim",
+   "category": "tops",
+   "colours": [
+    "black",
+    "light grey"
+   ],
+   "pattern": "solid with contrast trim",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "img": "img/anko-black-tank-grey-trim.webp",
+   "notes": "High racer neck, contrast binding. Your photo."
+  },
+  {
+   "fabric": "cotton rib",
+   "id": "anko-white-tank-black-trim",
+   "name": "Anko white rib tank with black trim",
+   "category": "tops",
+   "colours": [
+    "white",
+    "black"
+   ],
+   "pattern": "solid with contrast trim",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "img": "img/anko-white-tank-black-trim.webp",
+   "notes": "High racer neck, contrast binding. Picture is a crop of your photo."
+  },
+  {
+   "fabric": "cotton jersey",
+   "id": "black-white-stripe-tee",
+   "name": "Black and white stripe tee",
+   "category": "tops",
+   "colours": [
+    "black",
+    "white"
+   ],
+   "pattern": "breton stripe",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "img": "img/black-white-stripe-tee.webp",
+   "notes": "Crew neck, black neckband, short sleeves. Your photo."
+  },
+  {
+   "fabric": "linen-cotton jersey",
+   "id": "sussan-black-fine-stripe-tank",
+   "name": "Sussan black and white fine stripe tank",
+   "category": "tops",
+   "colours": [
+    "black",
+    "white"
+   ],
+   "pattern": "fine stripe",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "img": "img/sussan-black-fine-stripe-tank.webp",
+   "notes": "Relaxed, high-low hem. Your photo."
+  },
+  {
+   "fabric": "soft jersey",
+   "id": "black-cream-stripe-sleeveless-turtleneck",
+   "name": "Black and cream stripe sleeveless turtleneck",
+   "category": "tops",
+   "colours": [
+    "black",
+    "cream"
+   ],
+   "pattern": "wide stripe",
+   "seasons": [
+    "Spring",
+    "Autumn",
+    "Summer"
+   ],
+   "img": "img/black-cream-stripe-sleeveless-turtleneck.webp",
+   "notes": "Roll neck, sleeveless, wide stripes. Your photo."
+  },
+  {
+   "fabric": "cotton jersey",
+   "id": "black-white-spot-boatneck-tee",
+   "name": "Black and white big-spot boat-neck tee",
+   "category": "tops",
+   "colours": [
+    "black",
+    "white"
+   ],
+   "pattern": "large polka dot",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "img": "img/black-white-spot-boatneck-tee.webp",
+   "notes": "Boat neck, elbow sleeves, boxy. Your photo."
+  },
+  {
+   "fabric": "cotton",
+   "id": "marimekko-uniqlo-spot-tank",
+   "name": "Marimekko x Uniqlo big-spot sleeveless top",
+   "category": "tops",
+   "colours": [
+    "black",
+    "white"
+   ],
+   "pattern": "large polka dot",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "img": "img/marimekko-uniqlo-spot-tank.webp",
+   "notes": "Boxy shell, contrast stitching. Your photo."
+  },
+  {
    "id": "cream-mock-neck-long-sleeve",
    "name": "Cream mock-neck long-sleeve top",
    "category": "tops",
@@ -2518,7 +2681,7 @@
   },
   {
    "pattern": "solid",
-   "notes": "Elbow sleeves, four-button placket.",
+   "notes": "Elbow sleeves, four-button placket. Your photo.",
    "id": "uniqlo-black-knit-polo",
    "name": "Uniqlo black knit polo",
    "category": "knitwear",
