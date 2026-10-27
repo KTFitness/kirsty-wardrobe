@@ -164,9 +164,9 @@ dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
 
 <script src="style.js"></script>
 <script>
-const CATS=[["tops","Tops"],["knitwear","Knitwear"],["dresses","Dresses"],["skirts","Skirts"],["jeans","Jeans"],["trousers","Trousers"],["shorts","Shorts"],["outerwear","Jackets & coats"],["shoes","Shoes"],["bags","Bags"],["accessories","Accessories"]];
+const CATS=[["tops","Tops"],["knitwear","Knitwear"],["dresses","Dresses"],["skirts","Skirts"],["jeans","Jeans"],["trousers","Trousers"],["shorts","Shorts"],["outerwear","Outerwear"],["shoes","Shoes"],["bags","Bags"],["accessories","Accessories"]];
 const CATNAME=Object.fromEntries(CATS);
-const dcat=i=>i&&i.category==="trousers"&&/jean/.test((i.id+" "+i.name).toLowerCase())?"jeans":(i?i.category:"other");
+const dcat=i=>!i?"other":i.category==="trousers"&&/jean/.test((i.id+" "+i.name).toLowerCase())?"jeans":i.category==="knitwear"&&/cardigan/.test((i.id+" "+i.name).toLowerCase())?"outerwear":i.category;
 const SEASONS=["Spring","Summer","Autumn","Winter"];
 const TOPS=["tops","knitwear"],BOTTOMS=["skirts","trousers","shorts"];
 const D={items:[],outfits:[],inspo:[],occasions:[],updated:""};
@@ -353,7 +353,7 @@ function ratingLists0(){const sv=(D.taste&&D.taste.saved)||{liked:[],disliked:[]
   return {liked:mergeList(sv.liked,taste.liked),disliked:mergeList(sv.disliked,taste.disliked)};}
 function deriveW(){const {liked,disliked}=ratingLists(),N=liked.length+disliked.length,w={};if(!N||!window.Stylist)return w;
   const p=liked.length/N,c={};
-  const add=(key,i)=>{let P=key.split(",").map(byId).filter(Boolean);if(i===1)P=P.filter(x=>!["shoes","bags","accessories"].includes(x.category));for(const k of Stylist.features(P,"Everyday")){if(k.startsWith("it:"))continue;(c[k]=c[k]||[0,0])[i]++;}};
+  const add=(key,i)=>{let P=key.split(",").map(byId).filter(Boolean);if(i===1&&Stylist.busyClash&&Stylist.busyClash(P))return;if(i===1)P=P.filter(x=>!["shoes","bags","accessories"].includes(x.category));for(const k of Stylist.features(P,"Everyday")){if(k.startsWith("it:"))continue;(c[k]=c[k]||[0,0])[i]++;}};
   liked.forEach(k=>add(k,0));disliked.forEach(k=>add(k,1));
   for(const k in c){const n=c[k][0]+c[k][1];w[k]=Math.round((c[k][0]-n*p)/Math.sqrt(n+4)*100)/100;}return w;}
 function tasteW(){const w={...(D.taste&&D.taste.w||{})},r=deriveW();for(const k in r)w[k]=(w[k]||0)+r[k];return w;}

@@ -60,6 +60,8 @@ const OCC={"Everyday":1.6,"Lunch out":2.1,"Dinner out":2.7,"Smart casual":2.5,"T
 const sleeveless=it=>/sleeveless|tank|halter|vest|cami|strapless|racer/.test(lc(it));
 const isVest=it=>(it.category==="knitwear"&&/vest/.test(lc(it)))||/waistcoat/.test(lc(it));
 const longSleeve=it=>/long-sleeve|long sleeve|long balloon|turtleneck|jumper|sweat|funnel|cardigan|blazer|jacket|coat/.test(lc(it));
+// A busy piece (Ghanda checkerboard cardigan) only goes with block colours: no second pattern of any kind.
+const busyClash=ps=>{const cl=ps.filter(p=>p&&!["shoes","bags","accessories"].includes(p.category));return cl.some(p=>p.busy)&&cl.filter(p=>pkind(p)).length>1;};
 const isWarmLayer=it=>it.category==="outerwear"||(it.category==="knitwear"&&/cardigan/.test(lc(it)));
 const isUnder=it=>(it.category==="tops"||it.category==="knitwear")&&/basic-white-tee|basic-white-fitted-tee|basic-black-tee|basic-grey-tee|basic-black-relaxed-tee|basic-grey-relaxed-tee|basic-white-ls-crew|basic-pale-pink-ls|basic-white-linen|basic-black-turtleneck|fleece-turtleneck|uniqlo-light-blue-turtleneck|mock-neck|stripe long-sleeve|breton long-sleeve|navy-stripe-long/.test(it.id+" "+lc(it))&&!sleeveless(it);
 const inSeason=(it,season)=>!it.seasons||!it.seasons.length||it.seasons.includes(season);
@@ -201,6 +203,7 @@ function suggest(anchor,items,ctx){
     const bs=bottoms.map(t=>[t,SC([t,anchor],ctx).s]).sort((a,b)=>b[1]-a[1]).map(x=>x[0]);
     for(const t of ts)for(const b of bs)cores.push([t,b,anchor]);
   }
+  cores=cores.filter(c=>!busyClash(forceLayer&&WI?c.concat(WI):c));
   // pre-score cores, keep best
   {const sc=cores.map(c=>({c,s:SC(c,ctx).s+(rnd()*E)*1.2})).sort((a,b)=>b.s-a.s);
    const gk=c=>{const x=c.find(p=>p!==anchor&&['skirts','trousers','shorts','dresses'].includes(p.category))||c.find(p=>p!==anchor);return x?x.id:'';};
@@ -212,12 +215,13 @@ function suggest(anchor,items,ctx){
     let pieces=core.slice();
     const top=pieces.find(p=>p.category==="tops"||p.category==="knitwear");
     if(top&&isVest(top)&&(cool||season==="Spring")){
-      const u=unders.filter(u=>!pieces.includes(u)).map(u=>[u,SC(pieces.concat(u),ctx).s]).sort((a,b)=>b[1]-a[1])[0];
+      const u=unders.filter(u=>!pieces.includes(u)&&!busyClash(pieces.concat(u))).map(u=>[u,SC(pieces.concat(u),ctx).s]).sort((a,b)=>b[1]-a[1])[0];
       if(u)pieces.push(u[0]);
     }
     const chilly=ctx.tmax!=null&&ctx.tmax<20&&!pieces.some(longSleeve);
     const needLayer=forceLayer||chilly||(ctx.rain&&!pieces.some(isWarmLayer))||cool&&!pieces.some(isWarmLayer)&&(pieces.some(sleeveless)||season==="Winter"||pieces.some(p=>p.category==="dresses"));
-    if(needLayer&&layers.length&&!(forceLayer&&pieces.includes(WI))){const L=layers.filter(l=>!pieces.includes(l)).map(l=>[l,SC(pieces.concat(l),ctx).s+(rnd()*E)*0.8]).sort((a,b)=>b[1]-a[1])[0];if(L)pieces.push(L[0]);}
+    if(needLayer&&layers.length&&!(forceLayer&&pieces.includes(WI))){const L=layers.filter(l=>!pieces.includes(l)&&!busyClash(pieces.concat(l))).map(l=>[l,SC(pieces.concat(l),ctx).s+(rnd()*E)*0.8]).sort((a,b)=>b[1]-a[1])[0];if(L)pieces.push(L[0]);}
+    if(busyClash(pieces))continue;
     let alts=[];
     if(!ctx.noAccessories&&!pieces.some(p=>p.category==="shoes")&&shoes.length){
       const sh=shoes.map(x=>[x,SC(pieces.concat(x),ctx).s+(rnd()*E)*1.0]).sort((a,b)=>b[1]-a[1]);if(sh[0])pieces.push(sh[0][0]);alts=sh.slice(1,3).map(x=>x[0]);}
@@ -287,6 +291,6 @@ function finish(pieces,items,ctx){ctx=ctx||{};ctx.W=ctx.W||{};const season=ctx.s
 
 function addLayer(pieces,items,ctx){ctx=ctx||{};ctx.W=ctx.W||{};if(pieces.some(isWarmLayer)||(!ctx.rain&&pieces.some(longSleeve)))return null;
   const sc=ps=>(ctx.rules?score(ps,ctx).s:0)+learned(ps,ctx);
-  const L=items.filter(i=>isWarmLayer(i)&&inSeason(i,ctx.season)).map(x=>[x,sc(pieces.concat(x))]).sort((a,b)=>b[1]-a[1]);return L[0]?L[0][0]:null;}
-window.Stylist={addLayer,finish,coreKey:ps=>ps.filter(p=>!["shoes","bags","accessories"].includes(p.category)).map(p=>p.id).sort().join(","),suggest,features,families,pkind,formality,hemTip,hairTip};
+  const L=items.filter(i=>isWarmLayer(i)&&inSeason(i,ctx.season)&&!busyClash(pieces.concat(i))).map(x=>[x,sc(pieces.concat(x))]).sort((a,b)=>b[1]-a[1]);return L[0]?L[0][0]:null;}
+window.Stylist={busyClash,addLayer,finish,coreKey:ps=>ps.filter(p=>!["shoes","bags","accessories"].includes(p.category)).map(p=>p.id).sort().join(","),suggest,features,families,pkind,formality,hemTip,hairTip};
 })();
