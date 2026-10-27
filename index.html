@@ -291,6 +291,7 @@ function vOutfits(){
     ${open?`<div class="minigrid">${g.list.map(miniTile).join("")}</div>`:""}</div>`;}).join(""):""}</div>`;}).join("")}
   ${ideas.length?`<div class="grp${S.openG.__ideas?" open":""}"><button type="button" class="grphead" data-grp="__ideas" aria-expanded="${!!S.openG.__ideas}"><span class="gn">Ideas from Claude</span><span class="n">${ideas.length}</span><span class="chev">${S.openG.__ideas?"▾":"▸"}</span></button>
     ${S.openG.__ideas?`<div class="minigrid">${ideas.map(miniTile).join("")}</div>`:""}</div>`:""}
+  ${devicePanel()}
   ${hidden.length?`<div class="row"><button class="iconbtn" type="button" id="unhide">Show ${hidden.length} hidden outfit${hidden.length===1?"":"s"}</button></div>`:""}`;
 }
 function vBuild(){
@@ -387,6 +388,23 @@ function openFinish(id){const o=allOutfits().find(x=>x.id===id);if(!o)return;S.f
    <h3 style="margin:4px 0">Bag</h3><div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:8px">${r.bags.map(i=>tile(i,"data-fbag",curBag===i)).join("")}<button type="button" class="card pick" data-fbag="" aria-pressed="${!curBag}"><div class="tile" style="display:grid;place-items:center;font-size:13px">No bag</div></button></div>
    <div class="row"><button class="btn" type="button" data-findone>Done</button></div>`;
   if(!sheet.open)sheet.showModal();}
+function devicePanel(){return `<section class="panel" style="margin-top:22px;gap:8px"><h3 style="margin:0">Phone and iPad</h3>
+  <p class="lede" style="margin:0">Each device keeps its own ratings, built outfits and shoe choices. To bring one up to date, tap Copy on the device you've been using, then Paste on the other. Nothing is lost: the two are merged.</p>
+  <div class="row"><button class="btn ghost" type="button" id="devCopy">${S.copied==="dev"?"Copied":"Copy from this device"}</button><button class="btn ghost" type="button" id="devPaste">Paste from another device</button></div>
+  ${S.devMsg?`<p class="status" style="margin:0">${esc(S.devMsg)}</p>`:""}</section>`;}
+function devExport(){return "KW-DEVICE-1:"+JSON.stringify({taste,mine,fin,unliked,hidden,gone,favs});}
+function devMerge(txt){const i=txt.indexOf("{");if(i<0)throw new Error("no data");const j=JSON.parse(txt.slice(i));
+  const t=j.taste||j;const addAll=(a,b)=>{const seen=new Set(a);return a.concat((b||[]).filter(k=>!seen.has(k)));};
+  const before=taste.liked.length+taste.disliked.length,bm=mine.length;
+  taste.liked=addAll(taste.liked,t.liked);taste.disliked=addAll(taste.disliked,t.disliked);
+  taste.undone=[...new Set((taste.undone||[]).concat(t.undone||[]))];taste.unlikedKeys=[...new Set((taste.unlikedKeys||[]).concat(t.unlikedKeys||[]))];
+  taste.n=taste.liked.length+taste.disliked.length;if(t.ignoreSaved&&!taste.liked.length)taste.ignoreSaved=true;
+  const m=new Map(mine.map(o=>[o.id,o]));for(const o of (j.mine||j.built||[]))m.set(o.id,o);mine=[...m.values()];
+  fin={...fin,...(j.fin||j.finish||{})};
+  const un=(a,b)=>[...new Set(a.concat(b||[]))];unliked=un(unliked,j.unliked);hidden=un(hidden,j.hidden);gone=un(gone,j.gone);favs=un(favs,j.favs);
+  LS.set("taste",taste);LS.set("mine",mine);LS.set("finish",fin);LS.set("unliked",unliked);LS.set("hidden",hidden);LS.set("gone",gone);LS.set("favs",favs);
+  const added=taste.liked.length+taste.disliked.length-before,ad2=mine.length-bm;
+  return `Merged. ${added} new rating${added===1?"":"s"} and ${ad2} new saved outfit${ad2===1?"":"s"} added to this device.`;}
 function vInspo(){
   return `<h2>Inspiration</h2>
   <p class="lede">Send an inspiration photo to Claude in chat. It will recreate the look from your wardrobe and add it here, with a note of anything you'd need to buy.</p>
@@ -467,6 +485,14 @@ document.addEventListener("click",async e=>{
   if(t.dataset.nope){const o=S.lastRes[+t.dataset.nope];rate(o,-1);S.rated=(S.rated||[]).concat(o.key);render();return;}
   if(t.id==="resetTaste"){if(!t.dataset.armed){t.dataset.armed="1";t.textContent="Tap again to forget everything it learned";return;}
     taste={w:{},n:0,liked:[],disliked:[],ignoreSaved:true};LS.set("taste",taste);S.rated=[];render();return;}
+  if(t.id==="devCopy"){const txt=devExport();try{await navigator.clipboard.writeText(txt);S.copied="dev";S.devMsg="Copied. Now open the app on the other device, go to Outfits, scroll to the bottom and tap Paste from another device.";render();setTimeout(()=>{S.copied="";render();},2500);}
+    catch(err){sheetBody.innerHTML=`<div class="sheet-head"><h2>Copy this</h2><button class="iconbtn" type="button" data-close>Close</button></div><p class="lede">Select all and copy, then paste it on the other device.</p><textarea rows="8" style="width:100%" readonly>${esc(txt)}</textarea>`;if(!sheet.open)sheet.showModal();sheetBody.querySelector("textarea").select();}
+    return;}
+  if(t.id==="devPaste"){let clip="";try{clip=await navigator.clipboard.readText();}catch(e){}
+    sheetBody.innerHTML=`<div class="sheet-head"><h2>Paste from another device</h2><button class="iconbtn" type="button" data-close>Close</button></div>
+     <p class="lede" style="margin:0">Paste what you copied on the other device, then tap Merge.</p><textarea id="devText" rows="7" style="width:100%;font:inherit;font-size:13px" placeholder="Paste here">${esc(clip.includes("KW-DEVICE")||clip.includes("Please save my wardrobe")?clip:"")}</textarea>
+     <div class="row"><button class="btn" type="button" id="devMergeBtn">Merge</button></div><p class="status" id="devErr" style="margin:0"></p>`;if(!sheet.open)sheet.showModal();return;}
+  if(t.id==="devMergeBtn"){const v=($("#devText")||{}).value||"";try{S.devMsg=devMerge(v);sheet.close();render();}catch(e){const el=$("#devErr");if(el)el.textContent="That doesn't look like a copy from the app. Copy it again on the other device and try once more.";}return;}
   if(t.id==="copyTaste"){const txt="Please save my wardrobe taste into the app:\n"+JSON.stringify({...taste,built:mine.filter(isBuilt),hidden,finish:fin});
     try{await navigator.clipboard.writeText(txt);S.copied="taste";render();setTimeout(()=>{S.copied="";render();},2500);}
     catch(err){sheetBody.innerHTML=`<div class="sheet-head"><h2>Copy this</h2><button class="iconbtn" type="button" data-close>Close</button></div><textarea rows="8" style="width:100%" readonly>${esc(txt)}</textarea>`;if(!sheet.open)sheet.showModal();sheetBody.querySelector("textarea").select();}
