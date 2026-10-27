@@ -70,7 +70,7 @@ h2{font-family:var(--display);font-weight:400;font-size:22px;margin:0;text-wrap:
 .pairwith select,.pairwith input{font:inherit;font-weight:400;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--fg);width:100%}
 .minigrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(105px,1fr));gap:8px;padding:8px 0 4px}
 .minigrid.three{grid-template-columns:repeat(3,1fr)}
-.mini{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:0;overflow:hidden;cursor:pointer;text-align:left;display:flex;flex-direction:column;min-width:0;color:var(--fg)}
+.mini{cursor:pointer;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:0;overflow:hidden;cursor:pointer;text-align:left;display:flex;flex-direction:column;min-width:0;color:var(--fg)}
 .mini span{font-size:11.5px;line-height:1.25;padding:5px 7px 7px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .catsec{margin:0 0 10px}
 .cathead .chosen{display:flex;gap:3px}.cathead .chosen img{width:30px;height:30px;object-fit:contain;background:var(--surface);border-radius:6px}
@@ -265,7 +265,7 @@ function keyPiece(o){const P=(o.itemIds||[]).map(byId).filter(Boolean);
   return P.find(i=>i.category==="dresses")||P.find(i=>!i.basic&&["skirts","trousers","shorts"].includes(i.category))||P.find(i=>["skirts","trousers","shorts"].includes(i.category))||P.find(i=>!["shoes","bags","accessories"].includes(i.category))||P[0];}
 function topOf(o,k){const P=(o.itemIds||[]).map(byId).filter(Boolean);return P.find(i=>i!==k&&!i.basic&&["tops","knitwear"].includes(i.category))||P.find(i=>i!==k&&["tops","knitwear","outerwear"].includes(i.category));}
 function fitsSeason(o,se){return (o.itemIds||[]).every(id=>{const it=byId(id);return !it||!it.seasons||!it.seasons.length||it.seasons.includes(se);});}
-function miniTile(o){const k=keyPiece(o),t=topOf(o,k);return `<button type="button" class="mini" data-open="${esc(o.id)}">${collage(o.itemIds||[],k&&k.id)}<span>${esc(t?t.name.replace(/^(Gingham|Stripe|Dots) No\. \d+: /,""):o.name)}</span></button>`;}
+function miniTile(o){const k=keyPiece(o),t=topOf(o,k);return `<div role="button" tabindex="0" class="mini" data-open="${esc(o.id)}">${collage(o.itemIds||[],k&&k.id)}<span>${esc(t?t.name.replace(/^(Gingham|Stripe|Dots) No\. \d+: /,""):o.name)}</span></div>`;}
 function vOutfits(){
   const all=allOutfits().filter(o=>!hidden.includes(o.id));
   const liked=all.filter(isLiked),ideas=all.filter(o=>!isLiked(o)&&!o.liked);
@@ -284,7 +284,7 @@ function vOutfits(){
      :`<p class="lede">Like a few outfits in Style me and they'll show up here.</p>`}</section>
   ${(()=>{const B=all.filter(isBuilt).reverse();if(!B.length)return "";const open=!!S.openG.__built;return `<h3 style="margin:22px 0 8px">Built by you <span class="n">${B.length}</span></h3>
    <div class="grp${open?" open":""}"><button type="button" class="grphead" data-grp="__built" aria-expanded="${open}"><span class="gn">Your own outfits</span><span class="n">${B.length}</span><span class="chev">${open?"▾":"▸"}</span></button>
-   ${open?`<div class="minigrid">${B.map(o=>`<button type="button" class="mini" data-open="${esc(o.id)}">${collage(o.itemIds||[],keyPiece(o)&&keyPiece(o).id)}<span>${esc(o.name||"My outfit")}</span></button>`).join("")}</div>`:""}</div>`;})()}
+   ${open?`<div class="minigrid">${B.map(o=>`<div role="button" tabindex="0" class="mini" data-open="${esc(o.id)}">${collage(o.itemIds||[],keyPiece(o)&&keyPiece(o).id)}<span>${esc(o.name||"My outfit")}</span></div>`).join("")}</div>`:""}</div>`;})()}
   <h3 style="margin:22px 0 4px">Your liked outfits <span class="n">${liked.length}</span></h3>
   <p class="lede" style="margin:0 0 10px">Grouped by type, then by the main piece. Tap to open a section, then a piece, then an outfit to see it full size.</p>
   ${CATS.map(([ck,cv])=>[ck,cv,G.filter(g=>(g.item?g.item.category:"other")===ck)]).concat([["other","Other",G.filter(g=>!g.item||!CATS.some(c=>c[0]===g.item.category))]]).filter(x=>x[2].length).map(([ck,cv,gs])=>{const co=!!S.openG["cat:"+ck];const tot=gs.reduce((t,g)=>t+g.list.length,0);
@@ -466,7 +466,7 @@ function copyText(o){
 document.addEventListener("change",e=>{if(e.target.id==="pairWith"){S.with=e.target.value||null;S.withFor=S.anchor;S.seed=1;S.shown=[];render();return;}if(e.target.id==="useRules"){useRules=e.target.checked;LS.set("useRules",useRules);render();}});
 document.addEventListener("input",e=>{if(e.target.id==="bq"){S.bq=e.target.value;const pos=e.target.selectionStart;render();const el=$("#bq");if(el){el.focus();el.setSelectionRange(pos,pos);}return;}if(e.target.id==="sq"){S.q=e.target.value;const pos=e.target.selectionStart;render();const el=$("#sq");if(el){el.focus();el.setSelectionRange(pos,pos);}}});
 document.addEventListener("click",async e=>{
-  const t=e.target.closest("button");if(!t)return;
+  const t=e.target.closest("button,[role=button]");if(!t)return;
   if(t.dataset.tab){S.tab=t.dataset.tab;render();window.scrollTo(0,0);return;}
   if(t.dataset.anchor){S.anchor=t.dataset.anchor;S.seed=1;S.tab="style";if(sheet.open)sheet.close();render();window.scrollTo(0,0);return;}
   if(t.id==="changeAnchor"){S.anchor=null;render();window.scrollTo(0,0);return;}
