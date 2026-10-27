@@ -58,7 +58,7 @@ function formality(it){const s=lc(it);
   return 2.2;}
 const OCC={"Everyday":1.6,"Lunch out":2.1,"Dinner out":2.7,"Smart casual":2.5,"Travel":1.6,"Holiday":1.8,"Special occasion":3};
 const sleeveless=it=>/sleeveless|tank|halter|vest|cami|strapless|racer/.test(lc(it));
-const isVest=it=>it.category==="knitwear"&&/vest/.test(lc(it));
+const isVest=it=>(it.category==="knitwear"&&/vest/.test(lc(it)))||/waistcoat/.test(lc(it));
 const isWarmLayer=it=>it.category==="outerwear"||(it.category==="knitwear"&&/cardigan/.test(lc(it)));
 const isUnder=it=>(it.category==="tops"||it.category==="knitwear")&&/basic-white-tee|basic-white-fitted-tee|basic-black-tee|basic-grey-tee|basic-black-relaxed-tee|basic-grey-relaxed-tee|basic-white-ls-crew|basic-pale-pink-ls|basic-white-linen|basic-black-turtleneck|fleece-turtleneck|uniqlo-light-blue-turtleneck|mock-neck|stripe long-sleeve|breton long-sleeve|navy-stripe-long/.test(it.id+" "+lc(it))&&!sleeveless(it);
 const inSeason=(it,season)=>!it.seasons||!it.seasons.length||it.seasons.includes(season);

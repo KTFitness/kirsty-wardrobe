@@ -2409,6 +2409,44 @@
    ]
   },
   {
+   "id": "black-sleeveless-mock-neck",
+   "name": "Black sleeveless high-neck top",
+   "category": "tops",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "soft jersey knit",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Funnel high neck, sleeveless, relaxed A-line. Your photo.",
+   "img": "img/black-sleeveless-mock-neck.webp"
+  },
+  {
+   "id": "dharma-bums-black-waistcoat",
+   "name": "Dharma Bums black waistcoat",
+   "category": "tops",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "suiting",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Scoop neck, four buttons, welt pockets, split hem. Wear alone as a top or over a shirt or tee. Your photo.",
+   "img": "img/dharma-bums-black-waistcoat.webp",
+   "_f": [
+    "black"
+   ]
+  },
+  {
    "id": "cream-mock-neck-long-sleeve",
    "name": "Cream mock-neck long-sleeve top",
    "category": "tops",
@@ -12163,7 +12201,7 @@
     "basic-tan-crossbody"
    ],
    "missing": [
-    "Navy waistcoat",
+    "Navy waistcoat (your black waistcoat is the stand-in)",
     "Beige full midi skirt",
     "Butter yellow flats"
    ],
@@ -12610,11 +12648,10 @@
    "img": "img/inspo/inspo-165.webp",
    "summary": "Black halter waistcoat, grey pleated wide trousers, taupe bag.",
    "itemIds": [
-    "zara-black-sleeveless-knit",
+    "dharma-bums-black-waistcoat",
     "basic-tan-crossbody"
    ],
    "missing": [
-    "Black waistcoat",
     "Grey wide trousers"
    ],
    "createdAt": 164
@@ -12625,12 +12662,11 @@
    "img": "img/inspo/inspo-166.webp",
    "summary": "Long black button waistcoat, white wide trousers.",
    "itemIds": [
-    "zara-black-sleeveless-knit",
+    "dharma-bums-black-waistcoat",
     "basic-white-wide-jeans",
     "basic-white-sneakers"
    ],
    "missing": [
-    "Black waistcoat",
     "White tailored trousers (your white wide jeans are the stand-in)"
    ],
    "createdAt": 165
@@ -14698,7 +14734,7 @@
    "ip:basic-black-kitten-heels|basic-blue-wide-jeans": 0.36,
    "it:basic-black-kitten-heels": 0.91,
    "so:Everyday|heeled boots": 2.4,
-   "it:zara-black-sleeveless-knit": 2.14,
+   "it:zara-black-sleeveless-knit": 1.85,
    "ip:zara-black-sleeveless-knit|zara-white-sleeveless-knit": 0.36,
    "ip:basic-black-bamboo-wide-crop|zara-black-sleeveless-knit": 0.91,
    "ip:basic-black-flats|zara-black-sleeveless-knit": 0.36,
@@ -14715,7 +14751,7 @@
    "ip:basic-denim-jacket|zara-black-sleeveless-knit": 0.36,
    "ip:basic-tan-flats|zara-black-sleeveless-knit": 0.91,
    "cp:black+tan": 3.45,
-   "ip:basic-tan-crossbody|zara-black-sleeveless-knit": 1.13,
+   "ip:basic-tan-crossbody|zara-black-sleeveless-knit": 0.91,
    "ip:basic-black-bamboo-wide-crop|basic-denim-jacket": 0.36,
    "ip:basic-black-bamboo-wide-crop|basic-tan-flats": 0.36,
    "ip:basic-black-bamboo-wide-crop|basic-tan-crossbody": 0.36,
@@ -15353,7 +15389,7 @@
    "ip:basic-tan-flats|brown-mock-neck-long-sleeve": 0.36,
    "cp:brown+tan": 0.36,
    "ip:basic-tan-crossbody|brown-mock-neck-long-sleeve": 0.36,
-   "ip:basic-white-sneakers|zara-black-sleeveless-knit": 0.65,
+   "ip:basic-white-sneakers|zara-black-sleeveless-knit": 0.36,
    "ip:basic-denim-jacket|mimco-raffia-clutch": 0.65,
    "ip:green-wide-leg-cords|zara-white-sleeveless-knit": 0.91,
    "ip:mimco-raffia-clutch|zara-white-sleeveless-knit": 0.65,
@@ -15467,7 +15503,10 @@
    "it:charcoal-velvet-skirt": 0.36,
    "ip:basic-black-flats|charcoal-velvet-skirt": 0.36,
    "ip:basic-black-crossbody|charcoal-velvet-skirt": 0.36,
-   "ip:basic-white-wide-jeans|zara-black-sleeveless-knit": 0.36,
+   "it:dharma-bums-black-waistcoat": 0.65,
+   "ip:basic-tan-crossbody|dharma-bums-black-waistcoat": 0.36,
+   "ip:basic-white-wide-jeans|dharma-bums-black-waistcoat": 0.36,
+   "ip:basic-white-sneakers|dharma-bums-black-waistcoat": 0.36,
    "ip:basic-black-wide-linen-pants|zara-white-sleeveless-knit": 0.36,
    "ip:basic-black-midi-skirt|basic-black-tee": 0.36,
    "ip:basic-black-ankle-boots-flat|basic-black-tee": 0.36,
