@@ -1985,7 +1985,7 @@
   },
   {
    "id": "pink-rib-knit-tank",
-   "name": "Pink rib knit tank",
+   "name": "Decjuba hot pink rib tank",
    "category": "knitwear",
    "colours": [
     "hot pink"
@@ -1997,7 +1997,7 @@
     "Summer",
     "Autumn"
    ],
-   "notes": "Crew neck, fitted. Picture is a crop of the listing photo.",
+   "notes": "High crew neck, fitted rib. Picture is a crop of your photo.",
    "img": "img/pink-rib-knit-tank.webp",
    "_f": [
     "pink"
@@ -2516,6 +2516,151 @@
    ],
    "img": "img/anko-white-tank-black-trim.webp",
    "notes": "High racer neck, contrast binding. Picture is a crop of your photo."
+  },
+  {
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "fabric": "cotton rib",
+   "id": "decjuba-olive-rib-tank",
+   "name": "Decjuba olive rib tank",
+   "category": "tops",
+   "colours": [
+    "olive green"
+   ],
+   "pattern": "solid",
+   "img": "img/decjuba-olive-rib-tank.webp",
+   "notes": "High crew neck, fitted rib. Your photo.",
+   "_f": [
+    "forest"
+   ]
+  },
+  {
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "fabric": "linen",
+   "id": "white-linen-shell-tank",
+   "name": "White linen shell tank",
+   "category": "tops",
+   "colours": [
+    "white"
+   ],
+   "pattern": "solid",
+   "img": "img/white-linen-shell-tank.webp",
+   "notes": "Relaxed shell, centre seam. Picture is a crop of your photo."
+  },
+  {
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "fabric": "linen blend",
+   "id": "sussan-blush-tie-neck-halter",
+   "name": "Sussan blush linen tie-neck halter top",
+   "category": "tops",
+   "colours": [
+    "blush pink"
+   ],
+   "pattern": "solid",
+   "img": "img/sussan-blush-tie-neck-halter.webp",
+   "notes": "High halter neck with tie, gathered, swing shape. Photo shows the back. Picture is a crop of your photo."
+  },
+  {
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "fabric": "cotton jersey",
+   "id": "pink-white-stripe-tank",
+   "name": "Pink and white stripe tank",
+   "category": "tops",
+   "colours": [
+    "raspberry pink",
+    "white"
+   ],
+   "pattern": "breton stripe",
+   "img": "img/pink-white-stripe-tank.webp",
+   "notes": "Scoop back, side splits. Your photo."
+  },
+  {
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "fabric": "cotton rib",
+   "id": "pink-navy-stripe-rib-tank",
+   "name": "Pink and navy stripe rib tank",
+   "category": "tops",
+   "colours": [
+    "pink",
+    "navy"
+   ],
+   "pattern": "wide stripe",
+   "img": "img/pink-navy-stripe-rib-tank.webp",
+   "notes": "Fitted, navy binding. Photo shows the back. Your photo."
+  },
+  {
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "fabric": "silk blend knit",
+   "id": "jmclaughlin-pink-cream-stripe-knit-tank",
+   "name": "J.McLaughlin pink and cream stripe silk-knit tank",
+   "category": "knitwear",
+   "colours": [
+    "pink",
+    "cream"
+   ],
+   "pattern": "wide stripe",
+   "img": "img/jmclaughlin-pink-cream-stripe-knit-tank.webp",
+   "notes": "Crew neck, sleeveless, fine knit. Picture is a crop of your photo."
+  },
+  {
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "fabric": "linen blend",
+   "id": "rainbow-check-crop-tank",
+   "name": "Rainbow check cropped tank",
+   "category": "tops",
+   "colours": [
+    "multicolour",
+    "pink",
+    "blue"
+   ],
+   "pattern": "multicolour check",
+   "img": "img/rainbow-check-crop-tank.webp",
+   "notes": "Cropped, crew neck, back keyhole. Picture is a crop of your photo."
+  },
+  {
+   "seasons": [
+    "Summer",
+    "Spring"
+   ],
+   "fabric": "satin",
+   "id": "tropical-parrot-print-cami",
+   "name": "Tropical parrot print cami",
+   "category": "tops",
+   "colours": [
+    "peach",
+    "green",
+    "navy"
+   ],
+   "pattern": "tropical print with border",
+   "img": "img/tropical-parrot-print-cami.webp",
+   "notes": "Wide straps, square neck, navy and white floral borders. Picture is a crop of your photo."
   },
   {
    "fabric": "cotton jersey",
@@ -10274,13 +10419,12 @@
    "img": "img/inspo/inspo-13.webp",
    "summary": "Olive tank with a denim jacket or cream overshirt, black or blue jeans, sneakers.",
    "itemIds": [
-    "gorman-green-rib-tank",
+    "decjuba-olive-rib-tank",
     "basic-denim-jacket",
     "basic-black-straight-jeans-cropped",
     "basic-black-sneakers"
    ],
    "missing": [
-    "Olive tank",
     "Cream overshirt"
    ],
    "createdAt": 12
@@ -13056,14 +13200,12 @@
    "img": "img/inspo/inspo-181.webp",
    "summary": "Olive tank, denim jacket, black cropped jeans, black Converse.",
    "itemIds": [
-    "gorman-green-rib-tank",
+    "decjuba-olive-rib-tank",
     "basic-denim-jacket",
     "basic-black-straight-jeans-cropped",
     "basic-black-sneakers"
    ],
-   "missing": [
-    "Olive tank (your green rib tank is the stand-in)"
-   ],
+   "missing": [],
    "createdAt": 180
   },
   {
@@ -13072,14 +13214,12 @@
    "img": "img/inspo/inspo-182.webp",
    "summary": "Olive tank, denim jacket, light ripped jeans, white sneakers.",
    "itemIds": [
-    "gorman-green-rib-tank",
+    "decjuba-olive-rib-tank",
     "basic-denim-jacket",
     "basic-blue-straight-jeans",
     "basic-white-sneakers"
    ],
-   "missing": [
-    "Olive tank (your green rib tank is the stand-in)"
-   ],
+   "missing": [],
    "createdAt": 181
   },
   {
@@ -13088,13 +13228,12 @@
    "img": "img/inspo/inspo-183.webp",
    "summary": "Olive tank, cream shirt-jacket, black cropped jeans, black Converse.",
    "itemIds": [
-    "gorman-green-rib-tank",
+    "decjuba-olive-rib-tank",
     "basic-white-linen-shirt",
     "basic-black-straight-jeans-cropped",
     "basic-black-sneakers"
    ],
    "missing": [
-    "Olive tank (your green rib tank is the stand-in)",
     "Cream shirt-jacket (your white linen shirt is the stand-in)"
    ],
    "createdAt": 182
@@ -13105,13 +13244,12 @@
    "img": "img/inspo/inspo-184.webp",
    "summary": "Olive tank, cream shirt-jacket, light jeans, white sneakers.",
    "itemIds": [
-    "gorman-green-rib-tank",
+    "decjuba-olive-rib-tank",
     "basic-white-linen-shirt",
     "basic-blue-straight-jeans",
     "basic-white-sneakers"
    ],
    "missing": [
-    "Olive tank (your green rib tank is the stand-in)",
     "Cream shirt-jacket (your white linen shirt is the stand-in)"
    ],
    "createdAt": 183
@@ -14821,14 +14959,14 @@
   "w": {
    "it:basic-white-linen-shirt": 3.45,
    "ip:basic-green-cardigan|basic-white-linen-shirt": 0.36,
-   "cp:green+white": 2.52,
+   "cp:green+white": 2.14,
    "ip:basic-black-dress-pants|basic-white-linen-shirt": 0.65,
    "cp:black+white": 6.16,
    "ip:basic-black-loafers|basic-white-linen-shirt": 0.65,
    "ip:basic-black-crossbody|basic-white-linen-shirt": 1.33,
    "it:basic-green-cardigan": 0.36,
    "ip:basic-black-dress-pants|basic-green-cardigan": 0.36,
-   "cp:black+green": 1.13,
+   "cp:black+green": 0.36,
    "ip:basic-black-loafers|basic-green-cardigan": 0.36,
    "ip:basic-black-crossbody|basic-green-cardigan": 0.36,
    "it:basic-black-dress-pants": 0.65,
@@ -14963,11 +15101,12 @@
    "it:basic-blue-straight-jeans": 3.27,
    "ip:basic-blue-straight-jeans|basic-red-ballet-flats": 0.65,
    "it:basic-red-ballet-flats": 3.17,
-   "it:gorman-green-rib-tank": 1.52,
-   "ip:basic-denim-jacket|gorman-green-rib-tank": 0.91,
-   "cp:denim+green": 1.85,
-   "ip:basic-black-straight-jeans-cropped|gorman-green-rib-tank": 0.91,
-   "ip:basic-black-sneakers|gorman-green-rib-tank": 0.91,
+   "it:decjuba-olive-rib-tank": 1.33,
+   "ip:basic-denim-jacket|decjuba-olive-rib-tank": 0.91,
+   "cp:denim+forest": 2.64,
+   "ip:basic-black-straight-jeans-cropped|decjuba-olive-rib-tank": 0.91,
+   "cp:black+forest": 1.33,
+   "ip:basic-black-sneakers|decjuba-olive-rib-tank": 0.91,
    "ip:basic-black-straight-jeans-cropped|basic-denim-jacket": 0.65,
    "ip:basic-black-sneakers|basic-denim-jacket": 0.65,
    "it:basic-black-straight-jeans-cropped": 0.91,
@@ -14984,9 +15123,7 @@
    "ip:basic-blue-wide-jeans|basic-white-sneakers": 1.69,
    "it:gorman-green-cord-jacket": 2,
    "ip:basic-black-tee|gorman-green-cord-jacket": 0.36,
-   "cp:black+forest": 0.65,
    "ip:basic-blue-straight-jeans-cropped|gorman-green-cord-jacket": 0.91,
-   "cp:denim+forest": 2.14,
    "ip:basic-black-kitten-heels|gorman-green-cord-jacket": 0.36,
    "ip:basic-black-crossbody|gorman-green-cord-jacket": 0.36,
    "it:basic-black-tee": 1.69,
@@ -15040,7 +15177,7 @@
    "ip:basic-green-sneakers|marcs-pink-gingham-tank": 0.36,
    "cp:coral+forest": 0.36,
    "cp:coral+sky": 0.36,
-   "cp:forest+white": 1.69,
+   "cp:forest+white": 2.14,
    "cp:sky+white": 2.97,
    "ip:basic-tan-crossbody|marcs-pink-gingham-tank": 1.13,
    "cp:coral+tan": 2.14,
@@ -15246,6 +15383,7 @@
    "ip:cos-pink-funnel-neck-sweat|gorman-check-skirt": 0.36,
    "ip:basic-red-ballet-flats|cos-pink-funnel-neck-sweat": 0.36,
    "ip:basic-red-ballet-flats|gorman-check-skirt": 0.36,
+   "it:gorman-green-rib-tank": 0.36,
    "ip:gorman-check-skirt|gorman-green-rib-tank": 0.36,
    "ip:basic-tan-belt|gorman-green-rib-tank": 0.36,
    "ip:basic-tan-flats|gorman-green-rib-tank": 0.36,
@@ -15322,6 +15460,7 @@
    "ip:basic-white-sneakers|red-a-line-midi-skirt": 0.91,
    "pat:plain+print": 0.91,
    "ip:basic-blue-wide-jeans|pink-green-knit-tee": 0.36,
+   "cp:denim+green": 1.13,
    "ip:adidas-gazelle-pink|pink-green-knit-tee": 0.36,
    "ip:adidas-gazelle-pink|basic-blue-wide-jeans": 0.36,
    "ip:basic-blue-wide-jeans|cos-navy-stripe-tee-magenta-collar": 0.91,
@@ -15688,9 +15827,9 @@
    "ip:basic-tan-kitten-heels|basic-white-linen-shirt": 0.65,
    "ip:basic-white-linen-shirt|basic-white-wide-jeans": 0.36,
    "ip:basic-tan-flats|basic-white-linen-shirt": 0.65,
-   "ip:basic-blue-straight-jeans|gorman-green-rib-tank": 0.65,
-   "ip:basic-white-sneakers|gorman-green-rib-tank": 0.65,
-   "ip:basic-white-linen-shirt|gorman-green-rib-tank": 0.65,
+   "ip:basic-blue-straight-jeans|decjuba-olive-rib-tank": 0.65,
+   "ip:basic-white-sneakers|decjuba-olive-rib-tank": 0.65,
+   "ip:basic-white-linen-shirt|decjuba-olive-rib-tank": 0.65,
    "ip:basic-black-straight-jeans-cropped|basic-white-linen-shirt": 0.36,
    "ip:basic-black-sneakers|basic-white-linen-shirt": 0.65,
    "ip:basic-black-leggings|chambray-shirt": 0.65,
