@@ -5013,6 +5013,65 @@
    "_f": [
     "black"
    ]
+  },
+  {
+   "id": "boden-red-stripe-long-sleeve-tee",
+   "name": "Boden red and white stripe long-sleeve tee",
+   "category": "tops",
+   "colours": [
+    "red",
+    "white",
+    "navy"
+   ],
+   "pattern": "breton stripe, navy neckband",
+   "fabric": "cotton jersey",
+   "seasons": [
+    "Spring",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Crew neck with navy neckband, long sleeves. Your photo.",
+   "img": "img/boden-red-stripe-long-sleeve-tee.webp",
+   "shape": "tee"
+  },
+  {
+   "id": "black-white-stripe-tee-orange-collar",
+   "name": "Black and white stripe tee with orange collar",
+   "category": "tops",
+   "colours": [
+    "black",
+    "white",
+    "orange"
+   ],
+   "pattern": "breton stripe, solid orange neckband",
+   "fabric": "cotton jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Crew neck with orange-red neckband, short sleeves. Your photo.",
+   "img": "img/black-white-stripe-tee-orange-collar.webp",
+   "shape": "tee"
+  },
+  {
+   "id": "cos-red-fine-stripe-tee",
+   "name": "COS red and white fine stripe tee",
+   "category": "tops",
+   "colours": [
+    "red",
+    "cream"
+   ],
+   "pattern": "fine stripe, cream neckband",
+   "fabric": "cotton jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Boxy short sleeves, cream neckband. Your photo.",
+   "img": "img/cos-red-fine-stripe-tee.webp",
+   "shape": "tee"
   }
  ],
  "outfits": [
