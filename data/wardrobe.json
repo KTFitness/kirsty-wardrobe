@@ -1334,6 +1334,60 @@
    "notes": "Boat neck, empire seam, wrap skirt with side tab and buckle. Your photo."
   },
   {
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "id": "gorman-peek-a-bloom-shift-dress",
+   "name": "Gorman Peek A Bloom shift dress",
+   "category": "dresses",
+   "colours": [
+    "hot pink",
+    "red"
+   ],
+   "pattern": "broderie flower cutwork",
+   "fabric": "cotton broderie",
+   "notes": "Puff sleeves, shift mini, red flowers showing through the cutwork. Picture is a crop of the Gorman listing photo."
+  },
+  {
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "id": "gorman-floral-border-shirt-dress",
+   "name": "Gorman floral border shirt dress",
+   "category": "dresses",
+   "colours": [
+    "white",
+    "purple",
+    "orange",
+    "multicolour"
+   ],
+   "pattern": "bright floral border print",
+   "fabric": "linen",
+   "notes": "Collared, puff sleeves, swing mini, border-print hem. Picture is a crop of the Gorman listing photo."
+  },
+  {
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "id": "gorman-serpents-bloom-shift-dress",
+   "name": "Gorman Serpent’s Bloom shift dress",
+   "category": "dresses",
+   "colours": [
+    "orange",
+    "purple",
+    "green"
+   ],
+   "pattern": "embroidered floral and lattice print",
+   "fabric": "linen blend",
+   "notes": "Sleeveless A-line mini, purple flowers in a snake vase, lattice hem. Picture is a crop of the Gorman listing photo."
+  },
+  {
    "id": "red-blue-stripe-knit-vest",
    "name": "Red and blue stripe knit vest",
    "category": "knitwear",
@@ -2694,6 +2748,25 @@
    "pattern": "multicolour check",
    "img": "img/rainbow-check-crop-tank.webp",
    "notes": "Cropped, crew neck, back keyhole. Picture is a crop of your photo."
+  },
+  {
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "id": "gorman-zebra-floral-linen-tank",
+   "name": "Gorman zebra and floral linen tank",
+   "category": "tops",
+   "colours": [
+    "pink",
+    "red",
+    "black",
+    "white"
+   ],
+   "pattern": "zebra and floral print",
+   "fabric": "linen",
+   "notes": "Sleeveless shell, ric-rac and cutout hem trim. Picture is a crop of the Gorman listing photo."
   },
   {
    "seasons": [
@@ -4402,6 +4475,25 @@
    "_f": [
     "denim"
    ]
+  },
+  {
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "id": "gorman-gone-fishing-denim-mini",
+   "name": "Gorman Gone Fishing embroidered denim mini",
+   "category": "skirts",
+   "colours": [
+    "indigo denim",
+    "white",
+    "pink",
+    "green"
+   ],
+   "pattern": "embroidered motifs",
+   "fabric": "denim",
+   "notes": "Wrap-front mini, fish, cactus and sun embroidery, white loop-stitch trim. Picture is a crop of the Gorman listing photo."
   },
   {
    "pattern": "solid",
@@ -15330,7 +15422,7 @@
    "it:basic-black-loafers": 1.52,
    "ip:basic-black-crossbody|basic-black-loafers": 0.65,
    "it:basic-black-crossbody": 4.34,
-   "pat:plain+plain+plain": 5.38,
+   "pat:plain+plain+plain": 5.27,
    "so:Everyday|flats": 8.69,
    "it:basic-black-turtleneck": 1.13,
    "ip:basic-black-turtleneck|basic-blue-straight-jeans-cropped": 0.36,
@@ -15338,7 +15430,7 @@
    "ip:basic-black-loafers|basic-black-turtleneck": 0.36,
    "it:basic-blue-straight-jeans-cropped": 3.54,
    "ip:basic-black-loafers|basic-blue-straight-jeans-cropped": 0.36,
-   "pat:plain+plain": 6.36,
+   "pat:plain+plain": 6.11,
    "it:alessandra-colour-block-jumper": 0.36,
    "ip:alessandra-colour-block-jumper|basic-white-tee": 0.36,
    "cp:tan+white": 7.51,
@@ -15388,6 +15480,7 @@
    "it:basic-blue-wide-jeans": 4.76,
    "ip:basic-black-kitten-heels|basic-blue-wide-jeans": 0.36,
    "it:basic-black-kitten-heels": 0.91,
+   "pat:plain+print": 1.85,
    "so:Everyday|heeled boots": 2.4,
    "it:zara-black-sleeveless-knit": 1.85,
    "ip:zara-black-sleeveless-knit|zara-white-sleeveless-knit": 0.36,
@@ -15418,7 +15511,7 @@
    "cp:navy+tan": 2.64,
    "it:basic-black-wide-linen-pants": 1.33,
    "ip:basic-black-wide-linen-pants|basic-tan-flats": 0.36,
-   "pat:plain+stripe": 2.86,
+   "pat:plain+stripe": 2.75,
    "ip:basic-denim-jacket|navy-stripe-long-sleeve-top": 0.36,
    "ip:basic-black-wide-linen-pants|basic-denim-jacket": 0.36,
    "ip:basic-denim-jacket|basic-white-sneakers": 1.52,
@@ -15671,7 +15764,7 @@
    "ip:basic-white-sneakers|gorman-striped-skirt": 1.85,
    "ip:basic-tan-crossbody|gorman-striped-skirt": 2,
    "cp:blue+tan": 2.27,
-   "pat:plain+stripe+stripe": 0.65,
+   "pat:print+stripe+stripe": 0.36,
    "ip:basic-denim-jacket|basic-white-tee": 1.13,
    "ip:basic-denim-jacket|gorman-striped-skirt": 0.36,
    "cp:blue+denim": 0.36,
@@ -15707,6 +15800,7 @@
    "ip:country-road-white-tank|gorman-striped-skirt": 0.36,
    "ip:basic-white-sneakers|country-road-white-tank": 0.36,
    "ip:basic-tan-crossbody|country-road-white-tank": 0.91,
+   "pat:print+stripe": 0.36,
    "it:red-mock-neck-top": 0.36,
    "ip:gorman-check-skirt|red-mock-neck-top": 0.36,
    "ip:basic-white-sneakers|red-mock-neck-top": 0.36,
@@ -15761,6 +15855,7 @@
    "ip:basic-red-ballet-flats|basic-tan-belt": 0.36,
    "ip:basic-tan-belt|mimco-raffia-clutch": 0.36,
    "ip:basic-red-ballet-flats|mimco-raffia-clutch": 0.36,
+   "pat:plain+plain+print": 0.65,
    "it:red-daisy-pocket-knit-vest": 1.33,
    "ip:cream-mock-neck-long-sleeve|red-daisy-pocket-knit-vest": 0.36,
    "ip:basic-blue-straight-jeans-cropped|red-daisy-pocket-knit-vest": 0.36,
@@ -15812,7 +15907,6 @@
    "ip:pink-green-knit-tee|red-a-line-midi-skirt": 0.36,
    "ip:basic-white-sneakers|pink-green-knit-tee": 0.36,
    "ip:basic-white-sneakers|red-a-line-midi-skirt": 0.91,
-   "pat:plain+print": 0.91,
    "ip:basic-blue-wide-jeans|pink-green-knit-tee": 0.36,
    "cp:denim+green": 1.13,
    "ip:adidas-gazelle-pink|pink-green-knit-tee": 0.36,
@@ -15887,6 +15981,7 @@
    "ip:basic-tan-crossbody|pink-green-stripe-knit-tee": 0.36,
    "ip:basic-blue-wide-jeans|green-breton-long-sleeve": 0.36,
    "ip:basic-white-sneakers|green-breton-long-sleeve": 0.36,
+   "pat:plain+stripe+stripe": 0.36,
    "it:boden-red-gingham-shirt": 0.65,
    "ip:basic-white-wide-jeans|boden-red-gingham-shirt": 0.36,
    "ip:basic-tan-flats|boden-red-gingham-shirt": 0.65,
@@ -15928,7 +16023,7 @@
    "ip:basic-blue-straight-jeans|basic-white-linen-shirt": 1.13,
    "ip:basic-black-loafers|basic-blue-straight-jeans": 0.65,
    "ip:basic-blue-straight-jeans|basic-tan-crossbody": 2.14,
-   "pat:plain": 4.12,
+   "pat:plain": 4.04,
    "it:brown-mock-neck-long-sleeve": 0.65,
    "ip:basic-white-straight-jeans|brown-mock-neck-long-sleeve": 0.36,
    "cp:brown+white": 0.36,
@@ -16098,6 +16193,7 @@
    "ip:basic-black-flats|red-a-line-midi-skirt": 0.36,
    "ip:gorman-green-cord-jacket|navy-stripe-long-sleeve-top": 0.36,
    "ip:basic-white-flats|pale-blue-cutwork-puff-shirt": 0.36,
+   "pat:print": 0.65,
    "ip:basic-black-blazer|basic-black-turtleneck": 0.36,
    "ip:basic-black-blazer|basic-black-docs": 0.36,
    "ip:basic-black-docs|basic-black-turtleneck": 0.36,
@@ -16262,7 +16358,6 @@
    "ip:basic-blue-straight-jeans-cropped|basic-tan-belt": 0.36,
    "ip:basic-blue-straight-jeans-cropped|basic-red-ballet-flats": 0.65,
    "ip:basic-white-flats|guns-n-roses-band-tee": 0.36,
-   "pat:print": 0.36,
    "ip:basic-black-flats|basic-white-wide-jeans": 0.36,
    "ip:basic-blue-straight-jeans-cropped|sass-rust-cord-jacket": 0.36,
    "ip:green-linen-shirt|zara-white-sleeveless-knit": 0.36,
