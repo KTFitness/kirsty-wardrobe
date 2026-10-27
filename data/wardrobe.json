@@ -4752,19 +4752,20 @@
   },
   {
    "id": "white-denim-wrap-mini-skirt",
-   "name": "White denim wrap mini skirt",
+   "name": "Cream denim wrap mini skirt",
    "category": "skirts",
    "colours": [
-    "white"
+    "cream",
+    "brown"
    ],
-   "pattern": "solid",
+   "pattern": "solid with contrast topstitching",
    "fabric": "denim",
    "seasons": [
     "Spring",
     "Summer",
     "Autumn"
    ],
-   "notes": "Wrap front, tortoiseshell buttons, contrast stitching. Your photo.",
+   "notes": "Wrap front, tortoiseshell buttons, brown topstitching. Your photo.",
    "img": "img/white-denim-wrap-mini-skirt.webp"
   },
   {
