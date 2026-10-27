@@ -71,7 +71,6 @@ h2{font-family:var(--display);font-weight:400;font-size:22px;margin:0;text-wrap:
 .minigrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(105px,1fr));gap:8px;padding:8px 0 4px}
 .minigrid.three{grid-template-columns:repeat(3,1fr)}
 .mini{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:0;overflow:hidden;cursor:pointer;text-align:left;display:flex;flex-direction:column;min-width:0;color:var(--fg)}
-.mini .collage{padding:4px;gap:2px}
 .mini span{font-size:11.5px;line-height:1.25;padding:5px 7px 7px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .catsec{margin:0 0 10px}
 .cathead .chosen{display:flex;gap:3px}.cathead .chosen img{width:30px;height:30px;object-fit:contain;background:var(--surface);border-radius:6px}
@@ -88,13 +87,17 @@ h2{font-family:var(--display);font-weight:400;font-size:22px;margin:0;text-wrap:
 h3 .n,.grphead .n{font-size:12px;color:var(--muted);background:var(--tile);border-radius:99px;padding:2px 8px;font-weight:600}
 .ogrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
 .ocard{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
-.collage{background:var(--tile);display:grid;grid-template-columns:2fr 1fr;gap:4px;padding:8px;aspect-ratio:1/1;max-width:100%}
-.collage.solo{grid-template-columns:1fr}
+.collage{background:var(--tile);position:relative;width:100%;max-width:100%}
+.collage::before{content:"";display:block;padding-top:100%}
+.collage .cin{position:absolute;top:8px;left:8px;right:8px;bottom:8px;display:grid;grid-template-columns:2fr 1fr;gap:4px}
+.collage.solo .cin{grid-template-columns:1fr}
+.mini .collage .cin{top:4px;left:4px;right:4px;bottom:4px;gap:2px}
 .collage{overflow:hidden}
 .collage .main,.collage .side{display:grid;gap:4px;min-height:0;min-width:0;overflow:hidden}
 .collage .cl{position:relative;min-height:0;min-width:0;overflow:hidden}
 .collage .cl.hero{background:rgba(255,255,255,.35);border-radius:6px}
-.collage img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block}
+@media (prefers-color-scheme:dark){.collage .cl.hero{background:rgba(255,255,255,.07)}}
+.collage img{position:absolute;top:0;left:0;right:0;bottom:0;width:100%;height:100%;object-fit:contain;display:block}
 .collage .gone{display:grid;place-items:center;font-size:12px;color:var(--muted)}
 .ocard .meta{padding:11px 13px 13px;display:grid;gap:7px}
 .ocard .nm{font-family:var(--display);font-size:18px;line-height:1.2}
@@ -199,8 +202,8 @@ function collage(ids,hero){
   const mainCells=(H?[cell(H,true)]:[]).concat(main.map(x=>cell(x)));
   const rows=(H?["2fr"]:[]).concat(main.map(()=>"1fr")).join(" ")||"1fr";
   const mainHtml=`<div class="main" style="grid-template-rows:${rows}">${mainCells.join("")}</div>`;
-  if(!side.length)return `<div class="collage solo">${mainHtml}</div>`;
-  return `<div class="collage">${mainHtml}<div class="side" style="grid-template-rows:repeat(${side.length},1fr)">${side.map(x=>cell(x)).join("")}</div></div>`;
+  if(!side.length)return `<div class="collage solo"><div class="cin">${mainHtml}</div></div>`;
+  return `<div class="collage"><div class="cin">${mainHtml}<div class="side" style="grid-template-rows:repeat(${side.length},1fr)">${side.map(x=>cell(x)).join("")}</div></div></div>`;
 }
 function tipsFor(ids){const P=ids.map(byId).filter(Boolean);if(!window.Stylist||!Stylist.hemTip)return "";return [Stylist.hemTip(P),Stylist.hairTip(P)].filter(Boolean).map(t=>`<p class="tip">${esc(t)}</p>`).join("");}
 function outfitCard(o,extra="",hero){
