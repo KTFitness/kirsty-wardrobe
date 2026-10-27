@@ -59,6 +59,7 @@ function formality(it){const s=lc(it);
 const OCC={"Everyday":1.6,"Lunch out":2.1,"Dinner out":2.7,"Smart casual":2.5,"Travel":1.6,"Holiday":1.8,"Special occasion":3};
 const sleeveless=it=>/sleeveless|tank|halter|vest|cami|strapless|racer/.test(lc(it));
 const isVest=it=>(it.category==="knitwear"&&/vest/.test(lc(it)))||/waistcoat/.test(lc(it));
+const longSleeve=it=>/long-sleeve|long sleeve|long balloon|turtleneck|jumper|sweat|funnel|cardigan|blazer|jacket|coat/.test(lc(it));
 const isWarmLayer=it=>it.category==="outerwear"||(it.category==="knitwear"&&/cardigan/.test(lc(it)));
 const isUnder=it=>(it.category==="tops"||it.category==="knitwear")&&/basic-white-tee|basic-white-fitted-tee|basic-black-tee|basic-grey-tee|basic-black-relaxed-tee|basic-grey-relaxed-tee|basic-white-ls-crew|basic-pale-pink-ls|basic-white-linen|basic-black-turtleneck|fleece-turtleneck|uniqlo-light-blue-turtleneck|mock-neck|stripe long-sleeve|breton long-sleeve|navy-stripe-long/.test(it.id+" "+lc(it))&&!sleeveless(it);
 const inSeason=(it,season)=>!it.seasons||!it.seasons.length||it.seasons.includes(season);
@@ -214,7 +215,8 @@ function suggest(anchor,items,ctx){
       const u=unders.filter(u=>!pieces.includes(u)).map(u=>[u,SC(pieces.concat(u),ctx).s]).sort((a,b)=>b[1]-a[1])[0];
       if(u)pieces.push(u[0]);
     }
-    const needLayer=forceLayer||(ctx.rain&&!pieces.some(isWarmLayer))||cool&&!pieces.some(isWarmLayer)&&(pieces.some(sleeveless)||season==="Winter"||pieces.some(p=>p.category==="dresses"));
+    const chilly=ctx.tmax!=null&&ctx.tmax<20&&!pieces.some(longSleeve);
+    const needLayer=forceLayer||chilly||(ctx.rain&&!pieces.some(isWarmLayer))||cool&&!pieces.some(isWarmLayer)&&(pieces.some(sleeveless)||season==="Winter"||pieces.some(p=>p.category==="dresses"));
     if(needLayer&&layers.length&&!(forceLayer&&pieces.includes(WI))){const L=layers.filter(l=>!pieces.includes(l)).map(l=>[l,SC(pieces.concat(l),ctx).s+(rnd()*E)*0.8]).sort((a,b)=>b[1]-a[1])[0];if(L)pieces.push(L[0]);}
     let alts=[];
     if(!ctx.noAccessories&&!pieces.some(p=>p.category==="shoes")&&shoes.length){
@@ -282,5 +284,9 @@ function finish(pieces,items,ctx){ctx=ctx||{};ctx.W=ctx.W||{};const season=ctx.s
   const shoes=items.filter(i=>i.category==="shoes"&&inSeason(i,season)).map(x=>[x,sc(base.concat(x))]).sort((a,b)=>b[1]-a[1]).map(x=>x[0]);
   const best=shoes[0];const bags=items.filter(i=>i.category==="bags").map(x=>[x,sc(base.concat(best?[best,x]:[x]))]).sort((a,b)=>b[1]-a[1]).map(x=>x[0]);
   return {shoes,bags};}
-window.Stylist={finish,coreKey:ps=>ps.filter(p=>!["shoes","bags","accessories"].includes(p.category)).map(p=>p.id).sort().join(","),suggest,features,families,pkind,formality,hemTip,hairTip};
+
+function addLayer(pieces,items,ctx){ctx=ctx||{};ctx.W=ctx.W||{};if(pieces.some(isWarmLayer)||(!ctx.rain&&pieces.some(longSleeve)))return null;
+  const sc=ps=>(ctx.rules?score(ps,ctx).s:0)+learned(ps,ctx);
+  const L=items.filter(i=>isWarmLayer(i)&&inSeason(i,ctx.season)).map(x=>[x,sc(pieces.concat(x))]).sort((a,b)=>b[1]-a[1]);return L[0]?L[0][0]:null;}
+window.Stylist={addLayer,finish,coreKey:ps=>ps.filter(p=>!["shoes","bags","accessories"].includes(p.category)).map(p=>p.id).sort().join(","),suggest,features,families,pkind,formality,hemTip,hairTip};
 })();

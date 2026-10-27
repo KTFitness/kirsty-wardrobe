@@ -276,13 +276,15 @@ function keyPiece(o){const P=(o.itemIds||[]).map(byId).filter(Boolean);
   return P.find(i=>i.category==="dresses")||P.find(i=>!i.basic&&["skirts","trousers","shorts"].includes(i.category))||P.find(i=>["skirts","trousers","shorts"].includes(i.category))||P.find(i=>!["shoes","bags","accessories"].includes(i.category))||P[0];}
 function topOf(o,k){const P=(o.itemIds||[]).map(byId).filter(Boolean);return P.find(i=>i!==k&&!i.basic&&["tops","knitwear"].includes(i.category))||P.find(i=>i!==k&&["tops","knitwear","outerwear"].includes(i.category));}
 function fitsSeason(o,se){return (o.itemIds||[]).every(id=>{const it=byId(id);return !it||!it.seasons||!it.seasons.length||it.seasons.includes(se);});}
-function miniTile(o){const k=keyPiece(o),t=topOf(o,k);return `<div role="button" tabindex="0" class="mini" data-open="${esc(o.id)}">${collage(o.itemIds||[],k&&k.id)}<span>${esc(t?t.name.replace(/^(Gingham|Stripe|Dots) No\. \d+: /,""):o.name)}</span></div>`;}
+function miniTile(o){const k=keyPiece(o),t=topOf(o,k);return `<div role="button" tabindex="0" class="mini" data-open="${esc(o.id)}">${collage(o.itemIds||[],k&&k.id)}<span>${esc(t?t.name.replace(/^(Gingham|Stripe|Dots) No\. \d+: /,""):o.name)}${o.addedLayer?` + ${esc(o.addedLayer)}`:""}</span></div>`;}
 function vOutfits(){
   const all=allOutfits().filter(o=>!hidden.includes(o.id));
   const liked=all.filter(isLiked),ideas=all.filter(o=>!isLiked(o)&&!o.liked);
   const se=todaySeason();
   const pool=liked.filter(o=>fitsSeason(o,se));
   let today=[];if(pool.length){const r=rng(Number(new Date().toISOString().slice(0,10).replace(/-/g,''))+(S.todaySeed||0)*7919);const p=pool.slice();while(today.length<3&&p.length)today.push(p.splice(Math.floor(r()*p.length),1)[0]);}
+  if(S.wx&&(S.wx.max<20||wxRain()))today=today.map(o=>{const P=(o.itemIds||[]).map(byId).filter(Boolean);const L=Stylist.addLayer(P,D.items,{season:se,rain:wxRain(),W:tasteW()});return L?{...o,itemIds:o.itemIds.concat(L.id),addedLayer:L.name,why:`Add the ${L.name.toLowerCase()} for today's weather.`}:o;});
+  S.todayList=today;
   const groups={};for(const o of liked){const k=keyPiece(o);const id=k?k.id:"other";(groups[id]=groups[id]||{item:k,list:[]}).list.push(o);}
   const G=Object.values(groups).sort((x,y)=>y.list.length-x.list.length);
   for(const g of G)g.list.sort((x,y)=>{const a=topOf(x,g.item),b=topOf(y,g.item);return (a?colRank(a):99)-(b?colRank(b):99)||(a&&b?a.name.localeCompare(b.name):0);});
@@ -363,7 +365,7 @@ function vStyle(){
   const a=S.anchor&&byId(S.anchor);
   if(!a)return pickGrid();
   const season=S.sSeason||todaySeason();
-  const res=window.Stylist?Stylist.suggest(a,D.items,{occ:S.sOcc,season,rain:!S.sSeason&&wxRain(),seed:S.seed,count:6,W:tasteW(),n:tasteN(),rules:useRules,noAccessories:true,exclude:[],excludeCore:allDisliked().concat(ratingLists().liked,S.rated||[]).map(k=>Stylist.coreKey(k.split(",").map(byId).filter(Boolean))),shown:S.shownFor===a.id?(S.shown||[]):[],with:S.withFor===a.id?S.with:null}):[];
+  const res=window.Stylist?Stylist.suggest(a,D.items,{occ:S.sOcc,season,rain:!S.sSeason&&wxRain(),tmax:!S.sSeason&&S.wx?S.wx.max:null,seed:S.seed,count:6,W:tasteW(),n:tasteN(),rules:useRules,noAccessories:true,exclude:[],excludeCore:allDisliked().concat(ratingLists().liked,S.rated||[]).map(k=>Stylist.coreKey(k.split(",").map(byId).filter(Boolean))),shown:S.shownFor===a.id?(S.shown||[]):[],with:S.withFor===a.id?S.with:null}):[];
   S.lastRes=res.map((r,k)=>({key:r.key,id:"g"+S.seed+"-"+k,name:r.set?"The matching set":"With the "+a.name.replace(/^(Gingham|Stripe|Dots) No\. \d+: /,"").toLowerCase(),itemIds:r.pieces.map(p=>p.id),occasions:[S.sOcc],why:r.why}));
   const offSeason=a.seasons&&a.seasons.length&&!a.seasons.includes(season);
   return `<div class="panel" style="grid-template-columns:96px 1fr;align-items:center">
@@ -534,7 +536,7 @@ document.addEventListener("click",async e=>{
     return;}
   if(t.dataset.grp){S.openG=S.openG||{};S.openG[t.dataset.grp]=!S.openG[t.dataset.grp];render();return;}
   if(t.id==="todayMore"){S.todaySeed=(S.todaySeed||0)+1;render();return;}
-  if(t.dataset.open){const o=allOutfits().find(x=>x.id===t.dataset.open);if(o){sheetBody.innerHTML=`<div class="sheet-head"><h2>Outfit</h2><button class="iconbtn" type="button" data-close>Close</button></div>${outfitCard(o)}`;if(!sheet.open)sheet.showModal();}return;}
+  if(t.dataset.open){const o=(t.closest(".today")&&(S.todayList||[]).find(x=>x.id===t.dataset.open))||allOutfits().find(x=>x.id===t.dataset.open);if(o){sheetBody.innerHTML=`<div class="sheet-head"><h2>Outfit</h2><button class="iconbtn" type="button" data-close>Close</button></div>${outfitCard(o)}`;if(!sheet.open)sheet.showModal();}return;}
   if(t.dataset.likeo){const id=t.dataset.likeo;unliked=unliked.filter(x=>x!==id);LS.set("unliked",unliked);const o=allOutfits().find(x=>x.id===id);if(o&&!o.liked&&!o.mine&&!favs.includes(id)){favs=favs.concat(id);LS.set("favs",favs);}refreshOpen(id);render();return;}
   if(t.dataset.unlike){const id=t.dataset.unlike;const o=allOutfits().find(x=>x.id===id);if(!o)return;
     if(o.mine){mine=mine.filter(x=>x.id!==id);LS.set("mine",mine);}else if(o.liked){unliked=unliked.concat(id);LS.set("unliked",unliked);}
