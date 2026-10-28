@@ -53,7 +53,7 @@ function formality(it){const s=lc(it);
   if(/band tee|sweatshirt|track|crochet|guns/.test(s))return 1.1;
   if(it.category==="shorts")return 1.3;
   if(/\btee\b|t-shirt|tank|polo/.test(s))return 1.6;
-  if(/dress pants|blazer|velvet|broderie|cutwork|midi dress|maxi|appliqué|turtleneck|mock-neck/.test(s))return 2.9;
+  if(/dress pants|blazer|velvet|sequin|satin|silk|broderie|cutwork|midi dress|maxi|appliqué|turtleneck|mock-neck/.test(s))return 2.9;
   if(/jeans|denim|cord/.test(s))return 1.7;
   return 2.2;}
 const OCC={"Everyday":1.6,"Lunch out":2.1,"Dinner out":2.7,"Smart casual":2.5,"Travel":1.6,"Holiday":1.8,"Special occasion":3};
