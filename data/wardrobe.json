@@ -5665,6 +5665,266 @@
    "_f": [
     "red"
    ]
+  },
+  {
+   "id": "katies-black-white-chevron-shift-dress",
+   "name": "Katies black and white chevron shift dress",
+   "category": "dresses",
+   "colours": [
+    "black",
+    "white"
+   ],
+   "pattern": "chevron knit, black trim",
+   "fabric": "textured knit",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Cap sleeves, round neck with black band, back zip, two welt pockets with black trim. Your photo.",
+   "img": "img/katies-black-white-chevron-shift-dress.webp"
+  },
+  {
+   "id": "black-white-spot-linen-shift-dress",
+   "name": "Black and white spot linen shift dress",
+   "category": "dresses",
+   "colours": [
+    "black",
+    "white"
+   ],
+   "pattern": "large polka dot",
+   "fabric": "linen",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "High round neck, short cuffed sleeves, side pockets, straight shift. Your photo.",
+   "img": "img/black-white-spot-linen-shift-dress.webp",
+   "_f": [
+    "black",
+    "white"
+   ]
+  },
+  {
+   "id": "teal-geometric-shirt-dress",
+   "name": "Teal, navy and cream geometric shirt dress",
+   "category": "dresses",
+   "colours": [
+    "teal green",
+    "navy",
+    "cream"
+   ],
+   "pattern": "geometric petal print",
+   "fabric": "cotton",
+   "seasons": [
+    "Spring",
+    "Autumn"
+   ],
+   "notes": "Collared, button front, three-quarter sleeves with cuffs, waist seam, flared skirt. Your photo.",
+   "img": "img/teal-geometric-shirt-dress.webp"
+  },
+  {
+   "id": "sussan-cream-linen-shift-dress",
+   "name": "Sussan cream linen shift dress",
+   "category": "dresses",
+   "colours": [
+    "cream"
+   ],
+   "pattern": "solid with pintucks",
+   "fabric": "linen",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Open collar, V neck with pintucked yoke, short sleeves, relaxed A-line. Your photo.",
+   "img": "img/sussan-cream-linen-shift-dress.webp",
+   "_f": [
+    "cream"
+   ]
+  },
+  {
+   "id": "camel-sweatshirt-turtleneck-dress",
+   "name": "Camel sweatshirt turtleneck dress",
+   "category": "dresses",
+   "colours": [
+    "camel"
+   ],
+   "pattern": "solid",
+   "fabric": "cotton fleece",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Funnel neck, long cuffed sleeves, straight knee length. Your photo.",
+   "img": "img/camel-sweatshirt-turtleneck-dress.webp"
+  },
+  {
+   "id": "rust-navy-stripe-tank-dress",
+   "name": "Rust and navy stripe tank dress",
+   "category": "dresses",
+   "colours": [
+    "rust orange",
+    "white",
+    "navy"
+   ],
+   "pattern": "solid bodice, Breton stripe skirt",
+   "fabric": "cotton jersey",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Sleeveless, scoop neck, rust top with navy and white Breton stripes below. Your photo.",
+   "img": "img/rust-navy-stripe-tank-dress.webp"
+  },
+  {
+   "id": "grey-marle-tee-dress",
+   "name": "Grey marle T-shirt dress",
+   "category": "dresses",
+   "colours": [
+    "grey"
+   ],
+   "pattern": "solid marle",
+   "fabric": "knit jersey",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Mock neck, cap sleeves, straight knee length. Your photo.",
+   "img": "img/grey-marle-tee-dress.webp"
+  },
+  {
+   "id": "minkpink-leopard-smocked-dress",
+   "name": "MinkPink leopard smocked dress",
+   "category": "dresses",
+   "colours": [
+    "tan",
+    "black"
+   ],
+   "pattern": "leopard print with black lace",
+   "fabric": "rayon",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "V neck, kimono sleeves, black lace at the shoulders and hem, smocked waist, knee length. Your photo.",
+   "img": "img/minkpink-leopard-smocked-dress.webp"
+  },
+  {
+   "id": "marimekko-uniqlo-mustard-print-dress",
+   "name": "Marimekko x Uniqlo mustard and navy print shift dress",
+   "category": "dresses",
+   "colours": [
+    "mustard yellow",
+    "navy",
+    "blue"
+   ],
+   "pattern": "large abstract print",
+   "fabric": "cotton",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Sleeveless, round neck, button back, contrast topstitching, straight shift. Your photo.",
+   "img": "img/marimekko-uniqlo-mustard-print-dress.webp"
+  },
+  {
+   "id": "flamingo-print-puff-sleeve-dress",
+   "name": "Flamingo print puff-sleeve dress",
+   "category": "dresses",
+   "colours": [
+    "white",
+    "pink",
+    "blue"
+   ],
+   "pattern": "flamingo and fern print",
+   "fabric": "cotton",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Boat neck, puff sleeves, wrap tie waist, full knee-length skirt. Your photo.",
+   "img": "img/flamingo-print-puff-sleeve-dress.webp"
+  },
+  {
+   "id": "pink-plum-orange-colour-block-dress",
+   "name": "Pink, plum and orange colour-block shift dress",
+   "category": "dresses",
+   "colours": [
+    "pink",
+    "plum purple",
+    "orange"
+   ],
+   "pattern": "colour block",
+   "fabric": "ponte",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Sleeveless, round neck, three bands of colour, straight shift. Your photo.",
+   "img": "img/pink-plum-orange-colour-block-dress.webp",
+   "_f": [
+    "pink",
+    "lilac",
+    "orange"
+   ]
+  },
+  {
+   "id": "red-zigzag-knit-shift-dress",
+   "name": "Red, khaki and black zigzag knit shift dress",
+   "category": "dresses",
+   "colours": [
+    "red",
+    "olive",
+    "black"
+   ],
+   "pattern": "zigzag knit",
+   "fabric": "knit",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Sleeveless, round neck, back zip, fitted shift. Your photo.",
+   "img": "img/red-zigzag-knit-shift-dress.webp"
+  },
+  {
+   "id": "blue-sequin-shift-dress",
+   "name": "Blue sequin shift dress",
+   "category": "dresses",
+   "colours": [
+    "periwinkle blue"
+   ],
+   "pattern": "solid sequin",
+   "fabric": "sequin",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Sleeveless, high round neck, back zip, A-line. Dressy. Your photo.",
+   "img": "img/blue-sequin-shift-dress.webp"
+  },
+  {
+   "id": "cream-tulle-bow-neck-dress",
+   "name": "Cream tulle bow-neck dress with petal hem",
+   "category": "dresses",
+   "colours": [
+    "cream"
+   ],
+   "pattern": "solid tulle with 3D petals",
+   "fabric": "tulle, lined",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Sleeveless, high neck with long tie bow, pleated tulle overlay, petal appliqués on the hem. Dressy. Your photo.",
+   "img": "img/cream-tulle-bow-neck-dress.webp"
   }
  ],
  "outfits": [
@@ -20133,12 +20393,11 @@
    "img": "img/inspo/inspo-128.webp",
    "summary": "Cream bodice with black spots, black skirt with cream spots, nude sandals.",
    "itemIds": [
-    "zara-white-sleeveless-knit",
-    "black-big-spot-tie-skirt",
-    "basic-tan-flats"
+    "basic-tan-flats",
+    "black-white-spot-linen-shift-dress"
    ],
    "missing": [
-    "Two-tone spot midi dress (your white knit and spot skirt are the stand-in)"
+    "Two-tone spot midi dress (your Black and white spot linen shift dress is the stand-in)"
    ],
    "createdAt": 127
   },
@@ -20250,11 +20509,12 @@
    "itemIds": [
     "chambray-shirt",
     "basic-black-flats",
-    "mimco-raffia-clutch"
+    "mimco-raffia-clutch",
+    "sussan-cream-linen-shift-dress"
    ],
    "missing": [
     "Blue and white stripe shirt (your chambray shirt is the stand-in)",
-    "White midi slip dress",
+    "White midi slip dress (your Sussan cream linen shift dress is the stand-in)",
     "Straw basket bag"
    ],
    "createdAt": 134
@@ -20558,10 +20818,11 @@
    "img": "img/inspo/inspo-154.webp",
    "summary": "White midi sundress with bright cross-stitch florals, red slingback heels.",
    "itemIds": [
-    "red-silk-heeled-mules"
+    "red-silk-heeled-mules",
+    "sussan-cream-linen-shift-dress"
    ],
    "missing": [
-    "White embroidered midi dress",
+    "White embroidered midi dress (your Sussan cream linen shift dress is the stand-in)",
     "Red slingback heels (your Red silk square-toe heeled mules is the stand-in)"
    ],
    "createdAt": 153
@@ -20573,10 +20834,11 @@
    "summary": "Denim chore jacket over a white linen mini dress, white and black Sambas, cap.",
    "itemIds": [
     "basic-denim-jacket",
-    "basic-white-sneakers"
+    "basic-white-sneakers",
+    "sussan-cream-linen-shift-dress"
    ],
    "missing": [
-    "White linen mini dress"
+    "White linen mini dress (your Sussan cream linen shift dress is the stand-in)"
    ],
    "createdAt": 154
   },
@@ -21880,10 +22142,11 @@
    "summary": "Multicolour patchwork linen shift dress, tan clutch, tan woven wedges.",
    "itemIds": [
     "basic-tan-crossbody",
-    "basic-tan-flats"
+    "basic-tan-flats",
+    "pink-plum-orange-colour-block-dress"
    ],
    "missing": [
-    "Patchwork shift dress",
+    "Patchwork shift dress (your Pink, plum and orange colour-block shift dress is the stand-in)",
     "Tan wedges"
    ],
    "createdAt": 239
@@ -24065,7 +24328,7 @@
    "ip:basic-green-cardigan|basic-white-linen-shirt": 0.36,
    "cp:green+white": 2,
    "ip:basic-black-dress-pants|basic-white-linen-shirt": 0.65,
-   "cp:black+white": 6.16,
+   "cp:black+white": 6.11,
    "ip:basic-black-loafers|basic-white-linen-shirt": 0.65,
    "ip:basic-black-crossbody|basic-white-linen-shirt": 1.33,
    "it:basic-green-cardigan": 0.36,
@@ -24088,17 +24351,17 @@
    "ip:basic-black-loafers|basic-black-turtleneck": 0.36,
    "it:basic-blue-straight-jeans-cropped": 3.54,
    "ip:basic-black-loafers|basic-blue-straight-jeans-cropped": 0.36,
-   "pat:plain+plain": 5.62,
+   "pat:plain+plain": 5.73,
    "it:alessandra-colour-block-jumper": 0.36,
    "ip:alessandra-colour-block-jumper|basic-white-tee": 0.36,
    "cp:tan+white": 7.47,
-   "cp:cream+white": 2.14,
+   "cp:cream+white": 2.27,
    "ip:alessandra-colour-block-jumper|basic-blue-straight-jeans-cropped": 0.36,
    "cp:denim+tan": 5.38,
-   "cp:cream+denim": 1.69,
+   "cp:cream+denim": 1.85,
    "ip:alessandra-colour-block-jumper|basic-tan-flats": 0.36,
    "cp:tan+tan": 4.76,
-   "cp:cream+tan": 2.75,
+   "cp:cream+tan": 2.86,
    "ip:alessandra-colour-block-jumper|basic-tan-crossbody": 0.36,
    "it:basic-white-tee": 4.55,
    "ip:basic-blue-straight-jeans-cropped|basic-white-tee": 1.33,
@@ -24120,7 +24383,7 @@
    "cp:navy+pink": 0.36,
    "cp:navy+white": 2.52,
    "cp:pink+white": 4.04,
-   "cp:white+white": 6.36,
+   "cp:white+white": 6.31,
    "it:basic-black-midi-skirt": 1.13,
    "ip:basic-black-midi-skirt|basic-denim-jacket": 0.36,
    "ip:adidas-gazelle-pink|basic-black-midi-skirt": 0.36,
@@ -24145,7 +24408,7 @@
    "ip:basic-black-bamboo-wide-crop|zara-black-sleeveless-knit": 0.91,
    "ip:basic-black-flats|zara-black-sleeveless-knit": 0.36,
    "ip:basic-black-crossbody|zara-black-sleeveless-knit": 0.91,
-   "it:zara-white-sleeveless-knit": 3.07,
+   "it:zara-white-sleeveless-knit": 2.97,
    "ip:basic-black-bamboo-wide-crop|zara-white-sleeveless-knit": 0.36,
    "ip:basic-black-flats|zara-white-sleeveless-knit": 1.13,
    "ip:basic-black-crossbody|zara-white-sleeveless-knit": 0.91,
@@ -24242,12 +24505,12 @@
    "it:pink-tulip-knit-vest": 2.14,
    "ip:pink-tulip-knit-vest|three-of-something-cream-lace-top": 0.36,
    "cp:cream+pink": 0.91,
-   "cp:cream+red": 1.85,
+   "cp:cream+red": 2,
    "ip:green-wide-leg-cords|pink-tulip-knit-vest": 0.36,
    "cp:mint+pink": 0.65,
    "cp:mint+red": 0.65,
    "ip:basic-tan-flats|pink-tulip-knit-vest": 0.65,
-   "cp:pink+tan": 3.36,
+   "cp:pink+tan": 3.45,
    "cp:red+tan": 4.82,
    "ip:basic-tan-crossbody|pink-tulip-knit-vest": 1.13,
    "it:three-of-something-cream-lace-top": 1.13,
@@ -24338,14 +24601,14 @@
    "ip:basic-white-sneakers|basic-white-wide-jeans": 0.91,
    "ip:basic-tan-crossbody|basic-white-wide-jeans": 1.13,
    "ip:cream-mock-neck-long-sleeve|red-blue-stripe-knit-vest": 0.65,
-   "cp:cream+sky": 1.13,
+   "cp:cream+sky": 1.33,
    "ip:pink-boucle-mini-skirt|red-blue-stripe-knit-vest": 0.36,
    "ip:basic-black-knee-boots-flat|red-blue-stripe-knit-vest": 0.36,
    "cp:black+sky": 1.69,
    "it:cream-mock-neck-long-sleeve": 0.91,
    "ip:cream-mock-neck-long-sleeve|pink-boucle-mini-skirt": 0.36,
    "ip:basic-black-knee-boots-flat|cream-mock-neck-long-sleeve": 0.36,
-   "cp:black+cream": 1.13,
+   "cp:black+cream": 1.33,
    "ip:basic-tan-crossbody|cream-mock-neck-long-sleeve": 0.65,
    "it:pink-boucle-mini-skirt": 0.36,
    "ip:basic-black-knee-boots-flat|pink-boucle-mini-skirt": 0.36,
@@ -24528,7 +24791,7 @@
    "ip:black-big-spot-tie-skirt|red-white-stripe-ruffle-top": 0.65,
    "ip:basic-red-ballet-flats|red-white-stripe-ruffle-top": 0.36,
    "ip:basic-black-crossbody|red-white-stripe-ruffle-top": 0.65,
-   "it:black-big-spot-tie-skirt": 1.52,
+   "it:black-big-spot-tie-skirt": 1.33,
    "ip:basic-red-ballet-flats|black-big-spot-tie-skirt": 0.65,
    "ip:basic-black-crossbody|black-big-spot-tie-skirt": 0.65,
    "ip:basic-black-crossbody|basic-red-ballet-flats": 0.36,
@@ -24541,7 +24804,7 @@
    "ip:basic-tan-crossbody|basic-white-linen-shirt": 0.65,
    "ip:basic-white-sneakers|black-big-spot-tie-skirt": 0.36,
    "ip:basic-tan-crossbody|black-big-spot-tie-skirt": 0.91,
-   "pat:dot+plain": 1.13,
+   "pat:dot+plain": 0.91,
    "it:orange-gingham-ricrac-blouse": 0.36,
    "ip:black-big-spot-tie-skirt|orange-gingham-ricrac-blouse": 0.36,
    "cp:black+orange": 1.52,
@@ -24856,7 +25119,7 @@
    "ip:basic-white-cardigan|green-wide-leg-cords": 0.36,
    "ip:basic-white-cardigan|basic-white-sneakers": 0.36,
    "ip:basic-white-cardigan|mimco-raffia-clutch": 0.36,
-   "ip:basic-tan-flats|zara-white-sleeveless-knit": 1.52,
+   "ip:basic-tan-flats|zara-white-sleeveless-knit": 1.33,
    "ip:basic-grey-cardigan|green-wide-leg-cords": 0.36,
    "ip:green-wide-leg-cords|sussan-black-fine-stripe-tank": 0.36,
    "ip:basic-denim-jacket|country-road-white-tank": 0.65,
@@ -24869,8 +25132,9 @@
    "ip:basic-white-straight-jeans-cropped|mimco-raffia-clutch": 0.36,
    "ip:basic-black-belt|basic-blue-straight-jeans": 0.36,
    "ip:basic-black-belt|basic-white-sneakers": 0.36,
-   "ip:black-big-spot-tie-skirt|zara-white-sleeveless-knit": 0.36,
-   "ip:basic-tan-flats|black-big-spot-tie-skirt": 0.36,
+   "ip:basic-tan-flats|black-white-spot-linen-shift-dress": 0.36,
+   "it:black-white-spot-linen-shift-dress": 0.36,
+   "pat:dot": 0.36,
    "ip:basic-black-wide-linen-pants|basic-white-tee": 0.36,
    "ip:basic-black-flats|basic-black-wide-linen-pants": 0.65,
    "ip:basic-black-wide-linen-pants|uniqlo-brown-knit-jacket": 0.36,
@@ -24897,6 +25161,10 @@
    "ip:basic-white-wide-linen-pants|cos-navy-stripe-tee-magenta-collar": 0.36,
    "ip:basic-white-sneakers|basic-white-wide-linen-pants": 0.36,
    "ip:chambray-shirt|mimco-raffia-clutch": 0.36,
+   "ip:chambray-shirt|sussan-cream-linen-shift-dress": 0.36,
+   "ip:basic-black-flats|sussan-cream-linen-shift-dress": 0.36,
+   "ip:mimco-raffia-clutch|sussan-cream-linen-shift-dress": 0.36,
+   "it:sussan-cream-linen-shift-dress": 0.91,
    "ip:basic-white-sneakers|gorman-green-cord-jacket": 0.65,
    "ip:basic-black-crossbody|red-a-line-midi-skirt": 0.36,
    "ip:basic-black-flats|red-a-line-midi-skirt": 0.36,
@@ -24946,7 +25214,9 @@
    "ip:mimco-raffia-clutch|uniqlo-brown-knit-jacket": 0.36,
    "ip:basic-blue-wide-jeans|white-linen-orange-embroidered-shirt": 0.36,
    "ip:mimco-raffia-clutch|white-linen-orange-embroidered-shirt": 0.36,
-   "pat:": 2,
+   "ip:red-silk-heeled-mules|sussan-cream-linen-shift-dress": 0.36,
+   "ip:basic-denim-jacket|sussan-cream-linen-shift-dress": 0.36,
+   "ip:basic-white-sneakers|sussan-cream-linen-shift-dress": 0.36,
    "ip:basic-blue-straight-jeans-cropped|basic-white-linen-shirt": 0.91,
    "ip:basic-black-flats|basic-blue-straight-jeans-cropped": 0.36,
    "ip:basic-white-linen-shirt|uniqlo-brown-knit-skirt": 0.36,
@@ -25005,6 +25275,7 @@
    "ip:anko-dark-denim-crop-shirt|basic-white-flats": 0.36,
    "it:embroidered-wide-leg-jeans": 0.36,
    "ip:basic-white-flats|embroidered-wide-leg-jeans": 0.36,
+   "pat:": 1.69,
    "it:black-white-stripe-tee": 0.36,
    "ip:basic-black-wide-linen-pants|black-white-stripe-tee": 0.36,
    "ip:basic-white-sneakers|black-white-stripe-tee": 0.36,
@@ -25140,6 +25411,10 @@
    "ip:brown-linen-mini-skirt|guns-n-roses-band-tee": 0.36,
    "ip:basic-white-flats|brown-linen-mini-skirt": 0.36,
    "it:brown-linen-mini-skirt": 0.36,
+   "ip:basic-tan-crossbody|pink-plum-orange-colour-block-dress": 0.36,
+   "cp:lilac+tan": 0.36,
+   "ip:basic-tan-flats|pink-plum-orange-colour-block-dress": 0.36,
+   "it:pink-plum-orange-colour-block-dress": 0.36,
    "ip:basic-black-flats|denim-daisy-button-shirt": 0.36,
    "ip:basic-black-flats|basic-white-wide-jeans": 0.36,
    "ip:basic-blue-straight-jeans-cropped|sass-rust-cord-jacket": 0.36,
