@@ -5925,6 +5925,249 @@
    ],
    "notes": "Sleeveless, high neck with long tie bow, pleated tulle overlay, petal appliqués on the hem. Dressy. Your photo.",
    "img": "img/cream-tulle-bow-neck-dress.webp"
+  },
+  {
+   "id": "black-sequin-long-sleeve-dress",
+   "name": "Black sequin long-sleeve dress",
+   "category": "dresses",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid sequin",
+   "fabric": "sequin",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Scoop neck, long sleeves, strong shoulders, fitted knee length. Dressy. Your photo.",
+   "img": "img/black-sequin-long-sleeve-dress.webp"
+  },
+  {
+   "id": "black-jersey-turtleneck-swing-dress",
+   "name": "Black jersey turtleneck swing dress",
+   "category": "dresses",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "jersey",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Cowl turtleneck, long sleeves, asymmetric draped swing hem. Your photo.",
+   "img": "img/black-jersey-turtleneck-swing-dress.webp"
+  },
+  {
+   "id": "black-ponte-funnel-neck-dress",
+   "name": "Black ponte funnel-neck dress",
+   "category": "dresses",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "ponte",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Funnel neck, long cuffed sleeves, side pockets, straight shift. Your photo.",
+   "img": "img/black-ponte-funnel-neck-dress.webp"
+  },
+  {
+   "id": "joseph-ribkoff-black-studded-dress",
+   "name": "Joseph Ribkoff black studded midi dress",
+   "category": "dresses",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid with silver studs",
+   "fabric": "jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Sleeveless, round neck, silver studs on the armholes and along the front split and hem, fitted midi. Dressy. Your photo.",
+   "img": "img/joseph-ribkoff-black-studded-dress.webp"
+  },
+  {
+   "id": "uniqlo-black-sleeveless-shift-dress",
+   "name": "Uniqlo black sleeveless shift dress",
+   "category": "dresses",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "crepe jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Round neck, sleeveless, straight knee length. Your photo.",
+   "img": "img/uniqlo-black-sleeveless-shift-dress.webp"
+  },
+  {
+   "id": "black-knit-tank-swing-dress",
+   "name": "Black knit tank swing dress",
+   "category": "dresses",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "knit",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Wide straps, scoop neck, relaxed A-line. Your photo.",
+   "img": "img/black-knit-tank-swing-dress.webp",
+   "_f": [
+    "black"
+   ]
+  },
+  {
+   "id": "black-keyhole-mock-neck-midi-dress",
+   "name": "Black keyhole mock-neck midi dress",
+   "category": "dresses",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "crepe",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Mock neck with keyhole and back button, sleeveless, A-line midi. Your photo.",
+   "img": "img/black-keyhole-mock-neck-midi-dress.webp"
+  },
+  {
+   "id": "black-rib-mock-neck-swing-dress",
+   "name": "Black rib mock-neck swing dress",
+   "category": "dresses",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid rib",
+   "fabric": "rib jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Mock neck, sleeveless, A-line knee length. Your photo.",
+   "img": "img/black-rib-mock-neck-swing-dress.webp"
+  },
+  {
+   "id": "black-ponte-mock-neck-shift-dress",
+   "name": "Black ponte mock-neck shift dress",
+   "category": "dresses",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "ponte",
+   "seasons": [
+    "Spring",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Mock neck, sleeveless, seamed A-line knee length. Smart. Your photo.",
+   "img": "img/black-ponte-mock-neck-shift-dress.webp"
+  },
+  {
+   "id": "gorman-black-seersucker-puff-sleeve-dress",
+   "name": "Gorman black seersucker puff-sleeve dress",
+   "category": "dresses",
+   "colours": [
+    "black"
+   ],
+   "pattern": "tonal seersucker check",
+   "fabric": "seersucker",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Round neck, back keyhole, big puff sleeves, fitted bodice, flared mini. Your photo.",
+   "img": "img/gorman-black-seersucker-puff-sleeve-dress.webp",
+   "_f": [
+    "black"
+   ]
+  },
+  {
+   "id": "uniqlo-black-tee-dress",
+   "name": "Uniqlo black T-shirt dress",
+   "category": "dresses",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Crew neck, short sleeves, relaxed A-line knee length. Your photo.",
+   "img": "img/uniqlo-black-tee-dress.webp"
+  },
+  {
+   "id": "black-white-wide-stripe-tank-dress",
+   "name": "Black and white wide stripe tank dress",
+   "category": "dresses",
+   "colours": [
+    "black",
+    "white"
+   ],
+   "pattern": "wide stripe",
+   "fabric": "knit",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Scoop neck, tank straps, fitted knee length. Your photo.",
+   "img": "img/black-white-wide-stripe-tank-dress.webp"
+  },
+  {
+   "id": "morrissey-black-ruffle-halter-dress",
+   "name": "Morrissey black ruffle halter dress",
+   "category": "dresses",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "chiffon",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Tie halter neck, cascading ruffle front, flared mini. Dressy. Your photo.",
+   "img": "img/morrissey-black-ruffle-halter-dress.webp"
+  },
+  {
+   "id": "black-tie-neck-halter-midi-dress",
+   "name": "Black tie-neck halter midi dress",
+   "category": "dresses",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "High neck with side tie bow, cut-in shoulders, straight midi. Dressy. Your photo.",
+   "img": "img/black-tie-neck-halter-midi-dress.webp"
   }
  ],
  "outfits": [
@@ -21731,10 +21974,10 @@
    "summary": "Black satin long-sleeve smock mini dress, black Doc Martens.",
    "itemIds": [
     "basic-black-docs",
-    "keepers-black-wrap-dress"
+    "gorman-black-seersucker-puff-sleeve-dress"
    ],
    "missing": [
-    "Black satin smock dress (your Keepers black sleeveless wrap-front dress is the stand-in)"
+    "Black satin smock dress (your Gorman black seersucker puff-sleeve dress is the stand-in)"
    ],
    "createdAt": 212
   },
@@ -22226,10 +22469,11 @@
    "img": "img/inspo/inspo-246.webp",
    "summary": "Black cotton voile mini slip dress with lace trim, red beaded drawstring bag, black strappy flat sandals.",
    "itemIds": [
-    "basic-black-flats"
+    "basic-black-flats",
+    "black-knit-tank-swing-dress"
    ],
    "missing": [
-    "Black cotton voile mini dress",
+    "Black cotton voile mini dress (your Black knit tank swing dress is the stand-in)",
     "Red beaded pouch bag"
    ],
    "createdAt": 245
@@ -24338,7 +24582,7 @@
    "ip:basic-black-crossbody|basic-green-cardigan": 0.36,
    "it:basic-black-dress-pants": 0.65,
    "ip:basic-black-dress-pants|basic-black-loafers": 0.36,
-   "cp:black+black": 5.38,
+   "cp:black+black": 5.44,
    "ip:basic-black-crossbody|basic-black-dress-pants": 0.65,
    "it:basic-black-loafers": 1.52,
    "ip:basic-black-crossbody|basic-black-loafers": 0.65,
@@ -25275,7 +25519,7 @@
    "ip:anko-dark-denim-crop-shirt|basic-white-flats": 0.36,
    "it:embroidered-wide-leg-jeans": 0.36,
    "ip:basic-white-flats|embroidered-wide-leg-jeans": 0.36,
-   "pat:": 1.69,
+   "pat:": 1.52,
    "it:black-white-stripe-tee": 0.36,
    "ip:basic-black-wide-linen-pants|black-white-stripe-tee": 0.36,
    "ip:basic-white-sneakers|black-white-stripe-tee": 0.36,
@@ -25358,8 +25602,9 @@
    "cp:brown+grey": 0.36,
    "ip:basic-black-straight-jeans|uniqlo-brown-knit-jacket": 0.36,
    "ip:basic-black-ankle-boots-flat|uniqlo-brown-knit-jacket": 0.36,
-   "ip:basic-black-docs|keepers-black-wrap-dress": 0.36,
-   "it:keepers-black-wrap-dress": 0.36,
+   "ip:basic-black-docs|gorman-black-seersucker-puff-sleeve-dress": 0.36,
+   "it:gorman-black-seersucker-puff-sleeve-dress": 0.36,
+   "pat:check": 0.36,
    "ip:basic-black-cardigan|basic-white-linen-shirt": 0.36,
    "ip:basic-black-cardigan|basic-black-crossbody": 0.36,
    "ip:basic-black-cardigan|basic-white-denim-mini": 0.36,
@@ -25417,6 +25662,8 @@
    "it:pink-plum-orange-colour-block-dress": 0.36,
    "ip:basic-black-flats|denim-daisy-button-shirt": 0.36,
    "ip:basic-black-flats|basic-white-wide-jeans": 0.36,
+   "ip:basic-black-flats|black-knit-tank-swing-dress": 0.36,
+   "it:black-knit-tank-swing-dress": 0.36,
    "ip:basic-blue-straight-jeans-cropped|sass-rust-cord-jacket": 0.36,
    "ip:basic-red-ballet-flats|sass-rust-cord-jacket": 0.36,
    "ip:green-linen-shirt|zara-white-sleeveless-knit": 0.36,
