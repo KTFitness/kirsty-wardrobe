@@ -5147,6 +5147,46 @@
     "red",
     "cream"
    ]
+  },
+  {
+   "id": "sussan-white-linen-jacket",
+   "name": "Sussan white linen jacket",
+   "category": "outerwear",
+   "colours": [
+    "white"
+   ],
+   "pattern": "solid",
+   "fabric": "linen",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Cropped, lightweight, notched collar, flap chest pockets, concealed buttons. Your photo.",
+   "img": "img/sussan-white-linen-jacket.webp",
+   "_f": [
+    "white"
+   ]
+  },
+  {
+   "id": "country-road-khaki-utility-shirt",
+   "name": "Country Road khaki utility shirt",
+   "category": "tops",
+   "colours": [
+    "khaki olive"
+   ],
+   "pattern": "solid",
+   "fabric": "cotton blend",
+   "seasons": [
+    "Spring",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Collarless, epaulettes, two patch chest pockets, half-button placket, roll-tab sleeves, long dipped hem. Can be worn open as a light overshirt. Your photo.",
+   "img": "img/country-road-khaki-utility-shirt.webp",
+   "_f": [
+    "forest"
+   ]
   }
  ],
  "outfits": [
@@ -17715,14 +17755,14 @@
    "img": "img/inspo/inspo-16.webp",
    "summary": "Olive utility jacket over a dark tee, cuffed light jeans, black heeled mules, big tote.",
    "itemIds": [
-    "gorman-green-cord-jacket",
     "basic-black-tee",
     "basic-blue-straight-jeans-cropped",
     "basic-black-kitten-heels",
-    "basic-black-crossbody"
+    "basic-black-crossbody",
+    "country-road-khaki-utility-shirt"
    ],
    "missing": [
-    "Olive utility jacket",
+    "Olive utility jacket (your Country Road khaki utility shirt is the stand-in)",
     "Large tote bag"
    ],
    "createdAt": 15
@@ -19149,14 +19189,14 @@
    "img": "img/inspo/inspo-102.webp",
    "summary": "Olive utility jacket, white tee, dark straight jeans, tan bucket bag, brown loafers.",
    "itemIds": [
-    "gorman-green-cord-jacket",
+    "country-road-khaki-utility-shirt",
     "basic-white-tee",
     "basic-blue-straight-jeans",
     "basic-tan-flats",
     "basic-tan-crossbody"
    ],
    "missing": [
-    "Olive utility jacket (your green cord jacket is the stand-in)",
+    "Olive utility jacket (your Country Road khaki utility shirt is the stand-in)",
     "Brown loafers"
    ],
    "createdAt": 101
@@ -19827,14 +19867,14 @@
    "img": "img/inspo/inspo-141.webp",
    "summary": "Olive utility jacket, navy Breton long-sleeve, dark straight jeans, tan tote, brown loafers.",
    "itemIds": [
-    "gorman-green-cord-jacket",
+    "country-road-khaki-utility-shirt",
     "navy-stripe-long-sleeve-top",
     "basic-blue-straight-jeans",
     "basic-tan-flats",
     "basic-tan-crossbody"
    ],
    "missing": [
-    "Olive utility jacket (your green cord jacket is the stand-in)",
+    "Olive utility jacket (your Country Road khaki utility shirt is the stand-in)",
     "Brown loafers"
    ],
    "createdAt": 140
@@ -20484,12 +20524,12 @@
    "summary": "Olive tank, cream shirt-jacket, black cropped jeans, black Converse.",
    "itemIds": [
     "decjuba-olive-rib-tank",
-    "basic-white-linen-shirt",
+    "sussan-white-linen-jacket",
     "basic-black-straight-jeans-cropped",
     "basic-black-sneakers"
    ],
    "missing": [
-    "Cream shirt-jacket (your white linen shirt is the stand-in)"
+    "Cream shirt-jacket (your Sussan white linen jacket is the stand-in)"
    ],
    "createdAt": 182
   },
@@ -20500,12 +20540,12 @@
    "summary": "Olive tank, cream shirt-jacket, light jeans, white sneakers.",
    "itemIds": [
     "decjuba-olive-rib-tank",
-    "basic-white-linen-shirt",
+    "sussan-white-linen-jacket",
     "basic-blue-straight-jeans",
     "basic-white-sneakers"
    ],
    "missing": [
-    "Cream shirt-jacket (your white linen shirt is the stand-in)"
+    "Cream shirt-jacket (your Sussan white linen jacket is the stand-in)"
    ],
    "createdAt": 183
   },
@@ -20624,13 +20664,13 @@
    "img": "img/inspo/inspo-192.webp",
    "summary": "Olive field jacket over a grey wrap knit, seamed palazzo jeans, brown suede flats.",
    "itemIds": [
-    "gorman-green-cord-jacket",
+    "country-road-khaki-utility-shirt",
     "basic-grey-marle-jumper",
     "basic-blue-wide-jeans",
     "basic-tan-flats"
    ],
    "missing": [
-    "Olive field jacket (your green cord jacket is the stand-in)",
+    "Olive field jacket (your Country Road khaki utility shirt is the stand-in)",
     "Grey wrap jumper (your grey jumper is the stand-in)",
     "Seamed palazzo jeans"
    ],
@@ -20870,10 +20910,11 @@
     "basic-black-dress-pants",
     "basic-black-belt",
     "basic-black-crossbody",
-    "basic-black-sneakers"
+    "basic-black-sneakers",
+    "sussan-white-linen-jacket"
    ],
    "missing": [
-    "Beige chore jacket"
+    "Beige chore jacket (your Sussan white linen jacket is the stand-in)"
    ],
    "createdAt": 207
   },
@@ -21038,12 +21079,12 @@
    "img": "img/inspo/inspo-219.webp",
    "summary": "Olive field jacket over a grey sweatshirt, cuffed jeans, leopard slip-on sneakers.",
    "itemIds": [
-    "gorman-green-cord-jacket",
+    "country-road-khaki-utility-shirt",
     "basic-grey-marle-jumper",
     "basic-blue-straight-jeans-cropped"
    ],
    "missing": [
-    "Olive field jacket (your green cord jacket is the stand-in)",
+    "Olive field jacket (your Country Road khaki utility shirt is the stand-in)",
     "Leopard slip-on sneakers"
    ],
    "createdAt": 218
@@ -21200,10 +21241,11 @@
    "summary": "White blazer over a grey tee, dark cuffed jeans, hot pink flats, statement necklace.",
    "itemIds": [
     "basic-grey-tee",
-    "basic-blue-straight-jeans-cropped"
+    "basic-blue-straight-jeans-cropped",
+    "sussan-white-linen-jacket"
    ],
    "missing": [
-    "White blazer",
+    "White blazer (your Sussan white linen jacket is the stand-in)",
     "Hot pink flats"
    ],
    "createdAt": 229
@@ -23538,7 +23580,7 @@
    "savedAt": "2026-10-28"
   },
   "w": {
-   "it:basic-white-linen-shirt": 3.45,
+   "it:basic-white-linen-shirt": 3.27,
    "ip:basic-green-cardigan|basic-white-linen-shirt": 0.36,
    "cp:green+white": 2.14,
    "ip:basic-black-dress-pants|basic-white-linen-shirt": 0.65,
@@ -23565,7 +23607,7 @@
    "ip:basic-black-loafers|basic-black-turtleneck": 0.36,
    "it:basic-blue-straight-jeans-cropped": 3.54,
    "ip:basic-black-loafers|basic-blue-straight-jeans-cropped": 0.36,
-   "pat:plain+plain": 5.67,
+   "pat:plain+plain": 5.62,
    "it:alessandra-colour-block-jumper": 0.36,
    "ip:alessandra-colour-block-jumper|basic-white-tee": 0.36,
    "cp:tan+white": 7.51,
@@ -23579,7 +23621,7 @@
    "ip:alessandra-colour-block-jumper|basic-tan-crossbody": 0.36,
    "it:basic-white-tee": 4.76,
    "ip:basic-blue-straight-jeans-cropped|basic-white-tee": 1.52,
-   "cp:denim+white": 6.75,
+   "cp:denim+white": 6.8,
    "ip:basic-tan-flats|basic-white-tee": 1.85,
    "ip:basic-tan-crossbody|basic-white-tee": 3.07,
    "ip:basic-blue-straight-jeans-cropped|basic-tan-flats": 0.91,
@@ -23596,7 +23638,7 @@
    "cp:navy+pink": 0.36,
    "cp:navy+white": 2.52,
    "cp:pink+white": 3.96,
-   "cp:white+white": 6.26,
+   "cp:white+white": 6.31,
    "it:basic-black-midi-skirt": 1.13,
    "ip:basic-black-midi-skirt|basic-denim-jacket": 0.36,
    "ip:adidas-gazelle-pink|basic-black-midi-skirt": 0.36,
@@ -23668,7 +23710,7 @@
    "ip:basic-grey-marle-jumper|green-wide-leg-cords": 0.36,
    "cp:grey+mint": 0.65,
    "ip:basic-grey-marle-jumper|basic-white-sneakers": 0.36,
-   "cp:grey+white": 1.85,
+   "cp:grey+white": 2,
    "ip:basic-grey-marle-jumper|basic-tan-crossbody": 0.65,
    "cp:grey+tan": 1.33,
    "it:green-wide-leg-cords": 2.27,
@@ -23704,18 +23746,18 @@
    "ip:basic-blue-wide-jeans|zara-white-sleeveless-knit": 1.13,
    "ip:basic-white-sneakers|zara-white-sleeveless-knit": 0.91,
    "ip:basic-blue-wide-jeans|basic-white-sneakers": 1.69,
-   "it:gorman-green-cord-jacket": 2,
-   "ip:basic-black-tee|gorman-green-cord-jacket": 0.36,
-   "ip:basic-blue-straight-jeans-cropped|gorman-green-cord-jacket": 0.91,
-   "ip:basic-black-kitten-heels|gorman-green-cord-jacket": 0.36,
-   "ip:basic-black-crossbody|gorman-green-cord-jacket": 0.36,
    "it:basic-black-tee": 1.69,
    "ip:basic-black-tee|basic-blue-straight-jeans-cropped": 0.91,
    "ip:basic-black-kitten-heels|basic-black-tee": 0.65,
    "ip:basic-black-crossbody|basic-black-tee": 1.33,
+   "ip:basic-black-tee|country-road-khaki-utility-shirt": 0.36,
    "ip:basic-black-kitten-heels|basic-blue-straight-jeans-cropped": 0.65,
    "ip:basic-black-crossbody|basic-blue-straight-jeans-cropped": 1.13,
+   "ip:basic-blue-straight-jeans-cropped|country-road-khaki-utility-shirt": 0.65,
    "ip:basic-black-crossbody|basic-black-kitten-heels": 0.36,
+   "ip:basic-black-kitten-heels|country-road-khaki-utility-shirt": 0.36,
+   "ip:basic-black-crossbody|country-road-khaki-utility-shirt": 0.36,
+   "it:country-road-khaki-utility-shirt": 1.33,
    "it:pink-tulip-knit-vest": 2.14,
    "ip:cream-mock-neck-long-sleeve|pink-tulip-knit-vest": 0.36,
    "cp:cream+pink": 0.91,
@@ -24014,7 +24056,7 @@
    "ip:basic-red-sneakers|black-big-spot-tie-skirt": 0.36,
    "ip:basic-black-crossbody|basic-red-sneakers": 0.36,
    "ip:basic-white-linen-shirt|black-big-spot-tie-skirt": 0.36,
-   "ip:basic-white-linen-shirt|basic-white-sneakers": 0.91,
+   "ip:basic-white-linen-shirt|basic-white-sneakers": 0.65,
    "ip:basic-tan-crossbody|basic-white-linen-shirt": 0.65,
    "ip:basic-white-sneakers|black-big-spot-tie-skirt": 0.36,
    "ip:basic-tan-crossbody|black-big-spot-tie-skirt": 0.91,
@@ -24159,7 +24201,7 @@
    "ip:basic-blue-straight-jeans|basic-white-sneakers": 1.69,
    "ip:basic-white-linen-shirt|red-moss-stitch-jumper": 0.36,
    "ip:basic-black-loafers|red-moss-stitch-jumper": 0.36,
-   "ip:basic-blue-straight-jeans|basic-white-linen-shirt": 1.13,
+   "ip:basic-blue-straight-jeans|basic-white-linen-shirt": 0.91,
    "ip:basic-black-loafers|basic-blue-straight-jeans": 0.65,
    "ip:basic-blue-straight-jeans|basic-tan-crossbody": 2.14,
    "ip:basic-blue-straight-jeans|uniqlo-brown-knit-jacket": 1.13,
@@ -24207,7 +24249,7 @@
    "ip:basic-blue-straight-jeans|basic-white-tee": 1.52,
    "ip:basic-white-tee|uniqlo-brown-knit-jacket": 0.91,
    "ip:basic-white-sneakers|uniqlo-brown-knit-jacket": 0.65,
-   "pat:plain+plain+plain+plain": 1.13,
+   "pat:plain+plain+plain+plain": 1.33,
    "ip:basic-tan-flats|red-moss-stitch-jumper": 0.36,
    "ip:basic-tan-crossbody|red-moss-stitch-jumper": 0.36,
    "ip:red-moss-stitch-jumper|uniqlo-brown-knit-jacket": 0.36,
@@ -24233,10 +24275,10 @@
    "ip:basic-black-wide-jeans|basic-tan-crossbody": 1.13,
    "it:basic-tan-kitten-heels": 2.75,
    "ip:basic-tan-crossbody|basic-tan-kitten-heels": 1.69,
-   "ip:basic-white-tee|gorman-green-cord-jacket": 0.65,
-   "ip:basic-blue-straight-jeans|gorman-green-cord-jacket": 0.65,
-   "ip:basic-tan-flats|gorman-green-cord-jacket": 1.13,
-   "ip:basic-tan-crossbody|gorman-green-cord-jacket": 1.13,
+   "ip:basic-white-tee|country-road-khaki-utility-shirt": 0.36,
+   "ip:basic-blue-straight-jeans|country-road-khaki-utility-shirt": 0.65,
+   "ip:basic-tan-flats|country-road-khaki-utility-shirt": 0.91,
+   "ip:basic-tan-crossbody|country-road-khaki-utility-shirt": 0.65,
    "ip:navy-stripe-long-sleeve-top|sass-rust-cord-jacket": 0.36,
    "cp:navy+orange": 0.91,
    "ip:basic-black-wide-jeans|navy-stripe-long-sleeve-top": 0.36,
@@ -24349,10 +24391,12 @@
    "ip:basic-tan-belt|cos-red-fine-stripe-tee": 0.36,
    "ip:basic-black-flats|cos-red-fine-stripe-tee": 0.36,
    "ip:basic-tan-crossbody|cos-red-fine-stripe-tee": 0.36,
-   "ip:basic-blue-wide-jeans|gorman-green-cord-jacket": 0.91,
+   "ip:basic-blue-wide-jeans|gorman-green-cord-jacket": 0.65,
    "ip:basic-black-flats|basic-blue-wide-jeans": 0.91,
+   "it:gorman-green-cord-jacket": 1.13,
    "ip:basic-tan-belt|gorman-green-cord-jacket": 0.36,
    "ip:basic-black-flats|gorman-green-cord-jacket": 0.36,
+   "ip:basic-tan-crossbody|gorman-green-cord-jacket": 0.65,
    "ip:basic-black-flats|basic-tan-belt": 0.36,
    "ip:basic-white-wide-linen-pants|cos-navy-stripe-tee-magenta-collar": 0.36,
    "ip:basic-white-sneakers|basic-white-wide-linen-pants": 0.36,
@@ -24360,7 +24404,7 @@
    "ip:basic-white-sneakers|gorman-green-cord-jacket": 0.65,
    "ip:basic-black-crossbody|red-a-line-midi-skirt": 0.36,
    "ip:basic-black-flats|red-a-line-midi-skirt": 0.36,
-   "ip:gorman-green-cord-jacket|navy-stripe-long-sleeve-top": 0.36,
+   "ip:country-road-khaki-utility-shirt|navy-stripe-long-sleeve-top": 0.36,
    "cp:forest+navy": 0.36,
    "ip:basic-white-flats|pale-blue-cutwork-puff-shirt": 0.36,
    "pat:print": 0.36,
@@ -24379,6 +24423,7 @@
    "it:green-linen-shirt": 0.65,
    "ip:basic-white-wide-linen-pants|green-linen-shirt": 0.36,
    "ip:basic-tan-flats|green-linen-shirt": 0.65,
+   "ip:basic-tan-flats|gorman-green-cord-jacket": 0.36,
    "it:denim-daisy-button-shirt": 0.65,
    "ip:basic-white-wide-jeans|denim-daisy-button-shirt": 0.65,
    "ip:basic-white-flats|denim-daisy-button-shirt": 0.36,
@@ -24467,9 +24512,12 @@
    "ip:basic-tan-flats|basic-white-linen-shirt": 0.65,
    "ip:basic-blue-straight-jeans|decjuba-olive-rib-tank": 0.65,
    "ip:basic-white-sneakers|decjuba-olive-rib-tank": 0.65,
-   "ip:basic-white-linen-shirt|decjuba-olive-rib-tank": 0.65,
-   "ip:basic-black-straight-jeans-cropped|basic-white-linen-shirt": 0.36,
-   "ip:basic-black-sneakers|basic-white-linen-shirt": 0.65,
+   "ip:decjuba-olive-rib-tank|sussan-white-linen-jacket": 0.65,
+   "it:sussan-white-linen-jacket": 1.13,
+   "ip:basic-black-straight-jeans-cropped|sussan-white-linen-jacket": 0.36,
+   "ip:basic-black-sneakers|sussan-white-linen-jacket": 0.65,
+   "ip:basic-blue-straight-jeans|sussan-white-linen-jacket": 0.36,
+   "ip:basic-white-sneakers|sussan-white-linen-jacket": 0.36,
    "ip:basic-black-leggings|chambray-shirt": 0.65,
    "it:basic-black-leggings": 0.65,
    "ip:basic-blue-straight-jeans-cropped|red-moss-stitch-jumper": 0.36,
@@ -24484,8 +24532,9 @@
    "ip:chambray-shirt|pink-folk-print-shorts": 0.36,
    "ip:pink-folk-print-shorts|zara-white-sleeveless-knit": 0.36,
    "ip:basic-white-sneakers|pink-folk-print-shorts": 0.36,
-   "ip:basic-grey-marle-jumper|gorman-green-cord-jacket": 0.65,
+   "ip:basic-grey-marle-jumper|country-road-khaki-utility-shirt": 0.65,
    "cp:forest+grey": 0.65,
+   "ip:basic-blue-wide-jeans|country-road-khaki-utility-shirt": 0.36,
    "ip:basic-grey-marle-jumper|basic-tan-flats": 0.36,
    "it:anko-white-tank-black-trim": 0.36,
    "ip:anko-white-tank-black-trim|basic-blue-wide-jeans": 0.36,
@@ -24496,7 +24545,9 @@
    "ip:basic-tan-kitten-heels|uniqlo-brown-knit-skirt": 0.36,
    "ip:basic-white-wide-jeans|navy-stripe-long-sleeve-top": 0.36,
    "ip:mimco-raffia-clutch|navy-stripe-long-sleeve-top": 0.36,
+   "ip:basic-white-tee|gorman-green-cord-jacket": 0.36,
    "ip:basic-patterned-belts|gorman-green-cord-jacket": 0.36,
+   "ip:basic-blue-straight-jeans-cropped|gorman-green-cord-jacket": 0.36,
    "ip:basic-patterned-belts|basic-white-tee": 0.36,
    "ip:basic-blue-straight-jeans-cropped|basic-patterned-belts": 0.36,
    "ip:basic-patterned-belts|basic-tan-crossbody": 0.36,
@@ -24512,9 +24563,14 @@
    "ip:basic-black-crossbody|basic-blue-straight-jeans": 0.36,
    "ip:basic-black-crossbody|basic-black-sneakers": 0.91,
    "ip:basic-black-belt|basic-white-linen-shirt": 0.36,
+   "ip:basic-black-sneakers|basic-white-linen-shirt": 0.36,
+   "ip:basic-white-linen-shirt|sussan-white-linen-jacket": 0.36,
    "ip:basic-black-belt|basic-black-dress-pants": 0.36,
    "ip:basic-black-dress-pants|basic-black-sneakers": 0.36,
+   "ip:basic-black-dress-pants|sussan-white-linen-jacket": 0.36,
    "ip:basic-black-belt|basic-black-sneakers": 0.36,
+   "ip:basic-black-belt|sussan-white-linen-jacket": 0.36,
+   "ip:basic-black-crossbody|sussan-white-linen-jacket": 0.36,
    "ip:basic-blue-straight-jeans|basic-grey-marle-jumper": 0.36,
    "ip:basic-grey-marle-jumper|basic-red-ballet-flats": 0.36,
    "ip:basic-red-ballet-flats|basic-white-linen-shirt": 0.65,
@@ -24550,6 +24606,8 @@
    "ip:basic-blue-straight-jeans-cropped|zara-black-sleeveless-knit": 0.36,
    "it:basic-grey-tee": 0.36,
    "ip:basic-blue-straight-jeans-cropped|basic-grey-tee": 0.36,
+   "ip:basic-grey-tee|sussan-white-linen-jacket": 0.36,
+   "ip:basic-blue-straight-jeans-cropped|sussan-white-linen-jacket": 0.36,
    "ip:basic-black-blazer|basic-black-tee": 0.36,
    "ip:basic-black-blazer|basic-blue-straight-jeans-cropped": 0.36,
    "ip:basic-black-blazer|basic-black-sneakers": 0.36,
