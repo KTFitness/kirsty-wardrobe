@@ -6168,6 +6168,347 @@
    ],
    "notes": "High neck with side tie bow, cut-in shoulders, straight midi. Dressy. Your photo.",
    "img": "img/black-tie-neck-halter-midi-dress.webp"
+  },
+  {
+   "id": "mid-wash-denim-pinafore-dress",
+   "name": "Mid-wash denim pinafore dress",
+   "category": "dresses",
+   "colours": [
+    "denim"
+   ],
+   "pattern": "solid",
+   "fabric": "denim",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Wide straps with buttons, front seam, curved pockets. Layer a tee, shirt or skivvy under it. Your photo.",
+   "img": "img/mid-wash-denim-pinafore-dress.webp"
+  },
+  {
+   "id": "sussan-denim-shirt-dress",
+   "name": "Sussan denim shirt dress",
+   "category": "dresses",
+   "colours": [
+    "indigo denim"
+   ],
+   "pattern": "solid",
+   "fabric": "denim",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Collar, button front, two chest pockets, long cuffed sleeves, side pockets. Your photo.",
+   "img": "img/sussan-denim-shirt-dress.webp"
+  },
+  {
+   "id": "dark-denim-pinafore-shift-dress",
+   "name": "Dark denim pinafore shift dress",
+   "category": "dresses",
+   "colours": [
+    "indigo denim"
+   ],
+   "pattern": "solid, gold buttons",
+   "fabric": "denim",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Square neck, wide straps with gold buttons, two patch pockets, front seam. Layer a tee or skivvy under it. Your photo.",
+   "img": "img/dark-denim-pinafore-shift-dress.webp"
+  },
+  {
+   "id": "sussan-navy-stripe-drawstring-dress",
+   "name": "Sussan navy and white stripe drawstring dress",
+   "category": "dresses",
+   "colours": [
+    "navy",
+    "white"
+   ],
+   "pattern": "fine stripe",
+   "fabric": "cotton jersey",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Sleeveless, crew neck, drawstring waist, pockets. Your photo.",
+   "img": "img/sussan-navy-stripe-drawstring-dress.webp"
+  },
+  {
+   "id": "green-navy-white-panel-shift-dress",
+   "name": "Green, navy and white panel shift dress",
+   "category": "dresses",
+   "colours": [
+    "green",
+    "navy",
+    "white"
+   ],
+   "pattern": "vertical colour block",
+   "fabric": "cotton",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Sleeveless, round neck, wide vertical panels with navy pinstripes, A-line. Your photo.",
+   "img": "img/green-navy-white-panel-shift-dress.webp"
+  },
+  {
+   "id": "green-grey-black-colour-block-dress",
+   "name": "Green, grey and black Mondrian colour-block dress",
+   "category": "dresses",
+   "colours": [
+    "green",
+    "grey",
+    "white",
+    "black"
+   ],
+   "pattern": "colour block with black bands",
+   "fabric": "jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Sleeveless, round neck, Mondrian-style panels, straight shift. Your photo.",
+   "img": "img/green-grey-black-colour-block-dress.webp"
+  },
+  {
+   "id": "harrywill-green-stripe-ciao-dress",
+   "name": "Harrywill & Co green stripe CIAO T-shirt dress",
+   "category": "dresses",
+   "colours": [
+    "green",
+    "white",
+    "pink"
+   ],
+   "pattern": "wide stripe with pink lettering",
+   "fabric": "sweatshirt jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Short cuffed sleeves, V insert at the neck, pink CIAO lettering, star on the shoulder. Your photo.",
+   "img": "img/harrywill-green-stripe-ciao-dress.webp"
+  },
+  {
+   "id": "red-white-stripe-grey-panel-tee-dress",
+   "name": "Red and white stripe T-shirt dress with grey side panels",
+   "category": "dresses",
+   "colours": [
+    "red",
+    "white",
+    "grey"
+   ],
+   "pattern": "wide stripe, grey panels",
+   "fabric": "cotton jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Short sleeves, crew neck, overlocked seams, grey marle side panels and splits. Your photo.",
+   "img": "img/red-white-stripe-grey-panel-tee-dress.webp"
+  },
+  {
+   "id": "grey-stripe-green-panel-tee-dress",
+   "name": "Grey and navy stripe T-shirt dress with green panel",
+   "category": "dresses",
+   "colours": [
+    "grey",
+    "navy",
+    "green"
+   ],
+   "pattern": "fine stripe, green panel",
+   "fabric": "jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Short sleeves, crew neck, green side insert at the hem. Your photo.",
+   "img": "img/grey-stripe-green-panel-tee-dress.webp"
+  },
+  {
+   "id": "mix-navy-white-stripe-tee-dress",
+   "name": "Mix navy and white stripe scoop-neck T-shirt dress",
+   "category": "dresses",
+   "colours": [
+    "navy",
+    "white"
+   ],
+   "pattern": "Breton stripe",
+   "fabric": "rib jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Scoop neck, short sleeves, fitted knee length. Your photo.",
+   "img": "img/mix-navy-white-stripe-tee-dress.webp"
+  },
+  {
+   "id": "black-white-wide-stripe-orange-panel-dress",
+   "name": "Black and white wide stripe T-shirt dress with orange panel",
+   "category": "dresses",
+   "colours": [
+    "black",
+    "white",
+    "orange"
+   ],
+   "pattern": "wide stripe, orange panel",
+   "fabric": "jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Short sleeves, crew neck, orange side insert. Your photo.",
+   "img": "img/black-white-wide-stripe-orange-panel-dress.webp"
+  },
+  {
+   "id": "marimekko-uniqlo-navy-spot-tee-dress",
+   "name": "Marimekko x Uniqlo navy and white big-spot T-shirt dress",
+   "category": "dresses",
+   "colours": [
+    "navy",
+    "white"
+   ],
+   "pattern": "large spot",
+   "fabric": "cotton jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Crew neck, elbow sleeves, straight knee length. Your photo.",
+   "img": "img/marimekko-uniqlo-navy-spot-tee-dress.webp"
+  },
+  {
+   "id": "mix-grey-white-wide-stripe-tank-dress",
+   "name": "Mix grey and white wide stripe tank dress",
+   "category": "dresses",
+   "colours": [
+    "grey",
+    "white"
+   ],
+   "pattern": "wide stripe",
+   "fabric": "rib jersey",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Scoop neck, racer armholes, fitted knee length. Your photo.",
+   "img": "img/mix-grey-white-wide-stripe-tank-dress.webp"
+  },
+  {
+   "id": "mix-navy-white-stripe-rib-tee-dress",
+   "name": "Mix navy and white stripe rib T-shirt dress",
+   "category": "dresses",
+   "colours": [
+    "navy",
+    "white"
+   ],
+   "pattern": "fine stripe",
+   "fabric": "rib jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Crew neck, short sleeves, fitted midi. Your photo.",
+   "img": "img/mix-navy-white-stripe-rib-tee-dress.webp"
+  },
+  {
+   "id": "seed-navy-white-stripe-tee-dress",
+   "name": "Seed navy and white stripe T-shirt dress",
+   "category": "dresses",
+   "colours": [
+    "navy",
+    "white"
+   ],
+   "pattern": "Breton stripe",
+   "fabric": "cotton jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Boat neck, back zip, cuffed drop-shoulder sleeves, curved hem. Your photo.",
+   "img": "img/seed-navy-white-stripe-tee-dress.webp"
+  },
+  {
+   "id": "black-white-fine-stripe-tank-midi-dress",
+   "name": "Black and white fine stripe tank midi dress",
+   "category": "dresses",
+   "colours": [
+    "black",
+    "white"
+   ],
+   "pattern": "fine stripe",
+   "fabric": "jersey",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "High neck tank, side splits, fitted midi. Your photo.",
+   "img": "img/black-white-fine-stripe-tank-midi-dress.webp"
+  },
+  {
+   "id": "black-jersey-v-neck-swing-dress",
+   "name": "Black jersey V-neck swing dress",
+   "category": "dresses",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "V neck, sleeveless, relaxed A-line. Your photo.",
+   "img": "img/black-jersey-v-neck-swing-dress.webp"
+  },
+  {
+   "id": "sussan-black-tee-shift-dress",
+   "name": "Sussan black T-shirt shift dress",
+   "category": "dresses",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid, faux leather trim",
+   "fabric": "textured jersey",
+   "seasons": [
+    "Spring",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Crew neck, short sleeves, side pockets trimmed in faux leather. Your photo.",
+   "img": "img/sussan-black-tee-shift-dress.webp"
+  },
+  {
+   "id": "black-linen-tiered-shirt-dress",
+   "name": "Black linen tiered shirt dress",
+   "category": "dresses",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "linen",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Collar, button front, puff short sleeves, gathered yoke, tiered skirt. Your photo.",
+   "img": "img/black-linen-tiered-shirt-dress.webp"
   }
  ],
  "outfits": [
@@ -22386,10 +22727,10 @@
    "itemIds": [
     "basic-tan-crossbody",
     "basic-tan-flats",
-    "pink-plum-orange-colour-block-dress"
+    "green-grey-black-colour-block-dress"
    ],
    "missing": [
-    "Patchwork shift dress (your Pink, plum and orange colour-block shift dress is the stand-in)",
+    "Patchwork shift dress (your Green, grey and black Mondrian colour-block dress is the stand-in)",
     "Tan wedges"
    ],
    "createdAt": 239
