@@ -116,6 +116,15 @@ h3 .n,.grphead .n{font-size:12px;color:var(--muted);background:var(--tile);borde
 .fav[aria-pressed="true"]{background:var(--pink);border-color:var(--pink);color:#1d2430}
 .panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;display:grid;gap:12px}
 label.f{display:grid;gap:5px;font-size:13px;font-weight:600;color:var(--muted)}
+label.f select,label.f textarea{font:inherit;font-weight:400;font-size:16px;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:10px 11px;width:100%;min-width:0}
+.tripcard{display:grid;gap:8px;text-align:left;cursor:pointer;font:inherit;color:inherit}
+.tripstrip{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.dayhead{margin:22px 0 8px;display:flex;align-items:baseline;gap:8px}
+.pack{display:grid;gap:4px;margin:0;padding:0;list-style:none}
+.pack label{display:flex;align-items:center;gap:10px;font-size:15px;padding:4px 0}
+.pack img{width:40px;height:40px;object-fit:contain;background:var(--tile);border-radius:6px}
+.pack input:checked~span{text-decoration:line-through;color:var(--muted)}
+.lookf{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 label.f input{font-weight:400;font-size:16px;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:10px 11px;width:100%;min-width:0}
 .checks{display:flex;gap:6px;flex-wrap:wrap}
 .checks label{display:flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:6px 11px;font-size:14px;font-weight:500;color:var(--fg);cursor:pointer;background:var(--bg)}
@@ -130,7 +139,7 @@ dl.facts dd{margin:0}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:6px}
 nav.tabs{position:fixed;left:0;right:0;bottom:0;z-index:6;background:var(--surface);border-top:1px solid var(--line);
   padding-bottom:max(8px, env(safe-area-inset-bottom, 0px));padding-top:6px;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));
-  display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
+  display:grid;grid-template-columns:repeat(5,1fr);gap:2px}
 nav.tabs button{border:none;background:none;padding:8px 4px;border-radius:10px;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;display:grid;justify-items:center;gap:3px}
 nav.tabs button .dot{width:22px;height:4px;border-radius:2px;background:transparent}
 nav.tabs button[aria-current="page"]{color:var(--fg)}
@@ -157,6 +166,7 @@ dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
 <nav class="tabs" aria-label="Sections">
   <button type="button" data-tab="outfits" aria-current="page"><span class="dot"></span>Outfits</button>
   <button type="button" data-tab="style"><span class="dot"></span>Style me</button>
+  <button type="button" data-tab="trips"><span class="dot"></span>Trips</button>
   <button type="button" data-tab="inspo"><span class="dot"></span>Inspo</button>
   <button type="button" data-tab="wardrobe"><span class="dot"></span>Wardrobe</button>
 </nav>
@@ -178,6 +188,8 @@ const LS={get(k,d){try{const v=localStorage.getItem("kw:"+k);return v?JSON.parse
 let taste=LS.get("taste",{w:{},n:0,liked:[],disliked:[]}),useRules=LS.get("useRules",false);
 let fin=LS.get("finish",{}),unliked=LS.get("unliked",[]),favs=LS.get("favs",[]),hidden=LS.get("hidden",[]),mine=LS.get("mine",[]),gone=LS.get("gone",[]);
 S.sort=LS.get("sort","colour");
+let trips=LS.get("trips",[]);
+function saveTrips(t){if(t)t.updated=Date.now();LS.set("trips",trips);}
 function applyGone(){D.items=(D.all||[]).filter(i=>!gone.includes(i.id));}
 
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -202,6 +214,10 @@ const allOutfits=()=>{const L=mine.map(o=>({...o,mine:true})).concat(D.outfits.m
   for(const o of L){if((o.itemIds||[]).some(id=>gone.includes(id)))continue;const liked=o.mine||o.liked;if(liked){const k=ckey(o);if(seen.has(k))continue;seen.add(k);}out.push(applyFin(o));}
   return out.filter(o=>!o.mine).filter(o=>!o.liked).concat(out.filter(o=>o.liked&&!o.mine),out.filter(o=>o.mine));};
 
+/* Inspiration looks as outfits: they can be liked, swapped in Build, and turn up in What to wear today. */
+function likedCores(){return new Set(allOutfits().filter(isLiked).map(ckey));}
+function inspoOutfits(){return D.inspo.filter(p=>(p.itemIds||[]).length&&p.itemIds.every(id=>byId(id))).map(p=>({id:"insp-"+p.id,inspoId:p.id,name:p.name||"Inspired look",itemIds:p.itemIds.slice(),occasions:p.occasions||["Everyday"],why:"One of your inspiration looks, made from your wardrobe.",inspo:true}));}
+function inspoBtns(o,liked){return (liked?`<span class="fav" aria-pressed="true" style="cursor:default">♥ Liked</span>`:`<button class="fav" type="button" data-likeinsp="${esc(o.inspoId)}" aria-pressed="false">♡ Like</button>`)+`<button class="iconbtn" type="button" data-swapinsp="${esc(o.inspoId)}">Swap a piece</button>`;}
 function collage(ids,hero){
   const order=["outerwear","tops","knitwear","dresses","skirts","trousers","shorts"],body=["tops","knitwear","dresses","skirts","trousers","shorts"];
   const items=ids.map(byId);let H=hero?items.find(it=>it&&it.id===(ALIAS[hero]||hero)):null;
@@ -219,14 +235,16 @@ function collage(ids,hero){
 }
 function tipsFor(ids){const P=ids.map(byId).filter(Boolean);if(!window.Stylist||!Stylist.hemTip)return "";return [Stylist.hemTip(P),Stylist.hairTip(P)].filter(Boolean).map(t=>`<p class="tip">${esc(t)}</p>`).join("");}
 function outfitCard(o,extra="",hero){
-  const kp=hero?{id:hero}:keyPiece(o);return `<article class="ocard">${collage(o.itemIds||[],kp&&kp.id)}<div class="meta">
+  const kp=hero?{id:hero}:keyPiece(o);
+  if(o.inspo)return `<article class="ocard">${collage(o.itemIds||[],kp&&kp.id)}<div class="meta"><div class="nm">${esc(o.name)}</div><div class="tags"><span class="tag">Inspiration look</span></div>
+   ${o.why?`<p class="why">${esc(o.why)}</p>`:""}${tipsFor(o.itemIds||[])}<div class="row">${inspoBtns(o,likedCores().has(ckey(o)))}${addBtn(o.itemIds,o.name)}${extra}</div></div></article>`;return `<article class="ocard">${collage(o.itemIds||[],kp&&kp.id)}<div class="meta">
   <div class="nm">${esc(o.name||"Untitled outfit")}</div>
   <div class="tags">${(o.occasions||[]).map(x=>`<span class="tag">${esc(x)}</span>`).join("")}${isBuilt(o)?'<span class="tag mine">Built by you</span>':(o.mine||o.liked)?'<span class="tag mine">You liked this</span>':""}</div>
   ${o.why?`<p class="why">${esc(o.why)}</p>`:""}
   ${tipsFor(o.itemIds||[])}
   <div class="row">${o.temp?`<button class="btn" type="button" data-likesur>Like</button><button class="btn ghost" type="button" data-nopesur>Not for me</button>`:isLiked(o)?`<span class="fav" aria-pressed="true" style="cursor:default">♥ Liked</span><button class="iconbtn" type="button" data-unlike="${esc(o.id)}">Unlike</button>`:`<button class="fav" type="button" data-likeo="${esc(o.id)}" aria-pressed="false">♡ Like</button>`}
   ${isLiked(o)?`<button class="iconbtn" type="button" data-finish="${esc(o.id)}">${(o.itemIds||[]).some(id=>{const it=byId(id);return it&&it.category==="shoes";})?"Change shoes & bag":"Add shoes & bag"}</button>`:""}
-  ${isBuilt(o)?`<button class="iconbtn" type="button" data-editb="${esc(o.id)}">Edit</button><button class="iconbtn" type="button" data-delb="${esc(o.id)}">Delete</button>`:""}${!o.temp&&!isLiked(o)&&!o.mine&&!o.liked?`<button class="iconbtn" type="button" data-hide="${esc(o.id)}">Hide</button>`:""}${extra}</div></div></article>`;
+  ${isBuilt(o)?`<button class="iconbtn" type="button" data-editb="${esc(o.id)}">Edit</button><button class="iconbtn" type="button" data-delb="${esc(o.id)}">Delete</button>`:""}${addBtn(o.itemIds||[],o.name)}${!o.temp&&!isLiked(o)&&!o.mine&&!o.liked?`<button class="iconbtn" type="button" data-hide="${esc(o.id)}">Hide</button>`:""}${extra}</div></div></article>`;
 }
 
 
@@ -283,7 +301,8 @@ function vOutfits(){
   const all=allOutfits().filter(o=>!hidden.includes(o.id));
   const liked=all.filter(isLiked),ideas=all.filter(o=>!isLiked(o)&&!o.liked);
   const se=todaySeason();
-  const pool=liked.filter(o=>fitsSeason(o,se));
+  const LC=new Set(liked.map(ckey)),NO=new Set(allDisliked());
+  const pool=liked.concat(inspoOutfits().filter(o=>!LC.has(ckey(o))&&!NO.has(ckey(o))&&!hidden.includes(o.id))).filter(o=>fitsSeason(o,se));
   let today=[];if(pool.length){const r=rng(Number(new Date().toISOString().slice(0,10).replace(/-/g,''))+(S.todaySeed||0)*7919);const p=pool.slice();while(today.length<3&&p.length)today.push(p.splice(Math.floor(r()*p.length),1)[0]);}
   if(S.wx&&(S.wx.max<20||wxRain()))today=today.map(o=>{const P=(o.itemIds||[]).map(byId).filter(Boolean);const L=Stylist.addLayer(P,D.items,{season:se,rain:wxRain(),W:tasteW()});return L?{...o,itemIds:o.itemIds.concat(L.id),addedLayer:L.name,why:`Add the ${L.name.toLowerCase()} for today's weather.`}:o;});
   S.todayList=today;
@@ -294,7 +313,7 @@ function vOutfits(){
   return `<h2>Outfits</h2>
   <div class="row"><button class="btn" type="button" data-tab="style">Style a piece</button><button class="btn ghost" type="button" data-tab="build">Build your own</button><button class="btn ghost" type="button" id="surprise">Surprise me</button></div>
   ${S.surprise?`<div class="ogrid">${outfitCard(S.surprise,`<button class="iconbtn" type="button" id="keepSurprise">Edit in Build</button>`)}</div>`:""}
-  <section class="panel today"><div><h3 style="margin:0">What to wear today</h3>${S.wx?wxLine():`<p class="lede" style="margin:4px 0 0">Three of your liked outfits that suit ${se.toLowerCase()}.</p>`}</div>
+  <section class="panel today"><div><h3 style="margin:0">What to wear today</h3>${S.wx?wxLine():`<p class="lede" style="margin:4px 0 0">Three of your liked outfits and inspiration looks that suit ${se.toLowerCase()}.</p>`}</div>
    ${today.length?`<div class="minigrid three">${today.map(o=>miniTile(o)).join("")}</div><div class="row"><button class="btn ghost" type="button" id="todayMore">Show me three others</button></div>`
      :`<p class="lede">Like a few outfits in Style me and they'll show up here.</p>`}</section>
   ${(()=>{const B=all.filter(isBuilt).reverse();if(!B.length)return "";const open=!!S.openG.__built;return `<h3 style="margin:22px 0 8px">Built by you <span class="n">${B.length}</span></h3>
@@ -319,7 +338,8 @@ function vBuild(){
   <div class="panel">${b.itemIds.length?collage(b.itemIds):`<div class="empty"><span>Pick items below.</span></div>`}
   <label class="f">Name<input id="bName" value="${esc(b.name)}" placeholder="e.g. Sorbet Sunday"></label>
   <div class="checks">${D.occasions.map(o=>`<label><input type="checkbox" data-bocc value="${esc(o)}" ${b.occasions.includes(o)?"checked":""}>${esc(o)}</label>`).join("")}</div>
-  <div class="row"><button class="btn" type="button" id="bSave" ${b.itemIds.length?"":"disabled"}>${b.editId?"Save changes":"Save outfit"}</button>${b.itemIds.length?`<button class="btn ghost" type="button" id="bClear">Start again</button>`:""}</div></div>
+  ${b.fromInspo?`<div class="notice">Starting from the inspiration look. Tap a piece below to take it out, tap another to swap it in, then Save. Saving keeps it in Built by you and counts as a like.</div>`:""}${b.tripLook?`<div class="notice">Editing an outfit in ${esc((tripById(b.tripLook.tripId)||{}).name||"your trip")}. Save puts it back in the trip.</div>`:b.tripId?`<div class="notice">Building for ${esc((tripById(b.tripId)||{}).name||"your trip")}. Save adds it to the trip and to Built by you.</div>`:""}
+  <div class="row"><button class="btn" type="button" id="bSave" ${b.itemIds.length?"":"disabled"}>${b.tripLook?"Save to trip":b.editId?"Save changes":"Save outfit"}</button>${!b.tripLook&&!b.tripId&&b.itemIds.length?addBtn(b.itemIds,b.name):""}${b.itemIds.length?`<button class="btn ghost" type="button" id="bClear">Start again</button>`:""}</div></div>
   <label class="pairwith" style="margin-top:6px"><span>Find a piece</span><input id="bq" type="search" value="${esc(S.bq||"")}" placeholder="Search, e.g. red, stripe, linen" autocomplete="off"></label>
   ${(()=>{const q=(S.bq||"").trim().toLowerCase();S.bOpen=S.bOpen||{};
    return CATS.filter(([k])=>D.items.some(i=>dcat(i)===k)).map(([k,v])=>{
@@ -370,6 +390,7 @@ function vStyle(){
   const res=window.Stylist?Stylist.suggest(a,D.items,{occ:S.sOcc,season,rain:!S.sSeason&&wxRain(),tmax:!S.sSeason&&S.wx?S.wx.max:null,seed:S.seed,count:6,W:tasteW(),n:tasteN(),rules:useRules,noAccessories:true,exclude:[],excludeCore:allDisliked().concat(ratingLists().liked,S.rated||[]).map(k=>Stylist.coreKey(k.split(",").map(byId).filter(Boolean))),shown:S.shownFor===a.id?(S.shown||[]):[],with:S.withFor===a.id?S.with:null}):[];
   S.lastRes=res.map((r,k)=>({key:r.key,id:"g"+S.seed+"-"+k,name:r.set?"The matching set":"With the "+a.name.replace(/^(Gingham|Stripe|Dots) No\. \d+: /,"").toLowerCase(),itemIds:r.pieces.map(p=>p.id),occasions:[S.sOcc],why:r.why}));
   const offSeason=a.seasons&&a.seasons.length&&!a.seasons.includes(season);
+  const AT=S.addTrip&&tripById(S.addTrip);
   return `<div class="panel" style="grid-template-columns:96px 1fr;align-items:center">
    <div class="tile" style="aspect-ratio:1/1;border-radius:10px"><img src="${esc(a.img)}" alt=""></div>
    <div style="display:grid;gap:6px;min-width:0"><span class="status">Styling</span><strong style="font-family:var(--display);font-weight:400;font-size:19px;line-height:1.2">${esc(a.name)}</strong>
@@ -381,10 +402,11 @@ function vStyle(){
   <div class="panel" style="gap:8px"><div class="status">${tasteN()?`Learning from ${ratedCount()} of your rating${ratedCount()===1?"":"s"} and ${(D.taste&&D.taste.n)||0} inspiration looks. Keep tapping Like or Not for me and the ideas will get closer to your taste.`:"No rules yet. Tap Like or Not for me on each idea and the app learns your taste."}</div>
    <div class="row"><label class="checks" style="font-size:14px"><label><input type="checkbox" id="useRules" ${useRules?"checked":""}> Use my style notes as a head start</label></label></div>
    <div class="row">${tasteN()?`<button class="iconbtn" type="button" id="copyTaste">${S.copied==="taste"?"Copied":"Copy my taste for Claude"}</button><button class="iconbtn" type="button" id="resetTaste">Start learning again</button>`:""}</div></div>
+  ${AT?`<div class="notice">Picking for ${esc(AT.name)}. Tap Add to trip on an idea you want. <button class="iconbtn" type="button" data-tripgo="${esc(AT.id)}">Back to the trip</button></div>`:""}
   ${offSeason?`<div class="notice">This piece is usually a ${esc(a.seasons.join("/").toLowerCase())} piece, so these are stretch ideas.</div>`:""}
   ${S.lastRes.length?`<div class="ogrid">${S.lastRes.map((o,k)=>`<article class="ocard">${collage(o.itemIds,a.id)}<div class="meta"><div class="nm">${k===0&&res[0].set?"The matching set":"Idea "+(k+1)}</div>
    <p class="why">${esc(o.why)}</p><p class="why" style="font-size:12px">${esc([a.id].concat(o.itemIds.filter(id=>id!==a.id)).map(id=>byId(id)).filter(Boolean).map(i=>i.name).join(" · "))}</p>
-   <div class="row"><button class="btn" type="button" data-like="${k}">Like</button><button class="btn ghost" type="button" data-nope="${k}">Not for me</button><button class="iconbtn" type="button" data-copygen="${k}">${S.copied===o.id?"Copied":"Copy for Claude"}</button></div></div></article>`).join("")}</div>
+   <div class="row"><button class="btn" type="button" data-like="${k}">Like</button><button class="btn ghost" type="button" data-nope="${k}">Not for me</button>${addBtn(o.itemIds,o.name)}<button class="iconbtn" type="button" data-copygen="${k}">${S.copied===o.id?"Copied":"Copy for Claude"}</button></div></div></article>`).join("")}</div>
    <div class="row"><button class="btn ghost" type="button" id="more">Show me different ideas</button></div>
    ${likedFor(a)}${nopedFor(a)}`
    :`<div class="empty"><strong>No new ideas left for this piece</strong><span>You've rated every combination the app can make with it right now. Your liked ones are below, and the "Changed your mind?" list is at the bottom. Try another season or occasion, or pick a piece in "Pair it with".</span></div>${likedFor(a)}${nopedFor(a)}`}`;
@@ -408,10 +430,10 @@ function openFinish(id){const o=allOutfits().find(x=>x.id===id);if(!o)return;S.f
    <div class="row"><button class="btn" type="button" data-findone>Done</button></div>`;
   if(!sheet.open)sheet.showModal();}
 function devicePanel(){return `<section class="panel" style="margin-top:22px;gap:8px"><h3 style="margin:0">Phone and iPad</h3>
-  <p class="lede" style="margin:0">Each device keeps its own ratings, built outfits and shoe choices. To bring one up to date, tap Copy on the device you've been using, then Paste on the other. Nothing is lost: the two are merged.</p>
+  <p class="lede" style="margin:0">Each device keeps its own ratings, built outfits, trips and shoe choices. To bring one up to date, tap Copy on the device you've been using, then Paste on the other. Nothing is lost: the two are merged.</p>
   <div class="row"><button class="btn ghost" type="button" id="devCopy">${S.copied==="dev"?"Copied":"Copy from this device"}</button><button class="btn ghost" type="button" id="devPaste">Paste from another device</button></div>
   ${S.devMsg?`<p class="status" style="margin:0">${esc(S.devMsg)}</p>`:""}</section>`;}
-function devExport(){return "KW-DEVICE-1:"+JSON.stringify({taste,mine,fin,unliked,hidden,gone,favs});}
+function devExport(){return "KW-DEVICE-1:"+JSON.stringify({taste,mine,fin,unliked,hidden,gone,favs,trips});}
 function devMerge(txt){const i=txt.indexOf("{");if(i<0)throw new Error("no data");const j=JSON.parse(txt.slice(i));
   const t=j.taste||j;const addAll=(a,b)=>{const seen=new Set(a);return a.concat((b||[]).filter(k=>!seen.has(k)));};
   const before=taste.liked.length+taste.disliked.length,bm=mine.length;
@@ -422,8 +444,9 @@ function devMerge(txt){const i=txt.indexOf("{");if(i<0)throw new Error("no data"
   fin={...fin,...(j.fin||j.finish||{})};
   const un=(a,b)=>[...new Set(a.concat(b||[]))];unliked=un(unliked,j.unliked);hidden=un(hidden,j.hidden);gone=un(gone,j.gone);favs=un(favs,j.favs);
   LS.set("taste",taste);LS.set("mine",mine);LS.set("finish",fin);LS.set("unliked",unliked);LS.set("hidden",hidden);LS.set("gone",gone);LS.set("favs",favs);
+  const bt=trips.length;{const m=new Map(trips.map(t=>[t.id,t]));for(const t of (j.trips||[])){const c=m.get(t.id);if(!c||(t.updated||0)>(c.updated||0))m.set(t.id,t);}trips=[...m.values()];LS.set("trips",trips);}
   const added=taste.liked.length+taste.disliked.length-before,ad2=mine.length-bm;
-  return `Merged. ${added} new rating${added===1?"":"s"} and ${ad2} new saved outfit${ad2===1?"":"s"} added to this device.`;}
+  return `Merged. ${added} new rating${added===1?"":"s"} and ${ad2} new saved outfit${ad2===1?"":"s"} added to this device${trips.length>bt?`, plus ${trips.length-bt} trip${trips.length-bt===1?"":"s"}`:""}.`;}
 function vInspo(){
   return `<h2>Inspiration</h2>
   <p class="lede">Send an inspiration photo to Claude in chat. It will recreate the look from your wardrobe and add it here, with a note of anything you'd need to buy.</p>
@@ -434,14 +457,87 @@ function vInspo(){
   ${D.inspo.length?`<div class="ogrid">${D.inspo.map(p=>`<article class="ocard"><div class="two" style="background:var(--tile);padding:6px">
    <div class="tile" style="aspect-ratio:1/1"><img src="${esc(p.img)}" alt="Inspiration photo" loading="lazy"></div>${collage(p.itemIds||[])}</div>
    <div class="meta"><div class="nm">${esc(p.name||"Inspired look")}</div><p class="why">${esc(p.summary||"")}</p>
-   ${p.missing&&p.missing.length?`<div><strong style="font-size:13px">To get closer</strong><ul class="missing">${p.missing.map(m=>`<li>${esc(m)}</li>`).join("")}</ul></div>`:""}</div></article>`).join("")}</div>`
+   ${p.missing&&p.missing.length?`<div><strong style="font-size:13px">To get closer</strong><ul class="missing">${p.missing.map(m=>`<li>${esc(m)}</li>`).join("")}</ul></div>`:""}${(p.itemIds||[]).length?(()=>{const o=inspoOutfits().find(x=>x.inspoId===p.id);return o?`<div class="row">${inspoBtns(o,likedCores().has(ckey(o)))}${addBtn(p.itemIds,p.name)}</div>`:"";})():""}</div></article>`).join("")}</div>`
    :`<div class="empty"><strong>No inspiration looks yet</strong><span>Your first one will appear here.</span></div>`}`;
 }
+
+/* Trips: outfits saved for a trip or a run of events, grouped by day, with a packing list. */
+const isoD=d=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+const fmtDay=s=>new Date(s+"T00:00:00").toLocaleDateString("en-AU",{weekday:"short",day:"numeric",month:"short"});
+function tripDays(t){if(!t.start)return [];const out=[],d=new Date(t.start+"T00:00:00"),e=new Date((t.end&&t.end>=t.start?t.end:t.start)+"T00:00:00");while(d<=e&&out.length<31){out.push(isoD(d));d.setDate(d.getDate()+1);}return out;}
+function tripDates(t){if(!t.start)return "No dates yet";return t.end&&t.end!==t.start?fmtDay(t.start)+" to "+fmtDay(t.end):fmtDay(t.start);}
+const tripById=id=>trips.find(t=>t.id===id);
+function addBtn(ids,name){return `<button class="iconbtn" type="button" data-addtrip="${esc(ids.join(","))}" data-aname="${esc(name||"")}">Add to trip</button>`;}
+function newTripForm(withAdd){return `<div class="panel" style="gap:10px"><h3 style="margin:0">${withAdd?"Or start a new trip":"New trip"}</h3>
+  <label class="f">Name<input id="tName" placeholder="e.g. Melbourne weekend"></label>
+  <div class="lookf"><label class="f">From<input id="tStart" type="date"></label><label class="f">To<input id="tEnd" type="date"></label></div>
+  <div class="row"><button class="btn" type="button" id="${withAdd?"tCreateAdd":"tCreate"}">${withAdd?"Create and add":"Create trip"}</button></div><p class="status" id="tErr" style="margin:0"></p></div>`;}
+function vTrips(){
+  const t=S.tripId&&tripById(S.tripId);if(t)return vTrip(t);
+  const L=trips.slice().sort((a,b)=>(a.start||"9")<(b.start||"9")?-1:1);
+  return `<h2>Trips</h2>
+  <p class="lede">Save outfits for a trip or a run of events. Use Add to trip on any outfit in Outfits, Style me, Build your own or Inspo, then give each one a day and what it's for.</p>
+  ${L.length?`<div class="ogrid">${L.map(t=>`<div role="button" tabindex="0" class="panel tripcard" data-tripopen="${esc(t.id)}"><div><strong style="font-family:var(--display);font-weight:400;font-size:20px">${esc(t.name)}</strong><div class="status">${esc(tripDates(t))} · ${t.looks.length} outfit${t.looks.length===1?"":"s"}</div></div>
+   ${t.looks.length?`<div class="tripstrip">${t.looks.slice(0,4).map(l=>collage(l.itemIds)).join("")}</div>`:`<p class="lede" style="margin:0">No outfits yet.</p>`}</div>`).join("")}</div>`:""}
+  ${newTripForm(false)}`;
+}
+function lookCard(t,l,days){
+  return `<article class="ocard">${collage(l.itemIds,keyPiece(l)&&keyPiece(l).id)}<div class="meta">
+   <label class="f">What's it for<input data-tlabel="${esc(l.id)}" value="${esc(l.label||"")}" placeholder="e.g. Saturday lunch, travel day"></label>
+   ${days.length?`<label class="f">Day<select data-tday="${esc(l.id)}"><option value="">Not decided</option>${days.map(d=>`<option value="${d}" ${l.day===d?"selected":""}>${esc(fmtDay(d))}</option>`).join("")}</select></label>`:""}
+   <p class="why" style="font-size:12px">${esc(l.itemIds.map(byId).filter(Boolean).map(i=>i.name).join(" · "))}</p>
+   ${tipsFor(l.itemIds)}
+   <div class="row"><button class="iconbtn" type="button" data-tedit="${esc(l.id)}">${l.itemIds.some(id=>{const i=byId(id);return i&&i.category==="shoes";})?"Edit pieces":"Edit, add shoes & bag"}</button><button class="iconbtn" type="button" data-tdel="${esc(l.id)}">Remove</button></div></div></article>`;}
+function vTrip(t){
+  const days=tripDays(t),known=new Set(days);
+  const groups=days.map(d=>[d,fmtDay(d),t.looks.filter(l=>l.day===d)]).filter(g=>g[2].length).concat([["",days.length?"Not given a day yet":"Outfits",t.looks.filter(l=>!l.day||!known.has(l.day))]]).filter(g=>g[2].length);
+  const P=[...new Set(t.looks.flatMap(l=>l.itemIds))].map(byId).filter(Boolean);const packed=new Set(t.packed||[]);
+  return `<div class="row"><button class="iconbtn" type="button" id="tBack">‹ All trips</button></div>
+  <h2 style="margin-bottom:2px">${esc(t.name)}</h2><p class="status" style="margin:0 0 6px">${esc(tripDates(t))} · ${t.looks.length} outfit${t.looks.length===1?"":"s"}</p>
+  ${t.notes?`<p class="lede" style="margin:0 0 8px;white-space:pre-wrap">${esc(t.notes)}</p>`:""}
+  ${S.tripEdit?`<div class="panel" style="gap:10px"><label class="f">Name<input id="teName" value="${esc(t.name)}"></label>
+   <div class="lookf"><label class="f">From<input id="teStart" type="date" value="${esc(t.start||"")}"></label><label class="f">To<input id="teEnd" type="date" value="${esc(t.end||"")}"></label></div>
+   <label class="f">Notes<textarea id="teNotes" rows="3" placeholder="Events, dress codes, weather">${esc(t.notes||"")}</textarea></label>
+   <div class="row"><button class="btn" type="button" id="teSave">Save</button><button class="btn ghost" type="button" id="teCancel">Cancel</button><button class="iconbtn" type="button" id="teDel">Delete trip</button></div></div>`
+   :`<div class="row"><button class="iconbtn" type="button" id="tEdit">Edit name, dates and notes</button></div>`}
+  <section class="panel" style="gap:8px;margin-top:10px"><h3 style="margin:0">Add an outfit</h3>
+   <div class="row"><button class="btn" type="button" id="tFromLiked">From my liked outfits</button><button class="btn ghost" type="button" id="tBuild">Build one</button><button class="btn ghost" type="button" id="tStyle">Style a piece</button></div></section>
+  ${groups.length?groups.map(([d,lab,ls])=>`<h3 class="dayhead">${esc(lab)} <span class="n">${ls.length}</span></h3><div class="ogrid">${ls.map(l=>lookCard(t,l,days)).join("")}</div>`).join("")
+   :`<div class="empty" style="margin-top:14px"><strong>No outfits yet</strong><span>Add some from your liked outfits, build one, or style a piece.</span></div>`}
+  ${P.length?`<section class="panel" style="gap:8px;margin-top:22px"><h3 style="margin:0">Packing list <span class="n">${P.length} piece${P.length===1?"":"s"}</span></h3>
+   ${CATS.map(([k,v])=>[v,arrange(P.filter(i=>dcat(i)===k))]).filter(x=>x[1].length).map(([v,is])=>`<div><div class="status" style="margin:6px 0 2px">${esc(v)}</div><ul class="pack">${is.map(i=>`<li><label><input type="checkbox" data-tpack="${esc(i.id)}" ${packed.has(i.id)?"checked":""}><img src="${esc(i.img)}" alt=""><span>${esc(i.name)}</span></label></li>`).join("")}</ul></div>`).join("")}
+   <div class="row"><button class="iconbtn" type="button" id="tCopyPack">${S.copied==="pack"?"Copied":"Copy packing list"}</button></div></section>`:""}`;
+}
+function openAddTrip(ids,name){S.pend={itemIds:ids,name:name||""};
+  const L=trips.slice().sort((a,b)=>(b.id===S.addTrip)-(a.id===S.addTrip)||((a.start||"9")<(b.start||"9")?-1:1));
+  sheetBody.innerHTML=`<div class="sheet-head"><h2>Add to trip</h2><button class="iconbtn" type="button" data-close>Close</button></div>
+   <div style="max-width:220px">${collage(ids)}</div>
+   <label class="f">What's it for (optional)<input id="tLabel" placeholder="e.g. Friday dinner"></label>
+   ${L.length?`<div style="display:grid;gap:8px">${L.map(t=>`<button class="btn${t.id===S.addTrip?"":" ghost"}" type="button" data-addto="${esc(t.id)}" style="text-align:left">${esc(t.name)} <span style="font-weight:400;font-size:13px">· ${esc(tripDates(t))}</span></button>`).join("")}</div>`:""}
+   ${newTripForm(true)}`;
+  if(!sheet.open)sheet.showModal();}
+function addLook(t,ids,label,day){const l={id:"l"+Date.now()+Math.floor(Math.random()*1000),itemIds:ids.slice(),label:label||"",day:day||""};t.looks.push(l);saveTrips(t);return l;}
+function readNewTrip(){const name=($("#tName")||{}).value?.trim();const start=($("#tStart")||{}).value||"",end=($("#tEnd")||{}).value||"";
+  if(!name){const e=$("#tErr");if(e)e.textContent="Give the trip a name first.";return null;}
+  const t={id:"t"+Date.now(),name,start,end:end&&end>=start?end:start,notes:"",looks:[],packed:[]};trips.push(t);saveTrips(t);return t;}
+function addedMsg(t){sheetBody.innerHTML=`<div class="sheet-head"><h2>Added</h2><button class="iconbtn" type="button" data-close>Close</button></div>
+  <p class="lede" style="margin:0">Saved to ${esc(t.name)}. It now has ${t.looks.length} outfit${t.looks.length===1?"":"s"}.</p>
+  <div class="row"><button class="btn" type="button" data-tripgo="${esc(t.id)}">Open the trip</button><button class="btn ghost" type="button" data-close>Keep going</button></div>`;}
+function likedPicker(){const t=tripById(S.tripId);if(!t)return;const q=(S.tq||"").trim().toLowerCase();
+  const L=allOutfits().filter(o=>isLiked(o)&&!hidden.includes(o.id)).reverse();
+  const M=q?L.filter(o=>(o.itemIds||[]).map(byId).filter(Boolean).some(i=>(i.name+" "+(i.colours||[]).join(" ")+" "+(i.pattern||"")).toLowerCase().includes(q))):L;
+  return `<p class="status" style="margin:0">${q?M.length+" found":"Your "+L.length+" liked outfits, newest first"}. Tap one to add it to ${esc(t.name)}.</p>
+   <div class="minigrid">${M.slice(0,90).map(o=>`<div role="button" tabindex="0" class="mini" data-pickliked="${esc(o.id)}">${collage(o.itemIds||[],keyPiece(o)&&keyPiece(o).id)}<span>${esc(o.name||"Outfit")}</span></div>`).join("")}</div>
+   ${M.length>90?`<p class="status">Showing 90. Search for a piece to narrow it down.</p>`:""}`;}
+function openLikedPicker(){S.tq="";const t=tripById(S.tripId);
+  sheetBody.innerHTML=`<div class="sheet-head"><h2>Add from liked outfits</h2><button class="iconbtn" type="button" data-close>Close</button></div>
+   <label class="pairwith" style="margin:0"><span>Find by piece</span><input id="tq" type="search" placeholder="e.g. Ghanda, black blazer, stripe" autocomplete="off"></label>
+   <div id="tqRes">${likedPicker()}</div>`;if(!sheet.open)sheet.showModal();}
 
 function render(){
   if(S.tab==="build"&&$("#bName"))S.build.name=$("#bName").value;
   const sx=window.scrollY;
-  $("#view").innerHTML=S.tab==="wardrobe"?vWardrobe():S.tab==="style"?vStyle():S.tab==="outfits"?vOutfits():S.tab==="build"?vBuild():vInspo();
+  $("#view").innerHTML=S.tab==="wardrobe"?vWardrobe():S.tab==="style"?vStyle():S.tab==="outfits"?vOutfits():S.tab==="build"?vBuild():S.tab==="trips"?vTrips():vInspo();
   document.querySelectorAll("nav.tabs button").forEach(b=>{if(b.dataset.tab===S.tab)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current");});
   $("#countline").textContent=`${D.items.length} items · ${allOutfits().length} outfits`;
   window.scrollTo(0,sx);
@@ -479,11 +575,44 @@ function copyText(o){
   return `Please add this outfit to my wardrobe app.\nName: ${o.name}\nItems: ${(o.itemIds||[]).map(id=>{const it=byId(id);return it?`${it.name} (${it.id})`:id;}).join(", ")}\nOccasions: ${(o.occasions||[]).join(", ")||"none set"}`;
 }
 
-document.addEventListener("change",e=>{if(e.target.id==="pairWith"){S.with=e.target.value||null;S.withFor=S.anchor;S.seed=1;S.shown=[];render();return;}if(e.target.id==="useRules"){useRules=e.target.checked;LS.set("useRules",useRules);render();}});
-document.addEventListener("input",e=>{if(e.target.id==="bq"){S.bq=e.target.value;const pos=e.target.selectionStart;render();const el=$("#bq");if(el){el.focus();el.setSelectionRange(pos,pos);}return;}if(e.target.id==="sq"){S.q=e.target.value;const pos=e.target.selectionStart;render();const el=$("#sq");if(el){el.focus();el.setSelectionRange(pos,pos);}}});
+document.addEventListener("change",e=>{const el=e.target;
+  if(el.dataset&&(el.dataset.tlabel||el.dataset.tday||el.dataset.tpack)){const tr=tripById(S.tripId);if(!tr)return;
+    if(el.dataset.tpack){const s=new Set(tr.packed||[]);el.checked?s.add(el.dataset.tpack):s.delete(el.dataset.tpack);tr.packed=[...s];saveTrips(tr);return;}
+    const l=tr.looks.find(x=>x.id===(el.dataset.tlabel||el.dataset.tday));if(!l)return;if(el.dataset.tlabel)l.label=el.value;else{l.day=el.value;}saveTrips(tr);if(el.dataset.tday)render();return;}
+if(e.target.id==="pairWith"){S.with=e.target.value||null;S.withFor=S.anchor;S.seed=1;S.shown=[];render();return;}if(e.target.id==="useRules"){useRules=e.target.checked;LS.set("useRules",useRules);render();}});
+document.addEventListener("input",e=>{if(e.target.id==="tq"){S.tq=e.target.value;const r=$("#tqRes");if(r)r.innerHTML=likedPicker();return;}if(e.target.id==="bq"){S.bq=e.target.value;const pos=e.target.selectionStart;render();const el=$("#bq");if(el){el.focus();el.setSelectionRange(pos,pos);}return;}if(e.target.id==="sq"){S.q=e.target.value;const pos=e.target.selectionStart;render();const el=$("#sq");if(el){el.focus();el.setSelectionRange(pos,pos);}}});
 document.addEventListener("click",async e=>{
   const t=e.target.closest("button,[role=button]");if(!t)return;
-  if(t.dataset.tab){S.tab=t.dataset.tab;render();window.scrollTo(0,0);return;}
+  if(t.dataset.tab){if(t.closest("nav.tabs")&&t.dataset.tab==="trips"&&S.tab==="trips"){S.tripId=null;S.tripEdit=false;}S.tab=t.dataset.tab;render();window.scrollTo(0,0);return;}
+  if(t.dataset.likeinsp){const o=inspoOutfits().find(x=>x.inspoId===t.dataset.likeinsp);if(!o)return;const k=ckey(o);
+    if(!likedCores().has(k)){const rec={id:"m"+Date.now(),name:o.name,itemIds:o.itemIds.slice(),occasions:o.occasions,why:"You liked this inspiration look."};mine=mine.concat(rec);LS.set("mine",mine);
+      if(!taste.liked.includes(k)){taste.liked.push(k);taste.n++;}taste.undone=(taste.undone||[]).concat(k);taste.unlikedKeys=(taste.unlikedKeys||[]).filter(x=>x!==k);LS.set("taste",taste);
+      if(sheet.open)sheetBody.innerHTML=`<div class="sheet-head"><h2>Outfit</h2><button class="iconbtn" type="button" data-close>Close</button></div>${outfitCard({...rec,mine:true})}`;}
+    render();return;}
+  if(t.dataset.swapinsp){const o=inspoOutfits().find(x=>x.inspoId===t.dataset.swapinsp);if(!o)return;if(sheet.open)sheet.close();S.build={itemIds:o.itemIds.slice(),name:o.name+" (my version)",occasions:[],fromInspo:true};S.bOpen={};S.tab="build";render();window.scrollTo(0,0);return;}
+  if(t.dataset.addtrip!==undefined){openAddTrip(t.dataset.addtrip.split(",").filter(Boolean),t.dataset.aname);return;}
+  if(t.dataset.addto){const tr=tripById(t.dataset.addto);if(!tr||!S.pend)return;addLook(tr,S.pend.itemIds,($("#tLabel")||{}).value||"");addedMsg(tr);if(S.tab==="trips")render();return;}
+  if(t.id==="tCreateAdd"){const lab=($("#tLabel")||{}).value||"";const tr=readNewTrip();if(!tr||!S.pend)return;addLook(tr,S.pend.itemIds,lab);addedMsg(tr);return;}
+  if(t.id==="tCreate"){const tr=readNewTrip();if(!tr)return;S.tripId=tr.id;S.addTrip=tr.id;render();window.scrollTo(0,0);return;}
+  if(t.dataset.tripgo){S.tripId=t.dataset.tripgo;S.addTrip=S.tripId;S.tab="trips";if(sheet.open)sheet.close();render();window.scrollTo(0,0);return;}
+  if(t.dataset.tripopen){S.tripId=t.dataset.tripopen;S.addTrip=S.tripId;S.tripEdit=false;render();window.scrollTo(0,0);return;}
+  if(t.id==="tBack"){S.tripId=null;S.tripEdit=false;render();window.scrollTo(0,0);return;}
+  if(t.id==="tEdit"){S.tripEdit=true;render();return;}
+  if(t.id==="teCancel"){S.tripEdit=false;render();return;}
+  if(t.id==="teSave"){const tr=tripById(S.tripId);if(tr){tr.name=$("#teName").value.trim()||tr.name;tr.start=$("#teStart").value||"";const e=$("#teEnd").value||"";tr.end=e&&e>=tr.start?e:tr.start;tr.notes=$("#teNotes").value;saveTrips(tr);}S.tripEdit=false;render();return;}
+  if(t.id==="teDel"){if(!t.dataset.armed){t.dataset.armed="1";t.textContent="Tap again to delete this trip";return;}trips=trips.filter(x=>x.id!==S.tripId);saveTrips();S.tripId=null;S.tripEdit=false;if(S.addTrip&&!tripById(S.addTrip))S.addTrip=null;render();return;}
+  if(t.dataset.tdel){if(!t.dataset.armed){t.dataset.armed="1";t.textContent="Tap again to remove";return;}const tr=tripById(S.tripId);if(tr){tr.looks=tr.looks.filter(l=>l.id!==t.dataset.tdel);saveTrips(tr);}render();return;}
+  if(t.dataset.tedit){const tr=tripById(S.tripId),l=tr&&tr.looks.find(x=>x.id===t.dataset.tedit);if(!l)return;S.build={itemIds:l.itemIds.slice(),name:l.label||"",occasions:[],tripLook:{tripId:tr.id,lookId:l.id}};S.bOpen={};S.tab="build";render();window.scrollTo(0,0);return;}
+  if(t.id==="tFromLiked"){openLikedPicker();return;}
+  if(t.dataset.pickliked){const tr=tripById(S.tripId),o=allOutfits().find(x=>x.id===t.dataset.pickliked);if(!tr||!o)return;addLook(tr,o.itemIds,"");t.style.opacity=".45";t.querySelector("span").textContent="Added";t.removeAttribute("data-pickliked");render();return;}
+  if(t.id==="tBuild"){S.build={itemIds:[],name:"",occasions:[],tripId:S.tripId};S.bOpen={};S.tab="build";render();window.scrollTo(0,0);return;}
+  if(t.id==="tStyle"){S.addTrip=S.tripId;S.anchor=null;S.tab="style";render();window.scrollTo(0,0);return;}
+  if(t.id==="tCopyPack"){const tr=tripById(S.tripId);if(!tr)return;const P=[...new Set(tr.looks.flatMap(l=>l.itemIds))].map(byId).filter(Boolean);
+    const txt=tr.name+" packing list ("+tripDates(tr)+")\n"+CATS.map(([k,v])=>[v,arrange(P.filter(i=>dcat(i)===k))]).filter(x=>x[1].length).map(([v,is])=>v+"\n"+is.map(i=>"• "+i.name).join("\n")).join("\n\n");
+    try{await navigator.clipboard.writeText(txt);S.copied="pack";render();setTimeout(()=>{S.copied="";render();},2500);}
+    catch(err){sheetBody.innerHTML=`<div class="sheet-head"><h2>Copy this</h2><button class="iconbtn" type="button" data-close>Close</button></div><textarea rows="10" style="width:100%" readonly>${esc(txt)}</textarea>`;if(!sheet.open)sheet.showModal();sheetBody.querySelector("textarea").select();}
+    return;}
+
   if(t.dataset.anchor){S.anchor=t.dataset.anchor;S.seed=1;S.tab="style";if(sheet.open)sheet.close();render();window.scrollTo(0,0);return;}
   if(t.id==="changeAnchor"){S.anchor=null;render();window.scrollTo(0,0);return;}
   if(t.dataset.bsec){S.build.name=($("#bName")||{}).value||S.build.name;S.bOpen=S.bOpen||{};S.bOpen[t.dataset.bsec]=!S.bOpen[t.dataset.bsec];render();return;}
@@ -561,11 +690,14 @@ document.addEventListener("click",async e=>{
   if(t.id==="bClear"){S.build={itemIds:[],name:"",occasions:[]};render();return;}
   if(t.dataset.editb){const o=allOutfits().find(x=>x.id===t.dataset.editb);if(!o)return;if(sheet.open)sheet.close();S.build={itemIds:o.itemIds.slice(),name:o.name||"",occasions:(o.occasions||[]).slice(),editId:o.id};S.bOpen={};S.tab="build";render();window.scrollTo(0,0);return;}
   if(t.dataset.delb){const id=t.dataset.delb;if(mine.some(m=>m.id===id)){mine=mine.filter(m=>m.id!==id);LS.set("mine",mine);}else{hidden=hidden.concat(id);LS.set("hidden",hidden);}if(sheet.open)sheet.close();render();return;}
-  if(t.id==="bSave"){const name=$("#bName").value.trim()||"My outfit";const occ=[...document.querySelectorAll("input[data-bocc]:checked")].map(x=>x.value);
+  if(t.id==="bSave"&&S.build.tripLook){const tr=tripById(S.build.tripLook.tripId),l=tr&&tr.looks.find(x=>x.id===S.build.tripLook.lookId);if(l){l.itemIds=S.build.itemIds.slice();saveTrips(tr);}
+    S.build={itemIds:[],name:"",occasions:[]};S.tab="trips";S.tripId=tr&&tr.id;render();window.scrollTo(0,0);return;}
+  if(t.id==="bSave"){const name=$("#bName").value.trim()||"My outfit";const tripFor=S.build.tripId&&tripById(S.build.tripId);const occ=[...document.querySelectorAll("input[data-bocc]:checked")].map(x=>x.value);
     const ids=S.build.itemIds.slice(),eid=S.build.editId;const rec={id:eid&&mine.some(m=>m.id===eid)?eid:"m"+Date.now(),name,itemIds:ids,occasions:occ,why:"",built:true};
     if(eid&&!mine.some(m=>m.id===eid)){hidden=hidden.concat(eid);LS.set("hidden",hidden);}
     mine=mine.some(m=>m.id===rec.id)?mine.map(m=>m.id===rec.id?rec:m):mine.concat(rec);LS.set("mine",mine);
     const k=ids.slice().sort().join(",");if(!taste.liked.includes(k)){taste.liked.push(k);taste.n++;LS.set("taste",taste);}
+    if(tripFor){addLook(tripFor,ids,name==="My outfit"?"":name);S.build={itemIds:[],name:"",occasions:[]};S.tab="trips";S.tripId=tripFor.id;render();window.scrollTo(0,0);return;}
     S.build={itemIds:[],name:"",occasions:[]};S.openG=S.openG||{};S.openG.__built=true;S.tab="outfits";S.occ="all";render();window.scrollTo(0,0);return;}
 });
 
