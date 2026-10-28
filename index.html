@@ -137,6 +137,10 @@ dl.facts dt{color:var(--muted);font-weight:600}
 dl.facts dd{margin:0}
 .missing{margin:0;padding-left:18px;color:var(--muted);font-size:14px}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.iph{position:relative;padding-top:100%;background:var(--tile);border-radius:8px;overflow:hidden;cursor:zoom-in}
+.iph img{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:contain;display:block}
+.iph span{position:absolute;right:6px;bottom:6px;font-size:11px;background:rgba(0,0,0,.55);color:#fff;padding:2px 6px;border-radius:6px}
+.bigimg{display:block;width:100%;height:auto;max-height:78vh;object-fit:contain;border-radius:10px;background:var(--tile)}
 nav.tabs{position:fixed;left:0;right:0;bottom:0;z-index:6;background:var(--surface);border-top:1px solid var(--line);
   padding-bottom:max(8px, env(safe-area-inset-bottom, 0px));padding-top:6px;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));
   display:grid;grid-template-columns:repeat(5,1fr);gap:2px}
@@ -172,10 +176,10 @@ dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
 </nav>
 <dialog class="sheet" id="sheet"><div class="sheet-in" id="sheetBody"></div></dialog>
 
-<script src="style.js?v=202610281730"></script>
+<script src="style.js?v=202610281736"></script>
 <script>
 /* Home-screen apps hold on to old copies. On open, check version.txt; if a newer version is live, refresh the cached files and reload once. */
-const APPV="202610281730";
+const APPV="202610281736";
 fetch("version.txt",{cache:"no-store"}).then(r=>r.ok?r.text():"").then(v=>{v=v.trim();if(!v||v===APPV)return;
   let tried="";try{tried=sessionStorage.getItem("kw:upd")||"";}catch(e){}if(tried===v)return;try{sessionStorage.setItem("kw:upd",v);}catch(e){}
   Promise.all([fetch("index.html",{cache:"reload"}),fetch("./",{cache:"reload"})]).catch(()=>{}).then(()=>location.reload());}).catch(()=>{});
@@ -467,7 +471,7 @@ function vInspo(){
   <figure><img src="img/guides/hair-neckline.webp" alt="Hairstyles to suit each neckline" loading="lazy"><figcaption>Hair by neckline. Outfit cards now show a hair tip when the top has one of these necklines.</figcaption></figure></div>
   ${(()=>{const L=D.inspo.filter(p=>!inspoGone.includes(p.id));return `<h3 style="margin:6px 0 10px">Looks <span class="n">${L.length}</span></h3>`;})()}
   ${D.inspo.some(p=>!inspoGone.includes(p.id))?`<div class="ogrid">${D.inspo.filter(p=>!inspoGone.includes(p.id)).map(p=>`<article class="ocard"><div class="two" style="background:var(--tile);padding:6px">
-   <div class="tile" style="aspect-ratio:1/1"><img src="${esc(th(p.img))}" alt="Inspiration photo" loading="lazy"></div>${collage(p.itemIds||[])}</div>
+   <div role="button" tabindex="0" class="iph" data-bigimg="${esc(p.img)}" aria-label="See the whole photo"><img src="${esc(th(p.img))}" alt="Inspiration photo" loading="lazy"><span>Tap to enlarge</span></div>${collage(p.itemIds||[])}</div>
    <div class="meta"><div class="nm">${esc(p.name||"Inspired look")}</div><p class="why">${esc(p.summary||"")}</p>
    ${p.missing&&p.missing.length?`<div><strong style="font-size:13px">To get closer</strong><ul class="missing">${p.missing.map(m=>`<li>${esc(m)}</li>`).join("")}</ul></div>`:""}${(p.itemIds||[]).length?(()=>{const o=inspoOutfits().find(x=>x.inspoId===p.id);return o?`<div class="row">${inspoBtns(o,likedCores().has(ckey(o)))}${addBtn(p.itemIds,p.name)}</div>`:"";})():""}<div class="row"><button class="iconbtn" type="button" data-delinsp="${esc(p.id)}">Delete</button></div></div></article>`).join("")}</div>`
    :`<div class="empty"><strong>No inspiration looks yet</strong><span>Your first one will appear here.</span></div>`}
@@ -598,6 +602,7 @@ document.addEventListener("input",e=>{if(e.target.id==="tq"){S.tq=e.target.value
 document.addEventListener("click",async e=>{
   const t=e.target.closest("button,[role=button]");if(!t)return;
   if(t.dataset.tab){if(t.closest("nav.tabs")&&t.dataset.tab==="trips"&&S.tab==="trips"){S.tripId=null;S.tripEdit=false;}S.tab=t.dataset.tab;render();window.scrollTo(0,0);return;}
+  if(t.dataset.bigimg){sheetBody.innerHTML=`<div class="sheet-head"><h2>Inspiration photo</h2><button class="iconbtn" type="button" data-close>Close</button></div><img class="bigimg" src="${esc(t.dataset.bigimg)}" alt="Inspiration photo">`;if(!sheet.open)sheet.showModal();return;}
   if(t.dataset.delinsp){if(!t.dataset.armed){t.dataset.armed="1";t.textContent="Tap again to delete";return;}inspoGone=[...new Set(inspoGone.concat(t.dataset.delinsp))];LS.set("inspoGone",inspoGone);render();return;}
   if(t.dataset.restinsp){inspoGone=inspoGone.filter(x=>x!==t.dataset.restinsp);LS.set("inspoGone",inspoGone);render();return;}
   if(t.dataset.likeinsp){const o=inspoOutfits().find(x=>x.inspoId===t.dataset.likeinsp);if(!o)return;const k=ckey(o);
