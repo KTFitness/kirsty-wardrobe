@@ -176,18 +176,18 @@ dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
 </nav>
 <dialog class="sheet" id="sheet"><div class="sheet-in" id="sheetBody"></div></dialog>
 
-<script src="style.js?v=202610282133"></script>
+<script src="style.js?v=202610282136"></script>
 <script>
 /* Home-screen apps hold on to old copies. On open, check version.txt; if a newer version is live, refresh the cached files and reload once. */
-const APPV="202610282133";
+const APPV="202610282136";
 fetch("version.txt",{cache:"no-store"}).then(r=>r.ok?r.text():"").then(v=>{v=v.trim();if(!v||v===APPV)return;
   let tried="";try{tried=sessionStorage.getItem("kw:upd")||"";}catch(e){}if(tried===v)return;try{sessionStorage.setItem("kw:upd",v);}catch(e){}
   Promise.all([fetch("index.html",{cache:"reload"}),fetch("./",{cache:"reload"})]).catch(()=>{}).then(()=>location.reload());}).catch(()=>{});
 </script>
 <script>
-const CATS=[["tops","Tops"],["knitwear","Knitwear"],["dresses","Dresses"],["skirts","Skirts"],["jeans","Jeans"],["trousers","Trousers"],["shorts","Shorts"],["outerwear","Outerwear"],["shoes","Shoes"],["bags","Bags"],["accessories","Accessories"]];
+const CATS=[["tops","Tops"],["knitwear","Knitwear"],["dresses","Dresses"],["playsuits","Playsuits & jumpsuits"],["skirts","Skirts"],["jeans","Jeans"],["trousers","Trousers"],["shorts","Shorts"],["outerwear","Outerwear"],["shoes","Shoes"],["bags","Bags"],["accessories","Accessories"]];
 const CATNAME=Object.fromEntries(CATS);
-const dcat=i=>!i?"other":i.category==="trousers"&&/jean/.test((i.id+" "+i.name).toLowerCase())?"jeans":i.category==="knitwear"&&/cardigan/.test((i.id+" "+i.name).toLowerCase())?"outerwear":i.category;
+const dcat=i=>!i?"other":i.category==="trousers"&&/jean/.test((i.id+" "+i.name).toLowerCase())?"jeans":i.category==="knitwear"&&/cardigan/.test((i.id+" "+i.name).toLowerCase())?"outerwear":i.category==="dresses"&&/playsuit|jumpsuit/.test((i.id+" "+i.name).toLowerCase())?"playsuits":i.category;
 const SEASONS=["Spring","Summer","Autumn","Winter"];
 const TOPS=["tops","knitwear"],BOTTOMS=["skirts","trousers","shorts"];
 const D={items:[],outfits:[],inspo:[],occasions:[],updated:""};
