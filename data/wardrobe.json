@@ -6275,7 +6275,13 @@
     "Autumn"
    ],
    "notes": "Sleeveless, round neck, Mondrian-style panels, straight shift. Your photo.",
-   "img": "img/green-grey-black-colour-block-dress.webp"
+   "img": "img/green-grey-black-colour-block-dress.webp",
+   "_f": [
+    "green",
+    "grey",
+    "white",
+    "black"
+   ]
   },
   {
    "id": "harrywill-green-stripe-ciao-dress",
@@ -25041,7 +25047,7 @@
    "ip:basic-grey-marle-jumper|basic-white-sneakers": 0.36,
    "cp:grey+white": 2,
    "ip:basic-grey-marle-jumper|basic-tan-crossbody": 0.65,
-   "cp:grey+tan": 1.33,
+   "cp:grey+tan": 1.52,
    "it:green-wide-leg-cords": 2.27,
    "ip:basic-white-sneakers|green-wide-leg-cords": 0.91,
    "cp:mint+white": 2,
@@ -25095,7 +25101,7 @@
    "cp:mint+pink": 0.65,
    "cp:mint+red": 0.65,
    "ip:basic-tan-flats|pink-tulip-knit-vest": 0.65,
-   "cp:pink+tan": 3.45,
+   "cp:pink+tan": 3.36,
    "cp:red+tan": 4.82,
    "ip:basic-tan-crossbody|pink-tulip-knit-vest": 1.13,
    "it:three-of-something-cream-lace-top": 1.13,
@@ -25116,7 +25122,7 @@
    "ip:green-breton-long-sleeve|pink-cord-wide-leg-trousers": 0.36,
    "ip:adidas-gazelle-pink|green-breton-long-sleeve": 0.36,
    "ip:basic-tan-crossbody|green-breton-long-sleeve": 0.91,
-   "cp:green+tan": 2.27,
+   "cp:green+tan": 2.4,
    "it:pink-cord-wide-leg-trousers": 0.36,
    "ip:adidas-gazelle-pink|pink-cord-wide-leg-trousers": 0.36,
    "ip:basic-tan-crossbody|pink-cord-wide-leg-trousers": 0.36,
@@ -25997,10 +26003,9 @@
    "ip:brown-linen-mini-skirt|guns-n-roses-band-tee": 0.36,
    "ip:basic-white-flats|brown-linen-mini-skirt": 0.36,
    "it:brown-linen-mini-skirt": 0.36,
-   "ip:basic-tan-crossbody|pink-plum-orange-colour-block-dress": 0.36,
-   "cp:lilac+tan": 0.36,
-   "ip:basic-tan-flats|pink-plum-orange-colour-block-dress": 0.36,
-   "it:pink-plum-orange-colour-block-dress": 0.36,
+   "ip:basic-tan-crossbody|green-grey-black-colour-block-dress": 0.36,
+   "ip:basic-tan-flats|green-grey-black-colour-block-dress": 0.36,
+   "it:green-grey-black-colour-block-dress": 0.36,
    "ip:basic-black-flats|denim-daisy-button-shirt": 0.36,
    "ip:basic-black-flats|basic-white-wide-jeans": 0.36,
    "ip:basic-black-flats|black-knit-tank-swing-dress": 0.36,
