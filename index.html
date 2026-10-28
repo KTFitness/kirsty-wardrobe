@@ -176,10 +176,10 @@ dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
 </nav>
 <dialog class="sheet" id="sheet"><div class="sheet-in" id="sheetBody"></div></dialog>
 
-<script src="style.js?v=202610282033"></script>
+<script src="style.js?v=202610282037"></script>
 <script>
 /* Home-screen apps hold on to old copies. On open, check version.txt; if a newer version is live, refresh the cached files and reload once. */
-const APPV="202610282033";
+const APPV="202610282037";
 fetch("version.txt",{cache:"no-store"}).then(r=>r.ok?r.text():"").then(v=>{v=v.trim();if(!v||v===APPV)return;
   let tried="";try{tried=sessionStorage.getItem("kw:upd")||"";}catch(e){}if(tried===v)return;try{sessionStorage.setItem("kw:upd",v);}catch(e){}
   Promise.all([fetch("index.html",{cache:"reload"}),fetch("./",{cache:"reload"})]).catch(()=>{}).then(()=>location.reload());}).catch(()=>{});
@@ -201,7 +201,7 @@ const LS={get(k,d){try{const v=localStorage.getItem("kw:"+k);return v?JSON.parse
 let taste=LS.get("taste",{w:{},n:0,liked:[],disliked:[]}),useRules=LS.get("useRules",false);
 let fin=LS.get("finish",{}),unliked=LS.get("unliked",[]),favs=LS.get("favs",[]),hidden=LS.get("hidden",[]),mine=LS.get("mine",[]),gone=LS.get("gone",[]),inspoGone=LS.get("inspoGone",[]),inspoEdits=LS.get("inspoEdits",{});
 S.sort=LS.get("sort","colour");
-let trips=LS.get("trips",[]);
+let trips=LS.get("trips",[]);S.isort=LS.get("isort","new");
 function saveTrips(t){if(t)t.updated=Date.now();LS.set("trips",trips);}
 let IDX=new Map();
 function applyGone(){D.items=(D.all||[]).filter(i=>!gone.includes(i.id));IDX=new Map(D.items.map(i=>[i.id,i]));DV++;}
@@ -464,14 +464,32 @@ function devMerge(txt){const i=txt.indexOf("{");if(i<0)throw new Error("no data"
   const bt=trips.length;{const m=new Map(trips.map(t=>[t.id,t]));for(const t of (j.trips||[])){const c=m.get(t.id);if(!c||(t.updated||0)>(c.updated||0))m.set(t.id,t);}trips=[...m.values()];LS.set("trips",trips);}
   const added=taste.liked.length+taste.disliked.length-before,ad2=mine.length-bm;
   return `Merged. ${added} new rating${added===1?"":"s"} and ${ad2} new saved outfit${ad2===1?"":"s"} added to this device${trips.length>bt?`, plus ${trips.length-bt} trip${trips.length-bt===1?"":"s"}`:""}.`;}
+/* Inspo search: every word must appear in the look's name, description, wishlist or the names, colours and patterns of its pieces. */
+function inspoText(p){if(!p._t||p._tv!==JSON.stringify(inspoEdits[p.id]||"")){p._tv=JSON.stringify(inspoEdits[p.id]||"");p._t=[p.name,p.summary,(p.missing||[]).join(" "),iIds(p).map(byId).filter(Boolean).map(i=>[i.name,(i.colours||[]).join(" "),i.pattern||"",i.fabric||"",CATNAME[dcat(i)]||""].join(" ")).join(" ")].join(" ").toLowerCase();}return p._t;}
+function inspoList(){const q=(S.iq||"").toLowerCase().split(/[\s,]+/).filter(Boolean).map(w=>w.replace(/s$/,""));const f=S.ifilt||"all",LC=likedCores(),se=todaySeason();
+  let L=D.inspo.map((p,k)=>({p,k})).filter(({p})=>!inspoGone.includes(p.id));
+  if(q.length)L=L.filter(({p})=>{const t=inspoText(p);return q.every(w=>t.includes(w));});
+  if(f==="liked")L=L.filter(({p})=>{const o=inspoOutfits().find(x=>x.inspoId===p.id);return o&&LC.has(ckey(o));});
+  if(f==="mine")L=L.filter(({p})=>inspoEdits[p.id]);
+  if(f==="today")L=L.filter(({p})=>iIds(p).length&&fitsSeason({itemIds:iIds(p)},se));
+  if(f==="close")L=L.filter(({p})=>!(p.missing||[]).length);
+  const so=S.isort||"new";
+  L.sort((a,b)=>so==="old"?a.k-b.k:so==="az"?(a.p.name||"").localeCompare(b.p.name||""):so==="close"?((a.p.missing||[]).length-(b.p.missing||[]).length||b.k-a.k):b.k-a.k);
+  return L.map(x=>x.p);}
 function vInspo(){
   return `<h2>Inspiration</h2>
   <p class="lede">Send an inspiration photo to Claude in chat. It will recreate the look from your wardrobe and add it here, with a note of anything you'd need to buy.</p>
   <h3 style="margin:6px 0 10px">Style guides</h3>
   <div class="guides"><figure><img src="img/guides/jeans-length.webp" alt="Jeans length guide: which hem suits sneakers, heels, loafers, ballet flats and boots" loading="lazy"><figcaption>Jeans length. Style me now leans to loafers or flats with cropped trousers, and sneakers, heels or boots with full length. If an outfit breaks the rule, its card tells you what to change.</figcaption></figure>
   <figure><img src="img/guides/hair-neckline.webp" alt="Hairstyles to suit each neckline" loading="lazy"><figcaption>Hair by neckline. Outfit cards now show a hair tip when the top has one of these necklines.</figcaption></figure></div>
-  ${(()=>{const L=D.inspo.filter(p=>!inspoGone.includes(p.id));return `<h3 style="margin:6px 0 10px">Looks <span class="n">${L.length}</span></h3>`;})()}
-  ${D.inspo.some(p=>!inspoGone.includes(p.id))?`<div class="ogrid">${D.inspo.filter(p=>!inspoGone.includes(p.id)).map(p=>`<article class="ocard"><div class="two" style="background:var(--tile);padding:6px">
+  ${(()=>{const L=D.inspo.filter(p=>!inspoGone.includes(p.id));const F=inspoList();
+   const chip=(k,v)=>`<button class="chip" data-ifilt="${k}" aria-pressed="${(S.ifilt||"all")===k}">${v}</button>`;
+   return `<h3 style="margin:6px 0 10px">Looks <span class="n">${F.length===L.length?L.length:F.length+" of "+L.length}</span></h3>
+   <label class="pairwith" style="margin:0 0 8px"><span>Search looks</span><input id="iq" type="search" value="${esc(S.iq||"")}" placeholder="e.g. red skirt, blazer, Boden, linen" autocomplete="off"></label>
+   <div class="chips" role="group" aria-label="Show">${chip("all","All")}${chip("liked","Liked")}${chip("mine","Your versions")}${chip("today","Suits today")}${chip("close","Nothing to buy")}</div>
+   <label class="pairwith" style="margin:4px 0 12px"><span>Sort</span><select id="isort">${[["new","Newest first"],["old","Oldest first"],["close","Closest to your wardrobe"],["az","A to Z"]].map(([k,v])=>`<option value="${k}" ${(S.isort||"new")===k?"selected":""}>${v}</option>`).join("")}</select></label>
+   ${!F.length&&L.length?`<div class="empty"><strong>No looks match</strong><span>Try fewer words, or tap All.</span></div>`:""}`;})()}
+  ${inspoList().length?`<div class="ogrid">${inspoList().map(p=>`<article class="ocard"><div class="two" style="background:var(--tile);padding:6px">
    <div role="button" tabindex="0" class="iph" data-bigimg="${esc(p.img)}" aria-label="See the whole photo"><img src="${esc(th(p.img))}" alt="Inspiration photo" loading="lazy"><span>Tap to enlarge</span></div>${collage(iIds(p))}</div>
    <div class="meta"><div class="nm">${esc(p.name||"Inspired look")}</div>${inspoEdits[p.id]?`<div class="tags"><span class="tag mine">Your version</span></div>`:""}<p class="why">${esc(p.summary||"")}</p>
    ${p.missing&&p.missing.length?`<div><strong style="font-size:13px">To get closer</strong><ul class="missing">${p.missing.map(m=>`<li>${esc(m)}</li>`).join("")}</ul></div>`:""}${iIds(p).length?(()=>{const o=inspoOutfits().find(x=>x.inspoId===p.id);return o?`<div class="row">${inspoBtns(o,likedCores().has(ckey(o)))}${addBtn(iIds(p),p.name)}</div>`:"";})():""}<div class="row">${inspoEdits[p.id]?`<button class="iconbtn" type="button" data-resetinsp="${esc(p.id)}">Undo my changes</button>`:""}<button class="iconbtn" type="button" data-delinsp="${esc(p.id)}">Delete</button></div></div></article>`).join("")}</div>`
@@ -594,16 +612,17 @@ function copyText(o){
   return `Please add this outfit to my wardrobe app.\nName: ${o.name}\nItems: ${(o.itemIds||[]).map(id=>{const it=byId(id);return it?`${it.name} (${it.id})`:id;}).join(", ")}\nOccasions: ${(o.occasions||[]).join(", ")||"none set"}`;
 }
 
-document.addEventListener("change",e=>{const el=e.target;
+document.addEventListener("change",e=>{const el=e.target;if(el.id==="isort"){S.isort=el.value;LS.set("isort",S.isort);render();return;}
   if(el.dataset&&(el.dataset.tlabel||el.dataset.tday||el.dataset.tpack)){const tr=tripById(S.tripId);if(!tr)return;
     if(el.dataset.tpack){const s=new Set(tr.packed||[]);el.checked?s.add(el.dataset.tpack):s.delete(el.dataset.tpack);tr.packed=[...s];saveTrips(tr);return;}
     const l=tr.looks.find(x=>x.id===(el.dataset.tlabel||el.dataset.tday));if(!l)return;if(el.dataset.tlabel)l.label=el.value;else{l.day=el.value;}saveTrips(tr);if(el.dataset.tday)render();return;}
 if(e.target.id==="pairWith"){S.with=e.target.value||null;S.withFor=S.anchor;S.seed=1;S.shown=[];render();return;}if(e.target.id==="useRules"){useRules=e.target.checked;LS.set("useRules",useRules);render();}});
-document.addEventListener("input",e=>{if(e.target.id==="tq"){S.tq=e.target.value;const r=$("#tqRes");if(r)r.innerHTML=likedPicker();return;}if(e.target.id==="bq"){S.bq=e.target.value;const pos=e.target.selectionStart;render();const el=$("#bq");if(el){el.focus();el.setSelectionRange(pos,pos);}return;}if(e.target.id==="sq"){S.q=e.target.value;const pos=e.target.selectionStart;render();const el=$("#sq");if(el){el.focus();el.setSelectionRange(pos,pos);}}});
+document.addEventListener("input",e=>{if(e.target.id==="iq"){S.iq=e.target.value;clearTimeout(S.iqT);S.iqT=setTimeout(()=>{const cur=$("#iq"),pos=cur?cur.selectionStart:0;render();const el=$("#iq");if(el){el.focus();el.setSelectionRange(pos,pos);}},300);return;}if(e.target.id==="tq"){S.tq=e.target.value;const r=$("#tqRes");if(r)r.innerHTML=likedPicker();return;}if(e.target.id==="bq"){S.bq=e.target.value;const pos=e.target.selectionStart;render();const el=$("#bq");if(el){el.focus();el.setSelectionRange(pos,pos);}return;}if(e.target.id==="sq"){S.q=e.target.value;const pos=e.target.selectionStart;render();const el=$("#sq");if(el){el.focus();el.setSelectionRange(pos,pos);}}});
 document.addEventListener("click",async e=>{
   const t=e.target.closest("button,[role=button]");if(!t)return;
   if(t.dataset.tab){if(t.closest("nav.tabs")&&t.dataset.tab==="trips"&&S.tab==="trips"){S.tripId=null;S.tripEdit=false;}S.tab=t.dataset.tab;render();window.scrollTo(0,0);return;}
   if(t.dataset.bigimg){sheetBody.innerHTML=`<div class="sheet-head"><h2>Inspiration photo</h2><button class="iconbtn" type="button" data-close>Close</button></div><img class="bigimg" src="${esc(t.dataset.bigimg)}" alt="Inspiration photo">`;if(!sheet.open)sheet.showModal();return;}
+  if(t.dataset.ifilt){S.ifilt=t.dataset.ifilt;render();return;}
   if(t.dataset.delinsp){if(!t.dataset.armed){t.dataset.armed="1";t.textContent="Tap again to delete";return;}inspoGone=[...new Set(inspoGone.concat(t.dataset.delinsp))];LS.set("inspoGone",inspoGone);render();return;}
   if(t.dataset.restinsp){inspoGone=inspoGone.filter(x=>x!==t.dataset.restinsp);LS.set("inspoGone",inspoGone);render();return;}
   if(t.dataset.likeinsp){const o=inspoOutfits().find(x=>x.inspoId===t.dataset.likeinsp);if(!o)return;const k=ckey(o);
