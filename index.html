@@ -182,11 +182,11 @@ dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
 </nav>
 <dialog class="sheet" id="sheet"><div class="sheet-in" id="sheetBody"></div></dialog>
 
-<script src="style.js?v=202610291158"></script>
+<script src="style.js?v=202610291210"></script>
 <script>
 /* Home-screen apps hold on to old copies. On open, check version.txt; if a newer version is live, refresh the cached files and reload once. */
 if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{});});}
-const APPV="202610291158";
+const APPV="202610291210";
 fetch("version.txt",{cache:"no-store"}).then(r=>r.ok?r.text():"").then(v=>{v=v.trim();if(!v||v===APPV)return;
   let tried="";try{tried=sessionStorage.getItem("kw:upd")||"";}catch(e){}if(tried===v)return;try{sessionStorage.setItem("kw:upd",v);}catch(e){}
   Promise.all([fetch("index.html",{cache:"reload"}),fetch("./",{cache:"reload"})]).catch(()=>{}).then(()=>location.reload());}).catch(()=>{});
@@ -437,7 +437,7 @@ function vStyle(){
    <div style="display:grid;gap:6px;min-width:0"><span class="status">Styling</span><strong style="font-family:var(--display);font-weight:400;font-size:19px;line-height:1.2">${esc(a.name)}</strong>
    <div class="row"><button class="iconbtn" type="button" id="changeAnchor">Choose another piece</button></div></div></div>
   ${(()=>{const W=S.withFor===a.id&&S.with?byId(S.with):null;const pc=S.pwCat||"";const ad=dcat(a),GB=["skirts","jeans","trousers","shorts"],GT=["tops","knitwear"],GD=["dresses","playsuits"];
-   const hide=GB.includes(ad)?GB.concat(GD):GT.includes(ad)?GT.concat(GD):GD.includes(ad)?GB.concat(GD,/pinafore/i.test(a.name)?[]:GT):[];
+   const hide=GB.includes(ad)?GB.concat(GD):GT.includes(ad)?GT.concat(GD):GD.includes(ad)?GB.concat(GD,(a.overTop||/pinafore/i.test(a.name))?[]:GT):[];
    const cats=CATS.filter(([k])=>k!=="accessories"&&!hide.includes(k)&&D.items.some(i=>dcat(i)===k&&i.id!==a.id));
    const L=pc?arrange(D.items.filter(i=>dcat(i)===pc&&i.id!==a.id)):[];
    return `<div class="panel" style="gap:8px"><div class="row" style="justify-content:space-between;align-items:center"><strong style="font-size:15px">Pair it with</strong>${W?`<button class="iconbtn" type="button" data-pw="">Clear</button>`:""}</div>

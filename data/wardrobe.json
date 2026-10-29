@@ -1654,7 +1654,8 @@
     "Spring"
    ],
    "notes": "Short sleeves, collar, zip front, patch pockets, straight leg. Picture is a crop of the listing photo.",
-   "img": "img/denim-zip-jumpsuit.webp"
+   "img": "img/denim-zip-jumpsuit.webp",
+   "overTop": true
   },
   {
    "id": "cos-pink-funnel-neck-sweat",
@@ -5225,7 +5226,8 @@
    "_f": [
     "navy",
     "cream"
-   ]
+   ],
+   "overTop": true
   },
   {
    "id": "kivari-botanical-stamp-playsuit",
@@ -6198,7 +6200,8 @@
     "Winter"
    ],
    "notes": "Wide straps with buttons, front seam, curved pockets. Layer a tee, shirt or skivvy under it. Your photo.",
-   "img": "img/mid-wash-denim-pinafore-dress.webp"
+   "img": "img/mid-wash-denim-pinafore-dress.webp",
+   "overTop": true
   },
   {
    "id": "sussan-denim-shirt-dress",
@@ -6233,7 +6236,8 @@
     "Winter"
    ],
    "notes": "Square neck, wide straps with gold buttons, two patch pockets, front seam. Layer a tee or skivvy under it. Your photo.",
-   "img": "img/dark-denim-pinafore-shift-dress.webp"
+   "img": "img/dark-denim-pinafore-shift-dress.webp",
+   "overTop": true
   },
   {
    "id": "sussan-navy-stripe-drawstring-dress",

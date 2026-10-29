@@ -195,7 +195,7 @@ function suggest(anchor,items,ctx){
     for(const b of bottoms)cores.push([anchor,b]);
   }else if(["skirts","trousers","shorts"].includes(ac)){
     for(const t of tops)cores.push([t,anchor]);
-  }else if(ac==="dresses"&&/pinafore/.test(lc(anchor))){const U=tops.filter(t=>!sleeveless(t)&&!isVest(t));for(const t of U)cores.push([anchor,t]);if(cool||season==="Spring")for(const l of layers)cores.push([anchor,l]);
+  }else if(ac==="dresses"&&(anchor.overTop||/pinafore/.test(lc(anchor)))){const U=WI&&tops.includes(WI)?[WI]:tops.filter(t=>!sleeveless(t)&&!isVest(t)&&(!anchor.overTop||!/shirt|blouse|polo/i.test(t.name.replace(/T-shirt/ig,""))));for(const t of U)cores.push([anchor,t]);
   }else if(ac==="dresses"){cores.push([anchor]);if(cool||season==="Spring")for(const l of layers)cores.push([anchor,l]);
     if(!cool)for(const u of unders.filter(u=>/linen|tee/.test(u.id)))cores.push([anchor]);}
   else{
