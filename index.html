@@ -182,11 +182,11 @@ dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
 </nav>
 <dialog class="sheet" id="sheet"><div class="sheet-in" id="sheetBody"></div></dialog>
 
-<script src="style.js?v=202610291152"></script>
+<script src="style.js?v=202610291158"></script>
 <script>
 /* Home-screen apps hold on to old copies. On open, check version.txt; if a newer version is live, refresh the cached files and reload once. */
 if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{});});}
-const APPV="202610291152";
+const APPV="202610291158";
 fetch("version.txt",{cache:"no-store"}).then(r=>r.ok?r.text():"").then(v=>{v=v.trim();if(!v||v===APPV)return;
   let tried="";try{tried=sessionStorage.getItem("kw:upd")||"";}catch(e){}if(tried===v)return;try{sessionStorage.setItem("kw:upd",v);}catch(e){}
   Promise.all([fetch("index.html",{cache:"reload"}),fetch("./",{cache:"reload"})]).catch(()=>{}).then(()=>location.reload());}).catch(()=>{});
@@ -436,7 +436,14 @@ function vStyle(){
    <div class="tile" style="aspect-ratio:1/1;border-radius:10px"><img src="${esc(th(a.img))}" alt=""></div>
    <div style="display:grid;gap:6px;min-width:0"><span class="status">Styling</span><strong style="font-family:var(--display);font-weight:400;font-size:19px;line-height:1.2">${esc(a.name)}</strong>
    <div class="row"><button class="iconbtn" type="button" id="changeAnchor">Choose another piece</button></div></div></div>
-  <label class="pairwith"><span>Pair it with</span><select id="pairWith"><option value="">Anything (let the app choose)</option>${CATS.filter(([k])=>!["accessories"].includes(k)).map(([k,v])=>{const L=arrange(D.items.filter(i=>dcat(i)===k&&i.id!==a.id));return L.length?`<optgroup label="${esc(v)}">${L.map(i=>`<option value="${esc(i.id)}" ${S.withFor===a.id&&S.with===i.id?"selected":""}>${esc(i.name)}</option>`).join("")}</optgroup>`:"";}).join("")}</select></label>
+  ${(()=>{const W=S.withFor===a.id&&S.with?byId(S.with):null;const pc=S.pwCat||"";const ad=dcat(a),GB=["skirts","jeans","trousers","shorts"],GT=["tops","knitwear"],GD=["dresses","playsuits"];
+   const hide=GB.includes(ad)?GB.concat(GD):GT.includes(ad)?GT.concat(GD):GD.includes(ad)?GB.concat(GD,/pinafore/i.test(a.name)?[]:GT):[];
+   const cats=CATS.filter(([k])=>k!=="accessories"&&!hide.includes(k)&&D.items.some(i=>dcat(i)===k&&i.id!==a.id));
+   const L=pc?arrange(D.items.filter(i=>dcat(i)===pc&&i.id!==a.id)):[];
+   return `<div class="panel" style="gap:8px"><div class="row" style="justify-content:space-between;align-items:center"><strong style="font-size:15px">Pair it with</strong>${W?`<button class="iconbtn" type="button" data-pw="">Clear</button>`:""}</div>
+    ${W?`<div class="row" style="align-items:center;gap:10px"><div class="tile" style="width:64px;aspect-ratio:1/1;border-radius:8px"><img src="${esc(th(W.img))}" alt=""></div><span style="font-size:14px">${esc(W.name)}</span></div>`:`<p class="lede" style="margin:0;font-size:14px">Pick a type, then tap a piece to build the ideas around both. Or leave it and the app chooses.</p>`}
+    <div class="chips" role="group" aria-label="Pair with type">${cats.map(([k,v])=>`<button class="chip" type="button" data-pwcat="${k}" aria-pressed="${pc===k}">${v}</button>`).join("")}</div>
+    ${pc?`<div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:8px">${L.map(i=>`<button type="button" class="card pick" data-pw="${esc(i.id)}" aria-pressed="${!!(W&&W.id===i.id)}"><div class="tile"><img src="${esc(th(i.img))}" alt="${esc(i.name)}" loading="lazy"></div><div class="meta"><span class="ct">${esc(i.name)}</span></div></button>`).join("")}</div>`:""}</div>`;})()}
   <div class="chips" role="group" aria-label="Occasion">${["Everyday","Lunch out","Dinner out","Smart casual","Travel","Holiday","Special occasion"].map(o=>`<button class="chip" data-socc="${o}" aria-pressed="${S.sOcc===o}">${o}</button>`).join("")}</div>
   ${!S.sSeason&&S.wx?wxLine():""}
   <div class="chips" role="group" aria-label="Season">${SEASONS.map(x=>`<button class="chip" data-sseason="${x}" aria-pressed="${season===x}">${x}${x===todaySeason()?(S.wx?" (today)":" (now)"):""}</button>`).join("")}</div>
@@ -656,6 +663,8 @@ document.addEventListener("click",async e=>{
   if(t.dataset.wgot){const w=wish.find(x=>x.id===t.dataset.wgot);if(w){w.got=!w.got;w.updated=Date.now();LS.set("wish",wish);}render();return;}
   if(t.dataset.wdel){if(!t.dataset.armed){t.dataset.armed="1";t.textContent="Tap again to delete";return;}wish=wish.filter(x=>x.id!==t.dataset.wdel);LS.set("wish",wish);render();return;}
   if(t.dataset.wfrom){const p=D.inspo.find(x=>x.id===t.dataset.wfrom);wish.push({id:"w"+Date.now(),title:t.dataset.wt,note:"",link:"",tag:"Want",from:p?p.name:"",got:false,updated:Date.now()});LS.set("wish",wish);t.outerHTML=`<span class="wadd" style="cursor:default">✓ on wishlist</span>`;return;}
+  if(t.dataset.pwcat){S.pwCat=S.pwCat===t.dataset.pwcat?"":t.dataset.pwcat;render();return;}
+  if(t.dataset.pw!==undefined){S.with=t.dataset.pw||null;S.withFor=S.anchor;S.seed=1;S.shown=[];S.pwCat="";render();const g=document.querySelector(".ogrid");if(g&&S.with)g.scrollIntoView({behavior:"smooth",block:"start"});return;}
   if(t.dataset.ifilt){S.ifilt=t.dataset.ifilt;render();return;}
   if(t.dataset.delinsp){if(!t.dataset.armed){t.dataset.armed="1";t.textContent="Tap again to delete";return;}inspoGone=[...new Set(inspoGone.concat(t.dataset.delinsp))];LS.set("inspoGone",inspoGone);render();return;}
   if(t.dataset.restinsp){inspoGone=inspoGone.filter(x=>x!==t.dataset.restinsp);LS.set("inspoGone",inspoGone);render();return;}
@@ -689,7 +698,7 @@ document.addEventListener("click",async e=>{
     catch(err){sheetBody.innerHTML=`<div class="sheet-head"><h2>Copy this</h2><button class="iconbtn" type="button" data-close>Close</button></div><textarea rows="10" style="width:100%" readonly>${esc(txt)}</textarea>`;if(!sheet.open)sheet.showModal();sheetBody.querySelector("textarea").select();}
     return;}
 
-  if(t.dataset.anchor){S.anchor=t.dataset.anchor;S.seed=1;S.tab="style";if(sheet.open)sheet.close();render();window.scrollTo(0,0);return;}
+  if(t.dataset.anchor){S.anchor=t.dataset.anchor;S.pwCat="";S.seed=1;S.tab="style";if(sheet.open)sheet.close();render();window.scrollTo(0,0);return;}
   if(t.id==="changeAnchor"){S.anchor=null;render();window.scrollTo(0,0);return;}
   if(t.dataset.bsec){S.build.name=($("#bName")||{}).value||S.build.name;S.bOpen=S.bOpen||{};S.bOpen[t.dataset.bsec]=!S.bOpen[t.dataset.bsec];render();return;}
   if(t.dataset.pickcat){S.pickCat=t.dataset.pickcat;render();return;}
