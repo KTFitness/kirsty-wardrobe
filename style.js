@@ -306,7 +306,7 @@ const SUBS={
  dresses:[["tee","T-shirt & tank dresses"],["shift","Shift & swing dresses"],["shirt","Shirt & button dresses"],["pinafore","Pinafores"],["dressy","Dressy"],["maxi","Maxi"]],
  playsuits:[["playsuit","Playsuits"],["jumpsuit","Jumpsuits"]],
  shoes:[["sneakers","Sneakers"],["flats","Flats & loafers"],["sandals","Sandals & slides"],["heels","Heels"],["boots","Boots"]],
- bags:[["bags","Bags"]],accessories:[["belts","Belts"],["other","Other"]]};
+ bags:[["crossbody","Crossbody"],["clutch","Clutches"],["tote","Totes & shoulder bags"]],accessories:[["belts","Belts"],["other","Other"]]};
 function subOf(i,dc){if(i.sub)return i.sub;const n=(i.name+" "+(i.notes||"")+" "+(i.shape||"")).toLowerCase(),nm=i.name.toLowerCase();
  const sl=/sleeveless|tank|singlet|cami\b|halter|strappy|shell|racer|crop top|bandeau|tube/.test(n)&&!/long sleeve|long-sleeve|short sleeve/.test(nm);
  const ls=/long-sleeve|long sleeve|long sleeves|turtleneck|funnel|mock-neck long|balloon|blouson|three-quarter|3\/4|batwing|cuffed sleeves|roll-tab/.test(n);
@@ -322,7 +322,20 @@ function subOf(i,dc){if(i.sub)return i.sub;const n=(i.name+" "+(i.notes||"")+" "
  case "playsuits":return /jumpsuit/.test(nm)?"jumpsuit":"playsuit";
  case "shoes":{if(/sneaker|samba|gazelle|adidas/.test(n))return "sneakers";if(/boot|doc/.test(nm))return "boots";if(/heel|mule/.test(nm)&&!/flat/.test(nm))return "heels";if(/slide|sandal|thong/.test(nm))return "sandals";return "flats";}
  case "accessories":return /belt/.test(nm)?"belts":"other";
+ case "bags":return /clutch/.test(nm)?"clutch":/tote|shoulder|bucket/.test(nm)?"tote":"crossbody";
  default:return SUBS[dc]?SUBS[dc][0][0]:"other";}}
 
-window.Stylist={subOf,SUBS,busyClash,addLayer,finish,coreKey:ps=>ps.filter(p=>!["shoes","bags","accessories"].includes(p.category)).map(p=>p.id).sort().join(","),suggest,features,families,pkind,formality,hemTip,hairTip};
+/* Second ways to filter some categories (fabric, sleeve, length, heel). Each returns a key for a piece; an item's own field overrides. */
+function txt(i){return (i.name+" "+(i.notes||"")+" "+(i.fabric||"")+" "+(i.pattern||"")+" "+(i.shape||"")).toLowerCase();}
+const FACETS={
+ tops:[["fabric","Fabric",[["knit","Knit & rib"],["linen","Linen"],["jersey","Jersey & T-shirt"],["cotton","Woven cotton"],["special","Lace, sequin & silk"]],i=>{if(i.fabricKind)return i.fabricKind;const t=txt(i);
+   if(/lace(?!-up)|sequin|silk|satin|velvet|tulle/.test(t))return "special";if(/linen/.test(t))return "linen";if(/knit|rib\b|fine rib|crochet|pointelle|fleece|heattech/.test(t))return "knit";
+   if(/shirt\b|blouse|gingham|smocked|shell|ruffle|seersucker|broderie|cutwork|poplin|voile|denim|chambray|twill|popover/.test(t)&&!/t-shirt/.test(t))return "cotton";return "jersey";}]],
+ dresses:[["sleeve","Sleeves",[["sleeveless","Sleeveless"],["short","Short sleeve"],["long","Long & 3/4 sleeve"]],i=>{if(i.sleeve)return i.sleeve;const t=txt(i);
+   if(/long sleeve|long-sleeve|long sleeves|three-quarter|3\/4|turtleneck|funnel/.test(t))return "long";if(/sleeveless|tank|halter|strap|one-shoulder|pinafore|cami/.test(t))return "sleeveless";return "short";}],
+  ["length","Length",[["short","Knee or above"],["midi","Midi"],["maxi","Maxi"]],i=>{if(i.length)return i.length;const t=txt(i);if(/maxi/.test(t))return "maxi";if(/midi/.test(t))return "midi";return "short";}]],
+ shoes:[["heel","Heel",[["flat","Flat"],["low","Low & kitten"],["mid","Mid & block"],["high","High"]],i=>{if(i.heel)return i.heel;const t=txt(i);
+   if(/kitten|low-heel|low heel|low stacked/.test(t))return "low";if(/block|square-toe heeled|mid block/.test(t))return "mid";if(/heel|stiletto|slim-heel|pointed heeled/.test(t)&&!/flat/.test(i.name.toLowerCase()))return "high";return "flat";}]]};
+
+window.Stylist={FACETS,subOf,SUBS,busyClash,addLayer,finish,coreKey:ps=>ps.filter(p=>!["shoes","bags","accessories"].includes(p.category)).map(p=>p.id).sort().join(","),suggest,features,families,pkind,formality,hemTip,hairTip};
 })();

@@ -3735,7 +3735,8 @@
    "shape": "kitten",
    "_f": [
     "black"
-   ]
+   ],
+   "heel": "mid"
   },
   {
    "id": "basic-tan-kitten-heels",
@@ -4069,7 +4070,8 @@
    "shape": "loafer",
    "_f": [
     "black"
-   ]
+   ],
+   "heel": "flat"
   },
   {
    "id": "basic-red-ballet-flats",
@@ -5658,7 +5660,8 @@
    "img": "img/resort-white-embroidered-blouse.webp",
    "_f": [
     "white"
-   ]
+   ],
+   "fabricKind": "cotton"
   },
   {
    "id": "red-silk-heeled-mules",

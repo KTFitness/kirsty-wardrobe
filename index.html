@@ -184,11 +184,11 @@ dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
 </nav>
 <dialog class="sheet" id="sheet"><div class="sheet-in" id="sheetBody"></div></dialog>
 
-<script src="style.js?v=202610291240"></script>
+<script src="style.js?v=202610291257"></script>
 <script>
 /* Home-screen apps hold on to old copies. On open, check version.txt; if a newer version is live, refresh the cached files and reload once. */
 if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{});});}
-const APPV="202610291240";
+const APPV="202610291257";
 fetch("version.txt",{cache:"no-store"}).then(r=>r.ok?r.text():"").then(v=>{v=v.trim();if(!v||v===APPV)return;
   let tried="";try{tried=sessionStorage.getItem("kw:upd")||"";}catch(e){}if(tried===v)return;try{sessionStorage.setItem("kw:upd",v);}catch(e){}
   Promise.all([fetch("index.html",{cache:"reload"}),fetch("./",{cache:"reload"})]).catch(()=>{}).then(()=>location.reload());}).catch(()=>{});
@@ -204,6 +204,10 @@ const subLabel=i=>{const r=subList(dcat(i)).find(x=>x[0]===subKey(i));return r?r
 const subIdx=i=>{const L=subList(dcat(i));const k=L.findIndex(x=>x[0]===subKey(i));return k<0?99:k;};
 function subChips(cat,items,cur,attr){const L=subList(cat).map(([k,v])=>[k,v,items.filter(i=>subKey(i)===k).length]).filter(x=>x[2]);if(L.length<2)return "";
   return `<div class="chips subchips" role="group" aria-label="Kind"><button class="chip" type="button" ${attr}="" aria-pressed="${!cur}">All kinds</button>${L.map(([k,v,n])=>`<button class="chip" type="button" ${attr}="${k}" aria-pressed="${cur===k}">${esc(v)}<span class="n">${n}</span></button>`).join("")}</div>`;}
+const facetsOf=c=>(window.Stylist&&Stylist.FACETS[c])||[];
+function facetFilter(cat,items,st){const F=facetsOf(cat);return items.filter(i=>F.every(([k,,,fn])=>!st[k]||fn(i)===st[k]));}
+function facetRows(cat,items,st,attr){return facetsOf(cat).map(([k,lab,opts,fn])=>{const others=facetFilter(cat,items,{...st,[k]:""});const L=opts.map(([o,v])=>[o,v,others.filter(i=>fn(i)===o).length]).filter(x=>x[2]);if(L.length<2)return "";
+  return `<div class="chips subchips" role="group" aria-label="${esc(lab)}"><span class="ct" style="align-self:center;margin-right:4px;white-space:nowrap">${esc(lab)}</span><button class="chip" type="button" ${attr}="${k}:" aria-pressed="${!st[k]}">Any</button>${L.map(([o,v,n])=>`<button class="chip" type="button" ${attr}="${k}:${o}" aria-pressed="${st[k]===o}">${esc(v)}<span class="n">${n}</span></button>`).join("")}</div>`;}).join("");}
 function subGroups(items,cell,gridStyle){const groups=[];for(const i of items){const lab=subLabel(i)||"Other";let g=groups.find(x=>x[0]===lab);if(!g){g=[lab,[]];groups.push(g);}g[1].push(i);}
   if(groups.length<2)return `<div class="grid" style="${gridStyle}">${items.map(cell).join("")}</div>`;
   return groups.map(([lab,is])=>`<div class="subhead">${esc(lab)} <span class="n">${is.length}</span></div><div class="grid" style="${gridStyle}">${is.map(cell).join("")}</div>`).join("");}
@@ -326,7 +330,7 @@ function vWardrobe(){
   if(!D.items.length)return `<h2>Your clothes</h2><div class="empty"><strong>No clothes yet</strong><span>Send photos to Claude in chat and they'll appear here.</span></div>`;
   const own=D.items,nb=D.items.filter(i=>i.basic).length;
   const counts={};own.forEach(i=>counts[dcat(i)]=(counts[dcat(i)]||0)+1);
-  const catItems=S.cat==="basics"?D.items.filter(i=>i.basic):own.filter(i=>S.cat==="all"||dcat(i)===S.cat);const list=arrange(S.sub&&S.cat!=="all"&&S.cat!=="basics"?catItems.filter(i=>subKey(i)===S.sub):catItems);
+  const catItems=S.cat==="basics"?D.items.filter(i=>i.basic):own.filter(i=>S.cat==="all"||dcat(i)===S.cat);S.wfac=S.wfac||{};const subItems=S.sub&&S.cat!=="all"&&S.cat!=="basics"?catItems.filter(i=>subKey(i)===S.sub):catItems;const list=arrange(S.cat!=="all"&&S.cat!=="basics"?facetFilter(S.cat,subItems,S.wfac):subItems);
   const lenLabel=S.cat==="tops"||S.cat==="knitwear"||S.cat==="outerwear"?"Sleeve length":S.cat==="trousers"||S.cat==="skirts"||S.cat==="shorts"||S.cat==="dresses"?"Length":"Length";
   const goneItems=(D.all||[]).filter(i=>gone.includes(i.id));
   const goneBox=goneItems.length?`<div class="panel"><div class="status">${goneItems.length} item${goneItems.length===1?"":"s"} removed on this phone. Copy the list and paste it into chat so Claude removes ${goneItems.length===1?"it":"them"} for good.</div>
@@ -335,7 +339,7 @@ function vWardrobe(){
   return `<h2>Your clothes</h2>${wishPanel()}${goneBox}
   <div class="chips" role="group" aria-label="Filter by type"><button class="chip" data-cat="all" aria-pressed="${S.cat==="all"}">All<span class="n">${own.length}</span></button>
   ${CATS.filter(([k])=>counts[k]).map(([k,v])=>`<button class="chip" data-cat="${k}" aria-pressed="${S.cat===k}">${v}<span class="n">${counts[k]}</span></button>`).join("")}${nb?`<button class="chip" data-cat="basics" aria-pressed="${S.cat==="basics"}">Basics<span class="n">${nb}</span></button>`:""}</div>
-  ${S.cat!=="all"&&S.cat!=="basics"?subChips(S.cat,catItems,S.sub,"data-wsub"):""}
+  ${S.cat!=="all"&&S.cat!=="basics"?subChips(S.cat,catItems,S.sub,"data-wsub")+facetRows(S.cat,subItems,S.wfac,"data-wfac"):""}
   <div class="chips" role="group" aria-label="Arrange by"><span class="ct" style="align-self:center;margin-right:4px;white-space:nowrap">Sort</span>${[["colour","Colour"],["length",lenLabel],["pattern","Pattern"]].map(([k,v])=>`<button class="chip" data-sort="${k}" aria-pressed="${(S.sort||"colour")===k}">${v}</button>`).join("")}</div>
   <div class="grid">${list.map(i=>`<button type="button" class="card" data-item="${esc(i.id)}"><div class="tile"><img src="${esc(th(i.img))}" alt="" loading="lazy"></div>
   <div class="meta"><span class="nm">${esc(i.name)}</span><span class="ct">${esc(subLabel(i)||CATNAME[dcat(i)]||i.category)}</span></div></button>`).join("")}</div>`;
@@ -406,14 +410,14 @@ function vBuild(){
 }
 function pickGrid(){
   const q=S.q.trim().toLowerCase();
-  const own0=D.items.filter(i=>(S.pickCat==="basics"?i.basic:!i.basic)&&(S.pickCat==="all"||S.pickCat==="basics"||dcat(i)===S.pickCat)&&(!q||(i.name+" "+(i.colours||[]).join(" ")+" "+(i.pattern||"")+" "+subLabel(i)).toLowerCase().includes(q)));const own=arrange(S.pickSub&&S.pickCat!=="all"&&S.pickCat!=="basics"?own0.filter(i=>subKey(i)===S.pickSub):own0);
+  const own0=D.items.filter(i=>(S.pickCat==="basics"?i.basic:!i.basic)&&(S.pickCat==="all"||S.pickCat==="basics"||dcat(i)===S.pickCat)&&(!q||(i.name+" "+(i.colours||[]).join(" ")+" "+(i.pattern||"")+" "+subLabel(i)).toLowerCase().includes(q)));S.pfac=S.pfac||{};const own1=S.pickSub&&S.pickCat!=="all"&&S.pickCat!=="basics"?own0.filter(i=>subKey(i)===S.pickSub):own0;const own=arrange(S.pickCat!=="all"&&S.pickCat!=="basics"?facetFilter(S.pickCat,own1,S.pfac):own1);
   const counts={};D.items.filter(i=>!i.basic).forEach(i=>counts[dcat(i)]=(counts[dcat(i)]||0)+1);
   return `<h2>Style me</h2><p class="lede">Pick one piece and the app puts outfits together around it.</p>
   <label class="f">Search<input id="sq" type="search" value="${esc(S.q)}" placeholder="e.g. green, stripe, skirt"></label>
   <div class="chips" role="group" aria-label="Filter by type"><button class="chip" data-pickcat="all" aria-pressed="${S.pickCat==="all"}">All</button>
   ${CATS.filter(([k])=>counts[k]).map(([k,v])=>`<button class="chip" data-pickcat="${k}" aria-pressed="${S.pickCat===k}">${v}</button>`).join("")}
   <button class="chip" data-pickcat="basics" aria-pressed="${S.pickCat==="basics"}">Basics</button></div>
-  ${S.pickCat!=="all"&&S.pickCat!=="basics"?subChips(S.pickCat,own0,S.pickSub,"data-psub"):""}
+  ${S.pickCat!=="all"&&S.pickCat!=="basics"?subChips(S.pickCat,own0,S.pickSub,"data-psub")+facetRows(S.pickCat,own1,S.pfac,"data-pfac"):""}
   ${own.length?`<div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:9px">${own.map(i=>`<button type="button" class="card" data-anchor="${esc(i.id)}"><div class="tile"><img src="${esc(th(i.img))}" alt="" loading="lazy"></div><div class="meta"><span class="nm" style="font-size:13px">${esc(i.name)}</span></div></button>`).join("")}</div>`:`<div class="empty"><span>Nothing matches that search.</span></div>`}`;
 }
 /* Single pieces are never marked down on their own: a Not for me counts against the combination
@@ -509,7 +513,7 @@ function devMerge(txt){const i=txt.indexOf("{");if(i<0)throw new Error("no data"
   const added=taste.liked.length+taste.disliked.length-before,ad2=mine.length-bm;
   return `Merged. ${added} new rating${added===1?"":"s"} and ${ad2} new saved outfit${ad2===1?"":"s"} added to this device${trips.length>bt?`, plus ${trips.length-bt} trip${trips.length-bt===1?"":"s"}`:""}.`;}
 /* Inspo search: every word must appear in the look's name, description, wishlist or the names, colours and patterns of its pieces. */
-function inspoText(p){if(!p._t||p._tv!==JSON.stringify(inspoEdits[p.id]||"")){p._tv=JSON.stringify(inspoEdits[p.id]||"");p._t=[p.name,p.summary,(p.missing||[]).join(" "),iIds(p).map(byId).filter(Boolean).map(i=>[i.name,subLabel(i),(i.colours||[]).join(" "),i.pattern||"",i.fabric||"",CATNAME[dcat(i)]||""].join(" ")).join(" ")].join(" ").toLowerCase();}return p._t;}
+function inspoText(p){if(!p._t||p._tv!==JSON.stringify(inspoEdits[p.id]||"")){p._tv=JSON.stringify(inspoEdits[p.id]||"");p._t=[p.name,p.summary,(p.missing||[]).join(" "),iIds(p).map(byId).filter(Boolean).map(i=>[i.name,subLabel(i),facetsOf(dcat(i)).map(([k,l,o,fn])=>(o.find(x=>x[0]===fn(i))||[])[1]||"").join(" "),(i.colours||[]).join(" "),i.pattern||"",i.fabric||"",CATNAME[dcat(i)]||""].join(" ")).join(" ")].join(" ").toLowerCase();}return p._t;}
 function inspoList(){const q=(S.iq||"").toLowerCase().split(/[\s,]+/).filter(Boolean).map(w=>w.replace(/s$/,""));const f=S.ifilt||"all",LC=likedCores(),se=todaySeason();
   let L=D.inspo.map((p,k)=>({p,k})).filter(({p})=>!inspoGone.includes(p.id));
   if(q.length)L=L.filter(({p})=>{const t=inspoText(p);return q.every(w=>t.includes(w));});
@@ -631,7 +635,7 @@ function openItem(id){const it=byId(id);if(!it)return;
   const inO=allOutfits().filter(o=>(o.itemIds||[]).includes(id));
   sheetBody.innerHTML=`<div class="sheet-head"><h2>${esc(it.name)}</h2><button class="iconbtn" type="button" data-close>Close</button></div>
   <div class="preview"><img src="${esc(it.img)}" alt="${esc(it.name)}"></div>
-  <dl class="facts"><dt>Type</dt><dd>${esc((CATNAME[dcat(it)]||it.category)+(subLabel(it)&&subList(dcat(it)).length>1?" · "+subLabel(it):""))}</dd>
+  <dl class="facts">${facetsOf(dcat(it)).map(([k,lab,opts,fn])=>{const o=opts.find(x=>x[0]===fn(it));return o?`<dt>${esc(lab)}</dt><dd>${esc(o[1])}</dd>`:"";}).join("")}<dt>Type</dt><dd>${esc((CATNAME[dcat(it)]||it.category)+(subLabel(it)&&subList(dcat(it)).length>1?" · "+subLabel(it):""))}</dd>
   ${it.colours&&it.colours.length?`<dt>Colours</dt><dd>${esc(it.colours.join(", "))}</dd>`:""}
   ${it.pattern?`<dt>Pattern</dt><dd>${esc(it.pattern)}</dd>`:""}${it.fabric?`<dt>Fabric</dt><dd>${esc(it.fabric)}</dd>`:""}
   ${it.seasons&&it.seasons.length?`<dt>Seasons</dt><dd>${esc(it.seasons.join(", "))}</dd>`:""}${it.notes?`<dt>Notes</dt><dd>${esc(it.notes)}</dd>`:""}</dl>
@@ -714,7 +718,7 @@ document.addEventListener("click",async e=>{
   if(t.dataset.anchor){S.anchor=t.dataset.anchor;S.pwCat="";S.seed=1;S.tab="style";if(sheet.open)sheet.close();render();window.scrollTo(0,0);return;}
   if(t.id==="changeAnchor"){S.anchor=null;render();window.scrollTo(0,0);return;}
   if(t.dataset.bsec){S.build.name=($("#bName")||{}).value||S.build.name;S.bOpen=S.bOpen||{};S.bOpen[t.dataset.bsec]=!S.bOpen[t.dataset.bsec];render();return;}
-  if(t.dataset.pickcat){S.pickCat=t.dataset.pickcat;S.pickSub="";render();return;}
+  if(t.dataset.pickcat){S.pickCat=t.dataset.pickcat;S.pickSub="";S.pfac={};render();return;}
   if(t.dataset.psub!==undefined){S.pickSub=t.dataset.psub;render();return;}
   if(t.dataset.socc){S.sOcc=t.dataset.socc;S.seed=1;render();return;}
   if(t.dataset.sseason){S.sSeason=(S.wx&&t.dataset.sseason===todaySeason())?null:t.dataset.sseason;S.seed=1;render();return;}
@@ -749,7 +753,9 @@ document.addEventListener("click",async e=>{
     try{await navigator.clipboard.writeText(txt);S.copied=o.id;render();setTimeout(()=>{S.copied="";render();},2500);}
     catch(err){sheetBody.innerHTML=`<div class="sheet-head"><h2>Copy this</h2><button class="iconbtn" type="button" data-close>Close</button></div><textarea rows="6" style="width:100%" readonly>${esc(txt)}</textarea>`;if(!sheet.open)sheet.showModal();sheetBody.querySelector("textarea").select();}
     return;}
-  if(t.dataset.cat){S.cat=t.dataset.cat;S.sub="";render();return;}
+  if(t.dataset.cat){S.cat=t.dataset.cat;S.sub="";S.wfac={};render();return;}
+  if(t.dataset.wfac!==undefined){const [k,v]=t.dataset.wfac.split(":");S.wfac={...(S.wfac||{}),[k]:v};render();return;}
+  if(t.dataset.pfac!==undefined){const [k,v]=t.dataset.pfac.split(":");S.pfac={...(S.pfac||{}),[k]:v};render();return;}
   if(t.dataset.wsub!==undefined){S.sub=t.dataset.wsub;render();return;}
   if(t.dataset.sort){S.sort=t.dataset.sort;LS.set("sort",S.sort);render();return;}
   if(t.dataset.occ){S.occ=t.dataset.occ;render();return;}
