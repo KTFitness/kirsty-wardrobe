@@ -136,6 +136,9 @@ dl.facts{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:0;font-
 dl.facts dt{color:var(--muted);font-weight:600}
 dl.facts dd{margin:0}
 .missing{margin:0;padding-left:18px;color:var(--muted);font-size:14px}
+.missing li{margin:2px 0}.wadd{border:none;background:none;color:var(--accent);font:inherit;font-size:13px;font-weight:600;cursor:pointer;padding:0 0 0 6px}
+.wish{display:grid;gap:8px;margin:0;padding:0;list-style:none}.wish li{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px;display:grid;gap:4px}
+.wish .wt{font-weight:600}.wish .wn{color:var(--muted);font-size:14px;white-space:pre-wrap}.wish.got .wt{text-decoration:line-through;color:var(--muted)}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:6px}
 .iph{position:relative;padding-top:100%;background:var(--tile);border-radius:8px;overflow:hidden;cursor:zoom-in}
 .iph img{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:contain;display:block}
@@ -176,10 +179,10 @@ dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
 </nav>
 <dialog class="sheet" id="sheet"><div class="sheet-in" id="sheetBody"></div></dialog>
 
-<script src="style.js?v=202610291054"></script>
+<script src="style.js?v=202610291106"></script>
 <script>
 /* Home-screen apps hold on to old copies. On open, check version.txt; if a newer version is live, refresh the cached files and reload once. */
-const APPV="202610291054";
+const APPV="202610291106";
 fetch("version.txt",{cache:"no-store"}).then(r=>r.ok?r.text():"").then(v=>{v=v.trim();if(!v||v===APPV)return;
   let tried="";try{tried=sessionStorage.getItem("kw:upd")||"";}catch(e){}if(tried===v)return;try{sessionStorage.setItem("kw:upd",v);}catch(e){}
   Promise.all([fetch("index.html",{cache:"reload"}),fetch("./",{cache:"reload"})]).catch(()=>{}).then(()=>location.reload());}).catch(()=>{});
@@ -199,7 +202,7 @@ const memo=(fn)=>{let k=-1,v;return ()=>{const sg=DV+"|"+D.items.length+"|"+D.ou
 const LS={get(k,d){try{const v=localStorage.getItem("kw:"+k);return v?JSON.parse(v):d;}catch(e){return d;}},
   set(k,v){DV++;try{localStorage.setItem("kw:"+k,JSON.stringify(v));}catch(e){}}};
 let taste=LS.get("taste",{w:{},n:0,liked:[],disliked:[]}),useRules=LS.get("useRules",false);
-let fin=LS.get("finish",{}),unliked=LS.get("unliked",[]),favs=LS.get("favs",[]),hidden=LS.get("hidden",[]),mine=LS.get("mine",[]),gone=LS.get("gone",[]),inspoGone=LS.get("inspoGone",[]),inspoEdits=LS.get("inspoEdits",{});
+let fin=LS.get("finish",{}),unliked=LS.get("unliked",[]),favs=LS.get("favs",[]),hidden=LS.get("hidden",[]),mine=LS.get("mine",[]),gone=LS.get("gone",[]),inspoGone=LS.get("inspoGone",[]),inspoEdits=LS.get("inspoEdits",{}),wish=LS.get("wish",[]);
 S.sort=LS.get("sort","colour");
 let trips=LS.get("trips",[]);S.isort=LS.get("isort","new");
 function saveTrips(t){if(t)t.updated=Date.now();LS.set("trips",trips);}
@@ -287,6 +290,23 @@ const SORTS={colour:[colRank,lenRank,patRank],length:[lenRank,colRank,patRank],p
 function arrange(list){const fs=SORTS[S.sort]||SORTS.colour;const ci=i=>CATS.findIndex(c=>c[0]===dcat(i));
   const K=new Map(list.map(i=>[i,[ci(i),fs[0](i),fs[1](i),fs[2](i)]]));
   return list.slice().sort((a,b)=>{const x=K.get(a),y=K.get(b);return x[0]-y[0]||x[1]-y[1]||x[2]-y[2]||x[3]-y[3]||(a.name<b.name?-1:a.name>b.name?1:0);});}
+/* Wishlist: notes on pieces Kirsty wants or likes. Kept on this device, carried by Copy/Paste between devices. */
+const WTAGS=["Want","Love the look","Maybe","Make it"];
+function wishPanel(){const open=!!(S.openG&&S.openG.__wish);const L=wish.filter(w=>!w.got),G=wish.filter(w=>w.got);const e=S.wishEdit&&wish.find(w=>w.id===S.wishEdit);
+  const item=w=>`<li><div class="row" style="justify-content:space-between;gap:8px;align-items:baseline"><span class="wt">${esc(w.title)}</span>${w.tag?`<span class="tag">${esc(w.tag)}</span>`:""}</div>
+   ${w.note?`<div class="wn">${esc(w.note)}</div>`:""}${w.link?`<a href="${esc(w.link)}" target="_blank" rel="noopener" style="font-size:13px;word-break:break-all">${esc(w.link.replace(/^https?:\/\/(www\.)?/,"").slice(0,60))}</a>`:""}
+   ${w.from?`<div class="status" style="margin:0">From inspo: ${esc(w.from)}</div>`:""}
+   <div class="row"><button class="iconbtn" type="button" data-wgot="${esc(w.id)}">${w.got?"Not bought yet":"Got it"}</button><button class="iconbtn" type="button" data-wedit="${esc(w.id)}">Edit</button><button class="iconbtn" type="button" data-wdel="${esc(w.id)}">Delete</button></div></li>`;
+  return `<div class="grp${open?" open":""}" style="margin:6px 0 14px"><button type="button" class="grphead" data-grp="__wish" aria-expanded="${open}"><span class="gn">Wishlist and notes</span><span class="n">${L.length}</span><span class="chev">${open?"▾":"▸"}</span></button>
+  ${open?`<div style="display:grid;gap:10px;padding:6px 4px 10px">
+   <div class="panel" style="gap:8px"><label class="f">${e?"Edit":"Add a piece"}<input id="wTitle" value="${esc(e?e.title:"")}" placeholder="e.g. Red gingham wide trousers"></label>
+    <label class="f">Notes<textarea id="wNote" rows="3" placeholder="Size, colour, where you saw it, what it would go with">${esc(e?e.note||"":"")}</textarea></label>
+    <label class="f">Link (optional)<input id="wLink" type="url" value="${esc(e?e.link||"":"")}" placeholder="https://"></label>
+    <div class="chips" role="group" aria-label="Type">${WTAGS.map(t=>`<button class="chip" type="button" data-wtag="${esc(t)}" aria-pressed="${(S.wTag??(e?e.tag:""))===t}">${esc(t)}</button>`).join("")}</div>
+    <div class="row"><button class="btn" type="button" id="wSave">${e?"Save":"Add to wishlist"}</button>${e?`<button class="btn ghost" type="button" id="wCancel">Cancel</button>`:""}</div></div>
+   ${L.length?`<ul class="wish">${L.slice().reverse().map(item).join("")}</ul>`:`<p class="lede" style="margin:0">Nothing yet. Add pieces here, or tap + Wishlist next to anything in an inspo look's "To get closer" list.</p>`}
+   ${G.length?`<h3 style="margin:8px 0 0;font-size:15px">Bought <span class="n">${G.length}</span></h3><ul class="wish got">${G.slice().reverse().map(item).join("")}</ul><p class="status" style="margin:0">Send Claude a photo of anything you've bought so it joins your wardrobe.</p>`:""}
+  </div>`:""}</div>`;}
 function vWardrobe(){
   if(!D.items.length)return `<h2>Your clothes</h2><div class="empty"><strong>No clothes yet</strong><span>Send photos to Claude in chat and they'll appear here.</span></div>`;
   const own=D.items,nb=D.items.filter(i=>i.basic).length;
@@ -297,7 +317,7 @@ function vWardrobe(){
   const goneBox=goneItems.length?`<div class="panel"><div class="status">${goneItems.length} item${goneItems.length===1?"":"s"} removed on this phone. Copy the list and paste it into chat so Claude removes ${goneItems.length===1?"it":"them"} for good.</div>
    <div class="row"><button class="btn ghost" type="button" id="copyGone">${S.copied==="gone"?"Copied":"Copy list for Claude"}</button><button class="iconbtn" type="button" id="toggleGone">${S.showGone?"Hide removed":"Show removed"}</button></div>
    ${S.showGone?`<div class="row">${goneItems.map(i=>`<button class="iconbtn" type="button" data-restore="${esc(i.id)}">Restore ${esc(i.name)}</button>`).join("")}</div>`:""}</div>`:"";
-  return `<h2>Your clothes</h2>${goneBox}
+  return `<h2>Your clothes</h2>${wishPanel()}${goneBox}
   <div class="chips" role="group" aria-label="Filter by type"><button class="chip" data-cat="all" aria-pressed="${S.cat==="all"}">All<span class="n">${own.length}</span></button>
   ${CATS.filter(([k])=>counts[k]).map(([k,v])=>`<button class="chip" data-cat="${k}" aria-pressed="${S.cat===k}">${v}<span class="n">${counts[k]}</span></button>`).join("")}${nb?`<button class="chip" data-cat="basics" aria-pressed="${S.cat==="basics"}">Basics<span class="n">${nb}</span></button>`:""}</div>
   <div class="chips" role="group" aria-label="Arrange by"><span class="ct" style="align-self:center;margin-right:4px;white-space:nowrap">Sort</span>${[["colour","Colour"],["length",lenLabel],["pattern","Pattern"]].map(([k,v])=>`<button class="chip" data-sort="${k}" aria-pressed="${(S.sort||"colour")===k}">${v}</button>`).join("")}</div>
@@ -447,10 +467,10 @@ function openFinish(id){const o=allOutfits().find(x=>x.id===id);if(!o)return;S.f
    <div class="row"><button class="btn" type="button" data-findone>Done</button></div>`;
   if(!sheet.open)sheet.showModal();}
 function devicePanel(){return `<section class="panel" style="margin-top:22px;gap:8px"><h3 style="margin:0">Phone and iPad</h3>
-  <p class="lede" style="margin:0">Each device keeps its own ratings, built outfits, trips and shoe choices. To bring one up to date, tap Copy on the device you've been using, then Paste on the other. Nothing is lost: the two are merged.</p>
+  <p class="lede" style="margin:0">Each device keeps its own ratings, built outfits, trips, wishlist and shoe choices. To bring one up to date, tap Copy on the device you've been using, then Paste on the other. Nothing is lost: the two are merged.</p>
   <div class="row"><button class="btn ghost" type="button" id="devCopy">${S.copied==="dev"?"Copied":"Copy from this device"}</button><button class="btn ghost" type="button" id="devPaste">Paste from another device</button></div>
   ${S.devMsg?`<p class="status" style="margin:0">${esc(S.devMsg)}</p>`:""}</section>`;}
-function devExport(){return "KW-DEVICE-1:"+JSON.stringify({taste,mine,fin,unliked,hidden,gone,favs,trips,inspoGone,inspoEdits});}
+function devExport(){return "KW-DEVICE-1:"+JSON.stringify({taste,mine,fin,unliked,hidden,gone,favs,trips,inspoGone,inspoEdits,wish});}
 function devMerge(txt){const i=txt.indexOf("{");if(i<0)throw new Error("no data");const j=JSON.parse(txt.slice(i));
   const t=j.taste||j;const addAll=(a,b)=>{const seen=new Set(a);return a.concat((b||[]).filter(k=>!seen.has(k)));};
   const before=taste.liked.length+taste.disliked.length,bm=mine.length;
@@ -459,7 +479,7 @@ function devMerge(txt){const i=txt.indexOf("{");if(i<0)throw new Error("no data"
   taste.n=taste.liked.length+taste.disliked.length;if(t.ignoreSaved&&!taste.liked.length)taste.ignoreSaved=true;
   const m=new Map(mine.map(o=>[o.id,o]));for(const o of (j.mine||j.built||[]))m.set(o.id,o);mine=[...m.values()];
   fin={...fin,...(j.fin||j.finish||{})};
-  const un=(a,b)=>[...new Set(a.concat(b||[]))];unliked=un(unliked,j.unliked);inspoGone=un(inspoGone,j.inspoGone);LS.set("inspoGone",inspoGone);inspoEdits={...inspoEdits,...(j.inspoEdits||{})};LS.set("inspoEdits",inspoEdits);hidden=un(hidden,j.hidden);gone=un(gone,j.gone);favs=un(favs,j.favs);
+  const un=(a,b)=>[...new Set(a.concat(b||[]))];unliked=un(unliked,j.unliked);inspoGone=un(inspoGone,j.inspoGone);LS.set("inspoGone",inspoGone);inspoEdits={...inspoEdits,...(j.inspoEdits||{})};LS.set("inspoEdits",inspoEdits);{const m=new Map(wish.map(w=>[w.id,w]));for(const w of (j.wish||[])){const c=m.get(w.id);if(!c||(w.updated||0)>(c.updated||0))m.set(w.id,w);}wish=[...m.values()];LS.set("wish",wish);}hidden=un(hidden,j.hidden);gone=un(gone,j.gone);favs=un(favs,j.favs);
   LS.set("taste",taste);LS.set("mine",mine);LS.set("finish",fin);LS.set("unliked",unliked);LS.set("hidden",hidden);LS.set("gone",gone);LS.set("favs",favs);
   const bt=trips.length;{const m=new Map(trips.map(t=>[t.id,t]));for(const t of (j.trips||[])){const c=m.get(t.id);if(!c||(t.updated||0)>(c.updated||0))m.set(t.id,t);}trips=[...m.values()];LS.set("trips",trips);}
   const added=taste.liked.length+taste.disliked.length-before,ad2=mine.length-bm;
@@ -492,7 +512,7 @@ function vInspo(){
   ${inspoList().length?`<div class="ogrid">${inspoList().map(p=>`<article class="ocard"><div class="two" style="background:var(--tile);padding:6px">
    <div role="button" tabindex="0" class="iph" data-bigimg="${esc(p.img)}" aria-label="See the whole photo"><img src="${esc(th(p.img))}" alt="Inspiration photo" loading="lazy"><span>Tap to enlarge</span></div>${collage(iIds(p))}</div>
    <div class="meta"><div class="nm">${esc(p.name||"Inspired look")}</div>${inspoEdits[p.id]?`<div class="tags"><span class="tag mine">Your version</span></div>`:""}<p class="why">${esc(p.summary||"")}</p>
-   ${p.missing&&p.missing.length?`<div><strong style="font-size:13px">To get closer</strong><ul class="missing">${p.missing.map(m=>`<li>${esc(m)}</li>`).join("")}</ul></div>`:""}${iIds(p).length?(()=>{const o=inspoOutfits().find(x=>x.inspoId===p.id);return o?`<div class="row">${inspoBtns(o,likedCores().has(ckey(o)))}${addBtn(iIds(p),p.name)}</div>`:"";})():""}<div class="row">${inspoEdits[p.id]?`<button class="iconbtn" type="button" data-resetinsp="${esc(p.id)}">Undo my changes</button>`:""}<button class="iconbtn" type="button" data-delinsp="${esc(p.id)}">Delete</button></div></div></article>`).join("")}</div>`
+   ${p.missing&&p.missing.length?`<div><strong style="font-size:13px">To get closer</strong><ul class="missing">${p.missing.map(m=>{const t=m.replace(/ \((your|the) .*$/,"");const has=wish.some(w=>w.title.toLowerCase()===t.toLowerCase());return `<li>${esc(m)}${has?`<span class="wadd" style="cursor:default">✓ on wishlist</span>`:`<button class="wadd" type="button" data-wfrom="${esc(p.id)}" data-wt="${esc(t)}">+ Wishlist</button>`}</li>`;}).join("")}</ul></div>`:""}${iIds(p).length?(()=>{const o=inspoOutfits().find(x=>x.inspoId===p.id);return o?`<div class="row">${inspoBtns(o,likedCores().has(ckey(o)))}${addBtn(iIds(p),p.name)}</div>`:"";})():""}<div class="row">${inspoEdits[p.id]?`<button class="iconbtn" type="button" data-resetinsp="${esc(p.id)}">Undo my changes</button>`:""}<button class="iconbtn" type="button" data-delinsp="${esc(p.id)}">Delete</button></div></div></article>`).join("")}</div>`
    :`<div class="empty"><strong>No inspiration looks yet</strong><span>Your first one will appear here.</span></div>`}
   ${inspoGone.length?`<div class="grp${S.openG&&S.openG.__inspoGone?" open":""}" style="margin-top:18px"><button type="button" class="grphead" data-grp="__inspoGone" aria-expanded="${!!(S.openG&&S.openG.__inspoGone)}"><span class="gn">Deleted looks</span><span class="n">${inspoGone.length}</span><span class="chev">${S.openG&&S.openG.__inspoGone?"▾":"▸"}</span></button>
    ${S.openG&&S.openG.__inspoGone?`<div class="minigrid">${D.inspo.filter(p=>inspoGone.includes(p.id)).map(p=>`<div class="mini" style="cursor:default"><div class="tile" style="aspect-ratio:1/1"><img src="${esc(th(p.img))}" alt="" loading="lazy"></div><span>${esc(p.name||"Inspired look")}</span><button class="btn ghost" type="button" data-restinsp="${esc(p.id)}" style="margin:6px;padding:7px 8px;font-size:13px">Bring back</button></div>`).join("")}</div>`:""}</div>`:""}`;
@@ -622,6 +642,16 @@ document.addEventListener("click",async e=>{
   const t=e.target.closest("button,[role=button]");if(!t)return;
   if(t.dataset.tab){if(t.closest("nav.tabs")&&t.dataset.tab==="trips"&&S.tab==="trips"){S.tripId=null;S.tripEdit=false;}S.tab=t.dataset.tab;render();window.scrollTo(0,0);return;}
   if(t.dataset.bigimg){sheetBody.innerHTML=`<div class="sheet-head"><h2>Inspiration photo</h2><button class="iconbtn" type="button" data-close>Close</button></div><img class="bigimg" src="${esc(t.dataset.bigimg)}" alt="Inspiration photo">`;if(!sheet.open)sheet.showModal();return;}
+  if(t.dataset.wtag){S.wTag=(S.wTag??((S.wishEdit&&(wish.find(w=>w.id===S.wishEdit)||{}).tag)||""))===t.dataset.wtag?"":t.dataset.wtag;const a=$("#wTitle").value,b=$("#wNote").value,c=$("#wLink").value;render();$("#wTitle").value=a;$("#wNote").value=b;$("#wLink").value=c;return;}
+  if(t.id==="wSave"){const title=$("#wTitle").value.trim();if(!title){$("#wTitle").focus();return;}const note=$("#wNote").value.trim(),link=$("#wLink").value.trim();
+    if(S.wishEdit){const w=wish.find(x=>x.id===S.wishEdit);if(w){w.title=title;w.note=note;w.link=link;if(S.wTag!==undefined)w.tag=S.wTag;w.updated=Date.now();}}
+    else wish.push({id:"w"+Date.now(),title,note,link,tag:S.wTag||"",got:false,updated:Date.now()});
+    LS.set("wish",wish);S.wishEdit=null;S.wTag=undefined;render();return;}
+  if(t.id==="wCancel"){S.wishEdit=null;S.wTag=undefined;render();return;}
+  if(t.dataset.wedit){S.wishEdit=t.dataset.wedit;S.wTag=undefined;render();const el=$("#wTitle");if(el){el.scrollIntoView({block:"center"});el.focus();}return;}
+  if(t.dataset.wgot){const w=wish.find(x=>x.id===t.dataset.wgot);if(w){w.got=!w.got;w.updated=Date.now();LS.set("wish",wish);}render();return;}
+  if(t.dataset.wdel){if(!t.dataset.armed){t.dataset.armed="1";t.textContent="Tap again to delete";return;}wish=wish.filter(x=>x.id!==t.dataset.wdel);LS.set("wish",wish);render();return;}
+  if(t.dataset.wfrom){const p=D.inspo.find(x=>x.id===t.dataset.wfrom);wish.push({id:"w"+Date.now(),title:t.dataset.wt,note:"",link:"",tag:"Want",from:p?p.name:"",got:false,updated:Date.now()});LS.set("wish",wish);t.outerHTML=`<span class="wadd" style="cursor:default">✓ on wishlist</span>`;return;}
   if(t.dataset.ifilt){S.ifilt=t.dataset.ifilt;render();return;}
   if(t.dataset.delinsp){if(!t.dataset.armed){t.dataset.armed="1";t.textContent="Tap again to delete";return;}inspoGone=[...new Set(inspoGone.concat(t.dataset.delinsp))];LS.set("inspoGone",inspoGone);render();return;}
   if(t.dataset.restinsp){inspoGone=inspoGone.filter(x=>x!==t.dataset.restinsp);LS.set("inspoGone",inspoGone);render();return;}
@@ -683,7 +713,7 @@ document.addEventListener("click",async e=>{
      <p class="lede" style="margin:0">Paste what you copied on the other device, then tap Merge.</p><textarea id="devText" rows="7" style="width:100%;font:inherit;font-size:13px" placeholder="Paste here">${esc(clip.includes("KW-DEVICE")||clip.includes("Please save my wardrobe")?clip:"")}</textarea>
      <div class="row"><button class="btn" type="button" id="devMergeBtn">Merge</button></div><p class="status" id="devErr" style="margin:0"></p>`;if(!sheet.open)sheet.showModal();return;}
   if(t.id==="devMergeBtn"){const v=($("#devText")||{}).value||"";try{S.devMsg=devMerge(v);sheet.close();render();}catch(e){const el=$("#devErr");if(el)el.textContent="That doesn't look like a copy from the app. Copy it again on the other device and try once more.";}return;}
-  if(t.id==="copyTaste"){const txt="Please save my wardrobe taste into the app:\n"+JSON.stringify({...taste,built:mine.filter(isBuilt),hidden,finish:fin,inspoGone,inspoEdits});
+  if(t.id==="copyTaste"){const txt="Please save my wardrobe taste into the app:\n"+JSON.stringify({...taste,built:mine.filter(isBuilt),hidden,finish:fin,inspoGone,inspoEdits,wish});
     try{await navigator.clipboard.writeText(txt);S.copied="taste";render();setTimeout(()=>{S.copied="";render();},2500);}
     catch(err){sheetBody.innerHTML=`<div class="sheet-head"><h2>Copy this</h2><button class="iconbtn" type="button" data-close>Close</button></div><textarea rows="8" style="width:100%" readonly>${esc(txt)}</textarea>`;if(!sheet.open)sheet.showModal();sheetBody.querySelector("textarea").select();}
     return;}
