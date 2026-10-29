@@ -156,6 +156,9 @@ dialog.sheet{border:none;padding:0;background:var(--surface);color:var(--fg);wid
 dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
 .sheet-in{padding:16px max(16px, env(safe-area-inset-right, 0px)) max(20px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));display:grid;gap:14px}
 .sheet-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.car{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:0;scrollbar-width:none;overscroll-behavior-x:contain}.car::-webkit-scrollbar{display:none}
+.car .slide{flex:0 0 100%;scroll-snap-align:center;min-width:0;padding:0 2px;box-sizing:border-box}
+.cardots{display:flex;justify-content:center;gap:6px}.cardots span{width:7px;height:7px;border-radius:50%;background:var(--line)}.cardots span.on{background:var(--accent)}
 .iconbtn{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 12px;font-size:13px;font-weight:600;cursor:pointer}
 .pick{position:relative}
 .pick[aria-pressed="true"]{outline:3px solid var(--accent);outline-offset:-3px}
@@ -179,10 +182,10 @@ dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
 </nav>
 <dialog class="sheet" id="sheet"><div class="sheet-in" id="sheetBody"></div></dialog>
 
-<script src="style.js?v=202610291113"></script>
+<script src="style.js?v=202610291123"></script>
 <script>
 /* Home-screen apps hold on to old copies. On open, check version.txt; if a newer version is live, refresh the cached files and reload once. */
-const APPV="202610291113";
+const APPV="202610291123";
 fetch("version.txt",{cache:"no-store"}).then(r=>r.ok?r.text():"").then(v=>{v=v.trim();if(!v||v===APPV)return;
   let tried="";try{tried=sessionStorage.getItem("kw:upd")||"";}catch(e){}if(tried===v)return;try{sessionStorage.setItem("kw:upd",v);}catch(e){}
   Promise.all([fetch("index.html",{cache:"reload"}),fetch("./",{cache:"reload"})]).catch(()=>{}).then(()=>location.reload());}).catch(()=>{});
@@ -739,7 +742,18 @@ document.addEventListener("click",async e=>{
     return;}
   if(t.dataset.grp){S.openG=S.openG||{};S.openG[t.dataset.grp]=!S.openG[t.dataset.grp];render();return;}
   if(t.id==="todayMore"){S.todaySeed=(S.todaySeed||0)+1;render();return;}
-  if(t.dataset.open){const o=(t.closest(".today")&&(S.todayList||[]).find(x=>x.id===t.dataset.open))||allOutfits().find(x=>x.id===t.dataset.open);if(o){sheetBody.innerHTML=`<div class="sheet-head"><h2>Outfit</h2><button class="iconbtn" type="button" data-close>Close</button></div>${outfitCard(o)}`;if(!sheet.open)sheet.showModal();}return;}
+  if(t.dataset.open){const today=t.closest(".today");const grid=t.closest(".minigrid");
+    const find=id=>(today&&(S.todayList||[]).find(x=>x.id===id))||allOutfits().find(x=>x.id===id);
+    const ids=grid?[...grid.querySelectorAll("[data-open]")].map(e=>e.dataset.open):[t.dataset.open];
+    const L=ids.map(find).filter(Boolean);const k=Math.max(0,L.findIndex(o=>o.id===t.dataset.open));if(!L.length)return;
+    const hero=grid&&!today?(t.dataset.hero||null):null;
+    sheetBody.innerHTML=`<div class="sheet-head"><h2>Outfit${L.length>1?` <span class="n" id="carN">${k+1} of ${L.length}</span>`:""}</h2><button class="iconbtn" type="button" data-close>Close</button></div>
+     ${L.length>1?`<div class="car" id="car">${L.map(o=>`<div class="slide">${outfitCard(o,"",hero)}</div>`).join("")}</div>
+     <div class="cardots">${L.length<=12?L.map((o,i)=>`<span class="${i===k?"on":""}"></span>`).join(""):""}</div><p class="status" style="margin:-6px 0 0;text-align:center">Swipe for the next outfit</p>`:outfitCard(L[0],"",hero)}`;
+    if(!sheet.open)sheet.showModal();
+    const car=$("#car");if(car){requestAnimationFrame(()=>{car.scrollLeft=k*car.clientWidth;});
+      car.addEventListener("scroll",()=>{const i=Math.round(car.scrollLeft/car.clientWidth);const n=$("#carN");if(n)n.textContent=`${i+1} of ${L.length}`;sheetBody.querySelectorAll(".cardots span").forEach((d,j)=>d.className=j===i?"on":"");},{passive:true});}
+    return;}
   if(t.dataset.likeo){const id=t.dataset.likeo;unliked=unliked.filter(x=>x!==id);LS.set("unliked",unliked);const o=allOutfits().find(x=>x.id===id);if(o&&!o.liked&&!o.mine&&!favs.includes(id)){favs=favs.concat(id);LS.set("favs",favs);}refreshOpen(id);render();return;}
   if(t.dataset.unlike){const id=t.dataset.unlike;const o=allOutfits().find(x=>x.id===id);if(!o)return;
     {const k=ckey(o);mine=mine.filter(x=>ckey(x)!==k);LS.set("mine",mine);
