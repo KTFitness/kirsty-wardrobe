@@ -6554,6 +6554,98 @@
    "notes": "Mid-rise skinny, full length, five pockets plus zip-detail front pockets. Your photo.",
    "img": "img/country-road-sage-skinny-jeans.webp",
    "sub": "straight"
+  },
+  {
+   "id": "blue-crown-embroidered-jumper",
+   "name": "Pale blue embroidered crown jumper",
+   "category": "knitwear",
+   "colours": [
+    "sky blue",
+    "pink",
+    "red",
+    "cream",
+    "yellow"
+   ],
+   "pattern": "floral and crown embroidery, varsity stripe trims",
+   "fabric": "knit",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Mock neck, dropped shoulders, cream and yellow striped rib trims, \"Love is Love\" crown and blossom embroidery front and sleeves. Your photo.",
+   "img": "img/blue-crown-embroidered-jumper.webp"
+  },
+  {
+   "id": "pink-white-wide-stripe-maxi-skirt",
+   "name": "Pink and white wide stripe full maxi skirt",
+   "category": "skirts",
+   "colours": [
+    "hot pink",
+    "white"
+   ],
+   "pattern": "wide vertical stripe",
+   "fabric": "cotton sateen",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "High waistband, gathered full A-line, maxi length. Your photo.",
+   "img": "img/pink-white-wide-stripe-maxi-skirt.webp",
+   "sub": "maxi",
+   "_f": [
+    "pink",
+    "white"
+   ]
+  },
+  {
+   "id": "red-tartan-cigarette-trousers",
+   "name": "Red tartan cigarette trousers",
+   "category": "trousers",
+   "colours": [
+    "red",
+    "navy",
+    "white",
+    "yellow"
+   ],
+   "pattern": "tartan check",
+   "fabric": "wool blend",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "High waist, slim straight leg, ankle length, belt loops, slant pockets. Your photo.",
+   "img": "img/red-tartan-cigarette-trousers.webp",
+   "sub": "straight",
+   "_f": [
+    "red",
+    "navy",
+    "white",
+    "yellow"
+   ]
+  },
+  {
+   "id": "rust-linen-a-line-maxi-skirt",
+   "name": "Rust linen A-line maxi skirt",
+   "category": "skirts",
+   "colours": [
+    "rust orange"
+   ],
+   "pattern": "solid",
+   "fabric": "linen blend",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "High waist with belt loops, back zip, flared A-line, long midi to maxi. Your photo.",
+   "img": "img/rust-linen-a-line-maxi-skirt.webp",
+   "sub": "maxi",
+   "_f": [
+    "orange"
+   ]
   }
  ],
  "outfits": [
@@ -19680,13 +19772,13 @@
    "summary": "Hot pink turtleneck tucked in, brown belt, rust pleated midi skirt, black socks, brown brogues, tan tote.",
    "itemIds": [
     "cos-pink-funnel-neck-sweat",
-    "red-a-line-midi-skirt",
+    "rust-linen-a-line-maxi-skirt",
     "basic-tan-belt",
     "basic-tan-flats",
     "basic-tan-crossbody"
    ],
    "missing": [
-    "Rust midi skirt (your red A-line midi is the stand-in)",
+    "Rust midi skirt (your rust linen a-line maxi skirt is the stand-in)",
     "Brown lace-up brogues",
     "Black socks"
    ],
@@ -21269,10 +21361,10 @@
    "itemIds": [
     "basic-black-blazer",
     "basic-black-turtleneck",
-    "basic-black-docs"
+    "basic-black-docs",
+    "red-tartan-cigarette-trousers"
    ],
    "missing": [
-    "Red tartan trousers",
     "Black wool jacket (your black blazer is the stand-in)"
    ],
    "createdAt": 142
@@ -21284,10 +21376,11 @@
    "summary": "Blue and white stripe tee, orange bias maxi skirt, pink crossbody, white sneakers.",
    "itemIds": [
     "cos-navy-stripe-tee-magenta-collar",
-    "basic-white-sneakers"
+    "basic-white-sneakers",
+    "rust-linen-a-line-maxi-skirt"
    ],
    "missing": [
-    "Orange maxi skirt",
+    "Orange maxi skirt (your rust linen a-line maxi skirt is the stand-in)",
     "Pink crossbody bag"
    ],
    "createdAt": 143
@@ -21925,11 +22018,11 @@
    "summary": "Navy sweatshirt, pink and white stripe full maxi skirt, navy sandals, green stripe pouch.",
    "itemIds": [
     "navy-stripe-long-sleeve-top",
-    "basic-tan-flats"
+    "basic-tan-flats",
+    "pink-white-wide-stripe-maxi-skirt"
    ],
    "missing": [
-    "Navy sweatshirt",
-    "Pink and white stripe maxi skirt"
+    "Navy sweatshirt"
    ],
    "createdAt": 184
   },
@@ -25330,7 +25423,7 @@
    "ip:basic-black-loafers|basic-black-turtleneck": 0.36,
    "it:basic-blue-straight-jeans-cropped": 3.54,
    "ip:basic-black-loafers|basic-blue-straight-jeans-cropped": 0.36,
-   "pat:plain+plain": 6.11,
+   "pat:plain+plain": 6.05,
    "it:alessandra-colour-block-jumper": 0.36,
    "ip:alessandra-colour-block-jumper|basic-white-tee": 0.36,
    "cp:tan+white": 7.97,
@@ -25355,14 +25448,14 @@
    "so:Everyday|flats": 8.55,
    "it:cos-navy-stripe-tee-magenta-collar": 2.27,
    "ip:basic-black-midi-skirt|cos-navy-stripe-tee-magenta-collar": 0.36,
-   "cp:black+navy": 1.85,
+   "cp:black+navy": 2,
    "ip:basic-denim-jacket|cos-navy-stripe-tee-magenta-collar": 0.65,
    "cp:denim+navy": 2.27,
    "ip:adidas-gazelle-pink|cos-navy-stripe-tee-magenta-collar": 0.36,
-   "cp:navy+pink": 0.36,
-   "cp:navy+white": 2.75,
-   "cp:pink+white": 4.12,
-   "cp:white+white": 6.61,
+   "cp:navy+pink": 0.65,
+   "cp:navy+white": 2.86,
+   "cp:pink+white": 4.19,
+   "cp:white+white": 6.66,
    "it:basic-black-midi-skirt": 1.13,
    "ip:basic-black-midi-skirt|basic-denim-jacket": 0.36,
    "ip:adidas-gazelle-pink|basic-black-midi-skirt": 0.36,
@@ -25377,7 +25470,7 @@
    "ip:basic-blue-wide-jeans|gorman-red-strawberry-shirt": 0.65,
    "cp:denim+red": 4.19,
    "ip:basic-black-kitten-heels|gorman-red-strawberry-shirt": 0.36,
-   "cp:black+red": 3.36,
+   "cp:black+red": 3.45,
    "it:basic-blue-wide-jeans": 4.76,
    "ip:basic-black-kitten-heels|basic-blue-wide-jeans": 0.36,
    "it:basic-black-kitten-heels": 1.13,
@@ -25410,7 +25503,7 @@
    "ip:basic-tan-flats|sussan-black-fine-stripe-tank": 0.36,
    "it:basic-black-wide-linen-pants": 1.33,
    "ip:basic-black-wide-linen-pants|basic-tan-flats": 0.36,
-   "pat:plain+stripe": 2.97,
+   "pat:plain+stripe": 3.07,
    "ip:basic-denim-jacket|navy-stripe-long-sleeve-top": 0.36,
    "ip:basic-black-wide-linen-pants|basic-denim-jacket": 0.36,
    "ip:basic-denim-jacket|basic-white-sneakers": 1.85,
@@ -25489,8 +25582,8 @@
    "cp:mint+pink": 0.65,
    "cp:mint+red": 0.65,
    "ip:basic-tan-flats|pink-tulip-knit-vest": 0.65,
-   "cp:pink+tan": 3.45,
-   "cp:red+tan": 5.08,
+   "cp:pink+tan": 3.54,
+   "cp:red+tan": 5.02,
    "ip:basic-tan-crossbody|pink-tulip-knit-vest": 1.13,
    "it:three-of-something-cream-lace-top": 1.13,
    "ip:green-wide-leg-cords|three-of-something-cream-lace-top": 0.36,
@@ -25562,7 +25655,7 @@
    "it:mimco-raffia-clutch": 3.17,
    "pat:floral+plain": 1.33,
    "ip:cos-pink-funnel-neck-sweat|pink-tulip-knit-vest": 0.36,
-   "cp:coral+red": 0.91,
+   "cp:coral+red": 0.65,
    "ip:pink-tulip-knit-vest|pink-wide-leg-sailor-trousers": 0.36,
    "it:cos-pink-funnel-neck-sweat": 1.13,
    "ip:cos-pink-funnel-neck-sweat|pink-wide-leg-sailor-trousers": 0.36,
@@ -25615,8 +25708,8 @@
    "ip:cream-mock-neck-long-sleeve|red-a-line-midi-skirt": 0.36,
    "ip:basic-tan-flats|cream-mock-neck-long-sleeve": 0.36,
    "ip:cream-mock-neck-long-sleeve|mimco-raffia-clutch": 0.36,
-   "it:red-a-line-midi-skirt": 2.4,
-   "ip:basic-tan-flats|red-a-line-midi-skirt": 0.91,
+   "it:red-a-line-midi-skirt": 2.27,
+   "ip:basic-tan-flats|red-a-line-midi-skirt": 0.65,
    "ip:mimco-raffia-clutch|red-a-line-midi-skirt": 0.65,
    "ip:green-wide-leg-cords|red-blue-stripe-knit-vest": 0.36,
    "cp:mint+sky": 0.65,
@@ -25644,7 +25737,7 @@
    "ip:basic-denim-skirt|basic-white-flats": 0.36,
    "ip:basic-denim-skirt|mimco-raffia-clutch": 0.36,
    "ip:basic-white-flats|mimco-raffia-clutch": 0.65,
-   "pat:check+plain+plain": 1.13,
+   "pat:check+plain+plain": 1.33,
    "ip:marcs-pink-gingham-tank|white-denim-shorts": 0.36,
    "ip:basic-black-knee-boots-flat|marcs-pink-gingham-tank": 0.36,
    "cp:black+coral": 0.36,
@@ -25742,11 +25835,15 @@
    "it:basic-tan-belt": 2.27,
    "ip:basic-tan-belt|basic-tan-flats": 1.33,
    "ip:basic-tan-belt|basic-tan-crossbody": 1.52,
-   "ip:cos-pink-funnel-neck-sweat|red-a-line-midi-skirt": 0.36,
+   "ip:cos-pink-funnel-neck-sweat|rust-linen-a-line-maxi-skirt": 0.36,
+   "cp:coral+orange": 0.36,
    "ip:basic-tan-belt|cos-pink-funnel-neck-sweat": 0.36,
    "ip:basic-tan-flats|cos-pink-funnel-neck-sweat": 0.36,
-   "ip:basic-tan-belt|red-a-line-midi-skirt": 0.36,
-   "ip:basic-tan-crossbody|red-a-line-midi-skirt": 0.36,
+   "it:rust-linen-a-line-maxi-skirt": 0.65,
+   "ip:basic-tan-belt|rust-linen-a-line-maxi-skirt": 0.36,
+   "cp:orange+tan": 2.4,
+   "ip:basic-tan-flats|rust-linen-a-line-maxi-skirt": 0.36,
+   "ip:basic-tan-crossbody|rust-linen-a-line-maxi-skirt": 0.36,
    "it:saba-jungle-print-shirt": 0.36,
    "ip:basic-blue-wide-jeans|saba-jungle-print-shirt": 0.36,
    "ip:basic-tan-belt|saba-jungle-print-shirt": 0.36,
@@ -25787,11 +25884,10 @@
    "it:orange-gingham-ricrac-blouse": 0.36,
    "ip:black-big-spot-tie-skirt|orange-gingham-ricrac-blouse": 0.36,
    "cp:black+orange": 1.52,
-   "cp:orange+white": 2.14,
+   "cp:orange+white": 2.27,
    "ip:orange-gingham-ricrac-blouse|red-silk-heeled-mules": 0.36,
    "cp:orange+red": 0.91,
    "ip:basic-tan-crossbody|orange-gingham-ricrac-blouse": 0.36,
-   "cp:orange+tan": 2.27,
    "ip:black-big-spot-tie-skirt|red-silk-heeled-mules": 0.65,
    "it:red-silk-heeled-mules": 1.69,
    "ip:basic-tan-crossbody|red-silk-heeled-mules": 0.91,
@@ -26008,7 +26104,7 @@
    "ip:basic-tan-flats|country-road-khaki-utility-shirt": 0.91,
    "ip:basic-tan-crossbody|country-road-khaki-utility-shirt": 0.65,
    "ip:navy-stripe-long-sleeve-top|sass-rust-cord-jacket": 0.36,
-   "cp:navy+orange": 0.91,
+   "cp:navy+orange": 1.13,
    "ip:basic-black-wide-jeans|navy-stripe-long-sleeve-top": 0.36,
    "ip:basic-tan-kitten-heels|navy-stripe-long-sleeve-top": 0.36,
    "ip:basic-tan-crossbody|navy-stripe-long-sleeve-top": 0.91,
@@ -26153,10 +26249,15 @@
    "pat:floral": 0.36,
    "ip:basic-black-blazer|basic-black-turtleneck": 0.36,
    "ip:basic-black-blazer|basic-black-docs": 0.36,
+   "ip:basic-black-blazer|red-tartan-cigarette-trousers": 0.36,
    "ip:basic-black-docs|basic-black-turtleneck": 0.36,
+   "ip:basic-black-turtleneck|red-tartan-cigarette-trousers": 0.36,
    "it:basic-black-docs": 0.65,
+   "ip:basic-black-docs|red-tartan-cigarette-trousers": 0.36,
+   "it:red-tartan-cigarette-trousers": 0.36,
    "so:Everyday|Docs": 0.65,
-   "pat:stripe": 1.33,
+   "ip:cos-navy-stripe-tee-magenta-collar|rust-linen-a-line-maxi-skirt": 0.36,
+   "ip:basic-white-sneakers|rust-linen-a-line-maxi-skirt": 0.36,
    "it:white-linen-batwing-shirt": 0.36,
    "ip:basic-blue-wide-jeans|white-linen-batwing-shirt": 0.36,
    "ip:basic-tan-belt|white-linen-batwing-shirt": 0.36,
@@ -26269,6 +26370,10 @@
    "ip:basic-black-sneakers|sussan-white-linen-jacket": 0.65,
    "ip:basic-blue-straight-jeans|sussan-white-linen-jacket": 0.36,
    "ip:basic-white-sneakers|sussan-white-linen-jacket": 0.36,
+   "ip:navy-stripe-long-sleeve-top|pink-white-wide-stripe-maxi-skirt": 0.36,
+   "ip:basic-tan-flats|pink-white-wide-stripe-maxi-skirt": 0.36,
+   "it:pink-white-wide-stripe-maxi-skirt": 0.36,
+   "pat:stripe+stripe": 0.36,
    "ip:basic-black-leggings|chambray-shirt": 0.65,
    "it:basic-black-leggings": 0.65,
    "ip:basic-blue-straight-jeans-cropped|red-moss-stitch-jumper": 0.36,
@@ -26305,6 +26410,7 @@
    "ip:basic-blue-straight-jeans-cropped|basic-patterned-belts": 0.36,
    "ip:basic-patterned-belts|basic-tan-crossbody": 0.36,
    "ip:basic-patterned-belts|basic-white-sneakers": 0.36,
+   "pat:stripe": 0.91,
    "ip:basic-black-bamboo-wide-crop|basic-white-tee": 0.36,
    "it:marimekko-uniqlo-spot-tank": 0.36,
    "ip:basic-white-wide-jeans|marimekko-uniqlo-spot-tank": 0.36,
