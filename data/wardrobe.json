@@ -2591,7 +2591,10 @@
     "Autumn"
    ],
    "notes": "Funnel high neck, sleeveless, relaxed A-line. Your photo.",
-   "img": "img/black-sleeveless-mock-neck.webp"
+   "img": "img/black-sleeveless-mock-neck.webp",
+   "_f": [
+    "black"
+   ]
   },
   {
    "id": "dharma-bums-black-waistcoat",
@@ -23194,6 +23197,56 @@
     "Cream wide trousers (your white wide linen pants are the stand-in)"
    ],
    "createdAt": 0
+  },
+  {
+   "id": "i267",
+   "name": "Waistcoat and wide-leg trousers",
+   "img": "img/inspo/inspo-267.webp",
+   "summary": "Four takes on a waistcoat with wide-leg trousers: black with grey or white, white linen with oatmeal, cream knit with black. Palette black, white, pale blue, taupe, grey.",
+   "itemIds": [
+    "dharma-bums-black-waistcoat",
+    "basic-white-wide-linen-pants",
+    "basic-black-loafers",
+    "basic-tan-crossbody"
+   ],
+   "missing": [
+    "Grey wide pleated trousers",
+    "White linen button waistcoat",
+    "Cream knit V-neck waistcoat",
+    "Oatmeal wide linen trousers"
+   ],
+   "createdAt": 0
+  },
+  {
+   "id": "i268",
+   "name": "Denim waistcoat and white linen trousers",
+   "img": "img/inspo/inspo-268.webp",
+   "summary": "Dark denim button waistcoat over white wide linen trousers, tan suede loafers.",
+   "itemIds": [
+    "gorman-denim-lace-up-top",
+    "basic-white-wide-linen-pants",
+    "basic-tan-flats"
+   ],
+   "missing": [
+    "Dark denim button waistcoat (your Gorman denim top is the stand-in)",
+    "Tan suede loafers"
+   ],
+   "createdAt": 0
+  },
+  {
+   "id": "i269",
+   "name": "Black roll-neck shell and white mini",
+   "img": "img/inspo/inspo-269.webp",
+   "summary": "Black sleeveless roll-neck top, white mini skirt, black slides.",
+   "itemIds": [
+    "black-sleeveless-mock-neck",
+    "basic-white-denim-mini",
+    "basic-black-flats"
+   ],
+   "missing": [
+    "Black sleeveless roll-neck knit (your black sleeveless mock-neck is the stand-in)"
+   ],
+   "createdAt": 0
   }
  ],
  "taste": {
@@ -25190,7 +25243,7 @@
    "ip:basic-green-cardigan|basic-white-linen-shirt": 0.36,
    "cp:green+white": 2,
    "ip:basic-black-dress-pants|basic-white-linen-shirt": 0.65,
-   "cp:black+white": 6.41,
+   "cp:black+white": 6.51,
    "ip:basic-black-loafers|basic-white-linen-shirt": 0.65,
    "ip:basic-black-crossbody|basic-white-linen-shirt": 1.33,
    "it:basic-green-cardigan": 0.65,
@@ -25200,42 +25253,42 @@
    "ip:basic-black-crossbody|basic-green-cardigan": 0.36,
    "it:basic-black-dress-pants": 0.91,
    "ip:basic-black-dress-pants|basic-black-loafers": 0.36,
-   "cp:black+black": 5.56,
+   "cp:black+black": 5.67,
    "ip:basic-black-crossbody|basic-black-dress-pants": 0.65,
-   "it:basic-black-loafers": 1.69,
+   "it:basic-black-loafers": 1.85,
    "ip:basic-black-crossbody|basic-black-loafers": 0.91,
    "it:basic-black-crossbody": 4.55,
    "pat:plain+plain+plain": 5.78,
-   "so:Everyday|heeled boots": 3.88,
+   "so:Everyday|heeled boots": 3.96,
    "it:basic-black-turtleneck": 1.13,
    "ip:basic-black-turtleneck|basic-blue-straight-jeans-cropped": 0.36,
    "cp:black+denim": 4.12,
    "ip:basic-black-loafers|basic-black-turtleneck": 0.36,
    "it:basic-blue-straight-jeans-cropped": 3.54,
    "ip:basic-black-loafers|basic-blue-straight-jeans-cropped": 0.36,
-   "pat:plain+plain": 5.95,
+   "pat:plain+plain": 6.11,
    "it:alessandra-colour-block-jumper": 0.36,
    "ip:alessandra-colour-block-jumper|basic-white-tee": 0.36,
-   "cp:tan+white": 7.8,
-   "cp:cream+white": 2.4,
+   "cp:tan+white": 7.89,
+   "cp:cream+white": 2.52,
    "ip:alessandra-colour-block-jumper|basic-blue-straight-jeans-cropped": 0.36,
-   "cp:denim+tan": 5.56,
+   "cp:denim+tan": 5.62,
    "cp:cream+denim": 1.85,
    "ip:alessandra-colour-block-jumper|basic-tan-flats": 0.36,
    "cp:tan+tan": 4.82,
-   "cp:cream+tan": 2.97,
+   "cp:cream+tan": 3.07,
    "ip:alessandra-colour-block-jumper|basic-tan-crossbody": 0.36,
    "it:basic-white-tee": 4.69,
    "ip:basic-blue-straight-jeans-cropped|basic-white-tee": 1.33,
-   "cp:denim+white": 6.89,
+   "cp:denim+white": 6.94,
    "ip:basic-tan-flats|basic-white-tee": 1.85,
    "ip:basic-tan-crossbody|basic-white-tee": 2.86,
    "ip:basic-blue-straight-jeans-cropped|basic-tan-flats": 0.91,
    "ip:basic-blue-straight-jeans-cropped|basic-tan-crossbody": 1.52,
-   "it:basic-tan-flats": 5.78,
+   "it:basic-tan-flats": 5.84,
    "ip:basic-tan-crossbody|basic-tan-flats": 3.27,
-   "it:basic-tan-crossbody": 6.84,
-   "so:Everyday|flats": 8.43,
+   "it:basic-tan-crossbody": 6.89,
+   "so:Everyday|flats": 8.51,
    "it:cos-navy-stripe-tee-magenta-collar": 2.27,
    "ip:basic-black-midi-skirt|cos-navy-stripe-tee-magenta-collar": 0.36,
    "cp:black+navy": 1.85,
@@ -25277,11 +25330,11 @@
    "it:basic-black-bamboo-wide-crop": 1.33,
    "ip:basic-black-bamboo-wide-crop|basic-black-flats": 0.36,
    "ip:basic-black-bamboo-wide-crop|basic-black-crossbody": 0.36,
-   "it:basic-black-flats": 3.71,
+   "it:basic-black-flats": 3.8,
    "ip:basic-black-crossbody|basic-black-flats": 2.27,
    "ip:basic-denim-jacket|zara-black-sleeveless-knit": 0.36,
    "ip:basic-tan-flats|zara-black-sleeveless-knit": 0.91,
-   "cp:black+tan": 4.04,
+   "cp:black+tan": 4.12,
    "ip:basic-tan-crossbody|zara-black-sleeveless-knit": 0.91,
    "ip:basic-black-bamboo-wide-crop|basic-denim-jacket": 0.36,
    "ip:basic-black-bamboo-wide-crop|basic-tan-flats": 0.36,
@@ -25762,8 +25815,8 @@
    "ip:basic-white-flats|country-road-white-tank": 0.36,
    "ip:basic-white-wide-linen-pants|white-linen-orange-embroidered-shirt": 0.36,
    "ip:basic-tan-flats|white-linen-orange-embroidered-shirt": 0.65,
-   "it:basic-white-wide-linen-pants": 1.52,
-   "ip:basic-tan-flats|basic-white-wide-linen-pants": 0.91,
+   "it:basic-white-wide-linen-pants": 1.85,
+   "ip:basic-tan-flats|basic-white-wide-linen-pants": 1.13,
    "ip:basic-blue-straight-jeans-cropped|cos-pink-funnel-neck-sweat": 0.36,
    "ip:adidas-gazelle-pink|basic-blue-straight-jeans-cropped": 0.36,
    "ip:green-breton-long-sleeve|pink-green-knit-tee": 0.36,
@@ -25776,9 +25829,9 @@
    "ip:basic-white-wide-linen-pants|boden-red-gingham-shirt": 0.36,
    "ip:basic-tan-flats|boden-red-gingham-shirt": 0.65,
    "ip:basic-tan-flats|marcs-pink-gingham-tank": 0.36,
-   "it:gorman-denim-lace-up-top": 0.65,
+   "it:gorman-denim-lace-up-top": 0.91,
    "ip:basic-white-wide-jeans|gorman-denim-lace-up-top": 0.36,
-   "ip:basic-tan-flats|gorman-denim-lace-up-top": 0.36,
+   "ip:basic-tan-flats|gorman-denim-lace-up-top": 0.65,
    "ip:basic-white-wide-jeans|red-cotton-shirt": 0.36,
    "ip:basic-tan-belt|red-cotton-shirt": 0.36,
    "ip:basic-tan-flats|red-cotton-shirt": 0.65,
@@ -26113,8 +26166,8 @@
    "ip:basic-black-flats|charcoal-velvet-skirt": 0.36,
    "ip:basic-black-crossbody|charcoal-velvet-skirt": 0.36,
    "ip:basic-white-linen-shirt|black-wool-pocket-mini-skirt": 0.36,
-   "it:dharma-bums-black-waistcoat": 0.65,
-   "ip:basic-tan-crossbody|dharma-bums-black-waistcoat": 0.36,
+   "it:dharma-bums-black-waistcoat": 0.91,
+   "ip:basic-tan-crossbody|dharma-bums-black-waistcoat": 0.65,
    "ip:basic-white-wide-jeans|dharma-bums-black-waistcoat": 0.36,
    "ip:basic-white-sneakers|dharma-bums-black-waistcoat": 0.36,
    "ip:basic-black-wide-linen-pants|zara-white-sleeveless-knit": 0.36,
@@ -26230,7 +26283,7 @@
    "ip:basic-black-ankle-boots-flat|basic-black-crossbody": 0.36,
    "ip:basic-black-ankle-boots-flat|basic-white-denim-mini": 0.36,
    "ip:basic-black-crossbody|basic-white-denim-mini": 0.36,
-   "it:basic-white-denim-mini": 0.36,
+   "it:basic-white-denim-mini": 0.65,
    "ip:basic-black-tee|basic-white-straight-jeans-cropped": 0.36,
    "ip:basic-blue-straight-jeans-cropped|basic-grey-marle-jumper": 0.65,
    "ip:basic-black-sneakers|basic-grey-marle-jumper": 0.36,
@@ -26343,7 +26396,7 @@
    "ip:basic-white-wide-linen-pants|zara-white-sleeveless-knit": 0.36,
    "ip:uniqlo-brown-knit-jacket|zara-white-sleeveless-knit": 0.36,
    "ip:basic-white-wide-linen-pants|uniqlo-brown-knit-jacket": 0.36,
-   "ip:basic-tan-crossbody|basic-white-wide-linen-pants": 0.65,
+   "ip:basic-tan-crossbody|basic-white-wide-linen-pants": 0.91,
    "ip:basic-denim-jacket|basic-grey-tee": 0.36,
    "ip:basic-grey-tee|basic-white-wide-jeans": 0.36,
    "ip:basic-grey-tee|basic-white-sneakers": 0.36,
@@ -26351,9 +26404,18 @@
    "ip:basic-white-wide-linen-pants|black-white-stripe-tee": 0.36,
    "ip:basic-denim-jacket|black-white-stripe-tee": 0.36,
    "ip:basic-tan-crossbody|black-white-stripe-tee": 0.36,
-   "ip:basic-denim-jacket|basic-white-wide-linen-pants": 0.36
+   "ip:basic-denim-jacket|basic-white-wide-linen-pants": 0.36,
+   "ip:basic-white-wide-linen-pants|dharma-bums-black-waistcoat": 0.36,
+   "ip:basic-black-loafers|dharma-bums-black-waistcoat": 0.36,
+   "ip:basic-black-loafers|basic-white-wide-linen-pants": 0.36,
+   "ip:basic-black-loafers|basic-tan-crossbody": 0.36,
+   "ip:basic-white-wide-linen-pants|gorman-denim-lace-up-top": 0.36,
+   "it:black-sleeveless-mock-neck": 0.36,
+   "ip:basic-white-denim-mini|black-sleeveless-mock-neck": 0.36,
+   "ip:basic-black-flats|black-sleeveless-mock-neck": 0.36,
+   "ip:basic-black-flats|basic-white-denim-mini": 0.36
   },
-  "n": 266,
-  "source": "266 inspiration photos, 26 Oct 2026"
+  "n": 269,
+  "source": "269 inspiration photos, 26 Oct 2026"
  }
 }
