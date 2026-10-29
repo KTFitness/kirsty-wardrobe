@@ -185,11 +185,11 @@ dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
 </nav>
 <dialog class="sheet" id="sheet"><div class="sheet-in" id="sheetBody"></div></dialog>
 
-<script src="style.js?v=202610301020"></script>
+<script src="style.js?v=202610301020b"></script>
 <script>
 /* Home-screen apps hold on to old copies. On open, check version.txt; if a newer version is live, refresh the cached files and reload once. */
 if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{});});}
-const APPV="202610301020";
+const APPV="202610301020b";
 fetch("version.txt",{cache:"no-store"}).then(r=>r.ok?r.text():"").then(v=>{v=v.trim();if(!v||v===APPV)return;
   let tried="";try{tried=sessionStorage.getItem("kw:upd")||"";}catch(e){}if(tried===v)return;try{sessionStorage.setItem("kw:upd",v);}catch(e){}
   Promise.all([fetch("index.html",{cache:"reload"}),fetch("./",{cache:"reload"})]).catch(()=>{}).then(()=>location.reload());}).catch(()=>{});
@@ -199,14 +199,15 @@ const CATS=[["tops","Tops"],["knitwear","Knitwear"],["dresses","Dresses"],["play
 const CATNAME=Object.fromEntries(CATS);
 const dcat=i=>!i?"other":i.category==="trousers"&&/jean/.test((i.id+" "+i.name).toLowerCase())?"jeans":i.category==="knitwear"&&/cardigan/.test((i.id+" "+i.name).toLowerCase())?"outerwear":i.category==="dresses"&&/playsuit|jumpsuit/.test((i.id+" "+i.name).toLowerCase())?"playsuits":i.category;
 const SEASONS=["Spring","Summer","Autumn","Winter"];
-const subKey=i=>window.Stylist?Stylist.subOf(i,dcat(i)):"";
+const subKey=i=>{if(!window.Stylist)return "";if(i._sk===undefined)i._sk=Stylist.subOf(i,dcat(i));return i._sk;};
 const subList=c=>(window.Stylist&&Stylist.SUBS[c])||[];
 const subLabel=i=>{const r=subList(dcat(i)).find(x=>x[0]===subKey(i));return r?r[1]:"";};
 const subIdx=i=>{const L=subList(dcat(i));const k=L.findIndex(x=>x[0]===subKey(i));return k<0?99:k;};
 function subChips(cat,items,cur,attr){const L=subList(cat).map(([k,v])=>[k,v,items.filter(i=>subKey(i)===k).length]).filter(x=>x[2]);if(L.length<2)return "";
   return `<div class="chips subchips" role="group" aria-label="Kind"><button class="chip" type="button" ${attr}="" aria-pressed="${!cur}">All kinds</button>${L.map(([k,v,n])=>`<button class="chip" type="button" ${attr}="${k}" aria-pressed="${cur===k}">${esc(v)}<span class="n">${n}</span></button>`).join("")}</div>`;}
 const facetsOf=c=>(window.Stylist&&Stylist.FACETS[c])||[];
-function facetFilter(cat,items,st){const F=facetsOf(cat);return items.filter(i=>F.every(([k,,,fn])=>!st[k]||fn(i)===st[k]));}
+const fv=(i,k,fn)=>{i._fv=i._fv||{};if(i._fv[k]===undefined)i._fv[k]=fn(i);return i._fv[k];};
+function facetFilter(cat,items,st){const F=facetsOf(cat);return items.filter(i=>F.every(([k,,,fn])=>!st[k]||fv(i,k,fn)===st[k]));}
 function facetRows(cat,items,st,attr){return facetsOf(cat).map(([k,lab,opts,fn])=>{const others=facetFilter(cat,items,{...st,[k]:""});const L=opts.map(([o,v])=>[o,v,others.filter(i=>fn(i)===o).length]).filter(x=>x[2]);if(L.length<2)return "";
   return `<div class="chips subchips" role="group" aria-label="${esc(lab)}"><span class="ct" style="align-self:center;margin-right:4px;white-space:nowrap">${esc(lab)}</span><button class="chip" type="button" ${attr}="${k}:" aria-pressed="${!st[k]}">Any</button>${L.map(([o,v,n])=>`<button class="chip" type="button" ${attr}="${k}:${o}" aria-pressed="${st[k]===o}">${esc(v)}<span class="n">${n}</span></button>`).join("")}</div>`;}).join("");}
 function subGroups(items,cell,gridStyle,ctx,isOn){const groups=[];for(const i of items){const lab=subLabel(i)||"Other";let g=groups.find(x=>x[0]===lab);if(!g){g=[lab,[]];groups.push(g);}g[1].push(i);}
