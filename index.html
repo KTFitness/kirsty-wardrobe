@@ -137,6 +137,7 @@ dl.facts dt{color:var(--muted);font-weight:600}
 dl.facts dd{margin:0}
 .missing{margin:0;padding-left:18px;color:var(--muted);font-size:14px}
 .missing li{margin:2px 0}
+.subtog{display:flex;align-items:center;gap:8px;width:100%;border:none;border-top:1px solid var(--line);background:none;font:inherit;font-size:14px;font-weight:600;color:var(--fg);padding:10px 6px;cursor:pointer;text-align:left}.subtog>span:first-child{flex:1}.subtog .chosen img{width:26px;height:26px;object-fit:contain;background:var(--tile);border-radius:5px;margin-left:2px}
 .subhead{font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin:10px 4px 4px}
 .subchips .chip{font-size:13px;padding:6px 10px}.wadd{border:none;background:none;color:var(--accent);font:inherit;font-size:13px;font-weight:600;cursor:pointer;padding:0 0 0 6px}
 .wish{display:grid;gap:8px;margin:0;padding:0;list-style:none}.wish li{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px;display:grid;gap:4px}
@@ -184,11 +185,11 @@ dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
 </nav>
 <dialog class="sheet" id="sheet"><div class="sheet-in" id="sheetBody"></div></dialog>
 
-<script src="style.js?v=202610291257"></script>
+<script src="style.js?v=202610291259"></script>
 <script>
 /* Home-screen apps hold on to old copies. On open, check version.txt; if a newer version is live, refresh the cached files and reload once. */
 if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{});});}
-const APPV="202610291257";
+const APPV="202610291259";
 fetch("version.txt",{cache:"no-store"}).then(r=>r.ok?r.text():"").then(v=>{v=v.trim();if(!v||v===APPV)return;
   let tried="";try{tried=sessionStorage.getItem("kw:upd")||"";}catch(e){}if(tried===v)return;try{sessionStorage.setItem("kw:upd",v);}catch(e){}
   Promise.all([fetch("index.html",{cache:"reload"}),fetch("./",{cache:"reload"})]).catch(()=>{}).then(()=>location.reload());}).catch(()=>{});
@@ -208,9 +209,11 @@ const facetsOf=c=>(window.Stylist&&Stylist.FACETS[c])||[];
 function facetFilter(cat,items,st){const F=facetsOf(cat);return items.filter(i=>F.every(([k,,,fn])=>!st[k]||fn(i)===st[k]));}
 function facetRows(cat,items,st,attr){return facetsOf(cat).map(([k,lab,opts,fn])=>{const others=facetFilter(cat,items,{...st,[k]:""});const L=opts.map(([o,v])=>[o,v,others.filter(i=>fn(i)===o).length]).filter(x=>x[2]);if(L.length<2)return "";
   return `<div class="chips subchips" role="group" aria-label="${esc(lab)}"><span class="ct" style="align-self:center;margin-right:4px;white-space:nowrap">${esc(lab)}</span><button class="chip" type="button" ${attr}="${k}:" aria-pressed="${!st[k]}">Any</button>${L.map(([o,v,n])=>`<button class="chip" type="button" ${attr}="${k}:${o}" aria-pressed="${st[k]===o}">${esc(v)}<span class="n">${n}</span></button>`).join("")}</div>`;}).join("");}
-function subGroups(items,cell,gridStyle){const groups=[];for(const i of items){const lab=subLabel(i)||"Other";let g=groups.find(x=>x[0]===lab);if(!g){g=[lab,[]];groups.push(g);}g[1].push(i);}
-  if(groups.length<2)return `<div class="grid" style="${gridStyle}">${items.map(cell).join("")}</div>`;
-  return groups.map(([lab,is])=>`<div class="subhead">${esc(lab)} <span class="n">${is.length}</span></div><div class="grid" style="${gridStyle}">${is.map(cell).join("")}</div>`).join("");}
+function subGroups(items,cell,gridStyle,ctx,isOn){const groups=[];for(const i of items){const lab=subLabel(i)||"Other";let g=groups.find(x=>x[0]===lab);if(!g){g=[lab,[]];groups.push(g);}g[1].push(i);}
+  if(groups.length<2||!ctx)return groups.length<2?`<div class="grid" style="${gridStyle}">${items.map(cell).join("")}</div>`:groups.map(([lab,is])=>`<div class="subhead">${esc(lab)} <span class="n">${is.length}</span></div><div class="grid" style="${gridStyle}">${is.map(cell).join("")}</div>`).join("");
+  S.subOpen=S.subOpen||{};
+  return groups.map(([lab,is])=>{const key=ctx+"|"+lab,open=!!S.subOpen[key];const sel=isOn?is.filter(isOn):[];
+   return `<button type="button" class="subtog" data-subg="${esc(key)}" aria-expanded="${open}"><span>${esc(lab)}</span>${sel.length?`<span class="chosen">${sel.map(i=>`<img src="${esc(th(i.img))}" alt="">`).join("")}</span>`:""}<span class="n">${is.length}</span><span class="chev">${open?"▾":"▸"}</span></button>${open?`<div class="grid" style="${gridStyle}">${is.map(cell).join("")}</div>`:""}`;}).join("");}
 const TOPS=["tops","knitwear"],BOTTOMS=["skirts","trousers","shorts"];
 const D={items:[],outfits:[],inspo:[],occasions:[],updated:""};
 const S={anchor:null,sOcc:"Everyday",sSeason:null,seed:1,pickCat:"all",q:"",tab:"outfits",cat:"all",sort:"colour",occ:"all",season:"any",surprise:null,build:{itemIds:[],name:"",occasions:[]},copied:""};
@@ -406,7 +409,7 @@ function vBuild(){
     const chosen=all.filter(i=>b.itemIds.includes(i.id));const open=q?true:!!S.bOpen[k];
     return `<div class="catsec"><button type="button" class="cathead" data-bsec="${k}" aria-expanded="${open}"><span class="gn">${v}</span>
      ${chosen.length?`<span class="chosen">${chosen.map(i=>`<img src="${esc(th(i.img))}" alt="">`).join("")}</span>`:""}<span class="n">${q?list.length+" found":all.length}</span><span class="chev">${open?"▾":"▸"}</span></button>
-     ${open?subGroups(list,i=>`<button type="button" class="card pick" data-pick="${esc(i.id)}" aria-pressed="${b.itemIds.includes(i.id)}"><div class="tile"><img src="${esc(th(i.img))}" alt="${esc(i.name)}" loading="lazy"></div><div class="meta"><span class="ct">${esc(i.name)}</span></div></button>`,"grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:8px;padding:0 4px 8px"):""}</div>`;}).join("");})()}`;
+     ${open?subGroups(list,i=>`<button type="button" class="card pick" data-pick="${esc(i.id)}" aria-pressed="${b.itemIds.includes(i.id)}"><div class="tile"><img src="${esc(th(i.img))}" alt="${esc(i.name)}" loading="lazy"></div><div class="meta"><span class="ct">${esc(i.name)}</span></div></button>`,"grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:8px;padding:0 4px 8px",q?null:"b:"+k,i=>b.itemIds.includes(i.id)):""}</div>`;}).join("");})()}`;
 }
 function pickGrid(){
   const q=S.q.trim().toLowerCase();
@@ -418,7 +421,7 @@ function pickGrid(){
   ${CATS.filter(([k])=>counts[k]).map(([k,v])=>`<button class="chip" data-pickcat="${k}" aria-pressed="${S.pickCat===k}">${v}</button>`).join("")}
   <button class="chip" data-pickcat="basics" aria-pressed="${S.pickCat==="basics"}">Basics</button></div>
   ${S.pickCat!=="all"&&S.pickCat!=="basics"?subChips(S.pickCat,own0,S.pickSub,"data-psub")+facetRows(S.pickCat,own1,S.pfac,"data-pfac"):""}
-  ${own.length?`<div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:9px">${own.map(i=>`<button type="button" class="card" data-anchor="${esc(i.id)}"><div class="tile"><img src="${esc(th(i.img))}" alt="" loading="lazy"></div><div class="meta"><span class="nm" style="font-size:13px">${esc(i.name)}</span></div></button>`).join("")}</div>`:`<div class="empty"><span>Nothing matches that search.</span></div>`}`;
+  ${own.length?subGroups(own,i=>`<button type="button" class="card" data-anchor="${esc(i.id)}"><div class="tile"><img src="${esc(th(i.img))}" alt="" loading="lazy"></div><div class="meta"><span class="nm" style="font-size:13px">${esc(i.name)}</span></div></button>`,"grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:9px",S.pickCat!=="all"&&S.pickCat!=="basics"&&!S.pickSub&&!q?"p:"+S.pickCat:null):`<div class="empty"><span>Nothing matches that search.</span></div>`}`;
 }
 /* Single pieces are never marked down on their own: a Not for me counts against the combination
    (pairs of pieces, colour pairs, pattern mixes), not against any one item.
@@ -460,7 +463,7 @@ function vStyle(){
    return `<div class="panel" style="gap:8px"><div class="row" style="justify-content:space-between;align-items:center"><strong style="font-size:15px">Pair it with</strong>${W?`<button class="iconbtn" type="button" data-pw="">Clear</button>`:""}</div>
     ${W?`<div class="row" style="align-items:center;gap:10px"><div class="tile" style="width:64px;aspect-ratio:1/1;border-radius:8px"><img src="${esc(th(W.img))}" alt=""></div><span style="font-size:14px">${esc(W.name)}</span></div>`:`<p class="lede" style="margin:0;font-size:14px">Pick a type, then tap a piece to build the ideas around both. Or leave it and the app chooses.</p>`}
     <div class="chips" role="group" aria-label="Pair with type">${cats.map(([k,v])=>`<button class="chip" type="button" data-pwcat="${k}" aria-pressed="${pc===k}">${v}</button>`).join("")}</div>
-    ${pc?subGroups(L,i=>`<button type="button" class="card pick" data-pw="${esc(i.id)}" aria-pressed="${!!(W&&W.id===i.id)}"><div class="tile"><img src="${esc(th(i.img))}" alt="${esc(i.name)}" loading="lazy"></div><div class="meta"><span class="ct">${esc(i.name)}</span></div></button>`,"grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:8px"):""}</div>`;})()}
+    ${pc?subGroups(L,i=>`<button type="button" class="card pick" data-pw="${esc(i.id)}" aria-pressed="${!!(W&&W.id===i.id)}"><div class="tile"><img src="${esc(th(i.img))}" alt="${esc(i.name)}" loading="lazy"></div><div class="meta"><span class="ct">${esc(i.name)}</span></div></button>`,"grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:8px","pw:"+pc,i=>!!(W&&W.id===i.id)):""}</div>`;})()}
   <div class="chips" role="group" aria-label="Occasion">${["Everyday","Lunch out","Dinner out","Smart casual","Travel","Holiday","Special occasion"].map(o=>`<button class="chip" data-socc="${o}" aria-pressed="${S.sOcc===o}">${o}</button>`).join("")}</div>
   ${!S.sSeason&&S.wx?wxLine():""}
   <div class="chips" role="group" aria-label="Season">${SEASONS.map(x=>`<button class="chip" data-sseason="${x}" aria-pressed="${season===x}">${x}${x===todaySeason()?(S.wx?" (today)":" (now)"):""}</button>`).join("")}</div>
@@ -680,6 +683,7 @@ document.addEventListener("click",async e=>{
   if(t.dataset.wgot){const w=wish.find(x=>x.id===t.dataset.wgot);if(w){w.got=!w.got;w.updated=Date.now();LS.set("wish",wish);}render();return;}
   if(t.dataset.wdel){if(!t.dataset.armed){t.dataset.armed="1";t.textContent="Tap again to delete";return;}wish=wish.filter(x=>x.id!==t.dataset.wdel);LS.set("wish",wish);render();return;}
   if(t.dataset.wfrom){const p=D.inspo.find(x=>x.id===t.dataset.wfrom);wish.push({id:"w"+Date.now(),title:t.dataset.wt,note:"",link:"",tag:"Want",from:p?p.name:"",got:false,updated:Date.now()});LS.set("wish",wish);t.outerHTML=`<span class="wadd" style="cursor:default">✓ on wishlist</span>`;return;}
+  if(t.dataset.subg){S.subOpen=S.subOpen||{};S.subOpen[t.dataset.subg]=!S.subOpen[t.dataset.subg];if(S.tab==="build"&&$("#bName"))S.build.name=$("#bName").value;render();return;}
   if(t.dataset.pwcat){S.pwCat=S.pwCat===t.dataset.pwcat?"":t.dataset.pwcat;render();return;}
   if(t.dataset.pw!==undefined){S.with=t.dataset.pw||null;S.withFor=S.anchor;S.seed=1;S.shown=[];S.pwCat="";render();const g=document.querySelector(".ogrid");if(g&&S.with)g.scrollIntoView({behavior:"smooth",block:"start"});return;}
   if(t.dataset.ifilt){S.ifilt=t.dataset.ifilt;render();return;}
