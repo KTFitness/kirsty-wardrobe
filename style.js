@@ -300,7 +300,7 @@ const SUBS={
  knitwear:[["ktank","Knit tanks"],["kvest","Knit vests"],["ktee","Knit tees & polos"],["jumper","Jumpers & sweatshirts"]],
  outerwear:[["cardigan","Cardigans & knit jackets"],["blazer","Blazers"],["jacket","Jackets"],["coat","Coats"]],
  skirts:[["mini","Short & mini"],["midi","Knee & midi"],["maxi","Maxi"]],
- jeans:[["wide","Wide-leg"],["straight","Straight"],["cropped","Cropped & ankle"]],
+ jeans:[["wide","Wide-leg"],["straight","Straight & skinny"],["cropped","Cropped & ankle"]],
  trousers:[["wide","Wide-leg"],["straight","Straight & tapered"],["leggings","Leggings"]],
  shorts:[["shorts","Shorts"]],
  dresses:[["tee","T-shirt & tank dresses"],["shift","Shift & swing dresses"],["shirt","Shirt & button dresses"],["pinafore","Pinafores"],["dressy","Dressy"],["maxi","Maxi"]],

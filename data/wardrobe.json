@@ -6535,6 +6535,25 @@
    ],
    "notes": "Collar, button front, puff short sleeves, gathered yoke, tiered skirt. Your photo.",
    "img": "img/black-linen-tiered-shirt-dress.webp"
+  },
+  {
+   "id": "country-road-sage-skinny-jeans",
+   "name": "Country Road sage green skinny jeans",
+   "category": "trousers",
+   "colours": [
+    "sage green"
+   ],
+   "pattern": "solid",
+   "fabric": "stretch denim",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Mid-rise skinny, full length, five pockets plus zip-detail front pockets. Your photo.",
+   "img": "img/country-road-sage-skinny-jeans.webp",
+   "sub": "straight"
   }
  ],
  "outfits": [
