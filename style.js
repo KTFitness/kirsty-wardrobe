@@ -293,5 +293,36 @@ function finish(pieces,items,ctx){ctx=ctx||{};ctx.W=ctx.W||{};const season=ctx.s
 function addLayer(pieces,items,ctx){ctx=ctx||{};ctx.W=ctx.W||{};if(pieces.some(isWarmLayer)||(!ctx.rain&&pieces.some(longSleeve)))return null;
   const sc=ps=>(ctx.rules?score(ps,ctx).s:0)+learned(ps,ctx);
   const L=items.filter(i=>isWarmLayer(i)&&inSeason(i,ctx.season)&&!busyClash(pieces.concat(i))).map(x=>[x,sc(pieces.concat(x))]).sort((a,b)=>b[1]-a[1]);return L[0]?L[0][0]:null;}
-window.Stylist={busyClash,addLayer,finish,coreKey:ps=>ps.filter(p=>!["shoes","bags","accessories"].includes(p.category)).map(p=>p.id).sort().join(","),suggest,features,families,pkind,formality,hemTip,hairTip};
+
+/* Sub-categories, worked out from each piece's name, notes and shape. An item's own "sub" field overrides. */
+const SUBS={
+ tops:[["tanks","Tanks & singlets"],["vests","Vests & waistcoats"],["sstee","Short-sleeve tees & tops"],["lstee","Long-sleeve tees & tops"],["ssshirt","Short-sleeve & sleeveless shirts"],["lsshirt","Long-sleeve shirts & blouses"]],
+ knitwear:[["ktank","Knit tanks"],["kvest","Knit vests"],["ktee","Knit tees & polos"],["jumper","Jumpers & sweatshirts"]],
+ outerwear:[["cardigan","Cardigans & knit jackets"],["blazer","Blazers"],["jacket","Jackets"],["coat","Coats"]],
+ skirts:[["mini","Short & mini"],["midi","Knee & midi"],["maxi","Maxi"]],
+ jeans:[["wide","Wide-leg"],["straight","Straight"],["cropped","Cropped & ankle"]],
+ trousers:[["wide","Wide-leg"],["straight","Straight & tapered"],["leggings","Leggings"]],
+ shorts:[["shorts","Shorts"]],
+ dresses:[["tee","T-shirt & tank dresses"],["shift","Shift & swing dresses"],["shirt","Shirt & button dresses"],["pinafore","Pinafores"],["dressy","Dressy"],["maxi","Maxi"]],
+ playsuits:[["playsuit","Playsuits"],["jumpsuit","Jumpsuits"]],
+ shoes:[["sneakers","Sneakers"],["flats","Flats & loafers"],["sandals","Sandals & slides"],["heels","Heels"],["boots","Boots"]],
+ bags:[["bags","Bags"]],accessories:[["belts","Belts"],["other","Other"]]};
+function subOf(i,dc){if(i.sub)return i.sub;const n=(i.name+" "+(i.notes||"")+" "+(i.shape||"")).toLowerCase(),nm=i.name.toLowerCase();
+ const sl=/sleeveless|tank|singlet|cami\b|halter|strappy|shell|racer|crop top|bandeau|tube/.test(n)&&!/long sleeve|long-sleeve|short sleeve/.test(nm);
+ const ls=/long-sleeve|long sleeve|long sleeves|turtleneck|funnel|mock-neck long|balloon|blouson|three-quarter|3\/4|batwing|cuffed sleeves|roll-tab/.test(n);
+ switch(dc){
+ case "tops":{if(/waistcoat|vest\b/.test(nm))return "vests";if(sl&&!/shirt\b|blouse/.test(nm))return "tanks";
+   const shirt=/shirt\b|blouse|popover/.test(nm)&&!/t-shirt|tee/.test(nm);if(shirt)return ls?"lsshirt":"ssshirt";if(sl)return "tanks";return ls?"lstee":"sstee";}
+ case "knitwear":{if(/vest/.test(nm))return "kvest";if(sl||/tank/.test(nm))return "ktank";if(/jumper|sweat|turtleneck|pullover|funnel/.test(nm))return "jumper";return "ktee";}
+ case "outerwear":{if(/cardigan|knit jacket/.test(n))return "cardigan";if(/blazer/.test(nm))return "blazer";if(/coat|trench/.test(nm))return "coat";return "jacket";}
+ case "skirts":{if(/maxi/.test(n))return "maxi";if(/mini/.test(nm)||/above[ -]the[ -]knee|above[ -]knee/.test(n))return "mini";if(/midi|pencil|knee/.test(n))return "midi";return "mini";}
+ case "jeans":{if(/crop|ankle/.test(nm))return "cropped";if(/wide/.test(nm))return "wide";return "straight";}
+ case "trousers":{if(/legging/.test(nm))return "leggings";if(/wide|sailor|palazzo|culotte/.test(n))return "wide";return "straight";}
+ case "dresses":{if(/maxi/.test(nm))return "maxi";if(/pinafore/.test(nm))return "pinafore";if(/sequin|tulle|studded|halter|ruffle|dressy|appliqu/.test(n))return "dressy";if(/t-shirt|tee dress|tank/.test(nm))return "tee";if(/shirt dress|button-front|button front/.test(nm))return "shirt";return "shift";}
+ case "playsuits":return /jumpsuit/.test(nm)?"jumpsuit":"playsuit";
+ case "shoes":{if(/sneaker|samba|gazelle|adidas/.test(n))return "sneakers";if(/boot|doc/.test(nm))return "boots";if(/heel|mule/.test(nm)&&!/flat/.test(nm))return "heels";if(/slide|sandal|thong/.test(nm))return "sandals";return "flats";}
+ case "accessories":return /belt/.test(nm)?"belts":"other";
+ default:return SUBS[dc]?SUBS[dc][0][0]:"other";}}
+
+window.Stylist={subOf,SUBS,busyClash,addLayer,finish,coreKey:ps=>ps.filter(p=>!["shoes","bags","accessories"].includes(p.category)).map(p=>p.id).sort().join(","),suggest,features,families,pkind,formality,hemTip,hairTip};
 })();
