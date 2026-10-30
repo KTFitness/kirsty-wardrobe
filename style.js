@@ -193,6 +193,9 @@ function suggest(anchor,items,ctx){
   const ac=anchor.category;
   if(ac==="tops"||(ac==="knitwear"&&!isWarmLayer(anchor))){
     for(const b of bottoms)cores.push([anchor,b]);
+    // A plain tee or long-sleeve can go under a vest or waistcoat.
+    if(isUnder(anchor)&&!isVest(anchor)){const V=(WI&&isVest(WI))?[WI]:pool.filter(isVest);const bs=bottoms.map(b=>[b,SC([anchor,b],ctx).s]).sort((a,b)=>b[1]-a[1]).slice(0,14).map(x=>x[0]);
+      for(const v of V)for(const b of bs)cores.push([anchor,v,b]);}
   }else if(["skirts","trousers","shorts"].includes(ac)){
     for(const t of tops)cores.push([t,anchor]);
   }else if(ac==="dresses"&&(anchor.overTop||/pinafore/.test(lc(anchor)))){const U=WI&&tops.includes(WI)?[WI]:tops.filter(t=>!sleeveless(t)&&!isVest(t)&&(!anchor.overTop||!/shirt|blouse|polo/i.test(t.name.replace(/T-shirt/ig,""))));for(const t of U)cores.push([anchor,t]);
@@ -267,6 +270,7 @@ function suggest(anchor,items,ctx){
     if(mains.some(p=>(used[p.id]||0)>=1))continue;
     const bf=bottomFam(r);if(bf&&(bfam[bf]||0)>=2)continue;
     if(r.patNote){if(mixes>=3)continue;mixes++;}
+    const hv=r.pieces.some(p=>p!==anchor&&isVest(p));if(hv&&out.filter(o=>o.pieces.some(p=>p!==anchor&&isVest(p))).length>=3)continue;
     if(out.length===want-1&&!out.some(hasBasic)&&!hasBasic(r))continue;
     const allBasic=mains.every(p=>p.basic);
     if(allBasic&&basicOnly>=2)continue;
@@ -282,6 +286,7 @@ function suggest(anchor,items,ctx){
   if(out.length<want){const have=new Set(out.map(o=>o.pieces.map(p=>p.id).sort().join(",")));
     for(const r of results){if(out.length>=want)break;const k=r.pieces.map(p=>p.id).sort().join(",");if(have.has(k)||excl.has(k))continue;
       const mains=r.pieces.filter(p=>p!==anchor&&p!==WI&&p.category!=="shoes"&&p.category!=="bags");if(mains.some(p=>(used[p.id]||0)>=2))continue;
+      if(r.pieces.some(p=>p!==anchor&&isVest(p))&&out.filter(o=>o.pieces.some(p=>p!==anchor&&isVest(p))).length>=3)continue;
       const bf=bottomFam(r);if(bf&&(bfam[bf]||0)>=3)continue;if(bf)bfam[bf]=(bfam[bf]||0)+1;
       mains.forEach(p=>used[p.id]=(used[p.id]||0)+1);have.add(k);out.push(r);}}
   out.forEach(o=>{const lr=lreasons(o,anchor,ctx,items);o.why=(ctx.rules&&/fresh|different/.test(lr))?reasons(o,anchor,ctx):lr;if(o.variant)o.why="A variation on one you liked: same clothes, different shoes or bag.";o.key=o.pieces.map(p=>p.id).sort().join(",");o.tips=[hemTip(o.pieces),hairTip(o.pieces)].filter(Boolean);});
