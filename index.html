@@ -185,11 +185,11 @@ dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
 </nav>
 <dialog class="sheet" id="sheet"><div class="sheet-in" id="sheetBody"></div></dialog>
 
-<script src="style.js?v=202610301043"></script>
+<script src="style.js?v=202610301112"></script>
 <script>
 /* Home-screen apps hold on to old copies. On open, check version.txt; if a newer version is live, refresh the cached files and reload once. */
 if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{});});}
-const APPV="202610301043";
+const APPV="202610301112";
 fetch("version.txt",{cache:"no-store"}).then(r=>r.ok?r.text():"").then(v=>{v=v.trim();if(!v||v===APPV)return;
   let tried="";try{tried=sessionStorage.getItem("kw:upd")||"";}catch(e){}if(tried===v)return;try{sessionStorage.setItem("kw:upd",v);}catch(e){}
   Promise.all([fetch("index.html",{cache:"reload"}),fetch("./",{cache:"reload"})]).catch(()=>{}).then(()=>location.reload());}).catch(()=>{});
@@ -242,10 +242,21 @@ function wxSeason(w){const t=w.max;return t>=26?"Summer":t>=20?"Spring":t>=15?"A
 function todaySeason(){return S.wx?wxSeason(S.wx):currentSeason();}
 function wxRain(){return !!(S.wx&&(S.wx.rain>=50||[51,53,55,61,63,65,80,81,82,95,96,99].includes(S.wx.code)));}
 function wxLine(){if(!S.wx)return "";const w=S.wx;const d=WX_CODES[w.code]||"";const feel={Summer:"a hot day",Spring:"a warm day",Autumn:"a mild day",Winter:"a cool day"}[wxSeason(w)];
-  return `<div class="wx"><span class="wxt">${Math.round(w.max)}°</span><span>Today in West Beach: ${esc(d)}, ${Math.round(w.min)} to ${Math.round(w.max)}°C${w.rain>=30?`, ${w.rain}% chance of rain`:""}.<br><span class="lede" style="font-size:13px">Showing pieces for ${feel}${wxRain()?", with a layer and closed shoes for the rain":""}.</span></span></div>`;}
-function loadWx(){try{const c=JSON.parse(localStorage.getItem("kw:wx")||"null");if(c&&c.day===new Date().toDateString()){S.wx=c;}}catch(e){}
-  if(S.wx)return;fetch("https://api.open-meteo.com/v1/forecast?latitude=-34.95&longitude=138.50&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,weather_code&timezone=Australia%2FAdelaide&forecast_days=1")
-  .then(r=>r.json()).then(j=>{const d=j.daily;S.wx={day:new Date().toDateString(),max:d.temperature_2m_max[0],min:d.temperature_2m_min[0],rain:d.precipitation_probability_max[0]||0,code:d.weather_code[0]};try{localStorage.setItem("kw:wx",JSON.stringify(S.wx));}catch(e){}render();}).catch(()=>{});}
+  return `<div class="wx"><span class="wxt">${Math.round(w.max)}°</span><span>Today in ${esc(w.place||"West Beach")}: ${esc(d)}, ${Math.round(w.min)} to ${Math.round(w.max)}°C${w.rain>=30?`, ${w.rain}% chance of rain`:""}.<br><span class="lede" style="font-size:13px">Showing pieces for ${feel}${wxRain()?(w.max>=24?", with closed shoes for the rain":", with a layer and closed shoes for the rain"):""}.</span></span></div>`;}
+/* Weather for wherever the phone is. Asks for location once; falls back to West Beach if refused or unavailable. */
+const HOME={lat:-34.95,lon:138.50,place:"West Beach"};
+function getLoc(){return new Promise(res=>{let c=null;try{c=JSON.parse(localStorage.getItem("kw:loc")||"null");}catch(e){}
+  if(c&&Date.now()-c.t<3*3600e3)return res(c);
+  if(!navigator.geolocation)return res(c||HOME);
+  navigator.geolocation.getCurrentPosition(async p=>{const lat=+p.coords.latitude.toFixed(2),lon=+p.coords.longitude.toFixed(2);let place=c&&Math.abs(c.lat-lat)<0.05&&Math.abs(c.lon-lon)<0.05?c.place:"";
+    if(!place){try{const r=await (await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`)).json();place=r.locality||r.city||r.principalSubdivision||"";}catch(e){}}
+    const L={lat,lon,place:place||"your location",t:Date.now()};try{localStorage.setItem("kw:loc",JSON.stringify(L));}catch(e){}res(L);},
+   ()=>res(c||HOME),{timeout:8000,maximumAge:3*3600e3});});}
+async function loadWx(){try{const c=JSON.parse(localStorage.getItem("kw:wx")||"null");if(c&&c.day===new Date().toDateString()){S.wx=c;render();}}catch(e){}
+  const L=await getLoc();if(S.wx&&S.wx.lat!==undefined&&Math.abs(S.wx.lat-L.lat)<0.05&&Math.abs(S.wx.lon-L.lon)<0.05)return;
+  try{const j=await (await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${L.lat}&longitude=${L.lon}&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,weather_code&timezone=auto&forecast_days=1`)).json();const d=j.daily;
+   S.wx={day:new Date().toDateString(),max:d.temperature_2m_max[0],min:d.temperature_2m_min[0],rain:d.precipitation_probability_max[0]||0,code:d.weather_code[0],lat:L.lat,lon:L.lon,place:L.place};
+   try{localStorage.setItem("kw:wx",JSON.stringify(S.wx));}catch(e){}render();}catch(e){}}
 function currentSeason(){const m=new Date().getMonth();return m===11||m<2?"Summer":m<5?"Autumn":m<8?"Winter":"Spring";}
 const okey=o=>(o.itemIds||[]).map(id=>ALIAS[id]||id).sort().join(",");
 const ACC=["shoes","bags","accessories"];
