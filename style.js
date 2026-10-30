@@ -204,6 +204,13 @@ function suggest(anchor,items,ctx){
     const bs=bottoms.map(t=>[t,SC([t,anchor],ctx).s]).sort((a,b)=>b[1]-a[1]).map(x=>x[0]);
     for(const t of ts)for(const b of bs)cores.push([t,b,anchor]);
   }
+  // Vests are worn over something: each vest outfit is offered with several different tops underneath (short sleeves in summer), not just one.
+  {const hot=season==="Summer"||(ctx.tmax!=null&&ctx.tmax>=24);const U0=unders.filter(u=>!hot||!longSleeve(u));const out=[];
+   for(const c of cores){const v=c.find(p=>isVest(p));if(!v||c.some(p=>isUnder(p)&&p!==v)){out.push(c);continue;}
+     const U=WI&&isUnder(WI)?[WI]:U0;const ranked=U.filter(u=>!c.includes(u)).map(u=>[u,SC(c.concat(u),ctx).s+rnd()*E*0.8]).sort((a,b)=>b[1]-a[1]);
+     const pick=[],fams=new Set();for(const [u] of ranked){const f=(mainFams(u)[0]||"")+(/shirt/i.test(u.name)?"s":"");if(fams.has(f))continue;fams.add(f);pick.push(u);if(pick.length>=3)break;}
+     if(!pick.length)out.push(c);for(const u of pick)out.push(c.concat(u));}
+   cores=out;}
   cores=cores.filter(c=>!busyClash(forceLayer&&WI?c.concat(WI):c));
   // pre-score cores, keep best
   {const sc=cores.map(c=>({c,s:SC(c,ctx).s+(rnd()*E)*1.2})).sort((a,b)=>b.s-a.s);
@@ -215,7 +222,7 @@ function suggest(anchor,items,ctx){
   for(const core of cores){
     let pieces=core.slice();
     const top=pieces.find(p=>p.category==="tops"||p.category==="knitwear");
-    if(top&&isVest(top)&&(cool||season==="Spring")){
+    if(top&&isVest(top)&&!pieces.some(p=>isUnder(p)&&p!==top)){
       const u=unders.filter(u=>!pieces.includes(u)&&!busyClash(pieces.concat(u))).map(u=>[u,SC(pieces.concat(u),ctx).s]).sort((a,b)=>b[1]-a[1])[0];
       if(u)pieces.push(u[0]);
     }
