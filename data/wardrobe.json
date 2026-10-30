@@ -1352,8 +1352,8 @@
   {
    "fabric": "suiting crepe",
    "id": "keepers-black-wrap-dress",
-   "name": "Keepers black sleeveless wrap-front dress",
-   "category": "dresses",
+   "name": "Finders Keepers black wrap tunic top",
+   "category": "tops",
    "colours": [
     "black"
    ],
@@ -1365,10 +1365,11 @@
     "Winter"
    ],
    "img": "img/keepers-black-wrap-dress.webp",
-   "notes": "Boat neck, empire seam, wrap skirt with side tab and buckle. Your photo.",
+   "notes": "Sleeveless, boat neck, empire seam, long wrap-front tunic with side tab and buckle. Wear over trousers, jeans or a slim skirt. Your photo.",
    "_f": [
     "black"
-   ]
+   ],
+   "sub": "tanks"
   },
   {
    "seasons": [
