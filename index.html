@@ -185,11 +185,11 @@ dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
 </nav>
 <dialog class="sheet" id="sheet"><div class="sheet-in" id="sheetBody"></div></dialog>
 
-<script src="style.js?v=202610301032"></script>
+<script src="style.js?v=202610301043"></script>
 <script>
 /* Home-screen apps hold on to old copies. On open, check version.txt; if a newer version is live, refresh the cached files and reload once. */
 if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{});});}
-const APPV="202610301032";
+const APPV="202610301043";
 fetch("version.txt",{cache:"no-store"}).then(r=>r.ok?r.text():"").then(v=>{v=v.trim();if(!v||v===APPV)return;
   let tried="";try{tried=sessionStorage.getItem("kw:upd")||"";}catch(e){}if(tried===v)return;try{sessionStorage.setItem("kw:upd",v);}catch(e){}
   Promise.all([fetch("index.html",{cache:"reload"}),fetch("./",{cache:"reload"})]).catch(()=>{}).then(()=>location.reload());}).catch(()=>{});
@@ -365,7 +365,7 @@ function vOutfits(){
   const LC=new Set(liked.map(ckey)),NO=new Set(allDisliked());
   const pool=liked.concat(inspoOutfits().filter(o=>!LC.has(ckey(o))&&!NO.has(ckey(o))&&!hidden.includes(o.id))).filter(o=>fitsSeason(o,se));
   let today=[];if(pool.length){const r=rng(Number(new Date().toISOString().slice(0,10).replace(/-/g,''))+(S.todaySeed||0)*7919);const p=pool.slice();while(today.length<3&&p.length)today.push(p.splice(Math.floor(r()*p.length),1)[0]);}
-  if(S.wx&&(S.wx.max<20||wxRain()))today=today.map(o=>{const P=(o.itemIds||[]).map(byId).filter(Boolean);const L=Stylist.addLayer(P,D.items,{season:se,rain:wxRain(),W:tasteW()});return L?{...o,itemIds:o.itemIds.concat(L.id),addedLayer:L.name,why:`Add the ${L.name.toLowerCase()} for today's weather.`}:o;});
+  if(S.wx&&(S.wx.max<20||wxRain()))today=today.map(o=>{const P=(o.itemIds||[]).map(byId).filter(Boolean);const L=Stylist.addLayer(P,D.items,{season:se,rain:wxRain(),tmax:S.wx.max,W:tasteW()});return L?{...o,itemIds:o.itemIds.concat(L.id),addedLayer:L.name,why:`Add the ${L.name.toLowerCase()} for today's weather.`}:o;});
   S.todayList=today;
   const groups={};for(const o of liked){const P=[...new Set((o.itemIds||[]).map(byId).filter(i=>i&&!ACC.includes(i.category)))];for(const k of P){(groups[k.id]=groups[k.id]||{item:k,list:[]}).list.push(o);}}
   const G=Object.values(groups).sort((x,y)=>y.list.length-x.list.length);

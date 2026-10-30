@@ -220,7 +220,7 @@ function suggest(anchor,items,ctx){
       if(u)pieces.push(u[0]);
     }
     const chilly=ctx.tmax!=null&&ctx.tmax<20&&!pieces.some(longSleeve);
-    const needLayer=forceLayer||chilly||(ctx.rain&&!pieces.some(isWarmLayer))||cool&&!pieces.some(isWarmLayer)&&(pieces.some(sleeveless)||season==="Winter"||pieces.some(p=>p.category==="dresses"));
+    const needLayer=forceLayer||chilly||(ctx.rain&&season!=="Summer"&&!(ctx.tmax>=24)&&!pieces.some(isWarmLayer))||cool&&!pieces.some(isWarmLayer)&&(pieces.some(sleeveless)||season==="Winter"||pieces.some(p=>p.category==="dresses"));
     if(needLayer&&layers.length&&!(forceLayer&&pieces.includes(WI))){const L=layers.filter(l=>!pieces.includes(l)&&!busyClash(pieces.concat(l))).map(l=>[l,SC(pieces.concat(l),ctx).s+(rnd()*E)*0.8]).sort((a,b)=>b[1]-a[1])[0];if(L)pieces.push(L[0]);}
     if(busyClash(pieces))continue;
     let alts=[];
@@ -290,7 +290,7 @@ function finish(pieces,items,ctx){ctx=ctx||{};ctx.W=ctx.W||{};const season=ctx.s
   const best=shoes[0];const bags=items.filter(i=>i.category==="bags").map(x=>[x,sc(base.concat(best?[best,x]:[x]))]).sort((a,b)=>b[1]-a[1]).map(x=>x[0]);
   return {shoes,bags};}
 
-function addLayer(pieces,items,ctx){ctx=ctx||{};ctx.W=ctx.W||{};if(pieces.some(isWarmLayer)||(!ctx.rain&&pieces.some(longSleeve)))return null;
+function addLayer(pieces,items,ctx){ctx=ctx||{};ctx.W=ctx.W||{};if(ctx.season==="Summer"||ctx.tmax>=24)return null;if(pieces.some(isWarmLayer)||(!ctx.rain&&pieces.some(longSleeve)))return null;
   const sc=ps=>(ctx.rules?score(ps,ctx).s:0)+learned(ps,ctx);
   const L=items.filter(i=>isWarmLayer(i)&&inSeason(i,ctx.season)&&!busyClash(pieces.concat(i))).map(x=>[x,sc(pieces.concat(x))]).sort((a,b)=>b[1]-a[1]);return L[0]?L[0][0]:null;}
 
