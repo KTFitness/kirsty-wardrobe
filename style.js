@@ -282,7 +282,7 @@ function suggest(anchor,items,ctx){
         if(alt){r.pieces=r.pieces.map(p=>p===sh?alt:p);used["shoe:"+sh.id]--;used["shoe:"+alt.id]=(used["shoe:"+alt.id]||0)+1;const sc=SC(r.pieces,ctx);r.best=sc.best;r.patNote=sc.patNote;}}}
     out.push(r);
   }
-  for(const r of wild){const b=botOf(r);if(out.some(o=>o.pieces.includes(b)))continue;out.push(r);}
+  for(const r of wild){const b=botOf(r);if(out.some(o=>o.pieces.includes(b)))continue;if(r.pieces.some(p=>p!==anchor&&isVest(p))&&out.filter(o=>o.pieces.some(p=>p!==anchor&&isVest(p))).length>=3)continue;out.push(r);}
   if(out.length<want){const have=new Set(out.map(o=>o.pieces.map(p=>p.id).sort().join(",")));
     for(const r of results){if(out.length>=want)break;const k=r.pieces.map(p=>p.id).sort().join(",");if(have.has(k)||excl.has(k))continue;
       const mains=r.pieces.filter(p=>p!==anchor&&p!==WI&&p.category!=="shoes"&&p.category!=="bags");if(mains.some(p=>(used[p.id]||0)>=2))continue;
