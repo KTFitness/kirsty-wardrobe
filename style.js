@@ -76,7 +76,11 @@ const isShirt=it=>(it.category==="tops")&&/shirt\b|blouse|popover/i.test(it.name
 const patShirt=it=>isShirt(it)&&!!pkind(it);
 /* A plain button shirt worn open over a tee or tank, like a light jacket. */
 const isOver=it=>!!it.overshirt;
-const openTee=it=>isUnder(it)&&!isShirt(it)&&!longSleeve(it);
+/* Crew-neck T-shirts: the only thing a shirt worn as outerwear goes over. */
+const crewTee=it=>it.category==="tops"&&/\btee\b|t-shirt/i.test(it.name)&&!/v-neck|v neck|mock|polo|boat|scoop|halter|tank|crop/i.test(it.name+" "+(it.notes||""))&&(!pkind(it)||/stripe/i.test(it.pattern||""));
+const openTee=it=>crewTee(it)&&!longSleeve(it);
+const shirtLayer=l=>isOver(l)||(l.category==="outerwear"&&/shirt/i.test(l.name));
+const layerOk=(ps,l)=>!shirtLayer(l)||ps.every(p=>p===l||!["tops","knitwear"].includes(p.category)||crewTee(p));
 /* A collared shirt can sit under a crew or scoop-neck dress with the collar showing. */
 const collarShirt=it=>isShirt(it)&&(isOver(it)||/collar/i.test((it.notes||"")+it.name))&&!/band collar|band-collar|collarless|crop|popover|open collar/i.test((it.notes||"")+it.name)&&!sleeveless(it);
 const collarDress=d=>d.category==="dresses"&&!d.overTop&&!/pinafore|maxi|halter|strapless|one-shoulder|wrap|shirt dress|v-neck|v neck|slip|playsuit|jumpsuit|sequin|tulle|turtleneck|appliqu|cut-out/i.test(d.name+" "+(d.notes||""));
@@ -260,7 +264,7 @@ function suggest(anchor,items,ctx){
     if(!cool)for(const u of unders.filter(u=>/linen|tee/.test(u.id)))cores.push([anchor]);}
   else{
     for(const d of dresses)cores.push([d,anchor]);
-    const ts=tops.map(t=>[t,SC([t,anchor],ctx).s]).sort((a,b)=>b[1]-a[1]).slice(0,18).map(x=>x[0]);
+    const ts=tops.filter(t=>layerOk([t],anchor)).map(t=>[t,SC([t,anchor],ctx).s]).sort((a,b)=>b[1]-a[1]).slice(0,18).map(x=>x[0]);
     const bs=bottoms.map(t=>[t,SC([t,anchor],ctx).s]).sort((a,b)=>b[1]-a[1]).map(x=>x[0]);
     for(const t of ts)for(const b of bs)cores.push([t,b,anchor]);
   }
@@ -290,7 +294,7 @@ function suggest(anchor,items,ctx){
     }
     const chilly=ctx.tmax!=null&&ctx.tmax<20&&!pieces.some(longSleeve);
     const needLayer=forceLayer||chilly||(ctx.rain&&season!=="Summer"&&!(ctx.tmax>=24)&&!pieces.some(isWarmLayer))||cool&&!pieces.some(isWarmLayer)&&(pieces.some(sleeveless)||season==="Winter"||pieces.some(p=>p.category==="dresses"));
-    if(needLayer&&layers.length&&!(forceLayer&&pieces.includes(WI))){const L=layers.filter(l=>!pieces.includes(l)&&!busyClash(pieces.concat(l))).map(l=>[l,SC(pieces.concat(l),ctx).s+(rnd()*E)*0.8]).sort((a,b)=>b[1]-a[1])[0];if(L)pieces.push(L[0]);}
+    if(needLayer&&layers.length&&!(forceLayer&&pieces.includes(WI))){const L=layers.filter(l=>!pieces.includes(l)&&layerOk(pieces,l)&&!busyClash(pieces.concat(l))).map(l=>[l,SC(pieces.concat(l),ctx).s+(rnd()*E)*0.8]).sort((a,b)=>b[1]-a[1])[0];if(L)pieces.push(L[0]);}
     if(busyClash(pieces))continue;
     let alts=[];
     if(!ctx.noAccessories&&!pieces.some(p=>p.category==="shoes")&&shoes.length){
@@ -365,7 +369,7 @@ function finish(pieces,items,ctx){ctx=ctx||{};ctx.W=ctx.W||{};const season=ctx.s
 
 function addLayer(pieces,items,ctx){ctx=ctx||{};ctx.W=ctx.W||{};if(ctx.season==="Summer"||ctx.tmax>=24)return null;if(pieces.some(isWarmLayer)||(!ctx.rain&&pieces.some(longSleeve)))return null;
   const sc=ps=>(ctx.rules?score(ps,ctx).s:0)+learned(ps,ctx);
-  const L=items.filter(i=>isWarmLayer(i)&&inSeason(i,ctx.season)&&!busyClash(pieces.concat(i))).map(x=>[x,sc(pieces.concat(x))]).sort((a,b)=>b[1]-a[1]);return L[0]?L[0][0]:null;}
+  const L=items.filter(i=>isWarmLayer(i)&&inSeason(i,ctx.season)&&layerOk(pieces,i)&&!busyClash(pieces.concat(i))).map(x=>[x,sc(pieces.concat(x))]).sort((a,b)=>b[1]-a[1]);return L[0]?L[0][0]:null;}
 
 /* Sub-categories, worked out from each piece's name, notes and shape. An item's own "sub" field overrides. */
 const SUBS={
