@@ -8,6 +8,9 @@ def core(ids): return ','.join(sorted(x for x in ids if x in items and items[x][
 ul=set(E.get('unlikedKeys',[]));ulc={core(k.split(',')) for k in ul};und=set(E.get('undone',[]))
 liked=E['liked']+[k for k in S['liked'] if k not in set(E['liked'])];liked=[k for k in liked if k not in ul and core(k.split(',')) not in ulc]
 dis=[k for k in E['disliked'] if k not in und]+[k for k in ulc if k not in set(E['disliked'])]
+un=lambda a,b:sorted(set(a or [])|set(b or []))
+S['blockPairs']=[k for k in un(S.get('blockPairs'),E.get('blockPairs')) if k not in set(E.get('unblock',[]))]
+S['blockPats']=[k for k in un(S.get('blockPats'),E.get('blockPats')) if k not in set(E.get('unblockPat',[]))]
 S.update(liked=liked,disliked=dis,n=len(liked)+len(dis),savedAt=datetime.date.today().isoformat())
 d['outfits']=[o for o in d['outfits'] if not(o.get('liked') and core(o['itemIds']) in ulc)]
 have={core(o['itemIds']) for o in d['outfits']};n=max(int(o['id'][6:]) for o in d['outfits'] if re.fullmatch(r'liked-\d+',o['id']))

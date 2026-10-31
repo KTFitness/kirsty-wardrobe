@@ -185,11 +185,11 @@ dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
 </nav>
 <dialog class="sheet" id="sheet"><div class="sheet-in" id="sheetBody"></div></dialog>
 
-<script src="style.js?v=202610311430"></script>
+<script src="style.js?v=202610311433"></script>
 <script>
 /* Home-screen apps hold on to old copies. On open, check version.txt; if a newer version is live, refresh the cached files and reload once. */
 if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{});});}
-const APPV="202610311430";
+const APPV="202610311433";
 fetch("version.txt",{cache:"no-store"}).then(r=>r.ok?r.text():"").then(v=>{v=v.trim();if(!v||v===APPV)return;
   let tried="";try{tried=sessionStorage.getItem("kw:upd")||"";}catch(e){}if(tried===v)return;try{sessionStorage.setItem("kw:upd",v);}catch(e){}
   Promise.all([fetch("index.html",{cache:"reload"}),fetch("./",{cache:"reload"})]).catch(()=>{}).then(()=>location.reload());}).catch(()=>{});
@@ -444,6 +444,8 @@ function mergeList(a,b){let i=0;while(i<a.length&&i<b.length&&a[i]===b[i])i++;if
 function ratingLists0(){const sv=(D.taste&&D.taste.saved)||{liked:[],disliked:[],n:0};
   if(taste.ignoreSaved)return {liked:taste.liked,disliked:taste.disliked};
   return {liked:mergeList(sv.liked,taste.liked),disliked:mergeList(sv.disliked,taste.disliked)};}
+function blockSets(){const sv=(D.taste&&D.taste.saved)||{};const un=(a,b)=>[...new Set((a||[]).concat(b||[]))];
+  return {pairs:un(sv.blockPairs,taste.blockPairs).filter(k=>!(taste.unblock||[]).includes(k)),pats:un(sv.blockPats,taste.blockPats).filter(k=>!(taste.unblockPat||[]).includes(k))};}
 function deriveW(){const {liked,disliked}=ratingLists(),N=liked.length+disliked.length,w={};if(!N||!window.Stylist)return w;
   const p=liked.length/N,c={};
   const add=(key,i)=>{let P=key.split(",").map(byId).filter(Boolean);if(i===1&&Stylist.busyClash&&Stylist.busyClash(P))return;if(i===1)P=P.filter(x=>!["shoes","bags","accessories"].includes(x.category));for(const k of Stylist.features(P,"Everyday")){if(k.startsWith("it:"))continue;(c[k]=c[k]||[0,0])[i]++;}};
@@ -456,11 +458,29 @@ function allDisliked(){return ratingLists().disliked;}
 function rate(o,v){const pieces=o.itemIds.map(byId).filter(Boolean);
   for(const k of Stylist.features(pieces,S.sOcc))taste.w[k]=Math.round(((taste.w[k]||0)+v)*100)/100;
   taste.n++;(v>0?taste.liked:taste.disliked).push(o.key);LS.set("taste",taste);}
+/* After a Not for me: ask why, so a pairing the app keeps repeating can be switched off for good. */
+const PK={stripe:"stripes",check:"checks",dot:"spots",floral:"florals",print:"prints",animal:"leopard"};
+function askWhy(ids){const P=ids.map(byId).filter(i=>i&&!ACC.includes(i.category));if(P.length<2)return;
+  const pairs=[];for(let i=0;i<P.length;i++)for(let j=i+1;j<P.length;j++)pairs.push([P[i],P[j]]);
+  const pats=P.filter(p=>Stylist.pkind(p));const pk=pats.map(p=>Stylist.pkind(p)).sort().join("+");
+  const im=i=>`<img src="${esc(th(i.img))}" alt="" style="width:34px;height:34px;object-fit:contain;background:var(--tile);border-radius:6px;flex:none">`;
+  sheetBody.innerHTML=`<div class="sheet-head"><h2>What didn't work?</h2><button class="iconbtn" type="button" data-close>Close</button></div>
+   <div style="max-width:200px">${collage(ids)}</div>
+   <p class="lede" style="margin:0">Tap a pairing and the app won't put those two together again, in any outfit.</p>
+   <div style="display:grid;gap:8px">${pairs.map(([a,b])=>`<button class="btn ghost" type="button" data-blk="${esc([a.id,b.id].sort().join("|"))}" style="text-align:left;display:flex;gap:8px;align-items:center">${im(a)}${im(b)}<span>Never ${esc(a.name)} with ${esc(b.name)}</span></button>`).join("")}
+   ${pats.length>1?`<button class="btn ghost" type="button" data-blkpat="${esc(pk)}" style="text-align:left">Too much pattern: no ${esc([...new Set(pk.split("+"))].map(x=>PK[x]||x).join(" with "))}</button>`:""}
+   <button class="btn ghost" type="button" data-close style="text-align:left">Just this outfit</button></div>`;
+  if(!sheet.open)sheet.showModal();}
+function blockedPanel(){const B=blockSets();if(!B.pairs.length&&!B.pats.length)return "";const open=!!(S.openG&&S.openG.__blk);
+  return `<div class="grp${open?" open":""}" style="margin-top:14px"><button type="button" class="grphead" data-grp="__blk" aria-expanded="${open}"><span class="gn">Pairings you've switched off</span><span class="n">${B.pairs.length+B.pats.length}</span><span class="chev">${open?"▾":"▸"}</span></button>
+  ${open?`<div style="display:grid;gap:6px;padding:6px 4px">${B.pairs.map(k=>{const [a,b]=k.split("|").map(byId);return a&&b?`<div class="row" style="justify-content:space-between;align-items:center"><span style="font-size:14px">${esc(a.name)} + ${esc(b.name)}</span><button class="iconbtn" type="button" data-unblk="${esc(k)}">Allow again</button></div>`:"";}).join("")}
+   ${B.pats.map(k=>`<div class="row" style="justify-content:space-between;align-items:center"><span style="font-size:14px">No ${esc([...new Set(k.split("+"))].map(x=>PK[x]||x).join(" with "))}</span><button class="iconbtn" type="button" data-unblkpat="${esc(k)}">Allow again</button></div>`).join("")}</div>`:""}</div>`;}
+
 function vStyle(){
   const a=S.anchor&&byId(S.anchor);
   if(!a)return pickGrid();
   const season=S.sSeason||todaySeason();
-  const res=window.Stylist?Stylist.suggest(a,D.items,{occ:S.sOcc,season,rain:!S.sSeason&&wxRain(),tmax:!S.sSeason&&S.wx?S.wx.max:null,seed:S.seed,count:6,W:tasteW(),n:tasteN(),rules:useRules,noAccessories:true,exclude:[],excludeCore:allDisliked().concat(ratingLists().liked,S.rated||[]).map(k=>Stylist.coreKey(k.split(",").map(byId).filter(Boolean))),shown:S.shownFor===a.id?(S.shown||[]):[],with:S.withFor===a.id?S.with:null}):[];
+  const res=window.Stylist?Stylist.suggest(a,D.items,{occ:S.sOcc,season,rain:!S.sSeason&&wxRain(),tmax:!S.sSeason&&S.wx?S.wx.max:null,seed:S.seed,count:6,W:tasteW(),n:tasteN(),rules:useRules,noAccessories:true,block:blockSets(),exclude:[],excludeCore:allDisliked().concat(ratingLists().liked,S.rated||[]).map(k=>Stylist.coreKey(k.split(",").map(byId).filter(Boolean))),shown:S.shownFor===a.id?(S.shown||[]):[],with:S.withFor===a.id?S.with:null}):[];
   S.lastRes=res.map((r,k)=>({key:r.key,id:"g"+S.seed+"-"+k,name:r.set?"The matching set":"With the "+a.name.replace(/^(Gingham|Stripe|Dots) No\. \d+: /,"").toLowerCase(),itemIds:r.pieces.map(p=>p.id),occasions:[S.sOcc],why:r.why}));
   const offSeason=a.seasons&&a.seasons.length&&!a.seasons.includes(season);
   const AT=S.addTrip&&tripById(S.addTrip);
@@ -488,7 +508,7 @@ function vStyle(){
    <p class="why">${esc(o.why)}</p><p class="why" style="font-size:12px">${esc([a.id].concat(o.itemIds.filter(id=>id!==a.id)).map(id=>byId(id)).filter(Boolean).map(i=>i.name).join(" · "))}</p>
    <div class="row"><button class="btn" type="button" data-like="${k}">Like</button><button class="btn ghost" type="button" data-nope="${k}">Not for me</button>${addBtn(o.itemIds,o.name)}<button class="iconbtn" type="button" data-copygen="${k}">${S.copied===o.id?"Copied":"Copy for Claude"}</button></div></div></article>`).join("")}</div>
    <div class="row"><button class="btn ghost" type="button" id="more">Show me different ideas</button></div>
-   ${likedFor(a)}${nopedFor(a)}`
+   ${likedFor(a)}${nopedFor(a)}${blockedPanel()}`
    :`<div class="empty"><strong>No new ideas left for this piece</strong><span>You've rated every combination the app can make with it right now. Your liked ones are below, and the "Changed your mind?" list is at the bottom. Try another season or occasion, or pick a piece in "Pair it with".</span></div>${likedFor(a)}${nopedFor(a)}`}`;
 }
 function likedFor(a){const L=allOutfits().filter(o=>isLiked(o)&&(o.itemIds||[]).includes(a.id)).reverse();if(!L.length)return "";
@@ -518,7 +538,7 @@ function devMerge(txt){const i=txt.indexOf("{");if(i<0)throw new Error("no data"
   const t=j.taste||j;const addAll=(a,b)=>{const seen=new Set(a);return a.concat((b||[]).filter(k=>!seen.has(k)));};
   const before=taste.liked.length+taste.disliked.length,bm=mine.length;
   taste.liked=addAll(taste.liked,t.liked);taste.disliked=addAll(taste.disliked,t.disliked);
-  taste.undone=[...new Set((taste.undone||[]).concat(t.undone||[]))];taste.unlikedKeys=[...new Set((taste.unlikedKeys||[]).concat(t.unlikedKeys||[]))];
+  taste.undone=[...new Set((taste.undone||[]).concat(t.undone||[]))];for(const f of ["blockPairs","blockPats","unblock","unblockPat"])taste[f]=[...new Set((taste[f]||[]).concat(t[f]||[]))];taste.unlikedKeys=[...new Set((taste.unlikedKeys||[]).concat(t.unlikedKeys||[]))];
   taste.n=taste.liked.length+taste.disliked.length;if(t.ignoreSaved&&!taste.liked.length)taste.ignoreSaved=true;
   const m=new Map(mine.map(o=>[o.id,o]));for(const o of (j.mine||j.built||[]))m.set(o.id,o);mine=[...m.values()];
   fin={...fin,...(j.fin||j.finish||{})};
@@ -664,7 +684,7 @@ function surprise(){
   const pool=D.items.filter(i=>["tops","dresses","skirts","trousers","shorts"].includes(i.category)&&ok(i));
   const ex=allDisliked().concat(ratingLists().liked).map(k=>Stylist.coreKey(k.split(",").map(byId).filter(Boolean)));
   let r=null;for(let t=0;t<8&&!r;t++){const a=pool[Math.floor(Math.random()*pool.length)];if(!a)break;
-    const res=Stylist.suggest(a,D.items,{occ:"Everyday",season,seed:Math.floor(Math.random()*1e6),count:3,W:tasteW(),n:tasteN(),noAccessories:true,excludeCore:ex});
+    const res=Stylist.suggest(a,D.items,{occ:"Everyday",season,seed:Math.floor(Math.random()*1e6),count:3,W:tasteW(),n:tasteN(),noAccessories:true,block:blockSets(),excludeCore:ex});
     if(res.length)r=res[Math.floor(Math.random()*res.length)];}
   if(!r){S.surprise=null;return;}
   const P=r.pieces.slice();const f=Stylist.finish(P,D.items,{occ:"Everyday",season,W:tasteW()});if(f.shoes[0])P.push(f.shoes[0]);if(f.bags[0])P.push(f.bags[0]);
@@ -746,10 +766,14 @@ document.addEventListener("click",async e=>{
   if(t.dataset.findone!==undefined){const o=allOutfits().find(x=>x.id===S.finId);if(o){sheetBody.innerHTML=`<div class="sheet-head"><h2>Outfit</h2><button class="iconbtn" type="button" data-close>Close</button></div>${outfitCard(o)}`;}return;}
   if(t.dataset.likesur!==undefined&&S.surprise){const o=S.surprise;const core=o.itemIds.filter(id=>{const it=byId(id);return it&&!ACC.includes(it.category);});const k=core.slice().sort().join(",");taste.liked.push(k);taste.n++;LS.set("taste",taste);
     const rec={id:"m"+Date.now(),name:o.name,itemIds:o.itemIds.slice(),occasions:o.occasions,why:"You liked this from Surprise me."};mine=mine.concat(rec);LS.set("mine",mine);S.surprise=null;render();return;}
-  if(t.dataset.nopesur!==undefined&&S.surprise){const o=S.surprise;const core=o.itemIds.filter(id=>{const it=byId(id);return it&&!ACC.includes(it.category);});taste.disliked.push(core.slice().sort().join(","));taste.n++;LS.set("taste",taste);surprise();render();return;}
+  if(t.dataset.nopesur!==undefined&&S.surprise){const o=S.surprise;const core=o.itemIds.filter(id=>{const it=byId(id);return it&&!ACC.includes(it.category);});taste.disliked.push(core.slice().sort().join(","));taste.n++;LS.set("taste",taste);surprise();render();askWhy(o.itemIds);return;}
   if(t.dataset.relike){const k=t.dataset.relike;taste.undone=(taste.undone||[]).concat(k);taste.liked.push(k);
     const ids=k.split(",");const a=byId(S.anchor);mine=mine.concat({id:"m"+Date.now(),name:"With the "+(a?a.name.toLowerCase():"outfit"),itemIds:ids,occasions:[S.sOcc],why:"You changed your mind and liked this."});LS.set("mine",mine);LS.set("taste",taste);render();return;}
-  if(t.dataset.nope){const o=S.lastRes[+t.dataset.nope];rate(o,-1);S.rated=(S.rated||[]).concat(o.key);render();return;}
+  if(t.dataset.nope){const o=S.lastRes[+t.dataset.nope];rate(o,-1);S.rated=(S.rated||[]).concat(o.key);render();askWhy(o.itemIds);return;}
+  if(t.dataset.blk){taste.blockPairs=[...new Set((taste.blockPairs||[]).concat(t.dataset.blk))];taste.unblock=(taste.unblock||[]).filter(k=>k!==t.dataset.blk);LS.set("taste",taste);t.textContent="Switched off ✓";t.disabled=true;render();return;}
+  if(t.dataset.blkpat){taste.blockPats=[...new Set((taste.blockPats||[]).concat(t.dataset.blkpat))];taste.unblockPat=(taste.unblockPat||[]).filter(k=>k!==t.dataset.blkpat);LS.set("taste",taste);t.textContent="Switched off ✓";t.disabled=true;render();return;}
+  if(t.dataset.unblk){taste.blockPairs=(taste.blockPairs||[]).filter(k=>k!==t.dataset.unblk);taste.unblock=[...new Set((taste.unblock||[]).concat(t.dataset.unblk))];LS.set("taste",taste);render();return;}
+  if(t.dataset.unblkpat){taste.blockPats=(taste.blockPats||[]).filter(k=>k!==t.dataset.unblkpat);taste.unblockPat=[...new Set((taste.unblockPat||[]).concat(t.dataset.unblkpat))];LS.set("taste",taste);render();return;}
   if(t.id==="resetTaste"){if(!t.dataset.armed){t.dataset.armed="1";t.textContent="Tap again to forget everything it learned";return;}
     taste={w:{},n:0,liked:[],disliked:[],ignoreSaved:true};LS.set("taste",taste);S.rated=[];render();return;}
   if(t.id==="devCopy"){const txt=devExport();try{await navigator.clipboard.writeText(txt);S.copied="dev";S.devMsg="Copied. Now open the app on the other device, go to Outfits, scroll to the bottom and tap Paste from another device.";render();setTimeout(()=>{S.copied="";render();},2500);}
