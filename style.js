@@ -200,7 +200,7 @@ function suggest(anchor,items,ctx){
   const season=ctx.season,rnd=mulberry(ctx.seed||1);const excl0=new Set(ctx.exclude||[]),exCore=new Set(ctx.excludeCore||[]);
   const coreKey=ps=>ps.filter(p=>!["shoes","bags","accessories"].includes(p.category)).map(p=>p.id).sort().join(",");
   const excl={has:k=>{if(excl0.has(k))return true;const ps=k.split(",").map(id=>items.find(i=>i.id===id)).filter(Boolean);return exCore.has(coreKey(ps));}};
-  const pool=items.filter(i=>i.id!==anchor.id&&inSeason(i,season));
+  const pool=items.filter(i=>i.id!==anchor.id&&inSeason(i,season)&&(!i.setOnly||i.id===anchor.setWith));
   const by=c=>pool.filter(i=>c.includes(i.category));
   let tops=by(["tops","knitwear"]).filter(i=>!isWarmLayer(i)),bottoms=by(["skirts","trousers","shorts"]),dresses=by(["dresses"]);
   let shoes=by(["shoes"]),layers=pool.filter(isWarmLayer),unders=pool.filter(isUnder),bags=by(["bags"]);
@@ -232,6 +232,7 @@ function suggest(anchor,items,ctx){
      const pick=[],fams=new Set();for(const [u] of ranked){const f=(mainFams(u)[0]||"")+(/shirt/i.test(u.name)?"s":"");if(fams.has(f))continue;fams.add(f);pick.push(u);if(pick.length>=3)break;}
      if(!pick.length)out.push(c);for(const u of pick)out.push(c.concat(u));}
    cores=out;}
+  if(anchor.setOnly&&anchor.setWith)cores=cores.filter(c=>c.some(p=>p.id===anchor.setWith));
   cores=cores.filter(c=>!busyClash(forceLayer&&WI?c.concat(WI):c));
   if(BP.size)cores=cores.filter(c=>blockPen(c)>-40);
   // pre-score cores, keep best

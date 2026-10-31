@@ -5648,7 +5648,8 @@
     "sky",
     "red",
     "tan"
-   ]
+   ],
+   "setOnly": true
   },
   {
    "id": "saba-jungle-print-skirt",
@@ -5669,7 +5670,8 @@
    ],
    "notes": "A-line mini, striped waistband and border hem. Matches the Saba jungle print shirt. Your photo.",
    "img": "img/saba-jungle-print-skirt.webp",
-   "setWith": "saba-jungle-print-shirt"
+   "setWith": "saba-jungle-print-shirt",
+   "setOnly": true
   },
   {
    "id": "resort-white-embroidered-blouse",
