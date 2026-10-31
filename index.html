@@ -185,11 +185,11 @@ dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
 </nav>
 <dialog class="sheet" id="sheet"><div class="sheet-in" id="sheetBody"></div></dialog>
 
-<script src="style.js?v=202610312155"></script>
+<script src="style.js?v=202610312227"></script>
 <script>
 /* Home-screen apps hold on to old copies. On open, check version.txt; if a newer version is live, refresh the cached files and reload once. */
 if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{});});}
-const APPV="202610312155";
+const APPV="202610312227";
 fetch("version.txt",{cache:"no-store"}).then(r=>r.ok?r.text():"").then(v=>{v=v.trim();if(!v||v===APPV)return;
   let tried="";try{tried=sessionStorage.getItem("kw:upd")||"";}catch(e){}if(tried===v)return;try{sessionStorage.setItem("kw:upd",v);}catch(e){}
   Promise.all([fetch("index.html",{cache:"reload"}),fetch("./",{cache:"reload"})]).catch(()=>{}).then(()=>location.reload());}).catch(()=>{});
@@ -681,6 +681,7 @@ function openItem(id){const it=byId(id);if(!it)return;
    <div class="lookf"><label class="f">Category<select id="mvCat">${MOVE.map(([k,v])=>`<option value="${k}" ${it.category===k?"selected":""}>${v}</option>`).join("")}</select></label>
    <label class="f">Kind<select id="mvSub"><option value="">Let the app decide</option>${MOVE.map(([k])=>subList(k==="trousers"?"trousers":k).map(([sk,sv])=>`<option value="${sk}" data-c="${k}" ${it.category!==k?"hidden":""} ${it.category===k&&it.sub===sk?"selected":""}>${esc(sv)}</option>`).join("")).join("")}</select></label></div>
    <div class="row"><button class="btn ghost" type="button" data-move="${esc(id)}">Move</button>${catFix[id]?`<button class="iconbtn" type="button" data-unmove="${esc(id)}">Put back where it was</button>`:""}</div></div>
+  ${(()=>{const n=allOutfits().filter(o=>isLiked(o)&&(o.itemIds||[]).includes(id)).length;return n?`<div class="row"><button class="btn ghost" type="button" data-likedof="${esc(id)}">Go through its ${n} liked outfit${n===1?"":"s"}</button></div>`:"";})()}
   <div class="row"><button class="btn" type="button" data-anchor="${esc(id)}">Style this</button><button class="btn ghost" type="button" data-buildwith="${esc(id)}">Build your own</button><button class="btn danger" type="button" data-gone="${esc(id)}">I don't own this</button></div>`;
   if(!sheet.open)sheet.showModal();}
 
@@ -821,6 +822,10 @@ document.addEventListener("click",async e=>{
     return;}
   if(t.dataset.grp){S.openG=S.openG||{};S.openG[t.dataset.grp]=!S.openG[t.dataset.grp];render();return;}
   if(t.id==="todayMore"){S.todaySeed=(S.todaySeed||0)+1;render();return;}
+  if(t.dataset.likedof){const it=byId(t.dataset.likedof);const L=allOutfits().filter(o=>isLiked(o)&&(o.itemIds||[]).includes(it.id)).reverse();if(!L.length)return;
+    sheetBody.innerHTML=`<div class="sheet-head"><h2>Liked with the ${esc(it.name)} <span class="n" id="carN">1 of ${L.length}</span></h2><button class="iconbtn" type="button" data-close>Close</button></div>
+     <div class="car" id="car">${L.map(o=>`<div class="slide">${outfitCard(o,"",it.id)}</div>`).join("")}</div><p class="status" style="margin:-6px 0 0;text-align:center">Swipe through. Unlike removes it and moves on.</p>`;
+    if(!sheet.open)sheet.showModal();const car=$("#car");car.addEventListener("scroll",()=>{const i=Math.round(car.scrollLeft/car.clientWidth);const n=$("#carN");if(n)n.textContent=`${i+1} of ${car.querySelectorAll(".slide").length}`;},{passive:true});return;}
   if(t.dataset.open){const today=t.closest(".today");const grid=t.closest(".minigrid");
     const find=id=>(today&&(S.todayList||[]).find(x=>x.id===id))||allOutfits().find(x=>x.id===id);
     const ids=grid?[...grid.querySelectorAll("[data-open]")].map(e=>e.dataset.open):[t.dataset.open];
@@ -838,7 +843,9 @@ document.addEventListener("click",async e=>{
     {const k=ckey(o);mine=mine.filter(x=>ckey(x)!==k);LS.set("mine",mine);
      unliked=[...new Set(unliked.concat(id,D.outfits.filter(x=>x.liked&&ckey(x)===k).map(x=>x.id)))];LS.set("unliked",unliked);
      favs=favs.filter(f=>{const x=D.outfits.find(y=>y.id===f);return !(x&&ckey(x)===k);});}
-    {const ks=new Set([(o.itemIds||[]).slice().sort().join(","),ckey(o)]);const r0=ratingLists0();for(const k of r0.liked)if(Stylist.coreKey(k.split(",").map(byId).filter(Boolean))===ckey(o))ks.add(k);taste.unlikedKeys=[...new Set((taste.unlikedKeys||[]).concat([...ks]))];taste.undone=(taste.undone||[]).filter(k=>k!==ckey(o));taste.disliked.push(ckey(o));taste.n++;LS.set("taste",taste);}favs=favs.filter(x=>x!==id);LS.set("favs",favs);if(sheet.open)sheet.close();render();return;}
+    {const ks=new Set([(o.itemIds||[]).slice().sort().join(","),ckey(o)]);const r0=ratingLists0();for(const k of r0.liked)if(Stylist.coreKey(k.split(",").map(byId).filter(Boolean))===ckey(o))ks.add(k);taste.unlikedKeys=[...new Set((taste.unlikedKeys||[]).concat([...ks]))];taste.undone=(taste.undone||[]).filter(k=>k!==ckey(o));taste.disliked.push(ckey(o));taste.n++;LS.set("taste",taste);}favs=favs.filter(x=>x!==id);LS.set("favs",favs);
+    {const sl=t.closest(".slide"),car=t.closest(".car");if(sl&&car){sl.remove();const n=car.querySelectorAll(".slide").length;const N=$("#carN");const i=Math.min(n-1,Math.round(car.scrollLeft/car.clientWidth));if(N)N.textContent=n?`${i+1} of ${n}`:"";sheetBody.querySelectorAll(".cardots").forEach(x=>x.innerHTML="");if(!n)sheet.close();render();return;}}
+    if(sheet.open)sheet.close();render();return;}
   if(t.dataset.fav){const id=t.dataset.fav;favs=favs.includes(id)?favs.filter(x=>x!==id):favs.concat(id);LS.set("favs",favs);render();return;}
   if(t.dataset.hide){hidden=hidden.concat(t.dataset.hide);LS.set("hidden",hidden);render();return;}
   if(t.id==="unhide"){hidden=[];LS.set("hidden",hidden);render();return;}
