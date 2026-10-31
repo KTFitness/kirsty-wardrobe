@@ -383,7 +383,7 @@
   },
   {
    "id": "black-multi-spot-swing-dress",
-   "name": "Black multi-spot swing dress",
+   "name": "Gorman black multi-spot swing dress",
    "category": "dresses",
    "colours": [
     "black",
@@ -396,8 +396,14 @@
     "Summer",
     "Autumn"
    ],
-   "notes": "Sleeveless, mock neck, back zip, A-line",
-   "img": "img/black-multi-spot-swing-dress.webp"
+   "notes": "Sleeveless, mock neck, back zip, A-line. Collared shirt underneath: white, green, pink or black.",
+   "img": "img/black-multi-spot-swing-dress.webp",
+   "underShirts": [
+    "white",
+    "green",
+    "pink",
+    "black"
+   ]
   },
   {
    "id": "black-topstitch-pinafore-dress",
