@@ -185,11 +185,11 @@ dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
 </nav>
 <dialog class="sheet" id="sheet"><div class="sheet-in" id="sheetBody"></div></dialog>
 
-<script src="style.js?v=202610312248"></script>
+<script src="style.js?v=202611010659"></script>
 <script>
 /* Home-screen apps hold on to old copies. On open, check version.txt; if a newer version is live, refresh the cached files and reload once. */
 if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{});});}
-const APPV="202610312248";
+const APPV="202611010659";
 fetch("version.txt",{cache:"no-store"}).then(r=>r.ok?r.text():"").then(v=>{v=v.trim();if(!v||v===APPV)return;
   let tried="";try{tried=sessionStorage.getItem("kw:upd")||"";}catch(e){}if(tried===v)return;try{sessionStorage.setItem("kw:upd",v);}catch(e){}
   Promise.all([fetch("index.html",{cache:"reload"}),fetch("./",{cache:"reload"})]).catch(()=>{}).then(()=>location.reload());}).catch(()=>{});
@@ -197,7 +197,8 @@ fetch("version.txt",{cache:"no-store"}).then(r=>r.ok?r.text():"").then(v=>{v=v.t
 <script>
 const CATS=[["tops","Tops"],["knitwear","Knitwear"],["dresses","Dresses"],["playsuits","Playsuits & jumpsuits"],["skirts","Skirts"],["jeans","Jeans"],["trousers","Trousers"],["shorts","Shorts"],["outerwear","Outerwear"],["shoes","Shoes"],["bags","Bags"],["accessories","Accessories"]];
 const CATNAME=Object.fromEntries(CATS);
-const dcat=i=>!i?"other":i.category==="trousers"&&/jean/.test((i.id+" "+i.name).toLowerCase())?"jeans":i.category==="knitwear"&&/cardigan/.test((i.id+" "+i.name).toLowerCase())?"outerwear":i.category==="dresses"&&/playsuit|jumpsuit/.test((i.id+" "+i.name).toLowerCase())?"playsuits":i.category;
+const asOver=i=>Object.assign(Object.create(i),{_dc:"outerwear",_sk:"overshirt"});
+const dcat=i=>!i?"other":i._dc?i._dc:i.category==="trousers"&&/jean/.test((i.id+" "+i.name).toLowerCase())?"jeans":i.category==="knitwear"&&/cardigan/.test((i.id+" "+i.name).toLowerCase())?"outerwear":i.category==="dresses"&&/playsuit|jumpsuit/.test((i.id+" "+i.name).toLowerCase())?"playsuits":i.category;
 const SEASONS=["Spring","Summer","Autumn","Winter"];
 const subKey=i=>{if(!window.Stylist)return "";if(i._sk===undefined)i._sk=Stylist.subOf(i,dcat(i));return i._sk;};
 const subList=c=>(window.Stylist&&Stylist.SUBS[c])||[];
@@ -346,7 +347,7 @@ function vWardrobe(){
   if(!D.items.length)return `<h2>Your clothes</h2><div class="empty"><strong>No clothes yet</strong><span>Send photos to Claude in chat and they'll appear here.</span></div>`;
   const own=D.items,nb=D.items.filter(i=>i.basic).length;
   const counts={};own.forEach(i=>counts[dcat(i)]=(counts[dcat(i)]||0)+1);
-  const catItems=S.cat==="basics"?D.items.filter(i=>i.basic):own.filter(i=>S.cat==="all"||dcat(i)===S.cat);S.wfac=S.wfac||{};const subItems=S.sub&&S.cat!=="all"&&S.cat!=="basics"?catItems.filter(i=>subKey(i)===S.sub):catItems;const list=arrange(S.cat!=="all"&&S.cat!=="basics"?facetFilter(S.cat,subItems,S.wfac):subItems);
+  const catItems=S.cat==="basics"?D.items.filter(i=>i.basic):own.filter(i=>S.cat==="all"||dcat(i)===S.cat).concat(S.cat==="outerwear"?own.filter(i=>i.overshirt).map(asOver):[]);S.wfac=S.wfac||{};const subItems=S.sub&&S.cat!=="all"&&S.cat!=="basics"?catItems.filter(i=>subKey(i)===S.sub):catItems;const list=arrange(S.cat!=="all"&&S.cat!=="basics"?facetFilter(S.cat,subItems,S.wfac):subItems);
   const lenLabel=S.cat==="tops"||S.cat==="knitwear"||S.cat==="outerwear"?"Sleeve length":S.cat==="trousers"||S.cat==="skirts"||S.cat==="shorts"||S.cat==="dresses"?"Length":"Length";
   const goneItems=(D.all||[]).filter(i=>gone.includes(i.id));
   const goneBox=goneItems.length?`<div class="panel"><div class="status">${goneItems.length} item${goneItems.length===1?"":"s"} removed on this phone. Copy the list and paste it into chat so Claude removes ${goneItems.length===1?"it":"them"} for good.</div>
@@ -426,7 +427,7 @@ function vBuild(){
 }
 function pickGrid(){
   const q=S.q.trim().toLowerCase();
-  const own0=D.items.filter(i=>(S.pickCat==="basics"?i.basic:!i.basic)&&(S.pickCat==="all"||S.pickCat==="basics"||dcat(i)===S.pickCat)&&(!q||(i.name+" "+(i.colours||[]).join(" ")+" "+(i.pattern||"")+" "+subLabel(i)).toLowerCase().includes(q)));S.pfac=S.pfac||{};const own1=S.pickSub&&S.pickCat!=="all"&&S.pickCat!=="basics"?own0.filter(i=>subKey(i)===S.pickSub):own0;const own=arrange(S.pickCat!=="all"&&S.pickCat!=="basics"?facetFilter(S.pickCat,own1,S.pfac):own1);
+  const own0=D.items.filter(i=>(S.pickCat==="basics"?i.basic:!i.basic)&&(S.pickCat==="all"||S.pickCat==="basics"||dcat(i)===S.pickCat)&&(!q||(i.name+" "+(i.colours||[]).join(" ")+" "+(i.pattern||"")+" "+subLabel(i)).toLowerCase().includes(q))).concat(S.pickCat==="outerwear"?D.items.filter(i=>i.overshirt&&!i.basic&&(!q||i.name.toLowerCase().includes(q))).map(asOver):[]);S.pfac=S.pfac||{};const own1=S.pickSub&&S.pickCat!=="all"&&S.pickCat!=="basics"?own0.filter(i=>subKey(i)===S.pickSub):own0;const own=arrange(S.pickCat!=="all"&&S.pickCat!=="basics"?facetFilter(S.pickCat,own1,S.pfac):own1);
   const counts={};D.items.filter(i=>!i.basic).forEach(i=>counts[dcat(i)]=(counts[dcat(i)]||0)+1);
   return `<h2>Style me</h2><p class="lede">Pick one piece and the app puts outfits together around it.</p>
   <label class="f">Search<input id="sq" type="search" value="${esc(S.q)}" placeholder="e.g. green, stripe, skirt"></label>

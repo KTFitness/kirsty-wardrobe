@@ -74,6 +74,14 @@ const short=it=>it.name.replace(/^(Gingham|Stripe|Dots) No\. \d+: /,"").replace(
    3. A patterned shirt can go under a plain vest, with plain jeans or trousers. */
 const isShirt=it=>(it.category==="tops")&&/shirt\b|blouse|popover/i.test(it.name)&&!/t-shirt|tee/i.test(it.name);
 const patShirt=it=>isShirt(it)&&!!pkind(it);
+/* A plain button shirt worn open over a tee or tank, like a light jacket. */
+const isOver=it=>!!it.overshirt;
+const openTee=it=>isUnder(it)&&!isShirt(it)&&!longSleeve(it);
+/* A collared shirt can sit under a crew or scoop-neck dress with the collar showing. */
+const collarShirt=it=>isShirt(it)&&/collar/i.test((it.notes||"")+it.name)&&!/band collar|band-collar|collarless|crop|popover|open collar/i.test((it.notes||"")+it.name)&&!sleeveless(it);
+const collarDress=d=>d.category==="dresses"&&!d.overTop&&!/pinafore|maxi|halter|strapless|one-shoulder|wrap|shirt dress|v-neck|v neck|slip|playsuit|jumpsuit|sequin|tulle/i.test(d.name+" "+(d.notes||""));
+const shortShirt=it=>isShirt(it)&&!pkind(it)&&/short sleeve|short-sleeve|short cuffed sleeve/i.test((it.notes||"")+" "+it.name);
+const lsPatShirt=it=>patShirt(it)&&longSleeve(it)&&/collar/i.test(it.notes||"");
 const BOT=["skirts","trousers","shorts"];
 function kRules(ps){let s=0;const cl=ps.filter(p=>!["shoes","bags","accessories"].includes(p.category));
   const vest=cl.find(isVest),bots=cl.filter(p=>BOT.includes(p.category));
@@ -223,10 +231,21 @@ function suggest(anchor,items,ctx){
     // A plain tee or long-sleeve can go under a vest or waistcoat.
     if((isUnder(anchor)||patShirt(anchor))&&!isVest(anchor)){const V=(WI&&isVest(WI))?[WI]:pool.filter(v=>isVest(v)&&(!patShirt(anchor)||!pkind(v)));const bs=bottoms.map(b=>[b,SC([anchor,b],ctx).s]).sort((a,b)=>b[1]-a[1]).slice(0,14).map(x=>x[0]);
       for(const v of V)for(const b of bs)cores.push([anchor,v,b]);}
+    {const bs=()=>bottoms.map(b=>[b,SC([anchor,b],ctx).s]).sort((a,b)=>b[1]-a[1]).slice(0,10).map(x=>x[0]);
+     if(isOver(anchor)){const U=WI&&openTee(WI)?[WI]:unders.filter(openTee);const B=bs();for(const u of U)for(const b of B)cores.push([anchor,u,b]);}
+     if(openTee(anchor)){const O=WI&&isOver(WI)?[WI]:pool.filter(isOver);const B=bs();for(const o of O)for(const b of B)cores.push([anchor,o,b]);}
+     if(cool||season==="Spring"){
+      if(shortShirt(anchor)){const U=WI&&lsPatShirt(WI)?[WI]:pool.filter(lsPatShirt);const B=bs();for(const u of U)for(const b of B)cores.push([anchor,u,b]);}
+      if(lsPatShirt(anchor)){const O=WI&&shortShirt(WI)?[WI]:pool.filter(shortShirt);const B=bs();for(const o of O)for(const b of B)cores.push([anchor,o,b]);}
+      if(collarShirt(anchor)&&!(ctx.tmax>=26)){const D=WI&&WI.category==="dresses"?[WI]:dresses;for(const d of D.filter(collarDress).filter(d=>!pkind(anchor)||!pkind(d)))cores.push([d,anchor]);}}}
   }else if(["skirts","trousers","shorts"].includes(ac)){
     for(const t of tops)cores.push([t,anchor]);
+    {const O=pool.filter(isOver);const T=tops.filter(openTee).map(t=>[t,SC([t,anchor],ctx).s]).sort((a,b)=>b[1]-a[1]).slice(0,6).map(x=>x[0]);
+     if(!WI)for(const o of O)for(const t of T)cores.push([t,o,anchor]);
+     else if(isOver(WI))for(const t of T)cores.push([t,WI,anchor]);}
   }else if(ac==="dresses"&&(anchor.overTop||/pinafore/.test(lc(anchor)))){const U=WI&&tops.includes(WI)?[WI]:tops.filter(t=>!sleeveless(t)&&!isVest(t)&&(!anchor.overTop||!/shirt|blouse|polo/i.test(t.name.replace(/T-shirt/ig,""))));for(const t of U)cores.push([anchor,t]);
   }else if(ac==="dresses"){cores.push([anchor]);if(cool||season==="Spring")for(const l of layers)cores.push([anchor,l]);
+    if(collarDress(anchor)&&(cool||season==="Spring")&&!(ctx.tmax>=26)){const U=WI&&tops.includes(WI)?[WI]:tops.filter(t=>collarShirt(t)&&(!pkind(anchor)||!pkind(t)));for(const t of U)cores.push([anchor,t]);}
     if(!cool)for(const u of unders.filter(u=>/linen|tee/.test(u.id)))cores.push([anchor]);}
   else{
     for(const d of dresses)cores.push([d,anchor]);
@@ -301,7 +320,7 @@ function suggest(anchor,items,ctx){
     if(mains.some(p=>(used[p.id]||0)>=1))continue;
     const bf=bottomFam(r);if(bf&&(bfam[bf]||0)>=2)continue;
     if(r.patNote){if(mixes>=3)continue;mixes++;}
-    const hv=r.pieces.some(p=>p!==anchor&&isVest(p));if(hv&&out.filter(o=>o.pieces.some(p=>p!==anchor&&isVest(p))).length>=3)continue;
+    const hv=r.pieces.some(p=>p!==anchor&&isVest(p));if(hv&&out.filter(o=>o.pieces.some(p=>p!==anchor&&isVest(p))).length>=3)continue;const lay=o=>o.pieces.filter(p=>p.category==="tops"||p.category==="knitwear").length>1&&!o.pieces.some(isVest)||o.pieces.some(p=>p.category==="dresses")&&o.pieces.some(p=>p.category==="tops");if(lay(r)&&out.filter(lay).length>=3)continue;
     if(out.length===want-1&&!out.some(hasBasic)&&!hasBasic(r))continue;
     const allBasic=mains.every(p=>p.basic);
     if(allBasic&&basicOnly>=2)continue;
@@ -341,7 +360,7 @@ function addLayer(pieces,items,ctx){ctx=ctx||{};ctx.W=ctx.W||{};if(ctx.season===
 const SUBS={
  tops:[["tanks","Tanks & singlets"],["vests","Vests & waistcoats"],["sstee","Short-sleeve tees & tops"],["lstee","Long-sleeve tees & tops"],["ssshirt","Short-sleeve & sleeveless shirts"],["lsshirt","Long-sleeve shirts & blouses"]],
  knitwear:[["ktank","Knit tanks"],["kvest","Knit vests"],["ktee","Knit tees & polos"],["jumper","Jumpers & sweatshirts"]],
- outerwear:[["cardigan","Cardigans & knit jackets"],["blazer","Blazers"],["jacket","Jackets"],["coat","Coats"]],
+ outerwear:[["cardigan","Cardigans & knit jackets"],["overshirt","Shirts worn open"],["blazer","Blazers"],["jacket","Jackets"],["coat","Coats"]],
  skirts:[["mini","Short & mini"],["midi","Knee & midi"],["maxi","Maxi"]],
  jeans:[["wide","Wide-leg"],["straight","Straight & skinny"],["cropped","Cropped & ankle"]],
  trousers:[["wide","Wide-leg"],["straight","Straight & tapered"],["leggings","Leggings"]],
