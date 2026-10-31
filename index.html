@@ -185,11 +185,11 @@ dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
 </nav>
 <dialog class="sheet" id="sheet"><div class="sheet-in" id="sheetBody"></div></dialog>
 
-<script src="style.js?v=202610311627"></script>
+<script src="style.js?v=202610312155"></script>
 <script>
 /* Home-screen apps hold on to old copies. On open, check version.txt; if a newer version is live, refresh the cached files and reload once. */
 if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{});});}
-const APPV="202610311627";
+const APPV="202610312155";
 fetch("version.txt",{cache:"no-store"}).then(r=>r.ok?r.text():"").then(v=>{v=v.trim();if(!v||v===APPV)return;
   let tried="";try{tried=sessionStorage.getItem("kw:upd")||"";}catch(e){}if(tried===v)return;try{sessionStorage.setItem("kw:upd",v);}catch(e){}
   Promise.all([fetch("index.html",{cache:"reload"}),fetch("./",{cache:"reload"})]).catch(()=>{}).then(()=>location.reload());}).catch(()=>{});
@@ -225,12 +225,13 @@ const memo=(fn)=>{let k=-1,v;return ()=>{const sg=DV+"|"+D.items.length+"|"+D.ou
 const LS={get(k,d){try{const v=localStorage.getItem("kw:"+k);return v?JSON.parse(v):d;}catch(e){return d;}},
   set(k,v){DV++;try{localStorage.setItem("kw:"+k,JSON.stringify(v));}catch(e){}}};
 let taste=LS.get("taste",{w:{},n:0,liked:[],disliked:[]}),useRules=LS.get("useRules",false);
-let fin=LS.get("finish",{}),unliked=LS.get("unliked",[]),favs=LS.get("favs",[]),hidden=LS.get("hidden",[]),mine=LS.get("mine",[]),gone=LS.get("gone",[]),inspoGone=LS.get("inspoGone",[]),inspoEdits=LS.get("inspoEdits",{}),wish=LS.get("wish",[]);
+let fin=LS.get("finish",{}),unliked=LS.get("unliked",[]),favs=LS.get("favs",[]),hidden=LS.get("hidden",[]),mine=LS.get("mine",[]),gone=LS.get("gone",[]),inspoGone=LS.get("inspoGone",[]),inspoEdits=LS.get("inspoEdits",{}),wish=LS.get("wish",[]),catFix=LS.get("catFix",{});
 S.sort=LS.get("sort","colour");
 let trips=LS.get("trips",[]);S.isort=LS.get("isort","new");
 function saveTrips(t){if(t)t.updated=Date.now();LS.set("trips",trips);}
 let IDX=new Map();
-function applyGone(){D.items=(D.all||[]).filter(i=>!gone.includes(i.id));IDX=new Map(D.items.map(i=>[i.id,i]));DV++;}
+function applyGone(){for(const i of (D.all||[])){const f=catFix[i.id];if(f){if(!i._orig)i._orig={category:i.category,sub:i.sub};i.category=f.category;if(f.sub)i.sub=f.sub;else delete i.sub;}else if(i._orig){i.category=i._orig.category;if(i._orig.sub)i.sub=i._orig.sub;else delete i.sub;delete i._orig;}delete i._sk;delete i._fv;delete i._f;}
+  D.items=(D.all||[]).filter(i=>!gone.includes(i.id));IDX=new Map(D.items.map(i=>[i.id,i]));DV++;}
 
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const $=s=>document.querySelector(s);
@@ -533,7 +534,7 @@ function devicePanel(){return `<section class="panel" style="margin-top:22px;gap
   <p class="lede" style="margin:0">Each device keeps its own ratings, built outfits, trips, wishlist and shoe choices. To bring one up to date, tap Copy on the device you've been using, then Paste on the other. Nothing is lost: the two are merged.</p>
   <div class="row"><button class="btn ghost" type="button" id="devCopy">${S.copied==="dev"?"Copied":"Copy from this device"}</button><button class="btn ghost" type="button" id="devPaste">Paste from another device</button></div>
   ${S.devMsg?`<p class="status" style="margin:0">${esc(S.devMsg)}</p>`:""}</section>`;}
-function devExport(){return "KW-DEVICE-1:"+JSON.stringify({taste,mine,fin,unliked,hidden,gone,favs,trips,inspoGone,inspoEdits,wish});}
+function devExport(){return "KW-DEVICE-1:"+JSON.stringify({taste,mine,fin,unliked,hidden,gone,favs,trips,inspoGone,inspoEdits,wish,catFix});}
 function devMerge(txt){const i=txt.indexOf("{");if(i<0)throw new Error("no data");const j=JSON.parse(txt.slice(i));
   const t=j.taste||j;const addAll=(a,b)=>{const seen=new Set(a);return a.concat((b||[]).filter(k=>!seen.has(k)));};
   const before=taste.liked.length+taste.disliked.length,bm=mine.length;
@@ -542,7 +543,7 @@ function devMerge(txt){const i=txt.indexOf("{");if(i<0)throw new Error("no data"
   taste.n=taste.liked.length+taste.disliked.length;if(t.ignoreSaved&&!taste.liked.length)taste.ignoreSaved=true;
   const m=new Map(mine.map(o=>[o.id,o]));for(const o of (j.mine||j.built||[]))m.set(o.id,o);mine=[...m.values()];
   fin={...fin,...(j.fin||j.finish||{})};
-  const un=(a,b)=>[...new Set(a.concat(b||[]))];unliked=un(unliked,j.unliked);inspoGone=un(inspoGone,j.inspoGone);LS.set("inspoGone",inspoGone);inspoEdits={...inspoEdits,...(j.inspoEdits||{})};LS.set("inspoEdits",inspoEdits);{const m=new Map(wish.map(w=>[w.id,w]));for(const w of (j.wish||[])){const c=m.get(w.id);if(!c||(w.updated||0)>(c.updated||0))m.set(w.id,w);}wish=[...m.values()];LS.set("wish",wish);}hidden=un(hidden,j.hidden);gone=un(gone,j.gone);favs=un(favs,j.favs);
+  const un=(a,b)=>[...new Set(a.concat(b||[]))];unliked=un(unliked,j.unliked);inspoGone=un(inspoGone,j.inspoGone);LS.set("inspoGone",inspoGone);inspoEdits={...inspoEdits,...(j.inspoEdits||{})};LS.set("inspoEdits",inspoEdits);catFix={...catFix,...(j.catFix||{})};LS.set("catFix",catFix);applyGone();{const m=new Map(wish.map(w=>[w.id,w]));for(const w of (j.wish||[])){const c=m.get(w.id);if(!c||(w.updated||0)>(c.updated||0))m.set(w.id,w);}wish=[...m.values()];LS.set("wish",wish);}hidden=un(hidden,j.hidden);gone=un(gone,j.gone);favs=un(favs,j.favs);
   LS.set("taste",taste);LS.set("mine",mine);LS.set("finish",fin);LS.set("unliked",unliked);LS.set("hidden",hidden);LS.set("gone",gone);LS.set("favs",favs);
   const bt=trips.length;{const m=new Map(trips.map(t=>[t.id,t]));for(const t of (j.trips||[])){const c=m.get(t.id);if(!c||(t.updated||0)>(c.updated||0))m.set(t.id,t);}trips=[...m.values()];LS.set("trips",trips);}
   const added=taste.liked.length+taste.disliked.length-before,ad2=mine.length-bm;
@@ -666,6 +667,7 @@ function render(){
 const sheet=$("#sheet"),sheetBody=$("#sheetBody");
 function refreshOpen(id){if(!sheet.open||!sheetBody.querySelector(`[data-unlike="${id}"],[data-likeo="${id}"]`))return;const o=allOutfits().find(x=>x.id===id);if(o)sheetBody.innerHTML=`<div class="sheet-head"><h2>Outfit</h2><button class="iconbtn" type="button" data-close>Close</button></div>${outfitCard(o)}`;else sheet.close();}
 sheet.addEventListener("click",e=>{if(e.target===sheet)sheet.close();});
+const MOVE=[["tops","Tops"],["knitwear","Knitwear"],["outerwear","Outerwear"],["dresses","Dresses, playsuits & jumpsuits"],["skirts","Skirts"],["trousers","Trousers & jeans"],["shorts","Shorts"],["shoes","Shoes"],["bags","Bags"],["accessories","Accessories"]];
 function openItem(id){const it=byId(id);if(!it)return;
   const inO=allOutfits().filter(o=>(o.itemIds||[]).includes(id));
   sheetBody.innerHTML=`<div class="sheet-head"><h2>${esc(it.name)}</h2><button class="iconbtn" type="button" data-close>Close</button></div>
@@ -674,7 +676,11 @@ function openItem(id){const it=byId(id);if(!it)return;
   ${it.colours&&it.colours.length?`<dt>Colours</dt><dd>${esc(it.colours.join(", "))}</dd>`:""}
   ${it.pattern?`<dt>Pattern</dt><dd>${esc(it.pattern)}</dd>`:""}${it.fabric?`<dt>Fabric</dt><dd>${esc(it.fabric)}</dd>`:""}
   ${it.seasons&&it.seasons.length?`<dt>Seasons</dt><dd>${esc(it.seasons.join(", "))}</dd>`:""}${it.notes?`<dt>Notes</dt><dd>${esc(it.notes)}</dd>`:""}</dl>
-  <p class="status">In ${inO.length} outfit${inO.length===1?"":"s"}${inO.length?": "+esc(inO.map(o=>o.name).join(", ")):""}.</p>
+  <p class="status">In ${inO.length} outfit${inO.length===1?"":"s"}${inO.length?": "+esc(inO.slice(0,4).map(o=>o.name).join(", "))+(inO.length>4?` and ${inO.length-4} more`:""):""}.</p>
+  <div class="panel" style="gap:8px"><strong style="font-size:14px">Move to another category</strong>
+   <div class="lookf"><label class="f">Category<select id="mvCat">${MOVE.map(([k,v])=>`<option value="${k}" ${it.category===k?"selected":""}>${v}</option>`).join("")}</select></label>
+   <label class="f">Kind<select id="mvSub"><option value="">Let the app decide</option>${MOVE.map(([k])=>subList(k==="trousers"?"trousers":k).map(([sk,sv])=>`<option value="${sk}" data-c="${k}" ${it.category!==k?"hidden":""} ${it.category===k&&it.sub===sk?"selected":""}>${esc(sv)}</option>`).join("")).join("")}</select></label></div>
+   <div class="row"><button class="btn ghost" type="button" data-move="${esc(id)}">Move</button>${catFix[id]?`<button class="iconbtn" type="button" data-unmove="${esc(id)}">Put back where it was</button>`:""}</div></div>
   <div class="row"><button class="btn" type="button" data-anchor="${esc(id)}">Style this</button><button class="btn ghost" type="button" data-buildwith="${esc(id)}">Build your own</button><button class="btn danger" type="button" data-gone="${esc(id)}">I don't own this</button></div>`;
   if(!sheet.open)sheet.showModal();}
 
@@ -695,7 +701,7 @@ function copyText(o){
   return `Please add this outfit to my wardrobe app.\nName: ${o.name}\nItems: ${(o.itemIds||[]).map(id=>{const it=byId(id);return it?`${it.name} (${it.id})`:id;}).join(", ")}\nOccasions: ${(o.occasions||[]).join(", ")||"none set"}`;
 }
 
-document.addEventListener("change",e=>{const el=e.target;if(el.id==="isort"){S.isort=el.value;LS.set("isort",S.isort);render();return;}
+document.addEventListener("change",e=>{const el=e.target;if(el.id==="mvCat"){const sel=$("#mvSub");[...sel.options].forEach(o=>{if(o.value)o.hidden=o.dataset.c!==el.value;});sel.value="";return;}if(el.id==="isort"){S.isort=el.value;LS.set("isort",S.isort);render();return;}
   if(el.dataset&&(el.dataset.tlabel||el.dataset.tday||el.dataset.tpack)){const tr=tripById(S.tripId);if(!tr)return;
     if(el.dataset.tpack){const s=new Set(tr.packed||[]);el.checked?s.add(el.dataset.tpack):s.delete(el.dataset.tpack);tr.packed=[...s];saveTrips(tr);return;}
     const l=tr.looks.find(x=>x.id===(el.dataset.tlabel||el.dataset.tday));if(!l)return;if(el.dataset.tlabel)l.label=el.value;else{l.day=el.value;}saveTrips(tr);if(el.dataset.tday)render();return;}
@@ -784,7 +790,7 @@ document.addEventListener("click",async e=>{
      <p class="lede" style="margin:0">Paste what you copied on the other device, then tap Merge.</p><textarea id="devText" rows="7" style="width:100%;font:inherit;font-size:13px" placeholder="Paste here">${esc(clip.includes("KW-DEVICE")||clip.includes("Please save my wardrobe")?clip:"")}</textarea>
      <div class="row"><button class="btn" type="button" id="devMergeBtn">Merge</button></div><p class="status" id="devErr" style="margin:0"></p>`;if(!sheet.open)sheet.showModal();return;}
   if(t.id==="devMergeBtn"){const v=($("#devText")||{}).value||"";try{S.devMsg=devMerge(v);sheet.close();render();}catch(e){const el=$("#devErr");if(el)el.textContent="That doesn't look like a copy from the app. Copy it again on the other device and try once more.";}return;}
-  if(t.id==="copyTaste"){const txt="Please save my wardrobe taste into the app:\n"+JSON.stringify({...taste,built:mine.filter(isBuilt),hidden,finish:fin,inspoGone,inspoEdits,wish});
+  if(t.id==="copyTaste"){const txt="Please save my wardrobe taste into the app:\n"+JSON.stringify({...taste,built:mine.filter(isBuilt),hidden,finish:fin,inspoGone,inspoEdits,wish,catFix});
     try{await navigator.clipboard.writeText(txt);S.copied="taste";render();setTimeout(()=>{S.copied="";render();},2500);}
     catch(err){sheetBody.innerHTML=`<div class="sheet-head"><h2>Copy this</h2><button class="iconbtn" type="button" data-close>Close</button></div><textarea rows="8" style="width:100%" readonly>${esc(txt)}</textarea>`;if(!sheet.open)sheet.showModal();sheetBody.querySelector("textarea").select();}
     return;}
@@ -801,6 +807,8 @@ document.addEventListener("click",async e=>{
   if(t.dataset.occ){S.occ=t.dataset.occ;render();return;}
   if(t.dataset.season){S.season=t.dataset.season;render();return;}
   if(t.dataset.item){openItem(t.dataset.item);return;}
+  if(t.dataset.move){const c=$("#mvCat").value,sel=$("#mvSub"),o=sel.selectedOptions[0];const sub=o&&o.dataset.c===c?sel.value:"";catFix[t.dataset.move]={category:c,sub};LS.set("catFix",catFix);applyGone();openItem(t.dataset.move);render();return;}
+  if(t.dataset.unmove){delete catFix[t.dataset.unmove];LS.set("catFix",catFix);applyGone();openItem(t.dataset.unmove);render();return;}
   if(t.hasAttribute("data-close")){sheet.close();return;}
   if(t.dataset.buildwith){S.build={itemIds:[t.dataset.buildwith],name:"",occasions:[]};sheet.close();S.tab="build";render();window.scrollTo(0,0);return;}
   if(t.dataset.gone){if(!t.dataset.armed){t.dataset.armed="1";t.textContent="Tap again to remove";return;}

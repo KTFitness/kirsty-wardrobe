@@ -362,8 +362,8 @@
   },
   {
    "id": "denim-daisy-button-shirt",
-   "name": "Denim short-sleeve shirt with daisy buttons",
-   "category": "tops",
+   "name": "Gorman heavy denim shirt jacket with starburst buttons",
+   "category": "outerwear",
    "colours": [
     "mid-blue denim"
    ],
@@ -374,11 +374,12 @@
     "Summer",
     "Autumn"
    ],
-   "notes": "Collared, patch chest pockets, gold flower buttons",
+   "notes": "Heavyweight denim, worn as a light jacket. Collared, short sleeves, patch chest pockets, gold starburst buttons. Not for layering a cardigan over.",
    "img": "img/denim-daisy-button-shirt.webp",
    "_f": [
     "denim"
-   ]
+   ],
+   "sub": "jacket"
   },
   {
    "id": "black-multi-spot-swing-dress",

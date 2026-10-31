@@ -29,6 +29,12 @@ for pid,ids in E.get('inspoEdits',{}).items():
 for bo in E.get('built',[]):
   if '(my version)' in bo['name'] or core(bo['itemIds']) in have:continue
   d['outfits'].append({'id':'built-'+bo['id'],'name':bo['name'],'itemIds':bo['itemIds'],'occasions':bo.get('occasions',[]),'liked':True,'built':True,'why':''});have.add(core(bo['itemIds']))
+for iid,f in E.get('catFix',{}).items():
+  it=items.get(iid)
+  if it:
+    it['category']=f['category']
+    if f.get('sub'):it['sub']=f['sub']
+    else:it.pop('sub',None)
 json.dump(d,open('data/wardrobe.json','w'),ensure_ascii=False,indent=1)
 c={}
 for k in liked+dis:
