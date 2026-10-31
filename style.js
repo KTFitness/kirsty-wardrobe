@@ -81,6 +81,15 @@ function kRules(ps){let s=0;const cl=ps.filter(p=>!["shoes","bags","accessories"
   if(vest&&pkind(vest)){const und=cl.filter(p=>p!==vest&&(p.category==="tops"||p.category==="knitwear")&&!isWarmLayer(p));
     for(const u of und){if(pkind(u))s-=8;else if(families(u)[0]==="white"||families(u)[0]==="cream")s+=1.5;else s-=0.5;}}
   return s;}
+
+/* Per-piece pairing rules Kirsty gave: which bottoms or tops a piece goes with. Its own matching-set piece is always allowed. */
+const isDenim=it=>/denim|jean/i.test(it.name+" "+(it.fabric||""));
+const PAIR_RULES={
+ denimBottoms:{cat:["skirts","trousers","shorts"],ok:b=>isDenim(b)&&["denim","white","sky","blue"].includes(families(b)[0])},
+ whiteTeeShirt:{cat:["tops","knitwear"],ok:t=>t.category==="tops"&&/tee|t-shirt|shirt/i.test(t.name)&&["white","cream"].includes(families(t)[0])&&!/stripe|check|gingham/i.test(t.name)&&!isVest(t)},
+ neutralBottoms:{cat:["skirts","trousers","shorts"],ok:b=>["black","white","denim","cream"].includes(families(b)[0])&&!pkind(b)}};
+function pairOk(ps){for(const it of ps){const r=it.pairRule&&PAIR_RULES[it.pairRule];if(!r)continue;
+  for(const o of ps){if(o===it||o.id===it.setWith||!r.cat.includes(o.category)||isWarmLayer(o))continue;if(!r.ok(o))return false;}}return true;}
 function score(pieces,ctx){
   const clothes=pieces.filter(p=>p.category!=="shoes"&&p.category!=="bags");
   let s=0,n=0,best=null;
@@ -200,7 +209,7 @@ function suggest(anchor,items,ctx){
   const season=ctx.season,rnd=mulberry(ctx.seed||1);const excl0=new Set(ctx.exclude||[]),exCore=new Set(ctx.excludeCore||[]);
   const coreKey=ps=>ps.filter(p=>!["shoes","bags","accessories"].includes(p.category)).map(p=>p.id).sort().join(",");
   const excl={has:k=>{if(excl0.has(k))return true;const ps=k.split(",").map(id=>items.find(i=>i.id===id)).filter(Boolean);return exCore.has(coreKey(ps));}};
-  const pool=items.filter(i=>i.id!==anchor.id&&inSeason(i,season)&&(!i.setOnly||i.id===anchor.setWith));
+  const pool=items.filter(i=>i.id!==anchor.id&&inSeason(i,season));
   const by=c=>pool.filter(i=>c.includes(i.category));
   let tops=by(["tops","knitwear"]).filter(i=>!isWarmLayer(i)),bottoms=by(["skirts","trousers","shorts"]),dresses=by(["dresses"]);
   let shoes=by(["shoes"]),layers=pool.filter(isWarmLayer),unders=pool.filter(isUnder),bags=by(["bags"]);
@@ -232,7 +241,7 @@ function suggest(anchor,items,ctx){
      const pick=[],fams=new Set();for(const [u] of ranked){const f=(mainFams(u)[0]||"")+(/shirt/i.test(u.name)?"s":"");if(fams.has(f))continue;fams.add(f);pick.push(u);if(pick.length>=3)break;}
      if(!pick.length)out.push(c);for(const u of pick)out.push(c.concat(u));}
    cores=out;}
-  if(anchor.setOnly&&anchor.setWith)cores=cores.filter(c=>c.some(p=>p.id===anchor.setWith));
+  cores=cores.filter(pairOk);
   cores=cores.filter(c=>!busyClash(forceLayer&&WI?c.concat(WI):c));
   if(BP.size)cores=cores.filter(c=>blockPen(c)>-40);
   // pre-score cores, keep best
@@ -278,13 +287,14 @@ function suggest(anchor,items,ctx){
   const hasBasic=r=>r.pieces.some(p=>p!==anchor&&p.basic&&p.category!=="shoes");
   const botOf=r=>r.pieces.find(p=>p!==anchor&&['skirts','trousers','shorts','dresses','tops','knitwear'].includes(p.category)&&(['skirts','trousers','shorts','dresses'].includes(anchor.category)?['tops','knitwear'].includes(p.category):!['tops','knitwear'].includes(p.category)));
   const wild=[];if(!WI){const fams=new Set(),bestPer=new Map();for(const r of results){const b=botOf(r);if(b&&!bestPer.has(b.id))bestPer.set(b.id,r);}
-    const cand=[...bestPer.values()].map(r=>[r,rnd()]).sort((x,y)=>x[1]-y[1]).map(x=>x[0]);for(const r of cand){if(wild.length>=3)break;if(kRules(r.pieces)<0||blockPen(r.pieces)<=-40)continue;if(excl.has(r.pieces.map(p=>p.id).sort().join(",")))continue;const b=botOf(r);if(!b||seen[b.id])continue;const f=mainFams(b)[0];if(fams.has(f)||f==='denim'||f==='white')continue;fams.add(f);wild.push(r);}}
+    const cand=[...bestPer.values()].map(r=>[r,rnd()]).sort((x,y)=>x[1]-y[1]).map(x=>x[0]);for(const r of cand){if(wild.length>=3)break;if(kRules(r.pieces)<0||blockPen(r.pieces)<=-40||!pairOk(r.pieces))continue;if(excl.has(r.pieces.map(p=>p.id).sort().join(",")))continue;const b=botOf(r);if(!b||seen[b.id])continue;const f=mainFams(b)[0];if(fams.has(f)||f==='denim'||f==='white')continue;fams.add(f);wild.push(r);}}
   const mainWant=want-wild.length;
   for(const r of results){
     if(out.length>=mainWant)break;
     if(wild.includes(r))continue;
     if(excl.has(r.pieces.map(p=>p.id).sort().join(",")))continue;
     if(BP.size&&blockPen(r.pieces)<=-40)continue;
+    if(!pairOk(r.pieces))continue;
     const mains=r.pieces.filter(p=>p!==anchor&&p!==WI&&p.category!=="shoes"&&p.category!=="bags");
     const key=mains.length?null:r.pieces.map(p=>p.id).sort().join(",");
     if(key){if(seenKey.has(key))continue;seenKey.add(key);}
@@ -305,7 +315,7 @@ function suggest(anchor,items,ctx){
   }
   for(const r of wild){const b=botOf(r);if(out.some(o=>o.pieces.includes(b)))continue;if(r.pieces.some(p=>p!==anchor&&isVest(p))&&out.filter(o=>o.pieces.some(p=>p!==anchor&&isVest(p))).length>=3)continue;out.push(r);}
   if(out.length<want){const have=new Set(out.map(o=>o.pieces.map(p=>p.id).sort().join(",")));
-    for(const r of results){if(out.length>=want)break;const k=r.pieces.map(p=>p.id).sort().join(",");if(have.has(k)||excl.has(k)||blockPen(r.pieces)<=-40)continue;
+    for(const r of results){if(out.length>=want)break;const k=r.pieces.map(p=>p.id).sort().join(",");if(have.has(k)||excl.has(k)||blockPen(r.pieces)<=-40||!pairOk(r.pieces))continue;
       const mains=r.pieces.filter(p=>p!==anchor&&p!==WI&&p.category!=="shoes"&&p.category!=="bags");if(mains.some(p=>(used[p.id]||0)>=2))continue;
       if(r.pieces.some(p=>p!==anchor&&isVest(p))&&out.filter(o=>o.pieces.some(p=>p!==anchor&&isVest(p))).length>=3)continue;
       const bf=bottomFam(r);if(bf&&(bfam[bf]||0)>=3)continue;if(bf)bfam[bf]=(bfam[bf]||0)+1;

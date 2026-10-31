@@ -1249,7 +1249,8 @@
     "Summer"
    ],
    "notes": "V-neck, chest pocket, horn buttons. Picture is a crop of the listing photo.",
-   "img": "img/cobalt-linen-crop-shirt.webp"
+   "img": "img/cobalt-linen-crop-shirt.webp",
+   "pairRule": "neutralBottoms"
   },
   {
    "id": "pink-green-stripe-knit-tee",
@@ -5649,7 +5650,7 @@
     "red",
     "tan"
    ],
-   "setOnly": true
+   "pairRule": "denimBottoms"
   },
   {
    "id": "saba-jungle-print-skirt",
@@ -5671,7 +5672,7 @@
    "notes": "A-line mini, striped waistband and border hem. Matches the Saba jungle print shirt. Your photo.",
    "img": "img/saba-jungle-print-skirt.webp",
    "setWith": "saba-jungle-print-shirt",
-   "setOnly": true
+   "pairRule": "whiteTeeShirt"
   },
   {
    "id": "resort-white-embroidered-blouse",
