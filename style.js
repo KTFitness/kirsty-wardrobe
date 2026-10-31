@@ -94,10 +94,10 @@ function kRules(ps){let s=0;const cl=ps.filter(p=>!["shoes","bags","accessories"
 const isDenim=it=>/denim|jean/i.test(it.name+" "+(it.fabric||""));
 const PAIR_RULES={
  denimBottoms:{cat:["skirts","trousers","shorts"],ok:b=>isDenim(b)&&["denim","white","sky","blue"].includes(families(b)[0])},
- whiteTeeShirt:{cat:["tops","knitwear"],ok:t=>t.category==="tops"&&/tee|t-shirt|shirt/i.test(t.name)&&["white","cream"].includes(families(t)[0])&&!/stripe|check|gingham/i.test(t.name)&&!isVest(t)},
+ whiteTeeShirt:{cat:["tops","knitwear"],ok:(t,ps)=>(isShirt(t)&&(isDenim(t)||/chambray/i.test(t.name+" "+(t.fabric||"")))&&["sky","blue","denim"].includes(families(t)[0])&&!/dark|indigo/i.test(t.name+" "+(t.colours||[]).join(" "))&&ps.some(x=>x!==t&&x.category==="tops"&&/tee|t-shirt/i.test(x.name)&&["white","cream"].includes(families(x)[0])&&!/stripe/i.test(x.name)))||t.category==="tops"&&/tee|t-shirt|shirt/i.test(t.name)&&["white","cream"].includes(families(t)[0])&&!/stripe|check|gingham/i.test(t.name)&&!isVest(t)},
  neutralBottoms:{cat:["skirts","trousers","shorts"],ok:b=>["black","white","denim","cream"].includes(families(b)[0])&&!pkind(b)}};
 function pairOk(ps){for(const it of ps){const r=it.pairRule&&PAIR_RULES[it.pairRule];if(!r)continue;
-  for(const o of ps){if(o===it||o.id===it.setWith||!r.cat.includes(o.category)||isWarmLayer(o))continue;if(!r.ok(o))return false;}}return true;}
+  for(const o of ps){if(o===it||o.id===it.setWith||!r.cat.includes(o.category)||isWarmLayer(o))continue;if(!r.ok(o,ps))return false;}}return true;}
 function score(pieces,ctx){
   const clothes=pieces.filter(p=>p.category!=="shoes"&&p.category!=="bags");
   let s=0,n=0,best=null;

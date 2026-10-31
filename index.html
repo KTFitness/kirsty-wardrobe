@@ -185,11 +185,11 @@ dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
 </nav>
 <dialog class="sheet" id="sheet"><div class="sheet-in" id="sheetBody"></div></dialog>
 
-<script src="style.js?v=202611010659"></script>
+<script src="style.js?v=202611010715"></script>
 <script>
 /* Home-screen apps hold on to old copies. On open, check version.txt; if a newer version is live, refresh the cached files and reload once. */
 if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{});});}
-const APPV="202611010659";
+const APPV="202611010715";
 fetch("version.txt",{cache:"no-store"}).then(r=>r.ok?r.text():"").then(v=>{v=v.trim();if(!v||v===APPV)return;
   let tried="";try{tried=sessionStorage.getItem("kw:upd")||"";}catch(e){}if(tried===v)return;try{sessionStorage.setItem("kw:upd",v);}catch(e){}
   Promise.all([fetch("index.html",{cache:"reload"}),fetch("./",{cache:"reload"})]).catch(()=>{}).then(()=>location.reload());}).catch(()=>{});
@@ -448,10 +448,19 @@ function ratingLists0(){const sv=(D.taste&&D.taste.saved)||{liked:[],disliked:[]
   return {liked:mergeList(sv.liked,taste.liked),disliked:mergeList(sv.disliked,taste.disliked)};}
 function blockSets(){const sv=(D.taste&&D.taste.saved)||{};const un=(a,b)=>[...new Set((a||[]).concat(b||[]))];
   return {pairs:un(sv.blockPairs,taste.blockPairs).filter(k=>!(taste.unblock||[]).includes(k)),pats:un(sv.blockPats,taste.blockPats).filter(k=>!(taste.unblockPat||[]).includes(k))};}
+const STRONG=5;
+function strongKeys(){const rk=o=>(o.itemIds||[]).map(id=>ALIAS[id]||id).filter(byId).sort().join(","),L=inspoOutfits().map(rk);
+  for(const o of mine)if(o.built||/inspiration look/.test(o.why||""))L.push(rk(o));
+  for(const o of D.outfits)if((o.built||/^From your lookbook/.test(o.why||""))&&!unliked.includes(o.id))L.push(rk(o));
+  return [...new Set(L.filter(Boolean))];}
 function deriveW(){const {liked,disliked}=ratingLists(),N=liked.length+disliked.length,w={};if(!N||!window.Stylist)return w;
-  const p=liked.length/N,c={};
-  const add=(key,i)=>{let P=key.split(",").map(byId).filter(Boolean);if(i===1&&Stylist.busyClash&&Stylist.busyClash(P))return;if(i===1)P=P.filter(x=>!["shoes","bags","accessories"].includes(x.category));for(const k of Stylist.features(P,"Everyday")){if(k.startsWith("it:"))continue;(c[k]=c[k]||[0,0])[i]++;}};
-  liked.forEach(k=>add(k,0));disliked.forEach(k=>add(k,1));
+  const c={};
+  /* Inspiration looks and outfits she built herself count STRONG times as much as a tap of Like. */
+  const nk=k=>ckey({itemIds:k.split(",")}),SK=strongKeys(),SC=new Set(SK.map(nk)),LW=new Map();
+  liked.forEach(k=>{if(!SC.has(nk(k)))LW.set(k,1);});SK.forEach(k=>LW.set(k,STRONG));
+  const totL=[...LW.values()].reduce((a,b)=>a+b,0),p=totL/(totL+disliked.length);
+  const add=(key,i,wt)=>{let P=key.split(",").map(byId).filter(Boolean);if(i===1&&Stylist.busyClash&&Stylist.busyClash(P))return;if(i===1)P=P.filter(x=>!["shoes","bags","accessories"].includes(x.category));for(const k of Stylist.features(P,"Everyday")){if(k.startsWith("it:"))continue;(c[k]=c[k]||[0,0])[i]+=wt;}};
+  LW.forEach((wt,k)=>add(k,0,wt));disliked.forEach(k=>add(k,1,1));
   for(const k in c){const n=c[k][0]+c[k][1];w[k]=Math.round((c[k][0]-n*p)/Math.sqrt(n+4)*100)/100;}return w;}
 const tasteW=memo(()=>{const w={...(D.taste&&D.taste.w||{})},r=deriveW();for(const k in r)w[k]=(w[k]||0)+r[k];return w;});
 function ratedCount(){const r=ratingLists();return r.liked.length+r.disliked.length;}
