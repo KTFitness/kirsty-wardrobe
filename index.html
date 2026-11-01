@@ -185,11 +185,11 @@ dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
 </nav>
 <dialog class="sheet" id="sheet"><div class="sheet-in" id="sheetBody"></div></dialog>
 
-<script src="style.js?v=202611011144"></script>
+<script src="style.js?v=202611011154"></script>
 <script>
 /* Home-screen apps hold on to old copies. On open, check version.txt; if a newer version is live, refresh the cached files and reload once. */
 if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{});});}
-const APPV="202611011144";
+const APPV="202611011154";
 fetch("version.txt",{cache:"no-store"}).then(r=>r.ok?r.text():"").then(v=>{v=v.trim();if(!v||v===APPV)return;
   let tried="";try{tried=sessionStorage.getItem("kw:upd")||"";}catch(e){}if(tried===v)return;try{sessionStorage.setItem("kw:upd",v);}catch(e){}
   Promise.all([fetch("index.html",{cache:"reload"}),fetch("./",{cache:"reload"})]).catch(()=>{}).then(()=>location.reload());}).catch(()=>{});
@@ -222,6 +222,7 @@ const S={anchor:null,sOcc:"Everyday",sSeason:null,seed:1,pickCat:"all",q:"",tab:
 
 /* phone-only storage: favourites, hidden outfits, outfits built here */
 let DV=0;
+function toast(msg){let el=document.getElementById("toast");if(!el){el=document.createElement("div");el.id="toast";el.setAttribute("role","status");el.style.cssText="position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom));transform:translateX(-50%);background:#1d1d1f;color:#fff;padding:12px 16px;border-radius:12px;font-size:15px;z-index:99;max-width:88vw;text-align:center;box-shadow:0 6px 20px rgba(0,0,0,.25);transition:opacity .3s;pointer-events:none";document.body.appendChild(el);}el.textContent=msg;el.style.opacity="1";clearTimeout(toast.t);toast.t=setTimeout(()=>el.style.opacity="0",3500);}
 const memo=(fn)=>{let k=-1,v;return ()=>{const sg=DV+"|"+D.items.length+"|"+D.outfits.length+"|"+D.inspo.length;if(sg!==k){v=fn();k=sg;}return v;};};
 const LS={get(k,d){try{const v=localStorage.getItem("kw:"+k);return v?JSON.parse(v):d;}catch(e){return d;}},
   set(k,v){DV++;try{localStorage.setItem("kw:"+k,JSON.stringify(v));}catch(e){}}};
@@ -413,7 +414,7 @@ function vBuild(){
   <label class="f">Name<input id="bName" value="${esc(b.name)}" placeholder="e.g. Sorbet Sunday"></label>
   <div class="checks">${D.occasions.map(o=>`<label><input type="checkbox" data-bocc value="${esc(o)}" ${b.occasions.includes(o)?"checked":""}>${esc(o)}</label>`).join("")}</div>
   ${b.fromOutfit?`<div class="notice">Starting from "${esc(b.fromName||"")}". Tap a piece below to take it out, tap another to add or swap it in, then Save. It saves as a new outfit and the original stays as it is.</div>`:""}${b.fromInspo?`<div class="notice">Changing the inspiration look "${esc((D.inspo.find(p=>p.id===b.fromInspo)||{}).name||"")}". Tap a piece below to take it out, tap another to add or swap it in, then Save. It goes back into the Inspo tab with its photo.</div>`:""}${b.tripLook?`<div class="notice">Editing an outfit in ${esc((tripById(b.tripLook.tripId)||{}).name||"your trip")}. Save puts it back in the trip.</div>`:b.tripId?`<div class="notice">Building for ${esc((tripById(b.tripId)||{}).name||"your trip")}. Save adds it to the trip and to Built by you.</div>`:""}
-  <div class="row"><button class="btn" type="button" id="bSave" ${b.itemIds.length?"":"disabled"}>${b.tripLook?"Save to trip":b.fromInspo?"Save to the inspo look":b.editId?"Save changes":"Save outfit"}</button>${(b.editId||b.fromInspo)&&!b.tripLook&&b.itemIds.length?`<button class="btn ghost" type="button" id="bSaveNew">Save as a new outfit</button>`:""}${!b.tripLook&&!b.tripId&&b.itemIds.length?addBtn(b.itemIds,b.name):""}${b.itemIds.length?`<button class="btn ghost" type="button" id="bClear">Start again</button>`:""}</div></div>
+  <div class="row">${b.fromInspo&&!b.tripLook?`<button class="btn" type="button" id="bSaveNew" ${b.itemIds.length?"":"disabled"}>Save as a new outfit</button><button class="btn ghost" type="button" id="bSave" ${b.itemIds.length?"":"disabled"}>Change the inspo look instead</button>`:`<button class="btn" type="button" id="bSave" ${b.itemIds.length?"":"disabled"}>${b.tripLook?"Save to trip":b.editId?"Save changes":b.fromOutfit?"Save as a new outfit":"Save outfit"}</button>${b.editId&&!b.tripLook&&b.itemIds.length?`<button class="btn ghost" type="button" id="bSaveNew">Save as a new outfit</button>`:""}`}${!b.tripLook&&!b.tripId&&b.itemIds.length?addBtn(b.itemIds,b.name):""}${b.itemIds.length?`<button class="btn ghost" type="button" id="bClear">Start again</button>`:""}</div></div>
   <label class="pairwith" style="margin-top:6px"><span>Find a piece</span><input id="bq" type="search" value="${esc(S.bq||"")}" placeholder="Search, e.g. red, stripe, linen" autocomplete="off"></label>
   ${(()=>{const q=(S.bq||"").trim().toLowerCase();S.bOpen=S.bOpen||{};
    return CATS.filter(([k])=>D.items.some(i=>dcat(i)===k)).map(([k,v])=>{
@@ -783,7 +784,7 @@ document.addEventListener("click",async e=>{
     if(S.finOrig)fin[id]=S.finOrig;else delete fin[id];LS.set("finish",fin);
     const rec={id:"m"+Date.now(),name:(o.name||"My outfit")+" (new shoes & bag)",itemIds:ids,occasions:(o.occasions||[]).slice(),why:"",built:true};mine=mine.concat(rec);LS.set("mine",mine);
     const k=ids.slice().sort().join(",");if(!taste.liked.includes(k)){taste.liked.push(k);taste.n++;LS.set("taste",taste);}
-    S.finOrig=null;sheet.close();S.openG=S.openG||{};S.openG.__built=true;render();return;}
+    S.finOrig=null;sheet.close();S.openG=S.openG||{};S.openG.__built=true;render();toast("Saved as a new outfit. The original is unchanged. Find it at the top of Built by you.");return;}
   if(t.dataset.fshoe!==undefined||t.dataset.fbag!==undefined){const id=S.finId;const f=fin[id]||{};if(t.dataset.fshoe!==undefined)f.shoes=t.dataset.fshoe||null;if(t.dataset.fbag!==undefined)f.bag=t.dataset.fbag||null;fin[id]=f;LS.set("finish",fin);openFinish(id);render();return;}
   if(t.dataset.findone!==undefined){const o=allOutfits().find(x=>x.id===S.finId);if(o){sheetBody.innerHTML=`<div class="sheet-head"><h2>Outfit</h2><button class="iconbtn" type="button" data-close>Close</button></div>${outfitCard(o)}`;}return;}
   if(t.dataset.likesur!==undefined&&S.surprise){const o=S.surprise;const core=o.itemIds.filter(id=>{const it=byId(id);return it&&!ACC.includes(it.category);});const k=core.slice().sort().join(",");taste.liked.push(k);taste.n++;LS.set("taste",taste);
@@ -873,7 +874,7 @@ document.addEventListener("click",async e=>{
   if(t.id==="surprise"){surprise();render();return;}
   if(t.id==="keepSurprise"){const o=S.surprise;S.surprise=null;S.build={itemIds:o.itemIds.slice(),name:"",occasions:[]};S.tab="build";render();window.scrollTo(0,0);return;}
   if(t.dataset.pick){S.build.name=$("#bName").value;S.build.occasions=[...document.querySelectorAll("input[data-bocc]:checked")].map(x=>x.value);
-    const a=S.build.itemIds,i=a.indexOf(t.dataset.pick);if(i>=0)a.splice(i,1);else{a.push(t.dataset.pick);const it=byId(t.dataset.pick);if(it&&!S.bq&&it.category!=="accessories"){S.bOpen=S.bOpen||{};S.bOpen[it.category]=false;}}render();return;}
+    const a=S.build.itemIds,i=a.indexOf(t.dataset.pick);if(i>=0)a.splice(i,1);else{const nc=(byId(t.dataset.pick)||{}).category;if(nc==="shoes"||nc==="bags")for(let j=a.length-1;j>=0;j--){const x=byId(a[j]);if(x&&x.category===nc)a.splice(j,1);}a.push(t.dataset.pick);const it=byId(t.dataset.pick);if(it&&!S.bq&&it.category!=="accessories"){S.bOpen=S.bOpen||{};S.bOpen[it.category]=false;}}render();return;}
   if(t.id==="bClear"){S.build={itemIds:[],name:"",occasions:[]};render();return;}
   if(t.dataset.swapnew){const o=allOutfits().find(x=>x.id===t.dataset.swapnew);if(!o)return;if(sheet.open)sheet.close();S.build={itemIds:o.itemIds.slice(),name:(o.name||"My outfit").replace(/ \(new version( \d+)?\)$/,"")+" (new version)",occasions:(o.occasions||[]).slice(),fromOutfit:o.id,fromName:o.name||""};S.bOpen={};S.tab="build";render();window.scrollTo(0,0);return;}
   if(t.dataset.editb){const o=allOutfits().find(x=>x.id===t.dataset.editb);if(!o)return;if(sheet.open)sheet.close();S.build={itemIds:o.itemIds.slice(),name:o.name||"",occasions:(o.occasions||[]).slice(),editId:o.id};S.bOpen={};S.tab="build";render();window.scrollTo(0,0);return;}
@@ -889,7 +890,7 @@ document.addEventListener("click",async e=>{
     mine=mine.some(m=>m.id===rec.id)?mine.map(m=>m.id===rec.id?rec:m):mine.concat(rec);LS.set("mine",mine);
     const k=ids.slice().sort().join(",");if(!taste.liked.includes(k)){taste.liked.push(k);taste.n++;LS.set("taste",taste);}
     if(tripFor){addLook(tripFor,ids,name==="My outfit"?"":name);S.build={itemIds:[],name:"",occasions:[]};S.tab="trips";S.tripId=tripFor.id;render();window.scrollTo(0,0);return;}
-    S.build={itemIds:[],name:"",occasions:[]};S.openG=S.openG||{};S.openG.__built=true;S.tab="outfits";S.occ="all";render();window.scrollTo(0,0);return;}
+    const wasNew=!eid;S.build={itemIds:[],name:"",occasions:[]};S.openG=S.openG||{};S.openG.__built=true;S.tab="outfits";S.occ="all";render();window.scrollTo(0,0);toast(wasNew?"Saved \u201c"+name+"\u201d as a new outfit. It\u2019s at the top of Built by you.":"Changes saved.");return;}
 });
 
 fetch("data/wardrobe.json",{cache:"no-cache"}).then(r=>{if(!r.ok)throw new Error(r.status);return r.json();}).then(j=>{
