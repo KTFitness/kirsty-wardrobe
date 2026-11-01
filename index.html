@@ -185,11 +185,11 @@ dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
 </nav>
 <dialog class="sheet" id="sheet"><div class="sheet-in" id="sheetBody"></div></dialog>
 
-<script src="style.js?v=202611011124"></script>
+<script src="style.js?v=202611011144"></script>
 <script>
 /* Home-screen apps hold on to old copies. On open, check version.txt; if a newer version is live, refresh the cached files and reload once. */
 if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{});});}
-const APPV="202611011124";
+const APPV="202611011144";
 fetch("version.txt",{cache:"no-store"}).then(r=>r.ok?r.text():"").then(v=>{v=v.trim();if(!v||v===APPV)return;
   let tried="";try{tried=sessionStorage.getItem("kw:upd")||"";}catch(e){}if(tried===v)return;try{sessionStorage.setItem("kw:upd",v);}catch(e){}
   Promise.all([fetch("index.html",{cache:"reload"}),fetch("./",{cache:"reload"})]).catch(()=>{}).then(()=>location.reload());}).catch(()=>{});
@@ -265,7 +265,7 @@ const ACC=["shoes","bags","accessories"];
 const ckey=o=>(o.itemIds||[]).map(id=>ALIAS[id]||id).filter(id=>{const it=byId(id);return it&&!ACC.includes(it.category);}).sort().join(",");
 const applyFin=o=>{const f=fin[o.id];if(!f)return o;let ids=(o.itemIds||[]).filter(id=>{const it=byId(id);return !(it&&((f.shoes!==undefined&&it.category==="shoes")||(f.bag!==undefined&&it.category==="bags")));});if(f.shoes)ids.push(f.shoes);if(f.bag)ids.push(f.bag);return {...o,itemIds:ids};};
 const allOutfits=memo(()=>{const L=mine.map(o=>({...o,mine:true})).concat(D.outfits.map(o=>({...o,mine:false})));const seen=new Set(),out=[];
-  for(const o of L){if((o.itemIds||[]).some(id=>gone.includes(id)))continue;const liked=o.mine||o.liked;if(liked){const k=ckey(o);if(seen.has(k))continue;seen.add(k);}out.push(applyFin(o));}
+  for(const o of L){if((o.itemIds||[]).some(id=>gone.includes(id)))continue;const liked=o.mine||o.liked;if(liked){const k=(o.itemIds||[]).map(id=>ALIAS[id]||id).filter(byId).sort().join(",");if(seen.has(k))continue;seen.add(k);}out.push(applyFin(o));}
   return out.filter(o=>!o.mine).filter(o=>!o.liked).concat(out.filter(o=>o.liked&&!o.mine),out.filter(o=>o.mine));});
 
 /* Inspiration looks as outfits: they can be liked, swapped in Build, and turn up in What to wear today. */
@@ -299,7 +299,7 @@ function outfitCard(o,extra="",hero){
   ${tipsFor(o.itemIds||[])}
   <div class="row">${o.temp?`<button class="btn" type="button" data-likesur>Like</button><button class="btn ghost" type="button" data-nopesur>Not for me</button>`:isLiked(o)?`<span class="fav" aria-pressed="true" style="cursor:default">♥ Liked</span><button class="iconbtn" type="button" data-unlike="${esc(o.id)}">Unlike</button>`:`<button class="fav" type="button" data-likeo="${esc(o.id)}" aria-pressed="false">♡ Like</button>`}
   ${isLiked(o)?`<button class="iconbtn" type="button" data-finish="${esc(o.id)}">${(o.itemIds||[]).some(id=>{const it=byId(id);return it&&it.category==="shoes";})?"Change shoes & bag":"Add shoes & bag"}</button>`:""}
-  ${isBuilt(o)?`<button class="iconbtn" type="button" data-editb="${esc(o.id)}">Edit</button><button class="iconbtn" type="button" data-delb="${esc(o.id)}">Delete</button>`:""}${addBtn(o.itemIds||[],o.name)}${!o.temp&&!isLiked(o)&&!o.mine&&!o.liked?`<button class="iconbtn" type="button" data-hide="${esc(o.id)}">Hide</button>`:""}${extra}</div></div></article>`;
+  ${isLiked(o)?`<button class="iconbtn" type="button" data-swapnew="${esc(o.id)}">Swap a piece</button>`:""}${isBuilt(o)?`<button class="iconbtn" type="button" data-editb="${esc(o.id)}">Edit</button><button class="iconbtn" type="button" data-delb="${esc(o.id)}">Delete</button>`:""}${addBtn(o.itemIds||[],o.name)}${!o.temp&&!isLiked(o)&&!o.mine&&!o.liked?`<button class="iconbtn" type="button" data-hide="${esc(o.id)}">Hide</button>`:""}${extra}</div></div></article>`;
 }
 
 
@@ -412,8 +412,8 @@ function vBuild(){
   <div class="panel">${b.itemIds.length?collage(b.itemIds):`<div class="empty"><span>Pick items below.</span></div>`}
   <label class="f">Name<input id="bName" value="${esc(b.name)}" placeholder="e.g. Sorbet Sunday"></label>
   <div class="checks">${D.occasions.map(o=>`<label><input type="checkbox" data-bocc value="${esc(o)}" ${b.occasions.includes(o)?"checked":""}>${esc(o)}</label>`).join("")}</div>
-  ${b.fromInspo?`<div class="notice">Changing the inspiration look "${esc((D.inspo.find(p=>p.id===b.fromInspo)||{}).name||"")}". Tap a piece below to take it out, tap another to add or swap it in, then Save. It goes back into the Inspo tab with its photo.</div>`:""}${b.tripLook?`<div class="notice">Editing an outfit in ${esc((tripById(b.tripLook.tripId)||{}).name||"your trip")}. Save puts it back in the trip.</div>`:b.tripId?`<div class="notice">Building for ${esc((tripById(b.tripId)||{}).name||"your trip")}. Save adds it to the trip and to Built by you.</div>`:""}
-  <div class="row"><button class="btn" type="button" id="bSave" ${b.itemIds.length?"":"disabled"}>${b.tripLook?"Save to trip":b.fromInspo?"Save to the inspo look":b.editId?"Save changes":"Save outfit"}</button>${!b.tripLook&&!b.tripId&&b.itemIds.length?addBtn(b.itemIds,b.name):""}${b.itemIds.length?`<button class="btn ghost" type="button" id="bClear">Start again</button>`:""}</div></div>
+  ${b.fromOutfit?`<div class="notice">Starting from "${esc(b.fromName||"")}". Tap a piece below to take it out, tap another to add or swap it in, then Save. It saves as a new outfit and the original stays as it is.</div>`:""}${b.fromInspo?`<div class="notice">Changing the inspiration look "${esc((D.inspo.find(p=>p.id===b.fromInspo)||{}).name||"")}". Tap a piece below to take it out, tap another to add or swap it in, then Save. It goes back into the Inspo tab with its photo.</div>`:""}${b.tripLook?`<div class="notice">Editing an outfit in ${esc((tripById(b.tripLook.tripId)||{}).name||"your trip")}. Save puts it back in the trip.</div>`:b.tripId?`<div class="notice">Building for ${esc((tripById(b.tripId)||{}).name||"your trip")}. Save adds it to the trip and to Built by you.</div>`:""}
+  <div class="row"><button class="btn" type="button" id="bSave" ${b.itemIds.length?"":"disabled"}>${b.tripLook?"Save to trip":b.fromInspo?"Save to the inspo look":b.editId?"Save changes":"Save outfit"}</button>${(b.editId||b.fromInspo)&&!b.tripLook&&b.itemIds.length?`<button class="btn ghost" type="button" id="bSaveNew">Save as a new outfit</button>`:""}${!b.tripLook&&!b.tripId&&b.itemIds.length?addBtn(b.itemIds,b.name):""}${b.itemIds.length?`<button class="btn ghost" type="button" id="bClear">Start again</button>`:""}</div></div>
   <label class="pairwith" style="margin-top:6px"><span>Find a piece</span><input id="bq" type="search" value="${esc(S.bq||"")}" placeholder="Search, e.g. red, stripe, linen" autocomplete="off"></label>
   ${(()=>{const q=(S.bq||"").trim().toLowerCase();S.bOpen=S.bOpen||{};
    return CATS.filter(([k])=>D.items.some(i=>dcat(i)===k)).map(([k,v])=>{
@@ -529,7 +529,7 @@ function likedFor(a){const L=allOutfits().filter(o=>isLiked(o)&&(o.itemIds||[]).
 function nopedFor(a){const keys=[...new Set(allDisliked().filter(k=>k.split(",").includes(a.id)).reverse())];if(!keys.length)return "";const open=!!(S.openG&&S.openG["nope:"+a.id]);
   return `<div class="grp${open?" open":""}" style="margin-top:18px"><button type="button" class="grphead" data-grp="nope:${esc(a.id)}" aria-expanded="${open}"><span class="gn">Changed your mind? Outfits you said Not for me to</span><span class="n">${keys.length}</span><span class="chev">${open?"▾":"▸"}</span></button>
   ${open?`<div class="minigrid">${keys.map(k=>`<div class="mini" style="cursor:default">${collage(k.split(","),a.id)}<button class="btn" type="button" data-relike="${esc(k)}" style="margin:6px;padding:7px 8px;font-size:13px">Like instead</button></div>`).join("")}</div>`:""}</div>`;}
-function openFinish(id){const o=allOutfits().find(x=>x.id===id);if(!o)return;S.finId=id;
+function openFinish(id){const o=allOutfits().find(x=>x.id===id);if(!o)return;if(S.finId!==id||!sheet.open)S.finOrig=fin[id]?JSON.parse(JSON.stringify(fin[id])):null;S.finId=id;
   const cur=(o.itemIds||[]).map(byId).filter(Boolean),curShoe=cur.find(i=>i.category==="shoes"),curBag=cur.find(i=>i.category==="bags");
   const r=Stylist.finish(cur,D.items,{occ:o.occasions&&o.occasions[0]||"Everyday",season:todaySeason(),rain:wxRain(),W:tasteW(),rules:useRules});
   const tile=(i,attr,on)=>`<button type="button" class="card pick" ${attr}="${esc(i.id)}" aria-pressed="${on}"><div class="tile"><img src="${esc(th(i.img))}" alt="" loading="lazy"></div><div class="meta"><span class="ct">${esc(i.name)}</span></div></button>`;
@@ -538,7 +538,7 @@ function openFinish(id){const o=allOutfits().find(x=>x.id===id);if(!o)return;S.f
    <p class="lede" style="margin:0">Best matches first. Tap one to choose it.</p>
    <h3 style="margin:4px 0">Shoes</h3><div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:8px">${r.shoes.map(i=>tile(i,"data-fshoe",curShoe===i)).join("")}</div>
    <h3 style="margin:4px 0">Bag</h3><div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:8px">${r.bags.map(i=>tile(i,"data-fbag",curBag===i)).join("")}<button type="button" class="card pick" data-fbag="" aria-pressed="${!curBag}"><div class="tile" style="display:grid;place-items:center;font-size:13px">No bag</div></button></div>
-   <div class="row"><button class="btn" type="button" data-findone>Done</button></div>`;
+   <div class="row"><button class="btn" type="button" data-findone>Done</button><button class="btn ghost" type="button" data-finnew>Save as a new outfit</button></div><p class="lede" style="margin:0;font-size:13px">Done changes this outfit. Save as a new outfit keeps this one as it was and adds the new shoes and bag as a separate outfit.</p>`;
   if(!sheet.open)sheet.showModal();}
 function devicePanel(){return `<section class="panel" style="margin-top:22px;gap:8px"><h3 style="margin:0">Phone and iPad</h3>
   <p class="lede" style="margin:0">Each device keeps its own ratings, built outfits, trips, wishlist and shoe choices. To bring one up to date, tap Copy on the device you've been using, then Paste on the other. Nothing is lost: the two are merged.</p>
@@ -779,6 +779,11 @@ document.addEventListener("click",async e=>{
   if(t.dataset.like){const o=S.lastRes[+t.dataset.like];rate(o,1);S.rated=(S.rated||[]).concat(o.key);
     mine=mine.concat({id:"m"+Date.now(),name:o.name,itemIds:o.itemIds,occasions:o.occasions,why:o.why});LS.set("mine",mine);render();return;}
   if(t.dataset.finish){openFinish(t.dataset.finish);return;}
+  if(t.dataset.finnew!==undefined){const id=S.finId,o=allOutfits().find(x=>x.id===id);if(!o)return;const ids=o.itemIds.slice();
+    if(S.finOrig)fin[id]=S.finOrig;else delete fin[id];LS.set("finish",fin);
+    const rec={id:"m"+Date.now(),name:(o.name||"My outfit")+" (new shoes & bag)",itemIds:ids,occasions:(o.occasions||[]).slice(),why:"",built:true};mine=mine.concat(rec);LS.set("mine",mine);
+    const k=ids.slice().sort().join(",");if(!taste.liked.includes(k)){taste.liked.push(k);taste.n++;LS.set("taste",taste);}
+    S.finOrig=null;sheet.close();S.openG=S.openG||{};S.openG.__built=true;render();return;}
   if(t.dataset.fshoe!==undefined||t.dataset.fbag!==undefined){const id=S.finId;const f=fin[id]||{};if(t.dataset.fshoe!==undefined)f.shoes=t.dataset.fshoe||null;if(t.dataset.fbag!==undefined)f.bag=t.dataset.fbag||null;fin[id]=f;LS.set("finish",fin);openFinish(id);render();return;}
   if(t.dataset.findone!==undefined){const o=allOutfits().find(x=>x.id===S.finId);if(o){sheetBody.innerHTML=`<div class="sheet-head"><h2>Outfit</h2><button class="iconbtn" type="button" data-close>Close</button></div>${outfitCard(o)}`;}return;}
   if(t.dataset.likesur!==undefined&&S.surprise){const o=S.surprise;const core=o.itemIds.filter(id=>{const it=byId(id);return it&&!ACC.includes(it.category);});const k=core.slice().sort().join(",");taste.liked.push(k);taste.n++;LS.set("taste",taste);
@@ -870,6 +875,7 @@ document.addEventListener("click",async e=>{
   if(t.dataset.pick){S.build.name=$("#bName").value;S.build.occasions=[...document.querySelectorAll("input[data-bocc]:checked")].map(x=>x.value);
     const a=S.build.itemIds,i=a.indexOf(t.dataset.pick);if(i>=0)a.splice(i,1);else{a.push(t.dataset.pick);const it=byId(t.dataset.pick);if(it&&!S.bq&&it.category!=="accessories"){S.bOpen=S.bOpen||{};S.bOpen[it.category]=false;}}render();return;}
   if(t.id==="bClear"){S.build={itemIds:[],name:"",occasions:[]};render();return;}
+  if(t.dataset.swapnew){const o=allOutfits().find(x=>x.id===t.dataset.swapnew);if(!o)return;if(sheet.open)sheet.close();S.build={itemIds:o.itemIds.slice(),name:(o.name||"My outfit").replace(/ \(new version( \d+)?\)$/,"")+" (new version)",occasions:(o.occasions||[]).slice(),fromOutfit:o.id,fromName:o.name||""};S.bOpen={};S.tab="build";render();window.scrollTo(0,0);return;}
   if(t.dataset.editb){const o=allOutfits().find(x=>x.id===t.dataset.editb);if(!o)return;if(sheet.open)sheet.close();S.build={itemIds:o.itemIds.slice(),name:o.name||"",occasions:(o.occasions||[]).slice(),editId:o.id};S.bOpen={};S.tab="build";render();window.scrollTo(0,0);return;}
   if(t.dataset.delb){const id=t.dataset.delb;if(mine.some(m=>m.id===id)){mine=mine.filter(m=>m.id!==id);LS.set("mine",mine);}else{hidden=hidden.concat(id);LS.set("hidden",hidden);}if(sheet.open)sheet.close();render();return;}
   if(t.id==="bSave"&&S.build.tripLook){const tr=tripById(S.build.tripLook.tripId),l=tr&&tr.looks.find(x=>x.id===S.build.tripLook.lookId);if(l){l.itemIds=S.build.itemIds.slice();saveTrips(tr);}
@@ -877,7 +883,7 @@ document.addEventListener("click",async e=>{
   if(t.id==="bSave"&&S.build.fromInspo){const id=S.build.fromInspo,p0=D.inspo.find(p=>p.id===id);const ids=S.build.itemIds.slice();
     if(p0&&ids.slice().sort().join(",")===(p0.itemIds||[]).slice().sort().join(","))delete inspoEdits[id];else inspoEdits[id]=ids;LS.set("inspoEdits",inspoEdits);
     S.build={itemIds:[],name:"",occasions:[]};S.tab="inspo";render();const el=document.querySelector(`[data-delinsp="${id}"]`);if(el)el.closest(".ocard").scrollIntoView({block:"start"});else window.scrollTo(0,0);return;}
-  if(t.id==="bSave"){const name=$("#bName").value.trim()||"My outfit";const tripFor=S.build.tripId&&tripById(S.build.tripId);const occ=[...document.querySelectorAll("input[data-bocc]:checked")].map(x=>x.value);
+  if(t.id==="bSave"||t.id==="bSaveNew"){if(t.id==="bSaveNew"){S.build.editId=null;S.build.fromInspo=null;}const name=$("#bName").value.trim()||"My outfit";const tripFor=S.build.tripId&&tripById(S.build.tripId);const occ=[...document.querySelectorAll("input[data-bocc]:checked")].map(x=>x.value);
     const ids=S.build.itemIds.slice(),eid=S.build.editId;const rec={id:eid&&mine.some(m=>m.id===eid)?eid:"m"+Date.now(),name,itemIds:ids,occasions:occ,why:"",built:true};
     if(eid&&!mine.some(m=>m.id===eid)){hidden=hidden.concat(eid);LS.set("hidden",hidden);}
     mine=mine.some(m=>m.id===rec.id)?mine.map(m=>m.id===rec.id?rec:m):mine.concat(rec);LS.set("mine",mine);
