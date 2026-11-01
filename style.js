@@ -78,9 +78,12 @@ const patShirt=it=>isShirt(it)&&!!pkind(it);
 const isOver=it=>!!it.overshirt;
 /* Crew-neck T-shirts: the only thing a shirt worn as outerwear goes over. */
 const crewTee=it=>it.category==="tops"&&/\btee\b|t-shirt/i.test(it.name)&&!/v-neck|v neck|mock|polo|boat|scoop|halter|tank|crop/i.test(it.name+" "+(it.notes||""))&&(!pkind(it)||/stripe/i.test(it.pattern||""));
-const openTee=it=>crewTee(it)&&!longSleeve(it);
+/* Tanks work under a shirt layer too. */
+const layerTank=it=>["tops","knitwear"].includes(it.category)&&/\btank\b|singlet/i.test(it.name)&&!/halter|crop/i.test(it.name)&&(!pkind(it)||/stripe|rib|trim/i.test(it.pattern||""));
+const layerBase=it=>crewTee(it)||layerTank(it);
+const openTee=it=>layerBase(it)&&!longSleeve(it);
 const shirtLayer=l=>isOver(l)||(l.category==="outerwear"&&/shirt/i.test(l.name));
-const layerOk=(ps,l)=>!shirtLayer(l)||ps.every(p=>p===l||!["tops","knitwear"].includes(p.category)||crewTee(p));
+const layerOk=(ps,l)=>!shirtLayer(l)||ps.every(p=>p===l||!["tops","knitwear"].includes(p.category)||layerBase(p));
 /* A collared shirt can sit under a crew or scoop-neck dress with the collar showing. */
 const collarShirt=it=>isShirt(it)&&(isOver(it)||/collar/i.test((it.notes||"")+it.name))&&!/band collar|band-collar|collarless|crop|popover|open collar/i.test((it.notes||"")+it.name)&&!sleeveless(it);
 const collarDress=d=>d.category==="dresses"&&!d.overTop&&!/pinafore|maxi|halter|strapless|one-shoulder|wrap|shirt dress|v-neck|v neck|slip|playsuit|jumpsuit|sequin|tulle|turtleneck|appliqu|cut-out/i.test(d.name+" "+(d.notes||""));
