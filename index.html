@@ -185,11 +185,11 @@ dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
 </nav>
 <dialog class="sheet" id="sheet"><div class="sheet-in" id="sheetBody"></div></dialog>
 
-<script src="style.js?v=202611010958"></script>
+<script src="style.js?v=202611011119"></script>
 <script>
 /* Home-screen apps hold on to old copies. On open, check version.txt; if a newer version is live, refresh the cached files and reload once. */
 if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{});});}
-const APPV="202611010958";
+const APPV="202611011119";
 fetch("version.txt",{cache:"no-store"}).then(r=>r.ok?r.text():"").then(v=>{v=v.trim();if(!v||v===APPV)return;
   let tried="";try{tried=sessionStorage.getItem("kw:upd")||"";}catch(e){}if(tried===v)return;try{sessionStorage.setItem("kw:upd",v);}catch(e){}
   Promise.all([fetch("index.html",{cache:"reload"}),fetch("./",{cache:"reload"})]).catch(()=>{}).then(()=>location.reload());}).catch(()=>{});
@@ -376,8 +376,8 @@ function vOutfits(){
   const liked=all.filter(isLiked),ideas=all.filter(o=>!isLiked(o)&&!o.liked);
   const se=todaySeason();
   const LC=new Set(liked.map(ckey)),NO=new Set(allDisliked());
-  const pool=liked.concat(inspoOutfits().filter(o=>!LC.has(ckey(o))&&!NO.has(ckey(o))&&!hidden.includes(o.id))).filter(o=>fitsSeason(o,se));
-  let today=[];if(pool.length){const r=rng(Number(new Date().toISOString().slice(0,10).replace(/-/g,''))+(S.todaySeed||0)*7919);const p=pool.slice();while(today.length<3&&p.length)today.push(p.splice(Math.floor(r()*p.length),1)[0]);}
+  const pool=liked.concat(inspoOutfits().filter(o=>!LC.has(ckey(o))&&!NO.has(ckey(o))&&!hidden.includes(o.id))).filter(o=>fitsSeason(o,se)).filter(o=>{const P=(o.itemIds||[]).map(byId).filter(Boolean);return P.every(l=>!(l.category==="outerwear"&&/shirt/i.test(l.name))||Stylist.layerOk(P,l));});
+  let today=[];if(pool.length){const r=rng(Number(new Date().toISOString().slice(0,10).replace(/-/g,''))+(S.todaySeed||0)*7919);const p=pool.slice();while(today.length<6&&p.length)today.push(p.splice(Math.floor(r()*p.length),1)[0]);}
   if(S.wx&&(S.wx.max<20||wxRain()))today=today.map(o=>{const P=(o.itemIds||[]).map(byId).filter(Boolean);const L=Stylist.addLayer(P,D.items,{season:se,rain:wxRain(),tmax:S.wx.max,W:tasteW()});return L?{...o,itemIds:o.itemIds.concat(L.id),addedLayer:L.name,why:`Add the ${L.name.toLowerCase()} for today's weather.`}:o;});
   S.todayList=today;
   const groups={};for(const o of liked){const P=[...new Set((o.itemIds||[]).map(byId).filter(i=>i&&!ACC.includes(i.category)))];for(const k of P){(groups[k.id]=groups[k.id]||{item:k,list:[]}).list.push(o);}}
@@ -388,7 +388,7 @@ function vOutfits(){
   <div class="row"><button class="btn" type="button" data-tab="style">Style a piece</button><button class="btn ghost" type="button" data-tab="build">Build your own</button><button class="btn ghost" type="button" id="surprise">Surprise me</button></div>
   ${S.surprise?`<div class="ogrid">${outfitCard(S.surprise,`<button class="iconbtn" type="button" id="keepSurprise">Edit in Build</button>`)}</div>`:""}
   <section class="panel today"><div><h3 style="margin:0">What to wear today</h3>${S.wx?wxLine():`<p class="lede" style="margin:4px 0 0">Three of your liked outfits and inspiration looks that suit ${se.toLowerCase()}.</p>`}</div>
-   ${today.length?`<div class="minigrid three">${today.map(o=>miniTile(o)).join("")}</div><div class="row"><button class="btn ghost" type="button" id="todayMore">Show me three others</button></div>`
+   ${today.length?`<div class="minigrid three">${today.map(o=>miniTile(o)).join("")}</div><div class="row"><button class="btn ghost" type="button" id="todayMore">Show me six others</button></div>`
      :`<p class="lede">Like a few outfits in Style me and they'll show up here.</p>`}</section>
   ${(()=>{const B=all.filter(isBuilt).reverse();if(!B.length)return "";const open=!!S.openG.__built;return `<h3 style="margin:22px 0 8px">Built by you <span class="n">${B.length}</span></h3>
    <div class="grp${open?" open":""}"><button type="button" class="grphead" data-grp="__built" aria-expanded="${open}"><span class="gn">Your own outfits</span><span class="n">${B.length}</span><span class="chev">${open?"▾":"▸"}</span></button>
@@ -491,7 +491,7 @@ function vStyle(){
   const a=S.anchor&&byId(S.anchor);
   if(!a)return pickGrid();
   const season=S.sSeason||todaySeason();
-  const res=window.Stylist?Stylist.suggest(a,D.items,{occ:S.sOcc,season,rain:!S.sSeason&&wxRain(),tmax:!S.sSeason&&S.wx?S.wx.max:null,seed:S.seed,count:6,W:tasteW(),n:tasteN(),rules:useRules,noAccessories:true,block:blockSets(),exclude:[],excludeCore:allDisliked().concat(ratingLists().liked,S.rated||[]).map(k=>Stylist.coreKey(k.split(",").map(byId).filter(Boolean))),shown:S.shownFor===a.id?(S.shown||[]):[],with:S.withFor===a.id?S.with:null}):[];
+  const res=window.Stylist?Stylist.suggest(a,D.items,{occ:S.sOcc,season,rain:!S.sSeason&&wxRain(),tmax:!S.sSeason&&S.wx?S.wx.max:null,seed:S.seed,count:9,W:tasteW(),n:tasteN(),rules:useRules,noAccessories:true,block:blockSets(),exclude:[],excludeCore:allDisliked().concat(ratingLists().liked,S.rated||[]).map(k=>Stylist.coreKey(k.split(",").map(byId).filter(Boolean))),shown:S.shownFor===a.id?(S.shown||[]):[],with:S.withFor===a.id?S.with:null}):[];
   S.lastRes=res.map((r,k)=>({key:r.key,id:"g"+S.seed+"-"+k,name:r.set?"The matching set":"With the "+a.name.replace(/^(Gingham|Stripe|Dots) No\. \d+: /,"").toLowerCase(),itemIds:r.pieces.map(p=>p.id),occasions:[S.sOcc],why:r.why}));
   const offSeason=a.seasons&&a.seasons.length&&!a.seasons.includes(season);
   const AT=S.addTrip&&tripById(S.addTrip);

@@ -414,5 +414,5 @@ const FACETS={
  shoes:[["heel","Heel",[["flat","Flat"],["low","Low & kitten"],["mid","Mid & block"],["high","High"]],i=>{if(i.heel)return i.heel;const t=txt(i);
    if(/kitten|low-heel|low heel|low stacked/.test(t))return "low";if(/block|square-toe heeled|mid block/.test(t))return "mid";if(/heel|stiletto|slim-heel|pointed heeled/.test(t)&&!/flat/.test(i.name.toLowerCase()))return "high";return "flat";}]]};
 
-window.Stylist={FACETS,subOf,SUBS,busyClash,addLayer,finish,coreKey:ps=>ps.filter(p=>!["shoes","bags","accessories"].includes(p.category)).map(p=>p.id).sort().join(","),suggest,features,families,pkind,formality,hemTip,hairTip};
+window.Stylist={layerOk,FACETS,subOf,SUBS,busyClash,addLayer,finish,coreKey:ps=>ps.filter(p=>!["shoes","bags","accessories"].includes(p.category)).map(p=>p.id).sort().join(","),suggest,features,families,pkind,formality,hemTip,hairTip};
 })();
