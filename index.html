@@ -185,11 +185,11 @@ dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
 </nav>
 <dialog class="sheet" id="sheet"><div class="sheet-in" id="sheetBody"></div></dialog>
 
-<script src="style.js?v=202611021235"></script>
+<script src="style.js?v=202611021238"></script>
 <script>
 /* Home-screen apps hold on to old copies. On open, check version.txt; if a newer version is live, refresh the cached files and reload once. */
 if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{});});}
-const APPV="202611021235";
+const APPV="202611021238";
 fetch("version.txt",{cache:"no-store"}).then(r=>r.ok?r.text():"").then(v=>{v=v.trim();if(!v||v===APPV)return;
   let tried="";try{tried=sessionStorage.getItem("kw:upd")||"";}catch(e){}if(tried===v)return;try{sessionStorage.setItem("kw:upd",v);}catch(e){}
   Promise.all([fetch("index.html",{cache:"reload"}),fetch("./",{cache:"reload"})]).catch(()=>{}).then(()=>location.reload());}).catch(()=>{});
@@ -289,7 +289,7 @@ function collage(ids,hero){
   if(!side.length)return `<div class="collage solo"><div class="cin">${mainHtml}</div></div>`;
   return `<div class="collage"><div class="cin">${mainHtml}<div class="side" style="grid-template-rows:repeat(${side.length},1fr)">${side.map(x=>cell(x)).join("")}</div></div></div>`;
 }
-function tipsFor(ids){const P=ids.map(byId).filter(Boolean);if(!window.Stylist||!Stylist.hemTip)return "";return [Stylist.hemTip(P),Stylist.hairTip(P)].filter(Boolean).map(t=>`<p class="tip">${esc(t)}</p>`).join("");}
+function tipsFor(ids){const P=ids.map(byId).filter(Boolean);if(!window.Stylist||!Stylist.hemTip)return "";return [Stylist.layerTip?Stylist.layerTip(P):"",Stylist.hemTip(P),Stylist.hairTip(P)].filter(Boolean).map(t=>`<p class="tip">${esc(t)}</p>`).join("");}
 function outfitCard(o,extra="",hero){
   const kp=hero?{id:hero}:keyPiece(o);
   if(o.inspo)return `<article class="ocard">${collage(o.itemIds||[],kp&&kp.id)}<div class="meta"><div class="nm">${esc(o.name)}</div><div class="tags"><span class="tag">Inspiration look</span></div>
@@ -517,7 +517,7 @@ function vStyle(){
   ${AT?`<div class="notice">Picking for ${esc(AT.name)}. Tap Add to trip on an idea you want. <button class="iconbtn" type="button" data-tripgo="${esc(AT.id)}">Back to the trip</button></div>`:""}
   ${offSeason?`<div class="notice">This piece is usually a ${esc(a.seasons.join("/").toLowerCase())} piece, so these are stretch ideas.</div>`:""}
   ${S.lastRes.length?`<div class="ogrid">${S.lastRes.map((o,k)=>`<article class="ocard">${collage(o.itemIds,a.id)}<div class="meta"><div class="nm">${k===0&&res[0].set?"The matching set":"Idea "+(k+1)}</div>
-   <p class="why">${esc(o.why)}</p><p class="why" style="font-size:12px">${esc([a.id].concat(o.itemIds.filter(id=>id!==a.id)).map(id=>byId(id)).filter(Boolean).map(i=>i.name).join(" · "))}</p>
+   <p class="why">${esc(o.why)}</p>${(()=>{const t=Stylist.layerTip(o.itemIds.map(byId).filter(Boolean));return t?`<p class="tip">${esc(t)}</p>`:"";})()}<p class="why" style="font-size:12px">${esc([a.id].concat(o.itemIds.filter(id=>id!==a.id)).map(id=>byId(id)).filter(Boolean).map(i=>i.name).join(" · "))}</p>
    <div class="row"><button class="btn" type="button" data-like="${k}">Like</button><button class="btn ghost" type="button" data-nope="${k}">Not for me</button>${addBtn(o.itemIds,o.name)}<button class="iconbtn" type="button" data-copygen="${k}">${S.copied===o.id?"Copied":"Copy for Claude"}</button></div></div></article>`).join("")}</div>
    <div class="row"><button class="btn ghost" type="button" id="more">Show me different ideas</button></div>
    ${likedFor(a)}${nopedFor(a)}${blockedPanel()}`
