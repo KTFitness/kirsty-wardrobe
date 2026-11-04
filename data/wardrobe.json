@@ -8757,6 +8757,153 @@
    ],
    "notes": "Roll turtleneck, long fitted sleeves, slim body. Your photo.",
    "img": "img/black-fitted-turtleneck-top.webp"
+  },
+  {
+   "id": "cos-red-textured-crew-jumper",
+   "name": "COS red garter-stitch crew jumper",
+   "category": "knitwear",
+   "colours": [
+    "tomato red"
+   ],
+   "pattern": "solid, garter texture",
+   "fabric": "chunky cotton knit",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Crew neck, boxy, long sleeves. Your photo.",
+   "img": "img/cos-red-textured-crew-jumper.webp",
+   "_f": [
+    "red"
+   ]
+  },
+  {
+   "id": "orange-fluffy-crew-jumper",
+   "name": "Orange fluffy crew-neck jumper",
+   "category": "knitwear",
+   "colours": [
+    "bright orange"
+   ],
+   "pattern": "solid",
+   "fabric": "brushed fluffy knit",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Crew neck, dropped shoulders, ribbed cuffs and hem. Your photo.",
+   "img": "img/orange-fluffy-crew-jumper.webp"
+  },
+  {
+   "id": "red-fine-knit-mock-neck-jumper",
+   "name": "Red fine-knit high crew jumper",
+   "category": "knitwear",
+   "colours": [
+    "red"
+   ],
+   "pattern": "solid",
+   "fabric": "fine knit",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "High crew neck, dropped shoulders, long sleeves, curved split hem, longline. Your photo.",
+   "img": "img/red-fine-knit-mock-neck-jumper.webp"
+  },
+  {
+   "id": "esprit-grey-cream-stripe-long-sleeve-top",
+   "name": "Esprit grey and cream stripe long-sleeve top",
+   "category": "tops",
+   "colours": [
+    "grey marle",
+    "cream"
+   ],
+   "pattern": "Breton stripe",
+   "fabric": "cotton jersey",
+   "seasons": [
+    "Spring",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Wide crew neck, dropped shoulders, three-quarter sleeves, split hem. Your photo.",
+   "img": "img/esprit-grey-cream-stripe-long-sleeve-top.webp"
+  },
+  {
+   "id": "black-cream-stripe-mock-neck-jumper",
+   "name": "Black and cream stripe mock-neck jumper",
+   "category": "knitwear",
+   "colours": [
+    "black",
+    "cream"
+   ],
+   "pattern": "wide Breton stripe",
+   "fabric": "soft knit",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "High mock neck, dropped shoulders, cream-tipped ribbed cuffs. Your photo.",
+   "img": "img/black-cream-stripe-mock-neck-jumper.webp"
+  },
+  {
+   "id": "uniqlo-cream-navy-stripe-crew-jumper",
+   "name": "Uniqlo cream and navy stripe crew jumper",
+   "category": "knitwear",
+   "colours": [
+    "cream",
+    "navy"
+   ],
+   "pattern": "Breton stripe",
+   "fabric": "fine knit",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Crew neck, dropped shoulders, plain yoke and hem band, split hem. Your photo.",
+   "img": "img/uniqlo-cream-navy-stripe-crew-jumper.webp",
+   "_f": [
+    "cream",
+    "navy"
+   ]
+  },
+  {
+   "id": "sportsgirl-charcoal-fine-knit-jumper",
+   "name": "Sportsgirl charcoal fine-knit crew jumper",
+   "category": "knitwear",
+   "colours": [
+    "charcoal"
+   ],
+   "pattern": "solid",
+   "fabric": "fine knit",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Wide crew neck, long sleeves, dipped back hem. Your photo.",
+   "img": "img/sportsgirl-charcoal-fine-knit-jumper.webp"
+  },
+  {
+   "id": "sussan-pink-fine-knit-crew-jumper",
+   "name": "Sussan raspberry pink fine-knit crew jumper",
+   "category": "knitwear",
+   "colours": [
+    "raspberry pink"
+   ],
+   "pattern": "solid",
+   "fabric": "fine knit",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Wide scoop crew neck, dropped shoulders, split hem. Your photo.",
+   "img": "img/sussan-pink-fine-knit-crew-jumper.webp",
+   "_f": [
+    "pink"
+   ]
   }
  ],
  "outfits": [
@@ -82733,11 +82880,12 @@
     "navy-stripe-long-sleeve-top",
     "basic-white-straight-jeans",
     "basic-white-sneakers",
-    "basic-tan-crossbody"
+    "basic-tan-crossbody",
+    "uniqlo-cream-navy-stripe-crew-jumper"
    ],
    "missing": [
     "Navy double-breasted trench (your Boden navy military jacket is the stand-in)",
-    "Chunky navy jumper with white stripes (your stripe long-sleeve top is the stand-in)",
+    "Chunky navy jumper with white stripes (your Uniqlo cream and navy stripe crew jumper is the stand-in)",
     "Brown suede sneakers",
     "Brown suede shoulder bag"
    ],
@@ -83108,12 +83256,11 @@
    "img": "img/inspo/inspo-290.webp",
    "summary": "Oversized pink crew jumper with a white tee hanging below, brown and cream gingham wide trousers, oxblood hobo bag, cream and burgundy trail sneakers. AI-generated image.",
    "itemIds": [
-    "cos-pink-funnel-neck-sweat",
+    "sussan-pink-fine-knit-crew-jumper",
     "basic-white-tee",
     "basic-white-sneakers"
    ],
    "missing": [
-    "Pink crew-neck jumper (your COS pink funnel-neck is the stand-in)",
     "Brown gingham wide trousers",
     "Oxblood slouchy shoulder bag",
     "Burgundy and cream sneakers"
@@ -83129,14 +83276,14 @@
    "img": "img/inspo/inspo-291.webp",
    "summary": "Chunky burgundy crew jumper over a white shirt with collar and hem showing, light cuffed barrel jeans, tan shoulder bag, cream and burgundy Sambas. AI-generated image.",
    "itemIds": [
-    "red-moss-stitch-jumper",
+    "cos-red-textured-crew-jumper",
     "basic-white-linen-shirt",
     "basic-blue-wide-jeans",
     "basic-tan-crossbody",
     "basic-white-sneakers"
    ],
    "missing": [
-    "Burgundy chunky jumper (your red textured jumper is the stand-in)",
+    "Burgundy chunky jumper (your COS red garter-stitch crew jumper is the stand-in)",
     "Light barrel jeans",
     "Cream and burgundy Sambas"
    ],
@@ -83270,15 +83417,14 @@
    "img": "img/inspo/inspo-298.webp",
    "summary": "Red crew jumper with a blue and white stripe shirt collar and cuffs showing, mid-blue wide jeans, black shoulder bag, black block-heel ankle boots. AI-generated image.",
    "itemIds": [
-    "red-moss-stitch-jumper",
+    "cos-red-textured-crew-jumper",
     "chambray-shirt",
     "basic-blue-wide-jeans",
     "basic-black-crossbody",
     "basic-black-block-heel-ankle-boots"
    ],
    "missing": [
-    "Blue stripe shirt (your chambray shirt is the stand-in)",
-    "Plain red crew jumper (your red textured jumper is the stand-in)"
+    "Blue stripe shirt (your chambray shirt is the stand-in)"
    ],
    "occasions": [
     "Everyday",
@@ -92654,7 +92800,7 @@
    "ip:adidas-gazelle-pink|cos-navy-stripe-tee-magenta-collar": 0.36,
    "cp:navy+pink": 0.65,
    "cp:navy+white": 3.07,
-   "cp:pink+white": 4.04,
+   "cp:pink+white": 4.12,
    "cp:white+white": 6.84,
    "it:basic-black-midi-skirt": 1.33,
    "ip:basic-black-midi-skirt|basic-denim-jacket": 0.36,
@@ -92664,7 +92810,7 @@
    "ip:adidas-gazelle-pink|basic-denim-jacket": 0.36,
    "cp:denim+pink": 2.52,
    "it:adidas-gazelle-pink": 1.13,
-   "pat:plain+plain+stripe": 3.17,
+   "pat:plain+plain+stripe": 3.07,
    "so:Everyday|sneakers": 6.98,
    "it:gorman-red-strawberry-shirt": 0.65,
    "ip:basic-blue-wide-jeans|gorman-red-strawberry-shirt": 0.65,
@@ -92805,7 +92951,7 @@
    "it:marcs-pink-gingham-tank": 0.91,
    "ip:green-breton-long-sleeve|marcs-pink-gingham-tank": 0.36,
    "cp:coral+green": 0.36,
-   "cp:coral+white": 1.13,
+   "cp:coral+white": 0.91,
    "ip:marcs-pink-gingham-tank|pink-wide-leg-sailor-trousers": 0.65,
    "cp:coral+pink": 1.13,
    "ip:basic-green-sneakers|marcs-pink-gingham-tank": 0.36,
@@ -92901,7 +93047,7 @@
    "cp:blue+navy": 0.36,
    "cp:blue+cream": 0.65,
    "ip:basic-white-sneakers|boden-navy-military-jacket": 0.91,
-   "pat:plain+plain+stripe+stripe": 0.36,
+   "pat:plain+plain+stripe+stripe": 0.65,
    "it:pale-blue-knit-vest": 0.36,
    "ip:boden-folk-floral-shirt|pale-blue-knit-vest": 0.36,
    "ip:gorman-striped-skirt|pale-blue-knit-vest": 0.36,
@@ -92945,7 +93091,7 @@
    "ip:gorman-check-skirt|red-denim-jacket": 0.36,
    "ip:basic-red-ballet-flats|red-denim-jacket": 0.36,
    "ip:basic-tan-crossbody|red-denim-jacket": 0.36,
-   "it:cos-pink-funnel-neck-sweat": 1.33,
+   "it:cos-pink-funnel-neck-sweat": 1.13,
    "ip:cos-pink-funnel-neck-sweat|gorman-check-skirt": 0.36,
    "ip:basic-red-ballet-flats|cos-pink-funnel-neck-sweat": 0.36,
    "ip:basic-tan-crossbody|cos-pink-funnel-neck-sweat": 0.91,
@@ -93091,7 +93237,7 @@
    "ip:basic-red-ballet-flats|pink-tulip-knit-vest": 0.36,
    "ip:basic-red-ballet-flats|basic-white-ls-crew": 0.65,
    "ip:basic-red-ballet-flats|red-daisy-pocket-knit-vest": 0.36,
-   "it:red-moss-stitch-jumper": 2.27,
+   "it:red-moss-stitch-jumper": 2,
    "ip:basic-white-tee|red-moss-stitch-jumper": 0.65,
    "ip:red-a-line-midi-skirt|red-moss-stitch-jumper": 0.36,
    "ip:basic-black-ankle-boots-heel|red-moss-stitch-jumper": 0.36,
@@ -93151,9 +93297,9 @@
    "ip:basic-black-flats|basic-white-tee": 1.69,
    "ip:basic-black-flats|pink-wide-leg-sailor-trousers": 0.36,
    "ip:basic-blue-straight-jeans|red-moss-stitch-jumper": 0.91,
-   "ip:basic-white-sneakers|red-moss-stitch-jumper": 0.91,
+   "ip:basic-white-sneakers|red-moss-stitch-jumper": 0.65,
    "ip:basic-blue-straight-jeans|basic-white-sneakers": 1.69,
-   "ip:basic-white-linen-shirt|red-moss-stitch-jumper": 0.65,
+   "ip:basic-white-linen-shirt|red-moss-stitch-jumper": 0.36,
    "ip:basic-black-loafers|red-moss-stitch-jumper": 0.36,
    "ip:basic-blue-straight-jeans|basic-white-linen-shirt": 0.91,
    "ip:basic-black-loafers|basic-blue-straight-jeans": 0.91,
@@ -93212,7 +93358,7 @@
    "ip:basic-white-tee|uniqlo-brown-knit-jacket": 0.91,
    "ip:basic-white-sneakers|uniqlo-brown-knit-jacket": 0.91,
    "ip:basic-tan-flats|red-moss-stitch-jumper": 0.36,
-   "ip:basic-tan-crossbody|red-moss-stitch-jumper": 0.65,
+   "ip:basic-tan-crossbody|red-moss-stitch-jumper": 0.36,
    "ip:red-moss-stitch-jumper|uniqlo-brown-knit-jacket": 0.65,
    "ip:basic-black-wide-jeans|basic-white-sneakers": 0.65,
    "ip:basic-black-wide-jeans|black-cream-breton-stripe-jumper": 0.36,
@@ -93785,9 +93931,16 @@
    "ip:basic-tan-belt|basic-white-wide-linen-pants": 0.65,
    "ip:boden-navy-military-jacket|navy-stripe-long-sleeve-top": 0.36,
    "ip:basic-white-straight-jeans|boden-navy-military-jacket": 0.36,
+   "ip:boden-navy-military-jacket|uniqlo-cream-navy-stripe-crew-jumper": 0.36,
+   "cp:cream+cream": 0.36,
    "ip:basic-white-straight-jeans|navy-stripe-long-sleeve-top": 0.36,
+   "ip:navy-stripe-long-sleeve-top|uniqlo-cream-navy-stripe-crew-jumper": 0.36,
    "ip:basic-white-sneakers|basic-white-straight-jeans": 0.36,
    "ip:basic-tan-crossbody|basic-white-straight-jeans": 0.36,
+   "ip:basic-white-straight-jeans|uniqlo-cream-navy-stripe-crew-jumper": 0.36,
+   "ip:basic-white-sneakers|uniqlo-cream-navy-stripe-crew-jumper": 0.36,
+   "ip:basic-tan-crossbody|uniqlo-cream-navy-stripe-crew-jumper": 0.36,
+   "it:uniqlo-cream-navy-stripe-crew-jumper": 0.36,
    "it:white-linen-shell-tank": 0.36,
    "ip:basic-white-wide-linen-pants|white-linen-shell-tank": 0.36,
    "ip:basic-tan-flats|white-linen-shell-tank": 0.36,
@@ -93804,7 +93957,7 @@
    "ip:mimco-raffia-clutch|red-silk-heeled-mules": 0.36,
    "ip:embroidered-wide-leg-jeans|red-moss-stitch-jumper": 0.36,
    "cp:multi+red": 0.36,
-   "ip:basic-black-crossbody|red-moss-stitch-jumper": 0.91,
+   "ip:basic-black-crossbody|red-moss-stitch-jumper": 0.65,
    "ip:basic-white-sneakers|embroidered-wide-leg-jeans": 0.36,
    "ip:basic-black-crossbody|embroidered-wide-leg-jeans": 0.36,
    "ip:pink-wide-leg-sailor-trousers|uniqlo-blue-knit-tee": 0.36,
@@ -93875,9 +94028,14 @@
    "ip:basic-red-white-stripe-belt|red-silk-heeled-mules": 0.36,
    "ip:basic-denim-maxi-skirt|basic-white-linen-shirt": 0.36,
    "ip:basic-denim-maxi-skirt|basic-red-ballet-flats": 0.36,
-   "ip:basic-white-tee|cos-pink-funnel-neck-sweat": 0.36,
-   "ip:basic-white-sneakers|cos-pink-funnel-neck-sweat": 0.36,
-   "ip:basic-blue-wide-jeans|red-moss-stitch-jumper": 0.91,
+   "it:sussan-pink-fine-knit-crew-jumper": 0.36,
+   "ip:basic-white-tee|sussan-pink-fine-knit-crew-jumper": 0.36,
+   "ip:basic-white-sneakers|sussan-pink-fine-knit-crew-jumper": 0.36,
+   "it:cos-red-textured-crew-jumper": 0.65,
+   "ip:basic-white-linen-shirt|cos-red-textured-crew-jumper": 0.36,
+   "ip:basic-blue-wide-jeans|cos-red-textured-crew-jumper": 0.65,
+   "ip:basic-tan-crossbody|cos-red-textured-crew-jumper": 0.36,
+   "ip:basic-white-sneakers|cos-red-textured-crew-jumper": 0.36,
    "ip:anko-black-tank-grey-trim|basic-denim-jacket": 0.36,
    "it:anko-black-tank-grey-trim": 0.36,
    "ip:anko-black-tank-grey-trim|basic-white-wide-jeans": 0.36,
@@ -93892,16 +94050,20 @@
    "ip:brown-stripe-tee|uniqlo-brown-knit-jacket": 0.36,
    "it:brown-stripe-tee": 0.36,
    "ip:basic-blue-wide-jeans|brown-stripe-tee": 0.36,
-   "ip:chambray-shirt|red-moss-stitch-jumper": 0.65,
-   "ip:basic-black-block-heel-ankle-boots|red-moss-stitch-jumper": 0.65,
+   "ip:chambray-shirt|cos-red-textured-crew-jumper": 0.36,
+   "ip:basic-black-crossbody|cos-red-textured-crew-jumper": 0.36,
+   "ip:basic-black-block-heel-ankle-boots|cos-red-textured-crew-jumper": 0.36,
    "ip:basic-black-block-heel-ankle-boots|chambray-shirt": 0.65,
    "ip:basic-black-block-heel-ankle-boots|basic-blue-wide-jeans": 0.36,
    "ip:basic-black-block-heel-ankle-boots|basic-black-crossbody": 0.65,
    "it:basic-black-block-heel-ankle-boots": 0.65,
    "ip:basic-red-cardigan|chambray-shirt": 0.36,
+   "ip:chambray-shirt|red-moss-stitch-jumper": 0.36,
    "ip:basic-black-wide-jeans|red-moss-stitch-jumper": 0.36,
+   "ip:basic-black-block-heel-ankle-boots|red-moss-stitch-jumper": 0.36,
    "ip:basic-black-wide-jeans|chambray-shirt": 0.36,
    "ip:basic-black-block-heel-ankle-boots|basic-black-wide-jeans": 0.36,
+   "ip:basic-blue-wide-jeans|red-moss-stitch-jumper": 0.36,
    "ip:basic-tan-belt|red-moss-stitch-jumper": 0.36,
    "ip:basic-tan-belt|uniqlo-brown-knit-jacket": 0.36,
    "ip:basic-red-cardigan|basic-white-linen-shirt": 0.36,
