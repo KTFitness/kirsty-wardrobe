@@ -7093,6 +7093,155 @@
    ],
    "notes": "Crew neck, cropped, lots of small dark buttons, soft brushed yarn. Your photo.",
    "img": "img/topshop-grey-fluffy-crew-cardigan.webp"
+  },
+  {
+   "id": "green-brushed-wool-shirt-jacket",
+   "name": "Green brushed wool shirt jacket",
+   "category": "outerwear",
+   "colours": [
+    "kelly green"
+   ],
+   "pattern": "solid",
+   "fabric": "brushed wool blend, probably",
+   "seasons": [
+    "Spring",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Boxy, notch collar, two flap chest pockets, dark horn buttons, button cuffs. Your photo.",
+   "img": "img/green-brushed-wool-shirt-jacket.webp"
+  },
+  {
+   "id": "khaki-cotton-field-jacket",
+   "name": "Khaki cotton field jacket",
+   "category": "outerwear",
+   "colours": [
+    "khaki"
+   ],
+   "pattern": "solid",
+   "fabric": "washed cotton",
+   "seasons": [
+    "Spring",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Stand collar with tucked hood, zip and snap front, four flap pockets, drawstring waist, longline. Your photo.",
+   "img": "img/khaki-cotton-field-jacket.webp"
+  },
+  {
+   "id": "charcoal-peter-pan-collar-coat",
+   "name": "Charcoal flecked Peter Pan collar coat",
+   "category": "outerwear",
+   "colours": [
+    "charcoal"
+   ],
+   "pattern": "solid, fine fleck",
+   "fabric": "wool blend tweed, probably",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Round collar, five buttons, princess seams, mid-thigh length, lined. Your photo.",
+   "img": "img/charcoal-peter-pan-collar-coat.webp"
+  },
+  {
+   "id": "black-wool-collared-coat",
+   "name": "Black wool collared coat",
+   "category": "outerwear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "textured wool",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Big pointed collar, single-breasted, slanted welt pockets, mid-thigh length. Your photo.",
+   "img": "img/black-wool-collared-coat.webp"
+  },
+  {
+   "id": "yellow-hooded-duffle-coat",
+   "name": "Yellow hooded duffle coat",
+   "category": "outerwear",
+   "colours": [
+    "mustard yellow"
+   ],
+   "pattern": "solid",
+   "fabric": "wool blend",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Hood with black lining, black leather and wood toggles, pleated skirt below an empire seam, button cuff tabs, knee length. Your photo.",
+   "img": "img/yellow-hooded-duffle-coat.webp"
+  },
+  {
+   "id": "uniqlo-khaki-quilted-padded-jacket",
+   "name": "Uniqlo khaki quilted padded jacket",
+   "category": "outerwear",
+   "colours": [
+    "khaki"
+   ],
+   "pattern": "solid, diamond quilting",
+   "fabric": "padded nylon",
+   "seasons": [
+    "Spring",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Collarless crew neck, snap front, light padding. Warm Padded range. Your photo.",
+   "img": "img/uniqlo-khaki-quilted-padded-jacket.webp"
+  },
+  {
+   "id": "burgundy-leather-zip-jacket",
+   "name": "Burgundy leather zip jacket",
+   "category": "outerwear",
+   "colours": [
+    "burgundy"
+   ],
+   "pattern": "solid",
+   "fabric": "leather",
+   "seasons": [
+    "Spring",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Shirt collar, zip front, fitted with princess seams, welt pockets. Made in Bali. Your photo.",
+   "img": "img/burgundy-leather-zip-jacket.webp"
+  },
+  {
+   "id": "gloverall-black-duffle-coat",
+   "name": "Gloverall black duffle coat",
+   "category": "outerwear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "wool",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Hood, horn toggles with leather loops, tartan lining, big patch pockets, knee length. Your photo.",
+   "img": "img/gloverall-black-duffle-coat.webp"
+  },
+  {
+   "id": "taupe-leather-biker-jacket",
+   "name": "Taupe leather biker jacket",
+   "category": "outerwear",
+   "colours": [
+    "taupe"
+   ],
+   "pattern": "solid",
+   "fabric": "soft leather",
+   "seasons": [
+    "Spring",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Stand collar, zip front, zip chest and hand pockets, panel stitching. Your photo.",
+   "img": "img/taupe-leather-biker-jacket.webp"
   }
  ],
  "outfits": [
