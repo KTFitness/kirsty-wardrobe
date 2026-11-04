@@ -53,7 +53,7 @@ function formality(it){const s=lc(it);
   if(/band tee|sweatshirt|track|crochet|guns/.test(s))return 1.1;
   if(it.category==="shorts")return 1.3;
   if(/\btee\b|t-shirt|tank|polo/.test(s))return 1.6;
-  if(/dress pants|blazer|velvet|sequin|satin|silk|broderie|cutwork|midi dress|maxi|appliqué|turtleneck|mock-neck/.test(s))return 2.9;
+  if(/dress pants|blazer|velvet|sequin|satin|silk|broderie|cutwork|midi dress|maxi|appliqué|turtleneck|mock-neck|lace|feather|guipure|cowl|off-shoulder|mesh/.test(s))return 2.9;
   if(/jeans|denim|cord/.test(s))return 1.7;
   return 2.2;}
 const OCC={"Everyday":1.6,"Lunch out":2.1,"Dinner out":2.7,"Smart casual":2.5,"Travel":1.6,"Holiday":1.8,"Special occasion":3};
@@ -86,7 +86,7 @@ const shirtLayer=l=>isOver(l)||(l.category==="outerwear"&&/shirt/i.test(l.name))
 const layerOk=(ps,l)=>!shirtLayer(l)||ps.every(p=>p===l||!["tops","knitwear"].includes(p.category)||layerBase(p));
 /* A collared shirt can sit under a crew or scoop-neck dress with the collar showing. */
 const collarShirt=it=>isShirt(it)&&(isOver(it)||/collar/i.test((it.notes||"")+it.name))&&!/band collar|band-collar|collarless|cropped|crop top|popover|open collar/i.test((it.notes||"")+it.name)&&!sleeveless(it);
-const collarDress=d=>d.category==="dresses"&&!d.overTop&&!/pinafore|maxi|halter|strapless|one-shoulder|wrap|shirt dress|v-neck|v neck|slip|playsuit|jumpsuit|sequin|tulle|turtleneck|appliqu|cut-out/i.test(d.name+" "+(d.notes||""));
+const collarDress=d=>d.category==="dresses"&&!d.overTop&&!/pinafore|maxi|halter|strapless|one-shoulder|wrap|shirt dress|v-neck|v neck|slip|playsuit|jumpsuit|sequin|tulle|turtleneck|appliqu|cut-out|mock|stand collar|lace|feather|cowl|off-shoulder|off-the-shoulder|guipure|funnel|boat neck|mesh/i.test(d.name+" "+(d.notes||""));
 const underOk=(d,t)=>!d.underShirts||(!pkind(t)&&d.underShirts.includes(families(t)[0]));
 const shortShirt=it=>isShirt(it)&&!pkind(it)&&/short sleeve|short-sleeve|short cuffed sleeve/i.test((it.notes||"")+" "+it.name);
 /* A crew-neck jumper or sweatshirt worn over a collared shirt, collar and cuffs showing. */
@@ -117,6 +117,17 @@ const PAIR_RULES={
  neutralBottoms:{cat:["skirts","trousers","shorts"],ok:b=>["black","white","denim","cream"].includes(families(b)[0])&&!pkind(b)}};
 function pairOk(ps){for(const it of ps){const r=it.pairRule&&PAIR_RULES[it.pairRule];if(!r)continue;
   for(const o of ps){if(o===it||o.id===it.setWith||!r.cat.includes(o.category)||isWarmLayer(o))continue;if(!r.ok(o,ps))return false;}}return true;}
+
+/* Dress code: a dressy outfit (lace, feathers, a fitted black dress, or a dinner or special-occasion ask) gets heels, loafers or boots and a smart bag or layer, not sneakers and a denim jacket. */
+const DRESSY_OCC=/dinner|special|smart/i;
+function dressCode(ps,ctx){const cl=ps.filter(p=>!["shoes","bags","accessories"].includes(p.category));if(!cl.length)return 0;
+  const fm=Math.max(...cl.map(formality)),occ=DRESSY_OCC.test((ctx&&ctx.occ)||"");if(fm<2.9&&!occ)return 0;
+  const lvl=occ&&/special/i.test(ctx.occ)?1.5:1;let s=0;
+  for(const p of ps){const t=lc(p);
+    if(p.category==="shoes"){if(/sneaker|samba|gazelle|adidas|doc|slide|thong/.test(t))s-=8*lvl;else if(/heel|mule|kitten/.test(t))s+=4*lvl;else if(/loafer|boot|ballet|flat/.test(t))s+=1.5;}
+    else if(p.category==="bags"){if(/clutch/.test(t))s+=3*lvl;else if(/black/.test(t))s+=1;}
+    else if(isWarmLayer(p)){if(/denim|track|quilted|padded|field|scout|uniform|chore|cord/.test(t))s-=6*lvl;else if(/blazer|leather|coat|fine/.test(t))s+=2;}}
+  return s;}
 function score(pieces,ctx){
   const clothes=pieces.filter(p=>p.category!=="shoes"&&p.category!=="bags");
   let s=0,n=0,best=null;
@@ -227,7 +238,7 @@ function suggest(anchor,items,ctx){
   const W=ctx.W||{};ctx.W=W;ctx.n=ctx.n||0;
   const seen={};(ctx.shown||[]).forEach(id=>seen[id]=(seen[id]||0)+1);
   const fresh=p=>p.reduce((t,x)=>t-(x.id!==anchor.id&&!['shoes','bags','accessories'].includes(x.category)?Math.min(seen[x.id]||0,4)*3:0),0);
-  const SC=(p,c)=>{const r=ctx.rules?score(p,c):{s:0,best:null,patNote:null};r.s+=learned(p,c)+hemScore(p)+fresh(p)+kRules(p)+blockPen(p)+underBonus(p);return r;};
+  const SC=(p,c)=>{const r=ctx.rules?score(p,c):{s:0,best:null,patNote:null};r.s+=learned(p,c)+hemScore(p)+fresh(p)+kRules(p)+blockPen(p)+underBonus(p)+dressCode(p,c);return r;};
   const underBonus=ps=>{const d=ps.find(p=>p.underShirts);return d&&ps.some(t=>t.category==="tops"&&underOk(d,t)&&collarShirt(t))?6:0;};
   const BP=new Set((ctx.block&&ctx.block.pairs)||[]),BX=new Set((ctx.block&&ctx.block.pats)||[]);
   function blockPen(ps){if(!BP.size&&!BX.size)return 0;const cl=ps.filter(p=>!["shoes","bags","accessories"].includes(p.category));let s=0;
@@ -378,7 +389,7 @@ function mulberry(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a
 function finish(pieces,items,ctx){ctx=ctx||{};ctx.W=ctx.W||{};const season=ctx.season;
   const base=pieces.filter(p=>!["shoes","bags"].includes(p.category));
   const wet=sh=>{if(!ctx.rain)return 0;const t=lc(sh);if(/slide|sandal|flat|ballet|mule|suede|gazelle|samba/.test(t))return -3;if(/boot|doc|loafer|sneaker/.test(t))return 1.5;return 0;};
-  const sc=ps=>(ctx.rules?score(ps,ctx).s:0)+learned(ps,ctx)+hemScore(ps)+ps.reduce((t,x)=>t+(x.category==="shoes"?wet(x):0),0);
+  const sc=ps=>(ctx.rules?score(ps,ctx).s:0)+learned(ps,ctx)+hemScore(ps)+dressCode(ps,ctx)+ps.reduce((t,x)=>t+(x.category==="shoes"?wet(x):0),0);
   const shoes=items.filter(i=>i.category==="shoes"&&inSeason(i,season)).map(x=>[x,sc(base.concat(x))]).sort((a,b)=>b[1]-a[1]).map(x=>x[0]);
   const best=shoes[0];const bags=items.filter(i=>i.category==="bags").map(x=>[x,sc(base.concat(best?[best,x]:[x]))]).sort((a,b)=>b[1]-a[1]).map(x=>x[0]);
   return {shoes,bags};}
@@ -411,7 +422,7 @@ function subOf(i,dc){if(i.sub)return i.sub;const n=(i.name+" "+(i.notes||"")+" "
  case "skirts":{if(/maxi/.test(n))return "maxi";if(/mini/.test(nm)||/above[ -]the[ -]knee|above[ -]knee/.test(n))return "mini";if(/midi|pencil|knee/.test(n))return "midi";return "mini";}
  case "jeans":{if(/crop|ankle/.test(nm))return "cropped";if(/wide/.test(nm))return "wide";return "straight";}
  case "trousers":{if(/legging/.test(nm))return "leggings";if(/wide|sailor|palazzo|culotte/.test(n))return "wide";return "straight";}
- case "dresses":{if(/maxi/.test(nm))return "maxi";if(/pinafore/.test(nm))return "pinafore";if(/sequin|tulle|studded|halter|ruffle|dressy|appliqu/.test(n))return "dressy";if(/t-shirt|tee dress|tank/.test(nm))return "tee";if(/shirt dress|button-front|button front/.test(nm))return "shirt";return "shift";}
+ case "dresses":{if(/maxi/.test(nm))return "maxi";if(/pinafore/.test(nm))return "pinafore";if(/sequin|tulle|studded|halter|ruffle|dressy|appliqu|lace|feather|guipure|cowl|off-shoulder/.test(n))return "dressy";if(/t-shirt|tee dress|tank/.test(nm))return "tee";if(/shirt dress|button-front|button front/.test(nm))return "shirt";return "shift";}
  case "playsuits":return /jumpsuit/.test(nm)?"jumpsuit":"playsuit";
  case "shoes":{if(/sneaker|samba|gazelle|adidas/.test(n))return "sneakers";if(/boot|doc/.test(nm))return "boots";if(/heel|mule/.test(nm)&&!/flat/.test(nm))return "heels";if(/slide|sandal|thong/.test(nm))return "sandals";return "flats";}
  case "accessories":return /belt/.test(nm)?"belts":"other";

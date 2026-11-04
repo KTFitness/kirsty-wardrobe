@@ -7536,6 +7536,302 @@
    ],
    "notes": "High waist, belt loops, front pockets, straight wide leg, ankle length. Your photo.",
    "img": "img/red-cream-gingham-wide-trousers.webp"
+  },
+  {
+   "id": "black-crossback-wide-leg-jumpsuit",
+   "name": "Black cross-back wide-leg jumpsuit",
+   "category": "dresses",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "crepe",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Sleeveless, round neck, crossed straps at the back, waist band, wide legs, full length. Dressy. Your photo.",
+   "img": "img/black-crossback-wide-leg-jumpsuit.webp"
+  },
+  {
+   "id": "denim-zip-front-flare-jumpsuit",
+   "name": "Denim zip-front flared jumpsuit",
+   "category": "dresses",
+   "colours": [
+    "mid-blue denim"
+   ],
+   "pattern": "solid",
+   "fabric": "stretch denim",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Shirt collar, short sleeves, brass zip front, seamed bodice, patch pockets, flared legs. Your photo.",
+   "img": "img/denim-zip-front-flare-jumpsuit.webp"
+  },
+  {
+   "id": "dusty-rose-guipure-lace-midi-dress",
+   "name": "Dusty rose guipure lace midi dress",
+   "category": "dresses",
+   "colours": [
+    "dusty rose"
+   ],
+   "pattern": "tonal guipure lace",
+   "fabric": "cotton guipure lace",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Stand collar, hidden button front, puffed three-quarter sleeves with deep cuffs, fitted waist, full midi skirt. Your photo.",
+   "img": "img/dusty-rose-guipure-lace-midi-dress.webp"
+  },
+  {
+   "id": "red-gingham-wrap-maxi-dress",
+   "name": "Red gingham wrap maxi dress",
+   "category": "dresses",
+   "colours": [
+    "red",
+    "white"
+   ],
+   "pattern": "mid gingham",
+   "fabric": "cotton or viscose",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Sleeveless, wrap front with long ties, full maxi skirt. Can also be worn as a wrap skirt. Your photo.",
+   "img": "img/red-gingham-wrap-maxi-dress.webp"
+  },
+  {
+   "id": "sussan-black-jersey-tank-midi-dress",
+   "name": "Sussan black jersey tank midi dress",
+   "category": "dresses",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Scoop neck, sleeveless, straight midi. Your photo.",
+   "img": "img/sussan-black-jersey-tank-midi-dress.webp"
+  },
+  {
+   "id": "black-tee-maxi-dress",
+   "name": "Black T-shirt maxi dress",
+   "category": "dresses",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "cotton jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Crew neck, short sleeves, A-line maxi, side pockets. Your photo.",
+   "img": "img/black-tee-maxi-dress.webp"
+  },
+  {
+   "id": "coral-tee-maxi-dress",
+   "name": "Coral pink T-shirt maxi dress",
+   "category": "dresses",
+   "colours": [
+    "coral pink"
+   ],
+   "pattern": "solid",
+   "fabric": "cotton jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Crew neck, short sleeves, A-line maxi, side pockets. Your photo.",
+   "img": "img/coral-tee-maxi-dress.webp"
+  },
+  {
+   "id": "uniqlo-white-tee-maxi-dress",
+   "name": "Uniqlo white T-shirt maxi dress",
+   "category": "dresses",
+   "colours": [
+    "white"
+   ],
+   "pattern": "solid",
+   "fabric": "cotton jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Crew neck, short sleeves, A-line maxi, side pockets. Your photo.",
+   "img": "img/uniqlo-white-tee-maxi-dress.webp"
+  },
+  {
+   "id": "black-lace-feather-hem-dress",
+   "name": "Black lace dress with feather hem",
+   "category": "dresses",
+   "colours": [
+    "black"
+   ],
+   "pattern": "lace with ostrich feather tiers",
+   "fabric": "lace",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Mock neck, short lace sleeves, straight lace bodice, two tiers of black feathers to just above the knee. Party and special occasion. Your photo.",
+   "img": "img/black-lace-feather-hem-dress.webp"
+  },
+  {
+   "id": "keepers-black-cowl-neck-midi-dress",
+   "name": "Finders Keepers black cowl-neck midi dress",
+   "category": "dresses",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "ponte",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Wide cowl neckline, elbow sleeves, fitted pencil shape to below the knee. Your photo.",
+   "img": "img/keepers-black-cowl-neck-midi-dress.webp"
+  },
+  {
+   "id": "brown-white-stripe-belted-shirt-dress",
+   "name": "Brown and white stripe belted shirt maxi dress",
+   "category": "dresses",
+   "colours": [
+    "tan brown",
+    "white"
+   ],
+   "pattern": "vertical stripe",
+   "fabric": "cotton poplin",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Stand collar, hidden placket, puff short sleeves, flap chest pockets, tie belt with tortoiseshell buckle, maxi length. Your photo.",
+   "img": "img/brown-white-stripe-belted-shirt-dress.webp"
+  },
+  {
+   "id": "white-textured-off-shoulder-dress",
+   "name": "White textured off-shoulder dress",
+   "category": "dresses",
+   "colours": [
+    "white"
+   ],
+   "pattern": "tonal texture",
+   "fabric": "textured cotton",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Wide off-the-shoulder neckline, cap sleeves, fitted bodice, box-pleated skirt to the knee, rose-gold back zip. Your photo.",
+   "img": "img/white-textured-off-shoulder-dress.webp"
+  },
+  {
+   "id": "black-mesh-lettuce-trim-midi-dress",
+   "name": "Black mesh midi dress with lettuce trim",
+   "category": "dresses",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "sheer mesh, lined",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Scoop neck with ruffle trim, short sleeves, lettuce edges, straight midi. Your photo.",
+   "img": "img/black-mesh-lettuce-trim-midi-dress.webp"
+  },
+  {
+   "id": "black-long-sleeve-jersey-swing-dress",
+   "name": "Black long-sleeve jersey swing dress",
+   "category": "dresses",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "soft jersey",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Crew neck, long cuffed sleeves, A-line swing to the knee. Your photo.",
+   "img": "img/black-long-sleeve-jersey-swing-dress.webp"
+  },
+  {
+   "id": "black-funnel-neck-midi-dress",
+   "name": "Black funnel-neck long-sleeve midi dress",
+   "category": "dresses",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "heavy knit jersey",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Funnel neck, long sleeves, straight midi, printed lining. Your photo.",
+   "img": "img/black-funnel-neck-midi-dress.webp"
+  },
+  {
+   "id": "zara-black-long-sleeve-knit-maxi",
+   "name": "Zara black long-sleeve knit maxi dress",
+   "category": "dresses",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "fine rib knit",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Boat neck, long sleeves, column maxi. Your photo.",
+   "img": "img/zara-black-long-sleeve-knit-maxi.webp"
+  },
+  {
+   "id": "red-gingham-wrap-skirt",
+   "name": "Red gingham wrap dress worn as a skirt",
+   "category": "skirts",
+   "colours": [
+    "red",
+    "white"
+   ],
+   "pattern": "mid gingham",
+   "fabric": "cotton or viscose",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "shape": "maxi",
+   "notes": "The red gingham wrap maxi dress, wrapped and tied at the waist as a maxi skirt.",
+   "img": "img/red-gingham-wrap-maxi-dress.webp",
+   "sameAs": "red-gingham-wrap-maxi-dress"
   }
  ],
  "outfits": [
