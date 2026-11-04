@@ -7832,6 +7832,131 @@
    "notes": "The red gingham wrap maxi dress, wrapped and tied at the waist as a maxi skirt.",
    "img": "img/red-gingham-wrap-maxi-dress.webp",
    "sameAs": "red-gingham-wrap-maxi-dress"
+  },
+  {
+   "id": "black-cream-mosaic-print-maxi-dress",
+   "name": "Black and cream mosaic print maxi dress",
+   "category": "dresses",
+   "colours": [
+    "black",
+    "cream"
+   ],
+   "pattern": "bold mosaic and medallion print",
+   "fabric": "jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Double straps, wrap V-neck, black empire band with long ties, full maxi with black border hem. Your photo.",
+   "img": "img/black-cream-mosaic-print-maxi-dress.webp"
+  },
+  {
+   "id": "black-maxi-dress-white-straps",
+   "name": "Black maxi slip dress with white straps",
+   "category": "dresses",
+   "colours": [
+    "black",
+    "white"
+   ],
+   "pattern": "solid with contrast trim",
+   "fabric": "crepe",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Straight neckline with white binding and thin white straps, A-line maxi. Your photo.",
+   "img": "img/black-maxi-dress-white-straps.webp"
+  },
+  {
+   "id": "black-lace-slip-midi-dress",
+   "name": "Black lace slip midi dress",
+   "category": "dresses",
+   "colours": [
+    "black"
+   ],
+   "pattern": "tonal lace",
+   "fabric": "lace over satin lining",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Thin straps, deep V-neck, fitted bias slip shape, lace overlay, midi with side split. Dressy. Your photo.",
+   "img": "img/black-lace-slip-midi-dress.webp"
+  },
+  {
+   "id": "black-linen-halter-midi-dress",
+   "name": "Black linen halter midi dress",
+   "category": "dresses",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "linen",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Gathered high halter neck, sleeveless, relaxed A-line midi. Your photo.",
+   "img": "img/black-linen-halter-midi-dress.webp"
+  },
+  {
+   "id": "white-linen-slip-midi-dress",
+   "name": "White linen slip midi dress",
+   "category": "dresses",
+   "colours": [
+    "white"
+   ],
+   "pattern": "solid",
+   "fabric": "linen",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Thin straps, V-neck with seamed bust, empire seam, A-line midi. Your photo.",
+   "img": "img/white-linen-slip-midi-dress.webp"
+  },
+  {
+   "id": "silver-metallic-knit-maxi-dress",
+   "name": "Silver metallic knit maxi dress",
+   "category": "dresses",
+   "colours": [
+    "silver",
+    "grey"
+   ],
+   "pattern": "metallic sparkle knit",
+   "fabric": "metallic open knit, lined",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Wide boat neck, sleeveless, straight column maxi with back split. Dressy. Your photo.",
+   "img": "img/silver-metallic-knit-maxi-dress.webp"
+  },
+  {
+   "id": "black-white-floral-stripe-jacquard-midi-dress",
+   "name": "Black and white floral cutwork stripe midi dress",
+   "category": "dresses",
+   "colours": [
+    "black",
+    "white"
+   ],
+   "pattern": "wide stripe with floral cutwork jacquard",
+   "fabric": "structured jacquard",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "V-neck front and back, sleeveless, fitted bodice, full box-pleated midi skirt. Dressy. Your photo.",
+   "img": "img/black-white-floral-stripe-jacquard-midi-dress.webp"
   }
  ],
  "outfits": [
