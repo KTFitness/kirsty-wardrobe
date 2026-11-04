@@ -8317,6 +8317,102 @@
    ],
    "notes": "Tie halter neck, seamed bust, straight midi. Your photo.",
    "img": "img/lime-linen-halter-midi-dress.webp"
+  },
+  {
+   "id": "coral-stripe-hem-tank-midi-dress",
+   "name": "Coral tank midi dress with stripe hem",
+   "category": "dresses",
+   "colours": [
+    "coral",
+    "peach",
+    "grey",
+    "white"
+   ],
+   "pattern": "solid with wide stripe hem band",
+   "fabric": "jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Scoop neck, sleeveless, fitted midi, peach, grey and white stripes at the hem. Your photo.",
+   "img": "img/coral-stripe-hem-tank-midi-dress.webp"
+  },
+  {
+   "id": "black-lace-trim-keyhole-midi-dress",
+   "name": "Black midi dress with lace trim and keyhole",
+   "category": "dresses",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid with lace and 3D petal trim",
+   "fabric": "structured cotton sateen",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "High neck with keyhole, ring lace trim at neck and armholes, petal appliqué at the shoulder, fitted bodice, full midi skirt. Dressy. Your photo.",
+   "img": "img/black-lace-trim-keyhole-midi-dress.webp"
+  },
+  {
+   "id": "oroton-black-rose-applique-maxi-skirt",
+   "name": "Oroton black maxi skirt with rose appliqué",
+   "category": "skirts",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid with tonal rose appliqué",
+   "fabric": "linen blend",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Straight maxi, rose appliqué waistband trailing down one side. Matching set with the Oroton rose appliqué top. Your photo.",
+   "img": "img/oroton-black-rose-applique-maxi-skirt.webp",
+   "setWith": "oroton-black-rose-applique-top",
+   "shape": "maxi"
+  },
+  {
+   "id": "oroton-black-rose-applique-top",
+   "name": "Oroton black strapless top with rose appliqué",
+   "category": "tops",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid with tonal rose appliqué",
+   "fabric": "linen blend",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Strapless bandeau, rose appliqué neckline, curved hem. Matching set with the Oroton rose appliqué maxi skirt. Dressy. Your photo.",
+   "img": "img/oroton-black-rose-applique-top.webp",
+   "setWith": "oroton-black-rose-applique-maxi-skirt"
+  },
+  {
+   "id": "black-beaded-art-deco-chiffon-dress",
+   "name": "Black chiffon dress with art deco beading",
+   "category": "dresses",
+   "colours": [
+    "black",
+    "silver"
+   ],
+   "pattern": "art deco beaded hem",
+   "fabric": "chiffon, lined",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Scoop neck and armholes edged in silver beads, sleeveless, straight shift to the knee, deep geometric beaded hem. Party and special occasion. Your photo.",
+   "img": "img/black-beaded-art-deco-chiffon-dress.webp"
   }
  ],
  "outfits": [
