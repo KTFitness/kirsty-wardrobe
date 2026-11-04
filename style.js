@@ -83,7 +83,10 @@ const layerTank=it=>["tops","knitwear"].includes(it.category)&&/\btank\b|singlet
 const layerBase=it=>crewTee(it)||layerTank(it);
 const openTee=it=>layerBase(it)&&!longSleeve(it);
 const shirtLayer=l=>isOver(l)||(l.category==="outerwear"&&/shirt/i.test(l.name));
-const layerOk=(ps,l)=>!shirtLayer(l)||ps.every(p=>p===l||!["tops","knitwear"].includes(p.category)||layerBase(p));
+/* Kirsty doesn't wear a cardigan over a jumper. */
+const isCardi=l=>/cardigan/i.test(l.name+" "+l.id)||(l.category==="knitwear"&&isWarmLayer(l));
+const isJumper=p=>p.category==="knitwear"&&!isWarmLayer(p)&&!isVest(p)&&subOf(p,"knitwear")==="jumper";
+const layerOk=(ps,l)=>!(isCardi(l)&&ps.some(p=>p!==l&&isJumper(p)))&&(!shirtLayer(l)||ps.every(p=>p===l||!["tops","knitwear"].includes(p.category)||layerBase(p)));
 /* A collared shirt can sit under a crew or scoop-neck dress with the collar showing. */
 const collarShirt=it=>isShirt(it)&&(isOver(it)||/collar/i.test((it.notes||"")+it.name))&&!/band collar|band-collar|collarless|cropped|crop top|popover|open collar/i.test((it.notes||"")+it.name)&&!sleeveless(it);
 const collarDress=d=>d.category==="dresses"&&!d.overTop&&!/pinafore|maxi|halter|strapless|one-shoulder|wrap|shirt dress|v-neck|v neck|slip|playsuit|jumpsuit|sequin|tulle|turtleneck|appliqu|cut-out|mock|stand collar|lace|feather|cowl|off-shoulder|off-the-shoulder|guipure|funnel|boat neck|mesh/i.test(d.name+" "+(d.notes||""));
