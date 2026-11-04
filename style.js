@@ -90,7 +90,7 @@ const collarDress=d=>d.category==="dresses"&&!d.overTop&&!/pinafore|maxi|halter|
 const underOk=(d,t)=>!d.underShirts||(!pkind(t)&&d.underShirts.includes(families(t)[0]));
 const shortShirt=it=>isShirt(it)&&!pkind(it)&&/short sleeve|short-sleeve|short cuffed sleeve/i.test((it.notes||"")+" "+it.name);
 /* A crew-neck jumper or sweatshirt worn over a collared shirt, collar and cuffs showing. */
-const crewJumper=it=>it.category==="knitwear"&&!isWarmLayer(it)&&subOf(it,"knitwear")==="jumper"&&!/turtleneck|funnel|mock neck|mock-neck|polo neck|roll neck/i.test(it.name+" "+(it.notes||""));
+const crewJumper=it=>it.category==="knitwear"&&!isWarmLayer(it)&&subOf(it,"knitwear")==="jumper"&&!/turtleneck|funnel|mock neck|mock-neck|polo neck|roll neck|boat neck|boat-neck/i.test(it.name+" "+(it.notes||""));
 const jsOk=(j,sh)=>!pkind(j)||!pkind(sh);
 /* A short-sleeve tee (plain, striped or graphic) worn over a long-sleeve collared shirt, collar and cuffs out. In saved outfits the piece listed first is the one on top. */
 const teeOver=it=>it.category==="tops"&&/\btee\b|t-shirt/i.test(it.name)&&!/v-neck|v neck|mock|polo|boat|scoop|halter|tank|cropped|crop top/i.test(it.name+" "+(it.notes||""))&&!longSleeve(it)&&(!pkind(it)||/stripe|graphic|print|logo|slogan/i.test(it.pattern||""));
