@@ -8904,6 +8904,163 @@
    "_f": [
     "pink"
    ]
+  },
+  {
+   "id": "esprit-white-textured-roll-neck-jumper",
+   "name": "Esprit white textured crew jumper",
+   "category": "knitwear",
+   "colours": [
+    "white"
+   ],
+   "pattern": "solid, ribbed texture",
+   "fabric": "cotton knit",
+   "seasons": [
+    "Spring",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Rolled crew neck, centre seam, ribbed hem band and cuffs. Your photo.",
+   "img": "img/esprit-white-textured-roll-neck-jumper.webp"
+  },
+  {
+   "id": "esprit-pink-textured-crew-jumper",
+   "name": "Esprit pink textured crew jumper",
+   "category": "knitwear",
+   "colours": [
+    "pink"
+   ],
+   "pattern": "solid, ribbed texture",
+   "fabric": "cotton knit",
+   "seasons": [
+    "Spring",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Rolled crew neck, centre seam, ribbed hem band and cuffs. Your photo.",
+   "img": "img/esprit-pink-textured-crew-jumper.webp"
+  },
+  {
+   "id": "ivory-fine-knit-crew-jumper",
+   "name": "Ivory fine-knit crew jumper",
+   "category": "knitwear",
+   "colours": [
+    "ivory"
+   ],
+   "pattern": "solid",
+   "fabric": "fine knit",
+   "seasons": [
+    "Spring",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Wide crew neck with pointelle detail, dropped shoulders, split hem with longer back. Your photo.",
+   "img": "img/ivory-fine-knit-crew-jumper.webp"
+  },
+  {
+   "id": "white-navy-stripe-three-quarter-sleeve-knit",
+   "name": "White and navy stripe three-quarter sleeve fine knit jumper",
+   "category": "knitwear",
+   "colours": [
+    "white",
+    "navy"
+   ],
+   "pattern": "fine Breton stripe",
+   "fabric": "fine knit",
+   "seasons": [
+    "Spring",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Wide crew neck, plain white yoke, dropped shoulders, split hem. Your photo.",
+   "img": "img/white-navy-stripe-three-quarter-sleeve-knit.webp"
+  },
+  {
+   "id": "mix-cream-black-wide-stripe-crew-jumper",
+   "name": "Mix cream and black wide stripe crew jumper",
+   "category": "knitwear",
+   "colours": [
+    "cream",
+    "black"
+   ],
+   "pattern": "wide stripe",
+   "fabric": "fine knit",
+   "seasons": [
+    "Spring",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Crew neck, slim fit, long sleeves. Your photo.",
+   "img": "img/mix-cream-black-wide-stripe-crew-jumper.webp"
+  },
+  {
+   "id": "uniqlo-white-navy-stripe-crew-jumper",
+   "name": "Uniqlo white and navy stripe crew jumper",
+   "category": "knitwear",
+   "colours": [
+    "white",
+    "navy"
+   ],
+   "pattern": "spaced Breton stripe",
+   "fabric": "cotton knit",
+   "seasons": [
+    "Spring",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Crew neck, plain yoke and hem, long sleeves. Your photo.",
+   "img": "img/uniqlo-white-navy-stripe-crew-jumper.webp"
+  },
+  {
+   "id": "mix-lime-white-stripe-crew-jumper",
+   "name": "Mix lime and white stripe crew jumper",
+   "category": "knitwear",
+   "colours": [
+    "lime",
+    "white"
+   ],
+   "pattern": "wide stripe",
+   "fabric": "fine knit",
+   "seasons": [
+    "Spring",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Scoop crew neck, raglan sleeves. Your photo.",
+   "img": "img/mix-lime-white-stripe-crew-jumper.webp"
+  },
+  {
+   "id": "sussan-lime-fine-knit-crew-jumper",
+   "name": "Sussan lime fine-knit crew jumper",
+   "category": "knitwear",
+   "colours": [
+    "lime"
+   ],
+   "pattern": "solid",
+   "fabric": "fine knit",
+   "seasons": [
+    "Spring",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Wide crew neck with pointelle detail, dropped shoulders, split hem. Your photo.",
+   "img": "img/sussan-lime-fine-knit-crew-jumper.webp"
+  },
+  {
+   "id": "cotton-on-oatmeal-merino-vneck-jumper",
+   "name": "Cotton On oatmeal merino-blend V-neck jumper",
+   "category": "knitwear",
+   "colours": [
+    "oatmeal"
+   ],
+   "pattern": "solid marle",
+   "fabric": "merino blend knit",
+   "seasons": [
+    "Spring",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Deep V-neck, dropped shoulders, slouchy, split hem. Your photo.",
+   "img": "img/cotton-on-oatmeal-merino-vneck-jumper.webp"
   }
  ],
  "outfits": [
