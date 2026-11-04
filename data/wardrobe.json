@@ -7242,6 +7242,282 @@
    ],
    "notes": "Stand collar, zip front, zip chest and hand pockets, panel stitching. Your photo.",
    "img": "img/taupe-leather-biker-jacket.webp"
+  },
+  {
+   "id": "black-zip-knit-cardigan",
+   "name": "Black funnel-neck zip knit cardigan",
+   "category": "knitwear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "fine knit",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Funnel neck, two-way zip, ribbed hem band. Matching set with the black knit pencil skirt. Wear as a jacket, cardigan or zipped up as a jumper. Your photo.",
+   "img": "img/black-zip-knit-cardigan.webp",
+   "setWith": "black-knit-pencil-skirt"
+  },
+  {
+   "id": "black-knit-pencil-skirt",
+   "name": "Black knit pencil skirt",
+   "category": "skirts",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "fine knit",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Knee length, ribbed waistband, straight. Matching set with the black zip knit cardigan. Your photo.",
+   "img": "img/black-knit-pencil-skirt.webp",
+   "setWith": "black-zip-knit-cardigan"
+  },
+  {
+   "id": "chocolate-zip-knit-cardigan",
+   "name": "Chocolate funnel-neck zip knit cardigan",
+   "category": "knitwear",
+   "colours": [
+    "chocolate brown"
+   ],
+   "pattern": "solid",
+   "fabric": "fine knit",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Funnel neck, two-way zip, ribbed hem band. Matching set with the chocolate knit pencil skirt. Wear as a jacket, cardigan or zipped up as a jumper. Your photo.",
+   "img": "img/chocolate-zip-knit-cardigan.webp",
+   "setWith": "chocolate-knit-pencil-skirt"
+  },
+  {
+   "id": "chocolate-knit-pencil-skirt",
+   "name": "Chocolate knit pencil skirt",
+   "category": "skirts",
+   "colours": [
+    "chocolate brown"
+   ],
+   "pattern": "solid",
+   "fabric": "fine knit",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Knee length, ribbed waistband, straight. Matching set with the chocolate zip knit cardigan. Your photo.",
+   "img": "img/chocolate-knit-pencil-skirt.webp",
+   "setWith": "chocolate-zip-knit-cardigan"
+  },
+  {
+   "id": "black-tailored-straight-trousers",
+   "name": "Black tailored straight trousers",
+   "category": "trousers",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "suiting crepe",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "High waist, belt loops, slant pockets, pressed crease, ankle length. Your photo.",
+   "img": "img/black-tailored-straight-trousers.webp"
+  },
+  {
+   "id": "black-wide-linen-pants-stitched-hem",
+   "name": "Black wide-leg linen pants with stitched hem",
+   "category": "trousers",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "linen",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Wide leg, cropped, elastic back waist, pockets, rows of stitching at the hem. Your photo.",
+   "img": "img/black-wide-linen-pants-stitched-hem.webp"
+  },
+  {
+   "id": "dusty-pink-fleece-midi-skirt",
+   "name": "Dusty pink fleece midi skirt",
+   "category": "skirts",
+   "colours": [
+    "dusty pink"
+   ],
+   "pattern": "solid",
+   "fabric": "sweatshirt fleece",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Paperbag elastic waist, straight midi, back split. Your photo.",
+   "img": "img/dusty-pink-fleece-midi-skirt.webp"
+  },
+  {
+   "id": "cream-denim-tie-belt-midi-skirt",
+   "name": "Cream denim A-line midi skirt with tie belt",
+   "category": "skirts",
+   "colours": [
+    "cream"
+   ],
+   "pattern": "solid with brown contrast topstitching",
+   "fabric": "denim",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Self tie belt, front pockets, A-line midi, fringed raw hem. Your photo.",
+   "img": "img/cream-denim-tie-belt-midi-skirt.webp"
+  },
+  {
+   "id": "black-wide-linen-pants-smocked-waist",
+   "name": "Black wide-leg linen pants with smocked waist",
+   "category": "trousers",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "linen",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Deep smocked waistband, very wide culotte-style legs, pockets. Your photo.",
+   "img": "img/black-wide-linen-pants-smocked-waist.webp"
+  },
+  {
+   "id": "black-corduroy-straight-pants",
+   "name": "Black corduroy straight pants",
+   "category": "trousers",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid, wide-wale cord",
+   "fabric": "corduroy",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Elastic waist, side pockets, straight relaxed leg, full length. Your photo.",
+   "img": "img/black-corduroy-straight-pants.webp"
+  },
+  {
+   "id": "black-wide-linen-pants-2",
+   "name": "Black wide-leg linen pants (second pair)",
+   "category": "trousers",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "linen",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Wide leg, cropped, elastic back waist, stitched hem band. Your photo.",
+   "img": "img/black-wide-linen-pants-2.webp"
+  },
+  {
+   "id": "orange-wide-linen-pants",
+   "name": "Orange wide-leg linen pants",
+   "category": "trousers",
+   "colours": [
+    "orange"
+   ],
+   "pattern": "solid",
+   "fabric": "linen",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Wide leg, elastic back waist, side pockets, ankle length. Your photo.",
+   "img": "img/orange-wide-linen-pants.webp"
+  },
+  {
+   "id": "white-wide-linen-pants-2",
+   "name": "White wide-leg linen pants (second pair)",
+   "category": "trousers",
+   "colours": [
+    "white"
+   ],
+   "pattern": "solid",
+   "fabric": "linen",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Wide leg, elastic back waist, pintuck front seams, pockets. Your photo.",
+   "img": "img/white-wide-linen-pants-2.webp"
+  },
+  {
+   "id": "white-wide-cropped-jeans",
+   "name": "White wide-leg cropped jeans",
+   "category": "trousers",
+   "colours": [
+    "white"
+   ],
+   "pattern": "solid",
+   "fabric": "denim",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "High waist, belt loops, slant pockets, wide cropped leg. Your photo.",
+   "img": "img/white-wide-cropped-jeans.webp"
+  },
+  {
+   "id": "cream-pleated-wide-jeans",
+   "name": "Cream pleated high-rise wide-leg jeans",
+   "category": "trousers",
+   "colours": [
+    "cream"
+   ],
+   "pattern": "solid",
+   "fabric": "denim",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "High rise, front pleats, belt loops, wide leg, ankle length. Your photo.",
+   "img": "img/cream-pleated-wide-jeans.webp"
+  },
+  {
+   "id": "white-high-rise-wide-jeans",
+   "name": "White high-rise wide-leg jeans",
+   "category": "trousers",
+   "colours": [
+    "white"
+   ],
+   "pattern": "solid",
+   "fabric": "denim",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "High rise, belt loops, wide leg, ankle length. Your photo.",
+   "img": "img/white-high-rise-wide-jeans.webp"
   }
  ],
  "outfits": [
