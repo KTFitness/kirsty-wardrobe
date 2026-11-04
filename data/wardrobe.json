@@ -9133,6 +9133,41 @@
    ],
    "notes": "Wide crew neck, long curved split hem, longer at the back. Your photo.",
    "img": "img/sportsgirl-grey-fine-knit-longline-jumper.webp"
+  },
+  {
+   "id": "anko-grey-black-spot-jumper",
+   "name": "Anko grey jumper with black spots",
+   "category": "knitwear",
+   "colours": [
+    "grey marle",
+    "black"
+   ],
+   "pattern": "polka dot",
+   "fabric": "fine knit",
+   "seasons": [
+    "Spring",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Crew neck, dropped shoulders, curved hem. Your photo.",
+   "img": "img/anko-grey-black-spot-jumper.webp"
+  },
+  {
+   "id": "target-grey-marle-fine-knit-jumper",
+   "name": "Target grey marle fine-knit crew jumper",
+   "category": "knitwear",
+   "colours": [
+    "grey marle"
+   ],
+   "pattern": "solid marle",
+   "fabric": "fine knit",
+   "seasons": [
+    "Spring",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Rolled crew neck, raglan sleeves with pointelle seams, curved split hem. Your photo.",
+   "img": "img/target-grey-marle-fine-knit-jumper.webp"
   }
  ],
  "outfits": [
