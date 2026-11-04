@@ -8413,6 +8413,156 @@
    ],
    "notes": "Scoop neck and armholes edged in silver beads, sleeveless, straight shift to the knee, deep geometric beaded hem. Party and special occasion. Your photo.",
    "img": "img/black-beaded-art-deco-chiffon-dress.webp"
+  },
+  {
+   "id": "preview-charcoal-fluffy-collared-knit-cardigan",
+   "name": "Preview charcoal fluffy collared knit cardigan",
+   "category": "knitwear",
+   "colours": [
+    "charcoal grey"
+   ],
+   "pattern": "solid marle",
+   "fabric": "brushed fluffy knit",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Shirt collar, concealed button front, boxy cropped, long sleeves. Wear as a knit jacket or done up as a top. Your photo.",
+   "img": "img/preview-charcoal-fluffy-collared-knit-cardigan.webp"
+  },
+  {
+   "id": "coral-three-quarter-sleeve-knit-top",
+   "name": "Coral fine-knit three-quarter sleeve jumper",
+   "category": "knitwear",
+   "colours": [
+    "coral red"
+   ],
+   "pattern": "solid",
+   "fabric": "fine knit",
+   "seasons": [
+    "Spring",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Crew neck, dropped shoulders, three-quarter sleeves, curved split hem. Your photo.",
+   "img": "img/coral-three-quarter-sleeve-knit-top.webp"
+  },
+  {
+   "id": "cobalt-boat-neck-pocket-jumper",
+   "name": "Cobalt boat-neck jumper with patch pocket",
+   "category": "knitwear",
+   "colours": [
+    "cobalt blue"
+   ],
+   "pattern": "solid",
+   "fabric": "fine knit",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Wide rib boat neck, raglan sleeves, one patch pocket, split hem. Your photo.",
+   "img": "img/cobalt-boat-neck-pocket-jumper.webp"
+  },
+  {
+   "id": "preview-ivory-fluffy-collared-knit-cardigan",
+   "name": "Preview ivory fluffy collared knit cardigan",
+   "category": "knitwear",
+   "colours": [
+    "ivory"
+   ],
+   "pattern": "solid",
+   "fabric": "brushed fluffy knit",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Shirt collar, covered buttons, open-knit shoulders, boxy cropped, long sleeves. Your photo.",
+   "img": "img/preview-ivory-fluffy-collared-knit-cardigan.webp"
+  },
+  {
+   "id": "emerald-rib-turtleneck-jumper",
+   "name": "Emerald green rib turtleneck jumper",
+   "category": "knitwear",
+   "colours": [
+    "emerald green"
+   ],
+   "pattern": "solid rib",
+   "fabric": "rib knit",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Roll turtleneck, fitted, long sleeves. Your photo.",
+   "img": "img/emerald-rib-turtleneck-jumper.webp"
+  },
+  {
+   "id": "oatmeal-oversized-turtleneck-jumper",
+   "name": "Oatmeal oversized turtleneck jumper",
+   "category": "knitwear",
+   "colours": [
+    "oatmeal"
+   ],
+   "pattern": "solid",
+   "fabric": "soft knit",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Roll turtleneck, raglan dropped shoulders, ribbed split hem, slouchy. Your photo.",
+   "img": "img/oatmeal-oversized-turtleneck-jumper.webp"
+  },
+  {
+   "id": "pink-textured-turtleneck-jumper",
+   "name": "Pale pink textured turtleneck jumper",
+   "category": "knitwear",
+   "colours": [
+    "pale pink"
+   ],
+   "pattern": "solid, honeycomb texture",
+   "fabric": "textured knit",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Roll turtleneck, dropped shoulders, relaxed. Your photo.",
+   "img": "img/pink-textured-turtleneck-jumper.webp"
+  },
+  {
+   "id": "charcoal-turtleneck-knit-jumper-dress",
+   "name": "Charcoal turtleneck knit jumper dress",
+   "category": "dresses",
+   "colours": [
+    "charcoal grey"
+   ],
+   "pattern": "solid marle",
+   "fabric": "chunky knit",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Roll turtleneck, dropped shoulders, long ribbed-cuff sleeves, relaxed knee-length shift. Your photo.",
+   "img": "img/charcoal-turtleneck-knit-jumper-dress.webp"
+  },
+  {
+   "id": "charcoal-knit-midi-skirt",
+   "name": "Charcoal knit midi skirt",
+   "category": "skirts",
+   "colours": [
+    "charcoal grey"
+   ],
+   "pattern": "solid marle",
+   "fabric": "knit",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Elastic waist, straight midi with back split. Your photo.",
+   "img": "img/charcoal-knit-midi-skirt.webp",
+   "shape": "midi"
   }
  ],
  "outfits": [
