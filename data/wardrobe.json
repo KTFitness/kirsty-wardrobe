@@ -7518,6 +7518,24 @@
    ],
    "notes": "High rise, belt loops, wide leg, ankle length. Your photo.",
    "img": "img/white-high-rise-wide-jeans.webp"
+  },
+  {
+   "id": "red-cream-gingham-wide-trousers",
+   "name": "Red and cream gingham wide-leg trousers",
+   "category": "trousers",
+   "colours": [
+    "red",
+    "cream"
+   ],
+   "pattern": "small gingham",
+   "fabric": "woven suiting, probably",
+   "seasons": [
+    "Spring",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "High waist, belt loops, front pockets, straight wide leg, ankle length. Your photo.",
+   "img": "img/red-cream-gingham-wide-trousers.webp"
   }
  ],
  "outfits": [
