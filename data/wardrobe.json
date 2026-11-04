@@ -7957,6 +7957,366 @@
    ],
    "notes": "V-neck front and back, sleeveless, fitted bodice, full box-pleated midi skirt. Dressy. Your photo.",
    "img": "img/black-white-floral-stripe-jacquard-midi-dress.webp"
+  },
+  {
+   "id": "anko-white-denim-button-midi-dress",
+   "name": "Anko white denim button-front midi dress",
+   "category": "dresses",
+   "colours": [
+    "white"
+   ],
+   "pattern": "solid with contrast topstitching",
+   "fabric": "denim",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Shirt collar, V-neck, snap front all the way down, empire seam, puffed three-quarter sleeves. Your photo.",
+   "img": "img/anko-white-denim-button-midi-dress.webp"
+  },
+  {
+   "id": "white-guipure-lace-balloon-sleeve-dress",
+   "name": "White guipure lace balloon-sleeve dress",
+   "category": "dresses",
+   "colours": [
+    "white"
+   ],
+   "pattern": "tonal guipure lace",
+   "fabric": "cotton guipure lace, lined",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "High round neck, long balloon sleeves with elastic cuffs, straight shift to the knee, scalloped hem. Dressy. Your photo.",
+   "img": "img/white-guipure-lace-balloon-sleeve-dress.webp"
+  },
+  {
+   "id": "black-white-stripe-fitted-midi-dress",
+   "name": "Black and white stripe fitted midi dress",
+   "category": "dresses",
+   "colours": [
+    "black",
+    "white"
+   ],
+   "pattern": "Breton stripe",
+   "fabric": "stretch jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Boat neck, three-quarter sleeves, back zip, fitted pencil midi. Your photo.",
+   "img": "img/black-white-stripe-fitted-midi-dress.webp"
+  },
+  {
+   "id": "marimekko-uniqlo-green-navy-wave-knit-maxi",
+   "name": "Marimekko x Uniqlo green and navy wave knit maxi dress",
+   "category": "dresses",
+   "colours": [
+    "forest green",
+    "navy"
+   ],
+   "pattern": "large wave print",
+   "fabric": "fine knit",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Crew neck, long sleeves, straight maxi. Your photo.",
+   "img": "img/marimekko-uniqlo-green-navy-wave-knit-maxi.webp"
+  },
+  {
+   "id": "witchery-navy-rib-knit-maxi-dress",
+   "name": "Witchery navy rib knit maxi dress",
+   "category": "dresses",
+   "colours": [
+    "navy"
+   ],
+   "pattern": "solid rib",
+   "fabric": "rib knit",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "High round neck, sleeveless racer cut, fitted then flared maxi. Your photo.",
+   "img": "img/witchery-navy-rib-knit-maxi-dress.webp"
+  },
+  {
+   "id": "misslook-cobalt-sleeveless-maxi-dress",
+   "name": "Misslook cobalt blue sleeveless maxi dress",
+   "category": "dresses",
+   "colours": [
+    "cobalt blue"
+   ],
+   "pattern": "solid",
+   "fabric": "jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Crew neck, sleeveless, relaxed A-line maxi, side pockets. Your photo.",
+   "img": "img/misslook-cobalt-sleeveless-maxi-dress.webp"
+  },
+  {
+   "id": "black-silver-sequin-chevron-dress",
+   "name": "Black and silver sequin chevron dress",
+   "category": "dresses",
+   "colours": [
+    "black",
+    "silver"
+   ],
+   "pattern": "sequin chevron",
+   "fabric": "sequins on mesh, lined",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Scoop neck, sleeveless, fitted to the knee. Party and special occasion. Your photo.",
+   "img": "img/black-silver-sequin-chevron-dress.webp"
+  },
+  {
+   "id": "uniqlo-black-sleeveless-a-line-midi-dress",
+   "name": "Uniqlo black sleeveless A-line midi dress",
+   "category": "dresses",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "ponte jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Boat neck, sleeveless, princess seams, flared midi. Your photo.",
+   "img": "img/uniqlo-black-sleeveless-a-line-midi-dress.webp"
+  },
+  {
+   "id": "uniqlo-white-sleeveless-a-line-midi-dress",
+   "name": "Uniqlo white sleeveless A-line midi dress",
+   "category": "dresses",
+   "colours": [
+    "white"
+   ],
+   "pattern": "solid",
+   "fabric": "ponte jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Boat neck, sleeveless, princess seams, flared midi, side pockets. Your photo.",
+   "img": "img/uniqlo-white-sleeveless-a-line-midi-dress.webp"
+  },
+  {
+   "id": "sage-green-chiffon-ruched-midi-dress",
+   "name": "Sage green chiffon ruched midi dress",
+   "category": "dresses",
+   "colours": [
+    "sage green"
+   ],
+   "pattern": "solid",
+   "fabric": "chiffon",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Deep V, wide straps, ruched bodice and waist, full circle midi skirt. Dressy. Your photo.",
+   "img": "img/sage-green-chiffon-ruched-midi-dress.webp"
+  },
+  {
+   "id": "esprit-navy-tank-maxi-dress",
+   "name": "Esprit navy tank maxi dress with white trim",
+   "category": "dresses",
+   "colours": [
+    "navy",
+    "white"
+   ],
+   "pattern": "solid with contrast binding",
+   "fabric": "cotton jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Crew neck, sleeveless, white binding at neck and armholes, straight maxi. Your photo.",
+   "img": "img/esprit-navy-tank-maxi-dress.webp"
+  },
+  {
+   "id": "marimekko-uniqlo-teal-orange-dot-dress",
+   "name": "Marimekko x Uniqlo teal and orange dot midi dress",
+   "category": "dresses",
+   "colours": [
+    "teal",
+    "navy",
+    "orange"
+   ],
+   "pattern": "large abstract dots",
+   "fabric": "cotton",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Round neck, sleeveless, A-line midi, button back. Your photo.",
+   "img": "img/marimekko-uniqlo-teal-orange-dot-dress.webp"
+  },
+  {
+   "id": "khaki-white-polka-dot-tiered-midi-dress",
+   "name": "Khaki and white polka dot tiered midi dress",
+   "category": "dresses",
+   "colours": [
+    "khaki",
+    "white"
+   ],
+   "pattern": "polka dot",
+   "fabric": "crepe",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "High tie neck, sleeveless, gathered yoke, tiered midi skirt. Your photo.",
+   "img": "img/khaki-white-polka-dot-tiered-midi-dress.webp"
+  },
+  {
+   "id": "black-cream-buffalo-check-halter-maxi",
+   "name": "Black and cream buffalo check halter maxi dress",
+   "category": "dresses",
+   "colours": [
+    "black",
+    "cream"
+   ],
+   "pattern": "large diagonal buffalo check",
+   "fabric": "linen blend",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Gathered halter neck, sleeveless, straight maxi. Your photo.",
+   "img": "img/black-cream-buffalo-check-halter-maxi.webp"
+  },
+  {
+   "id": "jump-cream-pink-lily-print-shift-dress",
+   "name": "Jump cream and pink lily print shift dress",
+   "category": "dresses",
+   "colours": [
+    "cream",
+    "pink"
+   ],
+   "pattern": "lily floral print",
+   "fabric": "cotton sateen",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Square neck, sleeveless, fitted shift to the knee, back zip. Your photo.",
+   "img": "img/jump-cream-pink-lily-print-shift-dress.webp"
+  },
+  {
+   "id": "black-embroidered-rose-linen-midi-dress",
+   "name": "Black embroidered rose linen midi dress",
+   "category": "dresses",
+   "colours": [
+    "black",
+    "pink",
+    "red",
+    "green"
+   ],
+   "pattern": "scattered rose embroidery",
+   "fabric": "linen",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Deep V-neck front and back, sleeveless, seamed bodice, straight midi with front split. Your photo.",
+   "img": "img/black-embroidered-rose-linen-midi-dress.webp"
+  },
+  {
+   "id": "pink-rib-knit-tank-midi-dress",
+   "name": "Pink rib knit tank midi dress",
+   "category": "dresses",
+   "colours": [
+    "pink"
+   ],
+   "pattern": "solid rib",
+   "fabric": "rib knit",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "High round neck, sleeveless, bodycon midi. Your photo.",
+   "img": "img/pink-rib-knit-tank-midi-dress.webp"
+  },
+  {
+   "id": "blue-peach-rose-print-swing-dress",
+   "name": "Blue and peach rose print swing dress",
+   "category": "dresses",
+   "colours": [
+    "blue",
+    "peach",
+    "olive",
+    "white"
+   ],
+   "pattern": "large watercolour rose print",
+   "fabric": "cotton sateen",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Round neck, sleeveless, fitted bodice, pleated full midi skirt. 1950s style. Your photo.",
+   "img": "img/blue-peach-rose-print-swing-dress.webp"
+  },
+  {
+   "id": "navy-olive-ring-print-swing-dress",
+   "name": "Navy and olive ring print swing dress",
+   "category": "dresses",
+   "colours": [
+    "navy",
+    "olive",
+    "white"
+   ],
+   "pattern": "small ring geometric print",
+   "fabric": "cotton sateen",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Round neck, sleeveless, fitted bodice, full midi skirt. 1950s style. Tags still on. Your photo.",
+   "img": "img/navy-olive-ring-print-swing-dress.webp"
+  },
+  {
+   "id": "lime-linen-halter-midi-dress",
+   "name": "Lime green linen halter midi dress",
+   "category": "dresses",
+   "colours": [
+    "lime green"
+   ],
+   "pattern": "solid",
+   "fabric": "linen",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Tie halter neck, seamed bust, straight midi. Your photo.",
+   "img": "img/lime-linen-halter-midi-dress.webp"
   }
  ],
  "outfits": [
