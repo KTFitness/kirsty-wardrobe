@@ -6754,6 +6754,345 @@
     "yellow",
     "green"
    ]
+  },
+  {
+   "id": "red-orange-cropped-crew-cardigan",
+   "name": "Red-orange cropped crew cardigan",
+   "category": "knitwear",
+   "colours": [
+    "red-orange"
+   ],
+   "pattern": "solid",
+   "fabric": "fine knit",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Crew neck, cropped, self-covered buttons, ribbed hem and cuffs. Your photo.",
+   "img": "img/red-orange-cropped-crew-cardigan.webp"
+  },
+  {
+   "id": "terracotta-quilted-vest",
+   "name": "Terracotta quilted vest",
+   "category": "outerwear",
+   "colours": [
+    "terracotta"
+   ],
+   "pattern": "solid, diamond quilting",
+   "fabric": "quilted nylon with rib-knit side panels",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Stand collar, zip front with placket, welt pockets, rib-knit sides. Your photo.",
+   "img": "img/terracotta-quilted-vest.webp"
+  },
+  {
+   "id": "olive-military-jacket",
+   "name": "Olive military jacket",
+   "category": "outerwear",
+   "colours": [
+    "olive"
+   ],
+   "pattern": "solid",
+   "fabric": "cotton twill",
+   "seasons": [
+    "Spring",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Stand collar, epaulettes, button front, four flap pockets, buttoned cuff tabs. Your photo.",
+   "img": "img/olive-military-jacket.webp"
+  },
+  {
+   "id": "cue-charcoal-blazer",
+   "name": "Cue charcoal two-button blazer",
+   "category": "outerwear",
+   "colours": [
+    "charcoal"
+   ],
+   "pattern": "solid",
+   "fabric": "suiting",
+   "seasons": [
+    "Spring",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Notch lapels, two buttons, flap pockets, fitted. Made in Australia. Your photo.",
+   "img": "img/cue-charcoal-blazer.webp"
+  },
+  {
+   "id": "black-cropped-swing-jacket",
+   "name": "Black cropped swing jacket",
+   "category": "outerwear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "wool blend, probably",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Round collar, two big buttons, A-line swing shape, wide cuffed three-quarter sleeves, welt pockets. Your photo.",
+   "img": "img/black-cropped-swing-jacket.webp"
+  },
+  {
+   "id": "acciaio-mustard-cord-blazer",
+   "name": "Acciaio mustard cord blazer with appliqué",
+   "category": "outerwear",
+   "colours": [
+    "mustard"
+   ],
+   "pattern": "solid with tonal appliqué shapes",
+   "fabric": "needlecord",
+   "seasons": [
+    "Spring",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Peak lapels, single brown leather toggle fastening, raw-edge appliqué shapes on the front, striped lining. Your photo.",
+   "img": "img/acciaio-mustard-cord-blazer.webp"
+  },
+  {
+   "id": "esprit-light-wash-denim-jacket",
+   "name": "Esprit light vintage-wash denim jacket",
+   "category": "outerwear",
+   "colours": [
+    "light denim"
+   ],
+   "pattern": "solid",
+   "fabric": "denim",
+   "seasons": [
+    "Spring",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Classic trucker shape, pleated chest pockets, metal buttons, worn-in wash. Your photo.",
+   "img": "img/esprit-light-wash-denim-jacket.webp"
+  },
+  {
+   "id": "evergreen-sage-denim-jacket",
+   "name": "Evergreen sage denim jacket",
+   "category": "outerwear",
+   "colours": [
+    "sage green"
+   ],
+   "pattern": "solid",
+   "fabric": "stretch denim",
+   "seasons": [
+    "Spring",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Classic trucker shape, chest pockets with rivets, snap buttons. Your photo.",
+   "img": "img/evergreen-sage-denim-jacket.webp"
+  },
+  {
+   "id": "faded-vintage-denim-jacket",
+   "name": "Faded vintage denim jacket",
+   "category": "outerwear",
+   "colours": [
+    "light denim"
+   ],
+   "pattern": "solid, sun-faded wash",
+   "fabric": "denim",
+   "seasons": [
+    "Spring",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Flap chest pockets, slanted hand pockets, heavily faded wash with darker seams. Your photo.",
+   "img": "img/faded-vintage-denim-jacket.webp"
+  },
+  {
+   "id": "mid-wash-zip-denim-jacket",
+   "name": "Mid-wash zip-front denim jacket",
+   "category": "outerwear",
+   "colours": [
+    "mid-blue denim"
+   ],
+   "pattern": "solid",
+   "fabric": "stretch denim",
+   "seasons": [
+    "Spring",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Shirt collar, concealed zip front, curved zip pockets, fitted. Your photo.",
+   "img": "img/mid-wash-zip-denim-jacket.webp"
+  },
+  {
+   "id": "pingpong-red-knit-cardigan-coat",
+   "name": "Pingpong red knit cardigan coat with Peter Pan collar",
+   "category": "knitwear",
+   "colours": [
+    "red"
+   ],
+   "pattern": "solid",
+   "fabric": "knit",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Long, Peter Pan collar, three buttons, empire seam with pocket flaps, turned-back cuffs. Your photo.",
+   "img": "img/pingpong-red-knit-cardigan-coat.webp"
+  },
+  {
+   "id": "black-fine-crew-cardigan",
+   "name": "Black fine-knit crew cardigan",
+   "category": "knitwear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "fine knit",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Crew neck, button front, long sleeves. Your photo.",
+   "img": "img/black-fine-crew-cardigan.webp"
+  },
+  {
+   "id": "pingpong-black-three-quarter-cardigan",
+   "name": "Pingpong black fine-knit cardigan",
+   "category": "knitwear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "fine knit",
+   "seasons": [
+    "Spring",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Crew neck, three-quarter sleeves, small square brown buttons. Your photo.",
+   "img": "img/pingpong-black-three-quarter-cardigan.webp"
+  },
+  {
+   "id": "uniqlo-black-vneck-pocket-cardigan",
+   "name": "Uniqlo black V-neck pocket cardigan",
+   "category": "knitwear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "soft brushed knit",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "V-neck, two buttons, patch pockets, boxy, ribbed trims. Your photo.",
+   "img": "img/uniqlo-black-vneck-pocket-cardigan.webp"
+  },
+  {
+   "id": "uniqlo-olive-vneck-pocket-cardigan",
+   "name": "Uniqlo olive V-neck pocket cardigan",
+   "category": "knitwear",
+   "colours": [
+    "olive green"
+   ],
+   "pattern": "solid",
+   "fabric": "soft brushed knit",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "V-neck, tortoiseshell buttons, patch pockets, boxy, ribbed trims. Your photo.",
+   "img": "img/uniqlo-olive-vneck-pocket-cardigan.webp"
+  },
+  {
+   "id": "talbots-black-daisy-zip-cardigan",
+   "name": "Talbots black daisy embroidered zip cardigan",
+   "category": "knitwear",
+   "colours": [
+    "black",
+    "white"
+   ],
+   "pattern": "scattered daisy embroidery",
+   "fabric": "knit",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Crew neck, zip front, white daisy embroidery all over, black and white striped neckband, hem and cuffs. Your photo.",
+   "img": "img/talbots-black-daisy-zip-cardigan.webp"
+  },
+  {
+   "id": "green-quilted-bomber-jacket",
+   "name": "Green quilted bomber jacket",
+   "category": "outerwear",
+   "colours": [
+    "forest green"
+   ],
+   "pattern": "solid, diamond quilting",
+   "fabric": "quilted nylon",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Rib collar, snap front, welt pockets, elastic cuffs, curved hem. Your photo.",
+   "img": "img/green-quilted-bomber-jacket.webp"
+  },
+  {
+   "id": "woolovers-pink-crew-cardigan",
+   "name": "Woolovers pink crew cardigan",
+   "category": "knitwear",
+   "colours": [
+    "raspberry pink"
+   ],
+   "pattern": "solid",
+   "fabric": "fine knit",
+   "seasons": [
+    "Spring",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Crew neck, fine knit, small shell buttons, ribbed hem and cuffs. Your photo.",
+   "img": "img/woolovers-pink-crew-cardigan.webp"
+  },
+  {
+   "id": "kelly-green-scoop-cardigan",
+   "name": "Kelly green scoop-neck cardigan",
+   "category": "knitwear",
+   "colours": [
+    "kelly green"
+   ],
+   "pattern": "solid",
+   "fabric": "fine cotton knit",
+   "seasons": [
+    "Spring",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Scoop neck, few buttons, long fitted sleeves. Your photo.",
+   "img": "img/kelly-green-scoop-cardigan.webp"
+  },
+  {
+   "id": "topshop-grey-fluffy-crew-cardigan",
+   "name": "Topshop grey fluffy crew cardigan",
+   "category": "knitwear",
+   "colours": [
+    "grey marle"
+   ],
+   "pattern": "solid",
+   "fabric": "fluffy knit",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Crew neck, cropped, lots of small dark buttons, soft brushed yarn. Your photo.",
+   "img": "img/topshop-grey-fluffy-crew-cardigan.webp"
   }
  ],
  "outfits": [
