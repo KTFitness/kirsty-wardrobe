@@ -7095,21 +7095,21 @@
    "img": "img/topshop-grey-fluffy-crew-cardigan.webp"
   },
   {
-   "id": "green-brushed-wool-shirt-jacket",
-   "name": "Green brushed wool shirt jacket",
+   "id": "green-wool-car-coat",
+   "name": "Green wool car coat",
    "category": "outerwear",
    "colours": [
     "kelly green"
    ],
    "pattern": "solid",
-   "fabric": "brushed wool blend, probably",
+   "fabric": "thick wool felt",
    "seasons": [
-    "Spring",
     "Autumn",
-    "Winter"
+    "Winter",
+    "Spring"
    ],
-   "notes": "Boxy, notch collar, two flap chest pockets, dark horn buttons, button cuffs. Your photo.",
-   "img": "img/green-brushed-wool-shirt-jacket.webp"
+   "notes": "Thick wool felt car coat. Boxy, hip length, notch collar, two flap chest pockets, dark horn buttons, button cuffs. Your photo.",
+   "img": "img/green-wool-car-coat.webp"
   },
   {
    "id": "khaki-cotton-field-jacket",
