@@ -9061,6 +9061,78 @@
    ],
    "notes": "Deep V-neck, dropped shoulders, slouchy, split hem. Your photo.",
    "img": "img/cotton-on-oatmeal-merino-vneck-jumper.webp"
+  },
+  {
+   "id": "camel-fine-knit-longline-jumper",
+   "name": "Camel fine-knit longline jumper",
+   "category": "knitwear",
+   "colours": [
+    "camel"
+   ],
+   "pattern": "solid",
+   "fabric": "fine knit",
+   "seasons": [
+    "Spring",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Wide crew neck, dropped shoulders, long curved split hem, longer at the back. Your photo.",
+   "img": "img/camel-fine-knit-longline-jumper.webp"
+  },
+  {
+   "id": "grey-marle-merino-vneck-jumper",
+   "name": "Grey marle fine merino V-neck jumper",
+   "category": "knitwear",
+   "colours": [
+    "grey marle"
+   ],
+   "pattern": "solid marle",
+   "fabric": "fine merino knit",
+   "seasons": [
+    "Spring",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "V-neck, slim fit, long sleeves with ribbed cuffs. Your photo.",
+   "img": "img/grey-marle-merino-vneck-jumper.webp",
+   "_f": [
+    "grey"
+   ]
+  },
+  {
+   "id": "sportsgirl-grey-white-stripe-knit-jumper",
+   "name": "Sportsgirl grey and white stripe fine knit jumper",
+   "category": "knitwear",
+   "colours": [
+    "grey marle",
+    "white"
+   ],
+   "pattern": "Breton stripe",
+   "fabric": "fine knit",
+   "seasons": [
+    "Spring",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Rolled crew neck, dropped shoulders, rolled hem. Your photo.",
+   "img": "img/sportsgirl-grey-white-stripe-knit-jumper.webp"
+  },
+  {
+   "id": "sportsgirl-grey-fine-knit-longline-jumper",
+   "name": "Sportsgirl light grey fine-knit longline jumper",
+   "category": "knitwear",
+   "colours": [
+    "light grey marle"
+   ],
+   "pattern": "solid marle",
+   "fabric": "fine knit",
+   "seasons": [
+    "Spring",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Wide crew neck, long curved split hem, longer at the back. Your photo.",
+   "img": "img/sportsgirl-grey-fine-knit-longline-jumper.webp"
   }
  ],
  "outfits": [
@@ -82076,14 +82148,13 @@
    "img": "img/inspo/inspo-212.webp",
    "summary": "Camel hooded coat, grey V-neck jumper, black straight jeans, black chunky Chelsea boots, gold hoops.",
    "itemIds": [
-    "basic-grey-marle-jumper",
+    "grey-marle-merino-vneck-jumper",
     "basic-black-straight-jeans",
     "basic-black-ankle-boots-flat",
     "uniqlo-brown-knit-jacket"
    ],
    "missing": [
-    "Camel coat (your Uniqlo brown knit jacket is the stand-in)",
-    "Grey V-neck jumper (your grey jumper is the stand-in)"
+    "Camel coat (your Uniqlo brown knit jacket is the stand-in)"
    ],
    "createdAt": 211
   },
@@ -82225,13 +82296,12 @@
    "img": "img/inspo/inspo-222.webp",
    "summary": "Soft grey V-neck jumper, light cropped jeans, leopard high-top sneakers, pom-pom beanie.",
    "itemIds": [
-    "basic-grey-marle-jumper",
+    "grey-marle-merino-vneck-jumper",
     "basic-blue-straight-jeans-cropped",
     "basic-black-sneakers"
    ],
    "missing": [
-    "Leopard high-top sneakers",
-    "Grey V-neck jumper (your grey jumper is the stand-in)"
+    "Leopard high-top sneakers"
    ],
    "createdAt": 221
   },
@@ -93025,7 +93095,7 @@
    "cp:denim+grey": 2.4,
    "ip:basic-denim-jacket|green-wide-leg-cords": 0.65,
    "cp:denim+mint": 0.65,
-   "it:basic-grey-marle-jumper": 2.14,
+   "it:basic-grey-marle-jumper": 1.85,
    "ip:basic-grey-marle-jumper|green-wide-leg-cords": 0.36,
    "cp:grey+mint": 0.65,
    "ip:basic-grey-marle-jumper|basic-white-sneakers": 0.36,
@@ -93910,9 +93980,10 @@
    "ip:black-cream-breton-stripe-jumper|uniqlo-black-tapered-trousers": 0.36,
    "ip:basic-black-crossbody|basic-white-straight-jeans-cropped": 0.91,
    "ip:basic-white-straight-jeans-cropped|black-cream-breton-stripe-jumper": 0.36,
-   "ip:basic-black-straight-jeans|basic-grey-marle-jumper": 0.36,
-   "ip:basic-black-ankle-boots-flat|basic-grey-marle-jumper": 0.36,
-   "ip:basic-grey-marle-jumper|uniqlo-brown-knit-jacket": 0.36,
+   "it:grey-marle-merino-vneck-jumper": 0.65,
+   "ip:basic-black-straight-jeans|grey-marle-merino-vneck-jumper": 0.36,
+   "ip:basic-black-ankle-boots-flat|grey-marle-merino-vneck-jumper": 0.36,
+   "ip:grey-marle-merino-vneck-jumper|uniqlo-brown-knit-jacket": 0.36,
    "cp:brown+grey": 0.36,
    "ip:basic-black-straight-jeans|uniqlo-brown-knit-jacket": 0.36,
    "ip:basic-black-ankle-boots-flat|uniqlo-brown-knit-jacket": 0.36,
@@ -93930,11 +94001,12 @@
    "ip:basic-black-crossbody|basic-white-denim-mini": 0.36,
    "it:basic-white-denim-mini": 0.65,
    "ip:basic-black-tee|basic-white-straight-jeans-cropped": 0.36,
-   "ip:basic-blue-straight-jeans-cropped|basic-grey-marle-jumper": 0.65,
+   "ip:basic-blue-straight-jeans-cropped|basic-grey-marle-jumper": 0.36,
    "ip:basic-white-tee|pink-cord-chore-jacket": 0.36,
    "ip:basic-denim-skirt|pink-cord-chore-jacket": 0.36,
    "it:pink-cord-chore-jacket": 0.65,
-   "ip:basic-black-sneakers|basic-grey-marle-jumper": 0.36,
+   "ip:basic-blue-straight-jeans-cropped|grey-marle-merino-vneck-jumper": 0.36,
+   "ip:basic-black-sneakers|grey-marle-merino-vneck-jumper": 0.36,
    "ip:basic-black-sneakers|basic-blue-straight-jeans-cropped": 0.65,
    "ip:basic-blue-straight-jeans-cropped|boden-red-gingham-shirt": 0.36,
    "ip:basic-denim-shorts|basic-white-linen-shirt": 0.36,
