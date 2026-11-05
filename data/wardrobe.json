@@ -8560,7 +8560,10 @@
     "Winter"
    ],
    "notes": "Roll turtleneck, dropped shoulders, relaxed. Your photo.",
-   "img": "img/pink-textured-turtleneck-jumper.webp"
+   "img": "img/pink-textured-turtleneck-jumper.webp",
+   "_f": [
+    "pink"
+   ]
   },
   {
    "id": "charcoal-turtleneck-knit-jumper-dress",
@@ -83822,12 +83825,12 @@
    "img": "img/inspo/inspo-303.webp",
    "summary": "Fluffy pale pink off-shoulder jumper, khaki cargo barrel trousers with an olive gold-buckle belt, olive suede hobo bag, blush ballet flats. AI-generated image.",
    "itemIds": [
-    "cos-pink-funnel-neck-sweat",
+    "pink-textured-turtleneck-jumper",
     "khaki-straight-leg-utility-pants",
     "basic-tan-belt"
    ],
    "missing": [
-    "Pale pink off-shoulder jumper (your COS pink funnel-neck is the stand-in)",
+    "Pale pink off-shoulder jumper (your pale pink textured turtleneck jumper is the stand-in)",
     "Khaki cargo barrel trousers (your khaki straight-leg utility pants are the stand-in)",
     "Olive suede hobo bag",
     "Blush ballet flats"
@@ -93237,7 +93240,7 @@
    "cp:pink+red": 2.97,
    "ip:adidas-gazelle-pink|pink-tulip-knit-vest": 0.36,
    "ip:basic-tan-crossbody|pink-tulip-knit-vest": 0.36,
-   "cp:pink+tan": 2.97,
+   "cp:pink+tan": 3.07,
    "cp:red+tan": 4.76,
    "it:green-breton-long-sleeve": 0.91,
    "ip:green-breton-long-sleeve|pink-cord-wide-leg-trousers": 0.36,
@@ -93256,19 +93259,19 @@
    "ip:marcs-pink-gingham-tank|pink-wide-leg-sailor-trousers": 0.65,
    "cp:coral+pink": 1.13,
    "ip:basic-green-sneakers|marcs-pink-gingham-tank": 0.36,
-   "cp:coral+forest": 0.65,
+   "cp:coral+forest": 0.36,
    "cp:coral+sky": 0.36,
    "cp:forest+white": 2.14,
    "cp:sky+white": 3.17,
    "ip:basic-tan-crossbody|marcs-pink-gingham-tank": 0.36,
-   "cp:coral+tan": 1.69,
+   "cp:coral+tan": 1.52,
    "ip:green-breton-long-sleeve|pink-wide-leg-sailor-trousers": 0.36,
    "ip:basic-green-sneakers|green-breton-long-sleeve": 0.36,
    "cp:forest+green": 0.65,
    "cp:green+sky": 0.65,
    "it:pink-wide-leg-sailor-trousers": 1.69,
    "ip:basic-green-sneakers|pink-wide-leg-sailor-trousers": 0.36,
-   "cp:forest+pink": 0.65,
+   "cp:forest+pink": 0.91,
    "cp:pink+sky": 1.33,
    "ip:basic-tan-crossbody|pink-wide-leg-sailor-trousers": 0.36,
    "it:basic-green-sneakers": 1.33,
@@ -93392,7 +93395,7 @@
    "ip:gorman-check-skirt|red-denim-jacket": 0.36,
    "ip:basic-red-ballet-flats|red-denim-jacket": 0.36,
    "ip:basic-tan-crossbody|red-denim-jacket": 0.36,
-   "it:cos-pink-funnel-neck-sweat": 1.13,
+   "it:cos-pink-funnel-neck-sweat": 0.91,
    "ip:cos-pink-funnel-neck-sweat|gorman-check-skirt": 0.36,
    "ip:basic-red-ballet-flats|cos-pink-funnel-neck-sweat": 0.36,
    "ip:basic-tan-crossbody|cos-pink-funnel-neck-sweat": 0.91,
@@ -93409,7 +93412,7 @@
    "ip:basic-tan-belt|basic-tan-crossbody": 2,
    "ip:cos-pink-funnel-neck-sweat|rust-linen-a-line-maxi-skirt": 0.36,
    "cp:coral+orange": 0.36,
-   "ip:basic-tan-belt|cos-pink-funnel-neck-sweat": 0.65,
+   "ip:basic-tan-belt|cos-pink-funnel-neck-sweat": 0.36,
    "ip:basic-tan-flats|cos-pink-funnel-neck-sweat": 0.36,
    "it:rust-linen-a-line-maxi-skirt": 0.65,
    "ip:basic-tan-belt|rust-linen-a-line-maxi-skirt": 0.36,
@@ -94371,7 +94374,9 @@
    "ip:basic-tan-belt|uniqlo-brown-knit-jacket": 0.36,
    "ip:basic-red-cardigan|basic-white-linen-shirt": 0.36,
    "ip:basic-red-ballet-flats|basic-red-cardigan": 0.36,
-   "ip:cos-pink-funnel-neck-sweat|khaki-straight-leg-utility-pants": 0.36,
+   "it:pink-textured-turtleneck-jumper": 0.36,
+   "ip:khaki-straight-leg-utility-pants|pink-textured-turtleneck-jumper": 0.36,
+   "ip:basic-tan-belt|pink-textured-turtleneck-jumper": 0.36,
    "it:khaki-straight-leg-utility-pants": 0.36,
    "ip:basic-tan-belt|khaki-straight-leg-utility-pants": 0.36,
    "ip:basic-white-fitted-tee|boden-navy-military-jacket": 0.36,
