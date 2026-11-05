@@ -9168,6 +9168,45 @@
    ],
    "notes": "Rolled crew neck, raglan sleeves with pointelle seams, curved split hem. Your photo.",
    "img": "img/target-grey-marle-fine-knit-jumper.webp"
+  },
+  {
+   "id": "boden-khaki-slim-cargo-pants",
+   "name": "Boden khaki slim cargo pants",
+   "category": "trousers",
+   "colours": [
+    "khaki brown"
+   ],
+   "pattern": "solid",
+   "fabric": "stretch cotton twill",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Slim leg, cargo pockets with snap flaps, seamed knees, zips at the ankles. Picture is a crop of the listing photo.",
+   "img": "img/boden-khaki-slim-cargo-pants.webp"
+  },
+  {
+   "id": "khaki-straight-leg-utility-pants",
+   "name": "Khaki straight-leg utility pants",
+   "category": "trousers",
+   "colours": [
+    "olive khaki"
+   ],
+   "pattern": "solid",
+   "fabric": "washed cotton canvas",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "High rise, big front patch pockets, straight relaxed leg, contrast topstitching. Picture is a crop of the listing photo.",
+   "img": "img/khaki-straight-leg-utility-pants.webp",
+   "_f": [
+    "forest"
+   ]
   }
  ],
  "outfits": [
@@ -83784,12 +83823,12 @@
    "summary": "Fluffy pale pink off-shoulder jumper, khaki cargo barrel trousers with an olive gold-buckle belt, olive suede hobo bag, blush ballet flats. AI-generated image.",
    "itemIds": [
     "cos-pink-funnel-neck-sweat",
-    "country-road-sage-skinny-jeans",
+    "khaki-straight-leg-utility-pants",
     "basic-tan-belt"
    ],
    "missing": [
     "Pale pink off-shoulder jumper (your COS pink funnel-neck is the stand-in)",
-    "Khaki cargo barrel trousers (your sage skinny jeans are the stand-in)",
+    "Khaki cargo barrel trousers (your khaki straight-leg utility pants are the stand-in)",
     "Olive suede hobo bag",
     "Blush ballet flats"
    ],
@@ -93141,7 +93180,7 @@
    "ip:basic-white-sneakers|green-wide-leg-cords": 0.91,
    "cp:mint+white": 1.85,
    "ip:basic-tan-crossbody|green-wide-leg-cords": 0.91,
-   "cp:mint+tan": 1.85,
+   "cp:mint+tan": 1.69,
    "ip:basic-tan-crossbody|basic-white-sneakers": 3.54,
    "ip:basic-blue-straight-jeans|cos-navy-stripe-tee-magenta-collar": 0.36,
    "ip:basic-red-ballet-flats|cos-navy-stripe-tee-magenta-collar": 0.36,
@@ -93217,7 +93256,7 @@
    "ip:marcs-pink-gingham-tank|pink-wide-leg-sailor-trousers": 0.65,
    "cp:coral+pink": 1.13,
    "ip:basic-green-sneakers|marcs-pink-gingham-tank": 0.36,
-   "cp:coral+forest": 0.36,
+   "cp:coral+forest": 0.65,
    "cp:coral+sky": 0.36,
    "cp:forest+white": 2.14,
    "cp:sky+white": 3.17,
@@ -93234,7 +93273,7 @@
    "ip:basic-tan-crossbody|pink-wide-leg-sailor-trousers": 0.36,
    "it:basic-green-sneakers": 1.33,
    "ip:basic-green-sneakers|basic-tan-crossbody": 0.91,
-   "cp:forest+tan": 2,
+   "cp:forest+tan": 2.14,
    "cp:sky+tan": 2.97,
    "pat:check+plain+stripe": 0.36,
    "it:red-blue-stripe-knit-vest": 0.91,
@@ -94332,10 +94371,9 @@
    "ip:basic-tan-belt|uniqlo-brown-knit-jacket": 0.36,
    "ip:basic-red-cardigan|basic-white-linen-shirt": 0.36,
    "ip:basic-red-ballet-flats|basic-red-cardigan": 0.36,
-   "ip:cos-pink-funnel-neck-sweat|country-road-sage-skinny-jeans": 0.36,
-   "cp:coral+mint": 0.36,
-   "it:country-road-sage-skinny-jeans": 0.36,
-   "ip:basic-tan-belt|country-road-sage-skinny-jeans": 0.36,
+   "ip:cos-pink-funnel-neck-sweat|khaki-straight-leg-utility-pants": 0.36,
+   "it:khaki-straight-leg-utility-pants": 0.36,
+   "ip:basic-tan-belt|khaki-straight-leg-utility-pants": 0.36,
    "ip:basic-white-fitted-tee|boden-navy-military-jacket": 0.36,
    "ip:basic-blue-straight-jeans|boden-navy-military-jacket": 0.36,
    "ip:basic-blue-straight-jeans|basic-white-fitted-tee": 0.36,
