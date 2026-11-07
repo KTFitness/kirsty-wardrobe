@@ -185,11 +185,11 @@ dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
 </nav>
 <dialog class="sheet" id="sheet"><div class="sheet-in" id="sheetBody"></div></dialog>
 
-<script src="style.js?v=202611051819"></script>
+<script src="style.js?v=202611080806"></script>
 <script>
 /* Home-screen apps hold on to old copies. On open, check version.txt; if a newer version is live, refresh the cached files and reload once. */
 if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{});});}
-const APPV="202611051819";
+const APPV="202611080806";
 fetch("version.txt",{cache:"no-store"}).then(r=>r.ok?r.text():"").then(v=>{v=v.trim();if(!v||v===APPV)return;
   let tried="";try{tried=sessionStorage.getItem("kw:upd")||"";}catch(e){}if(tried===v)return;try{sessionStorage.setItem("kw:upd",v);}catch(e){}
   Promise.all([fetch("index.html",{cache:"reload"}),fetch("./",{cache:"reload"})]).catch(()=>{}).then(()=>location.reload());}).catch(()=>{});
@@ -227,6 +227,7 @@ const memo=(fn)=>{let k=-1,v;return ()=>{const sg=DV+"|"+D.items.length+"|"+D.ou
 const LS={get(k,d){try{const v=localStorage.getItem("kw:"+k);return v?JSON.parse(v):d;}catch(e){return d;}},
   set(k,v){DV++;try{localStorage.setItem("kw:"+k,JSON.stringify(v));}catch(e){}}};
 let taste=LS.get("taste",{w:{},n:0,liked:[],disliked:[]}),useRules=LS.get("useRules",false);
+let worn=LS.get("worn",[]);const WREG={};
 let fin=LS.get("finish",{}),unliked=LS.get("unliked",[]),favs=LS.get("favs",[]),hidden=LS.get("hidden",[]),mine=LS.get("mine",[]),gone=LS.get("gone",[]),inspoGone=LS.get("inspoGone",[]),inspoEdits=LS.get("inspoEdits",{}),wish=LS.get("wish",[]),catFix=LS.get("catFix",{});
 S.sort=LS.get("sort","colour");
 let trips=LS.get("trips",[]);S.isort=LS.get("isort","new");
@@ -291,6 +292,7 @@ function collage(ids,hero){
 }
 function tipsFor(ids){const P=ids.map(byId).filter(Boolean);if(!window.Stylist||!Stylist.hemTip)return "";return [Stylist.layerTip?Stylist.layerTip(P):"",Stylist.hemTip(P),Stylist.hairTip(P)].filter(Boolean).map(t=>`<p class="tip">${esc(t)}</p>`).join("");}
 function outfitCard(o,extra="",hero){
+  extra=wornBtn(o)+extra;
   const kp=hero?{id:hero}:keyPiece(o);
   if(o.inspo)return `<article class="ocard">${collage(o.itemIds||[],kp&&kp.id)}<div class="meta"><div class="nm">${esc(o.name)}</div><div class="tags"><span class="tag">Inspiration look</span></div>
    ${o.why?`<p class="why">${esc(o.why)}</p>`:""}${tipsFor(o.itemIds||[])}<div class="row">${inspoBtns(o,likedCores().has(ckey(o)))}${addBtn(o.itemIds,o.name)}${extra}</div></div></article>`;return `<article class="ocard">${collage(o.itemIds||[],kp&&kp.id)}<div class="meta">
@@ -344,6 +346,65 @@ function wishPanel(){const open=!!(S.openG&&S.openG.__wish);const L=wish.filter(
    ${L.length?`<ul class="wish">${L.slice().reverse().map(item).join("")}</ul>`:`<p class="lede" style="margin:0">Nothing yet. Add pieces here, or tap + Wishlist next to anything in an inspo look's "To get closer" list.</p>`}
    ${G.length?`<h3 style="margin:8px 0 0;font-size:15px">Bought <span class="n">${G.length}</span></h3><ul class="wish got">${G.slice().reverse().map(item).join("")}</ul><p class="status" style="margin:0">Send Claude a photo of anything you've bought so it joins your wardrobe.</p>`:""}
   </div>`:""}</div>`;}
+/* ---- Worn log: one entry per day, holding every piece worn that day ---- */
+const dayStr=d=>(d||new Date()).toLocaleDateString("en-CA");
+const CLOTHES=i=>i&&!["accessories"].includes(i.category);
+function wornToday(ids){const e=worn.find(x=>x.d===dayStr());if(!e)return false;const P=(ids||[]).filter(id=>CLOTHES(byId(id)));return P.length>0&&P.every(id=>e.ids.includes(id));}
+function setWorn(ids,on){const d=dayStr();let e=worn.find(x=>x.d===d);const P=(ids||[]).filter(id=>CLOTHES(byId(id)));
+  if(on){if(!e){e={d,ids:[]};worn.push(e);}e.ids=[...new Set(e.ids.concat(P))];}else if(e){e.ids=e.ids.filter(id=>!P.includes(id));if(!e.ids.length)worn=worn.filter(x=>x!==e);}
+  worn.sort((a,b)=>a.d<b.d?1:-1);LS.set("worn",worn);}
+function wornStats(){const m={};for(const e of worn)for(const id of e.ids){const r=m[id]||(m[id]={n:0,last:""});r.n++;if(e.d>r.last)r.last=e.d;}return m;}
+const niceDay=d=>{const x=new Date(d+"T12:00:00");return x.toLocaleDateString("en-AU",{weekday:"short",day:"numeric",month:"short"});};
+function wornBtn(o){if(!o||!o.itemIds||!o.itemIds.length)return "";WREG[o.id]=o.itemIds;const on=wornToday(o.itemIds);return `<button class="iconbtn" type="button" data-worn="${esc(o.id)}" aria-pressed="${on}">${on?"✓ Worn today":"I wore this today"}</button>`;}
+
+/* ---- Gaps: what keeps turning up as missing across the inspiration looks ---- */
+const GCOL=[["tan","tan|taupe|camel|beige|nude|sand|stone"],["burgundy","burgundy|oxblood|wine|maroon"],["cream","cream|ivory|oatmeal|ecru|off-white"],["brown","brown|chocolate|mocha|cognac"],["olive","olive|khaki"],["navy","navy"],["black","black"],["white","white"],["grey","grey|gray|charcoal"],["red","red|tomato|cherry"],["pink","pink|blush|fuchsia|magenta|hot pink"],["green","green|mint|lime|sage|emerald|kelly"],["blue","blue|cobalt|cornflower|chambray|indigo"],["yellow","yellow|mustard|butter"],["orange","orange|rust|coral"],["purple","purple|lilac|lavender"],["gold","gold|bronze"],["silver","silver|metallic"],["leopard","leopard|animal"],["denim","denim"]];
+const GTYPE=[["loafers","loafer"],["mary janes","mary jane"],["ballet flats","ballet"],["sneakers","sneaker|samba|gazelle|runner|trainer"],["ankle boots","ankle boot|chelsea"],["knee boots","knee boot|knee-high"],["boots","boot"],["sandals","sandal|thong|slide"],["heels","heel|pump|stiletto|slingback"],["mules","mule|clog"],["flats","flat"],
+ ["trench","trench"],["coat","coat"],["blazer","blazer"],["waistcoat","waistcoat|vest"],["cardigan","cardigan"],["jacket","jacket|shacket|bomber"],["jumper","jumper|sweater|knit polo|sweatshirt|turtleneck|roll-neck"],
+ ["jumpsuit","jumpsuit|playsuit"],["dress","dress"],["skirt","skirt"],["jeans","jeans|flares"],["trousers","trouser|pants|leggings|trackpants"],["shorts","shorts"],
+ ["shirt","shirt|blouse"],["tee","tee|t-shirt"],["top","top|tank|cami"],["bag","bag|tote|clutch|basket"],["belt","belt"],["scarf","scarf|neckerchief|bandana"],["jewellery","necklace|earring|bangle|bracelet|brooch|hoops|watch"],["sunglasses","sunglasses"],["hat","hat|cap|beret"],["socks","socks|tights"]];
+function gapKey(t){const l=t.toLowerCase();let c=null,ci=1e9;for(const [k,r] of GCOL){const m=l.match(new RegExp("\\b("+r+")\\b"));if(m&&m.index<ci){ci=m.index;c=k;}}
+  let ty=null;for(const [k,r] of GTYPE){if(new RegExp("\\b("+r+")").test(l)){ty=k;break;}}
+  if(!ty)return l.replace(/[^a-z ]/g,"").trim();
+  const pat=(l.match(/\b(stripe|gingham|check|tartan|plaid|floral|spot|polka|print|leopard|embroidered|lace|sequin)/)||[])[1];const P={polka:"spot",plaid:"check",tartan:"check"}[pat]||pat;
+  const mat=/suede/.test(l)&&/loafer|flat|boot|jacket|bag|mule|sneaker|heel|slingback/.test(l)?"suede":/(straw|raffia|woven|basket|crochet|wicker)/.test(l)&&ty==="bag"?"woven":"";
+  return [c,mat,P,ty].filter(Boolean).join(" ");}
+const gapTitle=k=>k.charAt(0).toUpperCase()+k.slice(1);
+const gaps=memo(()=>{const G={};for(const p of D.inspo){if(inspoGone.includes(p.id))continue;const ms=(p.missing||[]).map(m=>m.replace(/ \((your|the) .*$/,"").replace(/\s*\(.*?\)\s*/g," ").trim()).filter(Boolean);if(!ms.length)continue;
+  const ks=[...new Set(ms.map(gapKey))];for(const m of ms){const k=gapKey(m);const g=G[k]||(G[k]={k,looks:new Set(),eg:{},full:new Set()});g.looks.add(p.id);g.eg[m]=(g.eg[m]||0)+1;if(ks.length===1)g.full.add(p.id);}}
+  return Object.values(G).map(g=>({k:g.k,n:g.looks.size,full:g.full.size,looks:[...g.looks],eg:Object.entries(g.eg).sort((a,b)=>b[1]-a[1]).map(x=>x[0])})).filter(g=>g.n>1||g.full).sort((a,b)=>b.n-a.n||b.full-a.full);});
+
+function vInsights(){const st=wornStats(),days=worn.length,first=worn.length?worn[worn.length-1].d:null;
+  const clothes=D.items.filter(i=>!["accessories","bags"].includes(i.category));
+  const most=clothes.filter(i=>st[i.id]).sort((a,b)=>st[b.id].n-st[a.id].n||(st[b.id].last>st[a.id].last?1:-1)).slice(0,12);
+  const cutoff=dayStr(new Date(Date.now()-90*864e5));
+  const never=clothes.filter(i=>!st[i.id]),stale=clothes.filter(i=>st[i.id]&&st[i.id].last<cutoff);
+  const ncat={};never.forEach(i=>{const c=dcat(i);ncat[c]=(ncat[c]||0)+1;});const nf=S.neverCat||"";const nl=arrange(never.filter(i=>!nf||dcat(i)===nf));
+  const tile=(i,sub)=>`<button type="button" class="card" data-item="${esc(i.id)}"><div class="tile"><img src="${esc(th(i.img))}" alt="" loading="lazy"></div><div class="meta"><span class="ct">${esc(i.name)}</span>${sub?`<span class="status" style="font-size:12px">${esc(sub)}</span>`:""}</div></button>`;
+  const grid=`display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:8px`;
+  const G=gaps(),gShow=S.gapsAll?G:G.slice(0,20);
+  return `<h2>What I wear</h2>
+  <div class="row"><button class="iconbtn" type="button" data-tab="wardrobe">Back to my clothes</button></div>
+  <section class="panel" style="gap:10px">
+   ${!days?`<p class="lede" style="margin:0">Nothing logged yet. Tap <strong>I wore this today</strong> on any outfit, or on a single piece in your wardrobe, and it builds up here: what you reach for, and what never leaves the wardrobe.</p>`:
+   `<p class="lede" style="margin:0">${days} day${days===1?"":"s"} logged since ${esc(niceDay(first))}. ${Object.keys(st).length} pieces worn, ${never.length} not worn yet.</p>
+   <h3 style="margin:6px 0 0">Recent days</h3>
+   <div class="minigrid">${worn.slice(0,S.daysAll?60:6).map(e=>`<div class="mini" style="cursor:default">${collage(e.ids,null)}<span>${esc(niceDay(e.d))}</span><button class="iconbtn" type="button" data-unday="${e.d}" style="margin:4px 6px 6px;font-size:12px">Remove day</button></div>`).join("")}</div>
+   ${worn.length>6?`<div class="row"><button class="iconbtn" type="button" id="daysAll">${S.daysAll?"Fewer days":"All days"}</button></div>`:""}
+   ${most.length?`<h3 style="margin:6px 0 0">Most worn</h3><div style="${grid}">${most.map(i=>tile(i,`${st[i.id].n}× · last ${niceDay(st[i.id].last)}`)).join("")}</div>`:""}
+   ${stale.length?`<h3 style="margin:6px 0 0">Not worn in 3 months <span class="n">${stale.length}</span></h3><div style="${grid}">${arrange(stale).map(i=>tile(i,"last "+niceDay(st[i.id].last))).join("")}</div>`:""}
+   <h3 style="margin:6px 0 0">Not worn since you started logging <span class="n">${never.length}</span></h3>
+   <div class="chips subchips"><button class="chip" data-nevercat="" aria-pressed="${!nf}">All</button>${CATS.filter(([k])=>ncat[k]).map(([k,v])=>`<button class="chip" data-nevercat="${k}" aria-pressed="${nf===k}">${esc(v)}<span class="n">${ncat[k]}</span></button>`).join("")}</div>
+   <div style="${grid}">${nl.slice(0,S.neverAll?999:24).map(i=>tile(i)).join("")}</div>${nl.length>24?`<div class="row"><button class="iconbtn" type="button" id="neverAll">${S.neverAll?"Show fewer":`Show all ${nl.length}`}</button></div>`:""}`}
+  </section>
+  <h2 style="margin-top:22px">Gaps</h2>
+  <p class="lede">What keeps turning up as missing across your inspiration looks. "Would complete" counts the looks where it's the only thing you don't own.</p>
+  <section class="panel" style="gap:0;padding:4px 12px">${G.length?gShow.map((g,ix)=>{const title=gapTitle(g.k);const on=wish.some(w=>w.title.toLowerCase()===title.toLowerCase());const open=S.gapOpen===g.k;
+    return `<div style="padding:10px 0;border-bottom:1px solid var(--line)"><div class="row" style="justify-content:space-between;align-items:center;flex-wrap:nowrap"><div style="min-width:0"><strong>${esc(title)}</strong><div class="status" style="font-size:13px">In ${g.n} look${g.n===1?"":"s"}${g.full?` · would complete ${g.full}`:""}${g.eg.length>1?` · e.g. ${esc(g.eg.slice(0,2).join("; "))}`:""}</div></div>
+     <div class="row" style="flex-wrap:nowrap;gap:6px">${on?`<span class="status" style="font-size:13px">✓ on wishlist</span>`:`<button class="iconbtn" type="button" data-gapwish="${esc(g.k)}">Wishlist</button>`}<button class="iconbtn" type="button" data-gapopen="${esc(g.k)}">${open?"Hide":"Looks"}</button></div></div>
+     ${open?`<div style="${grid};margin-top:8px">${g.looks.map(id=>D.inspo.find(p=>p.id===id)).filter(Boolean).map(p=>`<button type="button" class="card" data-gaplook="${esc(p.id)}"><div class="tile"><img src="${esc(th(p.img))}" alt="" loading="lazy"></div><div class="meta"><span class="ct">${esc(p.name)}</span></div></button>`).join("")}</div>`:""}</div>`;}).join(""):`<p class="lede">No gaps: every inspiration look is covered.</p>`}</section>
+  ${G.length>20?`<div class="row"><button class="iconbtn" type="button" id="gapsAll">${S.gapsAll?"Show top 20":`Show all ${G.length}`}</button></div>`:""}`;}
+
 function vWardrobe(){
   if(!D.items.length)return `<h2>Your clothes</h2><div class="empty"><strong>No clothes yet</strong><span>Send photos to Claude in chat and they'll appear here.</span></div>`;
   const own=D.items,nb=D.items.filter(i=>i.basic).length;
@@ -354,7 +415,7 @@ function vWardrobe(){
   const goneBox=goneItems.length?`<div class="panel"><div class="status">${goneItems.length} item${goneItems.length===1?"":"s"} removed on this phone. Copy the list and paste it into chat so Claude removes ${goneItems.length===1?"it":"them"} for good.</div>
    <div class="row"><button class="btn ghost" type="button" id="copyGone">${S.copied==="gone"?"Copied":"Copy list for Claude"}</button><button class="iconbtn" type="button" id="toggleGone">${S.showGone?"Hide removed":"Show removed"}</button></div>
    ${S.showGone?`<div class="row">${goneItems.map(i=>`<button class="iconbtn" type="button" data-restore="${esc(i.id)}">Restore ${esc(i.name)}</button>`).join("")}</div>`:""}</div>`:"";
-  return `<h2>Your clothes</h2>${wishPanel()}${goneBox}
+  return `<h2>Your clothes</h2><div class="row"><button class="btn ghost" type="button" data-tab="insights">What I wear &amp; gaps</button></div>${wishPanel()}${goneBox}
   <div class="chips" role="group" aria-label="Filter by type"><button class="chip" data-cat="all" aria-pressed="${S.cat==="all"}">All<span class="n">${own.length}</span></button>
   ${CATS.filter(([k])=>counts[k]).map(([k,v])=>`<button class="chip" data-cat="${k}" aria-pressed="${S.cat===k}">${v}<span class="n">${counts[k]}</span></button>`).join("")}${nb?`<button class="chip" data-cat="basics" aria-pressed="${S.cat==="basics"}">Basics<span class="n">${nb}</span></button>`:""}</div>
   ${S.cat!=="all"&&S.cat!=="basics"?subChips(S.cat,catItems,S.sub,"data-wsub")+facetRows(S.cat,subItems,S.wfac,"data-wfac"):""}
@@ -545,7 +606,7 @@ function devicePanel(){return `<section class="panel" style="margin-top:22px;gap
   <p class="lede" style="margin:0">Each device keeps its own ratings, built outfits, trips, wishlist and shoe choices. To bring one up to date, tap Copy on the device you've been using, then Paste on the other. Nothing is lost: the two are merged.</p>
   <div class="row"><button class="btn ghost" type="button" id="devCopy">${S.copied==="dev"?"Copied":"Copy from this device"}</button><button class="btn ghost" type="button" id="devPaste">Paste from another device</button></div>
   ${S.devMsg?`<p class="status" style="margin:0">${esc(S.devMsg)}</p>`:""}</section>`;}
-function devExport(){return "KW-DEVICE-1:"+JSON.stringify({taste,mine,fin,unliked,hidden,gone,favs,trips,inspoGone,inspoEdits,wish,catFix});}
+function devExport(){return "KW-DEVICE-1:"+JSON.stringify({taste,mine,fin,unliked,hidden,gone,favs,trips,inspoGone,inspoEdits,wish,catFix,worn});}
 function devMerge(txt){const i=txt.indexOf("{");if(i<0)throw new Error("no data");const j=JSON.parse(txt.slice(i));
   const t=j.taste||j;const addAll=(a,b)=>{const seen=new Set(a);return a.concat((b||[]).filter(k=>!seen.has(k)));};
   const before=taste.liked.length+taste.disliked.length,bm=mine.length;
@@ -554,7 +615,7 @@ function devMerge(txt){const i=txt.indexOf("{");if(i<0)throw new Error("no data"
   taste.n=taste.liked.length+taste.disliked.length;if(t.ignoreSaved&&!taste.liked.length)taste.ignoreSaved=true;
   const m=new Map(mine.map(o=>[o.id,o]));for(const o of (j.mine||j.built||[]))m.set(o.id,o);mine=[...m.values()];
   fin={...fin,...(j.fin||j.finish||{})};
-  const un=(a,b)=>[...new Set(a.concat(b||[]))];unliked=un(unliked,j.unliked);inspoGone=un(inspoGone,j.inspoGone);LS.set("inspoGone",inspoGone);inspoEdits={...inspoEdits,...(j.inspoEdits||{})};LS.set("inspoEdits",inspoEdits);catFix={...catFix,...(j.catFix||{})};LS.set("catFix",catFix);applyGone();{const m=new Map(wish.map(w=>[w.id,w]));for(const w of (j.wish||[])){const c=m.get(w.id);if(!c||(w.updated||0)>(c.updated||0))m.set(w.id,w);}wish=[...m.values()];LS.set("wish",wish);}hidden=un(hidden,j.hidden);gone=un(gone,j.gone);favs=un(favs,j.favs);
+  const un=(a,b)=>[...new Set(a.concat(b||[]))];unliked=un(unliked,j.unliked);inspoGone=un(inspoGone,j.inspoGone);LS.set("inspoGone",inspoGone);inspoEdits={...inspoEdits,...(j.inspoEdits||{})};LS.set("inspoEdits",inspoEdits);catFix={...catFix,...(j.catFix||{})};LS.set("catFix",catFix);applyGone();{const m=new Map(wish.map(w=>[w.id,w]));for(const w of (j.wish||[])){const c=m.get(w.id);if(!c||(w.updated||0)>(c.updated||0))m.set(w.id,w);}wish=[...m.values()];LS.set("wish",wish);}hidden=un(hidden,j.hidden);gone=un(gone,j.gone);favs=un(favs,j.favs);{const m=new Map(worn.map(e=>[e.d,e]));for(const e of (j.worn||[])){const c=m.get(e.d);m.set(e.d,c?{d:e.d,ids:[...new Set(c.ids.concat(e.ids))]}:e);}worn=[...m.values()].sort((a,b)=>a.d<b.d?1:-1);LS.set("worn",worn);}
   LS.set("taste",taste);LS.set("mine",mine);LS.set("finish",fin);LS.set("unliked",unliked);LS.set("hidden",hidden);LS.set("gone",gone);LS.set("favs",favs);
   const bt=trips.length;{const m=new Map(trips.map(t=>[t.id,t]));for(const t of (j.trips||[])){const c=m.get(t.id);if(!c||(t.updated||0)>(c.updated||0))m.set(t.id,t);}trips=[...m.values()];LS.set("trips",trips);}
   const added=taste.liked.length+taste.disliked.length-before,ad2=mine.length-bm;
@@ -669,7 +730,7 @@ function openLikedPicker(){S.tq="";const t=tripById(S.tripId);
 function render(){
   if(S.tab==="build"&&$("#bName"))S.build.name=$("#bName").value;
   const sx=window.scrollY;
-  $("#view").innerHTML=S.tab==="wardrobe"?vWardrobe():S.tab==="style"?vStyle():S.tab==="outfits"?vOutfits():S.tab==="build"?vBuild():S.tab==="trips"?vTrips():vInspo();
+  $("#view").innerHTML=S.tab==="wardrobe"?vWardrobe():S.tab==="style"?vStyle():S.tab==="outfits"?vOutfits():S.tab==="build"?vBuild():S.tab==="trips"?vTrips():S.tab==="insights"?vInsights():vInspo();
   document.querySelectorAll("nav.tabs button").forEach(b=>{if(b.dataset.tab===S.tab)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current");});
   $("#countline").textContent=`${D.items.length} items · ${allOutfits().length} outfits`;
   window.scrollTo(0,sx);
@@ -687,6 +748,7 @@ function openItem(id){const it=byId(id);if(!it)return;
   ${it.colours&&it.colours.length?`<dt>Colours</dt><dd>${esc(it.colours.join(", "))}</dd>`:""}
   ${it.pattern?`<dt>Pattern</dt><dd>${esc(it.pattern)}</dd>`:""}${it.fabric?`<dt>Fabric</dt><dd>${esc(it.fabric)}</dd>`:""}
   ${it.seasons&&it.seasons.length?`<dt>Seasons</dt><dd>${esc(it.seasons.join(", "))}</dd>`:""}${it.notes?`<dt>Notes</dt><dd>${esc(it.notes)}</dd>`:""}</dl>
+  ${(()=>{const r=wornStats()[id];const on=(worn.find(x=>x.d===dayStr())||{ids:[]}).ids.includes(id);return `<div class="row" style="align-items:center"><span class="status">${r?`Worn ${r.n} time${r.n===1?"":"s"}, last on ${esc(niceDay(r.last))}.`:"Not logged as worn yet."}</span><button class="iconbtn" type="button" data-wornitem="${esc(id)}" aria-pressed="${on}">${on?"✓ Worn today":"I wore this today"}</button></div>`;})()}
   <p class="status">In ${inO.length} outfit${inO.length===1?"":"s"}${inO.length?": "+esc(inO.slice(0,4).map(o=>o.name).join(", "))+(inO.length>4?` and ${inO.length-4} more`:""):""}.</p>
   <div class="panel" style="gap:8px"><strong style="font-size:14px">Move to another category</strong>
    <div class="lookf"><label class="f">Category<select id="mvCat">${MOVE.map(([k,v])=>`<option value="${k}" ${it.category===k?"selected":""}>${v}</option>`).join("")}</select></label>
@@ -732,6 +794,17 @@ document.addEventListener("click",async e=>{
   if(t.dataset.wedit){S.wishEdit=t.dataset.wedit;S.wTag=undefined;render();const el=$("#wTitle");if(el){el.scrollIntoView({block:"center"});el.focus();}return;}
   if(t.dataset.wgot){const w=wish.find(x=>x.id===t.dataset.wgot);if(w){w.got=!w.got;w.updated=Date.now();LS.set("wish",wish);}render();return;}
   if(t.dataset.wdel){if(!t.dataset.armed){t.dataset.armed="1";t.textContent="Tap again to delete";return;}wish=wish.filter(x=>x.id!==t.dataset.wdel);LS.set("wish",wish);render();return;}
+  if(t.dataset.worn){const ids=WREG[t.dataset.worn];if(!ids)return;const on=!wornToday(ids);setWorn(ids,on);t.setAttribute("aria-pressed",on);t.textContent=on?"✓ Worn today":"I wore this today";toast(on?"Logged as worn today.":"Taken off today's log.");return;}
+  if(t.dataset.wornitem){const id=t.dataset.wornitem,on=t.getAttribute("aria-pressed")!=="true";setWorn([id],on);openItem(id);toast(on?"Logged as worn today.":"Taken off today's log.");return;}
+  if(t.dataset.unday){if(!t.dataset.armed){t.dataset.armed="1";t.textContent="Tap again";return;}worn=worn.filter(x=>x.d!==t.dataset.unday);LS.set("worn",worn);render();return;}
+  if(t.dataset.nevercat!==undefined){S.neverCat=t.dataset.nevercat;S.neverAll=false;render();return;}
+  if(t.id==="neverAll"){S.neverAll=!S.neverAll;render();return;}
+  if(t.id==="daysAll"){S.daysAll=!S.daysAll;render();return;}
+  if(t.id==="gapsAll"){S.gapsAll=!S.gapsAll;render();return;}
+  if(t.dataset.gapopen){S.gapOpen=S.gapOpen===t.dataset.gapopen?null:t.dataset.gapopen;render();return;}
+  if(t.dataset.gapwish){const g=gaps().find(x=>x.k===t.dataset.gapwish);if(!g)return;wish.push({id:"w"+Date.now(),title:gapTitle(g.k),note:`Turns up in ${g.n} inspiration looks`+(g.full?`, would complete ${g.full}`:"")+".",link:"",tag:"Want",got:false,updated:Date.now()});LS.set("wish",wish);render();return;}
+  if(t.dataset.gaplook){const p=D.inspo.find(x=>x.id===t.dataset.gaplook);if(!p)return;S.iq=p.name;S.ifilt="all";S.tab="inspo";render();window.scrollTo(0,0);return;}
+  if(t.dataset.item&&S.tab==="insights"){openItem(t.dataset.item);return;}
   if(t.dataset.wfrom){const p=D.inspo.find(x=>x.id===t.dataset.wfrom);wish.push({id:"w"+Date.now(),title:t.dataset.wt,note:"",link:"",tag:"Want",from:p?p.name:"",got:false,updated:Date.now()});LS.set("wish",wish);t.outerHTML=`<span class="wadd" style="cursor:default">✓ on wishlist</span>`;return;}
   if(t.dataset.subg){S.subOpen=S.subOpen||{};S.subOpen[t.dataset.subg]=!S.subOpen[t.dataset.subg];if(S.tab==="build"&&$("#bName"))S.build.name=$("#bName").value;render();return;}
   if(t.dataset.pwcat){S.pwCat=S.pwCat===t.dataset.pwcat?"":t.dataset.pwcat;render();return;}
