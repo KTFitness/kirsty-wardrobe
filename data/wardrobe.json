@@ -8186,10 +8186,11 @@
     "Autumn",
     "Winter"
    ],
-   "notes": "Straight maxi, rose appliqué waistband trailing down one side. Matching set with the Oroton rose appliqué top. Your photo.",
+   "notes": "Straight maxi, rose appliqué waistband trailing down one side. Matching set with the Oroton rose appliqué top. Your photo. Embellished, so plain tops only.",
    "img": "img/oroton-black-rose-applique-maxi-skirt.webp",
    "setWith": "oroton-black-rose-applique-top",
-   "shape": "maxi"
+   "shape": "maxi",
+   "pairRule": "plainTops"
   },
   {
    "id": "oroton-black-rose-applique-top",
