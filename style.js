@@ -218,7 +218,7 @@ function lreasons(o,anchor,ctx,items){
 /* ---- jeans length guide and hair-by-neckline guide ---- */
 function hem(it){if(it.category!=="trousers"||/legging/.test(it.id))return null;const s=(it.id+" "+it.name+" "+(it.notes||"").replace(/(picture|stand-in photo|your photo)[^.]*\./gi,"")+" "+(it.shape||"")).toLowerCase();
   return /crop|ankle|widecrop|above ankle/.test(s)?"crop":"full";}
-function shoeKind(it){const s=lc(it);if(/loafer/.test(s))return "loafer";if(/ballet|flats|slides|mary jane/.test(s))return "flat";if(/kitten|heel/.test(s)&&!/boot/.test(s))return "heel";
+function shoeKind(it){const s=lc(it);if(/loafer|moccasin/.test(s))return "loafer";if(/ballet|flats|slides|mary jane|clog/.test(s))return "flat";if(/sandal|thong/.test(s))return "sandal";if(/slip-on sneaker/.test(s))return "sneaker";if(/kitten|heel/.test(s)&&!/boot/.test(s))return "heel";
   if(/boot|doc/.test(s))return "boot";if(/sneaker|gazelle|samba/.test(s))return "sneaker";if(/sandal/.test(s))return "sandal";return null;}
 function hemScore(pieces){const t=pieces.find(p=>hem(p)),sh=pieces.find(p=>p.category==="shoes");if(!t||!sh)return 0;const h=hem(t),k=shoeKind(sh);
   if(h==="crop")return k==="loafer"||k==="flat"||k==="sandal"?0.5:k==="boot"?-0.8:0;

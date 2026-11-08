@@ -9460,6 +9460,158 @@
    "heel": "low",
    "notes": "Round toe, inside zip, curved panel seams, pull tab, low heel. Your photo.",
    "img": "img/jane-debster-brown-riding-boots.webp"
+  },
+  {
+   "id": "leopard-slip-on-sneakers",
+   "name": "Leopard print slip-on sneakers",
+   "category": "shoes",
+   "colours": [
+    "tan",
+    "brown",
+    "black"
+   ],
+   "pattern": "leopard print",
+   "fabric": "canvas",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "heel": "flat",
+   "notes": "Elastic side gussets, white rubber sole. Your photo.",
+   "img": "img/leopard-slip-on-sneakers.webp"
+  },
+  {
+   "id": "birkenstock-grey-felt-boston-clogs",
+   "name": "Birkenstock grey wool felt Boston clogs",
+   "category": "shoes",
+   "colours": [
+    "charcoal grey"
+   ],
+   "pattern": "solid",
+   "fabric": "wool felt",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "heel": "flat",
+   "notes": "Closed toe, backless, buckle strap, cork footbed. Your photo.",
+   "img": "img/birkenstock-grey-felt-boston-clogs.webp"
+  },
+  {
+   "id": "aussie-soles-black-thongs",
+   "name": "Aussie Soles black orthotic thongs",
+   "category": "shoes",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "moulded foam",
+   "seasons": [
+    "Summer",
+    "Spring"
+   ],
+   "heel": "flat",
+   "notes": "Contoured arch-support footbed, toe post. Your photo.",
+   "img": "img/aussie-soles-black-thongs.webp"
+  },
+  {
+   "id": "birkenstock-black-arizona-sandals",
+   "name": "Birkenstock black Arizona two-strap sandals",
+   "category": "shoes",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "leather",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "heel": "flat",
+   "notes": "Two buckle straps, cork footbed. Your photo.",
+   "img": "img/birkenstock-black-arizona-sandals.webp"
+  },
+  {
+   "id": "birkenstock-brown-milano-sandals",
+   "name": "Birkenstock brown Milano sandals",
+   "category": "shoes",
+   "colours": [
+    "mocha brown"
+   ],
+   "pattern": "solid",
+   "fabric": "Birko-Flor",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "heel": "flat",
+   "notes": "Two buckle straps plus heel strap, cork footbed. Your photo.",
+   "img": "img/birkenstock-brown-milano-sandals.webp"
+  },
+  {
+   "id": "black-velcro-platform-sandals",
+   "name": "Black platform sandals with velcro straps",
+   "category": "shoes",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "neoprene straps",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "heel": "mid",
+   "notes": "Two wide hook-and-loop straps, heel strap, chunky flatform sole. Your photo.",
+   "img": "img/black-velcro-platform-sandals.webp"
+  },
+  {
+   "id": "raspberry-suede-driving-moccasins",
+   "name": "Raspberry suede driving moccasins",
+   "category": "shoes",
+   "colours": [
+    "raspberry pink"
+   ],
+   "pattern": "solid",
+   "fabric": "suede",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "heel": "flat",
+   "notes": "Grey leather tie laces, moccasin stitching. Your photo.",
+   "img": "img/raspberry-suede-driving-moccasins.webp"
+  },
+  {
+   "id": "adidas-tan-woven-gazelle-indoor",
+   "name": "Adidas tan woven Gazelle Indoor",
+   "category": "shoes",
+   "colours": [
+    "tan",
+    "cream"
+   ],
+   "pattern": "woven texture",
+   "fabric": "suede and woven leather",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "heel": "flat",
+   "notes": "Cream stripes, translucent gum sole. Your photo.",
+   "img": "img/adidas-tan-woven-gazelle-indoor.webp",
+   "_f": [
+    "tan",
+    "cream"
+   ]
   }
  ],
  "outfits": [
@@ -80842,11 +80994,11 @@
     "cos-navy-stripe-tee-magenta-collar",
     "basic-white-wide-jeans",
     "basic-white-sneakers",
-    "basic-tan-crossbody"
+    "basic-tan-crossbody",
+    "adidas-tan-woven-gazelle-indoor"
    ],
    "missing": [
-    "Tan suede jacket (your taupe leather biker jacket is the stand-in)",
-    "Brown suede sneakers"
+    "Tan suede jacket (your taupe leather biker jacket is the stand-in)"
    ],
    "createdAt": 109
   },
@@ -80916,11 +81068,11 @@
     "cos-navy-stripe-tee-magenta-collar",
     "basic-blue-wide-jeans",
     "basic-white-sneakers",
-    "mimco-raffia-clutch"
+    "mimco-raffia-clutch",
+    "adidas-tan-woven-gazelle-indoor"
    ],
    "missing": [
     "Navy pinstripe blazer",
-    "Brown suede sneakers",
     "Red bandana scarf"
    ],
    "createdAt": 113
@@ -83443,12 +83595,12 @@
     "basic-white-straight-jeans",
     "basic-white-sneakers",
     "basic-tan-crossbody",
-    "uniqlo-cream-navy-stripe-crew-jumper"
+    "uniqlo-cream-navy-stripe-crew-jumper",
+    "adidas-tan-woven-gazelle-indoor"
    ],
    "missing": [
     "Navy double-breasted trench (your Boden navy military jacket is the stand-in)",
     "Chunky navy jumper with white stripes (your Uniqlo cream and navy stripe crew jumper is the stand-in)",
-    "Brown suede sneakers",
     "Brown suede shoulder bag"
    ],
    "createdAt": 0
@@ -83496,11 +83648,11 @@
     "dharma-bums-black-waistcoat",
     "basic-blue-straight-jeans",
     "basic-green-sneakers",
-    "basic-tan-crossbody"
+    "basic-tan-crossbody",
+    "adidas-tan-woven-gazelle-indoor"
    ],
    "missing": [
     "Black folk-embroidered waistcoat (your Dharma Bums black waistcoat is the stand-in)",
-    "Brown suede Adidas Gazelles",
     "Leopard baguette bag",
     "Yellow-lens sunglasses"
    ],
@@ -83860,13 +84012,13 @@
    "img": "img/inspo/inspo-292.webp",
    "summary": "Rust roll-neck raglan jumper, leopard print wide jeans, brown suede hobo bag, brown Gazelles, gold coin necklace. AI-generated image.",
    "itemIds": [
-    "red-moss-stitch-jumper"
+    "red-moss-stitch-jumper",
+    "adidas-tan-woven-gazelle-indoor"
    ],
    "missing": [
     "Rust jumper (your red textured jumper is the stand-in)",
     "Leopard print wide jeans",
-    "Brown suede hobo bag",
-    "Brown Gazelles"
+    "Brown suede hobo bag"
    ],
    "occasions": [
     "Everyday"
@@ -84003,11 +84155,11 @@
     "basic-red-cardigan",
     "chambray-shirt",
     "basic-blue-straight-jeans",
-    "basic-tan-crossbody"
+    "basic-tan-crossbody",
+    "adidas-tan-woven-gazelle-indoor"
    ],
    "missing": [
-    "Pale blue stripe shirt (your chambray shirt is the stand-in)",
-    "Tan suede sneakers"
+    "Pale blue stripe shirt (your chambray shirt is the stand-in)"
    ],
    "occasions": [
     "Everyday"
@@ -93334,13 +93486,13 @@
    "it:alessandra-colour-block-jumper": 0.36,
    "ip:alessandra-colour-block-jumper|basic-white-tee": 0.36,
    "cp:tan+white": 8.05,
-   "cp:cream+white": 3.27,
+   "cp:cream+white": 3.45,
    "ip:alessandra-colour-block-jumper|basic-blue-straight-jeans-cropped": 0.36,
    "cp:denim+tan": 6.26,
-   "cp:cream+denim": 2.14,
+   "cp:cream+denim": 2.52,
    "ip:alessandra-colour-block-jumper|basic-tan-flats": 0.36,
-   "cp:tan+tan": 5.14,
-   "cp:cream+tan": 2.97,
+   "cp:tan+tan": 5.44,
+   "cp:cream+tan": 3.36,
    "ip:alessandra-colour-block-jumper|basic-tan-crossbody": 0.36,
    "it:basic-white-tee": 5.27,
    "ip:basic-blue-straight-jeans-cropped|basic-white-tee": 1.33,
@@ -93373,7 +93525,7 @@
    "cp:denim+pink": 2.52,
    "it:adidas-gazelle-pink": 1.13,
    "pat:plain+plain+stripe": 3.17,
-   "so:Everyday|sneakers": 6.98,
+   "so:Everyday|sneakers": 7.07,
    "it:gorman-red-strawberry-shirt": 0.65,
    "ip:basic-blue-wide-jeans|gorman-red-strawberry-shirt": 0.65,
    "cp:denim+red": 4.89,
@@ -93505,7 +93657,7 @@
    "ip:adidas-gazelle-pink|pink-tulip-knit-vest": 0.36,
    "ip:basic-tan-crossbody|pink-tulip-knit-vest": 0.36,
    "cp:pink+tan": 3.07,
-   "cp:red+tan": 4.69,
+   "cp:red+tan": 4.76,
    "it:green-breton-long-sleeve": 0.91,
    "ip:green-breton-long-sleeve|pink-cord-wide-leg-trousers": 0.36,
    "ip:adidas-gazelle-pink|green-breton-long-sleeve": 0.36,
@@ -93606,9 +93758,9 @@
    "ip:basic-tan-crossbody|uniqlo-blue-knit-tee": 0.65,
    "ip:basic-white-tee|red-blue-stripe-knit-vest": 0.36,
    "ip:boden-navy-military-jacket|red-blue-stripe-knit-vest": 0.36,
-   "cp:cream+red": 2,
+   "cp:cream+red": 2.27,
    "cp:navy+sky": 0.36,
-   "cp:cream+sky": 0.65,
+   "cp:cream+sky": 1.13,
    "ip:basic-white-tee|boden-navy-military-jacket": 0.36,
    "it:boden-navy-military-jacket": 1.52,
    "ip:boden-navy-military-jacket|gorman-striped-skirt": 0.36,
@@ -93726,7 +93878,7 @@
    "pat:dot+plain": 1.13,
    "it:red-stripe-cropped-jacket": 0.36,
    "ip:black-big-spot-tie-skirt|red-stripe-cropped-jacket": 0.36,
-   "cp:black+cream": 2.4,
+   "cp:black+cream": 2.64,
    "ip:basic-white-tee|red-stripe-cropped-jacket": 0.36,
    "ip:basic-red-ballet-flats|red-stripe-cropped-jacket": 0.36,
    "ip:basic-tan-crossbody|red-stripe-cropped-jacket": 0.36,
@@ -93841,7 +93993,7 @@
    "ip:basic-tan-flats|cream-pleated-wide-jeans": 0.36,
    "ip:boden-navy-military-jacket|cos-navy-stripe-tee-magenta-collar": 0.36,
    "cp:navy+navy": 0.65,
-   "cp:cream+navy": 0.91,
+   "cp:cream+navy": 1.33,
    "ip:basic-white-sneakers|cos-navy-stripe-tee-magenta-collar": 1.52,
    "ip:cos-navy-stripe-tee-magenta-collar|red-cream-gingham-wide-trousers": 0.36,
    "ip:boden-navy-military-jacket|red-cream-gingham-wide-trousers": 0.36,
@@ -94017,7 +94169,13 @@
    "ip:cos-navy-stripe-tee-magenta-collar|taupe-leather-biker-jacket": 0.65,
    "ip:basic-white-wide-jeans|taupe-leather-biker-jacket": 0.36,
    "ip:basic-white-sneakers|taupe-leather-biker-jacket": 0.36,
+   "ip:adidas-tan-woven-gazelle-indoor|taupe-leather-biker-jacket": 0.36,
+   "ip:adidas-tan-woven-gazelle-indoor|cos-navy-stripe-tee-magenta-collar": 0.65,
    "ip:basic-white-sneakers|basic-white-wide-jeans": 0.91,
+   "ip:adidas-tan-woven-gazelle-indoor|basic-white-wide-jeans": 0.36,
+   "ip:adidas-tan-woven-gazelle-indoor|basic-white-sneakers": 0.91,
+   "ip:adidas-tan-woven-gazelle-indoor|basic-tan-crossbody": 1.13,
+   "it:adidas-tan-woven-gazelle-indoor": 1.52,
    "ip:basic-black-flats|cos-navy-stripe-tee-magenta-collar": 0.36,
    "ip:basic-black-flats|basic-tan-crossbody": 0.65,
    "ip:basic-denim-jacket|resort-white-embroidered-blouse": 0.36,
@@ -94030,8 +94188,11 @@
    "ip:basic-black-blazer|basic-blue-wide-jeans": 0.36,
    "ip:basic-black-blazer|basic-white-sneakers": 0.36,
    "ip:basic-black-blazer|mimco-raffia-clutch": 0.36,
+   "ip:adidas-tan-woven-gazelle-indoor|basic-black-blazer": 0.36,
    "ip:cos-navy-stripe-tee-magenta-collar|mimco-raffia-clutch": 0.36,
+   "ip:adidas-tan-woven-gazelle-indoor|basic-blue-wide-jeans": 0.36,
    "ip:basic-white-sneakers|mimco-raffia-clutch": 1.13,
+   "ip:adidas-tan-woven-gazelle-indoor|mimco-raffia-clutch": 0.36,
    "ip:country-road-white-tank|taupe-leather-biker-jacket": 0.36,
    "ip:red-silk-heeled-mules|taupe-leather-biker-jacket": 0.36,
    "ip:basic-blue-wide-jeans|country-road-white-tank": 0.36,
@@ -94103,7 +94264,7 @@
    "it:cos-red-fine-stripe-tee": 0.36,
    "ip:basic-blue-wide-jeans|cos-red-fine-stripe-tee": 0.36,
    "ip:cos-red-fine-stripe-tee|gorman-green-cord-jacket": 0.36,
-   "cp:cream+forest": 0.65,
+   "cp:cream+forest": 0.91,
    "ip:basic-tan-belt|cos-red-fine-stripe-tee": 0.36,
    "ip:basic-black-flats|cos-red-fine-stripe-tee": 0.36,
    "ip:basic-tan-crossbody|cos-red-fine-stripe-tee": 0.36,
@@ -94539,14 +94700,18 @@
    "ip:boden-navy-military-jacket|navy-stripe-long-sleeve-top": 0.36,
    "ip:basic-white-straight-jeans|boden-navy-military-jacket": 0.36,
    "ip:boden-navy-military-jacket|uniqlo-cream-navy-stripe-crew-jumper": 0.36,
+   "ip:adidas-tan-woven-gazelle-indoor|boden-navy-military-jacket": 0.36,
    "ip:basic-white-straight-jeans|navy-stripe-long-sleeve-top": 0.36,
    "ip:navy-stripe-long-sleeve-top|uniqlo-cream-navy-stripe-crew-jumper": 0.36,
+   "ip:adidas-tan-woven-gazelle-indoor|navy-stripe-long-sleeve-top": 0.36,
    "ip:basic-white-sneakers|basic-white-straight-jeans": 0.36,
    "ip:basic-tan-crossbody|basic-white-straight-jeans": 0.36,
    "ip:basic-white-straight-jeans|uniqlo-cream-navy-stripe-crew-jumper": 0.36,
+   "ip:adidas-tan-woven-gazelle-indoor|basic-white-straight-jeans": 0.36,
    "ip:basic-white-sneakers|uniqlo-cream-navy-stripe-crew-jumper": 0.36,
    "ip:basic-tan-crossbody|uniqlo-cream-navy-stripe-crew-jumper": 0.36,
    "it:uniqlo-cream-navy-stripe-crew-jumper": 0.36,
+   "ip:adidas-tan-woven-gazelle-indoor|uniqlo-cream-navy-stripe-crew-jumper": 0.36,
    "it:white-linen-shell-tank": 0.36,
    "ip:basic-white-wide-linen-pants|white-linen-shell-tank": 0.36,
    "ip:basic-tan-flats|white-linen-shell-tank": 0.36,
@@ -94557,7 +94722,10 @@
    "ip:cream-denim-tie-belt-midi-skirt|red-silk-heeled-mules": 0.36,
    "ip:basic-blue-straight-jeans|dharma-bums-black-waistcoat": 0.36,
    "ip:basic-green-sneakers|dharma-bums-black-waistcoat": 0.36,
+   "ip:adidas-tan-woven-gazelle-indoor|dharma-bums-black-waistcoat": 0.36,
    "ip:basic-blue-straight-jeans|basic-green-sneakers": 0.36,
+   "ip:adidas-tan-woven-gazelle-indoor|basic-blue-straight-jeans": 0.65,
+   "ip:adidas-tan-woven-gazelle-indoor|basic-green-sneakers": 0.36,
    "ip:pale-blue-cutwork-puff-shirt|red-a-line-midi-skirt": 0.36,
    "ip:pale-blue-cutwork-puff-shirt|red-silk-heeled-mules": 0.36,
    "ip:mimco-raffia-clutch|pale-blue-cutwork-puff-shirt": 0.36,
@@ -94643,6 +94811,7 @@
    "ip:basic-blue-wide-jeans|cos-red-textured-crew-jumper": 0.65,
    "ip:basic-tan-crossbody|cos-red-textured-crew-jumper": 0.36,
    "ip:basic-white-sneakers|cos-red-textured-crew-jumper": 0.36,
+   "ip:adidas-tan-woven-gazelle-indoor|red-moss-stitch-jumper": 0.36,
    "ip:anko-black-tank-grey-trim|basic-denim-jacket": 0.36,
    "it:anko-black-tank-grey-trim": 0.36,
    "ip:anko-black-tank-grey-trim|basic-white-wide-jeans": 0.36,
@@ -94664,6 +94833,8 @@
    "ip:basic-blue-wide-jeans|black-leather-heeled-chelsea-boots": 0.36,
    "ip:basic-black-crossbody|black-leather-heeled-chelsea-boots": 0.65,
    "ip:basic-red-cardigan|chambray-shirt": 0.36,
+   "ip:adidas-tan-woven-gazelle-indoor|basic-red-cardigan": 0.36,
+   "ip:adidas-tan-woven-gazelle-indoor|chambray-shirt": 0.36,
    "ip:chambray-shirt|red-moss-stitch-jumper": 0.36,
    "ip:basic-black-wide-jeans|red-moss-stitch-jumper": 0.36,
    "ip:basic-black-wide-jeans|chambray-shirt": 0.36,
