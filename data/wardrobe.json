@@ -1669,20 +1669,20 @@
   },
   {
    "id": "denim-zip-jumpsuit",
-   "name": "Denim zip-front jumpsuit",
+   "name": "Denim zip-front flared jumpsuit",
    "category": "dresses",
    "colours": [
-    "dark denim"
+    "mid-blue denim"
    ],
    "pattern": "solid",
-   "fabric": "stretch denim, probably",
+   "fabric": "stretch denim",
    "seasons": [
     "Autumn",
     "Winter",
     "Spring"
    ],
-   "notes": "Short sleeves, collar, zip front, patch pockets, straight leg. Picture is a crop of the listing photo.",
-   "img": "img/denim-zip-jumpsuit.webp",
+   "notes": "Shirt collar, short sleeves, brass zip front, seamed bodice, patch pockets, flared legs. Your photo. (One entry covers your near-identical pairs.)",
+   "img": "img/denim-zip-front-flare-jumpsuit.webp",
    "overTop": true
   },
   {
@@ -3554,7 +3554,7 @@
     "Summer",
     "Autumn"
    ],
-   "notes": "Your photo.",
+   "notes": "Your photo. (One entry covers your near-identical pairs.)",
    "img": "img/white-wide-jeans.webp",
    "basic": true,
    "shape": "wide",
@@ -3721,21 +3721,21 @@
   },
   {
    "pattern": "solid",
-   "notes": "High waist, pressed crease, tapered ankle length. Picture is a crop of the listing photo.",
+   "notes": "High waist, belt loops, slant pockets, pressed crease, ankle length. Your photo. (One entry covers your near-identical pairs.)",
    "id": "uniqlo-black-tapered-trousers",
-   "name": "Uniqlo black tapered ankle trousers",
+   "name": "Black tailored straight trousers",
    "category": "trousers",
    "colours": [
     "black"
    ],
-   "fabric": "smart stretch",
+   "fabric": "suiting crepe",
    "seasons": [
     "Spring",
     "Summer",
     "Autumn",
     "Winter"
    ],
-   "img": "img/uniqlo-black-tapered-trousers.webp",
+   "img": "img/black-tailored-straight-trousers.webp",
    "shape": "crop",
    "_f": [
     "black"
@@ -3847,7 +3847,7 @@
     "Summer",
     "Autumn"
    ],
-   "notes": "Your photo.",
+   "notes": "Your photo. (One entry covers your near-identical pairs.)",
    "img": "img/white-slides.webp",
    "basic": true,
    "shape": "flat",
@@ -5003,7 +5003,7 @@
    "pattern": "solid",
    "fabric": "linen",
    "basic": true,
-   "notes": "Your photo.",
+   "notes": "Your photo. (One entry covers your near-identical pairs.)",
    "id": "basic-white-wide-linen-pants",
    "name": "White wide-leg linen drawstring pants",
    "category": "trousers",
@@ -5982,7 +5982,7 @@
     "Summer",
     "Autumn"
    ],
-   "notes": "Round neck, sleeveless, straight knee length. Your photo.",
+   "notes": "Round neck, sleeveless, straight knee length. Your photo. (One entry covers your near-identical pairs.)",
    "img": "img/uniqlo-black-sleeveless-shift-dress.webp"
   },
   {
@@ -7216,24 +7216,6 @@
    ]
   },
   {
-   "id": "black-tailored-straight-trousers",
-   "name": "Black tailored straight trousers",
-   "category": "trousers",
-   "colours": [
-    "black"
-   ],
-   "pattern": "solid",
-   "fabric": "suiting crepe",
-   "seasons": [
-    "Spring",
-    "Summer",
-    "Autumn",
-    "Winter"
-   ],
-   "notes": "High waist, belt loops, slant pockets, pressed crease, ankle length. Your photo.",
-   "img": "img/black-tailored-straight-trousers.webp"
-  },
-  {
    "id": "black-wide-linen-pants-stitched-hem",
    "name": "Black wide-leg linen pants with stitched hem",
    "category": "trousers",
@@ -7247,7 +7229,7 @@
     "Summer",
     "Autumn"
    ],
-   "notes": "Wide leg, cropped, elastic back waist, pockets, rows of stitching at the hem. Your photo.",
+   "notes": "Wide leg, cropped, elastic back waist, pockets, rows of stitching at the hem. Your photo. (One entry covers your near-identical pairs.)",
    "img": "img/black-wide-linen-pants-stitched-hem.webp"
   },
   {
@@ -7321,23 +7303,6 @@
    "img": "img/black-corduroy-straight-pants.webp"
   },
   {
-   "id": "black-wide-linen-pants-2",
-   "name": "Black wide-leg linen pants (second pair)",
-   "category": "trousers",
-   "colours": [
-    "black"
-   ],
-   "pattern": "solid",
-   "fabric": "linen",
-   "seasons": [
-    "Spring",
-    "Summer",
-    "Autumn"
-   ],
-   "notes": "Wide leg, cropped, elastic back waist, stitched hem band. Your photo.",
-   "img": "img/black-wide-linen-pants-2.webp"
-  },
-  {
    "id": "orange-wide-linen-pants",
    "name": "Orange wide-leg linen pants",
    "category": "trousers",
@@ -7353,23 +7318,6 @@
    ],
    "notes": "Wide leg, elastic back waist, side pockets, ankle length. Your photo.",
    "img": "img/orange-wide-linen-pants.webp"
-  },
-  {
-   "id": "white-wide-linen-pants-2",
-   "name": "White wide-leg linen pants (second pair)",
-   "category": "trousers",
-   "colours": [
-    "white"
-   ],
-   "pattern": "solid",
-   "fabric": "linen",
-   "seasons": [
-    "Spring",
-    "Summer",
-    "Autumn"
-   ],
-   "notes": "Wide leg, elastic back waist, pintuck front seams, pockets. Your photo.",
-   "img": "img/white-wide-linen-pants-2.webp"
   },
   {
    "id": "white-wide-cropped-jeans",
@@ -7407,23 +7355,6 @@
    "_f": [
     "cream"
    ]
-  },
-  {
-   "id": "white-high-rise-wide-jeans",
-   "name": "White high-rise wide-leg jeans",
-   "category": "trousers",
-   "colours": [
-    "white"
-   ],
-   "pattern": "solid",
-   "fabric": "denim",
-   "seasons": [
-    "Spring",
-    "Summer",
-    "Autumn"
-   ],
-   "notes": "High rise, belt loops, wide leg, ankle length. Your photo.",
-   "img": "img/white-high-rise-wide-jeans.webp"
   },
   {
    "id": "red-cream-gingham-wide-trousers",
@@ -7467,23 +7398,6 @@
    "_f": [
     "black"
    ]
-  },
-  {
-   "id": "denim-zip-front-flare-jumpsuit",
-   "name": "Denim zip-front flared jumpsuit",
-   "category": "dresses",
-   "colours": [
-    "mid-blue denim"
-   ],
-   "pattern": "solid",
-   "fabric": "stretch denim",
-   "seasons": [
-    "Autumn",
-    "Winter",
-    "Spring"
-   ],
-   "notes": "Shirt collar, short sleeves, brass zip front, seamed bodice, patch pockets, flared legs. Your photo.",
-   "img": "img/denim-zip-front-flare-jumpsuit.webp"
   },
   {
    "id": "dusty-rose-guipure-lace-midi-dress",
@@ -8002,24 +7916,6 @@
    "img": "img/black-silver-sequin-chevron-dress.webp"
   },
   {
-   "id": "uniqlo-black-sleeveless-a-line-midi-dress",
-   "name": "Uniqlo black sleeveless A-line midi dress",
-   "category": "dresses",
-   "colours": [
-    "black"
-   ],
-   "pattern": "solid",
-   "fabric": "ponte jersey",
-   "seasons": [
-    "Spring",
-    "Summer",
-    "Autumn",
-    "Winter"
-   ],
-   "notes": "Boat neck, sleeveless, princess seams, flared midi. Your photo.",
-   "img": "img/uniqlo-black-sleeveless-a-line-midi-dress.webp"
-  },
-  {
    "id": "uniqlo-white-sleeveless-a-line-midi-dress",
    "name": "Uniqlo white sleeveless A-line midi dress",
    "category": "dresses",
@@ -8507,7 +8403,7 @@
     "Winter",
     "Spring"
    ],
-   "notes": "Crew neck, dropped shoulders, stripes across body and sleeves with plain black yoke and hem band. Your photo.",
+   "notes": "Crew neck, dropped shoulders, stripes across body and sleeves with plain black yoke and hem band. Your photo. (One entry covers your near-identical pairs.)",
    "img": "img/black-cream-breton-stripe-jumper.webp",
    "_f": [
     "black",
@@ -8730,23 +8626,6 @@
    "img": "img/esprit-grey-cream-stripe-long-sleeve-top.webp"
   },
   {
-   "id": "black-cream-stripe-mock-neck-jumper",
-   "name": "Black and cream stripe mock-neck jumper",
-   "category": "knitwear",
-   "colours": [
-    "black",
-    "cream"
-   ],
-   "pattern": "wide Breton stripe",
-   "fabric": "soft knit",
-   "seasons": [
-    "Autumn",
-    "Winter"
-   ],
-   "notes": "High mock neck, dropped shoulders, cream-tipped ribbed cuffs. Your photo.",
-   "img": "img/black-cream-stripe-mock-neck-jumper.webp"
-  },
-  {
    "id": "uniqlo-cream-navy-stripe-crew-jumper",
    "name": "Uniqlo cream and navy stripe crew jumper",
    "category": "knitwear",
@@ -8876,28 +8755,6 @@
    ],
    "notes": "Wide crew neck, plain white yoke, dropped shoulders, split hem. Your photo.",
    "img": "img/white-navy-stripe-three-quarter-sleeve-knit.webp"
-  },
-  {
-   "id": "mix-cream-black-wide-stripe-crew-jumper",
-   "name": "Mix cream and black wide stripe crew jumper",
-   "category": "knitwear",
-   "colours": [
-    "cream",
-    "black"
-   ],
-   "pattern": "wide stripe",
-   "fabric": "fine knit",
-   "seasons": [
-    "Spring",
-    "Autumn",
-    "Winter"
-   ],
-   "notes": "Crew neck, slim fit, long sleeves. Your photo.",
-   "img": "img/mix-cream-black-wide-stripe-crew-jumper.webp",
-   "_f": [
-    "cream",
-    "black"
-   ]
   },
   {
    "id": "uniqlo-white-navy-stripe-crew-jumper",
@@ -9030,23 +8887,6 @@
    "img": "img/sportsgirl-grey-white-stripe-knit-jumper.webp"
   },
   {
-   "id": "sportsgirl-grey-fine-knit-longline-jumper",
-   "name": "Sportsgirl light grey fine-knit longline jumper",
-   "category": "knitwear",
-   "colours": [
-    "light grey marle"
-   ],
-   "pattern": "solid marle",
-   "fabric": "fine knit",
-   "seasons": [
-    "Spring",
-    "Autumn",
-    "Winter"
-   ],
-   "notes": "Wide crew neck, long curved split hem, longer at the back. Your photo.",
-   "img": "img/sportsgirl-grey-fine-knit-longline-jumper.webp"
-  },
-  {
    "id": "anko-grey-black-spot-jumper",
    "name": "Anko grey jumper with black spots",
    "category": "knitwear",
@@ -9078,7 +8918,7 @@
     "Autumn",
     "Winter"
    ],
-   "notes": "Rolled crew neck, raglan sleeves with pointelle seams, curved split hem. Your photo.",
+   "notes": "Rolled crew neck, raglan sleeves with pointelle seams, curved split hem. Your photo. (One entry covers your near-identical pairs.)",
    "img": "img/target-grey-marle-fine-knit-jumper.webp"
   },
   {
@@ -9840,24 +9680,6 @@
    "heel": "mid",
    "notes": "Square toe with brogue punching, stacked block heel. Your photo.",
    "img": "img/black-brogue-square-toe-pumps.webp"
-  },
-  {
-   "id": "miss-sofie-cream-leather-slides",
-   "name": "Cream leather slides",
-   "category": "shoes",
-   "colours": [
-    "cream"
-   ],
-   "pattern": "solid",
-   "fabric": "leather",
-   "seasons": [
-    "Spring",
-    "Summer",
-    "Autumn"
-   ],
-   "heel": "flat",
-   "notes": "Wide soft leather band, tan footbed. Your photo.",
-   "img": "img/miss-sofie-cream-leather-slides.webp"
   },
   {
    "id": "black-pointed-slingback-kitten-heels",
@@ -82957,7 +82779,7 @@
     "basic-black-flats",
     "basic-black-crossbody",
     "black-wool-pocket-mini-skirt",
-    "mix-cream-black-wide-stripe-crew-jumper",
+    "black-cream-breton-stripe-jumper",
     "black-pointed-mary-jane-stilettos"
    ],
    "missing": [
@@ -95183,8 +95005,8 @@
    "ip:basic-black-wide-jeans|black-cream-breton-stripe-jumper": 0.36,
    "ip:basic-black-crossbody|basic-black-wide-jeans": 1.13,
    "ip:basic-white-sneakers|black-cream-breton-stripe-jumper": 0.36,
-   "it:black-cream-breton-stripe-jumper": 1.13,
-   "ip:basic-black-crossbody|black-cream-breton-stripe-jumper": 0.91,
+   "it:black-cream-breton-stripe-jumper": 1.33,
+   "ip:basic-black-crossbody|black-cream-breton-stripe-jumper": 1.13,
    "it:basic-black-straight-jeans": 1.33,
    "ip:basic-black-crossbody|basic-black-straight-jeans": 0.65,
    "ip:basic-black-flats|basic-black-straight-jeans": 0.65,
@@ -95486,14 +95308,12 @@
    "ip:basic-black-flats|brick-red-leather-hobo": 0.36,
    "ip:black-wool-pocket-mini-skirt|brick-red-leather-hobo": 0.36,
    "ip:basic-white-linen-shirt|black-wool-pocket-mini-skirt": 0.36,
-   "ip:basic-white-linen-shirt|mix-cream-black-wide-stripe-crew-jumper": 0.36,
-   "ip:basic-black-flats|mix-cream-black-wide-stripe-crew-jumper": 0.36,
-   "ip:basic-black-crossbody|mix-cream-black-wide-stripe-crew-jumper": 0.36,
+   "ip:basic-white-linen-shirt|black-cream-breton-stripe-jumper": 0.36,
+   "ip:basic-black-flats|black-cream-breton-stripe-jumper": 0.36,
    "ip:basic-black-crossbody|black-pointed-mary-jane-stilettos": 0.36,
-   "ip:black-wool-pocket-mini-skirt|mix-cream-black-wide-stripe-crew-jumper": 0.36,
+   "ip:black-cream-breton-stripe-jumper|black-wool-pocket-mini-skirt": 0.36,
    "ip:black-pointed-mary-jane-stilettos|black-wool-pocket-mini-skirt": 0.36,
-   "it:mix-cream-black-wide-stripe-crew-jumper": 0.36,
-   "ip:black-pointed-mary-jane-stilettos|mix-cream-black-wide-stripe-crew-jumper": 0.36,
+   "ip:black-cream-breton-stripe-jumper|black-pointed-mary-jane-stilettos": 0.36,
    "it:dharma-bums-black-waistcoat": 1.52,
    "ip:basic-tan-crossbody|dharma-bums-black-waistcoat": 1.13,
    "ip:basic-white-wide-jeans|dharma-bums-black-waistcoat": 0.36,

@@ -89,7 +89,7 @@ const isJumper=p=>p.category==="knitwear"&&!isWarmLayer(p)&&!isVest(p)&&subOf(p,
 const layerOk=(ps,l)=>!(isCardi(l)&&ps.some(p=>p!==l&&isJumper(p)))&&(!shirtLayer(l)||ps.every(p=>p===l||!["tops","knitwear"].includes(p.category)||layerBase(p)));
 /* A collared shirt can sit under a crew or scoop-neck dress with the collar showing. */
 const collarShirt=it=>isShirt(it)&&(isOver(it)||/collar/i.test((it.notes||"")+it.name))&&!/band collar|band-collar|collarless|cropped|crop top|popover|open collar/i.test((it.notes||"")+it.name)&&!sleeveless(it);
-const collarDress=d=>d.category==="dresses"&&!d.overTop&&!/pinafore|maxi|halter|strapless|one-shoulder|wrap|shirt dress|v-neck|v neck|slip|playsuit|jumpsuit|sequin|tulle|turtleneck|appliqu|cut-out|mock|stand collar|lace|feather|cowl|off-shoulder|off-the-shoulder|guipure|funnel|boat neck|mesh/i.test(d.name+" "+(d.notes||""));
+const collarDress=d=>d.category==="dresses"&&(!!d.underShirts||!d.overTop&&!/1950s|pinafore|maxi|halter|strapless|one-shoulder|wrap|shirt dress|v-neck|v neck|slip|playsuit|jumpsuit|sequin|tulle|turtleneck|appliqu|cut-out|mock|stand collar|lace|feather|cowl|off-shoulder|off-the-shoulder|guipure|funnel|boat neck|mesh/i.test(d.name+" "+(d.notes||"")));
 const underOk=(d,t)=>!d.underShirts||(!pkind(t)&&d.underShirts.includes(families(t)[0]));
 const shortShirt=it=>isShirt(it)&&!pkind(it)&&/short sleeve|short-sleeve|short cuffed sleeve/i.test((it.notes||"")+" "+it.name);
 /* A crew-neck jumper or sweatshirt worn over a collared shirt, collar and cuffs showing. */

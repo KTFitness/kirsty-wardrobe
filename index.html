@@ -185,11 +185,11 @@ dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
 </nav>
 <dialog class="sheet" id="sheet"><div class="sheet-in" id="sheetBody"></div></dialog>
 
-<script src="style.js?v=202611082131"></script>
+<script src="style.js?v=202611082147"></script>
 <script>
 /* Home-screen apps hold on to old copies. On open, check version.txt; if a newer version is live, refresh the cached files and reload once. */
 if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{});});}
-const APPV="202611082131";
+const APPV="202611082147";
 fetch("version.txt",{cache:"no-store"}).then(r=>r.ok?r.text():"").then(v=>{v=v.trim();if(!v||v===APPV)return;
   let tried="";try{tried=sessionStorage.getItem("kw:upd")||"";}catch(e){}if(tried===v)return;try{sessionStorage.setItem("kw:upd",v);}catch(e){}
   Promise.all([fetch("index.html",{cache:"reload"}),fetch("./",{cache:"reload"})]).catch(()=>{}).then(()=>location.reload());}).catch(()=>{});
@@ -238,7 +238,7 @@ function applyGone(){for(const i of (D.all||[])){const f=catFix[i.id];if(f){if(!
 
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const $=s=>document.querySelector(s);
-const ALIAS={"basic-tan-sandals":"basic-tan-flats","basic-white-tank":"zara-white-sleeveless-knit","basic-black-tank":"zara-black-sleeveless-knit","basic-black-knee-boots-flat":"black-leather-double-buckle-knee-boots","basic-black-knee-boots-heel":"black-square-toe-heeled-knee-boots","basic-black-ankle-boots-flat":"black-leather-side-zip-ankle-boots","basic-black-ankle-boots-heel":"black-leather-heeled-chelsea-boots","basic-black-block-heel-ankle-boots":"black-leather-heeled-chelsea-boots","basic-black-slim-heel-ankle-boots":"black-leather-heeled-chelsea-boots"};
+const ALIAS={"miss-sofie-cream-leather-slides":"basic-white-flats","uniqlo-black-sleeveless-a-line-midi-dress":"uniqlo-black-sleeveless-shift-dress","denim-zip-front-flare-jumpsuit":"denim-zip-jumpsuit","sportsgirl-grey-fine-knit-longline-jumper":"target-grey-marle-fine-knit-jumper","black-cream-stripe-mock-neck-jumper":"black-cream-breton-stripe-jumper","mix-cream-black-wide-stripe-crew-jumper":"black-cream-breton-stripe-jumper","black-wide-linen-pants-2":"black-wide-linen-pants-stitched-hem","white-wide-linen-pants-2":"basic-white-wide-linen-pants","white-high-rise-wide-jeans":"basic-white-wide-jeans","black-tailored-straight-trousers":"uniqlo-black-tapered-trousers","basic-tan-sandals":"basic-tan-flats","basic-white-tank":"zara-white-sleeveless-knit","basic-black-tank":"zara-black-sleeveless-knit","basic-black-knee-boots-flat":"black-leather-double-buckle-knee-boots","basic-black-knee-boots-heel":"black-square-toe-heeled-knee-boots","basic-black-ankle-boots-flat":"black-leather-side-zip-ankle-boots","basic-black-ankle-boots-heel":"black-leather-heeled-chelsea-boots","basic-black-block-heel-ankle-boots":"black-leather-heeled-chelsea-boots","basic-black-slim-heel-ankle-boots":"black-leather-heeled-chelsea-boots"};
 const byId=id=>IDX.get(ALIAS[id]||id);
 const th=src=>/^img\/(?!basics\/).*\.webp$/.test(src||"")?"img/t/"+src.slice(4):src;
 const WX_CODES={0:"sunny",1:"mostly sunny",2:"partly cloudy",3:"cloudy",45:"foggy",48:"foggy",51:"drizzle",53:"drizzle",55:"drizzle",61:"light rain",63:"rain",65:"heavy rain",80:"showers",81:"showers",82:"heavy showers",95:"storms",96:"storms",99:"storms"};
