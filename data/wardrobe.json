@@ -2315,7 +2315,7 @@
   },
   {
    "id": "mimco-raffia-clutch",
-   "name": "Mimco raffia clutch",
+   "name": "Mimco raffia frame bag",
    "category": "bags",
    "colours": [
     "natural",
@@ -2327,7 +2327,7 @@
     "Spring",
     "Summer"
    ],
-   "notes": "Frame clutch",
+   "notes": "Frame bag with tan leather trim, gold chain and leather crossbody strap. Your photo.",
    "img": "img/mimco-raffia-clutch.webp",
    "_f": [
     "tan"
@@ -4045,21 +4045,21 @@
   },
   {
    "id": "basic-tan-crossbody",
-   "name": "Tan crossbody bag",
+   "name": "Tan leather flap crossbody with ring buckle",
    "category": "bags",
    "colours": [
     "tan"
    ],
    "pattern": "solid",
-   "fabric": "",
+   "fabric": "washed leather",
    "seasons": [
     "Spring",
     "Summer",
     "Autumn",
     "Winter"
    ],
-   "notes": "Basic you already own. Drawn picture.",
-   "img": "img/basics/basic-tan-crossbody.svg",
+   "notes": "Brass ring buckle on the flap, long adjustable strap. Your photo.",
+   "img": "img/tan-leather-ring-flap-crossbody.webp",
    "basic": true,
    "shape": "crossbody",
    "_f": [
@@ -10528,6 +10528,156 @@
    "_f": [
     "red"
    ]
+  },
+  {
+   "id": "black-perforated-neoprene-crossbody",
+   "name": "Black perforated neoprene crossbody",
+   "category": "bags",
+   "colours": [
+    "black"
+   ],
+   "pattern": "perforated",
+   "fabric": "neoprene",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Black and white rope strap. Your photo.",
+   "img": "img/black-perforated-neoprene-crossbody.webp"
+  },
+  {
+   "id": "black-leather-flap-crossbody",
+   "name": "Black pebbled leather flap crossbody",
+   "category": "bags",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "pebbled leather",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Webbing strap, side pocket. Your photo.",
+   "img": "img/black-leather-flap-crossbody.webp"
+  },
+  {
+   "id": "leaf-print-canvas-handbag",
+   "name": "Cream leaf-print canvas handbag",
+   "category": "bags",
+   "colours": [
+    "cream",
+    "green",
+    "teal",
+    "tan"
+   ],
+   "pattern": "leaf and flower print",
+   "fabric": "canvas with tan leather trim",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Short tan handles, silver rings. Your photo.",
+   "img": "img/leaf-print-canvas-handbag.webp"
+  },
+  {
+   "id": "black-nylon-travel-crossbody",
+   "name": "Black nylon travel crossbody",
+   "category": "bags",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "nylon",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Zip pockets, adjustable strap. Practical, travel. Your photo.",
+   "img": "img/black-nylon-travel-crossbody.webp"
+  },
+  {
+   "id": "rust-floral-canvas-saddle-bag",
+   "name": "Rust floral canvas saddle shoulder bag",
+   "category": "bags",
+   "colours": [
+    "rust",
+    "cream",
+    "teal",
+    "black"
+   ],
+   "pattern": "retro floral",
+   "fabric": "canvas with black leather straps",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Big flap, buckled straps. Your photo.",
+   "img": "img/rust-floral-canvas-saddle-bag.webp"
+  },
+  {
+   "id": "black-neoprene-camera-crossbody",
+   "name": "Black neoprene camera crossbody",
+   "category": "bags",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "neoprene",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Small zip-top, wide strap, silver clips. Your photo.",
+   "img": "img/black-neoprene-camera-crossbody.webp"
+  },
+  {
+   "id": "black-leather-sling-bag",
+   "name": "Black slouchy leather sling bag",
+   "category": "bags",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "soft leather",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Buckled strap. Your photo.",
+   "img": "img/black-leather-sling-bag.webp"
+  },
+  {
+   "id": "tan-leather-wristlet",
+   "name": "Tan leather zip wristlet",
+   "category": "bags",
+   "colours": [
+    "tan"
+   ],
+   "pattern": "solid",
+   "fabric": "leather",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Gold zip, wrist strap. Your photo.",
+   "img": "img/tan-leather-wristlet.webp"
   }
  ],
  "outfits": [
@@ -80634,7 +80784,7 @@
     "mimco-raffia-clutch"
    ],
    "missing": [
-    "Straw shoulder bag"
+    "Straw shoulder bag (your Mimco raffia frame bag is the stand-in)"
    ],
    "createdAt": 29
   },
@@ -80829,10 +80979,10 @@
     "red-cotton-shirt",
     "basic-blue-wide-jeans",
     "basic-red-sneakers",
-    "tan-painted-leather-saddle-crossbody"
+    "basic-tan-crossbody"
    ],
    "missing": [
-    "Brown suede shoulder bag (your tan painted leather saddle crossbody is the stand-in)"
+    "Brown suede shoulder bag (your tan leather flap crossbody is the stand-in)"
    ],
    "createdAt": 43
   },
@@ -80922,7 +81072,7 @@
    "missing": [
     "Multicoloured print shirt (your Saba jungle print linen shirt is the stand-in)",
     "Red flat sandals",
-    "Straw tote"
+    "Straw tote (your Mimco raffia frame bag is the stand-in)"
    ],
    "createdAt": 48
   },
@@ -82337,12 +82487,12 @@
    "itemIds": [
     "chambray-shirt",
     "basic-black-flats",
-    "mimco-raffia-clutch",
-    "white-linen-slip-midi-dress"
+    "white-linen-slip-midi-dress",
+    "mimco-raffia-clutch"
    ],
    "missing": [
     "Blue and white stripe shirt (your chambray shirt is the stand-in)",
-    "Straw basket bag"
+    "Straw basket bag (your Mimco raffia frame bag is the stand-in)"
    ],
    "createdAt": 134
   },
@@ -84166,7 +84316,7 @@
    ],
    "missing": [
     "Brown leather thong sandals (your tan slides are the stand-in)",
-    "Straw shoulder bag (your raffia clutch is the stand-in)",
+    "Straw shoulder bag (your Mimco raffia frame bag is the stand-in)",
     "Layered gold necklaces"
    ],
    "createdAt": 251
@@ -84393,7 +84543,7 @@
    ],
    "missing": [
     "Short beige trench (your Uniqlo brown knit jacket is the stand-in)",
-    "Brown slouchy shoulder bag",
+    "Brown slouchy shoulder bag (your tan leather flap crossbody is the stand-in)",
     "Burgundy cap"
    ],
    "createdAt": 0
@@ -84514,12 +84664,12 @@
     "basic-white-sneakers",
     "uniqlo-cream-navy-stripe-crew-jumper",
     "adidas-tan-woven-gazelle-indoor",
-    "tan-painted-leather-saddle-crossbody"
+    "basic-tan-crossbody"
    ],
    "missing": [
     "Navy double-breasted trench (your Boden navy military jacket is the stand-in)",
     "Chunky navy jumper with white stripes (your Uniqlo cream and navy stripe crew jumper is the stand-in)",
-    "Brown suede shoulder bag (your tan painted leather saddle crossbody is the stand-in)"
+    "Brown suede shoulder bag (your tan leather flap crossbody is the stand-in)"
    ],
    "createdAt": 0
   },
@@ -94425,7 +94575,7 @@
    "ip:basic-blue-straight-jeans-cropped|basic-tan-crossbody": 1.52,
    "it:basic-tan-flats": 5.84,
    "ip:basic-tan-crossbody|basic-tan-flats": 3.07,
-   "it:basic-tan-crossbody": 6.36,
+   "it:basic-tan-crossbody": 6.46,
    "pat:plain+plain+plain": 6.61,
    "so:Everyday|flats": 8.62,
    "it:cos-navy-stripe-tee-magenta-collar": 2.4,
@@ -94522,11 +94672,11 @@
    "cp:mint+white": 0.65,
    "ip:basic-tan-crossbody|green-wide-leg-cords": 0.36,
    "cp:mint+tan": 0.65,
-   "ip:basic-tan-crossbody|basic-white-sneakers": 3.17,
+   "ip:basic-tan-crossbody|basic-white-sneakers": 3.27,
    "ip:basic-blue-straight-jeans|cos-navy-stripe-tee-magenta-collar": 0.36,
    "ip:basic-red-ballet-flats|cos-navy-stripe-tee-magenta-collar": 0.36,
-   "cp:navy+red": 1.85,
-   "cp:red+white": 6.26,
+   "cp:navy+red": 1.69,
+   "cp:red+white": 6.21,
    "it:basic-blue-straight-jeans": 3.88,
    "ip:basic-blue-straight-jeans|basic-red-ballet-flats": 0.91,
    "it:basic-red-ballet-flats": 3.07,
@@ -94623,14 +94773,14 @@
    "cp:forest+red": 1.13,
    "cp:forest+sky": 0.91,
    "ip:basic-tan-crossbody|red-blue-stripe-knit-vest": 0.36,
-   "cp:red+tan": 4.69,
+   "cp:red+tan": 4.62,
    "cp:sky+tan": 2.52,
    "it:chambray-shirt": 3.17,
    "ip:basic-blue-wide-jeans|chambray-shirt": 0.91,
    "ip:basic-green-sneakers|chambray-shirt": 0.36,
    "ip:basic-tan-crossbody|chambray-shirt": 1.13,
    "ip:basic-blue-wide-jeans|basic-green-sneakers": 0.65,
-   "ip:basic-blue-wide-jeans|basic-tan-crossbody": 1.69,
+   "ip:basic-blue-wide-jeans|basic-tan-crossbody": 1.85,
    "ip:basic-green-sneakers|basic-tan-crossbody": 0.65,
    "cp:forest+tan": 2.52,
    "ip:basic-white-tee|marcs-pink-gingham-tank": 0.36,
@@ -94687,7 +94837,7 @@
    "ip:michael-kors-cobalt-satchel|uniqlo-blue-knit-tee": 0.36,
    "ip:basic-white-tee|red-blue-stripe-knit-vest": 0.36,
    "ip:boden-navy-military-jacket|red-blue-stripe-knit-vest": 0.36,
-   "cp:cream+red": 2.4,
+   "cp:cream+red": 2.27,
    "cp:navy+sky": 0.36,
    "cp:cream+sky": 1.13,
    "ip:basic-white-tee|boden-navy-military-jacket": 0.36,
@@ -94727,10 +94877,8 @@
    "it:red-cotton-shirt": 1.13,
    "ip:basic-blue-wide-jeans|red-cotton-shirt": 0.65,
    "ip:basic-red-sneakers|red-cotton-shirt": 0.36,
-   "ip:red-cotton-shirt|tan-painted-leather-saddle-crossbody": 0.36,
-   "ip:basic-blue-wide-jeans|tan-painted-leather-saddle-crossbody": 0.36,
-   "ip:basic-red-sneakers|tan-painted-leather-saddle-crossbody": 0.36,
-   "it:tan-painted-leather-saddle-crossbody": 0.65,
+   "ip:basic-tan-crossbody|red-cotton-shirt": 0.36,
+   "ip:basic-red-sneakers|basic-tan-crossbody": 0.36,
    "ip:gorman-check-skirt|zara-white-sleeveless-knit": 0.36,
    "ip:basic-white-flats|zara-white-sleeveless-knit": 0.65,
    "ip:basic-tan-crossbody|zara-white-sleeveless-knit": 1.52,
@@ -95071,7 +95219,7 @@
    "ip:navy-stripe-long-sleeve-top|taupe-leather-biker-jacket": 0.36,
    "ip:basic-black-wide-jeans|navy-stripe-long-sleeve-top": 0.36,
    "ip:basic-tan-kitten-heels|navy-stripe-long-sleeve-top": 0.36,
-   "ip:basic-tan-crossbody|navy-stripe-long-sleeve-top": 0.65,
+   "ip:basic-tan-crossbody|navy-stripe-long-sleeve-top": 0.91,
    "ip:basic-blue-wide-jeans|basic-white-tee": 1.33,
    "ip:basic-blue-wide-jeans|uniqlo-brown-knit-jacket": 1.33,
    "ip:basic-blue-wide-jeans|taupe-leather-biker-jacket": 0.65,
@@ -95116,7 +95264,7 @@
    "ip:basic-white-sneakers|basic-white-wide-jeans": 0.91,
    "ip:adidas-tan-woven-gazelle-indoor|basic-white-wide-jeans": 0.36,
    "ip:adidas-tan-woven-gazelle-indoor|basic-white-sneakers": 0.91,
-   "ip:adidas-tan-woven-gazelle-indoor|basic-tan-crossbody": 0.91,
+   "ip:adidas-tan-woven-gazelle-indoor|basic-tan-crossbody": 1.13,
    "it:adidas-tan-woven-gazelle-indoor": 1.52,
    "ip:basic-black-flats|cos-navy-stripe-tee-magenta-collar": 0.36,
    "ip:basic-black-flats|basic-tan-crossbody": 0.65,
@@ -95222,11 +95370,11 @@
    "ip:basic-white-sneakers|basic-white-wide-linen-pants": 0.65,
    "ip:basic-white-wide-linen-pants|brick-red-leather-hobo": 0.36,
    "ip:basic-white-sneakers|brick-red-leather-hobo": 0.65,
-   "ip:chambray-shirt|mimco-raffia-clutch": 0.36,
    "ip:chambray-shirt|white-linen-slip-midi-dress": 0.36,
+   "ip:chambray-shirt|mimco-raffia-clutch": 0.36,
    "ip:basic-black-flats|white-linen-slip-midi-dress": 0.36,
-   "ip:mimco-raffia-clutch|white-linen-slip-midi-dress": 0.36,
    "it:white-linen-slip-midi-dress": 0.91,
+   "ip:mimco-raffia-clutch|white-linen-slip-midi-dress": 0.36,
    "ip:basic-white-sneakers|gorman-green-cord-jacket": 0.65,
    "ip:basic-black-crossbody|red-a-line-midi-skirt": 0.36,
    "ip:basic-black-flats|red-a-line-midi-skirt": 0.65,
@@ -95536,7 +95684,7 @@
    "ip:boden-navy-military-jacket|zara-white-sleeveless-knit": 0.36,
    "ip:basic-blue-straight-jeans-cropped|boden-navy-military-jacket": 0.36,
    "ip:basic-tan-kitten-heels|boden-navy-military-jacket": 0.36,
-   "ip:basic-tan-crossbody|boden-navy-military-jacket": 0.36,
+   "ip:basic-tan-crossbody|boden-navy-military-jacket": 0.65,
    "ip:basic-blue-straight-jeans-cropped|zara-white-sleeveless-knit": 0.65,
    "ip:basic-tan-kitten-heels|zara-white-sleeveless-knit": 0.65,
    "ip:pink-cord-chore-jacket|zara-white-sleeveless-knit": 0.36,
@@ -95687,21 +95835,17 @@
    "ip:basic-white-straight-jeans|boden-navy-military-jacket": 0.36,
    "ip:boden-navy-military-jacket|uniqlo-cream-navy-stripe-crew-jumper": 0.36,
    "ip:adidas-tan-woven-gazelle-indoor|boden-navy-military-jacket": 0.36,
-   "ip:boden-navy-military-jacket|tan-painted-leather-saddle-crossbody": 0.36,
    "ip:basic-white-straight-jeans|navy-stripe-long-sleeve-top": 0.36,
    "ip:navy-stripe-long-sleeve-top|uniqlo-cream-navy-stripe-crew-jumper": 0.36,
    "ip:adidas-tan-woven-gazelle-indoor|navy-stripe-long-sleeve-top": 0.36,
-   "ip:navy-stripe-long-sleeve-top|tan-painted-leather-saddle-crossbody": 0.36,
    "ip:basic-white-sneakers|basic-white-straight-jeans": 0.36,
    "ip:basic-white-straight-jeans|uniqlo-cream-navy-stripe-crew-jumper": 0.36,
    "ip:adidas-tan-woven-gazelle-indoor|basic-white-straight-jeans": 0.36,
-   "ip:basic-white-straight-jeans|tan-painted-leather-saddle-crossbody": 0.36,
+   "ip:basic-tan-crossbody|basic-white-straight-jeans": 0.36,
    "ip:basic-white-sneakers|uniqlo-cream-navy-stripe-crew-jumper": 0.36,
-   "ip:basic-white-sneakers|tan-painted-leather-saddle-crossbody": 0.36,
    "it:uniqlo-cream-navy-stripe-crew-jumper": 0.36,
    "ip:adidas-tan-woven-gazelle-indoor|uniqlo-cream-navy-stripe-crew-jumper": 0.36,
-   "ip:tan-painted-leather-saddle-crossbody|uniqlo-cream-navy-stripe-crew-jumper": 0.36,
-   "ip:adidas-tan-woven-gazelle-indoor|tan-painted-leather-saddle-crossbody": 0.36,
+   "ip:basic-tan-crossbody|uniqlo-cream-navy-stripe-crew-jumper": 0.36,
    "it:white-linen-shell-tank": 0.36,
    "ip:basic-white-wide-linen-pants|white-linen-shell-tank": 0.36,
    "ip:basic-tan-flats|white-linen-shell-tank": 0.36,
