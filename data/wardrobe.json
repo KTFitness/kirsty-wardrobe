@@ -9246,6 +9246,43 @@
    "_f": [
     "forest"
    ]
+  },
+  {
+   "id": "black-leather-double-buckle-ankle-boots",
+   "name": "Black leather double-buckle biker ankle boots",
+   "category": "shoes",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "leather",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Mid-calf biker style, two buckle straps, pull tab, low stacked heel, round toe. Your photo.",
+   "img": "img/black-leather-double-buckle-ankle-boots.webp"
+  },
+  {
+   "id": "tan-leather-square-toe-heeled-ankle-boots",
+   "name": "Tan leather square-toe heeled ankle boots",
+   "category": "shoes",
+   "colours": [
+    "tan"
+   ],
+   "pattern": "solid",
+   "fabric": "soft leather",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Square toe with centre seam, inside zip, dark stacked block heel about 7 cm. Your photo.",
+   "img": "img/tan-leather-square-toe-heeled-ankle-boots.webp",
+   "_f": [
+    "tan"
+   ]
   }
  ],
  "outfits": [
@@ -81222,11 +81259,11 @@
     "white-linen-batwing-shirt",
     "basic-blue-wide-jeans",
     "basic-tan-belt",
-    "basic-tan-kitten-heels"
+    "basic-tan-kitten-heels",
+    "tan-leather-square-toe-heeled-ankle-boots"
    ],
    "missing": [
-    "Ivory jersey shirt (your white linen shirt is the stand-in)",
-    "Tan heeled ankle boots"
+    "Ivory jersey shirt (your white linen shirt is the stand-in)"
    ],
    "createdAt": 144
   },
@@ -83995,10 +84032,10 @@
     "basic-white-tee",
     "basic-blue-wide-jeans",
     "basic-tan-belt",
-    "basic-tan-crossbody"
+    "basic-tan-crossbody",
+    "tan-leather-square-toe-heeled-ankle-boots"
    ],
    "missing": [
-    "Tan stiletto ankle boots",
     "Tan structured top-handle bag"
    ],
    "occasions": [
@@ -93109,7 +93146,7 @@
    "ip:basic-black-crossbody|black-wool-collared-coat": 0.36,
    "it:black-wool-collared-coat": 0.36,
    "pat:plain+plain+plain+plain": 2.64,
-   "so:Everyday|heeled boots": 4.89,
+   "so:Everyday|heeled boots": 4.95,
    "it:basic-black-turtleneck": 1.13,
    "ip:basic-black-turtleneck|basic-blue-straight-jeans-cropped": 0.36,
    "cp:black+denim": 4.89,
@@ -93934,6 +93971,11 @@
    "ip:basic-blue-wide-jeans|white-linen-batwing-shirt": 0.36,
    "ip:basic-tan-belt|white-linen-batwing-shirt": 0.36,
    "ip:basic-tan-kitten-heels|white-linen-batwing-shirt": 0.36,
+   "ip:tan-leather-square-toe-heeled-ankle-boots|white-linen-batwing-shirt": 0.36,
+   "ip:basic-blue-wide-jeans|tan-leather-square-toe-heeled-ankle-boots": 0.65,
+   "ip:basic-tan-belt|tan-leather-square-toe-heeled-ankle-boots": 0.65,
+   "ip:basic-tan-kitten-heels|tan-leather-square-toe-heeled-ankle-boots": 0.36,
+   "it:tan-leather-square-toe-heeled-ankle-boots": 0.65,
    "ip:basic-denim-shorts|red-cotton-shirt": 0.36,
    "it:basic-denim-shorts": 1.33,
    "ip:basic-denim-shorts|basic-tan-flats": 0.36,
@@ -94479,6 +94521,8 @@
    "ip:basic-black-belt|cos-navy-stripe-tee-magenta-collar": 0.36,
    "ip:basic-black-crossbody|cos-navy-stripe-tee-magenta-collar": 0.36,
    "ip:basic-black-belt|basic-blue-wide-jeans": 0.65,
+   "ip:basic-white-tee|tan-leather-square-toe-heeled-ankle-boots": 0.36,
+   "ip:basic-tan-crossbody|tan-leather-square-toe-heeled-ankle-boots": 0.36,
    "ip:basic-blue-straight-jeans|basic-tan-belt": 0.36,
    "ip:basic-white-linen-shirt|guns-n-roses-band-tee": 0.36,
    "ip:basic-black-wide-linen-pants|guns-n-roses-band-tee": 0.36,
