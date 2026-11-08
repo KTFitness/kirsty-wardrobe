@@ -9262,7 +9262,8 @@
     "Spring"
    ],
    "notes": "Mid-calf biker style, two buckle straps, pull tab, low stacked heel, round toe. Your photo.",
-   "img": "img/black-leather-double-buckle-ankle-boots.webp"
+   "img": "img/black-leather-double-buckle-ankle-boots.webp",
+   "bootH": "calf"
   },
   {
    "id": "tan-leather-square-toe-heeled-ankle-boots",
@@ -9282,7 +9283,301 @@
    "img": "img/tan-leather-square-toe-heeled-ankle-boots.webp",
    "_f": [
     "tan"
-   ]
+   ],
+   "bootH": "ankle",
+   "heel": "mid"
+  },
+  {
+   "id": "black-leather-side-zip-ankle-boots",
+   "name": "Black leather side-zip ankle boots",
+   "category": "shoes",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "leather",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "bootH": "ankle",
+   "heel": "low",
+   "notes": "Round toe, outside zip, pull tab, low stacked block heel. Your photo.",
+   "img": "img/black-leather-side-zip-ankle-boots.webp"
+  },
+  {
+   "id": "black-leather-heeled-chelsea-boots",
+   "name": "Black leather heeled Chelsea boots",
+   "category": "shoes",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "leather",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "bootH": "ankle",
+   "heel": "mid",
+   "notes": "Almond toe, elastic side gussets, Cuban block heel. Your photo.",
+   "img": "img/black-leather-heeled-chelsea-boots.webp"
+  },
+  {
+   "id": "black-leather-double-buckle-knee-boots",
+   "name": "Black leather knee boots with double buckle",
+   "category": "shoes",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "leather",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "bootH": "knee",
+   "heel": "low",
+   "notes": "Round toe, side zip, two buckle straps at the top of the shaft, low block heel. Your photo.",
+   "img": "img/black-leather-double-buckle-knee-boots.webp"
+  },
+  {
+   "id": "black-distressed-mid-calf-biker-boots",
+   "name": "Black distressed leather mid-calf biker boots",
+   "category": "shoes",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "leather",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "bootH": "calf",
+   "heel": "low",
+   "notes": "Round toe, worn-in leather, buckle strap at the top and the ankle, low stacked heel. Your photo.",
+   "img": "img/black-distressed-mid-calf-biker-boots.webp"
+  },
+  {
+   "id": "taupe-leather-zip-ankle-boots",
+   "name": "Taupe leather zip ankle boots",
+   "category": "shoes",
+   "colours": [
+    "taupe"
+   ],
+   "pattern": "solid",
+   "fabric": "leather",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "bootH": "ankle",
+   "heel": "low",
+   "notes": "Almond toe, outside zip with leather pull, pull tab, low stacked heel. Your photo.",
+   "img": "img/taupe-leather-zip-ankle-boots.webp"
+  },
+  {
+   "id": "blush-leather-zip-ankle-boots",
+   "name": "Blush pink leather zip ankle boots",
+   "category": "shoes",
+   "colours": [
+    "blush pink"
+   ],
+   "pattern": "solid",
+   "fabric": "leather",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "bootH": "ankle",
+   "heel": "low",
+   "notes": "Round toe, gold outside zip, pull tab, low stacked wood heel. Your photo.",
+   "img": "img/blush-leather-zip-ankle-boots.webp"
+  },
+  {
+   "id": "black-leather-buckle-riding-boots",
+   "name": "Black leather riding boots with buckles",
+   "category": "shoes",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "leather",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "bootH": "knee",
+   "heel": "low",
+   "notes": "Round toe, inside zip, buckle strap at the top of the shaft and at the ankle, low block heel. Your photo.",
+   "img": "img/black-leather-buckle-riding-boots.webp"
+  },
+  {
+   "id": "brown-square-toe-heeled-knee-boots",
+   "name": "Brown leather square-toe heeled knee boots",
+   "category": "shoes",
+   "colours": [
+    "chocolate brown"
+   ],
+   "pattern": "solid",
+   "fabric": "leather",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "bootH": "knee",
+   "heel": "mid",
+   "notes": "Square toe, inside zip, seamed shaft, block heel. Your photo.",
+   "img": "img/brown-square-toe-heeled-knee-boots.webp"
+  },
+  {
+   "id": "black-pointed-stiletto-knee-boots",
+   "name": "Black leather pointed stiletto knee boots",
+   "category": "shoes",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "leather",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "bootH": "knee",
+   "heel": "high",
+   "notes": "Pointed toe, inside zip, stretch back panel, slim stiletto heel. Dressy. Your photo.",
+   "img": "img/black-pointed-stiletto-knee-boots.webp"
+  },
+  {
+   "id": "red-leather-knee-boots",
+   "name": "Red leather knee boots",
+   "category": "shoes",
+   "colours": [
+    "red"
+   ],
+   "pattern": "solid",
+   "fabric": "leather",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "bootH": "knee",
+   "heel": "low",
+   "notes": "Round toe, pull-on with tabs, contrast stitching, stacked heel. Worn-in finish. Your photo.",
+   "img": "img/red-leather-knee-boots.webp"
+  },
+  {
+   "id": "black-pointed-heeled-mid-calf-boots",
+   "name": "Black leather pointed heeled mid-calf boots",
+   "category": "shoes",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "leather",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "bootH": "calf",
+   "heel": "high",
+   "notes": "Pointed toe, inside zip, slim heel. Dressy. Your photo.",
+   "img": "img/black-pointed-heeled-mid-calf-boots.webp"
+  },
+  {
+   "id": "tan-ostrich-leather-knee-boots",
+   "name": "Tan ostrich-print leather knee boots",
+   "category": "shoes",
+   "colours": [
+    "tan"
+   ],
+   "pattern": "solid",
+   "fabric": "leather",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "bootH": "knee",
+   "heel": "mid",
+   "notes": "Square toe, ostrich quill texture, block heel. Your photo.",
+   "img": "img/tan-ostrich-leather-knee-boots.webp"
+  },
+  {
+   "id": "black-leather-block-heel-riding-boots",
+   "name": "Black leather block-heel riding boots",
+   "category": "shoes",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "leather",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "bootH": "knee",
+   "heel": "mid",
+   "notes": "Round toe, inside zip, seamed cuff band, chunky block heel. Your photo.",
+   "img": "img/black-leather-block-heel-riding-boots.webp"
+  },
+  {
+   "id": "black-square-toe-heeled-knee-boots",
+   "name": "Black leather square-toe heeled knee boots",
+   "category": "shoes",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "leather",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "bootH": "knee",
+   "heel": "mid",
+   "notes": "Square toe, inside zip, block heel. Your photo.",
+   "img": "img/black-square-toe-heeled-knee-boots.webp"
+  },
+  {
+   "id": "brown-pointed-buckle-heeled-knee-boots",
+   "name": "Brown leather pointed heeled knee boots with buckle",
+   "category": "shoes",
+   "colours": [
+    "cognac brown"
+   ],
+   "pattern": "solid",
+   "fabric": "leather",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "bootH": "knee",
+   "heel": "high",
+   "notes": "Pointed toe, buckle strap at the ankle, slim heel, back zip. Your photo.",
+   "img": "img/brown-pointed-buckle-heeled-knee-boots.webp"
+  },
+  {
+   "id": "jane-debster-brown-riding-boots",
+   "name": "Jane Debster brown leather riding boots",
+   "category": "shoes",
+   "colours": [
+    "cognac brown"
+   ],
+   "pattern": "solid",
+   "fabric": "leather",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "bootH": "knee",
+   "heel": "low",
+   "notes": "Round toe, inside zip, curved panel seams, pull tab, low heel. Your photo.",
+   "img": "img/jane-debster-brown-riding-boots.webp"
   }
  ],
  "outfits": [

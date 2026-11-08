@@ -442,7 +442,8 @@ const FACETS={
    if(/long sleeve|long-sleeve|long sleeves|three-quarter|3\/4|turtleneck|funnel/.test(t))return "long";if(/sleeveless|tank|halter|strap|one-shoulder|pinafore|cami/.test(t))return "sleeveless";return "short";}],
   ["length","Length",[["short","Knee or above"],["midi","Midi"],["maxi","Maxi"]],i=>{if(i.length)return i.length;const t=txt(i);if(/maxi/.test(t))return "maxi";if(/midi/.test(t))return "midi";return "short";}]],
  shoes:[["heel","Heel",[["flat","Flat"],["low","Low & kitten"],["mid","Mid & block"],["high","High"]],i=>{if(i.heel)return i.heel;const t=txt(i);
-   if(/kitten|low-heel|low heel|low stacked/.test(t))return "low";if(/block|square-toe heeled|mid block/.test(t))return "mid";if(/heel|stiletto|slim-heel|pointed heeled/.test(t)&&!/flat/.test(i.name.toLowerCase()))return "high";return "flat";}]]};
+   if(/kitten|low-heel|low heel|low stacked/.test(t))return "low";if(/block|square-toe heeled|mid block/.test(t))return "mid";if(/heel|stiletto|slim-heel|pointed heeled/.test(t)&&!/flat/.test(i.name.toLowerCase()))return "high";return "flat";}],
+  ["bootH","Boot height",[["ankle","Ankle"],["calf","Calf"],["knee","Knee"]],i=>{if(i.bootH)return i.bootH;const t=txt(i);if(!/boot/.test(t))return null;if(/knee/.test(t))return "knee";if(/calf/.test(t))return "calf";return "ankle";}]]};
 
 window.Stylist={layerOk,layerTip,FACETS,subOf,SUBS,busyClash,addLayer,finish,coreKey:ps=>ps.filter(p=>!["shoes","bags","accessories"].includes(p.category)).map(p=>p.id).sort().join(","),suggest,features,families,pkind,formality,hemTip,hairTip};
 })();
