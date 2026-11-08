@@ -10,7 +10,7 @@ const FAM_WORDS=[
  ["pink",["pink","magenta","rose","fuchsia"]],["red",["red","tomato","cherry"]],
  ["orange",["orange","tangerine","rust","cinnamon","burnt"]],["yellow",["yellow","butter","lemon","mustard","ochre"]],
  ["green",["green","emerald","kelly","apple","jade"]],["brown",["brown","chocolate"]],
- ["tan",["tan","camel","oatmeal","natural","beige","stone"]],["cream",["cream","ecru","ivory","off-white"]],
+ ["tan",["tan","camel","oatmeal","natural","beige","stone","taupe"]],["cream",["cream","ecru","ivory","off-white"]],
  ["white",["white"]],["black",["black"]],["grey",["grey","gray","charcoal"]],["denim",["denim"]],["multi",["multicolour","multi"]]
 ];
 function fam(c){c=String(c).toLowerCase();
@@ -123,12 +123,14 @@ function pairOk(ps){for(const it of ps){const r=it.pairRule&&PAIR_RULES[it.pairR
 
 /* Dress code: a dressy outfit (lace, feathers, a fitted black dress, or a dinner or special-occasion ask) gets heels, loafers or boots and a smart bag or layer, not sneakers and a denim jacket. */
 const DRESSY_OCC=/dinner|special|smart/i;
+const EVE_RX=/sequin|satin|silk|velvet|lace|feather|guipure|metallic|beaded|chiffon|\bslip\b|cowl|off-shoulder|strapless|bandeau|tulle|taffeta|organza|dressy/;
 function dressCode(ps,ctx){const cl=ps.filter(p=>!["shoes","bags","accessories"].includes(p.category));if(!cl.length)return 0;
-  const fm=Math.max(...cl.map(formality)),occ=DRESSY_OCC.test((ctx&&ctx.occ)||"");if(fm<2.9&&!occ)return 0;
+  const fm=Math.max(...cl.map(formality)),occ=DRESSY_OCC.test((ctx&&ctx.occ)||"");const eve=occ||cl.some(p=>EVE_RX.test(lc(p))||(p.category==="dresses"&&/maxi/.test(lc(p))));
+  const eb=ps.some(p=>p.category==="bags"&&p.evening);if(eb&&!eve)return -9;if(fm<2.9&&!occ)return 0;
   const lvl=occ&&/special/i.test(ctx.occ)?1.5:1;let s=0;
   for(const p of ps){const t=lc(p);
     if(p.category==="shoes"){if(/sneaker|samba|gazelle|adidas|doc|slide|thong/.test(t))s-=8*lvl;else if(/heel|mule|kitten/.test(t))s+=4*lvl;else if(/loafer|boot|ballet|flat/.test(t))s+=1.5;}
-    else if(p.category==="bags"){if(/clutch/.test(t))s+=3*lvl;else if(/black/.test(t))s+=1;}
+    else if(p.category==="bags"){if(p.evening)s+=(eve?4:0)*lvl;else if(/clutch/.test(t))s+=3*lvl;else if(/canvas|wristlet|pouch|crossbody/.test(t))s-=2*lvl;else if(/black/.test(t))s+=1;}
     else if(isWarmLayer(p)){if(/denim|track|quilted|padded|field|scout|uniform|chore|cord/.test(t))s-=6*lvl;else if(/blazer|leather|coat|fine/.test(t))s+=2;}}
   return s;}
 function score(pieces,ctx){
@@ -330,7 +332,7 @@ function suggest(anchor,items,ctx){
     if(!ctx.noAccessories&&!pieces.some(p=>p.category==="shoes")&&shoes.length){
       const sh=shoes.map(x=>[x,SC(pieces.concat(x),ctx).s+(rnd()*E)*1.0]).sort((a,b)=>b[1]-a[1]);if(sh[0])pieces.push(sh[0][0]);alts=sh.slice(1,3).map(x=>x[0]);}
     if(!ctx.noAccessories&&bags.length&&!pieces.some(p=>p.category==="bags")){
-      const bg=bags.map(x=>[x,SC(pieces.concat(x),ctx).s]).sort((a,b)=>b[1]-a[1])[0];if(bg&&bg[1]>-1)pieces.push(bg[0]);}
+      const bg=bags.map(x=>[x,SC(pieces.concat(x),ctx).s+(rnd()*E)*1.0]).sort((a,b)=>b[1]-a[1])[0];if(bg&&bg[1]>-1)pieces.push(bg[0]);}
     const sc=SC(pieces,ctx);
     results.push({pieces,alts,s:sc.s+(rnd()*E)*0.6,best:sc.best,patNote:sc.patNote});
   }
@@ -413,7 +415,7 @@ const SUBS={
  dresses:[["tee","T-shirt & tank dresses"],["shift","Shift & swing dresses"],["shirt","Shirt & button dresses"],["pinafore","Pinafores"],["dressy","Dressy"],["maxi","Maxi"]],
  playsuits:[["playsuit","Playsuits"],["jumpsuit","Jumpsuits"]],
  shoes:[["sneakers","Sneakers"],["flats","Flats & loafers"],["sandals","Sandals & slides"],["heels","Heels"],["boots","Boots"]],
- bags:[["crossbody","Crossbody"],["clutch","Clutches"],["tote","Totes & shoulder bags"]],accessories:[["belts","Belts"],["other","Other"]]};
+ bags:[["crossbody","Crossbody"],["clutch","Clutches & evening"],["purse","Purses, wristlets & pouches"],["tote","Totes, hobos & handbags"]],accessories:[["belts","Belts"],["other","Other"]]};
 function subOf(i,dc){if(i.sub)return i.sub;const n=(i.name+" "+(i.notes||"")+" "+(i.shape||"")).toLowerCase(),nm=i.name.toLowerCase();
  const sl=/sleeveless|tank|singlet|cami\b|halter|strappy|shell|racer|crop top|bandeau|tube/.test(n)&&!/long sleeve|long-sleeve|short sleeve/.test(nm);
  const ls=/long-sleeve|long sleeve|long sleeves|turtleneck|funnel|mock-neck long|balloon|blouson|three-quarter|3\/4|batwing|cuffed sleeves|roll-tab/.test(n);
@@ -429,7 +431,7 @@ function subOf(i,dc){if(i.sub)return i.sub;const n=(i.name+" "+(i.notes||"")+" "
  case "playsuits":return /jumpsuit/.test(nm)?"jumpsuit":"playsuit";
  case "shoes":{if(/sneaker|samba|gazelle|adidas/.test(n))return "sneakers";if(/boot|doc/.test(nm))return "boots";if(/heel|mule/.test(nm)&&!/flat/.test(nm))return "heels";if(/slide|sandal|thong/.test(nm))return "sandals";return "flats";}
  case "accessories":return /belt/.test(nm)?"belts":"other";
- case "bags":return /clutch/.test(nm)?"clutch":/tote|shoulder|bucket/.test(nm)?"tote":"crossbody";
+ case "bags":return /clutch|minaudi|evening/.test(nm)?"clutch":/wristlet|pouch|purse/.test(nm)?"purse":/tote|shoulder|bucket|hobo|satchel|birkin|handbag/.test(nm)?"tote":"crossbody";
  default:return SUBS[dc]?SUBS[dc][0][0]:"other";}}
 
 /* Second ways to filter some categories (fabric, sleeve, length, heel). Each returns a key for a piece; an item's own field overrides. */
