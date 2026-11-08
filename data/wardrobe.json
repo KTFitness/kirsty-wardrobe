@@ -3878,133 +3878,6 @@
    ]
   },
   {
-   "id": "basic-black-knee-boots-flat",
-   "name": "Black flat knee-high boots",
-   "category": "shoes",
-   "colours": [
-    "black"
-   ],
-   "pattern": "solid",
-   "fabric": "",
-   "seasons": [
-    "Autumn",
-    "Winter"
-   ],
-   "notes": "Your photo.",
-   "img": "img/black-flat-knee-boots.webp",
-   "basic": true,
-   "shape": "kneeflat",
-   "_f": [
-    "black"
-   ]
-  },
-  {
-   "id": "basic-black-knee-boots-heel",
-   "name": "Black kitten-heel knee-high boots",
-   "category": "shoes",
-   "colours": [
-    "black"
-   ],
-   "pattern": "solid",
-   "fabric": "",
-   "seasons": [
-    "Autumn",
-    "Winter"
-   ],
-   "notes": "Square toe, slim kitten heel. Your photo.",
-   "img": "img/black-heeled-knee-boots.webp",
-   "basic": true,
-   "shape": "kneeheel",
-   "_f": [
-    "black"
-   ]
-  },
-  {
-   "id": "basic-black-ankle-boots-flat",
-   "name": "Black low-heel square-toe ankle boots",
-   "category": "shoes",
-   "colours": [
-    "black"
-   ],
-   "pattern": "solid",
-   "fabric": "",
-   "seasons": [
-    "Autumn",
-    "Winter",
-    "Spring"
-   ],
-   "notes": "Your photo.",
-   "img": "img/black-square-toe-ankle-boots.webp",
-   "basic": true,
-   "shape": "ankle",
-   "_f": [
-    "black"
-   ]
-  },
-  {
-   "id": "basic-black-ankle-boots-heel",
-   "name": "Black pointed heeled ankle boots",
-   "category": "shoes",
-   "colours": [
-    "black"
-   ],
-   "pattern": "solid",
-   "fabric": "",
-   "seasons": [
-    "Autumn",
-    "Winter",
-    "Spring"
-   ],
-   "notes": "Your photo.",
-   "img": "img/black-pointed-heel-ankle-boots.webp",
-   "basic": true,
-   "shape": "ankleheel",
-   "_f": [
-    "black"
-   ]
-  },
-  {
-   "pattern": "solid",
-   "fabric": "",
-   "basic": true,
-   "notes": "Your photo.",
-   "id": "basic-black-block-heel-ankle-boots",
-   "name": "Black block-heel ankle boots",
-   "category": "shoes",
-   "colours": [
-    "black"
-   ],
-   "seasons": [
-    "Autumn",
-    "Winter",
-    "Spring"
-   ],
-   "img": "img/black-block-heel-ankle-boots.webp",
-   "shape": "ankleheel",
-   "_f": [
-    "black"
-   ]
-  },
-  {
-   "pattern": "solid",
-   "fabric": "",
-   "basic": true,
-   "notes": "Your photo.",
-   "id": "basic-black-slim-heel-ankle-boots",
-   "name": "Black slim-heel ankle boots",
-   "category": "shoes",
-   "colours": [
-    "black"
-   ],
-   "seasons": [
-    "Autumn",
-    "Winter",
-    "Spring"
-   ],
-   "img": "img/black-slim-heel-ankle-boots.webp",
-   "shape": "ankleheel"
-  },
-  {
    "id": "basic-white-sneakers",
    "name": "White leather sneakers",
    "category": "shoes",
@@ -9304,7 +9177,10 @@
    "bootH": "ankle",
    "heel": "low",
    "notes": "Round toe, outside zip, pull tab, low stacked block heel. Your photo.",
-   "img": "img/black-leather-side-zip-ankle-boots.webp"
+   "img": "img/black-leather-side-zip-ankle-boots.webp",
+   "_f": [
+    "black"
+   ]
   },
   {
    "id": "black-leather-heeled-chelsea-boots",
@@ -9323,7 +9199,10 @@
    "bootH": "ankle",
    "heel": "mid",
    "notes": "Almond toe, elastic side gussets, Cuban block heel. Your photo.",
-   "img": "img/black-leather-heeled-chelsea-boots.webp"
+   "img": "img/black-leather-heeled-chelsea-boots.webp",
+   "_f": [
+    "black"
+   ]
   },
   {
    "id": "black-leather-double-buckle-knee-boots",
@@ -9541,7 +9420,10 @@
    "bootH": "knee",
    "heel": "mid",
    "notes": "Square toe, inside zip, block heel. Your photo.",
-   "img": "img/black-square-toe-heeled-knee-boots.webp"
+   "img": "img/black-square-toe-heeled-knee-boots.webp",
+   "_f": [
+    "black"
+   ]
   },
   {
    "id": "brown-pointed-buckle-heeled-knee-boots",
@@ -80070,7 +79952,7 @@
    "itemIds": [
     "white-linen-orange-embroidered-shirt",
     "pink-wide-leg-sailor-trousers",
-    "basic-black-knee-boots-heel"
+    "black-square-toe-heeled-knee-boots"
    ],
    "missing": [
     "Cream embroidered shirt-jacket (your white embroidered linen shirt is the stand-in)",
@@ -80220,7 +80102,7 @@
     "pink-tulip-knit-vest",
     "basic-white-ls-crew",
     "basic-black-wide-jeans",
-    "basic-black-ankle-boots-heel"
+    "black-leather-heeled-chelsea-boots"
    ],
    "missing": [],
    "createdAt": 65
@@ -80234,7 +80116,7 @@
     "pink-tulip-knit-vest",
     "basic-white-ls-crew",
     "red-a-line-midi-skirt",
-    "basic-black-ankle-boots-heel"
+    "black-leather-heeled-chelsea-boots"
    ],
    "missing": [],
    "createdAt": 66
@@ -80262,7 +80144,7 @@
     "red-daisy-pocket-knit-vest",
     "basic-white-ls-crew",
     "basic-black-wide-jeans",
-    "basic-black-ankle-boots-heel"
+    "black-leather-heeled-chelsea-boots"
    ],
    "missing": [],
    "createdAt": 68
@@ -80332,7 +80214,7 @@
     "red-moss-stitch-jumper",
     "basic-white-tee",
     "red-a-line-midi-skirt",
-    "basic-black-ankle-boots-heel"
+    "black-leather-heeled-chelsea-boots"
    ],
    "missing": [
     "Fluffy oversized red jumper (your red textured jumper is the stand-in)"
@@ -80607,7 +80489,7 @@
    "itemIds": [
     "brown-mock-neck-long-sleeve",
     "basic-white-straight-jeans",
-    "basic-black-knee-boots-heel",
+    "black-square-toe-heeled-knee-boots",
     "uniqlo-brown-knit-jacket"
    ],
    "missing": [
@@ -81764,7 +81646,7 @@
     "basic-black-turtleneck",
     "basic-white-linen-shirt",
     "basic-black-straight-jeans",
-    "basic-black-ankle-boots-flat"
+    "black-leather-side-zip-ankle-boots"
    ],
    "missing": [],
    "createdAt": 157
@@ -81951,7 +81833,7 @@
    "itemIds": [
     "basic-black-tee",
     "basic-black-midi-skirt",
-    "basic-black-ankle-boots-flat"
+    "black-leather-side-zip-ankle-boots"
    ],
    "missing": [
     "Full black satin midi skirt"
@@ -81966,7 +81848,7 @@
    "itemIds": [
     "basic-black-cardigan",
     "brown-big-spot-a-line-skirt",
-    "basic-black-ankle-boots-flat"
+    "black-leather-side-zip-ankle-boots"
    ],
    "missing": [
     "Brown spot full maxi skirt (your Brown and white big-spot A-line skirt is the stand-in)"
@@ -82305,7 +82187,7 @@
    "img": "img/inspo/inspo-193.webp",
    "summary": "Oversized green rib jumper with matching knit mini skirt, chunky black buckle boots.",
    "itemIds": [
-    "basic-black-knee-boots-flat"
+    "black-leather-double-buckle-knee-boots"
    ],
    "missing": [
     "Green knit jumper and skirt set"
@@ -82601,7 +82483,7 @@
    "itemIds": [
     "grey-marle-merino-vneck-jumper",
     "basic-black-straight-jeans",
-    "basic-black-ankle-boots-flat",
+    "black-leather-side-zip-ankle-boots",
     "uniqlo-brown-knit-jacket"
    ],
    "missing": [
@@ -82645,7 +82527,7 @@
    "itemIds": [
     "uniqlo-black-merino-crew-jumper",
     "basic-white-linen-shirt",
-    "basic-black-ankle-boots-flat",
+    "black-leather-side-zip-ankle-boots",
     "basic-black-crossbody",
     "basic-white-denim-mini"
    ],
@@ -83852,7 +83734,7 @@
     "boden-folk-floral-shirt",
     "uniqlo-black-tapered-trousers",
     "basic-tan-belt",
-    "basic-black-ankle-boots-flat"
+    "black-leather-side-zip-ankle-boots"
    ],
    "missing": [
     "Green tartan long-sleeve shirt (your Boden folk floral shirt is the stand-in)",
@@ -84101,7 +83983,7 @@
     "chambray-shirt",
     "basic-blue-wide-jeans",
     "basic-black-crossbody",
-    "basic-black-block-heel-ankle-boots"
+    "black-leather-heeled-chelsea-boots"
    ],
    "missing": [
     "Blue stripe shirt (your chambray shirt is the stand-in)"
@@ -84142,7 +84024,7 @@
     "chambray-shirt",
     "basic-black-wide-jeans",
     "basic-black-crossbody",
-    "basic-black-block-heel-ankle-boots"
+    "black-leather-heeled-chelsea-boots"
    ],
    "missing": [
     "Blue stripe shirt (your chambray shirt is the stand-in)",
@@ -85181,10 +85063,10 @@
     "basic-blue-straight-jeans-cropped,basic-green-sneakers,basic-tan-crossbody,red-white-stripe-ruffle-top",
     "basic-black-kitten-heels,basic-blue-straight-jeans-cropped,basic-tan-crossbody,red-white-stripe-ruffle-top",
     "basic-black-docs,basic-blue-straight-jeans-cropped,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-ankle-boots-flat,basic-blue-straight-jeans-cropped,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-ankle-boots-heel,basic-blue-straight-jeans-cropped,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-block-heel-ankle-boots,basic-blue-straight-jeans-cropped,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-slim-heel-ankle-boots,basic-blue-straight-jeans-cropped,basic-tan-crossbody,red-white-stripe-ruffle-top",
+    "basic-blue-straight-jeans-cropped,basic-tan-crossbody,black-leather-side-zip-ankle-boots,red-white-stripe-ruffle-top",
+    "basic-blue-straight-jeans-cropped,basic-tan-crossbody,black-leather-heeled-chelsea-boots,red-white-stripe-ruffle-top",
+    "basic-blue-straight-jeans-cropped,basic-tan-crossbody,black-leather-heeled-chelsea-boots,red-white-stripe-ruffle-top",
+    "basic-blue-straight-jeans-cropped,basic-tan-crossbody,black-leather-heeled-chelsea-boots,red-white-stripe-ruffle-top",
     "basic-blue-straight-jeans-cropped,basic-tan-crossbody,basic-tan-kitten-heels,red-white-stripe-ruffle-top",
     "basic-blue-straight-jeans-cropped,basic-tan-flats,mimco-raffia-clutch,red-white-stripe-ruffle-top",
     "basic-black-crossbody,basic-blue-straight-jeans-cropped,basic-tan-flats,red-white-stripe-ruffle-top",
@@ -85197,12 +85079,12 @@
     "basic-black-sneakers,basic-blue-straight-jeans,basic-tan-crossbody,red-white-stripe-ruffle-top",
     "basic-blue-straight-jeans,basic-tan-crossbody,basic-white-sneakers,red-white-stripe-ruffle-top",
     "basic-blue-straight-jeans,basic-green-sneakers,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-ankle-boots-flat,basic-blue-straight-jeans,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-ankle-boots-heel,basic-blue-straight-jeans,basic-tan-crossbody,red-white-stripe-ruffle-top",
+    "basic-blue-straight-jeans,basic-tan-crossbody,black-leather-side-zip-ankle-boots,red-white-stripe-ruffle-top",
+    "basic-blue-straight-jeans,basic-tan-crossbody,black-leather-heeled-chelsea-boots,red-white-stripe-ruffle-top",
     "basic-black-kitten-heels,basic-blue-straight-jeans,basic-tan-crossbody,red-white-stripe-ruffle-top",
     "basic-black-docs,basic-blue-straight-jeans,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-block-heel-ankle-boots,basic-blue-straight-jeans,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-slim-heel-ankle-boots,basic-blue-straight-jeans,basic-tan-crossbody,red-white-stripe-ruffle-top",
+    "basic-blue-straight-jeans,basic-tan-crossbody,black-leather-heeled-chelsea-boots,red-white-stripe-ruffle-top",
+    "basic-blue-straight-jeans,basic-tan-crossbody,black-leather-heeled-chelsea-boots,red-white-stripe-ruffle-top",
     "basic-blue-straight-jeans,basic-tan-crossbody,basic-tan-kitten-heels,red-white-stripe-ruffle-top",
     "basic-blue-straight-jeans,basic-tan-flats,mimco-raffia-clutch,red-white-stripe-ruffle-top",
     "basic-black-crossbody,basic-blue-straight-jeans,basic-tan-flats,red-white-stripe-ruffle-top",
@@ -85216,10 +85098,10 @@
     "basic-green-sneakers,basic-tan-crossbody,embroidered-wide-leg-jeans,red-white-stripe-ruffle-top",
     "basic-tan-crossbody,basic-white-sneakers,embroidered-wide-leg-jeans,red-white-stripe-ruffle-top",
     "basic-black-kitten-heels,basic-tan-crossbody,embroidered-wide-leg-jeans,red-white-stripe-ruffle-top",
-    "basic-black-ankle-boots-flat,basic-tan-crossbody,embroidered-wide-leg-jeans,red-white-stripe-ruffle-top",
-    "basic-black-ankle-boots-heel,basic-tan-crossbody,embroidered-wide-leg-jeans,red-white-stripe-ruffle-top",
-    "basic-black-block-heel-ankle-boots,basic-tan-crossbody,embroidered-wide-leg-jeans,red-white-stripe-ruffle-top",
-    "basic-black-slim-heel-ankle-boots,basic-tan-crossbody,embroidered-wide-leg-jeans,red-white-stripe-ruffle-top",
+    "basic-tan-crossbody,black-leather-side-zip-ankle-boots,embroidered-wide-leg-jeans,red-white-stripe-ruffle-top",
+    "basic-tan-crossbody,black-leather-heeled-chelsea-boots,embroidered-wide-leg-jeans,red-white-stripe-ruffle-top",
+    "basic-tan-crossbody,black-leather-heeled-chelsea-boots,embroidered-wide-leg-jeans,red-white-stripe-ruffle-top",
+    "basic-tan-crossbody,black-leather-heeled-chelsea-boots,embroidered-wide-leg-jeans,red-white-stripe-ruffle-top",
     "basic-black-docs,basic-tan-crossbody,embroidered-wide-leg-jeans,red-white-stripe-ruffle-top",
     "basic-tan-crossbody,basic-tan-kitten-heels,embroidered-wide-leg-jeans,red-white-stripe-ruffle-top",
     "basic-tan-flats,embroidered-wide-leg-jeans,mimco-raffia-clutch,red-white-stripe-ruffle-top",
@@ -85234,10 +85116,10 @@
     "basic-blue-wide-jeans,basic-tan-crossbody,basic-white-sneakers,red-white-stripe-ruffle-top",
     "basic-blue-wide-jeans,basic-green-sneakers,basic-tan-crossbody,red-white-stripe-ruffle-top",
     "basic-black-kitten-heels,basic-blue-wide-jeans,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-ankle-boots-flat,basic-blue-wide-jeans,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-ankle-boots-heel,basic-blue-wide-jeans,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-block-heel-ankle-boots,basic-blue-wide-jeans,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-slim-heel-ankle-boots,basic-blue-wide-jeans,basic-tan-crossbody,red-white-stripe-ruffle-top",
+    "basic-blue-wide-jeans,basic-tan-crossbody,black-leather-side-zip-ankle-boots,red-white-stripe-ruffle-top",
+    "basic-blue-wide-jeans,basic-tan-crossbody,black-leather-heeled-chelsea-boots,red-white-stripe-ruffle-top",
+    "basic-blue-wide-jeans,basic-tan-crossbody,black-leather-heeled-chelsea-boots,red-white-stripe-ruffle-top",
+    "basic-blue-wide-jeans,basic-tan-crossbody,black-leather-heeled-chelsea-boots,red-white-stripe-ruffle-top",
     "basic-black-docs,basic-blue-wide-jeans,basic-tan-crossbody,red-white-stripe-ruffle-top",
     "basic-blue-wide-jeans,basic-tan-crossbody,basic-tan-kitten-heels,red-white-stripe-ruffle-top",
     "basic-blue-wide-jeans,basic-tan-flats,mimco-raffia-clutch,red-white-stripe-ruffle-top",
@@ -85250,8 +85132,8 @@
     "basic-denim-shorts,basic-red-sneakers,basic-tan-crossbody,red-white-stripe-ruffle-top",
     "basic-denim-shorts,basic-green-sneakers,basic-tan-crossbody,red-white-stripe-ruffle-top",
     "basic-denim-shorts,basic-tan-crossbody,basic-white-sneakers,red-white-stripe-ruffle-top",
-    "basic-black-ankle-boots-flat,basic-denim-shorts,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-ankle-boots-heel,basic-denim-shorts,basic-tan-crossbody,red-white-stripe-ruffle-top",
+    "basic-denim-shorts,basic-tan-crossbody,black-leather-side-zip-ankle-boots,red-white-stripe-ruffle-top",
+    "basic-denim-shorts,basic-tan-crossbody,black-leather-heeled-chelsea-boots,red-white-stripe-ruffle-top",
     "basic-black-kitten-heels,basic-denim-shorts,basic-tan-crossbody,red-white-stripe-ruffle-top",
     "basic-black-flats,basic-tan-crossbody,black-big-spot-tie-skirt,red-white-stripe-ruffle-top",
     "basic-red-ballet-flats,basic-tan-crossbody,black-big-spot-tie-skirt,red-white-stripe-ruffle-top",
@@ -85277,11 +85159,11 @@
     "basic-denim-maxi-skirt,basic-red-sneakers,basic-tan-crossbody,red-white-stripe-ruffle-top",
     "basic-denim-maxi-skirt,basic-green-sneakers,basic-tan-crossbody,red-white-stripe-ruffle-top",
     "basic-denim-maxi-skirt,basic-tan-crossbody,basic-white-sneakers,red-white-stripe-ruffle-top",
-    "basic-black-ankle-boots-flat,basic-denim-maxi-skirt,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-ankle-boots-heel,basic-denim-maxi-skirt,basic-tan-crossbody,red-white-stripe-ruffle-top",
+    "basic-denim-maxi-skirt,basic-tan-crossbody,black-leather-side-zip-ankle-boots,red-white-stripe-ruffle-top",
+    "basic-denim-maxi-skirt,basic-tan-crossbody,black-leather-heeled-chelsea-boots,red-white-stripe-ruffle-top",
     "basic-black-kitten-heels,basic-denim-maxi-skirt,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-block-heel-ankle-boots,basic-denim-maxi-skirt,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-slim-heel-ankle-boots,basic-denim-maxi-skirt,basic-tan-crossbody,red-white-stripe-ruffle-top",
+    "basic-denim-maxi-skirt,basic-tan-crossbody,black-leather-heeled-chelsea-boots,red-white-stripe-ruffle-top",
+    "basic-denim-maxi-skirt,basic-tan-crossbody,black-leather-heeled-chelsea-boots,red-white-stripe-ruffle-top",
     "basic-black-docs,basic-denim-maxi-skirt,basic-tan-crossbody,red-white-stripe-ruffle-top",
     "basic-denim-maxi-skirt,basic-tan-crossbody,basic-tan-kitten-heels,red-white-stripe-ruffle-top",
     "basic-denim-maxi-skirt,basic-tan-flats,mimco-raffia-clutch,red-white-stripe-ruffle-top",
@@ -85296,11 +85178,11 @@
     "basic-black-loafers,basic-black-wide-jeans,basic-tan-crossbody,red-white-stripe-ruffle-top",
     "basic-black-wide-jeans,basic-tan-crossbody,basic-tan-kitten-heels,red-white-stripe-ruffle-top",
     "basic-black-sneakers,basic-black-wide-jeans,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-ankle-boots-heel,basic-black-wide-jeans,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-ankle-boots-flat,basic-black-wide-jeans,basic-tan-crossbody,red-white-stripe-ruffle-top",
+    "basic-black-wide-jeans,basic-tan-crossbody,black-leather-heeled-chelsea-boots,red-white-stripe-ruffle-top",
+    "basic-black-wide-jeans,basic-tan-crossbody,black-leather-side-zip-ankle-boots,red-white-stripe-ruffle-top",
     "basic-black-kitten-heels,basic-black-wide-jeans,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-block-heel-ankle-boots,basic-black-wide-jeans,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-slim-heel-ankle-boots,basic-black-wide-jeans,basic-tan-crossbody,red-white-stripe-ruffle-top",
+    "basic-black-wide-jeans,basic-tan-crossbody,black-leather-heeled-chelsea-boots,red-white-stripe-ruffle-top",
+    "basic-black-wide-jeans,basic-tan-crossbody,black-leather-heeled-chelsea-boots,red-white-stripe-ruffle-top",
     "basic-black-docs,basic-black-wide-jeans,basic-tan-crossbody,red-white-stripe-ruffle-top",
     "basic-black-wide-jeans,basic-tan-flats,mimco-raffia-clutch,red-white-stripe-ruffle-top",
     "basic-black-crossbody,basic-black-wide-jeans,basic-tan-flats,red-white-stripe-ruffle-top",
@@ -85315,10 +85197,10 @@
     "basic-black-bamboo-wide-crop,basic-black-sneakers,basic-tan-crossbody,red-white-stripe-ruffle-top",
     "basic-black-bamboo-wide-crop,basic-tan-crossbody,basic-tan-kitten-heels,red-white-stripe-ruffle-top",
     "basic-black-bamboo-wide-crop,basic-black-kitten-heels,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-ankle-boots-flat,basic-black-bamboo-wide-crop,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-ankle-boots-heel,basic-black-bamboo-wide-crop,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-bamboo-wide-crop,basic-black-block-heel-ankle-boots,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-bamboo-wide-crop,basic-black-slim-heel-ankle-boots,basic-tan-crossbody,red-white-stripe-ruffle-top",
+    "basic-black-bamboo-wide-crop,basic-tan-crossbody,black-leather-side-zip-ankle-boots,red-white-stripe-ruffle-top",
+    "basic-black-bamboo-wide-crop,basic-tan-crossbody,black-leather-heeled-chelsea-boots,red-white-stripe-ruffle-top",
+    "basic-black-bamboo-wide-crop,basic-tan-crossbody,black-leather-heeled-chelsea-boots,red-white-stripe-ruffle-top",
+    "basic-black-bamboo-wide-crop,basic-tan-crossbody,black-leather-heeled-chelsea-boots,red-white-stripe-ruffle-top",
     "basic-black-bamboo-wide-crop,basic-black-docs,basic-tan-crossbody,red-white-stripe-ruffle-top",
     "basic-black-bamboo-wide-crop,basic-tan-flats,mimco-raffia-clutch,red-white-stripe-ruffle-top",
     "basic-black-bamboo-wide-crop,basic-black-crossbody,basic-tan-flats,red-white-stripe-ruffle-top",
@@ -85333,10 +85215,10 @@
     "basic-black-sneakers,basic-black-straight-jeans-cropped,basic-tan-crossbody,red-white-stripe-ruffle-top",
     "basic-black-straight-jeans-cropped,basic-tan-crossbody,basic-tan-kitten-heels,red-white-stripe-ruffle-top",
     "basic-black-kitten-heels,basic-black-straight-jeans-cropped,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-ankle-boots-flat,basic-black-straight-jeans-cropped,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-ankle-boots-heel,basic-black-straight-jeans-cropped,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-block-heel-ankle-boots,basic-black-straight-jeans-cropped,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-slim-heel-ankle-boots,basic-black-straight-jeans-cropped,basic-tan-crossbody,red-white-stripe-ruffle-top",
+    "basic-black-straight-jeans-cropped,basic-tan-crossbody,black-leather-side-zip-ankle-boots,red-white-stripe-ruffle-top",
+    "basic-black-straight-jeans-cropped,basic-tan-crossbody,black-leather-heeled-chelsea-boots,red-white-stripe-ruffle-top",
+    "basic-black-straight-jeans-cropped,basic-tan-crossbody,black-leather-heeled-chelsea-boots,red-white-stripe-ruffle-top",
+    "basic-black-straight-jeans-cropped,basic-tan-crossbody,black-leather-heeled-chelsea-boots,red-white-stripe-ruffle-top",
     "basic-black-docs,basic-black-straight-jeans-cropped,basic-tan-crossbody,red-white-stripe-ruffle-top",
     "basic-black-straight-jeans-cropped,basic-tan-flats,mimco-raffia-clutch,red-white-stripe-ruffle-top",
     "basic-black-crossbody,basic-black-straight-jeans-cropped,basic-tan-flats,red-white-stripe-ruffle-top",
@@ -85350,11 +85232,11 @@
     "basic-black-leggings,basic-black-loafers,basic-tan-crossbody,red-white-stripe-ruffle-top",
     "basic-black-leggings,basic-black-sneakers,basic-tan-crossbody,red-white-stripe-ruffle-top",
     "basic-black-leggings,basic-tan-crossbody,basic-tan-kitten-heels,red-white-stripe-ruffle-top",
-    "basic-black-ankle-boots-flat,basic-black-leggings,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-ankle-boots-heel,basic-black-leggings,basic-tan-crossbody,red-white-stripe-ruffle-top",
+    "basic-black-leggings,basic-tan-crossbody,black-leather-side-zip-ankle-boots,red-white-stripe-ruffle-top",
+    "basic-black-leggings,basic-tan-crossbody,black-leather-heeled-chelsea-boots,red-white-stripe-ruffle-top",
     "basic-black-kitten-heels,basic-black-leggings,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-block-heel-ankle-boots,basic-black-leggings,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-leggings,basic-black-slim-heel-ankle-boots,basic-tan-crossbody,red-white-stripe-ruffle-top",
+    "basic-black-leggings,basic-tan-crossbody,black-leather-heeled-chelsea-boots,red-white-stripe-ruffle-top",
+    "basic-black-leggings,basic-tan-crossbody,black-leather-heeled-chelsea-boots,red-white-stripe-ruffle-top",
     "basic-black-docs,basic-black-leggings,basic-tan-crossbody,red-white-stripe-ruffle-top",
     "basic-black-leggings,basic-tan-flats,mimco-raffia-clutch,red-white-stripe-ruffle-top",
     "basic-black-crossbody,basic-black-leggings,basic-tan-flats,red-white-stripe-ruffle-top",
@@ -85368,11 +85250,11 @@
     "basic-black-loafers,basic-black-midi-skirt,basic-tan-crossbody,red-white-stripe-ruffle-top",
     "basic-black-midi-skirt,basic-black-sneakers,basic-tan-crossbody,red-white-stripe-ruffle-top",
     "basic-black-midi-skirt,basic-tan-crossbody,basic-tan-kitten-heels,red-white-stripe-ruffle-top",
-    "basic-black-ankle-boots-flat,basic-black-midi-skirt,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-ankle-boots-heel,basic-black-midi-skirt,basic-tan-crossbody,red-white-stripe-ruffle-top",
+    "basic-black-midi-skirt,basic-tan-crossbody,black-leather-side-zip-ankle-boots,red-white-stripe-ruffle-top",
+    "basic-black-midi-skirt,basic-tan-crossbody,black-leather-heeled-chelsea-boots,red-white-stripe-ruffle-top",
     "basic-black-kitten-heels,basic-black-midi-skirt,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-block-heel-ankle-boots,basic-black-midi-skirt,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-midi-skirt,basic-black-slim-heel-ankle-boots,basic-tan-crossbody,red-white-stripe-ruffle-top",
+    "basic-black-midi-skirt,basic-tan-crossbody,black-leather-heeled-chelsea-boots,red-white-stripe-ruffle-top",
+    "basic-black-midi-skirt,basic-tan-crossbody,black-leather-heeled-chelsea-boots,red-white-stripe-ruffle-top",
     "basic-black-docs,basic-black-midi-skirt,basic-tan-crossbody,red-white-stripe-ruffle-top",
     "basic-black-midi-skirt,basic-tan-flats,mimco-raffia-clutch,red-white-stripe-ruffle-top",
     "basic-black-crossbody,basic-black-midi-skirt,basic-tan-flats,red-white-stripe-ruffle-top",
@@ -85386,11 +85268,11 @@
     "basic-black-loafers,basic-black-wide-linen-pants,basic-tan-crossbody,red-white-stripe-ruffle-top",
     "basic-black-sneakers,basic-black-wide-linen-pants,basic-tan-crossbody,red-white-stripe-ruffle-top",
     "basic-black-wide-linen-pants,basic-tan-crossbody,basic-tan-kitten-heels,red-white-stripe-ruffle-top",
-    "basic-black-ankle-boots-flat,basic-black-wide-linen-pants,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-ankle-boots-heel,basic-black-wide-linen-pants,basic-tan-crossbody,red-white-stripe-ruffle-top",
+    "basic-black-wide-linen-pants,basic-tan-crossbody,black-leather-side-zip-ankle-boots,red-white-stripe-ruffle-top",
+    "basic-black-wide-linen-pants,basic-tan-crossbody,black-leather-heeled-chelsea-boots,red-white-stripe-ruffle-top",
     "basic-black-kitten-heels,basic-black-wide-linen-pants,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-block-heel-ankle-boots,basic-black-wide-linen-pants,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-slim-heel-ankle-boots,basic-black-wide-linen-pants,basic-tan-crossbody,red-white-stripe-ruffle-top",
+    "basic-black-wide-linen-pants,basic-tan-crossbody,black-leather-heeled-chelsea-boots,red-white-stripe-ruffle-top",
+    "basic-black-wide-linen-pants,basic-tan-crossbody,black-leather-heeled-chelsea-boots,red-white-stripe-ruffle-top",
     "basic-black-docs,basic-black-wide-linen-pants,basic-tan-crossbody,red-white-stripe-ruffle-top",
     "basic-black-wide-linen-pants,basic-tan-flats,mimco-raffia-clutch,red-white-stripe-ruffle-top",
     "basic-black-crossbody,basic-black-wide-linen-pants,basic-tan-flats,red-white-stripe-ruffle-top",
@@ -85404,11 +85286,11 @@
     "basic-black-loafers,basic-black-straight-jeans,basic-tan-crossbody,red-white-stripe-ruffle-top",
     "basic-black-sneakers,basic-black-straight-jeans,basic-tan-crossbody,red-white-stripe-ruffle-top",
     "basic-black-straight-jeans,basic-tan-crossbody,basic-tan-kitten-heels,red-white-stripe-ruffle-top",
-    "basic-black-ankle-boots-flat,basic-black-straight-jeans,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-ankle-boots-heel,basic-black-straight-jeans,basic-tan-crossbody,red-white-stripe-ruffle-top",
+    "basic-black-straight-jeans,basic-tan-crossbody,black-leather-side-zip-ankle-boots,red-white-stripe-ruffle-top",
+    "basic-black-straight-jeans,basic-tan-crossbody,black-leather-heeled-chelsea-boots,red-white-stripe-ruffle-top",
     "basic-black-kitten-heels,basic-black-straight-jeans,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-block-heel-ankle-boots,basic-black-straight-jeans,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-slim-heel-ankle-boots,basic-black-straight-jeans,basic-tan-crossbody,red-white-stripe-ruffle-top",
+    "basic-black-straight-jeans,basic-tan-crossbody,black-leather-heeled-chelsea-boots,red-white-stripe-ruffle-top",
+    "basic-black-straight-jeans,basic-tan-crossbody,black-leather-heeled-chelsea-boots,red-white-stripe-ruffle-top",
     "basic-black-docs,basic-black-straight-jeans,basic-tan-crossbody,red-white-stripe-ruffle-top",
     "basic-black-straight-jeans,basic-tan-flats,mimco-raffia-clutch,red-white-stripe-ruffle-top",
     "basic-black-crossbody,basic-black-straight-jeans,basic-tan-flats,red-white-stripe-ruffle-top",
@@ -85422,11 +85304,11 @@
     "basic-black-dress-pants,basic-black-loafers,basic-tan-crossbody,red-white-stripe-ruffle-top",
     "basic-black-dress-pants,basic-black-sneakers,basic-tan-crossbody,red-white-stripe-ruffle-top",
     "basic-black-dress-pants,basic-tan-crossbody,basic-tan-kitten-heels,red-white-stripe-ruffle-top",
-    "basic-black-ankle-boots-flat,basic-black-dress-pants,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-ankle-boots-heel,basic-black-dress-pants,basic-tan-crossbody,red-white-stripe-ruffle-top",
+    "basic-black-dress-pants,basic-tan-crossbody,black-leather-side-zip-ankle-boots,red-white-stripe-ruffle-top",
+    "basic-black-dress-pants,basic-tan-crossbody,black-leather-heeled-chelsea-boots,red-white-stripe-ruffle-top",
     "basic-black-dress-pants,basic-black-kitten-heels,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-block-heel-ankle-boots,basic-black-dress-pants,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-dress-pants,basic-black-slim-heel-ankle-boots,basic-tan-crossbody,red-white-stripe-ruffle-top",
+    "basic-black-dress-pants,basic-tan-crossbody,black-leather-heeled-chelsea-boots,red-white-stripe-ruffle-top",
+    "basic-black-dress-pants,basic-tan-crossbody,black-leather-heeled-chelsea-boots,red-white-stripe-ruffle-top",
     "basic-black-docs,basic-black-dress-pants,basic-tan-crossbody,red-white-stripe-ruffle-top",
     "basic-black-dress-pants,basic-tan-flats,mimco-raffia-clutch,red-white-stripe-ruffle-top",
     "basic-white-ls-crew,gorman-check-skirt,red-daisy-pocket-knit-vest",
@@ -90521,8 +90403,8 @@
     "basic-tan-crossbody,basic-tan-flats,basic-white-tee,blue-tile-print-shorts,red-stripe-cropped-jacket",
     "basic-tan-crossbody,basic-tan-flats,basic-white-linen-shirt,blue-tile-print-shorts,red-stripe-cropped-jacket",
     "basic-tan-crossbody,basic-tan-flats,black-multi-spot-swing-dress,red-stripe-cropped-jacket",
-    "basic-black-block-heel-ankle-boots,basic-denim-shorts,basic-tan-crossbody,red-white-stripe-ruffle-top",
-    "basic-black-ankle-boots-flat,basic-denim-skirt,basic-tan-crossbody,red-white-stripe-ruffle-top",
+    "basic-denim-shorts,basic-tan-crossbody,black-leather-heeled-chelsea-boots,red-white-stripe-ruffle-top",
+    "basic-denim-skirt,basic-tan-crossbody,black-leather-side-zip-ankle-boots,red-white-stripe-ruffle-top",
     "basic-black-tee,gorman-striped-skirt,magenta-vneck-knit-vest",
     "gorman-striped-skirt,pink-green-knit-tee",
     "gorman-striped-skirt,pink-green-stripe-knit-tee",
@@ -93441,7 +93323,7 @@
    "ip:basic-black-crossbody|black-wool-collared-coat": 0.36,
    "it:black-wool-collared-coat": 0.36,
    "pat:plain+plain+plain+plain": 2.64,
-   "so:Everyday|heeled boots": 4.95,
+   "so:Everyday|heeled boots": 5.14,
    "it:basic-black-turtleneck": 1.13,
    "ip:basic-black-turtleneck|basic-blue-straight-jeans-cropped": 0.36,
    "cp:black+denim": 4.89,
@@ -93854,11 +93736,10 @@
    "it:white-linen-orange-embroidered-shirt": 0.91,
    "ip:pink-wide-leg-sailor-trousers|white-linen-orange-embroidered-shirt": 0.36,
    "cp:orange+pink": 0.36,
-   "ip:basic-black-knee-boots-heel|white-linen-orange-embroidered-shirt": 0.36,
+   "ip:black-square-toe-heeled-knee-boots|white-linen-orange-embroidered-shirt": 0.36,
    "cp:black+orange": 0.65,
-   "ip:basic-black-knee-boots-heel|pink-wide-leg-sailor-trousers": 0.36,
-   "it:basic-black-knee-boots-heel": 0.65,
-   "so:Everyday|kitten heels": 3.17,
+   "ip:black-square-toe-heeled-knee-boots|pink-wide-leg-sailor-trousers": 0.36,
+   "it:black-square-toe-heeled-knee-boots": 0.65,
    "it:pink-green-knit-tee": 0.91,
    "ip:pink-green-knit-tee|red-a-line-midi-skirt": 0.36,
    "ip:basic-white-sneakers|pink-green-knit-tee": 0.65,
@@ -93906,19 +93787,19 @@
    "ip:basic-red-sneakers|basic-white-ls-crew": 0.36,
    "ip:basic-white-ls-crew|pink-tulip-knit-vest": 1.33,
    "ip:basic-black-wide-jeans|pink-tulip-knit-vest": 0.36,
-   "ip:basic-black-ankle-boots-heel|pink-tulip-knit-vest": 0.65,
+   "ip:black-leather-heeled-chelsea-boots|pink-tulip-knit-vest": 0.65,
    "ip:basic-black-wide-jeans|basic-white-ls-crew": 0.65,
-   "ip:basic-black-ankle-boots-heel|basic-white-ls-crew": 0.91,
+   "ip:basic-white-ls-crew|black-leather-heeled-chelsea-boots": 0.91,
    "it:basic-black-wide-jeans": 2.14,
-   "ip:basic-black-ankle-boots-heel|basic-black-wide-jeans": 0.65,
-   "it:basic-black-ankle-boots-heel": 1.13,
+   "ip:basic-black-wide-jeans|black-leather-heeled-chelsea-boots": 0.91,
+   "it:black-leather-heeled-chelsea-boots": 1.52,
    "ip:pink-tulip-knit-vest|red-a-line-midi-skirt": 0.65,
    "ip:basic-white-ls-crew|red-a-line-midi-skirt": 0.65,
-   "ip:basic-black-ankle-boots-heel|red-a-line-midi-skirt": 0.65,
+   "ip:black-leather-heeled-chelsea-boots|red-a-line-midi-skirt": 0.65,
    "ip:basic-white-sneakers|pink-tulip-knit-vest": 0.65,
    "ip:basic-white-ls-crew|basic-white-sneakers": 0.91,
    "ip:basic-black-wide-jeans|red-daisy-pocket-knit-vest": 0.36,
-   "ip:basic-black-ankle-boots-heel|red-daisy-pocket-knit-vest": 0.36,
+   "ip:black-leather-heeled-chelsea-boots|red-daisy-pocket-knit-vest": 0.36,
    "ip:basic-blue-wide-jeans|pink-tulip-knit-vest": 0.65,
    "ip:basic-red-ballet-flats|pink-tulip-knit-vest": 0.36,
    "ip:basic-red-ballet-flats|basic-white-ls-crew": 0.65,
@@ -93926,9 +93807,9 @@
    "it:red-moss-stitch-jumper": 2,
    "ip:basic-white-tee|red-moss-stitch-jumper": 0.65,
    "ip:red-a-line-midi-skirt|red-moss-stitch-jumper": 0.36,
-   "ip:basic-black-ankle-boots-heel|red-moss-stitch-jumper": 0.36,
+   "ip:black-leather-heeled-chelsea-boots|red-moss-stitch-jumper": 0.65,
    "ip:basic-white-tee|red-a-line-midi-skirt": 0.65,
-   "ip:basic-black-ankle-boots-heel|basic-white-tee": 0.36,
+   "ip:basic-white-tee|black-leather-heeled-chelsea-boots": 0.36,
    "ip:country-road-white-tank|gorman-check-skirt": 0.36,
    "ip:basic-white-flats|country-road-white-tank": 0.36,
    "ip:basic-white-wide-linen-pants|white-linen-orange-embroidered-shirt": 0.36,
@@ -94008,14 +93889,14 @@
    "it:brown-mock-neck-long-sleeve": 0.36,
    "ip:basic-white-straight-jeans|brown-mock-neck-long-sleeve": 0.36,
    "cp:brown+white": 2.4,
-   "ip:basic-black-knee-boots-heel|brown-mock-neck-long-sleeve": 0.36,
+   "ip:black-square-toe-heeled-knee-boots|brown-mock-neck-long-sleeve": 0.36,
    "cp:black+brown": 2,
    "ip:brown-mock-neck-long-sleeve|uniqlo-brown-knit-jacket": 0.36,
    "cp:brown+brown": 0.91,
    "it:basic-white-straight-jeans": 0.65,
-   "ip:basic-black-knee-boots-heel|basic-white-straight-jeans": 0.36,
+   "ip:basic-white-straight-jeans|black-square-toe-heeled-knee-boots": 0.36,
    "ip:basic-white-straight-jeans|uniqlo-brown-knit-jacket": 0.36,
-   "ip:basic-black-knee-boots-heel|uniqlo-brown-knit-jacket": 0.36,
+   "ip:black-square-toe-heeled-knee-boots|uniqlo-brown-knit-jacket": 0.36,
    "ip:basic-white-straight-jeans-cropped|chambray-shirt": 0.36,
    "it:basic-white-straight-jeans-cropped": 1.33,
    "ip:basic-tan-flats|basic-white-straight-jeans-cropped": 0.65,
@@ -94085,6 +93966,7 @@
    "ip:basic-black-wide-jeans|basic-tan-crossbody": 1.13,
    "it:basic-tan-kitten-heels": 2.97,
    "ip:basic-tan-crossbody|basic-tan-kitten-heels": 1.69,
+   "so:Everyday|kitten heels": 2.97,
    "ip:basic-white-tee|country-road-khaki-utility-shirt": 0.36,
    "ip:basic-blue-straight-jeans|country-road-khaki-utility-shirt": 0.65,
    "ip:basic-tan-flats|country-road-khaki-utility-shirt": 0.91,
@@ -94314,11 +94196,11 @@
    "ip:basic-black-flats|uniqlo-brown-knit-skirt": 0.36,
    "ip:basic-black-turtleneck|basic-white-linen-shirt": 0.36,
    "ip:basic-black-straight-jeans|basic-black-turtleneck": 0.36,
-   "ip:basic-black-ankle-boots-flat|basic-black-turtleneck": 0.36,
+   "ip:basic-black-turtleneck|black-leather-side-zip-ankle-boots": 0.36,
    "ip:basic-black-straight-jeans|basic-white-linen-shirt": 0.36,
-   "ip:basic-black-ankle-boots-flat|basic-white-linen-shirt": 0.65,
-   "ip:basic-black-ankle-boots-flat|basic-black-straight-jeans": 0.65,
-   "it:basic-black-ankle-boots-flat": 1.52,
+   "ip:basic-white-linen-shirt|black-leather-side-zip-ankle-boots": 0.65,
+   "ip:basic-black-straight-jeans|black-leather-side-zip-ankle-boots": 0.65,
+   "it:black-leather-side-zip-ankle-boots": 1.52,
    "it:cobalt-boat-neck-pocket-jumper": 0.36,
    "ip:basic-white-linen-shirt|cobalt-boat-neck-pocket-jumper": 0.36,
    "ip:basic-blue-wide-jeans|cobalt-boat-neck-pocket-jumper": 0.36,
@@ -94355,13 +94237,13 @@
    "it:three-of-something-cream-lace-top": 0.65,
    "ip:basic-blue-wide-jeans|three-of-something-cream-lace-top": 0.36,
    "ip:basic-black-midi-skirt|basic-black-tee": 0.36,
-   "ip:basic-black-ankle-boots-flat|basic-black-tee": 0.36,
-   "ip:basic-black-ankle-boots-flat|basic-black-midi-skirt": 0.36,
+   "ip:basic-black-tee|black-leather-side-zip-ankle-boots": 0.36,
+   "ip:basic-black-midi-skirt|black-leather-side-zip-ankle-boots": 0.36,
    "it:basic-black-cardigan": 0.65,
    "ip:basic-black-cardigan|brown-big-spot-a-line-skirt": 0.36,
-   "ip:basic-black-ankle-boots-flat|basic-black-cardigan": 0.36,
+   "ip:basic-black-cardigan|black-leather-side-zip-ankle-boots": 0.36,
    "it:brown-big-spot-a-line-skirt": 0.36,
-   "ip:basic-black-ankle-boots-flat|brown-big-spot-a-line-skirt": 0.36,
+   "ip:black-leather-side-zip-ankle-boots|brown-big-spot-a-line-skirt": 0.36,
    "ip:basic-white-wide-jeans|country-road-white-tank": 0.36,
    "ip:country-road-white-tank|mimco-raffia-clutch": 0.36,
    "ip:basic-denim-jacket|basic-white-wide-jeans": 0.65,
@@ -94415,8 +94297,7 @@
    "ip:basic-grey-marle-jumper|basic-tan-flats": 0.36,
    "ip:basic-grey-marle-jumper|khaki-cotton-field-jacket": 0.65,
    "ip:basic-blue-wide-jeans|khaki-cotton-field-jacket": 0.36,
-   "it:basic-black-knee-boots-flat": 0.36,
-   "so:Everyday|knee boots": 0.36,
+   "it:black-leather-double-buckle-knee-boots": 0.36,
    "it:anko-white-tank-black-trim": 0.36,
    "ip:anko-white-tank-black-trim|basic-blue-wide-jeans": 0.36,
    "ip:basic-tan-flats|gorman-navy-rope-trim-playsuit": 0.36,
@@ -94474,22 +94355,22 @@
    "ip:basic-white-straight-jeans-cropped|black-cream-breton-stripe-jumper": 0.36,
    "it:grey-marle-merino-vneck-jumper": 0.65,
    "ip:basic-black-straight-jeans|grey-marle-merino-vneck-jumper": 0.36,
-   "ip:basic-black-ankle-boots-flat|grey-marle-merino-vneck-jumper": 0.36,
+   "ip:black-leather-side-zip-ankle-boots|grey-marle-merino-vneck-jumper": 0.36,
    "ip:grey-marle-merino-vneck-jumper|uniqlo-brown-knit-jacket": 0.36,
    "cp:brown+grey": 0.36,
    "ip:basic-black-straight-jeans|uniqlo-brown-knit-jacket": 0.36,
-   "ip:basic-black-ankle-boots-flat|uniqlo-brown-knit-jacket": 0.36,
+   "ip:black-leather-side-zip-ankle-boots|uniqlo-brown-knit-jacket": 0.36,
    "ip:basic-black-docs|gorman-black-seersucker-puff-sleeve-dress": 0.36,
    "it:gorman-black-seersucker-puff-sleeve-dress": 0.36,
    "pat:check": 0.36,
    "it:uniqlo-black-merino-crew-jumper": 0.36,
    "ip:basic-white-linen-shirt|uniqlo-black-merino-crew-jumper": 0.36,
-   "ip:basic-black-ankle-boots-flat|uniqlo-black-merino-crew-jumper": 0.36,
+   "ip:black-leather-side-zip-ankle-boots|uniqlo-black-merino-crew-jumper": 0.36,
    "ip:basic-black-crossbody|uniqlo-black-merino-crew-jumper": 0.36,
    "ip:basic-white-denim-mini|uniqlo-black-merino-crew-jumper": 0.36,
    "ip:basic-white-denim-mini|basic-white-linen-shirt": 0.36,
-   "ip:basic-black-ankle-boots-flat|basic-black-crossbody": 0.36,
-   "ip:basic-black-ankle-boots-flat|basic-white-denim-mini": 0.36,
+   "ip:basic-black-crossbody|black-leather-side-zip-ankle-boots": 0.36,
+   "ip:basic-white-denim-mini|black-leather-side-zip-ankle-boots": 0.36,
    "ip:basic-black-crossbody|basic-white-denim-mini": 0.36,
    "it:basic-white-denim-mini": 0.65,
    "ip:basic-black-tee|basic-white-straight-jeans-cropped": 0.36,
@@ -94735,13 +94616,13 @@
    "ip:anko-dark-denim-crop-shirt|boden-folk-floral-shirt": 0.36,
    "ip:anko-dark-denim-crop-shirt|uniqlo-black-tapered-trousers": 0.36,
    "ip:anko-dark-denim-crop-shirt|basic-tan-belt": 0.36,
-   "ip:anko-dark-denim-crop-shirt|basic-black-ankle-boots-flat": 0.36,
+   "ip:anko-dark-denim-crop-shirt|black-leather-side-zip-ankle-boots": 0.36,
    "ip:boden-folk-floral-shirt|uniqlo-black-tapered-trousers": 0.36,
    "ip:basic-tan-belt|boden-folk-floral-shirt": 0.36,
-   "ip:basic-black-ankle-boots-flat|boden-folk-floral-shirt": 0.36,
+   "ip:black-leather-side-zip-ankle-boots|boden-folk-floral-shirt": 0.36,
    "ip:basic-tan-belt|uniqlo-black-tapered-trousers": 0.36,
-   "ip:basic-black-ankle-boots-flat|uniqlo-black-tapered-trousers": 0.36,
-   "ip:basic-black-ankle-boots-flat|basic-tan-belt": 0.36,
+   "ip:black-leather-side-zip-ankle-boots|uniqlo-black-tapered-trousers": 0.36,
+   "ip:basic-tan-belt|black-leather-side-zip-ankle-boots": 0.36,
    "ip:basic-denim-maxi-skirt|country-road-white-tank": 0.36,
    "it:basic-denim-maxi-skirt": 0.91,
    "ip:basic-denim-maxi-skirt|basic-tan-crossbody": 0.36,
@@ -94778,17 +94659,14 @@
    "ip:basic-blue-wide-jeans|boden-red-stripe-long-sleeve-tee": 0.36,
    "ip:chambray-shirt|cos-red-textured-crew-jumper": 0.36,
    "ip:basic-black-crossbody|cos-red-textured-crew-jumper": 0.36,
-   "ip:basic-black-block-heel-ankle-boots|cos-red-textured-crew-jumper": 0.36,
-   "ip:basic-black-block-heel-ankle-boots|chambray-shirt": 0.65,
-   "ip:basic-black-block-heel-ankle-boots|basic-blue-wide-jeans": 0.36,
-   "ip:basic-black-block-heel-ankle-boots|basic-black-crossbody": 0.65,
-   "it:basic-black-block-heel-ankle-boots": 0.65,
+   "ip:black-leather-heeled-chelsea-boots|cos-red-textured-crew-jumper": 0.36,
+   "ip:black-leather-heeled-chelsea-boots|chambray-shirt": 0.65,
+   "ip:basic-blue-wide-jeans|black-leather-heeled-chelsea-boots": 0.36,
+   "ip:basic-black-crossbody|black-leather-heeled-chelsea-boots": 0.65,
    "ip:basic-red-cardigan|chambray-shirt": 0.36,
    "ip:chambray-shirt|red-moss-stitch-jumper": 0.36,
    "ip:basic-black-wide-jeans|red-moss-stitch-jumper": 0.36,
-   "ip:basic-black-block-heel-ankle-boots|red-moss-stitch-jumper": 0.36,
    "ip:basic-black-wide-jeans|chambray-shirt": 0.36,
-   "ip:basic-black-block-heel-ankle-boots|basic-black-wide-jeans": 0.36,
    "ip:basic-blue-wide-jeans|red-moss-stitch-jumper": 0.36,
    "ip:basic-tan-belt|red-moss-stitch-jumper": 0.36,
    "ip:basic-tan-belt|uniqlo-brown-knit-jacket": 0.36,
