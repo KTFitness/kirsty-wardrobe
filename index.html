@@ -185,11 +185,11 @@ dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
 </nav>
 <dialog class="sheet" id="sheet"><div class="sheet-in" id="sheetBody"></div></dialog>
 
-<script src="style.js?v=202611081741"></script>
+<script src="style.js?v=202611081744"></script>
 <script>
 /* Home-screen apps hold on to old copies. On open, check version.txt; if a newer version is live, refresh the cached files and reload once. */
 if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{});});}
-const APPV="202611081741";
+const APPV="202611081744";
 fetch("version.txt",{cache:"no-store"}).then(r=>r.ok?r.text():"").then(v=>{v=v.trim();if(!v||v===APPV)return;
   let tried="";try{tried=sessionStorage.getItem("kw:upd")||"";}catch(e){}if(tried===v)return;try{sessionStorage.setItem("kw:upd",v);}catch(e){}
   Promise.all([fetch("index.html",{cache:"reload"}),fetch("./",{cache:"reload"})]).catch(()=>{}).then(()=>location.reload());}).catch(()=>{});
@@ -290,7 +290,7 @@ function collage(ids,hero){
   if(!side.length)return `<div class="collage solo"><div class="cin">${mainHtml}</div></div>`;
   return `<div class="collage"><div class="cin">${mainHtml}<div class="side" style="grid-template-rows:repeat(${side.length},1fr)">${side.map(x=>cell(x)).join("")}</div></div></div>`;
 }
-function tipsFor(ids){const P=ids.map(byId).filter(Boolean);if(!window.Stylist||!Stylist.hemTip)return "";return [Stylist.layerTip?Stylist.layerTip(P):"",Stylist.hemTip(P),Stylist.hairTip(P)].filter(Boolean).map(t=>`<p class="tip">${esc(t)}</p>`).join("");}
+function tipsFor(ids){const P=ids.map(byId).filter(Boolean);if(!window.Stylist||!Stylist.hemTip)return "";return [Stylist.layerTip?Stylist.layerTip(P):"",Stylist.hemTip(P),Stylist.shoeTip?Stylist.shoeTip(P):"",Stylist.hairTip(P)].filter(Boolean).map(t=>`<p class="tip">${esc(t)}</p>`).join("");}
 function outfitCard(o,extra="",hero){
   extra=wornBtn(o)+extra;
   const kp=hero?{id:hero}:keyPiece(o);

@@ -229,6 +229,12 @@ function hemTip(pieces){const t=pieces.find(p=>hem(p)),sh=pieces.find(p=>p.categ
   if(h==="crop"&&k==="boot")return "Jeans length: a cropped hem leaves a gap over boots. Loafers or ballet flats suit this length better.";
   if(h==="full"&&(k==="flat"||k==="loafer"))return "Jeans length: a full-length hem can swamp flats. Cuff it to the ankle, or swap to sneakers, heels or boots.";
   return "";}
+function shoeTip(pieces){const sh=pieces.find(p=>p.category==="shoes");if(!sh)return "";const k=shoeKind(sh),out=[];
+  const legs=pieces.some(p=>p.category==="trousers"||p.category==="jeans"),bare=pieces.some(p=>["skirts","dresses","shorts"].includes(p.category)||(p.category==="playsuits"&&!/jumpsuit/.test(lc(p))));
+  if(k==="boot"&&legs)out.push("Boots: trousers go over the boots, not tucked in.");
+  if(k==="boot"&&bare&&/knee|calf/i.test((sh.bootH||"")+" "+lc(sh)))out.push("Tights with the boots.");
+  if(k==="loafer")out.push("Loafers: bare ankles or no-show liners, no visible socks.");
+  return out.join(" ");}
 function hairTip(pieces){const t=pieces.find(p=>p.category==="dresses")||pieces.find(p=>(p.category==="tops"||p.category==="knitwear")&&!isWarmLayer(p));if(!t)return "";
   const s=(t.name+" "+(t.notes||"")).toLowerCase();
   if(/halter/.test(s))return "Hair: high ponytail or top knot.";
@@ -447,5 +453,5 @@ const FACETS={
    if(/kitten|low-heel|low heel|low stacked/.test(t))return "low";if(/block|square-toe heeled|mid block/.test(t))return "mid";if(/heel|stiletto|slim-heel|pointed heeled/.test(t)&&!/flat/.test(i.name.toLowerCase()))return "high";return "flat";}],
   ["bootH","Boot height",[["ankle","Ankle"],["calf","Calf"],["knee","Knee"]],i=>{if(i.bootH)return i.bootH;const t=txt(i);if(!/boot/.test(t))return null;if(/knee/.test(t))return "knee";if(/calf/.test(t))return "calf";return "ankle";}]]};
 
-window.Stylist={layerOk,layerTip,FACETS,subOf,SUBS,busyClash,addLayer,finish,coreKey:ps=>ps.filter(p=>!["shoes","bags","accessories"].includes(p.category)).map(p=>p.id).sort().join(","),suggest,features,families,pkind,formality,hemTip,hairTip};
+window.Stylist={layerOk,layerTip,FACETS,subOf,SUBS,busyClash,addLayer,finish,coreKey:ps=>ps.filter(p=>!["shoes","bags","accessories"].includes(p.category)).map(p=>p.id).sort().join(","),suggest,features,families,pkind,formality,hemTip,hairTip,shoeTip};
 })();
