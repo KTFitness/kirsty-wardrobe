@@ -59,7 +59,7 @@ function formality(it){const s=lc(it);
 const OCC={"Everyday":1.6,"Lunch out":2.1,"Dinner out":2.7,"Smart casual":2.5,"Travel":1.6,"Holiday":1.8,"Special occasion":3};
 const sleeveless=it=>/sleeveless|tank|halter|vest|cami|strapless|racer/.test(lc(it));
 const isVest=it=>(it.category==="knitwear"&&/vest/.test(lc(it)))||/waistcoat/.test(lc(it));
-const longSleeve=it=>/long-sleeve|long sleeve|long balloon|turtleneck|jumper|sweat|funnel|cardigan|blazer|jacket|coat/.test(lc(it));
+const longSleeve=it=>/long-sleeve|long sleeve|three-quarter sleeve|long balloon|turtleneck|jumper|sweat|funnel|cardigan|blazer|jacket|coat/.test(lc(it));
 // A busy piece (Ghanda checkerboard cardigan) only goes with block colours: no second pattern of any kind.
 const busyClash=ps=>{const cl=ps.filter(p=>p&&!["shoes","bags","accessories"].includes(p.category));return cl.some(p=>p.busy)&&cl.filter(p=>pkind(p)).length>1;};
 const isWarmLayer=it=>it.category==="outerwear"||(it.category==="knitwear"&&/cardigan/.test(lc(it)));
