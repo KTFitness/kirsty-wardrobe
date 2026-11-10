@@ -149,8 +149,10 @@ dl.facts dd{margin:0}
 .bigimg{display:block;width:100%;height:auto;max-height:78vh;object-fit:contain;border-radius:10px;background:var(--tile)}
 nav.tabs{position:fixed;left:0;right:0;bottom:0;z-index:6;background:var(--surface);border-top:1px solid var(--line);
   padding-bottom:max(8px, env(safe-area-inset-bottom, 0px));padding-top:6px;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));
-  display:grid;grid-template-columns:repeat(5,1fr);gap:2px}
-nav.tabs button{border:none;background:none;padding:8px 4px;border-radius:10px;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;display:grid;justify-items:center;gap:3px}
+  display:grid;grid-template-columns:repeat(6,1fr);gap:0}
+nav.tabs button{border:none;background:none;padding:8px 2px;border-radius:10px;font-size:12px;font-weight:600;color:var(--muted);cursor:pointer;display:grid;justify-items:center;gap:3px}
+.qbar{position:sticky;bottom:calc(64px + env(safe-area-inset-bottom, 0px));display:grid;grid-template-columns:1fr .7fr 1fr;gap:8px;padding:10px 0;background:var(--bg)}
+.qbar .btn{min-height:52px;font-size:16px}
 nav.tabs button .dot{width:22px;height:4px;border-radius:2px;background:transparent}
 nav.tabs button[aria-current="page"]{color:var(--fg)}
 nav.tabs button[aria-current="page"] .dot{background:var(--accent)}
@@ -179,17 +181,18 @@ dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
 <nav class="tabs" aria-label="Sections">
   <button type="button" data-tab="outfits" aria-current="page"><span class="dot"></span>Outfits</button>
   <button type="button" data-tab="style"><span class="dot"></span>Style me</button>
+  <button type="button" data-tab="rate"><span class="dot"></span>Rate</button>
   <button type="button" data-tab="trips"><span class="dot"></span>Trips</button>
   <button type="button" data-tab="inspo"><span class="dot"></span>Inspo</button>
   <button type="button" data-tab="wardrobe"><span class="dot"></span>Wardrobe</button>
 </nav>
 <dialog class="sheet" id="sheet"><div class="sheet-in" id="sheetBody"></div></dialog>
 
-<script src="style.js?v=202611110948"></script>
+<script src="style.js?v=202611110955"></script>
 <script>
 /* Home-screen apps hold on to old copies. On open, check version.txt; if a newer version is live, refresh the cached files and reload once. */
 if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{});});}
-const APPV="202611110948";
+const APPV="202611110955";
 fetch("version.txt",{cache:"no-store"}).then(r=>r.ok?r.text():"").then(v=>{v=v.trim();if(!v||v===APPV)return;
   let tried="";try{tried=sessionStorage.getItem("kw:upd")||"";}catch(e){}if(tried===v)return;try{sessionStorage.setItem("kw:upd",v);}catch(e){}
   Promise.all([fetch("index.html",{cache:"reload"}),fetch("./",{cache:"reload"})]).catch(()=>{}).then(()=>location.reload());}).catch(()=>{});
@@ -730,7 +733,7 @@ function openLikedPicker(){S.tq="";const t=tripById(S.tripId);
 function render(){
   if(S.tab==="build"&&$("#bName"))S.build.name=$("#bName").value;
   const sx=window.scrollY;
-  $("#view").innerHTML=S.tab==="wardrobe"?vWardrobe():S.tab==="style"?vStyle():S.tab==="outfits"?vOutfits():S.tab==="build"?vBuild():S.tab==="trips"?vTrips():S.tab==="insights"?vInsights():vInspo();
+  $("#view").innerHTML=S.tab==="wardrobe"?vWardrobe():S.tab==="style"?vStyle():S.tab==="outfits"?vOutfits():S.tab==="build"?vBuild():S.tab==="trips"?vTrips():S.tab==="insights"?vInsights():S.tab==="rate"?vRate():vInspo();
   document.querySelectorAll("nav.tabs button").forEach(b=>{if(b.dataset.tab===S.tab)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current");});
   $("#countline").textContent=`${D.items.length} items · ${allOutfits().length} outfits`;
   window.scrollTo(0,sx);
@@ -757,6 +760,36 @@ function openItem(id){const it=byId(id);if(!it)return;
   ${(()=>{const n=allOutfits().filter(o=>isLiked(o)&&(o.itemIds||[]).includes(id)).length;return n?`<div class="row"><button class="btn ghost" type="button" data-likedof="${esc(id)}">Go through its ${n} liked outfit${n===1?"":"s"}</button></div>`:"";})()}
   <div class="row"><button class="btn" type="button" data-anchor="${esc(id)}">Style this</button><button class="btn ghost" type="button" data-buildwith="${esc(id)}">Build your own</button><button class="btn danger" type="button" data-gone="${esc(id)}">I don't own this</button></div>`;
   if(!sheet.open)sheet.showModal();}
+
+/* Quick rate: one outfit at a time from across the whole wardrobe; Like / Not for me / Skip moves straight to the next one. */
+const QOCC=["Everyday","Everyday","Everyday","Lunch out","Smart casual","Dinner out","Holiday","Travel"];
+function qrNext(){
+  const Q=S.qr;const season=Q.season==="any"?["Spring","Summer","Autumn","Winter"][Math.floor(Math.random()*4)]:todaySeason();
+  const ok=i=>!i.seasons||!i.seasons.length||i.seasons.includes(season);
+  const cats=["tops","dresses","skirts","trousers","shorts","knitwear","outerwear","playsuits"];
+  const pool=D.items.filter(i=>cats.includes(i.category)&&ok(i));
+  const ex=allDisliked().concat(ratingLists().liked,Q.seenKeys).map(k=>Stylist.coreKey(k.split(",").map(byId).filter(Boolean)));
+  for(let t=0;t<10;t++){const a=pool[Math.floor(Math.random()*pool.length)];if(!a)break;
+    const occ=Q.occ==="mixed"?QOCC[Math.floor(Math.random()*QOCC.length)]:Q.occ;
+    const res=Stylist.suggest(a,D.items,{occ,season,seed:Math.floor(Math.random()*1e6),count:4,W:tasteW(),n:tasteN(),rules:useRules,noAccessories:true,block:blockSets(),excludeCore:ex});
+    const fresh=res.filter(r=>!Q.seenKeys.includes(r.key));if(!fresh.length)continue;
+    const r=fresh[Math.floor(Math.random()*fresh.length)];const P=r.pieces.slice();
+    const f=Stylist.finish(P,D.items,{occ,season,W:tasteW()});if(f.shoes&&f.shoes[0])P.push(f.shoes[0]);if(f.bags&&f.bags[0])P.push(f.bags[0]);
+    Q.seenKeys.push(r.key);Q.cur={key:r.key,id:"q"+Date.now(),name:"Quick rate pick",itemIds:P.map(p=>p.id),occasions:[occ],why:r.why,season};return;}
+  Q.cur=null;}
+function vRate(){
+  S.qr=S.qr||{occ:"mixed",season:"now",seenKeys:[],n:0,likes:0,hist:[]};const Q=S.qr;if(!Q.cur)qrNext();const o=Q.cur;
+  const chip=(k,v,lab)=>`<button class="chip" data-qr${k}="${v}" aria-pressed="${Q[k]===v}">${lab}</button>`;
+  const P=o?o.itemIds.map(byId).filter(Boolean):[];
+  return `<h2>Quick rate</h2><p class="lede">One outfit at a time from across your whole wardrobe. Every tap teaches the app what you like. Liked ones are saved to your outfits.</p>
+  <div class="chips" role="group" aria-label="Occasion">${chip("occ","mixed","Mixed")}${["Everyday","Lunch out","Smart casual","Dinner out","Holiday","Travel"].map(x=>chip("occ",x,x)).join("")}</div>
+  <div class="chips" role="group" aria-label="Season" style="margin-top:6px">${chip("season","now","This season")}${chip("season","any","Any season")}</div>
+  <p class="lede" style="margin:10px 0 6px">${Q.n} rated this session${Q.n?` · ${Q.likes} liked`:""}</p>
+  ${o?`<article class="ocard qcard">${collage(o.itemIds)}<div class="meta"><div class="tags"><span class="tag">${esc(o.occasions[0])}</span><span class="tag">${esc(o.season)}</span></div>
+   <p class="why" style="margin:6px 0">${P.map(p=>esc(p.name)).join(" · ")}</p>${o.why?`<p class="why">${esc(o.why)}</p>`:""}</div></article>
+   <div class="qbar"><button class="btn ghost" type="button" data-qrate="-1">Not for me</button><button class="btn ghost" type="button" data-qrate="0">Skip</button><button class="btn" type="button" data-qrate="1">Like</button></div>`
+   :`<div class="empty"><strong>Nothing new to show with these settings.</strong> Try Any season or a different occasion.</div>`}
+  <div class="row" style="margin-top:10px">${Q.hist.length?`<button class="iconbtn" type="button" id="qrUndo">Undo last</button>`:""}${Q.lastNo?`<button class="iconbtn" type="button" id="qrWhy">Say why I said no to the last one</button>`:""}</div>`;}
 
 function surprise(){
   const season=S.season==="any"?todaySeason():S.season;
@@ -847,6 +880,17 @@ document.addEventListener("click",async e=>{
   if(t.dataset.bsec){S.build.name=($("#bName")||{}).value||S.build.name;S.bOpen=S.bOpen||{};S.bOpen[t.dataset.bsec]=!S.bOpen[t.dataset.bsec];render();return;}
   if(t.dataset.pickcat){S.pickCat=t.dataset.pickcat;S.pickSub="";S.pfac={};render();return;}
   if(t.dataset.psub!==undefined){S.pickSub=t.dataset.psub;render();return;}
+  if(t.dataset.qrocc||t.dataset.qrseason){const Q=S.qr;if(t.dataset.qrocc)Q.occ=t.dataset.qrocc;else Q.season=t.dataset.qrseason;Q.cur=null;render();return;}
+  if(t.dataset.qrate!==undefined&&S.qr&&S.qr.cur){const Q=S.qr,o=Q.cur,v=+t.dataset.qrate;const h={v,key:o.key,occ:o.occasions[0],o};
+    if(v){const keep=S.sOcc;S.sOcc=h.occ;rate(o,v);S.sOcc=keep;Q.n++;}
+    if(v>0){Q.likes++;h.mid="m"+Date.now();mine=mine.concat({id:h.mid,name:"Liked in Quick rate",itemIds:o.itemIds.slice(),occasions:o.occasions.slice(),why:o.why||""});LS.set("mine",mine);}
+    Q.lastNo=v<0?o.itemIds.slice():null;Q.hist=Q.hist.concat(h).slice(-30);Q.cur=null;render();return;}
+  if(t.id==="qrUndo"&&S.qr&&S.qr.hist.length){const Q=S.qr,h=Q.hist.pop();
+    if(h.v){const keep=S.sOcc;S.sOcc=h.occ;for(const k of Stylist.features(h.o.itemIds.map(byId).filter(Boolean),S.sOcc))taste.w[k]=Math.round(((taste.w[k]||0)-h.v)*100)/100;S.sOcc=keep;
+      const L=h.v>0?taste.liked:taste.disliked;const i=L.lastIndexOf(h.key);if(i>=0)L.splice(i,1);taste.n=Math.max(0,taste.n-1);LS.set("taste",taste);Q.n=Math.max(0,Q.n-1);}
+    if(h.mid){mine=mine.filter(m=>m.id!==h.mid);LS.set("mine",mine);Q.likes=Math.max(0,Q.likes-1);}
+    Q.cur=h.o;Q.lastNo=null;render();return;}
+  if(t.id==="qrWhy"&&S.qr&&S.qr.lastNo){const ids=S.qr.lastNo;S.qr.lastNo=null;render();askWhy(ids);return;}
   if(t.dataset.socc){S.sOcc=t.dataset.socc;S.seed=1;render();return;}
   if(t.dataset.sseason){S.sSeason=(S.wx&&t.dataset.sseason===todaySeason())?null:t.dataset.sseason;S.seed=1;render();return;}
   if(t.id==="more"){if(S.shownFor!==S.anchor){S.shownFor=S.anchor;S.shown=[];}S.shown=S.shown.concat(...S.lastRes.map(o=>o.itemIds));S.seed++;render();window.scrollTo(0,0);return;}
