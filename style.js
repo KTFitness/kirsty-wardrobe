@@ -4,13 +4,13 @@
    no navy or plain white with the red/blue striped skirt, no forest green with tomato red. */
 (function(){
 const FAM_WORDS=[
- ["navy",["navy"]],["forest",["forest","bottle","olive","khaki"]],["mint",["mint","sage"]],
+ ["wine",["burgundy","wine","oxblood","plum","maroon","beet"]],["navy",["navy"]],["forest",["forest","bottle","olive","khaki"]],["mint",["mint","sage"]],
  ["coral",["coral","salmon","peach"]],["lilac",["lilac","lavender","purple"]],
- ["sky",["sky","pale blue","light blue","baby blue","aqua","chambray"]],
+ ["sky",["sky","pale blue","light blue","baby blue","aqua","chambray","turquoise","teal"]],
  ["blue",["cornflower","cobalt","mid blue","mid-blue","blue"]],
  ["pink",["pink","magenta","rose","fuchsia"]],["red",["red","tomato","cherry"]],
  ["orange",["orange","tangerine","rust","cinnamon","burnt"]],["yellow",["yellow","butter","lemon","mustard","ochre"]],
- ["green",["green","emerald","kelly","apple","jade"]],["brown",["brown","chocolate"]],
+ ["green",["green","emerald","kelly","apple","jade","lime","chartreuse"]],["brown",["brown","chocolate"]],
  ["tan",["tan","camel","oatmeal","natural","beige","stone","taupe"]],["cream",["cream","ecru","ivory","off-white"]],
  ["white",["white"]],["black",["black"]],["grey",["grey","gray","charcoal"]],["denim",["denim"]],["multi",["multicolour","multi"]]
 ];
@@ -19,18 +19,19 @@ function fam(c){c=String(c).toLowerCase();
   if(c.includes("white denim"))return "white"; if(c.includes("black denim"))return "black";
   for(const [f,ws] of FAM_WORDS) if(ws.some(w=>c.includes(w))) return f; return null;}
 const NEUTRAL=new Set(["white","cream","tan","grey","denim","black"]);
-const NAME={red:"red",pink:"pink",coral:"coral",orange:"orange",yellow:"yellow",mint:"mint",green:"green",forest:"dark green",sky:"sky blue",blue:"blue",navy:"navy",lilac:"lilac",brown:"chocolate brown"};
+const NAME={red:"red",pink:"pink",coral:"coral",orange:"orange",yellow:"yellow",mint:"mint",green:"green",forest:"dark green",sky:"sky blue",blue:"blue",navy:"navy",lilac:"lilac",brown:"chocolate brown",wine:"burgundy"};
 const M={};function set(a,b,v){M[a+"|"+b]=v;M[b+"|"+a]=v;}
 [["red","pink",3],["red","coral",0],["red","orange",-2],["red","yellow",2],["red","mint",1],["red","green",-1],["red","forest",-3],["red","sky",3],["red","blue",3],["red","navy",1],["red","lilac",0],["red","brown",2],
- ["pink","coral",1],["pink","orange",2],["pink","yellow",2],["pink","mint",3],["pink","green",3],["pink","forest",1],["pink","sky",2],["pink","blue",2],["pink","navy",2],["pink","lilac",1],["pink","brown",2],
- ["coral","orange",1],["coral","yellow",1],["coral","mint",3],["coral","green",2],["coral","forest",1],["coral","sky",2],["coral","blue",2],["coral","navy",2],["coral","lilac",1],["coral","brown",2],
- ["orange","yellow",1],["orange","mint",3],["orange","green",2],["orange","forest",1],["orange","sky",2],["orange","blue",3],["orange","navy",2],["orange","lilac",3],["orange","brown",2],
- ["yellow","mint",1],["yellow","green",1],["yellow","forest",0],["yellow","sky",3],["yellow","blue",3],["yellow","navy",2],["yellow","lilac",3],["yellow","brown",2],
+ ["pink","coral",1],["pink","orange",3],["pink","yellow",3],["pink","mint",3],["pink","green",3],["pink","forest",1],["pink","sky",2],["pink","blue",2],["pink","navy",2],["pink","lilac",1],["pink","brown",2],
+ ["coral","orange",1],["coral","yellow",1],["coral","mint",3],["coral","green",2],["coral","forest",1],["coral","sky",3],["coral","blue",2],["coral","navy",2],["coral","lilac",1],["coral","brown",2],
+ ["orange","yellow",1],["orange","mint",3],["orange","green",3],["orange","forest",1],["orange","sky",2],["orange","blue",3],["orange","navy",2],["orange","lilac",3],["orange","brown",2],
+ ["yellow","mint",1],["yellow","green",1],["yellow","forest",0],["yellow","sky",3],["yellow","blue",3],["yellow","navy",2],["yellow","lilac",3],["yellow","brown",3],
  ["mint","green",0],["mint","forest",-1],["mint","sky",2],["mint","blue",2],["mint","navy",3],["mint","lilac",2],["mint","brown",2],
- ["green","forest",0],["green","sky",2],["green","blue",2],["green","navy",2],["green","lilac",1],["green","brown",2],
+ ["green","forest",0],["green","sky",2],["green","blue",3],["green","navy",2],["green","lilac",1],["green","brown",2],
  ["forest","sky",0],["forest","blue",1],["forest","navy",0],["forest","lilac",0],["forest","brown",2],
  ["sky","blue",1],["sky","navy",1],["sky","lilac",1],["sky","brown",2],["blue","navy",0],["blue","lilac",1],["blue","brown",2],
- ["navy","lilac",1],["navy","brown",2],["lilac","brown",1]].forEach(x=>set(...x));
+ ["navy","lilac",1],["navy","brown",2],["lilac","brown",1],
+ ["wine","pink",3],["wine","lilac",2],["wine","green",2],["wine","mint",2],["wine","forest",2],["wine","sky",1],["wine","red",1],["wine","coral",1],["wine","orange",0],["wine","yellow",1],["wine","navy",1],["wine","blue",1],["wine","brown",2]].forEach(x=>set(...x));
 function pair(a,b){
   if(a==="multi"||b==="multi")return 1;
   if(a===b)return NEUTRAL.has(a)?0.5:1;
@@ -181,7 +182,7 @@ function reasons(o,anchor,ctx){
       "blue+red":"Red and blue, picked up from your skirts.","red+sky":"Red with sky blue, like your check skirt.","mint+navy":"Navy makes mint look crisp.","coral+mint":"Coral and mint, the sorbet pairing.",
       "lilac+orange":"Orange and lilac, the lobster-skirt clash.","blue+orange":"Orange and blue sit opposite each other, so both pop.","blue+yellow":"Yellow and blue, cheerful and easy.",
       "sky+yellow":"Butter yellow with sky blue, a gentle clash.","lilac+yellow":"Yellow and lilac, soft and unexpected.","brown+mint":"Mint and chocolate, the mint-choc-chip look.","mint+pink":"Pink and mint, the sorbet pairing.","pink+sky":"Pink and sky blue, soft and fresh.","blue+pink":"Pink and blue, fresh rather than sweet.",
-      "orange+pink":"Orange and pink, a warm clash.","pink+yellow":"Pink and butter yellow, sunny and sweet.","green+orange":"Orange and green, very seventies.","navy+pink":"Navy and pink, crisp and grown-up.","green+navy":"Green and navy, classic but bright.","green+sky":"Green and sky blue, fresh and outdoorsy.","blue+green":"Green and blue, fresh and outdoorsy.","red+yellow":"Red and yellow, like a picnic rug.","brown+red":"Red with chocolate brown, warm and grown-up.","brown+pink":"Pink with chocolate brown, a seventies combination."};
+      "orange+pink":"Orange and pink, a warm clash.","pink+yellow":"Pink and butter yellow, sunny and sweet.","green+orange":"Orange and green, very seventies.","navy+pink":"Navy and pink, crisp and grown-up.","green+navy":"Green and navy, classic but bright.","green+sky":"Green and sky blue, fresh and outdoorsy.","blue+green":"Green and blue, fresh and outdoorsy.","red+yellow":"Red and yellow, like a picnic rug.","brown+red":"Red with chocolate brown, warm and grown-up.","brown+pink":"Pink with chocolate brown, a seventies combination.","pink+wine":"Pale pink with burgundy, same colour family at two strengths.","brown+yellow":"Butter yellow with chocolate brown, soft and grown-up.","coral+sky":"Coral and turquoise, a holiday pairing.","green+wine":"Burgundy with a hit of green, the Parisian trick."};
     r.push(T[k]||`The ${NAME[best.a]||best.a} and ${NAME[best.b]||best.b} work together.`);}
   if(patNote){const m=patNote,bits=[];
     if(m.shared.length)bits.push(`both share ${m.shared.slice(0,2).join(" and ")}`);
