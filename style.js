@@ -1,5 +1,6 @@
 /* Kirsty's outfit engine: builds outfits around one chosen piece.
-   Rules come from her styling sessions: friendly colour clashes, mixed pattern types,
+   Rules come from her styling sessions: friendly colour clashes, mixed pattern types
+   (two patterns must share a colour, differ in scale, and one leads),
    no navy or plain white with the red/blue striped skirt, no forest green with tomato red. */
 (function(){
 const FAM_WORDS=[
@@ -47,7 +48,14 @@ function pkind(it){const p=String(it.pattern||"").toLowerCase();if(/^solid/.test
   if(/print|embroider|penguin|tile|geometric|jacquard|medallion|lobster|graphic/.test(p))return "print";
   return null;}
 const KIND={stripe:"stripes",check:"check",animal:"leopard",dot:"spots",floral:"florals",print:"print"};
-function pscale(it){const p=lc(it);if(/micro|fine|small|pin /.test(p))return 1;if(/jumbo|wide|large|big|bold/.test(p))return 3;return 2;}
+function pscale(it){const p=lc(it);if(it.pscale)return it.pscale;if(/micro|fine|small|pin |ditsy|tiny|mini |pinstripe|seersucker/.test(p))return 1;
+  if(/jumbo|wide|large|big|bold|oversized|tropical|palm|leaf|graphic|logo|slogan|placement|border/.test(p))return 3;return 2;}
+/* Pattern mixing (her pattern-clash guide): share a colour, mix the scale (one big, one small), one main pattern.
+   The main pattern is the bigger-scale one; if equal, the piece showing most (dress, outer layer, bottoms) leads. */
+const AREA={dresses:4,playsuits:4,outerwear:3,skirts:2.5,trousers:2.5,jeans:2.5,shorts:2,knitwear:2,tops:1.5};
+function patMix(x,y){const fx=families(x),fy=families(y),shared=fx.filter(f=>f!=="multi"&&fy.includes(f));
+  const sx=pscale(x),sy=pscale(y);const main=sx!==sy?(sx>sy?x:y):((AREA[x.category]||1)>=(AREA[y.category]||1)?x:y);
+  return {shared,diffScale:sx!==sy,main,support:main===x?y:x};}
 function formality(it){const s=lc(it);
   if(it.category==="shoes"){if(/kitten|heeled|heel/.test(s))return 3;if(/knee-high|knee boots/.test(s))return 2.3;if(/doc/.test(s))return 1.6;if(/sneaker|gazelle/.test(s))return 1.2;return 1.8;}
   if(/band tee|sweatshirt|track|crochet|guns/.test(s))return 1.1;
@@ -148,7 +156,9 @@ function score(pieces,ctx){
   const pats=clothes.filter(p=>pkind(p));
   let patNote=null;
   if(pats.length===2){const [x,y]=pats;
-    if(pkind(x)===pkind(y)){s-=2.5;}else{s+=1.2+(pscale(x)!==pscale(y)?0.5:0);patNote=[x,y];}}
+    const m=patMix(x,y);s+=m.shared.length?1.4:-4;s+=m.diffScale?1:-1.2;
+    if(pkind(x)===pkind(y)){s-=m.diffScale&&m.shared.length?1:2.5;}else{s+=0.8;}
+    if(m.shared.length||m.diffScale)patNote=m;}
   else if(pats.length>2)s-=3;
   else if(pats.length===1)s+=0.6;
   // striped red/blue skirt: no navy, no plain white
@@ -173,7 +183,10 @@ function reasons(o,anchor,ctx){
       "sky+yellow":"Butter yellow with sky blue, a gentle clash.","lilac+yellow":"Yellow and lilac, soft and unexpected.","brown+mint":"Mint and chocolate, the mint-choc-chip look.","mint+pink":"Pink and mint, the sorbet pairing.","pink+sky":"Pink and sky blue, soft and fresh.","blue+pink":"Pink and blue, fresh rather than sweet.",
       "orange+pink":"Orange and pink, a warm clash.","pink+yellow":"Pink and butter yellow, sunny and sweet.","green+orange":"Orange and green, very seventies.","navy+pink":"Navy and pink, crisp and grown-up.","green+navy":"Green and navy, classic but bright.","green+sky":"Green and sky blue, fresh and outdoorsy.","blue+green":"Green and blue, fresh and outdoorsy.","red+yellow":"Red and yellow, like a picnic rug.","brown+red":"Red with chocolate brown, warm and grown-up.","brown+pink":"Pink with chocolate brown, a seventies combination."};
     r.push(T[k]||`The ${NAME[best.a]||best.a} and ${NAME[best.b]||best.b} work together.`);}
-  if(patNote)r.push(`${KIND[pkind(patNote[0])]} against ${KIND[pkind(patNote[1])]}: different pattern types, so it looks deliberate.`.replace(/^./,c=>c.toUpperCase()));
+  if(patNote){const m=patNote,bits=[];
+    if(m.shared.length)bits.push(`both share ${m.shared.slice(0,2).join(" and ")}`);
+    if(m.diffScale)bits.push(`big ${KIND[pkind(m.main)]} with small ${KIND[pkind(m.support)]}`);
+    r.push(`Pattern mix: ${bits.join(", ")}. Main pattern: ${m.main.name}.`);}
   const partner=pieces.find(p=>p!==anchor&&p.basic&&p.category!=="shoes");
   if(!patNote&&partner&&r.length<2)r.push(`The plain ${short(partner)} keeps the focus on the ${short(anchor)}.`);
   const layer=pieces.find(p=>p!==anchor&&isWarmLayer(p));
