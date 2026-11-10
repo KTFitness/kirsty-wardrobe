@@ -169,21 +169,27 @@ function score(pieces,ctx){
   const target=OCC[ctx.occ]??2;const fl=pieces.map(formality);const avg=fl.reduce((a,b)=>a+b,0)/fl.length;
   s-=Math.abs(avg-target)*1.6;
   const shoe=pieces.find(p=>p.category==="shoes");
-  if(shoe){const sf=mainFams(shoe)[0];if(!NEUTRAL.has(sf)){const hit=clothes.some(p=>families(p).includes(sf));s+=hit?0.2:-1.5;}else s+=0.4;
+  /* Colour-pop guides: a neutral outfit (black, navy, grey, white, denim, tan) lifted by one coloured bag or shoe; or one coloured piece with everything else neutral. */
+  const NEU=f=>NEUTRAL.has(f)||f==="navy"||f==="brown";const plain=p=>mainFams(p).every(NEU);
+  const allNeutral=clothes.length&&clothes.every(plain);const popAcc=pieces.filter(p=>(p.category==="shoes"||p.category==="bags")&&!plain(p)&&!/leopard|animal|multi/i.test(lc(p))).sort((x,y)=>(x.category==="bags"?0:1)-(y.category==="bags"?0:1));
+  let pop=null;if(allNeutral&&popAcc.length){s+=1.5;pop={kind:"acc",p:popAcc[0]};}
+  else{const col=clothes.filter(p=>!plain(p));if(col.length===1&&clothes.length>=2&&!pkind(col[0])&&["trousers","skirts","knitwear","tops"].includes(col[0].category)){s+=0.8;pop={kind:"one",p:col[0]};}}
+  if(shoe){const sf=mainFams(shoe)[0];if(!NEUTRAL.has(sf)){const hit=clothes.some(p=>families(p).includes(sf));s+=hit?0.2:(allNeutral?0:-1.5);}else s+=0.4;
     const d=Math.abs(formality(shoe)-target);if(d>0.6)s-=d*1.8;}
-  return {s,best,patNote};
+  return {s,best,patNote,pop};
 }
 
 function reasons(o,anchor,ctx){
   const r=[];const {best,patNote,pieces}=o;
   if(o.set)r.push("Worn as the matching set.");
-  if(best&&best.v>=2){const k=[best.a,best.b].sort().join("+");
+  if(best&&best.v>=2&&!(o.pop&&best.v<3)){const k=[best.a,best.b].sort().join("+");
     const T={"green+pink":"Pink and green, one of your strongest pairings.","pink+red":"Red and pink: a friendly clash.","mint+orange":"Orange and mint make each other brighter.",
       "blue+red":"Red and blue, picked up from your skirts.","red+sky":"Red with sky blue, like your check skirt.","mint+navy":"Navy makes mint look crisp.","coral+mint":"Coral and mint, the sorbet pairing.",
       "lilac+orange":"Orange and lilac, the lobster-skirt clash.","blue+orange":"Orange and blue sit opposite each other, so both pop.","blue+yellow":"Yellow and blue, cheerful and easy.",
       "sky+yellow":"Butter yellow with sky blue, a gentle clash.","lilac+yellow":"Yellow and lilac, soft and unexpected.","brown+mint":"Mint and chocolate, the mint-choc-chip look.","mint+pink":"Pink and mint, the sorbet pairing.","pink+sky":"Pink and sky blue, soft and fresh.","blue+pink":"Pink and blue, fresh rather than sweet.",
       "orange+pink":"Orange and pink, a warm clash.","pink+yellow":"Pink and butter yellow, sunny and sweet.","green+orange":"Orange and green, very seventies.","navy+pink":"Navy and pink, crisp and grown-up.","green+navy":"Green and navy, classic but bright.","green+sky":"Green and sky blue, fresh and outdoorsy.","blue+green":"Green and blue, fresh and outdoorsy.","red+yellow":"Red and yellow, like a picnic rug.","brown+red":"Red with chocolate brown, warm and grown-up.","brown+pink":"Pink with chocolate brown, a seventies combination.","pink+wine":"Pale pink with burgundy, same colour family at two strengths.","brown+yellow":"Butter yellow with chocolate brown, soft and grown-up.","coral+sky":"Coral and turquoise, a holiday pairing.","green+wine":"Burgundy with a hit of green, the Parisian trick."};
     r.push(T[k]||`The ${NAME[best.a]||best.a} and ${NAME[best.b]||best.b} work together.`);}
+  if(o.pop&&!(best&&best.v>=3)){const p=o.pop.p;r.push(o.pop.kind==="acc"?`Neutral outfit with one pop of colour from the ${p.name.toLowerCase()}.`:`One colour, everything else neutral, so the ${p.name.toLowerCase()} is the focus.`);}
   if(patNote){const m=patNote,bits=[];
     if(m.shared.length)bits.push(`both share ${m.shared.slice(0,2).join(" and ")}`);
     if(m.diffScale)bits.push(`big ${KIND[pkind(m.main)]} with small ${KIND[pkind(m.support)]}`);
@@ -355,7 +361,7 @@ function suggest(anchor,items,ctx){
     if(!ctx.noAccessories&&bags.length&&!pieces.some(p=>p.category==="bags")){
       const bg=bags.map(x=>[x,SC(pieces.concat(x),ctx).s+(rnd()*E)*1.0]).sort((a,b)=>b[1]-a[1])[0];if(bg&&bg[1]>-1)pieces.push(bg[0]);}
     const sc=SC(pieces,ctx);
-    results.push({pieces,alts,s:sc.s+(rnd()*E)*0.6,best:sc.best,patNote:sc.patNote});
+    results.push({pieces,alts,s:sc.s+(rnd()*E)*0.6,best:sc.best,patNote:sc.patNote,pop:sc.pop});
   }
   results.sort((a,b)=>b.s-a.s);
   const kOf=ps=>ps.map(p=>p.id).sort().join(",");
@@ -367,7 +373,7 @@ function suggest(anchor,items,ctx){
   const out=[],used={};
   if(anchor.setWith){const mate=items.find(i=>i.id===anchor.setWith);
     if(mate){let pieces=[anchor,mate];const sh=ctx.noAccessories?null:shoes.map(x=>[x,SC(pieces.concat(x),ctx).s]).sort((a,b)=>b[1]-a[1])[0];if(sh)pieces.push(sh[0]);
-      const sc=SC(pieces,ctx);out.push({pieces,s:99,best:sc.best,patNote:sc.patNote,set:true});used[mate.id]=2;}}
+      const sc=SC(pieces,ctx);out.push({pieces,s:99,best:sc.best,patNote:sc.patNote,pop:sc.pop,set:true});used[mate.id]=2;}}
   let basicOnly=0,mixes=0;const seenKey=new Set(),bfam={};
   const bottomFam=r=>{const b=r.pieces.find(p=>p!==anchor&&p!==WI&&['skirts','trousers','shorts'].includes(p.category));return b?(mainFams(b)[0]||'x'):null;};
   const want=ctx.count||6;
@@ -397,7 +403,7 @@ function suggest(anchor,items,ctx){
     const sh=r.pieces.find(p=>p.category==="shoes"&&p!==anchor);
     if(sh){used["shoe:"+sh.id]=(used["shoe:"+sh.id]||0)+1;
       if(used["shoe:"+sh.id]>2&&r.alts&&r.alts.length){const alt=r.alts.find(a=>(used["shoe:"+a.id]||0)<2);
-        if(alt){r.pieces=r.pieces.map(p=>p===sh?alt:p);used["shoe:"+sh.id]--;used["shoe:"+alt.id]=(used["shoe:"+alt.id]||0)+1;const sc=SC(r.pieces,ctx);r.best=sc.best;r.patNote=sc.patNote;}}}
+        if(alt){r.pieces=r.pieces.map(p=>p===sh?alt:p);used["shoe:"+sh.id]--;used["shoe:"+alt.id]=(used["shoe:"+alt.id]||0)+1;const sc=SC(r.pieces,ctx);r.best=sc.best;r.patNote=sc.patNote;r.pop=sc.pop;}}}
     out.push(r);
   }
   for(const r of wild){const b=botOf(r);if(out.some(o=>o.pieces.includes(b)))continue;if(r.pieces.some(p=>p!==anchor&&isVest(p))&&out.filter(o=>o.pieces.some(p=>p!==anchor&&isVest(p))).length>=3)continue;out.push(r);}
