@@ -133,9 +133,9 @@ function pairOk(ps){for(const it of ps){const r=it.pairRule&&PAIR_RULES[it.pairR
 
 /* Dress code: a dressy outfit (lace, feathers, a fitted black dress, or a dinner or special-occasion ask) gets heels, loafers or boots and a smart bag or layer, not sneakers and a denim jacket. */
 const DRESSY_OCC=/dinner|special|smart/i;
-const EVE_RX=/sequin|satin|silk|velvet|lace|feather|guipure|metallic|beaded|chiffon|\bslip\b|cowl|off-shoulder|strapless|bandeau|tulle|taffeta|organza|dressy/;
+const EVE_RX=/\b(sequin|satin|silk|velvet|lace|feather|guipure|metallic|beaded|chiffon|slip|cowl|off-shoulder|strapless|bandeau|tulle|taffeta|organza|dressy)/;
 function dressCode(ps,ctx){const cl=ps.filter(p=>!["shoes","bags","accessories"].includes(p.category));if(!cl.length)return 0;
-  const fm=Math.max(...cl.map(formality)),occ=DRESSY_OCC.test((ctx&&ctx.occ)||"");const eve=occ||cl.some(p=>EVE_RX.test(lc(p))||(p.category==="dresses"&&/maxi/.test(lc(p))));
+  const fm=Math.max(...cl.map(formality)),occ=DRESSY_OCC.test((ctx&&ctx.occ)||"");const eve=occ||cl.some(p=>/\b(dressy|sequin|tulle|beaded|satin)/.test(lc(p))||(EVE_RX.test(lc(p))&&formality(p)>=3));
   const eb=ps.some(p=>p.category==="bags"&&p.evening);if(eb&&!eve)return -9;if(fm<2.9&&!occ)return 0;
   const lvl=occ&&/special/i.test(ctx.occ)?1.5:1;let s=0;
   for(const p of ps){const t=lc(p);
