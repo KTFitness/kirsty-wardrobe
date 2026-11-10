@@ -188,11 +188,11 @@ dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
 </nav>
 <dialog class="sheet" id="sheet"><div class="sheet-in" id="sheetBody"></div></dialog>
 
-<script src="style.js?v=202611110955"></script>
+<script src="style.js?v=202611110957"></script>
 <script>
 /* Home-screen apps hold on to old copies. On open, check version.txt; if a newer version is live, refresh the cached files and reload once. */
 if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{});});}
-const APPV="202611110955";
+const APPV="202611110957";
 fetch("version.txt",{cache:"no-store"}).then(r=>r.ok?r.text():"").then(v=>{v=v.trim();if(!v||v===APPV)return;
   let tried="";try{tried=sessionStorage.getItem("kw:upd")||"";}catch(e){}if(tried===v)return;try{sessionStorage.setItem("kw:upd",v);}catch(e){}
   Promise.all([fetch("index.html",{cache:"reload"}),fetch("./",{cache:"reload"})]).catch(()=>{}).then(()=>location.reload());}).catch(()=>{});
@@ -303,7 +303,7 @@ function outfitCard(o,extra="",hero){
   <div class="tags">${(o.occasions||[]).map(x=>`<span class="tag">${esc(x)}</span>`).join("")}${isBuilt(o)?'<span class="tag mine">Built by you</span>':(o.mine||o.liked)?'<span class="tag mine">You liked this</span>':""}</div>
   ${o.why?`<p class="why">${esc(o.why)}</p>`:""}
   ${tipsFor(o.itemIds||[])}
-  <div class="row">${o.temp?`<button class="btn" type="button" data-likesur>Like</button><button class="btn ghost" type="button" data-nopesur>Not for me</button>`:isLiked(o)?`<span class="fav" aria-pressed="true" style="cursor:default">♥ Liked</span><button class="iconbtn" type="button" data-unlike="${esc(o.id)}">Unlike</button>`:`<button class="fav" type="button" data-likeo="${esc(o.id)}" aria-pressed="false">♡ Like</button>`}
+  <div class="row">${o.temp?`<button class="btn" type="button" data-likesur>Like</button><button class="btn ghost" type="button" data-nopesur>Not for me</button></div>${accBtns("sur")}<div class="row">`:isLiked(o)?`<span class="fav" aria-pressed="true" style="cursor:default">♥ Liked</span><button class="iconbtn" type="button" data-unlike="${esc(o.id)}">Unlike</button>`:`<button class="fav" type="button" data-likeo="${esc(o.id)}" aria-pressed="false">♡ Like</button>`}
   ${isLiked(o)?`<button class="iconbtn" type="button" data-finish="${esc(o.id)}">${(o.itemIds||[]).some(id=>{const it=byId(id);return it&&it.category==="shoes";})?"Change shoes & bag":"Add shoes & bag"}</button>`:""}
   ${isLiked(o)?`<button class="iconbtn" type="button" data-swapnew="${esc(o.id)}">Swap a piece</button>`:""}${isBuilt(o)?`<button class="iconbtn" type="button" data-editb="${esc(o.id)}">Edit</button><button class="iconbtn" type="button" data-delb="${esc(o.id)}">Delete</button>`:""}${addBtn(o.itemIds||[],o.name)}${!o.temp&&!isLiked(o)&&!o.mine&&!o.liked?`<button class="iconbtn" type="button" data-hide="${esc(o.id)}">Hide</button>`:""}${extra}</div></div></article>`;
 }
@@ -773,8 +773,7 @@ function qrNext(){
     const occ=Q.occ==="mixed"?QOCC[Math.floor(Math.random()*QOCC.length)]:Q.occ;
     const res=Stylist.suggest(a,D.items,{occ,season,seed:Math.floor(Math.random()*1e6),count:4,W:tasteW(),n:tasteN(),rules:useRules,noAccessories:true,block:blockSets(),excludeCore:ex});
     const fresh=res.filter(r=>!Q.seenKeys.includes(r.key));if(!fresh.length)continue;
-    const r=fresh[Math.floor(Math.random()*fresh.length)];const P=r.pieces.slice();
-    const f=Stylist.finish(P,D.items,{occ,season,W:tasteW()});if(f.shoes&&f.shoes[0])P.push(f.shoes[0]);if(f.bags&&f.bags[0])P.push(f.bags[0]);
+    const r=fresh[Math.floor(Math.random()*fresh.length)];const P=pickAcc(r.pieces.slice(),occ,season);
     Q.seenKeys.push(r.key);Q.cur={key:r.key,id:"q"+Date.now(),name:"Quick rate pick",itemIds:P.map(p=>p.id),occasions:[occ],why:r.why,season};return;}
   Q.cur=null;}
 function vRate(){
@@ -786,10 +785,22 @@ function vRate(){
   <div class="chips" role="group" aria-label="Season" style="margin-top:6px">${chip("season","now","This season")}${chip("season","any","Any season")}</div>
   <p class="lede" style="margin:10px 0 6px">${Q.n} rated this session${Q.n?` · ${Q.likes} liked`:""}</p>
   ${o?`<article class="ocard qcard">${collage(o.itemIds)}<div class="meta"><div class="tags"><span class="tag">${esc(o.occasions[0])}</span><span class="tag">${esc(o.season)}</span></div>
-   <p class="why" style="margin:6px 0">${P.map(p=>esc(p.name)).join(" · ")}</p>${o.why?`<p class="why">${esc(o.why)}</p>`:""}</div></article>
+   <p class="why" style="margin:6px 0">${P.map(p=>esc(p.name)).join(" · ")}</p>${o.why?`<p class="why">${esc(o.why)}</p>`:""}${accBtns("qr")}</div></article>
    <div class="qbar"><button class="btn ghost" type="button" data-qrate="-1">Not for me</button><button class="btn ghost" type="button" data-qrate="0">Skip</button><button class="btn" type="button" data-qrate="1">Like</button></div>`
    :`<div class="empty"><strong>Nothing new to show with these settings.</strong> Try Any season or a different occasion.</div>`}
   <div class="row" style="margin-top:10px">${Q.hist.length?`<button class="iconbtn" type="button" id="qrUndo">Undo last</button>`:""}${Q.lastNo?`<button class="iconbtn" type="button" id="qrWhy">Say why I said no to the last one</button>`:""}</div>`;}
+
+/* Shoes and bag for a generated look: full rules, skip any you've said no to for this outfit, pick at random from the best few so the same pair doesn't repeat. */
+function accNoSet(){return new Set(taste.accNo||[]);}
+function pickAcc(P,occ,season,skip){skip=skip||[];const core=P.filter(p=>!["shoes","bags"].includes(p.category));const ck=Stylist.coreKey(core);const NO=accNoSet();
+  const f=Stylist.finish(core,D.items,{occ,season,W:tasteW(),rules:useRules});
+  const pick=L=>{const ok=L.filter(x=>!NO.has(ck+"|"+x.id)&&!skip.includes(x.id)).slice(0,4);return ok[Math.floor(Math.random()*ok.length)]||null;};
+  const sh=pick(f.shoes),bg=pick(f.bags);return core.concat(sh?[sh]:[],bg?[bg]:[]);}
+function accNo(o,cat){const P=o.itemIds.map(byId).filter(Boolean);const core=P.filter(p=>!["shoes","bags"].includes(p.category));const a=P.find(p=>p.category===cat);if(!a)return o;
+  taste.accNo=[...new Set((taste.accNo||[]).concat(Stylist.coreKey(core)+"|"+a.id))];LS.set("taste",taste);
+  const keep=P.find(p=>p.category===(cat==="shoes"?"bags":"shoes"));const occ=(o.occasions||["Everyday"])[0],season=o.season||todaySeason();
+  const N=pickAcc(core,occ,season,[a.id]).filter(p=>p.category===cat);return {...o,itemIds:core.concat(cat==="shoes"?N:keep?[keep]:[],cat==="bags"?N:keep?[keep]:[]).map(p=>p.id)};}
+const accBtns=pre=>`<div class="row" style="margin-top:6px"><button class="iconbtn" type="button" data-${pre}acc="shoes">Not these shoes</button><button class="iconbtn" type="button" data-${pre}acc="bags">Not this bag</button></div>`;
 
 function surprise(){
   const season=S.season==="any"?todaySeason():S.season;
@@ -800,8 +811,8 @@ function surprise(){
     const res=Stylist.suggest(a,D.items,{occ:"Everyday",season,seed:Math.floor(Math.random()*1e6),count:3,W:tasteW(),n:tasteN(),noAccessories:true,block:blockSets(),excludeCore:ex});
     if(res.length)r=res[Math.floor(Math.random()*res.length)];}
   if(!r){S.surprise=null;return;}
-  const P=r.pieces.slice();const f=Stylist.finish(P,D.items,{occ:"Everyday",season,W:tasteW()});if(f.shoes[0])P.push(f.shoes[0]);if(f.bags[0])P.push(f.bags[0]);
-  S.surprise={id:"s"+Date.now(),name:"Something new to try",itemIds:P.map(p=>p.id),occasions:["Everyday"],why:"A combination you haven't rated yet, picked using your taste.",temp:true};
+  const P=pickAcc(r.pieces.slice(),"Everyday",season);
+  S.surprise={id:"s"+Date.now(),name:"Something new to try",itemIds:P.map(p=>p.id),occasions:["Everyday"],season,why:"A combination you haven't rated yet, picked using your taste.",temp:true};
 }
 
 function copyText(o){
@@ -880,6 +891,8 @@ document.addEventListener("click",async e=>{
   if(t.dataset.bsec){S.build.name=($("#bName")||{}).value||S.build.name;S.bOpen=S.bOpen||{};S.bOpen[t.dataset.bsec]=!S.bOpen[t.dataset.bsec];render();return;}
   if(t.dataset.pickcat){S.pickCat=t.dataset.pickcat;S.pickSub="";S.pfac={};render();return;}
   if(t.dataset.psub!==undefined){S.pickSub=t.dataset.psub;render();return;}
+  if(t.dataset.suracc&&S.surprise){S.surprise=accNo(S.surprise,t.dataset.suracc);render();toast(t.dataset.suracc==="shoes"?"Noted. Those shoes won't come up with this outfit again.":"Noted. That bag won't come up with this outfit again.");return;}
+  if(t.dataset.qracc&&S.qr&&S.qr.cur){S.qr.cur=accNo(S.qr.cur,t.dataset.qracc);render();toast(t.dataset.qracc==="shoes"?"Noted. Those shoes won't come up with this outfit again.":"Noted. That bag won't come up with this outfit again.");return;}
   if(t.dataset.qrocc||t.dataset.qrseason){const Q=S.qr;if(t.dataset.qrocc)Q.occ=t.dataset.qrocc;else Q.season=t.dataset.qrseason;Q.cur=null;render();return;}
   if(t.dataset.qrate!==undefined&&S.qr&&S.qr.cur){const Q=S.qr,o=Q.cur,v=+t.dataset.qrate;const h={v,key:o.key,occ:o.occasions[0],o};
     if(v){const keep=S.sOcc;S.sOcc=h.occ;rate(o,v);S.sOcc=keep;Q.n++;}
