@@ -11020,6 +11020,26 @@
     "navy",
     "white"
    ]
+  },
+  {
+   "id": "pink-linen-a-line-midi-skirt",
+   "name": "Pink linen A-line midi skirt",
+   "category": "skirts",
+   "colours": [
+    "bubblegum pink"
+   ],
+   "pattern": "solid",
+   "fabric": "linen",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "High waist with belt loops, side pockets, centre seam, flared A-line midi. Your photo.",
+   "img": "img/pink-linen-a-line-midi-skirt.webp",
+   "_f": [
+    "pink"
+   ]
   }
  ],
  "outfits": [
@@ -83508,10 +83528,11 @@
    "summary": "Crisp white shirt, wide orange satin sash, full hot pink tulle midi skirt, orange clutch, orange heels.",
    "itemIds": [
     "basic-white-linen-shirt",
-    "basic-tan-kitten-heels"
+    "basic-tan-kitten-heels",
+    "pink-linen-a-line-midi-skirt"
    ],
    "missing": [
-    "Hot pink tulle midi skirt",
+    "Hot pink tulle midi skirt (your pink linen A-line midi skirt is the stand-in)",
     "Orange satin sash belt",
     "Orange clutch",
     "Orange heels"
@@ -86122,13 +86143,13 @@
    "summary": "Butter yellow loose knit, pink satin maxi skirt, woven basket with flowers, pink gingham bucket hat, silver flats. Yellow and pink. From @the.parisian.wardrobe on Instagram.",
    "itemIds": [
     "uniqlo-yellow-knit-polo",
-    "dusty-pink-fleece-midi-skirt",
     "mimco-raffia-clutch",
-    "basic-white-flats"
+    "basic-white-flats",
+    "pink-linen-a-line-midi-skirt"
    ],
    "missing": [
     "Butter yellow loose knit (your yellow knit polo is the stand-in)",
-    "Pink satin maxi skirt (your dusty pink midi skirt is the stand-in)",
+    "Pink satin maxi skirt (your pink linen A-line midi skirt is the stand-in)",
     "Woven basket (your Mimco raffia bag is the stand-in)",
     "Pink gingham bucket hat",
     "Silver flats (your white flats are the stand-in)"
@@ -86163,11 +86184,11 @@
    "summary": "Butter yellow jumper, pale pink full maxi skirt, small yellow bag. Yellow and pink. From @the.parisian.wardrobe on Instagram.",
    "itemIds": [
     "basic-yellow-cardigan",
-    "dusty-pink-fleece-midi-skirt"
+    "pink-linen-a-line-midi-skirt"
    ],
    "missing": [
     "Butter yellow jumper (your yellow cardigan, buttoned, is the stand-in)",
-    "Pale pink full maxi skirt (your dusty pink midi skirt is the stand-in)",
+    "Pale pink full maxi skirt (your pink linen A-line midi skirt is the stand-in)",
     "Small yellow bag"
    ],
    "occasions": [
@@ -96773,7 +96794,7 @@
    "ip:basic-black-loafers|basic-black-turtleneck": 0.36,
    "it:basic-blue-straight-jeans-cropped": 3.8,
    "ip:basic-black-loafers|basic-blue-straight-jeans-cropped": 0.36,
-   "pat:plain+plain": 8.24,
+   "pat:plain+plain": 8.28,
    "it:alessandra-colour-block-jumper": 0.36,
    "ip:alessandra-colour-block-jumper|basic-white-tee": 0.36,
    "cp:tan+white": 8.8,
@@ -96805,7 +96826,7 @@
    "ip:adidas-gazelle-pink|cos-navy-stripe-tee-magenta-collar": 0.36,
    "cp:navy+pink": 0.91,
    "cp:navy+white": 3.27,
-   "cp:pink+white": 4.69,
+   "cp:pink+white": 4.76,
    "cp:white+white": 7.51,
    "it:basic-black-midi-skirt": 1.69,
    "ip:basic-black-midi-skirt|basic-denim-jacket": 0.65,
@@ -97025,7 +97046,7 @@
    "cp:green+tan": 2.14,
    "cp:blue+tan": 2,
    "ip:basic-tan-flats|pink-wide-leg-sailor-trousers": 0.65,
-   "cp:pink+tan": 3.36,
+   "cp:pink+tan": 3.45,
    "ip:pale-blue-cutwork-puff-shirt|red-blue-stripe-knit-vest": 0.36,
    "ip:gorman-striped-skirt|red-blue-stripe-knit-vest": 0.65,
    "cp:blue+red": 1.69,
@@ -97524,7 +97545,7 @@
    "ip:basic-tan-crossbody|brown-linen-popover-top": 0.36,
    "ip:brown-linen-popover-top|uniqlo-brown-knit-jacket": 0.36,
    "ip:basic-white-sneakers|zara-black-sleeveless-knit": 0.36,
-   "pat:plain": 4.89,
+   "pat:plain": 4.82,
    "ip:basic-denim-jacket|mimco-raffia-clutch": 0.91,
    "ip:basic-tan-flats|mimco-raffia-clutch": 1.69,
    "ip:khaki-straight-leg-utility-pants|zara-white-sleeveless-knit": 0.91,
@@ -97745,6 +97766,9 @@
    "ip:basic-black-wide-linen-pants|black-white-stripe-tee": 0.36,
    "ip:basic-white-sneakers|black-white-stripe-tee": 0.91,
    "ip:basic-tan-kitten-heels|basic-white-linen-shirt": 0.65,
+   "ip:basic-white-linen-shirt|pink-linen-a-line-midi-skirt": 0.36,
+   "ip:basic-tan-kitten-heels|pink-linen-a-line-midi-skirt": 0.36,
+   "it:pink-linen-a-line-midi-skirt": 0.91,
    "ip:basic-white-linen-shirt|red-embroidered-silk-mini-crossbody": 0.36,
    "ip:basic-tan-kitten-heels|red-embroidered-silk-mini-crossbody": 0.36,
    "it:red-embroidered-silk-mini-crossbody": 1.13,
@@ -98334,17 +98358,16 @@
    "ip:black-croc-frame-clutch|red-a-line-midi-skirt": 0.36,
    "it:black-croc-frame-clutch": 0.36,
    "ip:black-croc-frame-clutch|red-silk-heeled-mules": 0.36,
-   "ip:dusty-pink-fleece-midi-skirt|uniqlo-yellow-knit-polo": 0.36,
-   "cp:pink+yellow": 0.91,
    "ip:mimco-raffia-clutch|uniqlo-yellow-knit-polo": 0.36,
    "ip:basic-white-flats|uniqlo-yellow-knit-polo": 0.36,
    "cp:white+yellow": 1.52,
-   "it:dusty-pink-fleece-midi-skirt": 0.65,
-   "ip:dusty-pink-fleece-midi-skirt|mimco-raffia-clutch": 0.36,
-   "ip:basic-white-flats|dusty-pink-fleece-midi-skirt": 0.36,
+   "ip:pink-linen-a-line-midi-skirt|uniqlo-yellow-knit-polo": 0.36,
+   "cp:pink+yellow": 0.91,
+   "ip:mimco-raffia-clutch|pink-linen-a-line-midi-skirt": 0.36,
+   "ip:basic-white-flats|pink-linen-a-line-midi-skirt": 0.36,
    "ip:pink-wide-leg-sailor-trousers|uniqlo-yellow-knit-polo": 0.36,
    "it:basic-yellow-cardigan": 0.91,
-   "ip:basic-yellow-cardigan|dusty-pink-fleece-midi-skirt": 0.36,
+   "ip:basic-yellow-cardigan|pink-linen-a-line-midi-skirt": 0.36,
    "it:abercrombie-pink-moose-tee": 0.36,
    "ip:abercrombie-pink-moose-tee|adidas-gazelle-pink": 0.36,
    "pat:print": 0.36,
