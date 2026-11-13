@@ -11737,7 +11737,7 @@
   {
    "id": "cream-cable-knit-turtleneck-poncho",
    "name": "Cream cable-knit turtleneck poncho",
-   "category": "knitwear",
+   "category": "outerwear",
    "colours": [
     "cream"
    ],
@@ -11749,7 +11749,8 @@
     "Spring"
    ],
    "notes": "Ribbed turtleneck, wide cape shape with no sleeves, cable panel down the front, curved ribbed hem. Wear over a fitted long-sleeve top or skivvy. Your photo.",
-   "img": "img/cream-cable-knit-turtleneck-poncho.webp"
+   "img": "img/cream-cable-knit-turtleneck-poncho.webp",
+   "sub": "poncho"
   },
   {
    "id": "pale-blue-turtleneck-tunic-jumper",
@@ -11903,6 +11904,78 @@
    "notes": "Elastic waist, straight leg, ankle length. Your photo.",
    "img": "img/black-straight-leg-leggings.webp",
    "sub": "leggings"
+  },
+  {
+   "id": "charcoal-rib-fringed-wrap-poncho",
+   "name": "Charcoal rib-knit fringed poncho",
+   "category": "outerwear",
+   "colours": [
+    "charcoal grey"
+   ],
+   "pattern": "solid rib",
+   "fabric": "rib knit, fibre unknown",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Asymmetric pointed poncho, slips over the head, diagonal rib, long fringe down both sides. Your photo.",
+   "img": "img/charcoal-rib-fringed-wrap-poncho.webp",
+   "sub": "poncho"
+  },
+  {
+   "id": "black-rib-fringed-wrap-poncho",
+   "name": "Black rib-knit fringed poncho",
+   "category": "outerwear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid rib",
+   "fabric": "rib knit, fibre unknown",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Asymmetric pointed poncho, slips over the head, diagonal rib, long fringe down both sides. Same style as the charcoal one. Your photo.",
+   "img": "img/black-rib-fringed-wrap-poncho.webp",
+   "sub": "poncho"
+  },
+  {
+   "id": "keepers-taupe-fine-knit-poncho",
+   "name": "Keepers taupe fine-knit poncho",
+   "category": "outerwear",
+   "colours": [
+    "taupe"
+   ],
+   "pattern": "solid",
+   "fabric": "fine knit, fibre unknown",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Light square poncho with rolled edges, slips over the head. Drapes over shoulders. Your photo.",
+   "img": "img/keepers-taupe-fine-knit-poncho.webp",
+   "sub": "poncho"
+  },
+  {
+   "id": "black-cable-knit-turtleneck-cape",
+   "name": "Black cable-knit turtleneck cape",
+   "category": "outerwear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "cable knit",
+   "fabric": "chunky cable knit, fibre unknown",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Big ribbed turtleneck, wide cape body with cable diamonds, deep rib hem band, arm openings at the sides. Wear over a fitted crew or long-sleeve top. Your photo.",
+   "img": "img/black-cable-knit-turtleneck-cape.webp",
+   "sub": "poncho"
   }
  ],
  "outfits": [
