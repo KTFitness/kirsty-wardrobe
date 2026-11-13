@@ -95,6 +95,7 @@ const shirtLayer=l=>isOver(l)||(l.category==="outerwear"&&/shirt/i.test(l.name))
 /* Kirsty doesn't wear a cardigan over a jumper. */
 const isCardi=l=>/cardigan/i.test(l.name+" "+l.id)||(l.category==="knitwear"&&isWarmLayer(l));
 const isJumper=p=>p.category==="knitwear"&&!isWarmLayer(p)&&!isVest(p)&&subOf(p,"knitwear")==="jumper";
+const baseLayer=l=>/cardigan|blazer|knit jacket/i.test(l.name)||shirtLayer(l);
 const layerOk=(ps,l)=>!(/poncho|cape\b/i.test(l.name)&&/turtleneck|mock/i.test(l.name)&&ps.some(p=>p!==l&&/turtleneck|mock[- ]neck|funnel|hood/i.test(p.name+" "+(p.notes||""))))&&!(isCardi(l)&&ps.some(p=>p!==l&&isJumper(p)))&&(!shirtLayer(l)||ps.every(p=>p===l||!["tops","knitwear"].includes(p.category)||layerBase(p)));
 /* A collared shirt can sit under a crew or scoop-neck dress with the collar showing. */
 const collarShirt=it=>isShirt(it)&&(isOver(it)||/collar/i.test((it.notes||"")+it.name))&&!/band collar|band-collar|collarless|cropped|crop top|popover|open collar/i.test((it.notes||"")+it.name)&&!sleeveless(it);
@@ -284,7 +285,7 @@ function suggest(anchor,items,ctx){
   const by=c=>pool.filter(i=>c.includes(i.category));
   let tops=by(["tops","knitwear"]).filter(i=>!isWarmLayer(i)),bottoms=by(["skirts","trousers","shorts"]),dresses=by(["dresses"]);
   let shoes=by(["shoes"]),layers=pool.filter(isWarmLayer),unders=pool.filter(isUnder),bags=by(["bags"]);
-  const WI=ctx.with?items.find(i=>i.id===ctx.with&&i.id!==anchor.id):null;let forceLayer=false;
+  if(ctx.baseOnly)layers=layers.filter(baseLayer);const WI=ctx.with?items.find(i=>i.id===ctx.with&&i.id!==anchor.id):null;let forceLayer=false;
   if(WI){const c=WI.category;if(isWarmLayer(WI)){layers=[WI];forceLayer=true;}else if(c==="tops"||c==="knitwear")tops=[WI];else if(["skirts","trousers","shorts"].includes(c)){bottoms=[WI];dresses=[];}else if(c==="dresses"){dresses=[WI];bottoms=[];}else if(c==="shoes")shoes=[WI];else if(c==="bags")bags=[WI];}
   const cool=season==="Autumn"||season==="Winter";
   let cores=[];
@@ -318,7 +319,7 @@ function suggest(anchor,items,ctx){
      const Te=WI&&teeOver(WI)?[WI]:rk(tops.filter(teeOver)),Su=WI&&shirtUnder(WI)?[WI]:rk(tops.filter(shirtUnder)).slice(0,3);
      for(const t of Te)for(const sh of Su)if(teeShirtOk(t,sh))cores.push([t,sh,anchor]);}
   }else if(ac==="dresses"&&(anchor.overTop||/pinafore/.test(lc(anchor)))){const U=WI&&tops.includes(WI)?[WI]:tops.filter(t=>!sleeveless(t)&&!isVest(t)&&(!anchor.overTop||!/shirt|blouse|polo/i.test(t.name.replace(/T-shirt/ig,""))));for(const t of U)cores.push([anchor,t]);
-  }else if(ac==="dresses"){cores.push([anchor]);if((cool||season==="Spring")&&(!ctx.baseOnly||forceLayer))for(const l of layers)cores.push([anchor,l]);
+  }else if(ac==="dresses"){cores.push([anchor]);if(cool||season==="Spring")for(const l of layers)cores.push([anchor,l]);
     if(collarDress(anchor)&&(cool||season==="Spring")&&!(ctx.tmax>=26)){const U=WI&&tops.includes(WI)?[WI]:tops.filter(t=>collarShirt(t)&&(!pkind(anchor)||!pkind(t))&&underOk(anchor,t));for(const t of U)cores.push([anchor,t]);}
     if(!cool)for(const u of unders.filter(u=>/linen|tee/.test(u.id)))cores.push([anchor]);}
   else{
@@ -353,7 +354,7 @@ function suggest(anchor,items,ctx){
     }
     const chilly=ctx.tmax!=null&&ctx.tmax<20&&!pieces.some(longSleeve);
     const needLayer=forceLayer||chilly||(ctx.rain&&season!=="Summer"&&!(ctx.tmax>=24)&&!pieces.some(isWarmLayer))||cool&&!pieces.some(isWarmLayer)&&(pieces.some(sleeveless)||season==="Winter"||pieces.some(p=>p.category==="dresses"));
-    if(needLayer&&(!ctx.baseOnly||forceLayer)&&layers.length&&!(forceLayer&&pieces.includes(WI))&&(forceLayer||!openShirtOn(pieces))){const L=layers.filter(l=>!pieces.includes(l)&&layerOk(pieces,l)&&!busyClash(pieces.concat(l))).map(l=>[l,SC(pieces.concat(l),ctx).s+(rnd()*E)*0.8]).sort((a,b)=>b[1]-a[1])[0];if(L)pieces.push(L[0]);}
+    if(needLayer&&layers.length&&!(forceLayer&&pieces.includes(WI))&&(forceLayer||!openShirtOn(pieces))){const L=layers.filter(l=>!pieces.includes(l)&&layerOk(pieces,l)&&!busyClash(pieces.concat(l))).map(l=>[l,SC(pieces.concat(l),ctx).s+(rnd()*E)*0.8]).sort((a,b)=>b[1]-a[1])[0];if(L)pieces.push(L[0]);}
     if(busyClash(pieces))continue;
     let alts=[];
     if(!ctx.noAccessories&&!pieces.some(p=>p.category==="shoes")&&shoes.length){
@@ -428,7 +429,7 @@ function finish(pieces,items,ctx){ctx=ctx||{};ctx.W=ctx.W||{};const season=ctx.s
 
 function addLayer(pieces,items,ctx){ctx=ctx||{};ctx.W=ctx.W||{};if(ctx.season==="Summer"||ctx.tmax>=24)return null;if(pieces.some(isWarmLayer)||openShirtOn(pieces)||(!ctx.rain&&!(ctx.pick&&ctx.season==="Winter")&&pieces.some(longSleeve)))return null;const SK=new Set(ctx.skip||[]);
   const sc=ps=>(ctx.rules?score(ps,ctx).s:0)+learned(ps,ctx);
-  const L=items.filter(i=>!SK.has(i.id)&&isWarmLayer(i)&&inSeason(i,ctx.season)&&layerOk(pieces,i)&&!busyClash(pieces.concat(i))).map(x=>[x,sc(pieces.concat(x))]).sort((a,b)=>b[1]-a[1]);if(ctx.pick){const t=L.slice(0,4);return t.length?t[Math.floor(Math.random()*t.length)][0]:null;}return L[0]?L[0][0]:null;}
+  const L=items.filter(i=>!SK.has(i.id)&&isWarmLayer(i)&&!(ctx.outerOnly&&baseLayer(i))&&inSeason(i,ctx.season)&&layerOk(pieces,i)&&!busyClash(pieces.concat(i))).map(x=>[x,sc(pieces.concat(x))]).sort((a,b)=>b[1]-a[1]);if(ctx.pick){const t=L.slice(0,4);return t.length?t[Math.floor(Math.random()*t.length)][0]:null;}return L[0]?L[0][0]:null;}
 
 /* Sub-categories, worked out from each piece's name, notes and shape. An item's own "sub" field overrides. */
 const SUBS={
@@ -474,5 +475,5 @@ const FACETS={
    if(/kitten|low-heel|low heel|low stacked/.test(t))return "low";if(/block|square-toe heeled|mid block/.test(t))return "mid";if(/heel|stiletto|slim-heel|pointed heeled/.test(t)&&!/flat/.test(i.name.toLowerCase()))return "high";return "flat";}],
   ["bootH","Boot height",[["ankle","Ankle"],["calf","Calf"],["knee","Knee"]],i=>{if(i.bootH)return i.bootH;const t=txt(i);if(!/boot/.test(t))return null;if(/knee/.test(t))return "knee";if(/calf/.test(t))return "calf";return "ankle";}]]};
 
-window.Stylist={layerOk,layerTip,FACETS,subOf,SUBS,busyClash,addLayer,finish,coreKey:ps=>ps.filter(p=>!["shoes","bags","accessories"].includes(p.category)).map(p=>p.id).sort().join(","),suggest,features,families,pkind,formality,hemTip,hairTip,shoeTip};
+window.Stylist={baseLayer,layerOk,layerTip,FACETS,subOf,SUBS,busyClash,addLayer,finish,coreKey:ps=>ps.filter(p=>!["shoes","bags","accessories"].includes(p.category)).map(p=>p.id).sort().join(","),suggest,features,families,pkind,formality,hemTip,hairTip,shoeTip};
 })();
