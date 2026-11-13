@@ -3670,7 +3670,7 @@
   },
   {
    "id": "basic-black-straight-jeans-cropped",
-   "name": "Black jeans, ankle crop",
+   "name": "Black cropped straight-leg jeans",
    "category": "trousers",
    "colours": [
     "black denim"
@@ -3683,13 +3683,15 @@
     "Autumn",
     "Winter"
    ],
-   "notes": "Your photo.",
-   "img": "img/black-wide-crop-jeans.webp",
+   "notes": "Mid rise, zip fly, five pockets, straight leg. Length: above the ankle (cropped). Your photo.",
+   "img": "img/basic-black-straight-jeans-cropped.webp",
    "basic": true,
    "shape": "cropped",
    "_f": [
     "black"
-   ]
+   ],
+   "sub": "cropped",
+   "hem": "crop"
   },
   {
    "id": "basic-white-straight-jeans",
@@ -11352,6 +11354,284 @@
    "hem": "full",
    "shape": "wide",
    "img": "img/jag-dark-wash-wide-bootleg-jeans.webp"
+  },
+  {
+   "id": "mix-mid-wash-cropped-straight-jeans",
+   "name": "Mix mid-wash cropped straight-leg jeans",
+   "category": "trousers",
+   "colours": [
+    "mid-blue denim"
+   ],
+   "pattern": "solid",
+   "fabric": "denim",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Mid rise, zip fly, five pockets, faded whiskering, straight leg. Length: above the ankle (cropped). Your photo.",
+   "sub": "cropped",
+   "hem": "crop",
+   "img": "img/mix-mid-wash-cropped-straight-jeans.webp"
+  },
+  {
+   "id": "black-cropped-skinny-jeans",
+   "name": "Black cropped skinny jeans",
+   "category": "trousers",
+   "colours": [
+    "black denim"
+   ],
+   "pattern": "solid",
+   "fabric": "denim",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Low-mid rise, zip fly, five pockets, slim leg. Length: above the ankle (cropped). Your photo.",
+   "sub": "cropped",
+   "hem": "crop",
+   "img": "img/black-cropped-skinny-jeans.webp"
+  },
+  {
+   "id": "black-straight-leg-jeans-red-label",
+   "name": "Black straight-leg jeans with red label",
+   "category": "trousers",
+   "colours": [
+    "black denim"
+   ],
+   "pattern": "solid",
+   "fabric": "denim",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Mid rise, zip fly, five pockets, straight leg with a slight kick at the hem. Red brand label on the waistband. Length: below the ankle. Your photo.",
+   "sub": "straight",
+   "hem": "full",
+   "img": "img/black-straight-leg-jeans-red-label.webp"
+  },
+  {
+   "id": "black-skinny-jeans",
+   "name": "Black skinny jeans",
+   "category": "trousers",
+   "colours": [
+    "black denim"
+   ],
+   "pattern": "solid",
+   "fabric": "denim",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Mid rise, zip fly, five pockets, slim leg. Length: below the ankle. Your photo.",
+   "sub": "straight",
+   "hem": "full",
+   "img": "img/black-skinny-jeans.webp"
+  },
+  {
+   "id": "mid-wash-cropped-bootcut-jeans",
+   "name": "Mid-wash cropped bootcut jeans",
+   "category": "trousers",
+   "colours": [
+    "mid-blue denim"
+   ],
+   "pattern": "solid",
+   "fabric": "denim",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Low rise, zip fly, scoop pockets, pink floral waistband lining, faded wash, bootcut flare. Length: above the ankle (cropped). Your photo.",
+   "sub": "cropped",
+   "hem": "crop",
+   "img": "img/mid-wash-cropped-bootcut-jeans.webp"
+  },
+  {
+   "id": "guess-cuffed-cropped-straight-jeans",
+   "name": "Guess cuffed cropped straight-leg jeans",
+   "category": "trousers",
+   "colours": [
+    "mid-blue denim"
+   ],
+   "pattern": "solid",
+   "fabric": "denim",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Low rise, button fly, triangle logo coin pocket, faded whiskering, straight leg worn with deep turn-ups. Length: above the ankle (cropped). Your photo.",
+   "sub": "cropped",
+   "hem": "crop",
+   "img": "img/guess-cuffed-cropped-straight-jeans.webp"
+  },
+  {
+   "id": "jag-denim-dark-wash-wide-bootcut-jeans",
+   "name": "JAG Denim dark-wash wide bootcut jeans",
+   "category": "trousers",
+   "colours": [
+    "dark denim"
+   ],
+   "pattern": "solid",
+   "fabric": "denim",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Low rise, zip fly, five pockets with tan topstitching, red J tab, wide bootcut flare. Length: no tag in the photo. Your photo.",
+   "sub": "wide",
+   "img": "img/jag-denim-dark-wash-wide-bootcut-jeans.webp"
+  },
+  {
+   "id": "dark-wash-cuffed-straight-jeans",
+   "name": "Dark-wash cuffed straight-leg jeans",
+   "category": "trousers",
+   "colours": [
+    "dark denim"
+   ],
+   "pattern": "solid",
+   "fabric": "denim",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Mid rise, zip fly, five pockets, copper rivets, red waistband label, faded knees, straight leg worn with rolled cuffs. Length: no tag in the photo. Your photo.",
+   "sub": "straight",
+   "img": "img/dark-wash-cuffed-straight-jeans.webp"
+  },
+  {
+   "id": "mid-wash-cropped-wide-leg-jeans",
+   "name": "Mid-wash cropped wide-leg jeans",
+   "category": "trousers",
+   "colours": [
+    "mid-blue denim"
+   ],
+   "pattern": "solid",
+   "fabric": "denim",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "High rise, zip fly, five pockets, wide leg with deep hem. Length: above the ankle (cropped). Your photo.",
+   "sub": "cropped",
+   "hem": "crop",
+   "img": "img/mid-wash-cropped-wide-leg-jeans.webp"
+  },
+  {
+   "id": "mid-wash-patch-pocket-wide-leg-jeans",
+   "name": "Mid-wash wide-leg jeans with front patch pockets",
+   "category": "trousers",
+   "colours": [
+    "mid-blue denim"
+   ],
+   "pattern": "solid",
+   "fabric": "denim",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "High rise, zip fly, two square patch pockets on the front, sailor style, wide leg with deep hem. Length: below the ankle. Your photo.",
+   "sub": "wide",
+   "hem": "full",
+   "img": "img/mid-wash-patch-pocket-wide-leg-jeans.webp"
+  },
+  {
+   "id": "mid-wash-slant-pocket-wide-leg-jeans",
+   "name": "Mid-wash wide-leg jeans with slant pockets",
+   "category": "trousers",
+   "colours": [
+    "mid-blue denim"
+   ],
+   "pattern": "solid",
+   "fabric": "denim",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "High rise, zip fly, slant trouser pockets, waistband tabs, wide leg with deep hem band, copper topstitching and raw edge. Length: below the ankle. Your photo.",
+   "sub": "wide",
+   "hem": "full",
+   "img": "img/mid-wash-slant-pocket-wide-leg-jeans.webp"
+  },
+  {
+   "id": "dark-wash-skinny-jeans",
+   "name": "Dark-wash skinny jeans",
+   "category": "trousers",
+   "colours": [
+    "dark denim"
+   ],
+   "pattern": "solid",
+   "fabric": "denim",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Mid rise, zip fly, five pockets, copper rivets, slim leg. Length: below the ankle. Your photo.",
+   "sub": "straight",
+   "hem": "full",
+   "img": "img/dark-wash-skinny-jeans.webp"
+  },
+  {
+   "id": "dark-wash-cropped-straight-jeans",
+   "name": "Dark-wash cropped straight-leg jeans",
+   "category": "trousers",
+   "colours": [
+    "dark denim"
+   ],
+   "pattern": "solid",
+   "fabric": "denim",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Low rise, zip fly, five pockets, straight leg. Label says skinny but it cuts straight. Length: above the ankle (cropped). Your photo.",
+   "sub": "cropped",
+   "hem": "crop",
+   "img": "img/dark-wash-cropped-straight-jeans.webp"
+  },
+  {
+   "id": "jag-dark-wash-cropped-skinny-jeans",
+   "name": "JAG dark-wash cropped skinny jeans",
+   "category": "trousers",
+   "colours": [
+    "dark denim"
+   ],
+   "pattern": "solid",
+   "fabric": "denim",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Mid rise, zip fly, five pockets, gold rivets, slim leg. Length: above the ankle (cropped). Your photo.",
+   "sub": "cropped",
+   "hem": "crop",
+   "img": "img/jag-dark-wash-cropped-skinny-jeans.webp"
   }
  ],
  "outfits": [
