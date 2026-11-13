@@ -11632,6 +11632,57 @@
    "sub": "cropped",
    "hem": "crop",
    "img": "img/jag-dark-wash-cropped-skinny-jeans.webp"
+  },
+  {
+   "id": "cream-shaker-rib-raglan-jumper",
+   "name": "Cream shaker-rib raglan jumper",
+   "colours": [
+    "cream"
+   ],
+   "pattern": "solid rib",
+   "fabric": "chunky rib knit, fibre unknown",
+   "notes": "Rolled crew neck, raglan sleeves, long relaxed body, side splits with a longer back. Your photo.",
+   "category": "knitwear",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "img": "img/cream-shaker-rib-raglan-jumper.webp"
+  },
+  {
+   "id": "sportsgirl-pale-pink-cropped-knit-jumper",
+   "name": "Sportsgirl pale pink cropped knit jumper",
+   "colours": [
+    "pale pink"
+   ],
+   "pattern": "solid",
+   "fabric": "smooth fine knit",
+   "notes": "Rolled crew neck, dropped shoulders, centre front seam, boxy cropped, rolled raw hem. Your photo.",
+   "category": "knitwear",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "img": "img/sportsgirl-pale-pink-cropped-knit-jumper.webp"
+  },
+  {
+   "id": "uniqlo-cream-fine-knit-crew-jumper",
+   "name": "Uniqlo cream fine-knit crew jumper",
+   "colours": [
+    "cream"
+   ],
+   "pattern": "solid",
+   "fabric": "fine knit, possibly cashmere or merino",
+   "notes": "Ribbed crew neck, set-in sleeves, ribbed cuffs and hem band, regular length. Your photo.",
+   "category": "knitwear",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "img": "img/uniqlo-cream-fine-knit-crew-jumper.webp"
   }
  ],
  "outfits": [
