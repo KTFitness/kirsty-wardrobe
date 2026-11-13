@@ -11089,6 +11089,238 @@
    ],
    "notes": "Cropped boxy crew neck, dropped shoulders, rolled neck edge, big pale pink daisies all over including the sleeves. Your photo.",
    "img": "img/ghanda-pale-blue-daisy-cropped-jumper.webp"
+  },
+  {
+   "id": "country-road-chambray-snap-shirt",
+   "name": "Country Road chambray snap-front shirt",
+   "category": "tops",
+   "colours": [
+    "mid blue"
+   ],
+   "pattern": "solid",
+   "fabric": "chambray (light denim)",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Classic collar, pearl snap front, one chest pocket, long sleeves worn rolled, curved hem. Can be worn open as an overshirt. Your photo.",
+   "overshirt": true,
+   "img": "img/country-road-chambray-snap-shirt.webp",
+   "_f": [
+    "sky"
+   ]
+  },
+  {
+   "id": "white-poppy-print-shift-dress",
+   "name": "White shift dress with watercolour poppies",
+   "category": "dresses",
+   "colours": [
+    "white",
+    "pink",
+    "yellow",
+    "cobalt blue",
+    "olive"
+   ],
+   "pattern": "large watercolour floral border",
+   "fabric": "linen blend, probably",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Sleeveless, wide boat neck with keyhole and flower button, straight shift to the knee, big poppy border across the hem. Your photo.",
+   "img": "img/white-poppy-print-shift-dress.webp"
+  },
+  {
+   "id": "light-wash-denim-pocket-shift-dress",
+   "name": "Light-wash denim shift dress with patch pockets",
+   "category": "dresses",
+   "colours": [
+    "light denim"
+   ],
+   "pattern": "solid",
+   "fabric": "denim",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Crew neck with stitched edge, elbow sleeves, centre front seam, two big patch pockets, frayed raw hem, back zip. Your photo.",
+   "img": "img/light-wash-denim-pocket-shift-dress.webp"
+  },
+  {
+   "id": "indigo-knit-seamed-shift-dress",
+   "name": "Indigo knit shift dress with seam panels",
+   "category": "dresses",
+   "colours": [
+    "indigo denim"
+   ],
+   "pattern": "solid",
+   "fabric": "indigo-dyed cotton knit",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Scoop neck, three-quarter sleeves, angled panel seams at the waist, side pockets, straight knee length. Reads as soft denim. Your photo.",
+   "img": "img/indigo-knit-seamed-shift-dress.webp"
+  },
+  {
+   "id": "grey-marle-mock-neck-sleeveless-shift-dress",
+   "name": "Grey marle mock-neck sleeveless shift dress",
+   "category": "dresses",
+   "colours": [
+    "grey"
+   ],
+   "pattern": "solid marle",
+   "fabric": "ponte or scuba knit, black lining",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Mock neck, sleeveless, straight shift above the knee, back zip. Layer a skivvy or shirt under it in winter. Your photo.",
+   "img": "img/grey-marle-mock-neck-sleeveless-shift-dress.webp"
+  },
+  {
+   "id": "uniqlo-ecru-sleeveless-shift-dress",
+   "name": "Uniqlo ecru sleeveless shift dress",
+   "category": "dresses",
+   "colours": [
+    "cream"
+   ],
+   "pattern": "solid",
+   "fabric": "smooth cotton-blend jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Crew neck, sleeveless, straight shift to the knee, side pockets, side splits. Your photo.",
+   "img": "img/uniqlo-ecru-sleeveless-shift-dress.webp"
+  },
+  {
+   "id": "country-road-oatmeal-linen-shirt",
+   "name": "Country Road oatmeal linen shirt",
+   "category": "tops",
+   "colours": [
+    "oatmeal"
+   ],
+   "pattern": "solid",
+   "fabric": "organic French linen",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Classic collar, chest pocket, long sleeves worn rolled, curved hem. Same shirt as your pink and black Country Road ones. Your photo.",
+   "overshirt": true,
+   "img": "img/country-road-oatmeal-linen-shirt.webp"
+  },
+  {
+   "id": "sussan-white-linen-utility-shirt",
+   "name": "Sussan white linen utility shirt",
+   "category": "tops",
+   "colours": [
+    "white"
+   ],
+   "pattern": "solid",
+   "fabric": "linen",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Collar, shell buttons, two flap chest pockets, roll-tab sleeves, longer curved back hem. Your photo.",
+   "overshirt": true,
+   "img": "img/sussan-white-linen-utility-shirt.webp"
+  },
+  {
+   "id": "country-road-khaki-linen-v-neck-dress",
+   "name": "Country Road khaki linen V-neck shift dress",
+   "category": "dresses",
+   "colours": [
+    "khaki olive"
+   ],
+   "pattern": "solid",
+   "fabric": "linen",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "V neck, short dropped sleeves, curved side panel seams, straight shift above the knee. Your photo.",
+   "img": "img/country-road-khaki-linen-v-neck-dress.webp"
+  },
+  {
+   "id": "mix-distressed-denim-cutoff-shorts",
+   "name": "Mix distressed denim cut-off shorts",
+   "category": "shorts",
+   "colours": [
+    "mid denim"
+   ],
+   "pattern": "solid",
+   "fabric": "denim",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Five-pocket, mid rise, ripped patches, frayed raw hem. Your photo.",
+   "shape": "shorts",
+   "img": "img/mix-distressed-denim-cutoff-shorts.webp"
+  },
+  {
+   "id": "orange-coral-wide-stripe-rib-tank-dress",
+   "name": "Orange and coral wide stripe rib tank dress",
+   "category": "dresses",
+   "colours": [
+    "orange",
+    "coral"
+   ],
+   "pattern": "wide stripe",
+   "fabric": "rib jersey",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Scoop neck, tank straps, fitted knee length. Your photo.",
+   "img": "img/orange-coral-wide-stripe-rib-tank-dress.webp"
+  },
+  {
+   "id": "black-ric-rac-trim-midi-dress",
+   "name": "Black midi dress with white ric-rac side trim",
+   "category": "dresses",
+   "colours": [
+    "black",
+    "white"
+   ],
+   "pattern": "solid with ric-rac trim",
+   "fabric": "crepe, probably polyester",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Crew neck, sleeveless, back keyhole button, straight midi with side splits, wide white ric-rac down both sides. Your photo.",
+   "img": "img/black-ric-rac-trim-midi-dress.webp"
+  },
+  {
+   "id": "black-white-stripe-v-neck-tee-maxi-dress",
+   "name": "Black and white stripe V-neck T-shirt midi dress",
+   "category": "dresses",
+   "colours": [
+    "white",
+    "black"
+   ],
+   "pattern": "fine stripe",
+   "fabric": "viscose jersey",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "V neck, cap sleeves, relaxed straight cut to mid-calf, curved split hem. Your photo.",
+   "img": "img/black-white-stripe-v-neck-tee-maxi-dress.webp"
   }
  ],
  "outfits": [
