@@ -9,10 +9,10 @@ const FAM_WORDS=[
  ["sky",["sky","pale blue","light blue","baby blue","aqua","chambray","turquoise","teal"]],
  ["blue",["cornflower","cobalt","mid blue","mid-blue","blue"]],
  ["pink",["pink","magenta","rose","fuchsia"]],["red",["red","tomato","cherry"]],
- ["orange",["orange","tangerine","rust","cinnamon","burnt"]],["yellow",["yellow","butter","lemon","mustard","ochre"]],
+ ["orange",["orange","tangerine","rust","cinnamon","burnt","terracotta"]],["yellow",["yellow","butter","lemon","mustard","ochre"]],
  ["green",["green","emerald","kelly","apple","jade","lime","chartreuse"]],["brown",["brown","chocolate"]],
- ["tan",["tan","camel","oatmeal","natural","beige","stone","taupe"]],["cream",["cream","ecru","ivory","off-white"]],
- ["white",["white"]],["black",["black"]],["grey",["grey","gray","charcoal"]],["denim",["denim"]],["multi",["multicolour","multi"]]
+ ["tan",["tan","camel","oatmeal","natural","beige","stone","taupe","gold"]],["cream",["cream","ecru","ivory","off-white"]],
+ ["white",["white"]],["black",["black"]],["grey",["grey","gray","charcoal","silver"]],["denim",["denim"]],["multi",["multicolour","multi"]]
 ];
 function fam(c){c=String(c).toLowerCase();
   if(c.includes("denim")&&!c.includes("white")&&!c.includes("black"))return "denim";

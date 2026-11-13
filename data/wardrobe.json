@@ -1893,6 +1893,7 @@
    "_f": [
     "pink",
     "red",
+    "sky",
     "yellow"
    ]
   },
@@ -4433,7 +4434,7 @@
    "basic": true,
    "shape": "cardigan",
    "_f": [
-    "black"
+    "grey"
    ]
   },
   {
@@ -5908,12 +5909,7 @@
     "Autumn"
    ],
    "notes": "Sleeveless, round neck, three bands of colour, straight shift. Your photo.",
-   "img": "img/pink-plum-orange-colour-block-dress.webp",
-   "_f": [
-    "pink",
-    "lilac",
-    "orange"
-   ]
+   "img": "img/pink-plum-orange-colour-block-dress.webp"
   },
   {
    "id": "red-zigzag-knit-shift-dress",
@@ -6700,6 +6696,7 @@
     "pink",
     "blue",
     "yellow",
+    "wine",
     "green"
    ]
   },
@@ -7226,7 +7223,9 @@
    ],
    "notes": "Stand collar, zip front, zip chest and hand pockets, panel stitching. Your photo.",
    "img": "img/taupe-leather-biker-jacket.webp",
-   "_f": []
+   "_f": [
+    "tan"
+   ]
   },
   {
    "id": "black-zip-knit-cardigan",
@@ -8938,7 +8937,9 @@
    ],
    "notes": "Wide crew neck with pointelle detail, dropped shoulders, split hem. Your photo.",
    "img": "img/sussan-lime-fine-knit-crew-jumper.webp",
-   "_f": []
+   "_f": [
+    "green"
+   ]
   },
   {
    "id": "cotton-on-oatmeal-merino-vneck-jumper",
@@ -98544,7 +98545,7 @@
    "ip:basic-green-cardigan|basic-white-linen-shirt": 0.36,
    "cp:green+white": 3.45,
    "ip:basic-black-dress-pants|basic-white-linen-shirt": 0.65,
-   "cp:black+white": 8.05,
+   "cp:black+white": 8.01,
    "ip:basic-black-loafers|basic-white-linen-shirt": 0.91,
    "ip:basic-black-crossbody|basic-white-linen-shirt": 1.52,
    "ip:basic-white-linen-shirt|black-wool-collared-coat": 0.36,
@@ -98556,7 +98557,7 @@
    "ip:basic-green-cardigan|black-wool-collared-coat": 0.36,
    "it:basic-black-dress-pants": 1.52,
    "ip:basic-black-dress-pants|basic-black-loafers": 0.65,
-   "cp:black+black": 7.43,
+   "cp:black+black": 7.38,
    "ip:basic-black-crossbody|basic-black-dress-pants": 0.65,
    "ip:basic-black-dress-pants|black-wool-collared-coat": 0.36,
    "it:basic-black-loafers": 2.52,
@@ -98569,20 +98570,20 @@
    "so:Everyday|heeled boots": 6.26,
    "it:basic-black-turtleneck": 1.13,
    "ip:basic-black-turtleneck|basic-blue-straight-jeans-cropped": 0.36,
-   "cp:black+denim": 5.67,
+   "cp:black+denim": 5.62,
    "ip:basic-black-loafers|basic-black-turtleneck": 0.36,
    "it:basic-blue-straight-jeans-cropped": 3.8,
    "ip:basic-black-loafers|basic-blue-straight-jeans-cropped": 0.36,
    "pat:plain+plain": 8.8,
    "it:alessandra-colour-block-jumper": 0.36,
    "ip:alessandra-colour-block-jumper|basic-white-tee": 0.36,
-   "cp:tan+white": 9.33,
+   "cp:tan+white": 9.4,
    "cp:cream+white": 3.88,
    "ip:alessandra-colour-block-jumper|basic-blue-straight-jeans-cropped": 0.36,
    "cp:denim+tan": 7.38,
    "cp:cream+denim": 2.97,
    "ip:alessandra-colour-block-jumper|basic-tan-flats": 0.36,
-   "cp:tan+tan": 6.36,
+   "cp:tan+tan": 6.46,
    "cp:cream+tan": 3.63,
    "ip:alessandra-colour-block-jumper|basic-tan-crossbody": 0.36,
    "it:basic-white-tee": 6.26,
@@ -98642,7 +98643,7 @@
    "ip:basic-black-crossbody|basic-black-flats": 2.27,
    "ip:basic-denim-jacket|zara-black-sleeveless-knit": 0.36,
    "ip:basic-tan-flats|zara-black-sleeveless-knit": 0.91,
-   "cp:black+tan": 5.08,
+   "cp:black+tan": 5.14,
    "ip:basic-tan-crossbody|zara-black-sleeveless-knit": 0.91,
    "ip:black-crossback-wide-leg-jumpsuit|zara-black-sleeveless-knit": 0.36,
    "ip:basic-black-bamboo-wide-crop|basic-denim-jacket": 0.36,
@@ -98676,16 +98677,16 @@
    "ip:basic-black-loafers|zara-black-sleeveless-knit": 0.36,
    "ip:basic-black-bamboo-wide-crop|basic-black-loafers": 0.36,
    "ip:basic-denim-jacket|basic-grey-marle-jumper": 0.36,
-   "cp:denim+grey": 2.4,
+   "cp:denim+grey": 2.52,
    "ip:basic-denim-jacket|green-wide-leg-cords": 0.36,
    "cp:denim+mint": 0.36,
    "it:basic-grey-marle-jumper": 2.14,
    "ip:basic-grey-marle-jumper|green-wide-leg-cords": 0.65,
    "cp:grey+mint": 0.65,
    "ip:basic-grey-marle-jumper|basic-white-sneakers": 0.65,
-   "cp:grey+white": 3.36,
+   "cp:grey+white": 3.54,
    "ip:basic-grey-marle-jumper|basic-tan-crossbody": 0.36,
-   "cp:grey+tan": 2,
+   "cp:grey+tan": 2.14,
    "it:green-wide-leg-cords": 1.33,
    "ip:basic-white-sneakers|green-wide-leg-cords": 0.91,
    "cp:mint+white": 1.13,
@@ -98740,7 +98741,7 @@
    "it:khaki-cotton-field-jacket": 1.33,
    "it:pink-tulip-knit-vest": 1.52,
    "ip:green-breton-long-sleeve|pink-tulip-knit-vest": 0.36,
-   "cp:green+pink": 2.14,
+   "cp:green+pink": 2.27,
    "cp:green+red": 2.14,
    "ip:pink-cord-wide-leg-trousers|pink-tulip-knit-vest": 0.36,
    "cp:pink+pink": 2.52,
@@ -98822,7 +98823,7 @@
    "ip:green-geometric-knit-polo|pink-wide-leg-sailor-trousers": 0.36,
    "cp:blue+pink": 1.13,
    "ip:basic-tan-flats|green-geometric-knit-polo": 0.36,
-   "cp:green+tan": 2.64,
+   "cp:green+tan": 2.75,
    "cp:blue+tan": 2,
    "ip:basic-tan-flats|pink-wide-leg-sailor-trousers": 0.65,
    "cp:pink+tan": 3.8,
@@ -98997,7 +98998,7 @@
    "it:red-a-line-midi-skirt": 3.54,
    "ip:basic-white-sneakers|red-a-line-midi-skirt": 1.13,
    "ip:basic-blue-wide-jeans|pink-green-knit-tee": 0.65,
-   "cp:denim+green": 2.14,
+   "cp:denim+green": 2.27,
    "ip:adidas-gazelle-pink|pink-green-knit-tee": 0.36,
    "ip:adidas-gazelle-pink|basic-blue-wide-jeans": 0.36,
    "ip:basic-blue-wide-jeans|cos-navy-stripe-tee-magenta-collar": 0.65,
@@ -99151,7 +99152,7 @@
    "ip:basic-white-straight-jeans|brown-mock-neck-long-sleeve": 0.36,
    "cp:brown+white": 3.07,
    "ip:black-square-toe-heeled-knee-boots|brown-mock-neck-long-sleeve": 0.36,
-   "cp:black+brown": 2.52,
+   "cp:black+brown": 2.4,
    "ip:brown-mock-neck-long-sleeve|uniqlo-brown-knit-jacket": 0.36,
    "cp:brown+brown": 1.13,
    "it:basic-white-straight-jeans": 0.91,
@@ -99315,7 +99316,7 @@
    "ip:basic-tan-crossbody|red-silk-heeled-mules": 0.91,
    "it:basic-grey-cardigan": 1.52,
    "ip:basic-grey-cardigan|sussan-black-fine-stripe-tank": 0.65,
-   "cp:black+grey": 2.4,
+   "cp:black+grey": 2.52,
    "ip:basic-grey-cardigan|basic-white-sneakers": 0.65,
    "ip:basic-grey-cardigan|mimco-raffia-clutch": 0.65,
    "ip:basic-white-sneakers|sussan-black-fine-stripe-tank": 0.65,
@@ -99528,6 +99529,7 @@
    "ip:basic-black-midi-skirt|black-leather-side-zip-ankle-boots": 0.36,
    "it:basic-black-cardigan": 0.91,
    "ip:basic-black-cardigan|brown-big-spot-a-line-skirt": 0.36,
+   "cp:brown+grey": 0.91,
    "ip:basic-black-cardigan|black-leather-side-zip-ankle-boots": 0.36,
    "it:brown-big-spot-a-line-skirt": 0.91,
    "ip:black-leather-side-zip-ankle-boots|brown-big-spot-a-line-skirt": 0.36,
@@ -99655,7 +99657,6 @@
    "ip:basic-black-straight-jeans|grey-marle-merino-vneck-jumper": 0.36,
    "ip:black-leather-side-zip-ankle-boots|grey-marle-merino-vneck-jumper": 0.36,
    "ip:grey-marle-merino-vneck-jumper|uniqlo-brown-knit-jacket": 0.36,
-   "cp:brown+grey": 0.36,
    "ip:basic-black-straight-jeans|uniqlo-brown-knit-jacket": 0.36,
    "ip:black-leather-side-zip-ankle-boots|uniqlo-brown-knit-jacket": 0.36,
    "ip:basic-black-docs|gorman-black-seersucker-puff-sleeve-dress": 0.36,
@@ -99924,7 +99925,7 @@
    "ip:basic-denim-shorts|uniqlo-yellow-knit-polo": 0.36,
    "cp:denim+yellow": 0.91,
    "ip:basic-tan-belt|uniqlo-yellow-knit-polo": 0.36,
-   "cp:tan+yellow": 1.52,
+   "cp:tan+yellow": 1.69,
    "ip:basic-tan-crossbody|uniqlo-yellow-knit-polo": 0.36,
    "ip:basic-denim-shorts|basic-tan-crossbody": 0.91,
    "ip:basic-denim-shorts|dharma-bums-black-waistcoat": 0.36,
