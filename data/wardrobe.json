@@ -1654,10 +1654,10 @@
   },
   {
    "id": "embroidered-wide-leg-jeans",
-   "name": "Wide-leg jeans with cross-stitch trim",
+   "name": "Gorman embroidered wide-leg jeans",
    "category": "trousers",
    "colours": [
-    "mid-blue denim",
+    "dark denim",
     "multicolour stitching"
    ],
    "pattern": "cross-stitch trim",
@@ -1668,12 +1668,14 @@
     "Autumn",
     "Winter"
    ],
-   "notes": "High waist, cropped wide leg, coloured cross-stitch at pockets and hem. Picture is a crop of the listing photo.",
+   "notes": "High rise, wide leg, multicolour cross-stitch along the front pockets, belt loops and hem. Length: below the ankle. Your photo.",
    "img": "img/embroidered-wide-leg-jeans.webp",
    "_f": [
     "denim",
     "multi"
-   ]
+   ],
+   "sub": "wide",
+   "hem": "full"
   },
   {
    "id": "denim-zip-jumpsuit",
@@ -3526,7 +3528,7 @@
   },
   {
    "id": "basic-blue-wide-jeans",
-   "name": "Blue wide-leg jeans, raw hem",
+   "name": "Mid-wash wide-leg jeans with turn-up hem",
    "category": "trousers",
    "colours": [
     "mid-blue denim"
@@ -3539,13 +3541,15 @@
     "Autumn",
     "Winter"
    ],
-   "notes": "Mid-wash, high waist, frayed hem. Your photo.",
-   "img": "img/blue-wide-raw-hem-jeans.webp",
+   "notes": "High rise, zip fly, wide leg with deep turned-up hem band and copper topstitching. Length: below the ankle. Your photo.",
+   "img": "img/basic-blue-wide-jeans.webp",
    "basic": true,
    "shape": "wide",
    "_f": [
     "denim"
-   ]
+   ],
+   "sub": "wide",
+   "hem": "full"
   },
   {
    "id": "basic-black-wide-jeans",
@@ -3562,13 +3566,15 @@
     "Autumn",
     "Winter"
    ],
-   "notes": "High waist, full length. Your photo.",
-   "img": "img/black-wide-leg-jeans.webp",
+   "notes": "High rise, button fly, five pockets, wide leg. Length: below the ankle. Your photo.",
+   "img": "img/basic-black-wide-jeans.webp",
    "basic": true,
    "shape": "wide",
    "_f": [
     "black"
-   ]
+   ],
+   "sub": "wide",
+   "hem": "full"
   },
   {
    "id": "basic-white-wide-jeans",
@@ -3639,7 +3645,7 @@
   },
   {
    "id": "basic-black-straight-jeans",
-   "name": "Black straight jeans, full length",
+   "name": "Black straight-leg jeans",
    "category": "trousers",
    "colours": [
     "black denim"
@@ -3652,13 +3658,15 @@
     "Autumn",
     "Winter"
    ],
-   "notes": "Your photo.",
-   "img": "img/black-straight-jeans-full.webp",
+   "notes": "Mid rise, button fly, five pockets, straight leg. Length: below the ankle. Your photo.",
+   "img": "img/basic-black-straight-jeans.webp",
    "basic": true,
    "shape": "straight",
    "_f": [
     "black"
-   ]
+   ],
+   "sub": "straight",
+   "hem": "full"
   },
   {
    "id": "basic-black-straight-jeans-cropped",
@@ -3707,7 +3715,7 @@
   },
   {
    "id": "basic-white-straight-jeans-cropped",
-   "name": "White straight jeans, ankle crop",
+   "name": "White cropped straight-leg jeans",
    "category": "trousers",
    "colours": [
     "white denim"
@@ -3718,13 +3726,15 @@
     "Spring",
     "Summer"
    ],
-   "notes": "Your photo.",
-   "img": "img/white-straight-jeans-crop.webp",
+   "notes": "Mid rise, zip fly, five pockets, straight leg cropped above the ankle with small side splits. Your photo.",
+   "img": "img/basic-white-straight-jeans-cropped.webp",
    "basic": true,
    "shape": "cropped",
    "_f": [
     "white"
-   ]
+   ],
+   "sub": "cropped",
+   "hem": "crop"
   },
   {
    "id": "basic-black-dress-pants",
@@ -11321,6 +11331,27 @@
    ],
    "notes": "V neck, cap sleeves, relaxed straight cut to mid-calf, curved split hem. Your photo.",
    "img": "img/black-white-stripe-v-neck-tee-maxi-dress.webp"
+  },
+  {
+   "id": "jag-dark-wash-wide-bootleg-jeans",
+   "name": "JAG dark-wash wide bootleg jeans",
+   "category": "trousers",
+   "colours": [
+    "dark denim"
+   ],
+   "pattern": "solid",
+   "fabric": "stretch denim",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Low rise, zip fly, scoop front pockets with tan topstitching, fitted thigh into a wide bootleg flare. Length: below the ankle. Your photo.",
+   "sub": "wide",
+   "hem": "full",
+   "shape": "wide",
+   "img": "img/jag-dark-wash-wide-bootleg-jeans.webp"
   }
  ],
  "outfits": [

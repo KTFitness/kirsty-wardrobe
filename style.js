@@ -239,7 +239,7 @@ function lreasons(o,anchor,ctx,items){
 
 
 /* ---- jeans length guide and hair-by-neckline guide ---- */
-function hem(it){if(it.category!=="trousers"||/legging/.test(it.id))return null;const s=(it.id+" "+it.name+" "+(it.notes||"").replace(/(picture|stand-in photo|your photo)[^.]*\./gi,"")+" "+(it.shape||"")).toLowerCase();
+function hem(it){if(it.category!=="trousers"||/legging/.test(it.id))return null;if(it.hem)return it.hem;const s=(it.id+" "+it.name+" "+(it.notes||"").replace(/(picture|stand-in photo|your photo)[^.]*\./gi,"")+" "+(it.shape||"")).toLowerCase();
   return /crop|ankle|widecrop|above ankle/.test(s)?"crop":"full";}
 function shoeKind(it){const s=lc(it);if(/loafer|moccasin/.test(s))return "loafer";if(/ballet|flats|slides|mary jane|clog/.test(s))return "flat";if(/sandal|thong/.test(s))return "sandal";if(/slip-on sneaker/.test(s))return "sneaker";if(/kitten|heel/.test(s)&&!/boot/.test(s))return "heel";
   if(/boot|doc/.test(s))return "boot";if(/sneaker|gazelle|samba|trainer|lace-up/.test(s))return "sneaker";if(/sandal/.test(s))return "sandal";return null;}
