@@ -11683,6 +11683,226 @@
     "Spring"
    ],
    "img": "img/uniqlo-cream-fine-knit-crew-jumper.webp"
+  },
+  {
+   "id": "bottle-green-honeycomb-turtleneck-jumper",
+   "name": "Bottle green honeycomb-knit turtleneck jumper",
+   "category": "knitwear",
+   "colours": [
+    "bottle green"
+   ],
+   "pattern": "textured honeycomb knit",
+   "fabric": "chunky knit, fibre unknown",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Ribbed roll turtleneck, dropped shoulders, ribbed three-quarter sleeves, wide boxy body, rolled hem. Your photo.",
+   "img": "img/bottle-green-honeycomb-turtleneck-jumper.webp"
+  },
+  {
+   "id": "oatmeal-mock-neck-split-hem-jumper",
+   "name": "Oatmeal mock-neck jumper with split hem",
+   "category": "knitwear",
+   "colours": [
+    "oatmeal"
+   ],
+   "pattern": "solid marle",
+   "fabric": "soft brushed knit, fibre unknown",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Ribbed high mock neck, dropped shoulders, deep rib cuffs and hem band, side splits, slightly longer back. Your photo.",
+   "img": "img/oatmeal-mock-neck-split-hem-jumper.webp"
+  },
+  {
+   "id": "forest-green-mock-neck-split-hem-jumper",
+   "name": "Forest green mock-neck jumper with split hem",
+   "category": "knitwear",
+   "colours": [
+    "forest green"
+   ],
+   "pattern": "solid",
+   "fabric": "soft brushed knit, fibre unknown",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Ribbed high mock neck, dropped shoulders, deep rib cuffs and hem band, side splits. Same style as the oatmeal one. Your photo.",
+   "img": "img/forest-green-mock-neck-split-hem-jumper.webp"
+  },
+  {
+   "id": "cream-cable-knit-turtleneck-poncho",
+   "name": "Cream cable-knit turtleneck poncho",
+   "category": "knitwear",
+   "colours": [
+    "cream"
+   ],
+   "pattern": "cable panel",
+   "fabric": "knit, fibre unknown",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Ribbed turtleneck, wide cape shape with no sleeves, cable panel down the front, curved ribbed hem. Wear over a fitted long-sleeve top or skivvy. Your photo.",
+   "img": "img/cream-cable-knit-turtleneck-poncho.webp"
+  },
+  {
+   "id": "pale-blue-turtleneck-tunic-jumper",
+   "name": "Pale blue turtleneck tunic jumper",
+   "category": "knitwear",
+   "colours": [
+    "pale blue"
+   ],
+   "pattern": "solid",
+   "fabric": "fine knit, possibly merino",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Fold-over ribbed turtleneck, set-in long sleeves, ribbed cuffs, long tunic length with curved hem. Good over leggings. Your photo.",
+   "img": "img/pale-blue-turtleneck-tunic-jumper.webp"
+  },
+  {
+   "id": "cream-cable-hooded-toggle-cardigan",
+   "name": "Cream cable-knit hooded toggle cardigan",
+   "category": "knitwear",
+   "colours": [
+    "cream"
+   ],
+   "pattern": "cable knit",
+   "fabric": "chunky knit, fibre unknown",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Hood, horn toggle front, two patch pockets, ribbed hem and cuffs, cables all over. Your photo.",
+   "img": "img/cream-cable-hooded-toggle-cardigan.webp"
+  },
+  {
+   "id": "black-cropped-boxy-turtleneck-jumper",
+   "name": "Black cropped boxy turtleneck jumper",
+   "category": "knitwear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "smooth knit, fibre unknown",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Ribbed turtleneck, dropped shoulders, deep rib cuffs and hem band, boxy cropped. Your photo.",
+   "img": "img/black-cropped-boxy-turtleneck-jumper.webp"
+  },
+  {
+   "id": "black-fluffy-cropped-turtleneck-jumper",
+   "name": "Black fluffy cropped turtleneck jumper",
+   "category": "knitwear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "fluffy brushed knit, fibre unknown",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Soft roll turtleneck, dropped shoulders, wide sleeves worn turned back, boxy cropped. Your photo.",
+   "img": "img/black-fluffy-cropped-turtleneck-jumper.webp"
+  },
+  {
+   "id": "black-turtleneck-tunic-jumper",
+   "name": "Black turtleneck tunic jumper",
+   "category": "knitwear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "fine knit, possibly merino",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Fold-over ribbed turtleneck, long sleeves, rolled edges, long tunic length with curved high-low hem. Good over leggings. Your photo.",
+   "img": "img/black-turtleneck-tunic-jumper.webp"
+  },
+  {
+   "id": "charcoal-mock-neck-split-hem-jumper",
+   "name": "Charcoal mock-neck jumper with split hem",
+   "category": "knitwear",
+   "colours": [
+    "charcoal grey"
+   ],
+   "pattern": "solid marle",
+   "fabric": "soft brushed knit, fibre unknown",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Ribbed high mock neck, dropped shoulders, deep rib cuffs and hem band, side splits. Your photo.",
+   "img": "img/charcoal-mock-neck-split-hem-jumper.webp"
+  },
+  {
+   "id": "black-oversized-batwing-turtleneck",
+   "name": "Black oversized batwing turtleneck top",
+   "category": "knitwear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "fine jersey knit",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Slim turtleneck, very wide batwing body, elbow sleeves, banded hem with side splits. Your photo.",
+   "img": "img/black-oversized-batwing-turtleneck.webp"
+  },
+  {
+   "id": "pink-turtleneck-three-quarter-sleeve-jumper",
+   "name": "Pink turtleneck jumper with three-quarter sleeves",
+   "category": "knitwear",
+   "colours": [
+    "rose pink"
+   ],
+   "pattern": "solid marle",
+   "fabric": "soft knit, fibre unknown",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Fold-over ribbed turtleneck, dropped shoulders, three-quarter sleeves, ribbed hem with side splits and a longer back. Your photo.",
+   "img": "img/pink-turtleneck-three-quarter-sleeve-jumper.webp"
+  },
+  {
+   "id": "black-straight-leg-leggings",
+   "name": "Black straight-leg leggings",
+   "category": "trousers",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "ponte or thick jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Elastic waist, straight leg, ankle length. Your photo.",
+   "img": "img/black-straight-leg-leggings.webp",
+   "sub": "leggings"
   }
  ],
  "outfits": [
