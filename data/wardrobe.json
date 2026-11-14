@@ -7369,11 +7369,13 @@
     "Summer",
     "Autumn"
    ],
-   "notes": "High rise, front pleats, belt loops, wide leg, ankle length. Your photo.",
+   "notes": "High rise, front pleats, belt loops, slant pockets, wide leg. Label reads \"Wide High Rise\". Length: below the ankle. Your photo.",
    "img": "img/cream-pleated-wide-jeans.webp",
    "_f": [
     "cream"
-   ]
+   ],
+   "sub": "wide",
+   "hem": "full"
   },
   {
    "id": "red-cream-gingham-wide-trousers",
@@ -11906,6 +11908,87 @@
    "notes": "Big ribbed turtleneck, wide cape body with cable diamonds, deep rib hem band, arm openings at the sides. Wear over a fitted crew or long-sleeve top. Your photo.",
    "img": "img/black-cable-knit-turtleneck-cape.webp",
    "sub": "poncho"
+  },
+  {
+   "id": "olive-leaf-trim-wide-leg-jeans",
+   "name": "Olive wide-leg jeans with leaf-trim hem",
+   "category": "trousers",
+   "colours": [
+    "olive green",
+    "cream"
+   ],
+   "pattern": "solid with leaf braid trim",
+   "fabric": "denim",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "High rise, button and zip fly, five pockets, two bands of cream and green leaf braid near the frayed hem. Length: above the ankle (cropped). Your photo.",
+   "sub": "cropped",
+   "hem": "crop",
+   "img": "img/olive-leaf-trim-wide-leg-jeans.webp"
+  },
+  {
+   "id": "mid-wash-daisy-trim-wide-leg-jeans",
+   "name": "Mid-wash wide-leg jeans with daisy-trim hem",
+   "category": "trousers",
+   "colours": [
+    "mid-blue denim",
+    "pink",
+    "white"
+   ],
+   "pattern": "solid with daisy trim",
+   "fabric": "denim",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "High rise, five pockets, a row of pink daisies and a row of white daisies above the hem. Label reads \"Wide High Rise\". Length: below the ankle. Your photo.",
+   "sub": "wide",
+   "hem": "full",
+   "img": "img/mid-wash-daisy-trim-wide-leg-jeans.webp"
+  },
+  {
+   "id": "tan-wide-leg-frayed-hem-jeans",
+   "name": "Tan wide-leg jeans with frayed hem",
+   "category": "trousers",
+   "colours": [
+    "tan"
+   ],
+   "pattern": "solid",
+   "fabric": "denim",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "High rise, five pockets, wide leg, long frayed raw hem. Length: below the ankle. Your photo.",
+   "sub": "wide",
+   "hem": "full",
+   "img": "img/tan-wide-leg-frayed-hem-jeans.webp"
+  },
+  {
+   "id": "frank-eileen-olive-cropped-utility-pants",
+   "name": "Frank & Eileen olive cropped utility pants",
+   "category": "trousers",
+   "colours": [
+    "olive green"
+   ],
+   "pattern": "solid",
+   "fabric": "stretch cotton twill",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Mid rise, slant pockets with front patch pockets, slim straight leg, frayed raw hem. Length: above the ankle (cropped). Your photo.",
+   "sub": "straight",
+   "hem": "crop",
+   "img": "img/frank-eileen-olive-cropped-utility-pants.webp"
   }
  ],
  "outfits": [
