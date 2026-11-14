@@ -355,8 +355,10 @@ function suggest(anchor,items,ctx){if(!notActive(anchor))return [];items=items.f
     }
     const chilly=ctx.tmax!=null&&ctx.tmax<20&&!pieces.some(longSleeve);
     const needLayer=forceLayer||chilly||(ctx.rain&&season!=="Summer"&&!(ctx.tmax>=24)&&!pieces.some(isWarmLayer))||cool&&!pieces.some(isWarmLayer)&&(pieces.some(sleeveless)||season==="Winter"||pieces.some(p=>p.category==="dresses"));
+    const bare=pieces.slice();
     if(needLayer&&layers.length&&!(forceLayer&&pieces.includes(WI))&&(forceLayer||!openShirtOn(pieces))){const L=layers.filter(l=>!pieces.includes(l)&&layerOk(pieces,l)&&!busyClash(pieces.concat(l))).map(l=>[l,SC(pieces.concat(l),ctx).s+(rnd()*E)*0.8]).sort((a,b)=>b[1]-a[1])[0];if(L)pieces.push(L[0]);}
     if(busyClash(pieces))continue;
+    if(ctx.baseOnly&&!forceLayer&&season!=="Winter"&&pieces.length>bare.length&&!busyClash(bare)){const b=SC(bare,ctx);results.push({pieces:bare,alts:[],s:b.s+(rnd()*E)*0.6,best:b.best,patNote:b.patNote,pop:b.pop});}
     let alts=[];
     if(!ctx.noAccessories&&!pieces.some(p=>p.category==="shoes")&&shoes.length){
       const sh=shoes.map(x=>[x,SC(pieces.concat(x),ctx).s+(rnd()*E)*1.0]).sort((a,b)=>b[1]-a[1]);if(sh[0])pieces.push(sh[0][0]);alts=sh.slice(1,3).map(x=>x[0]);}
@@ -365,7 +367,10 @@ function suggest(anchor,items,ctx){if(!notActive(anchor))return [];items=items.f
     const sc=SC(pieces,ctx);
     results.push({pieces,alts,s:sc.s+(rnd()*E)*0.6,best:sc.best,patNote:sc.patNote,pop:sc.pop});
   }
+  if(ctx.baseOnly){const LEAN={Summer:1.5,Spring:0.9,Autumn:0.5,Winter:0}[season]||0;const LS=new Set(layers);
+    for(const r of results)r.s-=LEAN*r.pieces.filter(p=>p!==anchor&&LS.has(p)).length;}
   results.sort((a,b)=>b.s-a.s);
+  if(ctx.baseOnly&&season!=="Winter"&&!forceLayer&&results.length>1){const i=results.findIndex(r=>r.pieces.length===1&&r.pieces[0]===anchor);if(i>1){const [r]=results.splice(i,1);r.s=results[1].s+0.001;results.splice(1,0,r);}}
   const kOf=ps=>ps.map(p=>p.id).sort().join(",");
   if(!ctx.noAccessories)for(const r of results){if(!excl0.has(kOf(r.pieces))||exCore.has(coreKey(r.pieces)))continue;
     const sh=r.pieces.find(p=>p.category==="shoes"&&p!==anchor),bg=r.pieces.find(p=>p.category==="bags"&&p!==anchor);
@@ -415,6 +420,7 @@ function suggest(anchor,items,ctx){if(!notActive(anchor))return [];items=items.f
       if(r.pieces.some(p=>p!==anchor&&isVest(p))&&out.filter(o=>o.pieces.some(p=>p!==anchor&&isVest(p))).length>=3)continue;
       const bf=bottomFam(r);if(bf&&(bfam[bf]||0)>=3)continue;if(bf)bfam[bf]=(bfam[bf]||0)+1;
       mains.forEach(p=>used[p.id]=(used[p.id]||0)+1);have.add(k);out.push(r);}}
+  if(ctx.baseOnly&&season!=="Winter"&&!forceLayer&&!out.some(o=>o.pieces.length===1)){const b=results.find(r=>r.pieces.length===1&&r.pieces[0]===anchor&&!excl.has(anchor.id)&&pairOk(r.pieces));if(b){if(out.length>=want)out.splice(Math.min(1,out.length-1),1,b);else out.push(b);}}
   out.forEach(o=>{const lr=lreasons(o,anchor,ctx,items);o.why=(ctx.rules&&/fresh|different/.test(lr))?reasons(o,anchor,ctx):lr;if(o.variant)o.why="A variation on one you liked: same clothes, different shoes or bag.";o.key=o.pieces.map(p=>p.id).sort().join(",");o.tips=[hemTip(o.pieces),hairTip(o.pieces)].filter(Boolean);});
   return out;
 }

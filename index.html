@@ -188,11 +188,11 @@ dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
 </nav>
 <dialog class="sheet" id="sheet"><div class="sheet-in" id="sheetBody"></div></dialog>
 
-<script src="style.js?v=202611141708"></script>
+<script src="style.js?v=202611141712"></script>
 <script>
 /* Home-screen apps hold on to old copies. On open, check version.txt; if a newer version is live, refresh the cached files and reload once. */
 if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{});});}
-const APPV="202611141708";
+const APPV="202611141712";
 fetch("version.txt",{cache:"no-store"}).then(r=>r.ok?r.text():"").then(v=>{v=v.trim();if(!v||v===APPV)return;
   let tried="";try{tried=sessionStorage.getItem("kw:upd")||"";}catch(e){}if(tried===v)return;try{sessionStorage.setItem("kw:upd",v);}catch(e){}
   Promise.all([fetch("index.html",{cache:"reload"}),fetch("./",{cache:"reload"})]).catch(()=>{}).then(()=>location.reload());}).catch(()=>{});
@@ -763,6 +763,8 @@ function openItem(id){const it=byId(id);if(!it)return;
 
 /* Quick rate: one outfit at a time from across the whole wardrobe; Like / Not for me / Skip moves straight to the next one. */
 const QOCC=["Everyday","Everyday","Everyday","Lunch out","Smart casual","Dinner out","Holiday","Travel"];
+/* Favour simpler outfits: a dress on its own, or just a top and a bottom, come up more often than layered ones. */
+function pickLean(L){const W={1:6,2:2,3:1};const w=L.map(r=>W[r.pieces.length]||0.6);let t=Math.random()*w.reduce((a,b)=>a+b,0);for(let i=0;i<L.length;i++){t-=w[i];if(t<=0)return L[i];}return L[L.length-1];}
 function qrNext(){
   const Q=S.qr;const season=Q.season==="any"?["Spring","Summer","Autumn","Winter"][Math.floor(Math.random()*4)]:todaySeason();
   const ok=i=>!i.seasons||!i.seasons.length||i.seasons.includes(season);
@@ -773,7 +775,7 @@ function qrNext(){
     const occ=Q.occ==="mixed"?QOCC[Math.floor(Math.random()*QOCC.length)]:Q.occ;
     const res=Stylist.suggest(a,D.items,{occ,season,seed:Math.floor(Math.random()*1e6),count:4,W:tasteW(),n:tasteN(),rules:useRules,baseOnly:true,block:blockSets(),excludeCore:ex});
     const fresh=res.filter(r=>!Q.seenKeys.includes(r.key));if(!fresh.length)continue;
-    const r=fresh[Math.floor(Math.random()*fresh.length)];const ids=r.pieces.map(p=>p.id);
+    const r=pickLean(fresh);const ids=r.pieces.map(p=>p.id);
     Q.seenKeys.push(r.key);Q.cur={key:r.key,id:"q"+Date.now(),name:"Quick rate pick",base:ids,acc:null,itemIds:ids.slice(),occasions:[occ],why:r.why,season};return;}
   Q.cur=null;}
 function vRate(){
@@ -813,7 +815,7 @@ function surprise(){
   const ex=allDisliked().concat(ratingLists().liked).map(k=>Stylist.coreKey(k.split(",").map(byId).filter(Boolean)));
   let r=null;for(let t=0;t<8&&!r;t++){const a=pool[Math.floor(Math.random()*pool.length)];if(!a)break;
     const res=Stylist.suggest(a,D.items,{occ:"Everyday",season,seed:Math.floor(Math.random()*1e6),count:3,W:tasteW(),n:tasteN(),baseOnly:true,block:blockSets(),excludeCore:ex});
-    if(res.length)r=res[Math.floor(Math.random()*res.length)];}
+    if(res.length)r=pickLean(res);}
   if(!r){S.surprise=null;return;}
   const ids=r.pieces.map(p=>p.id);
   S.surprise={id:"s"+Date.now(),name:"Something new to try",base:ids,acc:null,itemIds:ids.slice(),occasions:["Everyday"],season,why:"A combination you haven't rated yet, picked using your taste.",temp:true};
