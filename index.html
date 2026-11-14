@@ -188,11 +188,11 @@ dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
 </nav>
 <dialog class="sheet" id="sheet"><div class="sheet-in" id="sheetBody"></div></dialog>
 
-<script src="style.js?v=202611141512"></script>
+<script src="style.js?v=202611141624"></script>
 <script>
 /* Home-screen apps hold on to old copies. On open, check version.txt; if a newer version is live, refresh the cached files and reload once. */
 if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{});});}
-const APPV="202611141512";
+const APPV="202611141624";
 fetch("version.txt",{cache:"no-store"}).then(r=>r.ok?r.text():"").then(v=>{v=v.trim();if(!v||v===APPV)return;
   let tried="";try{tried=sessionStorage.getItem("kw:upd")||"";}catch(e){}if(tried===v)return;try{sessionStorage.setItem("kw:upd",v);}catch(e){}
   Promise.all([fetch("index.html",{cache:"reload"}),fetch("./",{cache:"reload"})]).catch(()=>{}).then(()=>location.reload());}).catch(()=>{});
@@ -270,7 +270,7 @@ const ACC=["shoes","bags","accessories"];
 const ckey=o=>(o.itemIds||[]).map(id=>ALIAS[id]||id).filter(id=>{const it=byId(id);return it&&!ACC.includes(it.category);}).sort().join(",");
 const applyFin=o=>{const f=fin[o.id];if(!f)return o;let ids=(o.itemIds||[]).filter(id=>{const it=byId(id);return !(it&&((f.shoes!==undefined&&it.category==="shoes")||(f.bag!==undefined&&it.category==="bags")));});if(f.shoes)ids.push(f.shoes);if(f.bag)ids.push(f.bag);return {...o,itemIds:ids};};
 const allOutfits=memo(()=>{const L=mine.map(o=>({...o,mine:true})).concat(D.outfits.map(o=>({...o,mine:false})));const seen=new Set(),out=[];
-  for(const o of L){if((o.itemIds||[]).some(id=>gone.includes(id)))continue;const liked=o.mine||o.liked;if(liked){const k=(o.itemIds||[]).map(id=>ALIAS[id]||id).filter(byId).sort().join(",");if(seen.has(k))continue;seen.add(k);}out.push(applyFin(o));}
+  for(const o of L){if((o.itemIds||[]).some(id=>gone.includes(id)||!byId(ALIAS[id]||id)))continue;const liked=o.mine||o.liked;if(liked){const k=(o.itemIds||[]).map(id=>ALIAS[id]||id).filter(byId).sort().join(",");if(seen.has(k))continue;seen.add(k);}out.push(applyFin(o));}
   return out.filter(o=>!o.mine).filter(o=>!o.liked).concat(out.filter(o=>o.liked&&!o.mine),out.filter(o=>o.mine));});
 
 /* Inspiration looks as outfits: they can be liked, swapped in Build, and turn up in What to wear today. */
