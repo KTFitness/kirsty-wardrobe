@@ -1036,8 +1036,8 @@
     "Summer",
     "Autumn"
    ],
-   "notes": "Collared, cropped, tortoiseshell buttons. Works as a light jacket. Picture is a crop of the listing photo.",
-   "img": "img/boden-green-crochet-jacket.webp",
+   "notes": "Collared, cropped, tortoiseshell buttons. Works as a light jacket. Your photo.",
+   "img": "img/boden-green-crochet-cardigan.webp",
    "_f": [
     "green",
     "cream"
@@ -5017,7 +5017,7 @@
     "Spring",
     "Summer"
    ],
-   "img": "img/white-linen-drawstring-pants.webp",
+   "img": "img/basic-white-wide-linen-pants.webp",
    "shape": "wide",
    "_f": [
     "white"
@@ -5924,7 +5924,7 @@
   },
   {
    "id": "black-jersey-turtleneck-swing-dress",
-   "name": "Black jersey turtleneck swing dress",
+   "name": "Black jersey mock-neck swing dress",
    "category": "dresses",
    "colours": [
     "black"
@@ -5936,7 +5936,7 @@
     "Winter",
     "Spring"
    ],
-   "notes": "Cowl turtleneck, long sleeves, asymmetric draped swing hem. Your photo.",
+   "notes": "Mock neck, long sleeves, soft A-line swing to the knee. Your photo.",
    "img": "img/black-jersey-turtleneck-swing-dress.webp"
   },
   {
