@@ -1332,7 +1332,7 @@
   {
    "id": "etoile-colour-block-sweatshirt",
    "name": "Étoile colour-block sweatshirt",
-   "category": "knitwear",
+   "category": "activewear",
    "colours": [
     "pale blue",
     "pink",
@@ -2113,7 +2113,7 @@
   {
    "id": "rust-track-jacket",
    "name": "Rust track jacket",
-   "category": "outerwear",
+   "category": "activewear",
    "colours": [
     "rust",
     "white",
@@ -9909,7 +9909,7 @@
   {
    "id": "nike-black-free-flyknit-trainers",
    "name": "Nike black Free Flyknit trainers",
-   "category": "shoes",
+   "category": "activewear",
    "colours": [
     "black",
     "grey",
@@ -98580,7 +98580,7 @@
    "ip:basic-black-loafers|basic-black-turtleneck": 0.36,
    "it:basic-blue-straight-jeans-cropped": 3.8,
    "ip:basic-black-loafers|basic-blue-straight-jeans-cropped": 0.36,
-   "pat:plain+plain": 8.8,
+   "pat:plain+plain": 8.77,
    "it:alessandra-colour-block-jumper": 0.36,
    "ip:alessandra-colour-block-jumper|basic-white-tee": 0.36,
    "cp:tan+white": 9.4,
@@ -98602,8 +98602,8 @@
    "it:basic-tan-flats": 6.26,
    "ip:basic-tan-crossbody|basic-tan-flats": 3.36,
    "it:basic-tan-crossbody": 7.93,
-   "pat:plain+plain+plain": 7.84,
-   "so:Everyday|flats": 10.34,
+   "pat:plain+plain+plain": 7.89,
+   "so:Everyday|flats": 10.31,
    "it:cos-navy-stripe-tee-magenta-collar": 2.14,
    "ip:basic-black-midi-skirt|cos-navy-stripe-tee-magenta-collar": 0.36,
    "cp:black+navy": 2.4,

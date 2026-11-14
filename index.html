@@ -188,17 +188,17 @@ dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
 </nav>
 <dialog class="sheet" id="sheet"><div class="sheet-in" id="sheetBody"></div></dialog>
 
-<script src="style.js?v=202611140951"></script>
+<script src="style.js?v=202611141512"></script>
 <script>
 /* Home-screen apps hold on to old copies. On open, check version.txt; if a newer version is live, refresh the cached files and reload once. */
 if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{});});}
-const APPV="202611140951";
+const APPV="202611141512";
 fetch("version.txt",{cache:"no-store"}).then(r=>r.ok?r.text():"").then(v=>{v=v.trim();if(!v||v===APPV)return;
   let tried="";try{tried=sessionStorage.getItem("kw:upd")||"";}catch(e){}if(tried===v)return;try{sessionStorage.setItem("kw:upd",v);}catch(e){}
   Promise.all([fetch("index.html",{cache:"reload"}),fetch("./",{cache:"reload"})]).catch(()=>{}).then(()=>location.reload());}).catch(()=>{});
 </script>
 <script>
-const CATS=[["tops","Tops"],["knitwear","Knitwear"],["dresses","Dresses"],["playsuits","Playsuits & jumpsuits"],["skirts","Skirts"],["jeans","Jeans"],["trousers","Trousers"],["shorts","Shorts"],["outerwear","Outerwear"],["shoes","Shoes"],["bags","Bags"],["accessories","Accessories"]];
+const CATS=[["tops","Tops"],["knitwear","Knitwear"],["dresses","Dresses"],["playsuits","Playsuits & jumpsuits"],["skirts","Skirts"],["jeans","Jeans"],["trousers","Trousers"],["shorts","Shorts"],["outerwear","Outerwear"],["activewear","Activewear"],["shoes","Shoes"],["bags","Bags"],["accessories","Accessories"]];
 const CATNAME=Object.fromEntries(CATS);
 const asOver=i=>Object.assign(Object.create(i),{_dc:"outerwear",_sk:"overshirt"});
 const dcat=i=>!i?"other":i._dc?i._dc:i.category==="trousers"&&/jean/.test((i.id+" "+i.name).toLowerCase())?"jeans":i.category==="knitwear"&&/cardigan/.test((i.id+" "+i.name).toLowerCase())?"outerwear":i.category==="dresses"&&/playsuit|jumpsuit/.test((i.id+" "+i.name).toLowerCase())?"playsuits":i.category;
@@ -742,7 +742,7 @@ function render(){
 const sheet=$("#sheet"),sheetBody=$("#sheetBody");
 function refreshOpen(id){if(!sheet.open||!sheetBody.querySelector(`[data-unlike="${id}"],[data-likeo="${id}"]`))return;const o=allOutfits().find(x=>x.id===id);if(o)sheetBody.innerHTML=`<div class="sheet-head"><h2>Outfit</h2><button class="iconbtn" type="button" data-close>Close</button></div>${outfitCard(o)}`;else sheet.close();}
 sheet.addEventListener("click",e=>{if(e.target===sheet)sheet.close();});
-const MOVE=[["tops","Tops"],["knitwear","Knitwear"],["outerwear","Outerwear"],["dresses","Dresses, playsuits & jumpsuits"],["skirts","Skirts"],["trousers","Trousers & jeans"],["shorts","Shorts"],["shoes","Shoes"],["bags","Bags"],["accessories","Accessories"]];
+const MOVE=[["tops","Tops"],["knitwear","Knitwear"],["outerwear","Outerwear"],["dresses","Dresses, playsuits & jumpsuits"],["skirts","Skirts"],["trousers","Trousers & jeans"],["shorts","Shorts"],["activewear","Activewear"],["shoes","Shoes"],["bags","Bags"],["accessories","Accessories"]];
 function openItem(id){const it=byId(id);if(!it)return;
   const inO=allOutfits().filter(o=>(o.itemIds||[]).includes(id));
   sheetBody.innerHTML=`<div class="sheet-head"><h2>${esc(it.name)}</h2><button class="iconbtn" type="button" data-close>Close</button></div>
@@ -758,7 +758,7 @@ function openItem(id){const it=byId(id);if(!it)return;
    <label class="f">Kind<select id="mvSub"><option value="">Let the app decide</option>${MOVE.map(([k])=>subList(k==="trousers"?"trousers":k).map(([sk,sv])=>`<option value="${sk}" data-c="${k}" ${it.category!==k?"hidden":""} ${it.category===k&&it.sub===sk?"selected":""}>${esc(sv)}</option>`).join("")).join("")}</select></label></div>
    <div class="row"><button class="btn ghost" type="button" data-move="${esc(id)}">Move</button>${catFix[id]?`<button class="iconbtn" type="button" data-unmove="${esc(id)}">Put back where it was</button>`:""}</div></div>
   ${(()=>{const n=allOutfits().filter(o=>isLiked(o)&&(o.itemIds||[]).includes(id)).length;return n?`<div class="row"><button class="btn ghost" type="button" data-likedof="${esc(id)}">Go through its ${n} liked outfit${n===1?"":"s"}</button></div>`:"";})()}
-  <div class="row"><button class="btn" type="button" data-anchor="${esc(id)}">Style this</button><button class="btn ghost" type="button" data-buildwith="${esc(id)}">Build your own</button><button class="btn danger" type="button" data-gone="${esc(id)}">I don't own this</button></div>`;
+  <div class="row">${it.category==="activewear"?"":`<button class="btn" type="button" data-anchor="${esc(id)}">Style this</button>`}<button class="btn ghost" type="button" data-buildwith="${esc(id)}">Build your own</button><button class="btn danger" type="button" data-gone="${esc(id)}">I don't own this</button></div>`;
   if(!sheet.open)sheet.showModal();}
 
 /* Quick rate: one outfit at a time from across the whole wardrobe; Like / Not for me / Skip moves straight to the next one. */

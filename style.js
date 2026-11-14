@@ -267,7 +267,8 @@ function hairTip(pieces){const t=pieces.find(p=>p.category==="dresses")||pieces.
   if(/boat|bateau/.test(s))return "Hair: low bun.";
   return "";}
 
-function suggest(anchor,items,ctx){
+const notActive=i=>i&&i.category!=="activewear";
+function suggest(anchor,items,ctx){if(!notActive(anchor))return [];items=items.filter(notActive);
   const W=ctx.W||{};ctx.W=W;ctx.n=ctx.n||0;if(ctx.baseOnly)ctx.noAccessories=true;
   const seen={};(ctx.shown||[]).forEach(id=>seen[id]=(seen[id]||0)+1);
   const fresh=p=>p.reduce((t,x)=>t-(x.id!==anchor.id&&!['shoes','bags','accessories'].includes(x.category)?Math.min(seen[x.id]||0,4)*3:0),0);
@@ -419,7 +420,7 @@ function suggest(anchor,items,ctx){
 }
 function mulberry(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
 
-function finish(pieces,items,ctx){ctx=ctx||{};ctx.W=ctx.W||{};const season=ctx.season;
+function finish(pieces,items,ctx){items=items.filter(notActive);ctx=ctx||{};ctx.W=ctx.W||{};const season=ctx.season;
   const base=pieces.filter(p=>!["shoes","bags"].includes(p.category));
   const wet=sh=>{if(!ctx.rain)return 0;const t=lc(sh);if(/slide|sandal|flat|ballet|mule|suede|gazelle|samba/.test(t))return -3;if(/boot|doc|loafer|sneaker/.test(t))return 1.5;return 0;};
   const sc=ps=>(ctx.rules?score(ps,ctx).s:0)+learned(ps,ctx)+hemScore(ps)+dressCode(ps,ctx)+ps.reduce((t,x)=>t+(x.category==="shoes"?wet(x):0),0);
@@ -427,7 +428,7 @@ function finish(pieces,items,ctx){ctx=ctx||{};ctx.W=ctx.W||{};const season=ctx.s
   const best=shoes[0];const bags=items.filter(i=>i.category==="bags").map(x=>[x,sc(base.concat(best?[best,x]:[x]))]).sort((a,b)=>b[1]-a[1]).map(x=>x[0]);
   return {shoes,bags};}
 
-function addLayer(pieces,items,ctx){ctx=ctx||{};ctx.W=ctx.W||{};if(ctx.season==="Summer"||ctx.tmax>=24)return null;if(pieces.some(isWarmLayer)||openShirtOn(pieces)||(!ctx.rain&&!(ctx.pick&&ctx.season==="Winter")&&pieces.some(longSleeve)))return null;const SK=new Set(ctx.skip||[]);
+function addLayer(pieces,items,ctx){items=items.filter(notActive);ctx=ctx||{};ctx.W=ctx.W||{};if(ctx.season==="Summer"||ctx.tmax>=24)return null;if(pieces.some(isWarmLayer)||openShirtOn(pieces)||(!ctx.rain&&!(ctx.pick&&ctx.season==="Winter")&&pieces.some(longSleeve)))return null;const SK=new Set(ctx.skip||[]);
   const sc=ps=>(ctx.rules?score(ps,ctx).s:0)+learned(ps,ctx);
   const L=items.filter(i=>!SK.has(i.id)&&isWarmLayer(i)&&!(ctx.outerOnly&&baseLayer(i))&&inSeason(i,ctx.season)&&layerOk(pieces,i)&&!busyClash(pieces.concat(i))).map(x=>[x,sc(pieces.concat(x))]).sort((a,b)=>b[1]-a[1]);if(ctx.pick){const t=L.slice(0,4);return t.length?t[Math.floor(Math.random()*t.length)][0]:null;}return L[0]?L[0][0]:null;}
 
@@ -443,11 +444,12 @@ const SUBS={
  dresses:[["tee","T-shirt & tank dresses"],["shift","Shift & swing dresses"],["shirt","Shirt & button dresses"],["pinafore","Pinafores"],["dressy","Dressy"],["maxi","Maxi"]],
  playsuits:[["playsuit","Playsuits"],["jumpsuit","Jumpsuits"]],
  shoes:[["sneakers","Sneakers"],["flats","Flats & loafers"],["sandals","Sandals & slides"],["heels","Heels"],["boots","Boots"]],
- bags:[["crossbody","Crossbody"],["clutch","Clutches & evening"],["purse","Purses, wristlets & pouches"],["tote","Totes, hobos & handbags"]],accessories:[["belts","Belts"],["other","Other"]]};
+ bags:[["crossbody","Crossbody"],["clutch","Clutches & evening"],["purse","Purses, wristlets & pouches"],["tote","Totes, hobos & handbags"]],accessories:[["belts","Belts"],["other","Other"]],activewear:[["atop","Sweatshirts & tops"],["abottom","Leggings & trackpants"],["ajacket","Track jackets & hoodies"],["ashoes","Trainers"]]};
 function subOf(i,dc){if(i.sub)return i.sub;const n=(i.name+" "+(i.notes||"")+" "+(i.shape||"")).toLowerCase(),nm=i.name.toLowerCase();
  const sl=/sleeveless|tank|singlet|cami\b|halter|strappy|shell|racer|crop top|bandeau|tube/.test(n)&&!/long sleeve|long-sleeve|short sleeve/.test(nm);
  const ls=/long-sleeve|long sleeve|long sleeves|turtleneck|funnel|mock-neck long|balloon|blouson|three-quarter|3\/4|batwing|cuffed sleeves|roll-tab/.test(n);
  switch(dc){
+ case "activewear":{if(/trainer|sneaker|shoe/.test(nm))return "ashoes";if(/legging|track ?pant|jogger|short/.test(nm))return "abottom";if(/jacket|hood|zip/.test(nm))return "ajacket";return "atop";}
  case "tops":{if(/waistcoat|vest\b/.test(nm))return "vests";if(sl&&!/shirt\b|blouse/.test(nm))return "tanks";
    const shirt=/shirt\b|blouse|popover/.test(nm)&&!/t-shirt|tee/.test(nm);if(shirt)return ls?"lsshirt":"ssshirt";if(sl)return "tanks";return ls?"lstee":"sstee";}
  case "knitwear":{if(/vest/.test(nm))return "kvest";if(sl||/tank/.test(nm))return "ktank";if(/jumper|sweat|turtleneck|pullover|funnel/.test(nm))return "jumper";return "ktee";}
