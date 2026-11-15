@@ -13129,6 +13129,205 @@
    "notes": "Full zip, stand collar, zip side pockets, princess seams. Your photo.",
    "img": "img/black-polar-fleece-zip-jacket.webp",
    "sub": "ajacket"
+  },
+  {
+   "id": "red-jersey-shorts",
+   "name": "Red jersey shorts",
+   "category": "activewear",
+   "colours": [
+    "red"
+   ],
+   "pattern": "solid",
+   "fabric": "performance stretch",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Soft cotton jersey, wide elastic waistband, small embroidered logo on the leg. Your photo.",
+   "img": "img/red-jersey-shorts.webp",
+   "sub": "abottom"
+  },
+  {
+   "id": "north-face-black-hiking-shorts",
+   "name": "The North Face black hiking shorts",
+   "category": "activewear",
+   "colours": [
+    "black",
+    "grey"
+   ],
+   "pattern": "solid",
+   "fabric": "performance stretch",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Stretch nylon, grey webbing belt with buckle, slash pockets, logo on the leg. Your photo.",
+   "img": "img/north-face-black-hiking-shorts.webp",
+   "sub": "abottom"
+  },
+  {
+   "id": "black-zip-pocket-running-shorts",
+   "name": "Black running shorts with zip pocket",
+   "category": "activewear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "performance stretch",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Stretch woven, flat waistband, zip side pocket, curved hem panels. Your photo.",
+   "img": "img/black-zip-pocket-running-shorts.webp",
+   "sub": "abottom"
+  },
+  {
+   "id": "charcoal-drawstring-skort",
+   "name": "Charcoal drawstring skort",
+   "category": "activewear",
+   "colours": [
+    "charcoal grey"
+   ],
+   "pattern": "solid",
+   "fabric": "performance stretch",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Stretch woven skirt over shorts, wide waistband with drawcord. Your photo.",
+   "img": "img/charcoal-drawstring-skort.webp",
+   "sub": "abottom"
+  },
+  {
+   "id": "black-long-bike-shorts",
+   "name": "Black long bike shorts",
+   "category": "activewear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "performance stretch",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Knee length, high waist, seamed panels, back waistband pocket. Your photo.",
+   "img": "img/black-long-bike-shorts.webp",
+   "sub": "abottom"
+  },
+  {
+   "id": "lorna-jane-charcoal-piped-shorts",
+   "name": "Lorna Jane charcoal shorts with red and purple piping",
+   "category": "activewear",
+   "colours": [
+    "charcoal grey",
+    "red",
+    "purple"
+   ],
+   "pattern": "solid",
+   "fabric": "performance stretch",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Fold-over waistband piped in red and purple, short leg. Your photo.",
+   "img": "img/lorna-jane-charcoal-piped-shorts.webp",
+   "sub": "abottom"
+  },
+  {
+   "id": "black-mid-length-bike-shorts",
+   "name": "Black mid-length bike shorts",
+   "category": "activewear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "performance stretch",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "High waist, side pockets, mid-thigh length. Your photo.",
+   "img": "img/black-mid-length-bike-shorts.webp",
+   "sub": "abottom"
+  },
+  {
+   "id": "forest-green-down-puffer-jacket",
+   "name": "Forest green down puffer jacket",
+   "category": "outerwear",
+   "colours": [
+    "forest green"
+   ],
+   "pattern": "solid",
+   "fabric": "nylon, down fill",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Stand collar, zip with snap placket, side pockets, fitted waist. Your photo.",
+   "img": "img/forest-green-down-puffer-jacket.webp"
+  },
+  {
+   "id": "macpac-navy-hooded-down-jacket",
+   "name": "Macpac navy hooded down jacket",
+   "category": "activewear",
+   "colours": [
+    "navy"
+   ],
+   "pattern": "solid",
+   "fabric": "performance stretch",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Down fill, hood, zip front, zip pockets, drawcord hem. Your photo.",
+   "img": "img/macpac-navy-hooded-down-jacket.webp",
+   "sub": "ajacket"
+  },
+  {
+   "id": "black-hooded-rain-jacket",
+   "name": "Black hooded rain jacket",
+   "category": "activewear",
+   "colours": [
+    "black",
+    "white"
+   ],
+   "pattern": "solid",
+   "fabric": "performance stretch",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Waterproof shell, hood, white zip edge, velcro cuffs, drawcord hem. Your photo.",
+   "img": "img/black-hooded-rain-jacket.webp",
+   "sub": "ajacket"
+  },
+  {
+   "id": "kathmandu-raspberry-rain-jacket",
+   "name": "Kathmandu raspberry hooded rain jacket",
+   "category": "activewear",
+   "colours": [
+    "raspberry pink"
+   ],
+   "pattern": "solid",
+   "fabric": "performance stretch",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Waterproof shell, hood, storm flap zip, mesh lining, velcro cuffs. Your photo.",
+   "img": "img/kathmandu-raspberry-rain-jacket.webp",
+   "sub": "ajacket"
   }
  ],
  "outfits": [
