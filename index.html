@@ -437,7 +437,7 @@ function fitsSeason(o,se){return (o.itemIds||[]).every(id=>{const it=byId(id);re
 function other(o,k){const P=(o.itemIds||[]).map(byId).filter(i=>i&&i!==k&&!ACC.includes(i.category));const bot=["skirts","trousers","shorts","dresses"];return ["tops","knitwear","outerwear"].includes(k&&k.category)?(P.find(i=>bot.includes(i.category))||P[0]):(topOf(o,k)||P[0]);}
 function miniTile(o,hero){const k=hero?byId(hero):keyPiece(o),t=hero?other(o,k):topOf(o,k);return `<div role="button" tabindex="0" class="mini" data-open="${esc(o.id)}">${collage(o.itemIds||[],k&&k.id)}<span>${esc(t?t.name.replace(/^(Gingham|Stripe|Dots) No\. \d+: /,""):o.name)}${o.addedLayer?` + ${esc(o.addedLayer)}`:""}</span></div>`;}
 /* Activewear: a daily set of 2-3 combos for the dog walk. Activewear bottoms go with activewear tops, plain tees, tanks, long-sleeve tops, jumpers and casual jackets. */
-const ACT_DRESSY=/sequin|silk|satin|lace|lurex|beaded|guipure|halter|embroider|appliqu|ruffle|frill|blouse|bardot|off-shoulder|corset|cami|peplum|bow|puff/i;
+const ACT_DRESSY=/(?<!t-)\bshirt\b|broderie|blouse|sequin|silk|satin|lace|lurex|beaded|guipure|halter|embroider|appliqu|ruffle|frill|blouse|bardot|off-shoulder|corset|cami|peplum|bow|puff/i;
 function activeCombos(se,seed){const r=rng(seed);const W=S.wx&&S.wx.max!=null?S.wx.max:null;
   const A=D.items.filter(i=>i.category==="activewear");const sub=i=>Stylist.subOf(i,"activewear");const ins=i=>!i.seasons||!i.seasons.length||i.seasons.includes(se);
   const isShort=i=>/short/i.test(i.name);const warm=W!=null?W>=23:se==="Summer";const cold=W!=null?W<17:se==="Winter";
