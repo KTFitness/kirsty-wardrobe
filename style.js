@@ -483,5 +483,6 @@ const FACETS={
    if(/kitten|low-heel|low heel|low stacked/.test(t))return "low";if(/block|square-toe heeled|mid block/.test(t))return "mid";if(/heel|stiletto|slim-heel|pointed heeled/.test(t)&&!/flat/.test(i.name.toLowerCase()))return "high";return "flat";}],
   ["bootH","Boot height",[["ankle","Ankle"],["calf","Calf"],["knee","Knee"]],i=>{if(i.bootH)return i.bootH;const t=txt(i);if(!/boot/.test(t))return null;if(/knee/.test(t))return "knee";if(/calf/.test(t))return "calf";return "ankle";}]]};
 
-window.Stylist={baseLayer,layerOk,layerTip,FACETS,subOf,SUBS,busyClash,addLayer,finish,coreKey:ps=>ps.filter(p=>!["shoes","bags","accessories"].includes(p.category)).map(p=>p.id).sort().join(","),suggest,features,families,pkind,formality,hemTip,hairTip,shoeTip};
+const colFit=(x,y)=>{const A=mainFams(x),B=mainFams(y);if(!A.length||!B.length)return 0.5;let t=0;for(const a of A)for(const b of B)t+=pair(a,b);return t/(A.length*B.length);};
+window.Stylist={colFit,baseLayer,layerOk,layerTip,FACETS,subOf,SUBS,busyClash,addLayer,finish,coreKey:ps=>ps.filter(p=>!["shoes","bags","accessories"].includes(p.category)).map(p=>p.id).sort().join(","),suggest,features,families,pkind,formality,hemTip,hairTip,shoeTip};
 })();

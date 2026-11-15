@@ -188,11 +188,11 @@ dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
 </nav>
 <dialog class="sheet" id="sheet"><div class="sheet-in" id="sheetBody"></div></dialog>
 
-<script src="style.js?v=202611151756"></script>
+<script src="style.js?v=202611151901"></script>
 <script>
 /* Home-screen apps hold on to old copies. On open, check version.txt; if a newer version is live, refresh the cached files and reload once. */
 if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{});});}
-const APPV="202611151756";
+const APPV="202611151901";
 fetch("version.txt",{cache:"no-store"}).then(r=>r.ok?r.text():"").then(v=>{v=v.trim();if(!v||v===APPV)return;
   let tried="";try{tried=sessionStorage.getItem("kw:upd")||"";}catch(e){}if(tried===v)return;try{sessionStorage.setItem("kw:upd",v);}catch(e){}
   Promise.all([fetch("index.html",{cache:"reload"}),fetch("./",{cache:"reload"})]).catch(()=>{}).then(()=>location.reload());}).catch(()=>{});
@@ -436,6 +436,30 @@ function topOf(o,k){const P=(o.itemIds||[]).map(byId).filter(Boolean);return P.f
 function fitsSeason(o,se){return (o.itemIds||[]).every(id=>{const it=byId(id);return !it||!it.seasons||!it.seasons.length||it.seasons.includes(se);});}
 function other(o,k){const P=(o.itemIds||[]).map(byId).filter(i=>i&&i!==k&&!ACC.includes(i.category));const bot=["skirts","trousers","shorts","dresses"];return ["tops","knitwear","outerwear"].includes(k&&k.category)?(P.find(i=>bot.includes(i.category))||P[0]):(topOf(o,k)||P[0]);}
 function miniTile(o,hero){const k=hero?byId(hero):keyPiece(o),t=hero?other(o,k):topOf(o,k);return `<div role="button" tabindex="0" class="mini" data-open="${esc(o.id)}">${collage(o.itemIds||[],k&&k.id)}<span>${esc(t?t.name.replace(/^(Gingham|Stripe|Dots) No\. \d+: /,""):o.name)}${o.addedLayer?` + ${esc(o.addedLayer)}`:""}</span></div>`;}
+/* Activewear: a daily set of 2-3 combos for the dog walk. Activewear bottoms go with activewear tops, plain tees, tanks, long-sleeve tops, jumpers and casual jackets. */
+const ACT_DRESSY=/sequin|silk|satin|lace|lurex|beaded|guipure|halter|embroider|appliqu|ruffle|frill|blouse|bardot|off-shoulder|corset|cami|peplum|bow|puff/i;
+function activeCombos(se,seed){const r=rng(seed);const W=S.wx&&S.wx.max!=null?S.wx.max:null;
+  const A=D.items.filter(i=>i.category==="activewear");const sub=i=>Stylist.subOf(i,"activewear");const ins=i=>!i.seasons||!i.seasons.length||i.seasons.includes(se);
+  const isShort=i=>/short/i.test(i.name);const warm=W!=null?W>=23:se==="Summer";const cold=W!=null?W<17:se==="Winter";
+  let bots=A.filter(i=>sub(i)==="abottom"&&(isShort(i)?warm:!warm));if(!bots.length)bots=A.filter(i=>sub(i)==="abottom");
+  const tees=D.items.filter(i=>i.category==="tops"&&/\btee\b|t-shirt|tank|long-sleeve|long sleeve|breton/i.test(i.name)&&!ACT_DRESSY.test(i.name+" "+(i.pattern||""))&&(!/tank|sleeveless/i.test(i.name)||!cold));
+  const jumpers=D.items.filter(i=>i.category==="knitwear"&&/jumper|sweater|crew/i.test(i.name)&&!/cardigan|poncho|dress|tunic/i.test(i.name)&&!ACT_DRESSY.test(i.name)&&ins(i));
+  const atops=A.filter(i=>sub(i)==="atop"&&(ins(i)||warm&&/tank/i.test(i.name))),ajk=A.filter(i=>sub(i)==="ajacket"&&ins(i));
+  const outer=D.items.filter(i=>i.category==="outerwear"&&/denim jacket|quilted|padded|bomber|field jacket|military jacket|duffle/i.test(i.name)&&ins(i));
+  const shoes=A.filter(i=>sub(i)==="ashoes").concat(D.items.filter(i=>i.category==="shoes"&&/sneaker|gazelle|samba|trainer/i.test(i.name)&&!/slip-on|leopard/i.test(i.name)));
+  const tops=warm?atops.filter(i=>/tank/i.test(i.name)).concat(tees):cold?atops.concat(ajk,jumpers,tees.filter(i=>/long/i.test(i.name))):atops.concat(ajk,tees,jumpers);
+  const NO=new Set(allDisliked());const out=[],usedB=new Set(),usedT=new Set();
+  const pick=(L,f,n)=>{const sc=L.map(x=>[x,f(x)+r()*1.6]).sort((a,b)=>b[1]-a[1]);return sc.slice(0,n||3).map(x=>x[0]);};
+  const setBonus=(a,b)=>a.category==="activewear"&&b.category==="activewear"&&Stylist.families(a)[0]===Stylist.families(b)[0]?2:0;
+  for(const b of pick(bots,()=>0,bots.length)){if(out.length>=3)break;if(usedB.has(b.id))continue;
+    const tc=tops.filter(t=>!usedT.has(t.id));if(!tc.length)break;
+    for(const t of pick(tc,t=>Stylist.colFit(b,t)*2+setBonus(b,t),4)){
+      const P=[b,t];const top=t;const covered=/hood|zip|fleece|jacket/i.test(top.name),knit=top.category==="knitwear"||/sweat/i.test(top.name);
+      if(!warm&&!covered&&(cold||r()<0.5)){const L=(knit?ajk.filter(l=>/zip|fleece|jacket/i.test(l.name)):ajk).concat(outer).filter(l=>l!==t);if(L.length)P.push(pick(L,l=>Stylist.colFit(l,b)+Stylist.colFit(l,t)+setBonus(l,b),1)[0]);}
+      if(shoes.length)P.push(pick(shoes,s=>Stylist.colFit(s,b)+(Stylist.families(s).some(f=>["white","black","grey","cream","tan"].includes(f))?1:0),2)[0]);
+      const o={id:"act-"+P.map(p=>p.id).join("+"),name:"Activewear",itemIds:P.map(p=>p.id),base:P.filter(p=>p.category!=="shoes").map(p=>p.id),occasions:["Active"],season:se,why:setBonus(b,t)?"A matching set.":"Activewear with everyday pieces."};
+      if(NO.has(ckey(o)))continue;out.push(o);usedB.add(b.id);usedT.add(t.id);break;}}
+  return out;}
 function vOutfits(){
   const all=allOutfits().filter(o=>!hidden.includes(o.id));
   const liked=all.filter(isLiked),ideas=all.filter(o=>!isLiked(o)&&!o.liked);
@@ -444,7 +468,8 @@ function vOutfits(){
   const pool=liked.concat(inspoOutfits().filter(o=>!LC.has(ckey(o))&&!NO.has(ckey(o))&&!hidden.includes(o.id))).filter(o=>fitsSeason(o,se)).filter(o=>{const P=(o.itemIds||[]).map(byId).filter(Boolean);return P.every(l=>!((l.category==="outerwear"&&/shirt/i.test(l.name))||/cardigan/i.test(l.name+" "+l.id))||Stylist.layerOk(P,l));});
   let today=[];if(pool.length){const r=rng(Number(new Date().toISOString().slice(0,10).replace(/-/g,''))+(S.todaySeed||0)*7919);const p=pool.slice();while(today.length<6&&p.length)today.push(p.splice(Math.floor(r()*p.length),1)[0]);}
   if(S.wx&&(S.wx.max<20||wxRain()))today=today.map(o=>{const P=(o.itemIds||[]).map(byId).filter(Boolean);const L=Stylist.addLayer(P,D.items,{season:se,rain:wxRain(),tmax:S.wx.max,W:tasteW()});return L?{...o,itemIds:o.itemIds.concat(L.id),addedLayer:L.name,why:`Add the ${L.name.toLowerCase()} for today's weather.`}:o;});
-  S.todayList=today;
+  const act=activeCombos(se,Number(new Date().toISOString().slice(0,10).replace(/-/g,''))*3+(S.actSeed||0)*104729);
+  S.todayList=today.concat(act);
   const groups={};for(const o of liked){const P=[...new Set((o.itemIds||[]).map(byId).filter(i=>i&&!ACC.includes(i.category)))];for(const k of P){(groups[k.id]=groups[k.id]||{item:k,list:[]}).list.push(o);}}
   const G=Object.values(groups).sort((x,y)=>y.list.length-x.list.length);
   for(const g of G)g.list.sort((x,y)=>{const a=other(x,g.item),b=other(y,g.item);return (a?colRank(a):99)-(b?colRank(b):99)||(a&&b?a.name.localeCompare(b.name):0);});
@@ -455,6 +480,8 @@ function vOutfits(){
   <section class="panel today"><div><h3 style="margin:0">What to wear today</h3>${S.wx?wxLine():`<p class="lede" style="margin:4px 0 0">Three of your liked outfits and inspiration looks that suit ${se.toLowerCase()}.</p>`}</div>
    ${today.length?`<div class="minigrid three">${today.map(o=>miniTile(o)).join("")}</div><div class="row"><button class="btn ghost" type="button" id="todayMore">Show me six others</button></div>`
      :`<p class="lede">Like a few outfits in Style me and they'll show up here.</p>`}</section>
+  ${act.length?`<section class="panel today"><div><h3 style="margin:0">Dog walk and activewear</h3><p class="lede" style="margin:4px 0 0">Three activewear combos for today. Some use your tees, jumpers or a jacket.</p></div>
+   <div class="minigrid three">${act.map(o=>miniTile(o)).join("")}</div><div class="row"><button class="btn ghost" type="button" id="actMore">Three others</button></div></section>`:""}
   ${(()=>{const B=all.filter(isBuilt).reverse();if(!B.length)return "";const open=!!S.openG.__built;return `<h3 style="margin:22px 0 8px">Built by you <span class="n">${B.length}</span></h3>
    <div class="grp${open?" open":""}"><button type="button" class="grphead" data-grp="__built" aria-expanded="${open}"><span class="gn">Your own outfits</span><span class="n">${B.length}</span><span class="chev">${open?"▾":"▸"}</span></button>
    ${open?`<div class="minigrid">${B.map(o=>`<div role="button" tabindex="0" class="mini" data-open="${esc(o.id)}">${collage(o.itemIds||[],keyPiece(o)&&keyPiece(o).id)}<span>${esc(o.name||"My outfit")}</span></div>`).join("")}</div>`:""}</div>`;})()}
@@ -976,6 +1003,7 @@ document.addEventListener("click",async e=>{
     catch(err){sheetBody.innerHTML=`<div class="sheet-head"><h2>Copy this</h2><button class="iconbtn" type="button" data-close>Close</button></div><textarea rows="8" style="width:100%" readonly>${esc(txt)}</textarea>`;if(!sheet.open)sheet.showModal();sheetBody.querySelector("textarea").select();}
     return;}
   if(t.dataset.grp){S.openG=S.openG||{};S.openG[t.dataset.grp]=!S.openG[t.dataset.grp];render();return;}
+  if(t.id==="actMore"){S.actSeed=(S.actSeed||0)+1;render();return;}
   if(t.id==="todayMore"){S.todaySeed=(S.todaySeed||0)+1;render();return;}
   if(t.dataset.likedof){const it=byId(t.dataset.likedof);const L=allOutfits().filter(o=>isLiked(o)&&(o.itemIds||[]).includes(it.id)).reverse();if(!L.length)return;
     sheetBody.innerHTML=`<div class="sheet-head"><h2>Liked with the ${esc(it.name)} <span class="n" id="carN">1 of ${L.length}</span></h2><button class="iconbtn" type="button" data-close>Close</button></div>
