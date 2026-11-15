@@ -12680,6 +12680,271 @@
    "notes": "Microfleece, stand collar, full zip, zip pockets, fitted. Your photo.",
    "img": "img/kathmandu-pink-zip-fleece-jacket.webp",
    "sub": "ajacket"
+  },
+  {
+   "id": "black-leggings-grey-side-stripe-78",
+   "name": "Black 7/8 leggings with grey side stripe",
+   "category": "activewear",
+   "colours": [
+    "black",
+    "grey"
+   ],
+   "pattern": "solid with stripe trim",
+   "fabric": "performance stretch",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Mid-calf length, high waist, side phone pockets, grey stripe down each side, angled seams. Your photo.",
+   "img": "img/black-leggings-grey-side-stripe-78.webp",
+   "sub": "abottom"
+  },
+  {
+   "id": "black-leggings-pale-blue-side-stripe-78",
+   "name": "Black 7/8 leggings with pale blue side stripe",
+   "category": "activewear",
+   "colours": [
+    "black",
+    "pale blue"
+   ],
+   "pattern": "solid with stripe trim",
+   "fabric": "performance stretch",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Mid-calf length, high waist, side pockets, pale blue reflective stripe down each side. Your photo.",
+   "img": "img/black-leggings-pale-blue-side-stripe-78.webp",
+   "sub": "abottom"
+  },
+  {
+   "id": "plum-full-length-pocket-leggings",
+   "name": "Plum full-length pocket leggings",
+   "category": "activewear",
+   "colours": [
+    "plum"
+   ],
+   "pattern": "solid",
+   "fabric": "performance stretch",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "High waist, deep side pockets, seamed legs. Your photo.",
+   "img": "img/plum-full-length-pocket-leggings.webp",
+   "sub": "abottom"
+  },
+  {
+   "id": "athleta-black-reflective-print-leggings",
+   "name": "Athleta black leggings with reflective side panels",
+   "category": "activewear",
+   "colours": [
+    "black",
+    "silver"
+   ],
+   "pattern": "solid with print panel",
+   "fabric": "performance stretch",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Full length, high waist, reflective geometric print panels down the sides. Your photo.",
+   "img": "img/athleta-black-reflective-print-leggings.webp",
+   "sub": "abottom"
+  },
+  {
+   "id": "black-zip-pocket-leggings",
+   "name": "Black leggings with zip pockets",
+   "category": "activewear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "performance stretch",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Full length, zip hip pockets, zip ankles. Your photo.",
+   "img": "img/black-zip-pocket-leggings.webp",
+   "sub": "abottom"
+  },
+  {
+   "id": "black-leggings-pale-blue-pocket-panels",
+   "name": "Black 7/8 leggings with pale blue pocket panels",
+   "category": "activewear",
+   "colours": [
+    "black",
+    "pale blue"
+   ],
+   "pattern": "colour block",
+   "fabric": "performance stretch",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Mid-calf length, high waist, pale blue side pocket panels, angled seams. Your photo.",
+   "img": "img/black-leggings-pale-blue-pocket-panels.webp",
+   "sub": "abottom"
+  },
+  {
+   "id": "black-full-length-reflective-seam-leggings",
+   "name": "Black full-length leggings with reflective seam",
+   "category": "activewear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "performance stretch",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "High waist, side pockets, thin reflective line down the back of the calf. Your photo.",
+   "img": "img/black-full-length-reflective-seam-leggings.webp",
+   "sub": "abottom"
+  },
+  {
+   "id": "black-woven-cuffed-joggers",
+   "name": "Black woven cuffed joggers",
+   "category": "activewear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "stretch woven",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Light woven stretch fabric, shirred waist, pintuck front, rib cuffs. Cropped. Your photo.",
+   "img": "img/black-woven-cuffed-joggers.webp",
+   "sub": "abottom"
+  },
+  {
+   "id": "black-jersey-cuffed-joggers",
+   "name": "Black jersey cuffed joggers",
+   "category": "activewear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "stretch knit",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Smooth stretch jersey, wide waistband, slim leg, deep cuffs. Your photo.",
+   "img": "img/black-jersey-cuffed-joggers.webp",
+   "sub": "abottom"
+  },
+  {
+   "id": "black-tapered-track-pants",
+   "name": "Black tapered track pants",
+   "category": "activewear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "stretch knit",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Soft stretch knit, elastic waist, side pockets, tapered leg, ankle split. Your photo.",
+   "img": "img/black-tapered-track-pants.webp",
+   "sub": "abottom"
+  },
+  {
+   "id": "washed-navy-straight-track-pants",
+   "name": "Washed navy straight-leg track pants",
+   "category": "activewear",
+   "colours": [
+    "navy"
+   ],
+   "pattern": "solid",
+   "fabric": "stretch knit",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Soft washed knit, shirred waist with drawcord, zip pockets, straight leg. Your photo.",
+   "img": "img/washed-navy-straight-track-pants.webp",
+   "sub": "abottom"
+  },
+  {
+   "id": "black-seersucker-drawstring-pants",
+   "name": "Black seersucker drawstring pants",
+   "category": "activewear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid texture",
+   "fabric": "stretch woven",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Textured lightweight woven, rib waistband with cord, patch pockets, straight cropped leg. Your photo.",
+   "img": "img/black-seersucker-drawstring-pants.webp",
+   "sub": "abottom"
+  },
+  {
+   "id": "black-woven-straight-pull-on-pants",
+   "name": "Black woven pull-on pants",
+   "category": "activewear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "stretch woven",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Light stretch woven, elastic back waist, side pockets, straight cropped leg. Your photo.",
+   "img": "img/black-woven-straight-pull-on-pants.webp",
+   "sub": "abottom"
+  },
+  {
+   "id": "black-three-quarter-leggings-navy-panel",
+   "name": "Black 3/4 leggings with navy panel",
+   "category": "activewear",
+   "colours": [
+    "black",
+    "navy"
+   ],
+   "pattern": "solid",
+   "fabric": "performance stretch",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Below-knee length, navy mesh panel at the lower outer leg, small logo at the hip. Your photo.",
+   "img": "img/black-three-quarter-leggings-navy-panel.webp",
+   "sub": "abottom"
   }
  ],
  "outfits": [

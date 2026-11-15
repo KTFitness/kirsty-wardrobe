@@ -188,11 +188,11 @@ dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
 </nav>
 <dialog class="sheet" id="sheet"><div class="sheet-in" id="sheetBody"></div></dialog>
 
-<script src="style.js?v=202611151903"></script>
+<script src="style.js?v=202611151943"></script>
 <script>
 /* Home-screen apps hold on to old copies. On open, check version.txt; if a newer version is live, refresh the cached files and reload once. */
 if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{});});}
-const APPV="202611151903";
+const APPV="202611151943";
 fetch("version.txt",{cache:"no-store"}).then(r=>r.ok?r.text():"").then(v=>{v=v.trim();if(!v||v===APPV)return;
   let tried="";try{tried=sessionStorage.getItem("kw:upd")||"";}catch(e){}if(tried===v)return;try{sessionStorage.setItem("kw:upd",v);}catch(e){}
   Promise.all([fetch("index.html",{cache:"reload"}),fetch("./",{cache:"reload"})]).catch(()=>{}).then(()=>location.reload());}).catch(()=>{});
@@ -441,7 +441,7 @@ const ACT_DRESSY=/sequin|silk|satin|lace|lurex|beaded|guipure|halter|embroider|a
 function activeCombos(se,seed){const r=rng(seed);const W=S.wx&&S.wx.max!=null?S.wx.max:null;
   const A=D.items.filter(i=>i.category==="activewear");const sub=i=>Stylist.subOf(i,"activewear");const ins=i=>!i.seasons||!i.seasons.length||i.seasons.includes(se);
   const isShort=i=>/short/i.test(i.name);const warm=W!=null?W>=23:se==="Summer";const cold=W!=null?W<17:se==="Winter";
-  let bots=A.filter(i=>sub(i)==="abottom"&&(isShort(i)?warm:!warm));if(!bots.length)bots=A.filter(i=>sub(i)==="abottom");
+  let bots=A.filter(i=>sub(i)==="abottom"&&(/3\/4|7\/8/.test(i.name)?!cold:isShort(i)?warm:!warm));if(!bots.length)bots=A.filter(i=>sub(i)==="abottom");
   const tees=D.items.filter(i=>i.category==="tops"&&/\btee\b|t-shirt|tank|long-sleeve|long sleeve|breton/i.test(i.name)&&!ACT_DRESSY.test(i.name+" "+(i.pattern||""))&&(!/tank|sleeveless/i.test(i.name)||!cold));
   const jumpers=D.items.filter(i=>i.category==="knitwear"&&/jumper|sweater|crew/i.test(i.name)&&!/cardigan|poncho|dress|tunic/i.test(i.name)&&!ACT_DRESSY.test(i.name)&&ins(i));
   const atops=A.filter(i=>sub(i)==="atop"&&(ins(i)||warm&&/tank/i.test(i.name))),ajk=A.filter(i=>sub(i)==="ajacket"&&ins(i));
