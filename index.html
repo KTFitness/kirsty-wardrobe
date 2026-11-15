@@ -188,11 +188,11 @@ dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
 </nav>
 <dialog class="sheet" id="sheet"><div class="sheet-in" id="sheetBody"></div></dialog>
 
-<script src="style.js?v=202611152126"></script>
+<script src="style.js?v=202611152126b"></script>
 <script>
 /* Home-screen apps hold on to old copies. On open, check version.txt; if a newer version is live, refresh the cached files and reload once. */
 if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{});});}
-const APPV="202611152126";
+const APPV="202611152126b";
 fetch("version.txt",{cache:"no-store"}).then(r=>r.ok?r.text():"").then(v=>{v=v.trim();if(!v||v===APPV)return;
   let tried="";try{tried=sessionStorage.getItem("kw:upd")||"";}catch(e){}if(tried===v)return;try{sessionStorage.setItem("kw:upd",v);}catch(e){}
   Promise.all([fetch("index.html",{cache:"reload"}),fetch("./",{cache:"reload"})]).catch(()=>{}).then(()=>location.reload());}).catch(()=>{});
@@ -447,7 +447,7 @@ function activeCombos(se,seed){const r=rng(seed);const X=walkWx(se);const A=D.it
   const bots=A.filter(i=>sub(i)==="abottom");const isShort=i=>/short|skort/i.test(i.name);
   const B=X.band==="warm"?bots.filter(isShort):bots.filter(i=>!isShort(i)&&!/3\/4/.test(i.name));
   const longSl=i=>/long-sleeve|long sleeve|half-zip.*top|raglan|base layer|heattech/i.test(i.name);
-  const tees=D.items.filter(i=>(i.category==="tops"&&/\btee\b|t-shirt|tank|long-sleeve|long sleeve|breton/i.test(i.name)&&!ACT_DRESSY.test(i.name+" "+(i.pattern||"")))||(i.category==="activewear"&&sub(i)==="atop"&&!/sweat|fleece/i.test(i.name)))&&!role(i);
+  const tees=D.items.filter(i=>(i.category==="tops"&&/\btee\b|t-shirt|tank|long-sleeve|long sleeve|breton/i.test(i.name)&&!ACT_DRESSY.test(i.name+" "+(i.pattern||"")))||(i.category==="activewear"&&sub(i)==="atop"&&!/sweat|fleece/i.test(i.name)&&!role(i)));
   const shortTees=tees.filter(i=>!longSl(i)&&!/elbow/i.test(i.name)),longTees=tees.filter(i=>longSl(i)||/elbow/i.test(i.name));
   const jumpers=D.items.filter(i=>i.category==="knitwear"&&/jumper|sweater|crew/i.test(i.name)&&!/cardigan|poncho|dress|tunic/i.test(i.name)&&!ACT_DRESSY.test(i.name));
   const mids=A.filter(i=>role(i)==="mid").concat(jumpers);const puffers=D.items.filter(i=>role(i)==="puffer");const rainJ=k=>D.items.filter(i=>role(i)==="rain-"+k);
