@@ -13591,6 +13591,170 @@
    ],
    "notes": "Scoop neck with pale blue inner trim, slim sleeves, A-line swing body. Your photo.",
    "img": "img/navy-white-stripe-swing-long-sleeve-tee.webp"
+  },
+  {
+   "id": "navy-white-stripe-crew-long-sleeve-tee",
+   "name": "Navy and white stripe crew long-sleeve tee",
+   "category": "tops",
+   "colours": [
+    "navy",
+    "white"
+   ],
+   "pattern": "stripe",
+   "fabric": "jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Navy crew neckband, relaxed fit, curved high-low hem. Your photo.",
+   "img": "img/navy-white-stripe-crew-long-sleeve-tee.webp"
+  },
+  {
+   "id": "dusty-pink-drapey-long-sleeve-tee",
+   "name": "Dusty pink drapey long-sleeve tee",
+   "category": "tops",
+   "colours": [
+    "dusty pink"
+   ],
+   "pattern": "solid",
+   "fabric": "jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Fine slinky jersey, crew neck, long slim sleeves, side splits. Your photo.",
+   "img": "img/dusty-pink-drapey-long-sleeve-tee.webp"
+  },
+  {
+   "id": "country-road-grey-marle-elbow-sleeve-tee",
+   "name": "Country Road grey marle elbow-sleeve tee",
+   "category": "tops",
+   "colours": [
+    "grey marle"
+   ],
+   "pattern": "solid",
+   "fabric": "jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Thin slub jersey, wide scoop neck, dropped shoulders, elbow sleeves, boxy. Your photo.",
+   "img": "img/country-road-grey-marle-elbow-sleeve-tee.webp"
+  },
+  {
+   "id": "witchery-grey-marle-long-sleeve-tee",
+   "name": "Witchery grey marle long-sleeve tee",
+   "category": "tops",
+   "colours": [
+    "grey marle"
+   ],
+   "pattern": "solid",
+   "fabric": "jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Fine drapey slub jersey, wide crew neck, curved hem. Your photo.",
+   "img": "img/witchery-grey-marle-long-sleeve-tee.webp"
+  },
+  {
+   "id": "grey-marle-pocket-elbow-sleeve-tee",
+   "name": "Grey marle pocket tee with coral neck trim",
+   "category": "tops",
+   "colours": [
+    "grey marle",
+    "coral"
+   ],
+   "pattern": "solid",
+   "fabric": "jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Wide scoop neck with coral inner binding, elbow sleeves, chest pocket, curved hem. Some white marks near the hem. Your photo.",
+   "img": "img/grey-marle-pocket-elbow-sleeve-tee.webp"
+  },
+  {
+   "id": "light-grey-marle-long-sleeve-tee",
+   "name": "Light grey marle long-sleeve tee",
+   "category": "tops",
+   "colours": [
+    "light grey marle"
+   ],
+   "pattern": "solid",
+   "fabric": "jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Cotton jersey, crew neck, relaxed body, curved hem. Your photo.",
+   "img": "img/light-grey-marle-long-sleeve-tee.webp"
+  },
+  {
+   "id": "boden-pink-slub-long-sleeve-tee",
+   "name": "Boden pink slub long-sleeve tee",
+   "category": "tops",
+   "colours": [
+    "pink"
+   ],
+   "pattern": "solid",
+   "fabric": "jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Slub cotton, wide crew neck with navy inner binding, raglan sleeves. Your photo.",
+   "img": "img/boden-pink-slub-long-sleeve-tee.webp"
+  },
+  {
+   "id": "coral-red-drapey-scoop-neck-long-sleeve-tee",
+   "name": "Coral red drapey scoop-neck long-sleeve tee",
+   "category": "tops",
+   "colours": [
+    "coral red"
+   ],
+   "pattern": "solid",
+   "fabric": "jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Thin slinky jersey, wide scoop neck, banded hem. Your photo.",
+   "img": "img/coral-red-drapey-scoop-neck-long-sleeve-tee.webp"
+  },
+  {
+   "id": "raspberry-pink-long-sleeve-tee",
+   "name": "Raspberry pink long-sleeve tee",
+   "category": "tops",
+   "colours": [
+    "raspberry pink"
+   ],
+   "pattern": "solid",
+   "fabric": "jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Cotton jersey, crew neck, relaxed body, curved hem. Your photo.",
+   "img": "img/raspberry-pink-long-sleeve-tee.webp"
   }
  ],
  "outfits": [
