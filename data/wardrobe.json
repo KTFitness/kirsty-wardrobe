@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14",
+ "updated": "2026-11-15",
  "occasions": [
   "Everyday",
   "Lunch out",
@@ -1901,7 +1901,7 @@
   },
   {
    "id": "white-denim-shorts",
-   "name": "White denim shorts",
+   "name": "Emerson white denim shorts",
    "category": "shorts",
    "colours": [
     "white"
@@ -1912,7 +1912,7 @@
     "Spring",
     "Summer"
    ],
-   "notes": "Mid-length, double-button waist, frayed hem. Your photo.",
+   "notes": "Mid-length, double-button waist, clean hem. Your photo.",
    "img": "img/white-denim-shorts.webp",
    "_f": [
     "white"
@@ -11989,6 +11989,114 @@
    "sub": "straight",
    "hem": "crop",
    "img": "img/frank-eileen-olive-cropped-utility-pants.webp"
+  },
+  {
+   "id": "black-gold-lurex-halter-cami",
+   "name": "Black and gold lurex high-neck cami",
+   "category": "tops",
+   "colours": [
+    "black",
+    "gold"
+   ],
+   "pattern": "solid metallic fleck",
+   "fabric": "lurex knit",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "High halter neck with thin straps, sleeveless, relaxed A-line swing. Black with gold sparkle. Dressy. Your photo.",
+   "img": "img/black-gold-lurex-halter-cami.webp"
+  },
+  {
+   "id": "white-navy-green-stripe-shift-dress",
+   "name": "White, navy and green stripe shift dress",
+   "category": "dresses",
+   "colours": [
+    "white",
+    "navy",
+    "kelly green"
+   ],
+   "pattern": "stripe",
+   "fabric": "cotton",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "High round neck, sleeveless, A-line shift above the knee. White top with thin navy stripes, navy and green stripes below, back button. Your photo.",
+   "img": "img/white-navy-green-stripe-shift-dress.webp"
+  },
+  {
+   "id": "white-navy-green-grid-shift-dress",
+   "name": "White shift dress with navy and green grid",
+   "category": "dresses",
+   "colours": [
+    "white",
+    "navy",
+    "kelly green"
+   ],
+   "pattern": "windowpane check",
+   "fabric": "cotton",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "High round neck, sleeveless, A-line shift above the knee, keyhole back button. Large navy and green windowpane check. Your photo.",
+   "img": "img/white-navy-green-grid-shift-dress.webp"
+  },
+  {
+   "id": "orange-blue-graphic-floral-shift-dress",
+   "name": "Orange and periwinkle graphic floral shift dress",
+   "category": "dresses",
+   "colours": [
+    "orange",
+    "periwinkle blue",
+    "navy",
+    "white"
+   ],
+   "pattern": "large graphic floral",
+   "fabric": "cotton poplin",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Sleeveless, high round neck, A-line shift above the knee, side pockets. Big cut-out flowers in coral orange and periwinkle with navy leaves. Your photo.",
+   "img": "img/orange-blue-graphic-floral-shift-dress.webp"
+  },
+  {
+   "id": "mid-wash-denim-sleeveless-shift-dress",
+   "name": "Mid-wash denim sleeveless A-line dress",
+   "category": "dresses",
+   "colours": [
+    "mid-blue denim"
+   ],
+   "pattern": "solid",
+   "fabric": "denim",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Round neck, sleeveless, bust darts, A-line to the knee, deep hem band, back button. Your photo.",
+   "img": "img/mid-wash-denim-sleeveless-shift-dress.webp"
+  },
+  {
+   "id": "white-denim-cutoff-shorts",
+   "name": "White denim cut-off shorts",
+   "category": "shorts",
+   "colours": [
+    "white"
+   ],
+   "pattern": "solid",
+   "fabric": "denim",
+   "seasons": [
+    "Spring",
+    "Summer"
+   ],
+   "notes": "Mid rise, single button, five pockets, frayed raw hem, mid-thigh. Your photo.",
+   "img": "img/white-denim-cutoff-shorts.webp",
+   "shape": "shorts"
   }
  ],
  "outfits": [
