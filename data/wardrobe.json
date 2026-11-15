@@ -13497,6 +13497,100 @@
    "notes": "Polar fleece, stand collar, zip front, zip pockets with plum pulls, fitted. Your photo.",
    "img": "img/kathmandu-black-fleece-vest.webp",
    "sub": "ajacket"
+  },
+  {
+   "id": "white-relaxed-long-sleeve-tee",
+   "name": "White relaxed long-sleeve tee",
+   "category": "tops",
+   "colours": [
+    "white"
+   ],
+   "pattern": "solid",
+   "fabric": "cotton jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Smooth cotton jersey, crew neck, relaxed body, curved longer back hem. Your photo.",
+   "img": "img/white-relaxed-long-sleeve-tee.webp"
+  },
+  {
+   "id": "black-white-fine-stripe-long-sleeve-tee",
+   "name": "Black and white fine stripe long-sleeve tee",
+   "category": "tops",
+   "colours": [
+    "white",
+    "black"
+   ],
+   "pattern": "fine stripe",
+   "fabric": "cotton jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Thin jersey, wide scoop neck, raglan sleeves, centre front seam, curved hem. Your photo.",
+   "img": "img/black-white-fine-stripe-long-sleeve-tee.webp"
+  },
+  {
+   "id": "sussan-navy-white-stripe-long-sleeve-tee",
+   "name": "Sussan navy and white stripe long-sleeve tee",
+   "category": "tops",
+   "colours": [
+    "navy",
+    "white"
+   ],
+   "pattern": "stripe",
+   "fabric": "cotton jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Crew neck with navy neckband, relaxed fit, curved hem. Your photo.",
+   "img": "img/sussan-navy-white-stripe-long-sleeve-tee.webp"
+  },
+  {
+   "id": "witchery-black-white-stripe-long-sleeve-tee",
+   "name": "Witchery black and white stripe long-sleeve tee",
+   "category": "tops",
+   "colours": [
+    "white",
+    "black"
+   ],
+   "pattern": "stripe",
+   "fabric": "cotton jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Fine drapey jersey, wide boat neck with cream binding, long sleeves, curved high-low hem. Your photo.",
+   "img": "img/witchery-black-white-stripe-long-sleeve-tee.webp"
+  },
+  {
+   "id": "navy-white-stripe-swing-long-sleeve-tee",
+   "name": "Navy and white stripe swing long-sleeve tee",
+   "category": "tops",
+   "colours": [
+    "navy",
+    "white"
+   ],
+   "pattern": "stripe",
+   "fabric": "cotton jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Scoop neck with pale blue inner trim, slim sleeves, A-line swing body. Your photo.",
+   "img": "img/navy-white-stripe-swing-long-sleeve-tee.webp"
   }
  ],
  "outfits": [
