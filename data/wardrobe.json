@@ -13328,6 +13328,124 @@
    "notes": "Waterproof shell, hood, storm flap zip, mesh lining, velcro cuffs. Your photo.",
    "img": "img/kathmandu-raspberry-rain-jacket.webp",
    "sub": "ajacket"
+  },
+  {
+   "id": "navy-daisy-print-hooded-raincoat",
+   "name": "Navy daisy print hooded raincoat",
+   "category": "outerwear",
+   "colours": [
+    "navy",
+    "white"
+   ],
+   "pattern": "small floral",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Light waterproof shell, hood, big wooden buttons, knee length, loose fit. Your photo.",
+   "img": "img/navy-daisy-print-hooded-raincoat.webp"
+  },
+  {
+   "id": "cream-padded-long-zip-coat",
+   "name": "Cream padded long zip coat",
+   "category": "outerwear",
+   "colours": [
+    "cream"
+   ],
+   "pattern": "solid",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Stand collar, long zip, quilted sleeve detail, zip pockets, A-line to the knee. Some marks around the pockets and hem. Your photo.",
+   "img": "img/cream-padded-long-zip-coat.webp"
+  },
+  {
+   "id": "mountain-designs-black-long-down-coat",
+   "name": "Mountain Designs black long down coat",
+   "category": "outerwear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "750 down fill, hood, two-way zip, zip pockets, fitted, mid-thigh length. Your photo.",
+   "img": "img/mountain-designs-black-long-down-coat.webp"
+  },
+  {
+   "id": "kathmandu-grey-colour-block-hooded-jacket",
+   "name": "Kathmandu grey colour-block hooded jacket",
+   "category": "activewear",
+   "colours": [
+    "charcoal grey",
+    "light grey",
+    "black"
+   ],
+   "pattern": "colour block",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Waterproof insulated shell, hood with lime lining, storm flap, big flap pockets. Your photo.",
+   "img": "img/kathmandu-grey-colour-block-hooded-jacket.webp",
+   "sub": "ajacket"
+  },
+  {
+   "id": "kathmandu-black-down-jacket",
+   "name": "Kathmandu black down jacket",
+   "category": "activewear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Light down, stand collar, zip pockets, fitted. Your photo.",
+   "img": "img/kathmandu-black-down-jacket.webp",
+   "sub": "ajacket"
+  },
+  {
+   "id": "kathmandu-black-down-vest",
+   "name": "Kathmandu black down vest",
+   "category": "activewear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Light down, stand collar, zip pockets, sleeveless. Matches the down jacket. Your photo.",
+   "img": "img/kathmandu-black-down-vest.webp",
+   "sub": "ajacket"
+  },
+  {
+   "id": "adidas-black-mesh-running-shoes",
+   "name": "Adidas black mesh running shoes",
+   "category": "activewear",
+   "colours": [
+    "black",
+    "white"
+   ],
+   "pattern": "solid",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Black mesh upper, black side stripes, white sole. Your photo.",
+   "img": "img/adidas-black-mesh-running-shoes.webp",
+   "sub": "ashoes"
   }
  ],
  "outfits": [

@@ -188,11 +188,11 @@ dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
 </nav>
 <dialog class="sheet" id="sheet"><div class="sheet-in" id="sheetBody"></div></dialog>
 
-<script src="style.js?v=202611152008"></script>
+<script src="style.js?v=202611152013"></script>
 <script>
 /* Home-screen apps hold on to old copies. On open, check version.txt; if a newer version is live, refresh the cached files and reload once. */
 if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{});});}
-const APPV="202611152008";
+const APPV="202611152013";
 fetch("version.txt",{cache:"no-store"}).then(r=>r.ok?r.text():"").then(v=>{v=v.trim();if(!v||v===APPV)return;
   let tried="";try{tried=sessionStorage.getItem("kw:upd")||"";}catch(e){}if(tried===v)return;try{sessionStorage.setItem("kw:upd",v);}catch(e){}
   Promise.all([fetch("index.html",{cache:"reload"}),fetch("./",{cache:"reload"})]).catch(()=>{}).then(()=>location.reload());}).catch(()=>{});
@@ -446,7 +446,7 @@ function activeCombos(se,seed){const r=rng(seed);const W=S.wx&&S.wx.max!=null?S.
   const tees=D.items.filter(i=>i.category==="tops"&&/\btee\b|t-shirt|tank|long-sleeve|long sleeve|breton/i.test(i.name)&&!ACT_DRESSY.test(i.name+" "+(i.pattern||""))&&(!/tank|sleeveless/i.test(i.name)||!cold));
   const jumpers=D.items.filter(i=>i.category==="knitwear"&&/jumper|sweater|crew/i.test(i.name)&&!/cardigan|poncho|dress|tunic/i.test(i.name)&&!ACT_DRESSY.test(i.name)&&ins(i));
   const atops=A.filter(i=>sub(i)==="atop"&&(ins(i)||warm&&/tank/i.test(i.name))),ajk=A.filter(i=>sub(i)==="ajacket"&&ins(i));
-  const outer=D.items.filter(i=>i.category==="outerwear"&&/denim jacket|quilted|padded|puffer|bomber|field jacket|military jacket|duffle/i.test(i.name)&&ins(i));
+  const outer=D.items.filter(i=>i.category==="outerwear"&&/denim jacket|quilted|padded|puffer|down coat|raincoat|bomber|field jacket|military jacket|duffle/i.test(i.name)&&ins(i));
   const shoes=A.filter(i=>sub(i)==="ashoes");
   const tops=warm?atops.filter(i=>/tank/i.test(i.name)).concat(tees):cold?atops.concat(ajk,jumpers,tees.filter(i=>/long/i.test(i.name))):atops.concat(ajk,tees,jumpers);
   const NO=new Set(allDisliked());const out=[],usedB=new Set(),usedT=new Set();
