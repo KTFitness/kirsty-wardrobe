@@ -448,7 +448,7 @@ function activeCombos(se,seed){const r=rng(seed);const W=S.wx&&S.wx.max!=null?S.
   const atops=A.filter(i=>sub(i)==="atop"&&(ins(i)||warm&&/tank/i.test(i.name))),ajk=A.filter(i=>sub(i)==="ajacket"&&ins(i));
   const outer=D.items.filter(i=>i.category==="outerwear"&&/denim jacket|quilted|padded|puffer|down coat|raincoat|bomber|field jacket|military jacket|duffle/i.test(i.name)&&ins(i));
   const shoes=A.filter(i=>sub(i)==="ashoes");
-  const tops=warm?atops.filter(i=>/tank/i.test(i.name)).concat(tees):cold?atops.concat(ajk,jumpers,tees.filter(i=>/long/i.test(i.name))):atops.concat(ajk,tees,jumpers);
+  const ajkTop=ajk.filter(l=>/hood|sweat|fleece|half-zip/i.test(l.name)&&!/rain|down|vest|puffer/i.test(l.name));const tops=warm?atops.filter(i=>/tank/i.test(i.name)).concat(tees):cold?atops.concat(ajkTop,jumpers,tees.filter(i=>/long/i.test(i.name))):atops.concat(ajkTop,tees,jumpers);
   const NO=new Set(allDisliked());const out=[],usedB=new Set(),usedT=new Set();
   const pick=(L,f,n)=>{const sc=L.map(x=>[x,f(x)+r()*1.6]).sort((a,b)=>b[1]-a[1]);return sc.slice(0,n||3).map(x=>x[0]);};
   const setBonus=(a,b)=>a.category==="activewear"&&b.category==="activewear"&&(a.colours||[])[0]===(b.colours||[])[0]?2:0;
