@@ -13446,6 +13446,57 @@
    "notes": "Black mesh upper, black side stripes, white sole. Your photo.",
    "img": "img/adidas-black-mesh-running-shoes.webp",
    "sub": "ashoes"
+  },
+  {
+   "id": "kathmandu-black-softshell-jacket",
+   "name": "Kathmandu black softshell jacket",
+   "category": "activewear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Stretch softshell, stand collar, zip front, curved zip pockets, fitted. Your photo.",
+   "img": "img/kathmandu-black-softshell-jacket.webp",
+   "sub": "ajacket"
+  },
+  {
+   "id": "lululemon-black-hooded-down-hybrid-jacket",
+   "name": "Lululemon black hooded down hybrid jacket",
+   "category": "activewear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Down-filled front panel, stretch sides and sleeves, hood, rib pockets, reflective dots, fitted. Your photo.",
+   "img": "img/lululemon-black-hooded-down-hybrid-jacket.webp",
+   "sub": "ajacket"
+  },
+  {
+   "id": "kathmandu-black-fleece-vest",
+   "name": "Kathmandu black fleece vest",
+   "category": "activewear",
+   "colours": [
+    "black",
+    "plum"
+   ],
+   "pattern": "solid",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Polar fleece, stand collar, zip front, zip pockets with plum pulls, fitted. Your photo.",
+   "img": "img/kathmandu-black-fleece-vest.webp",
+   "sub": "ajacket"
   }
  ],
  "outfits": [
