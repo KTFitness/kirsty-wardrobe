@@ -1346,7 +1346,8 @@
     "Spring"
    ],
    "notes": "Striped rib cuffs and hem",
-   "img": "img/etoile-colour-block-sweatshirt.webp"
+   "img": "img/etoile-colour-block-sweatshirt.webp",
+   "walkRole": "mid"
   },
   {
    "id": "black-pink-trim-shift-dress",
@@ -2110,7 +2111,8 @@
     "Spring"
    ],
    "notes": "Funnel neck, zip front",
-   "img": "img/rust-track-jacket.webp"
+   "img": "img/rust-track-jacket.webp",
+   "walkRole": "mid"
   },
   {
    "id": "alessandra-colour-block-jumper",
@@ -12405,7 +12407,8 @@
    ],
    "notes": "Pullover hood, kangaroo pocket, white WB logo, raw-edge hem and cuffs. Your photo.",
    "img": "img/wb-charcoal-cropped-hoodie.webp",
-   "sub": "ajacket"
+   "sub": "ajacket",
+   "walkRole": "mid"
   },
   {
    "id": "black-white-stripe-mock-neck-long-sleeve-top",
@@ -12441,7 +12444,8 @@
    ],
    "notes": "Zip front, hood, side pockets, rib cuffs and hem. Your photo.",
    "img": "img/grey-marle-zip-hoodie.webp",
-   "sub": "ajacket"
+   "sub": "ajacket",
+   "walkRole": "mid"
   },
   {
    "id": "grey-marle-cuffed-trackpants",
@@ -12477,7 +12481,8 @@
    ],
    "notes": "Embossed logo across the chest, tape drawcord, deep hem band, cropped. Goes with the Everlast pink wide trackpants. Your photo.",
    "img": "img/everlast-dusty-pink-embossed-cropped-hoodie.webp",
-   "sub": "ajacket"
+   "sub": "ajacket",
+   "walkRole": "mid"
   },
   {
    "id": "forest-green-cropped-hoodie",
@@ -12495,7 +12500,8 @@
    ],
    "notes": "Kangaroo pocket, dropped shoulders, rib hem and cuffs, cropped. Goes with the forest green joggers and shorts. Your photo.",
    "img": "img/forest-green-cropped-hoodie.webp",
-   "sub": "ajacket"
+   "sub": "ajacket",
+   "walkRole": "mid"
   },
   {
    "id": "pale-pink-cropped-crew-sweatshirt",
@@ -12513,7 +12519,8 @@
    ],
    "notes": "Rib neck, cuffs and hem, boxy cropped. Your photo.",
    "img": "img/pale-pink-cropped-crew-sweatshirt.webp",
-   "sub": "atop"
+   "sub": "atop",
+   "walkRole": "mid"
   },
   {
    "id": "grey-marle-cropped-crew-sweatshirt",
@@ -12531,7 +12538,8 @@
    ],
    "notes": "Rib neck and cuffs, raw hem, boxy cropped. Your photo.",
    "img": "img/grey-marle-cropped-crew-sweatshirt.webp",
-   "sub": "atop"
+   "sub": "atop",
+   "walkRole": "mid"
   },
   {
    "id": "everlast-cream-embossed-cropped-hoodie",
@@ -12549,7 +12557,8 @@
    ],
    "notes": "Embossed logo across the chest, tape drawcord, deep hem band, cropped. Goes with the Everlast cream shorts and wide trackpants. Your photo.",
    "img": "img/everlast-cream-embossed-cropped-hoodie.webp",
-   "sub": "ajacket"
+   "sub": "ajacket",
+   "walkRole": "mid"
   },
   {
    "id": "grey-scuba-hoodie",
@@ -12567,7 +12576,8 @@
    ],
    "notes": "Smooth scuba fabric, raglan sleeves, centre seam, side slash pockets. Your photo.",
    "img": "img/grey-scuba-hoodie.webp",
-   "sub": "ajacket"
+   "sub": "ajacket",
+   "walkRole": "mid"
   },
   {
    "id": "dusty-pink-patch-pocket-sweatshirt",
@@ -12585,7 +12595,8 @@
    ],
    "notes": "Crew neck with contrast stitching, one patch pocket, boxy. Your photo.",
    "img": "img/dusty-pink-patch-pocket-sweatshirt.webp",
-   "sub": "atop"
+   "sub": "atop",
+   "walkRole": "mid"
   },
   {
    "id": "black-stripe-trim-pocket-sweatshirt",
@@ -12604,7 +12615,8 @@
    ],
    "notes": "Boxy, centre seam, black and white stripe neckband and pocket edge. Your photo.",
    "img": "img/black-stripe-trim-pocket-sweatshirt.webp",
-   "sub": "atop"
+   "sub": "atop",
+   "walkRole": "mid"
   },
   {
    "id": "black-pink-stripe-funnel-neck-sweatshirt",
@@ -12623,7 +12635,8 @@
    ],
    "notes": "High funnel neck, boxy, one wide pink band across the body and sleeves. Your photo.",
    "img": "img/black-pink-stripe-funnel-neck-sweatshirt.webp",
-   "sub": "atop"
+   "sub": "atop",
+   "walkRole": "mid"
   },
   {
    "id": "grey-black-white-colour-block-half-zip",
@@ -12643,7 +12656,8 @@
    ],
    "notes": "Half zip, stand collar, white sleeves, black shoulders and pocket panels, kangaroo pocket. Your photo.",
    "img": "img/grey-black-white-colour-block-half-zip.webp",
-   "sub": "atop"
+   "sub": "atop",
+   "walkRole": "mid"
   },
   {
    "id": "kathmandu-blue-half-zip-fleece",
@@ -12661,7 +12675,8 @@
    ],
    "notes": "Microfleece, stand collar, half zip, fitted with princess seams. Your photo.",
    "img": "img/kathmandu-blue-half-zip-fleece.webp",
-   "sub": "atop"
+   "sub": "atop",
+   "walkRole": "mid"
   },
   {
    "id": "kathmandu-pink-zip-fleece-jacket",
@@ -12679,7 +12694,8 @@
    ],
    "notes": "Microfleece, stand collar, full zip, zip pockets, fitted. Your photo.",
    "img": "img/kathmandu-pink-zip-fleece-jacket.webp",
-   "sub": "ajacket"
+   "sub": "ajacket",
+   "walkRole": "mid"
   },
   {
    "id": "black-leggings-grey-side-stripe-78",
@@ -12999,7 +13015,8 @@
    ],
    "notes": "Stand collar, half zip, yoke seam, fitted with side panels, deep cuffs. Your photo.",
    "img": "img/black-half-zip-long-sleeve-top.webp",
-   "sub": "atop"
+   "sub": "atop",
+   "walkRole": "mid"
   },
   {
    "id": "uniqlo-heattech-black-long-sleeve-tee",
@@ -13073,7 +13090,8 @@
    ],
    "notes": "Stand collar, half zip, zip side pocket, thumbhole cuffs, curved hem, small logo. Your photo.",
    "img": "img/black-half-zip-running-top-zip-pocket.webp",
-   "sub": "atop"
+   "sub": "atop",
+   "walkRole": "mid"
   },
   {
    "id": "black-red-merino-zip-jacket",
@@ -13092,7 +13110,8 @@
    ],
    "notes": "Full zip, stand collar, red side panels and collar lining, chest zip pocket, side pockets. Your photo.",
    "img": "img/black-red-merino-zip-jacket.webp",
-   "sub": "ajacket"
+   "sub": "ajacket",
+   "walkRole": "mid"
   },
   {
    "id": "black-merino-half-zip-top",
@@ -13110,7 +13129,8 @@
    ],
    "notes": "Stand collar, half zip, raglan sleeves, curved hem. Your photo.",
    "img": "img/black-merino-half-zip-top.webp",
-   "sub": "atop"
+   "sub": "atop",
+   "walkRole": "mid"
   },
   {
    "id": "black-polar-fleece-zip-jacket",
@@ -13128,7 +13148,8 @@
    ],
    "notes": "Full zip, stand collar, zip side pockets, princess seams. Your photo.",
    "img": "img/black-polar-fleece-zip-jacket.webp",
-   "sub": "ajacket"
+   "sub": "ajacket",
+   "walkRole": "mid"
   },
   {
    "id": "red-jersey-shorts",
@@ -13273,7 +13294,8 @@
     "Winter"
    ],
    "notes": "Stand collar, zip with snap placket, side pockets, fitted waist. Your photo.",
-   "img": "img/forest-green-down-puffer-jacket.webp"
+   "img": "img/forest-green-down-puffer-jacket.webp",
+   "walkRole": "puffer"
   },
   {
    "id": "macpac-navy-hooded-down-jacket",
@@ -13290,7 +13312,8 @@
    ],
    "notes": "Down fill, hood, zip front, zip pockets, drawcord hem. Your photo.",
    "img": "img/macpac-navy-hooded-down-jacket.webp",
-   "sub": "ajacket"
+   "sub": "ajacket",
+   "walkRole": "puffer"
   },
   {
    "id": "black-hooded-rain-jacket",
@@ -13309,7 +13332,8 @@
    ],
    "notes": "Waterproof shell, hood, white zip edge, velcro cuffs, drawcord hem. Your photo.",
    "img": "img/black-hooded-rain-jacket.webp",
-   "sub": "ajacket"
+   "sub": "ajacket",
+   "walkRole": "rain-warm"
   },
   {
    "id": "kathmandu-raspberry-rain-jacket",
@@ -13327,7 +13351,8 @@
    ],
    "notes": "Waterproof shell, hood, storm flap zip, mesh lining, velcro cuffs. Your photo.",
    "img": "img/kathmandu-raspberry-rain-jacket.webp",
-   "sub": "ajacket"
+   "sub": "ajacket",
+   "walkRole": "rain-light"
   },
   {
    "id": "navy-daisy-print-hooded-raincoat",
@@ -13344,7 +13369,8 @@
     "Spring"
    ],
    "notes": "Light waterproof shell, hood, big wooden buttons, knee length, loose fit. Your photo.",
-   "img": "img/navy-daisy-print-hooded-raincoat.webp"
+   "img": "img/navy-daisy-print-hooded-raincoat.webp",
+   "walkRole": "rain-light"
   },
   {
    "id": "cream-padded-long-zip-coat",
@@ -13374,7 +13400,8 @@
     "Winter"
    ],
    "notes": "750 down fill, hood, two-way zip, zip pockets, fitted, mid-thigh length. Your photo.",
-   "img": "img/mountain-designs-black-long-down-coat.webp"
+   "img": "img/mountain-designs-black-long-down-coat.webp",
+   "walkRole": "puffer"
   },
   {
    "id": "kathmandu-grey-colour-block-hooded-jacket",
@@ -13392,7 +13419,8 @@
    ],
    "notes": "Waterproof insulated shell, hood with lime lining, storm flap, big flap pockets. Your photo.",
    "img": "img/kathmandu-grey-colour-block-hooded-jacket.webp",
-   "sub": "ajacket"
+   "sub": "ajacket",
+   "walkRole": "rain-cold"
   },
   {
    "id": "kathmandu-black-down-jacket",
@@ -13409,7 +13437,8 @@
    ],
    "notes": "Light down, stand collar, zip pockets, fitted. Your photo.",
    "img": "img/kathmandu-black-down-jacket.webp",
-   "sub": "ajacket"
+   "sub": "ajacket",
+   "walkRole": "puffer"
   },
   {
    "id": "kathmandu-black-down-vest",
@@ -13426,7 +13455,8 @@
    ],
    "notes": "Light down, stand collar, zip pockets, sleeveless. Matches the down jacket. Your photo.",
    "img": "img/kathmandu-black-down-vest.webp",
-   "sub": "ajacket"
+   "sub": "ajacket",
+   "walkRole": "mid"
   },
   {
    "id": "adidas-black-mesh-running-shoes",
@@ -13462,7 +13492,8 @@
    ],
    "notes": "Stretch softshell, stand collar, zip front, curved zip pockets, fitted. Your photo.",
    "img": "img/kathmandu-black-softshell-jacket.webp",
-   "sub": "ajacket"
+   "sub": "ajacket",
+   "walkRole": "mid"
   },
   {
    "id": "lululemon-black-hooded-down-hybrid-jacket",
@@ -13478,7 +13509,8 @@
    ],
    "notes": "Down-filled front panel, stretch sides and sleeves, hood, rib pockets, reflective dots, fitted. Your photo.",
    "img": "img/lululemon-black-hooded-down-hybrid-jacket.webp",
-   "sub": "ajacket"
+   "sub": "ajacket",
+   "walkRole": "puffer"
   },
   {
    "id": "kathmandu-black-fleece-vest",
@@ -13496,7 +13528,8 @@
    ],
    "notes": "Polar fleece, stand collar, zip front, zip pockets with plum pulls, fitted. Your photo.",
    "img": "img/kathmandu-black-fleece-vest.webp",
-   "sub": "ajacket"
+   "sub": "ajacket",
+   "walkRole": "mid"
   },
   {
    "id": "white-relaxed-long-sleeve-tee",
