@@ -188,11 +188,11 @@ dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
 </nav>
 <dialog class="sheet" id="sheet"><div class="sheet-in" id="sheetBody"></div></dialog>
 
-<script src="style.js?v=202611151943"></script>
+<script src="style.js?v=202611151944"></script>
 <script>
 /* Home-screen apps hold on to old copies. On open, check version.txt; if a newer version is live, refresh the cached files and reload once. */
 if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{});});}
-const APPV="202611151943";
+const APPV="202611151944";
 fetch("version.txt",{cache:"no-store"}).then(r=>r.ok?r.text():"").then(v=>{v=v.trim();if(!v||v===APPV)return;
   let tried="";try{tried=sessionStorage.getItem("kw:upd")||"";}catch(e){}if(tried===v)return;try{sessionStorage.setItem("kw:upd",v);}catch(e){}
   Promise.all([fetch("index.html",{cache:"reload"}),fetch("./",{cache:"reload"})]).catch(()=>{}).then(()=>location.reload());}).catch(()=>{});
@@ -278,14 +278,15 @@ const likedCores=memo(()=>new Set(allOutfits().filter(isLiked).map(ckey)));
 const iIds=p=>inspoEdits[p.id]||p.itemIds||[];
 const inspoOutfits=memo(()=>D.inspo.filter(p=>!inspoGone.includes(p.id)&&iIds(p).length&&iIds(p).every(id=>byId(id))).map(p=>({id:"insp-"+p.id,inspoId:p.id,name:p.name||"Inspired look",itemIds:iIds(p).slice(),occasions:p.occasions||["Everyday"],why:"One of your inspiration looks, made from your wardrobe.",inspo:true})));
 function inspoBtns(o,liked){return (liked?`<span class="fav" aria-pressed="true" style="cursor:default">♥ Liked</span>`:`<button class="fav" type="button" data-likeinsp="${esc(o.inspoId)}" aria-pressed="false">♡ Like</button>`)+`<button class="iconbtn" type="button" data-swapinsp="${esc(o.inspoId)}">Swap a piece</button>`;}
+const vcat=it=>{if(!it||it.category!=="activewear")return it&&it.category;const u=Stylist.subOf(it,"activewear");return u==="ashoes"?"shoes":u==="abottom"?"trousers":u==="ajacket"?"outerwear":"tops";};
 function collage(ids,hero){
   const order=["outerwear","tops","knitwear","dresses","skirts","trousers","shorts"],body=["tops","knitwear","dresses","skirts","trousers","shorts"];
   const items=ids.map(byId);let H=hero?items.find(it=>it&&it.id===(ALIAS[hero]||hero)):null;
-  if(H&&["shoes","bags","accessories"].includes(H.category)===false&&!body.includes(H.category)&&H.category!=="outerwear")H=null;
+  if(H&&["shoes","bags","accessories"].includes(vcat(H))===false&&!body.includes(vcat(H))&&vcat(H)!=="outerwear")H=null;
   const main=[],side=[];
-  items.forEach(it=>{if(it===H)return;if(!it){main.push(null);return;}(body.includes(it.category)?main:side).push(it);});
-  main.sort((a,b)=>(a?order.indexOf(a.category):9)-(b?order.indexOf(b.category):9));
-  if(H&&["shoes","bags","accessories"].includes(H.category)){side.unshift(H);H=null;}
+  items.forEach(it=>{if(it===H)return;if(!it){main.push(null);return;}(body.includes(vcat(it))?main:side).push(it);});
+  main.sort((a,b)=>(a?order.indexOf(vcat(a)):9)-(b?order.indexOf(vcat(b)):9));
+  if(H&&["shoes","bags","accessories"].includes(vcat(H))){side.unshift(H);H=null;}
   const cell=(it,big)=>`<div class="cl${big?" hero":""}">${it?`<img src="${esc(th(it.img))}" alt="${esc(it.name)}" loading="lazy">`:`<div class="gone">Item no longer in wardrobe</div>`}</div>`;
   const mainCells=(H?[cell(H,true)]:[]).concat(main.map(x=>cell(x)));
   const rows=(H?["2fr"]:[]).concat(main.map(()=>"1fr")).join(" ")||"1fr";
@@ -431,7 +432,7 @@ function rng(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15
 function isBuilt(o){return !o.temp&&!!(o.built||(o.mine&&o.why===""));}
 function isLiked(o){if(o.temp)return false;return !!(o.mine||(o.liked&&!unliked.includes(o.id))||favs.includes(o.id));}
 function keyPiece(o){const P=(o.itemIds||[]).map(byId).filter(Boolean);
-  return P.find(i=>i.category==="dresses")||P.find(i=>!i.basic&&["skirts","trousers","shorts"].includes(i.category))||P.find(i=>["skirts","trousers","shorts"].includes(i.category))||P.find(i=>!["shoes","bags","accessories"].includes(i.category))||P[0];}
+  return P.find(i=>i.category==="dresses")||P.find(i=>vcat(i)==="trousers"&&i.category==="activewear")||P.find(i=>!i.basic&&["skirts","trousers","shorts"].includes(i.category))||P.find(i=>["skirts","trousers","shorts"].includes(i.category))||P.find(i=>!["shoes","bags","accessories"].includes(i.category))||P[0];}
 function topOf(o,k){const P=(o.itemIds||[]).map(byId).filter(Boolean);return P.find(i=>i!==k&&!i.basic&&["tops","knitwear"].includes(i.category))||P.find(i=>i!==k&&["tops","knitwear","outerwear"].includes(i.category));}
 function fitsSeason(o,se){return (o.itemIds||[]).every(id=>{const it=byId(id);return !it||!it.seasons||!it.seasons.length||it.seasons.includes(se);});}
 function other(o,k){const P=(o.itemIds||[]).map(byId).filter(i=>i&&i!==k&&!ACC.includes(i.category));const bot=["skirts","trousers","shorts","dresses"];return ["tops","knitwear","outerwear"].includes(k&&k.category)?(P.find(i=>bot.includes(i.category))||P[0]):(topOf(o,k)||P[0]);}
@@ -450,7 +451,7 @@ function activeCombos(se,seed){const r=rng(seed);const W=S.wx&&S.wx.max!=null?S.
   const tops=warm?atops.filter(i=>/tank/i.test(i.name)).concat(tees):cold?atops.concat(ajk,jumpers,tees.filter(i=>/long/i.test(i.name))):atops.concat(ajk,tees,jumpers);
   const NO=new Set(allDisliked());const out=[],usedB=new Set(),usedT=new Set();
   const pick=(L,f,n)=>{const sc=L.map(x=>[x,f(x)+r()*1.6]).sort((a,b)=>b[1]-a[1]);return sc.slice(0,n||3).map(x=>x[0]);};
-  const setBonus=(a,b)=>a.category==="activewear"&&b.category==="activewear"&&Stylist.families(a)[0]===Stylist.families(b)[0]?2:0;
+  const setBonus=(a,b)=>a.category==="activewear"&&b.category==="activewear"&&(a.colours||[])[0]===(b.colours||[])[0]?2:0;
   for(const b of pick(bots,()=>0,bots.length)){if(out.length>=3)break;if(usedB.has(b.id))continue;
     const tc=tops.filter(t=>!usedT.has(t.id));if(!tc.length)break;
     for(const t of pick(tc,t=>Stylist.colFit(b,t)*2+setBonus(b,t),4)){
