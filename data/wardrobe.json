@@ -12945,6 +12945,190 @@
    "notes": "Below-knee length, navy mesh panel at the lower outer leg, small logo at the hip. Your photo.",
    "img": "img/black-three-quarter-leggings-navy-panel.webp",
    "sub": "abottom"
+  },
+  {
+   "id": "black-raglan-long-sleeve-running-top",
+   "name": "Black raglan long-sleeve running top",
+   "category": "activewear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "performance jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Light jersey, crew neck, raglan sleeves, curved hem, small reflective logo at the hip. Your photo.",
+   "img": "img/black-raglan-long-sleeve-running-top.webp",
+   "sub": "atop"
+  },
+  {
+   "id": "white-mock-neck-long-sleeve-base-layer",
+   "name": "White mock-neck long-sleeve base layer",
+   "category": "activewear",
+   "colours": [
+    "white"
+   ],
+   "pattern": "solid",
+   "fabric": "performance jersey",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Fine soft jersey, mock neck, centre front seam, fitted. Your photo.",
+   "img": "img/white-mock-neck-long-sleeve-base-layer.webp",
+   "sub": "atop"
+  },
+  {
+   "id": "black-half-zip-long-sleeve-top",
+   "name": "Black half-zip long-sleeve top",
+   "category": "activewear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "performance jersey",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Stand collar, half zip, yoke seam, fitted with side panels, deep cuffs. Your photo.",
+   "img": "img/black-half-zip-long-sleeve-top.webp",
+   "sub": "atop"
+  },
+  {
+   "id": "uniqlo-heattech-black-long-sleeve-tee",
+   "name": "Uniqlo Heattech black long-sleeve tee",
+   "category": "activewear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "performance jersey",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Thin thermal base layer, crew neck. Your photo.",
+   "img": "img/uniqlo-heattech-black-long-sleeve-tee.webp",
+   "sub": "atop"
+  },
+  {
+   "id": "black-scoop-neck-long-sleeve-top",
+   "name": "Black scoop-neck long-sleeve top",
+   "category": "activewear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "performance jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Light jersey, wide scoop neck, fitted. Your photo.",
+   "img": "img/black-scoop-neck-long-sleeve-top.webp",
+   "sub": "atop"
+  },
+  {
+   "id": "black-long-line-long-sleeve-tee",
+   "name": "Black long-line long-sleeve tee",
+   "category": "activewear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "performance jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Soft drapey jersey, crew neck, long body with curved hem. Your photo.",
+   "img": "img/black-long-line-long-sleeve-tee.webp",
+   "sub": "atop"
+  },
+  {
+   "id": "black-half-zip-running-top-zip-pocket",
+   "name": "Black half-zip running top with zip pocket",
+   "category": "activewear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "performance jersey",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Stand collar, half zip, zip side pocket, thumbhole cuffs, curved hem, small logo. Your photo.",
+   "img": "img/black-half-zip-running-top-zip-pocket.webp",
+   "sub": "atop"
+  },
+  {
+   "id": "black-red-merino-zip-jacket",
+   "name": "Black and red merino zip jacket",
+   "category": "activewear",
+   "colours": [
+    "black",
+    "red"
+   ],
+   "pattern": "colour block",
+   "fabric": "merino",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Full zip, stand collar, red side panels and collar lining, chest zip pocket, side pockets. Your photo.",
+   "img": "img/black-red-merino-zip-jacket.webp",
+   "sub": "ajacket"
+  },
+  {
+   "id": "black-merino-half-zip-top",
+   "name": "Black merino half-zip top",
+   "category": "activewear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "merino",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Stand collar, half zip, raglan sleeves, curved hem. Your photo.",
+   "img": "img/black-merino-half-zip-top.webp",
+   "sub": "atop"
+  },
+  {
+   "id": "black-polar-fleece-zip-jacket",
+   "name": "Black polar fleece zip jacket",
+   "category": "activewear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "fabric": "fleece",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Full zip, stand collar, zip side pockets, princess seams. Your photo.",
+   "img": "img/black-polar-fleece-zip-jacket.webp",
+   "sub": "ajacket"
   }
  ],
  "outfits": [
