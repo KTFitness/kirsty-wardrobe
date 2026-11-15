@@ -12097,6 +12097,369 @@
    "notes": "Mid rise, single button, five pockets, frayed raw hem, mid-thigh. Your photo.",
    "img": "img/white-denim-cutoff-shorts.webp",
    "shape": "shorts"
+  },
+  {
+   "id": "dusty-pink-sweat-tank",
+   "name": "Dusty pink sweat tank",
+   "category": "activewear",
+   "colours": [
+    "dusty pink"
+   ],
+   "pattern": "solid",
+   "fabric": "sweat fleece",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Fleece-back sweat fabric, high round neck, step hem. Your photo.",
+   "img": "img/dusty-pink-sweat-tank.webp",
+   "sub": "atop"
+  },
+  {
+   "id": "dusty-pink-cuffed-trackpants",
+   "name": "Dusty pink cuffed trackpants",
+   "category": "activewear",
+   "colours": [
+    "dusty pink"
+   ],
+   "pattern": "solid",
+   "fabric": "sweat fleece",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Elastic waist, side pockets, tapered leg, deep elastic cuffs. Your photo.",
+   "img": "img/dusty-pink-cuffed-trackpants.webp",
+   "sub": "abottom"
+  },
+  {
+   "id": "charcoal-joggers-red-drawstring",
+   "name": "Charcoal joggers with red drawstring",
+   "category": "activewear",
+   "colours": [
+    "charcoal grey",
+    "red"
+   ],
+   "pattern": "solid",
+   "fabric": "sweat fleece",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Soft marle jersey, elastic waist, red cord, side pockets, rib cuffs. Your photo.",
+   "img": "img/charcoal-joggers-red-drawstring.webp",
+   "sub": "abottom"
+  },
+  {
+   "id": "grey-marle-sweat-shorts",
+   "name": "Grey marle sweat shorts",
+   "category": "activewear",
+   "colours": [
+    "grey"
+   ],
+   "pattern": "solid",
+   "fabric": "sweat fleece",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Wide rib waistband with drawcord, side pockets. Your photo.",
+   "img": "img/grey-marle-sweat-shorts.webp",
+   "sub": "abottom"
+  },
+  {
+   "id": "dusty-pink-sweat-shorts",
+   "name": "Dusty pink sweat shorts",
+   "category": "activewear",
+   "colours": [
+    "dusty pink"
+   ],
+   "pattern": "solid",
+   "fabric": "sweat fleece",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Elastic waist, scoop pockets. Same fabric and colour as the pink sweat tank and trackpants. Your photo.",
+   "img": "img/dusty-pink-sweat-shorts.webp",
+   "sub": "abottom"
+  },
+  {
+   "id": "everlast-black-sweat-shorts",
+   "name": "Everlast black sweat shorts",
+   "category": "activewear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "logo",
+   "fabric": "sweat fleece",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Elastic waist with drawcord, side splits, logo patch on the leg. Your photo.",
+   "img": "img/everlast-black-sweat-shorts.webp",
+   "sub": "abottom"
+  },
+  {
+   "id": "olive-cuffed-joggers",
+   "name": "Olive cuffed joggers",
+   "category": "activewear",
+   "colours": [
+    "olive green"
+   ],
+   "pattern": "solid",
+   "fabric": "sweat fleece",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Light jersey, elastic waist with drawcord, side pockets, curved seams, deep cuffs. Your photo.",
+   "img": "img/olive-cuffed-joggers.webp",
+   "sub": "abottom"
+  },
+  {
+   "id": "sage-green-drawcord-shorts",
+   "name": "Sage green drawcord shorts",
+   "category": "activewear",
+   "colours": [
+    "sage green"
+   ],
+   "pattern": "solid",
+   "fabric": "sweat fleece",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Smooth scuba-style knit, toggle drawcord, side pockets. Your photo.",
+   "img": "img/sage-green-drawcord-shorts.webp",
+   "sub": "abottom"
+  },
+  {
+   "id": "everlast-lilac-sweat-shorts",
+   "name": "Everlast lilac sweat shorts",
+   "category": "activewear",
+   "colours": [
+    "lilac"
+   ],
+   "pattern": "solid",
+   "fabric": "sweat fleece",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Shirred waist, tape tie, front seams, embossed logo on the leg. Your photo.",
+   "img": "img/everlast-lilac-sweat-shorts.webp",
+   "sub": "abottom"
+  },
+  {
+   "id": "everlast-cream-sweat-shorts",
+   "name": "Everlast cream sweat shorts",
+   "category": "activewear",
+   "colours": [
+    "cream"
+   ],
+   "pattern": "solid",
+   "fabric": "sweat fleece",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Shirred waist, tape tie, front seams, embossed logo on the leg. Matches the cream wide trackpants. Your photo.",
+   "img": "img/everlast-cream-sweat-shorts.webp",
+   "sub": "abottom"
+  },
+  {
+   "id": "kelly-green-jersey-shorts",
+   "name": "Kelly green jersey shorts",
+   "category": "activewear",
+   "colours": [
+    "kelly green"
+   ],
+   "pattern": "solid",
+   "fabric": "cotton jersey",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Light cotton jersey, curved pockets, contrast topstitch. Your photo.",
+   "img": "img/kelly-green-jersey-shorts.webp",
+   "sub": "abottom"
+  },
+  {
+   "id": "forest-green-drawstring-sweat-shorts",
+   "name": "Forest green drawstring sweat shorts",
+   "category": "activewear",
+   "colours": [
+    "forest green"
+   ],
+   "pattern": "solid",
+   "fabric": "sweat fleece",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Shirred waist with drawstring, side pockets. Same colour as the forest green joggers. Your photo.",
+   "img": "img/forest-green-drawstring-sweat-shorts.webp",
+   "sub": "abottom"
+  },
+  {
+   "id": "everlast-magenta-logo-sweat-shorts",
+   "name": "Everlast magenta logo sweat shorts",
+   "category": "activewear",
+   "colours": [
+    "magenta pink",
+    "white"
+   ],
+   "pattern": "logo",
+   "fabric": "sweat fleece",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Elastic waist with drawcord, white logo print on the leg. Your photo.",
+   "img": "img/everlast-magenta-logo-sweat-shorts.webp",
+   "sub": "abottom"
+  },
+  {
+   "id": "everlast-pink-wide-trackpants",
+   "name": "Everlast pink wide-leg trackpants",
+   "category": "activewear",
+   "colours": [
+    "dusty pink"
+   ],
+   "pattern": "solid",
+   "fabric": "sweat fleece",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Elastic waist, tape tie, side pockets, straight wide leg, embossed logo down one leg. Your photo.",
+   "img": "img/everlast-pink-wide-trackpants.webp",
+   "sub": "abottom"
+  },
+  {
+   "id": "everlast-cream-wide-trackpants",
+   "name": "Everlast cream wide-leg trackpants",
+   "category": "activewear",
+   "colours": [
+    "cream"
+   ],
+   "pattern": "solid",
+   "fabric": "sweat fleece",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Elastic waist, tape tie, side pockets, straight wide leg, embossed logo down one leg. Your photo.",
+   "img": "img/everlast-cream-wide-trackpants.webp",
+   "sub": "abottom"
+  },
+  {
+   "id": "forest-green-cuffed-joggers",
+   "name": "Forest green cuffed joggers",
+   "category": "activewear",
+   "colours": [
+    "forest green"
+   ],
+   "pattern": "solid",
+   "fabric": "sweat fleece",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Elastic waist with drawstring, front seams, elastic cuffs. Your photo.",
+   "img": "img/forest-green-cuffed-joggers.webp",
+   "sub": "abottom"
+  },
+  {
+   "id": "wb-charcoal-cropped-hoodie",
+   "name": "WB charcoal cropped hoodie",
+   "category": "activewear",
+   "colours": [
+    "charcoal grey",
+    "white"
+   ],
+   "pattern": "logo",
+   "fabric": "sweat fleece",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Pullover hood, kangaroo pocket, white WB logo, raw-edge hem and cuffs. Your photo.",
+   "img": "img/wb-charcoal-cropped-hoodie.webp",
+   "sub": "ajacket"
+  },
+  {
+   "id": "black-white-stripe-mock-neck-long-sleeve-top",
+   "name": "Black and white stripe mock-neck long-sleeve top",
+   "category": "tops",
+   "colours": [
+    "black",
+    "white"
+   ],
+   "pattern": "stripe",
+   "fabric": "cotton jersey",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Cotton jersey, mock neck, long sleeves, boxy, side splits. Your photo.",
+   "img": "img/black-white-stripe-mock-neck-long-sleeve-top.webp"
+  },
+  {
+   "id": "grey-marle-zip-hoodie",
+   "name": "Grey marle zip hoodie",
+   "category": "activewear",
+   "colours": [
+    "grey"
+   ],
+   "pattern": "solid",
+   "fabric": "sweat fleece",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Zip front, hood, side pockets, rib cuffs and hem. Your photo.",
+   "img": "img/grey-marle-zip-hoodie.webp",
+   "sub": "ajacket"
+  },
+  {
+   "id": "grey-marle-cuffed-trackpants",
+   "name": "Grey marle cuffed trackpants",
+   "category": "activewear",
+   "colours": [
+    "grey"
+   ],
+   "pattern": "solid",
+   "fabric": "sweat fleece",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Fleece, elastic waist with drawcord, front seams, elastic cuffs. Your photo.",
+   "img": "img/grey-marle-cuffed-trackpants.webp",
+   "sub": "abottom"
   }
  ],
  "outfits": [
