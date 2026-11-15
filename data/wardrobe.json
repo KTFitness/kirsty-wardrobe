@@ -12460,6 +12460,226 @@
    "notes": "Fleece, elastic waist with drawcord, front seams, elastic cuffs. Your photo.",
    "img": "img/grey-marle-cuffed-trackpants.webp",
    "sub": "abottom"
+  },
+  {
+   "id": "everlast-dusty-pink-embossed-cropped-hoodie",
+   "name": "Everlast dusty pink embossed cropped hoodie",
+   "category": "activewear",
+   "colours": [
+    "dusty pink"
+   ],
+   "pattern": "logo",
+   "fabric": "sweat fleece",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Embossed logo across the chest, tape drawcord, deep hem band, cropped. Goes with the Everlast pink wide trackpants. Your photo.",
+   "img": "img/everlast-dusty-pink-embossed-cropped-hoodie.webp",
+   "sub": "ajacket"
+  },
+  {
+   "id": "forest-green-cropped-hoodie",
+   "name": "Forest green cropped hoodie",
+   "category": "activewear",
+   "colours": [
+    "forest green"
+   ],
+   "pattern": "solid",
+   "fabric": "sweat fleece",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Kangaroo pocket, dropped shoulders, rib hem and cuffs, cropped. Goes with the forest green joggers and shorts. Your photo.",
+   "img": "img/forest-green-cropped-hoodie.webp",
+   "sub": "ajacket"
+  },
+  {
+   "id": "pale-pink-cropped-crew-sweatshirt",
+   "name": "Pale pink cropped crew sweatshirt",
+   "category": "activewear",
+   "colours": [
+    "pale pink"
+   ],
+   "pattern": "solid",
+   "fabric": "sweat fleece",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Rib neck, cuffs and hem, boxy cropped. Your photo.",
+   "img": "img/pale-pink-cropped-crew-sweatshirt.webp",
+   "sub": "atop"
+  },
+  {
+   "id": "grey-marle-cropped-crew-sweatshirt",
+   "name": "Grey marle cropped crew sweatshirt",
+   "category": "activewear",
+   "colours": [
+    "grey"
+   ],
+   "pattern": "solid",
+   "fabric": "sweat fleece",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Rib neck and cuffs, raw hem, boxy cropped. Your photo.",
+   "img": "img/grey-marle-cropped-crew-sweatshirt.webp",
+   "sub": "atop"
+  },
+  {
+   "id": "everlast-cream-embossed-cropped-hoodie",
+   "name": "Everlast cream embossed cropped hoodie",
+   "category": "activewear",
+   "colours": [
+    "cream"
+   ],
+   "pattern": "logo",
+   "fabric": "sweat fleece",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Embossed logo across the chest, tape drawcord, deep hem band, cropped. Goes with the Everlast cream shorts and wide trackpants. Your photo.",
+   "img": "img/everlast-cream-embossed-cropped-hoodie.webp",
+   "sub": "ajacket"
+  },
+  {
+   "id": "grey-scuba-hoodie",
+   "name": "Grey scuba-knit hoodie",
+   "category": "activewear",
+   "colours": [
+    "grey"
+   ],
+   "pattern": "solid",
+   "fabric": "sweat fleece",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Smooth scuba fabric, raglan sleeves, centre seam, side slash pockets. Your photo.",
+   "img": "img/grey-scuba-hoodie.webp",
+   "sub": "ajacket"
+  },
+  {
+   "id": "dusty-pink-patch-pocket-sweatshirt",
+   "name": "Dusty pink patch-pocket sweatshirt",
+   "category": "activewear",
+   "colours": [
+    "dusty pink"
+   ],
+   "pattern": "solid",
+   "fabric": "sweat fleece",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Crew neck with contrast stitching, one patch pocket, boxy. Your photo.",
+   "img": "img/dusty-pink-patch-pocket-sweatshirt.webp",
+   "sub": "atop"
+  },
+  {
+   "id": "black-stripe-trim-pocket-sweatshirt",
+   "name": "Black sweatshirt with stripe neck and pocket trim",
+   "category": "activewear",
+   "colours": [
+    "black",
+    "white"
+   ],
+   "pattern": "solid with stripe trim",
+   "fabric": "sweat fleece",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Boxy, centre seam, black and white stripe neckband and pocket edge. Your photo.",
+   "img": "img/black-stripe-trim-pocket-sweatshirt.webp",
+   "sub": "atop"
+  },
+  {
+   "id": "black-pink-stripe-funnel-neck-sweatshirt",
+   "name": "Black funnel-neck sweatshirt with pink stripe",
+   "category": "activewear",
+   "colours": [
+    "black",
+    "dusty pink"
+   ],
+   "pattern": "colour block",
+   "fabric": "sweat fleece",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "High funnel neck, boxy, one wide pink band across the body and sleeves. Your photo.",
+   "img": "img/black-pink-stripe-funnel-neck-sweatshirt.webp",
+   "sub": "atop"
+  },
+  {
+   "id": "grey-black-white-colour-block-half-zip",
+   "name": "Grey, black and white colour-block half-zip sweatshirt",
+   "category": "activewear",
+   "colours": [
+    "grey",
+    "black",
+    "white"
+   ],
+   "pattern": "colour block",
+   "fabric": "sweat fleece",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Half zip, stand collar, white sleeves, black shoulders and pocket panels, kangaroo pocket. Your photo.",
+   "img": "img/grey-black-white-colour-block-half-zip.webp",
+   "sub": "atop"
+  },
+  {
+   "id": "kathmandu-blue-half-zip-fleece",
+   "name": "Kathmandu blue half-zip fleece",
+   "category": "activewear",
+   "colours": [
+    "mid blue"
+   ],
+   "pattern": "solid",
+   "fabric": "fleece",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Microfleece, stand collar, half zip, fitted with princess seams. Your photo.",
+   "img": "img/kathmandu-blue-half-zip-fleece.webp",
+   "sub": "atop"
+  },
+  {
+   "id": "kathmandu-pink-zip-fleece-jacket",
+   "name": "Kathmandu pink zip fleece jacket",
+   "category": "activewear",
+   "colours": [
+    "raspberry pink"
+   ],
+   "pattern": "solid",
+   "fabric": "fleece",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Microfleece, stand collar, full zip, zip pockets, fitted. Your photo.",
+   "img": "img/kathmandu-pink-zip-fleece-jacket.webp",
+   "sub": "ajacket"
   }
  ],
  "outfits": [
