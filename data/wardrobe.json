@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15",
+ "updated": "2026-11-17",
  "occasions": [
   "Everyday",
   "Lunch out",
@@ -10229,27 +10229,6 @@
    "img": "img/fuchsia-damask-zip-pouch.webp"
   },
   {
-   "id": "raspberry-eyelet-shoulder-tote",
-   "name": "Raspberry shoulder tote with brass eyelets",
-   "category": "bags",
-   "colours": [
-    "raspberry pink"
-   ],
-   "pattern": "solid",
-   "fabric": "faux leather",
-   "seasons": [
-    "Spring",
-    "Summer",
-    "Autumn",
-    "Winter"
-   ],
-   "notes": "Structured tote, two shoulder straps. Your photo.",
-   "img": "img/raspberry-eyelet-shoulder-tote.webp",
-   "_f": [
-    "pink"
-   ]
-  },
-  {
    "id": "tan-painted-leather-saddle-crossbody",
    "name": "Tan painted leather saddle crossbody",
    "category": "bags",
@@ -10338,48 +10317,6 @@
    ]
   },
   {
-   "id": "michael-kors-cobalt-satchel",
-   "name": "Michael Kors cobalt saffiano satchel",
-   "category": "bags",
-   "colours": [
-    "cobalt blue"
-   ],
-   "pattern": "solid",
-   "fabric": "saffiano leather",
-   "seasons": [
-    "Spring",
-    "Summer",
-    "Autumn",
-    "Winter"
-   ],
-   "notes": "Top handles with buckles, gold hardware, strap rings at the sides. Your photo.",
-   "img": "img/michael-kors-cobalt-satchel.webp",
-   "_f": [
-    "blue"
-   ]
-  },
-  {
-   "id": "prada-cobalt-leather-tote",
-   "name": "Prada cobalt pebbled leather tote",
-   "category": "bags",
-   "colours": [
-    "cobalt blue"
-   ],
-   "pattern": "solid",
-   "fabric": "pebbled leather",
-   "seasons": [
-    "Spring",
-    "Summer",
-    "Autumn",
-    "Winter"
-   ],
-   "notes": "Rolled handles, luggage tag. Your photo.",
-   "img": "img/prada-cobalt-leather-tote.webp",
-   "_f": [
-    "blue"
-   ]
-  },
-  {
    "id": "black-slouchy-hobo-logo-ring",
    "name": "Black slouchy leather hobo with gold logo ring",
    "category": "bags",
@@ -10440,27 +10377,6 @@
    "img": "img/black-pebbled-hobo-cord-handle.webp",
    "_f": [
     "black"
-   ]
-  },
-  {
-   "id": "red-croc-patent-tote",
-   "name": "Red croc-embossed patent tote",
-   "category": "bags",
-   "colours": [
-    "red"
-   ],
-   "pattern": "croc embossed",
-   "fabric": "patent faux leather",
-   "seasons": [
-    "Spring",
-    "Summer",
-    "Autumn",
-    "Winter"
-   ],
-   "notes": "Cut-out top handles. Your photo.",
-   "img": "img/red-croc-patent-tote.webp",
-   "_f": [
-    "red"
    ]
   },
   {
@@ -11578,7 +11494,10 @@
     "Winter",
     "Spring"
    ],
-   "img": "img/cream-shaker-rib-raglan-jumper.webp"
+   "img": "img/cream-shaker-rib-raglan-jumper.webp",
+   "_f": [
+    "cream"
+   ]
   },
   {
    "id": "sportsgirl-pale-pink-cropped-knit-jumper",
@@ -11595,7 +11514,10 @@
     "Winter",
     "Spring"
    ],
-   "img": "img/sportsgirl-pale-pink-cropped-knit-jumper.webp"
+   "img": "img/sportsgirl-pale-pink-cropped-knit-jumper.webp",
+   "_f": [
+    "pink"
+   ]
   },
   {
    "id": "uniqlo-cream-fine-knit-crew-jumper",
@@ -11662,7 +11584,10 @@
     "Spring"
    ],
    "notes": "Ribbed high mock neck, dropped shoulders, deep rib cuffs and hem band, side splits. Same style as the oatmeal one. Your photo.",
-   "img": "img/forest-green-mock-neck-split-hem-jumper.webp"
+   "img": "img/forest-green-mock-neck-split-hem-jumper.webp",
+   "_f": [
+    "forest"
+   ]
   },
   {
    "id": "cream-cable-knit-turtleneck-poncho",
@@ -11929,7 +11854,11 @@
    "notes": "High rise, button and zip fly, five pockets, two bands of cream and green leaf braid near the frayed hem. Length: above the ankle (cropped). Your photo.",
    "sub": "cropped",
    "hem": "crop",
-   "img": "img/olive-leaf-trim-wide-leg-jeans.webp"
+   "img": "img/olive-leaf-trim-wide-leg-jeans.webp",
+   "_f": [
+    "forest",
+    "cream"
+   ]
   },
   {
    "id": "mid-wash-daisy-trim-wide-leg-jeans",
@@ -12426,7 +12355,11 @@
     "Spring"
    ],
    "notes": "Cotton jersey, mock neck, long sleeves, boxy, side splits. Your photo.",
-   "img": "img/black-white-stripe-mock-neck-long-sleeve-top.webp"
+   "img": "img/black-white-stripe-mock-neck-long-sleeve-top.webp",
+   "_f": [
+    "black",
+    "white"
+   ]
   },
   {
    "id": "grey-marle-zip-hoodie",
@@ -13604,7 +13537,11 @@
     "Winter"
    ],
    "notes": "Fine drapey jersey, wide boat neck with cream binding, long sleeves, curved high-low hem. Your photo.",
-   "img": "img/witchery-black-white-stripe-long-sleeve-tee.webp"
+   "img": "img/witchery-black-white-stripe-long-sleeve-tee.webp",
+   "_f": [
+    "white",
+    "black"
+   ]
   },
   {
    "id": "navy-white-stripe-swing-long-sleeve-tee",
@@ -13925,7 +13862,10 @@
     "Spring"
    ],
    "notes": "Fitted rib-knit tube, no waistband, knee length. Part of a mocha rib-knit set (tube skirt, sleeveless top, long-sleeve top, shorts, wide pants). Your photo.",
-   "img": "img/mocha-rib-knit-tube-skirt.webp"
+   "img": "img/mocha-rib-knit-tube-skirt.webp",
+   "_f": [
+    "brown"
+   ]
   },
   {
    "id": "mocha-rib-knit-sleeveless-mock-neck-top",
@@ -13941,7 +13881,10 @@
     "Autumn"
    ],
    "notes": "Mock neck, sleeveless, boxy cropped, raw edges. Part of a mocha rib-knit set (tube skirt, sleeveless top, long-sleeve top, shorts, wide pants). Your photo.",
-   "img": "img/mocha-rib-knit-sleeveless-mock-neck-top.webp"
+   "img": "img/mocha-rib-knit-sleeveless-mock-neck-top.webp",
+   "_f": [
+    "brown"
+   ]
   },
   {
    "id": "mocha-rib-knit-mock-neck-long-sleeve-top",
@@ -13957,7 +13900,10 @@
     "Spring"
    ],
    "notes": "Mock neck, long sleeves, side seams, boxy cropped, raw hem. Part of a mocha rib-knit set (tube skirt, sleeveless top, long-sleeve top, shorts, wide pants). Your photo.",
-   "img": "img/mocha-rib-knit-mock-neck-long-sleeve-top.webp"
+   "img": "img/mocha-rib-knit-mock-neck-long-sleeve-top.webp",
+   "_f": [
+    "brown"
+   ]
   },
   {
    "id": "mocha-rib-knit-shorts",
@@ -13992,7 +13938,10 @@
    "notes": "Wide rib waistband with white cord, wide cropped leg, raw hem. A few dark marks on the front. Part of a mocha rib-knit set (tube skirt, sleeveless top, long-sleeve top, shorts, wide pants). Your photo.",
    "img": "img/mocha-rib-knit-wide-pants.webp",
    "sub": "wide",
-   "hem": "crop"
+   "hem": "crop",
+   "_f": [
+    "brown"
+   ]
   },
   {
    "id": "black-crepe-v-neck-maxi-dress",
@@ -14025,7 +13974,10 @@
     "Spring"
    ],
    "notes": "Notch lapels, double-breasted, fitted, tie belt, mid-thigh. Your photo.",
-   "img": "img/ckm-black-double-breasted-coat.webp"
+   "img": "img/ckm-black-double-breasted-coat.webp",
+   "_f": [
+    "black"
+   ]
   },
   {
    "id": "stone-belted-trench-coat",
@@ -14041,7 +13993,10 @@
     "Spring"
    ],
    "notes": "Storm flap, puff shoulders, single-breasted, patch pockets, tab cuffs, belt with black buckle, knee length. Your photo.",
-   "img": "img/stone-belted-trench-coat.webp"
+   "img": "img/stone-belted-trench-coat.webp",
+   "_f": [
+    "tan"
+   ]
   },
   {
    "id": "sage-green-trench-coat",
@@ -14092,7 +14047,12 @@
     "Winter"
    ],
    "notes": "Classic collar, big dark buttons, straight cut, mid-thigh. Your photo.",
-   "img": "img/tan-black-check-wool-coat.webp"
+   "img": "img/tan-black-check-wool-coat.webp",
+   "_f": [
+    "tan",
+    "black",
+    "cream"
+   ]
   },
   {
    "id": "blush-car-coat",
@@ -14108,7 +14068,10 @@
     "Spring"
    ],
    "notes": "Cotton sateen, shirt collar, concealed button placket, raglan sleeves, deep cuffs, knee length. Your photo.",
-   "img": "img/blush-car-coat.webp"
+   "img": "img/blush-car-coat.webp",
+   "_f": [
+    "pink"
+   ]
   },
   {
    "id": "edc-red-trench-coat",
@@ -14140,7 +14103,10 @@
     "Winter"
    ],
    "notes": "Gathered stand collar with pale blue lining, grosgrain bow band at the empire waist, chain-detail buttons, A-line, knee length. Your photo.",
-   "img": "img/navy-bow-waist-ruched-collar-coat.webp"
+   "img": "img/navy-bow-waist-ruched-collar-coat.webp",
+   "_f": [
+    "navy"
+   ]
   },
   {
    "id": "black-spot-hem-peter-pan-coat",
@@ -14191,6 +14157,105 @@
    ],
    "notes": "Hood, two-way zip, side pockets, straight cut, below the knee. Your photo.",
    "img": "img/charcoal-hooded-zip-wool-coat.webp"
+  },
+  {
+   "id": "calvin-klein-red-camera-crossbody",
+   "name": "Calvin Klein red camera crossbody bag",
+   "category": "bags",
+   "colours": [
+    "red"
+   ],
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Boxy zip-top camera bag, smooth red faux leather, wide red strap, embossed logo. Bought on Vinted; picture is the listing photo.",
+   "img": "img/calvin-klein-red-camera-crossbody.webp",
+   "shape": "crossbody",
+   "pattern": "solid",
+   "_f": [
+    "red"
+   ]
+  },
+  {
+   "id": "marcs-baby-pink-crossbody",
+   "name": "Marcs baby pink crossbody bag",
+   "category": "bags",
+   "colours": [
+    "pale pink"
+   ],
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Soft pebbled leather, zip top, slim adjustable strap, gold hardware. Bought on Vinted; picture is the listing photo.",
+   "img": "img/marcs-baby-pink-crossbody.webp",
+   "shape": "crossbody",
+   "pattern": "solid",
+   "_f": [
+    "pink"
+   ]
+  },
+  {
+   "id": "mabel-lou-blush-tooled-leather-crossbody",
+   "name": "Mabel & Lou blush floral tooled leather crossbody",
+   "category": "bags",
+   "colours": [
+    "blush pink"
+   ],
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Flap front with silver bar, tooled floral leather, leather and chain strap. Bought on Vinted; picture is the listing photo.",
+   "img": "img/mabel-lou-blush-tooled-leather-crossbody.webp",
+   "shape": "crossbody",
+   "pattern": "embossed floral",
+   "_f": [
+    "pink"
+   ]
+  },
+  {
+   "id": "tommy-bahama-white-denim-mini-skirt",
+   "name": "Tommy Bahama white denim skirt",
+   "category": "skirts",
+   "colours": [
+    "white"
+   ],
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Five-pocket, straight fitted cut above the knee, frayed hem. Bought on Vinted; picture is the listing photo.",
+   "img": "img/tommy-bahama-white-denim-mini-skirt.webp",
+   "pattern": "solid",
+   "fabric": "denim",
+   "shape": "mini"
+  },
+  {
+   "id": "seed-white-denim-a-line-mini-skirt",
+   "name": "Seed Heritage white denim A-line skirt",
+   "category": "skirts",
+   "colours": [
+    "white"
+   ],
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "High waist, big front patch pockets, A-line mini. Bought on Vinted; picture is the listing photo.",
+   "img": "img/seed-white-denim-a-line-mini-skirt.webp",
+   "pattern": "solid",
+   "fabric": "denim",
+   "shape": "mini"
   }
  ],
  "outfits": [
@@ -83233,14 +83298,14 @@
    "summary": "Green crew jumper over a white shirt, slim black trousers, black loafers.",
    "itemIds": [
     "basic-white-linen-shirt",
-    "basic-green-cardigan",
+    "forest-green-mock-neck-split-hem-jumper",
     "basic-black-dress-pants",
     "basic-black-loafers",
     "basic-black-crossbody",
     "black-wool-collared-coat"
    ],
    "missing": [
-    "Green crew-neck jumper (the green cardigan buttoned up is the stand-in)"
+    "Green crew-neck jumper (your forest green mock-neck jumper with split hem is the stand-in)"
    ],
    "createdAt": 0
   },
@@ -83568,12 +83633,11 @@
     "red-blue-stripe-knit-vest",
     "pale-blue-cutwork-puff-shirt",
     "gorman-striped-skirt",
-    "basic-white-sneakers",
-    "michael-kors-cobalt-satchel"
+    "basic-white-sneakers"
    ],
    "missing": [
     "Blue espadrilles",
-    "Blue crossbody bag (your Michael Kors cobalt satchel is the stand-in)"
+    "Blue crossbody bag"
    ],
    "createdAt": 32
   },
@@ -83603,11 +83667,10 @@
    "itemIds": [
     "uniqlo-blue-knit-tee",
     "gorman-striped-skirt",
-    "basic-white-sneakers",
-    "michael-kors-cobalt-satchel"
+    "basic-white-sneakers"
    ],
    "missing": [
-    "Blue crossbody bag (your Michael Kors cobalt satchel is the stand-in)"
+    "Blue crossbody bag"
    ],
    "createdAt": 34
   },
@@ -83684,13 +83747,12 @@
    "itemIds": [
     "pale-blue-cutwork-puff-shirt",
     "gorman-striped-skirt",
-    "basic-white-sneakers",
-    "michael-kors-cobalt-satchel"
+    "basic-white-sneakers"
    ],
    "missing": [
     "Blue checkerboard polo with white collar (your pale blue cutwork shirt is the stand-in)",
     "Blue espadrille wedges",
-    "Blue crossbody bag (your Michael Kors cobalt satchel is the stand-in)"
+    "Blue crossbody bag"
    ],
    "createdAt": 39
   },
@@ -84023,11 +84085,11 @@
     "chambray-shirt",
     "basic-white-tee",
     "basic-white-wide-jeans",
-    "basic-tan-flats",
-    "prada-cobalt-leather-tote"
+    "basic-tan-flats"
    ],
    "missing": [
-    "Nude pointed flats"
+    "Nude pointed flats",
+    "Cobalt blue tote"
    ],
    "createdAt": 62
   },
@@ -84229,12 +84291,13 @@
     "cos-pink-funnel-neck-sweat",
     "basic-blue-straight-jeans-cropped",
     "adidas-gazelle-pink",
-    "basic-tan-crossbody"
+    "basic-tan-crossbody",
+    "marcs-baby-pink-crossbody",
+    "tan-black-check-wool-coat"
    ],
    "missing": [
-    "Multicolour check wool coat",
-    "Mint sneakers",
-    "Pink crossbody bag"
+    "Multicolour check wool coat (your tan and black check wool coat is the stand-in)",
+    "Mint sneakers"
    ],
    "createdAt": 76
   },
@@ -84248,12 +84311,12 @@
     "green-breton-long-sleeve",
     "basic-blue-wide-jeans",
     "basic-white-sneakers",
-    "basic-tan-crossbody"
+    "basic-tan-crossbody",
+    "marcs-baby-pink-crossbody"
    ],
    "missing": [
     "Pink and green check knit vest (your pink and green geometric knit tee is the stand-in)",
-    "Plain green long-sleeve top",
-    "Pink crossbody bag"
+    "Plain green long-sleeve top"
    ],
    "createdAt": 77
   },
@@ -84358,13 +84421,13 @@
    "summary": "White broderie puff-sleeve blouse, olive pinstripe jeans, patterned belt, tan fisherman sandals.",
    "itemIds": [
     "resort-white-embroidered-blouse",
-    "green-wide-leg-cords",
+    "olive-leaf-trim-wide-leg-jeans",
     "basic-patterned-belts",
     "basic-tan-flats"
    ],
    "missing": [
     "White broderie blouse (your Resort white embroidered cotton blouse is the stand-in)",
-    "Olive pinstripe jeans (your green cords are the stand-in)",
+    "Olive pinstripe jeans (your olive wide-leg jeans with leaf-trim hem is the stand-in)",
     "Tan fisherman sandals"
    ],
    "createdAt": 84
@@ -84424,10 +84487,11 @@
     "basic-white-linen-shirt",
     "basic-blue-straight-jeans",
     "basic-black-loafers",
-    "brick-red-leather-hobo"
+    "brick-red-leather-hobo",
+    "navy-bow-waist-ruched-collar-coat"
    ],
    "missing": [
-    "Long navy wool coat",
+    "Long navy wool coat (your navy wool coat with bow waist and ruched collar is the stand-in)",
     "Burgundy suede bag (your brick red leather hobo is the stand-in)"
    ],
    "createdAt": 88
@@ -84440,12 +84504,12 @@
    "itemIds": [
     "basic-blue-straight-jeans",
     "basic-tan-crossbody",
-    "uniqlo-brown-knit-jacket",
-    "ivory-fine-knit-crew-jumper"
+    "stone-belted-trench-coat",
+    "cream-shaker-rib-raglan-jumper"
    ],
    "missing": [
-    "Camel coat (your Uniqlo brown knit jacket is the stand-in)",
-    "Cream cable-knit jumper (your ivory fine-knit crew jumper is the stand-in)",
+    "Camel coat (your stone belted trench coat is the stand-in)",
+    "Cream cable-knit jumper (your cream shaker-rib raglan jumper is the stand-in)",
     "Brown riding boots",
     "Tan tote"
    ],
@@ -84460,10 +84524,10 @@
     "brown-mock-neck-long-sleeve",
     "basic-white-straight-jeans",
     "black-square-toe-heeled-knee-boots",
-    "uniqlo-brown-knit-jacket"
+    "stone-belted-trench-coat"
    ],
    "missing": [
-    "Camel coat (your Uniqlo brown knit jacket is the stand-in)",
+    "Camel coat (your stone belted trench coat is the stand-in)",
     "Brown fluffy jumper (your brown mock-neck is the stand-in)",
     "Dark brown knee boots",
     "Brown polka dot scarf"
@@ -84478,10 +84542,10 @@
    "itemIds": [
     "chambray-shirt",
     "basic-blue-wide-jeans",
-    "basic-white-sneakers"
+    "basic-white-sneakers",
+    "stone-belted-trench-coat"
    ],
    "missing": [
-    "Beige trench coat",
     "Canvas tote"
    ],
    "createdAt": 91
@@ -84495,10 +84559,10 @@
     "chambray-shirt",
     "basic-white-straight-jeans-cropped",
     "basic-tan-flats",
-    "basic-tan-crossbody"
+    "basic-tan-crossbody",
+    "stone-belted-trench-coat"
    ],
    "missing": [
-    "Beige trench coat",
     "Brown loafers",
     "Leopard silk scarf"
    ],
@@ -84513,10 +84577,10 @@
     "uniqlo-white-navy-stripe-crew-jumper",
     "basic-blue-straight-jeans",
     "basic-tan-flats",
-    "uniqlo-brown-knit-jacket"
+    "stone-belted-trench-coat"
    ],
    "missing": [
-    "Short camel trench (your Uniqlo brown knit jacket is the stand-in)",
+    "Short camel trench (your stone belted trench coat is the stand-in)",
     "Navy Breton jumper (your Uniqlo white and navy stripe crew jumper is the stand-in)",
     "Red tartan scarf",
     "Sheepskin boots"
@@ -84533,11 +84597,11 @@
     "basic-black-midi-skirt",
     "red-silk-heeled-mules",
     "basic-black-crossbody",
-    "uniqlo-brown-knit-jacket",
+    "stone-belted-trench-coat",
     "witchery-navy-rib-knit-maxi-dress"
    ],
    "missing": [
-    "Short camel trench (your Uniqlo brown knit jacket is the stand-in)",
+    "Short camel trench (your stone belted trench coat is the stand-in)",
     "Red slingbacks (your Red silk square-toe heeled mules is the stand-in)"
    ],
    "createdAt": 94
@@ -84571,11 +84635,11 @@
     "basic-blue-straight-jeans",
     "basic-tan-flats",
     "basic-tan-crossbody",
-    "uniqlo-brown-knit-jacket"
+    "stone-belted-trench-coat"
    ],
    "missing": [
     "Blue stripe shirt",
-    "Long camel coat (your Uniqlo brown knit jacket is the stand-in)",
+    "Long camel coat (your stone belted trench coat is the stand-in)",
     "Brown loafers",
     "Leopard silk scarf"
    ],
@@ -84590,10 +84654,10 @@
     "basic-black-wide-jeans",
     "basic-white-sneakers",
     "black-cream-breton-stripe-jumper",
-    "basic-black-crossbody"
+    "basic-black-crossbody",
+    "stone-belted-trench-coat"
    ],
    "missing": [
-    "Beige trench coat",
     "Black woven bag (your black crossbody bag with tassel is the stand-in)"
    ],
    "createdAt": 97
@@ -84607,11 +84671,11 @@
     "basic-black-straight-jeans",
     "basic-black-crossbody",
     "basic-black-flats",
-    "oatmeal-oversized-turtleneck-jumper"
+    "cream-shaker-rib-raglan-jumper",
+    "stone-belted-trench-coat"
    ],
    "missing": [
-    "Cream cable-knit jumper (your oatmeal oversized turtleneck jumper is the stand-in)",
-    "Beige trench coat",
+    "Cream cable-knit jumper (your cream shaker-rib raglan jumper is the stand-in)",
     "Two-tone ballet flats",
     "Black and white silk scarf"
    ],
@@ -85112,10 +85176,11 @@
     "basic-white-tee",
     "basic-blue-straight-jeans",
     "basic-black-belt",
-    "basic-white-sneakers"
+    "basic-white-sneakers",
+    "stone-belted-trench-coat"
    ],
    "missing": [
-    "Short beige trench",
+    "Short beige trench (your stone belted trench coat is the stand-in)",
     "Navy tote"
    ],
    "createdAt": 126
@@ -85258,10 +85323,11 @@
    "itemIds": [
     "basic-white-tee",
     "basic-tan-flats",
-    "basic-tan-crossbody"
+    "basic-tan-crossbody",
+    "mocha-rib-knit-wide-pants"
    ],
    "missing": [
-    "Brown pinstripe wide trousers"
+    "Brown pinstripe wide trousers (your mocha rib-knit wide pants is the stand-in)"
    ],
    "createdAt": 135
   },
@@ -85386,11 +85452,11 @@
    "itemIds": [
     "cos-navy-stripe-tee-magenta-collar",
     "basic-white-sneakers",
-    "rust-linen-a-line-maxi-skirt"
+    "rust-linen-a-line-maxi-skirt",
+    "marcs-baby-pink-crossbody"
    ],
    "missing": [
-    "Orange maxi skirt (your rust linen a-line maxi skirt is the stand-in)",
-    "Pink crossbody bag"
+    "Orange maxi skirt (your rust linen a-line maxi skirt is the stand-in)"
    ],
    "createdAt": 143
   },
@@ -86096,10 +86162,10 @@
     "guns-n-roses-band-tee",
     "basic-black-wide-jeans",
     "basic-white-sneakers",
-    "basic-black-crossbody"
+    "basic-black-crossbody",
+    "stone-belted-trench-coat"
    ],
    "missing": [
-    "Beige trench coat",
     "Black flares (your black wide-leg jeans is the stand-in)"
    ],
    "createdAt": 188
@@ -86231,11 +86297,11 @@
    "summary": "Brown marle knit top and matching pencil midi skirt, silver platform sneakers. (Sewing pattern)",
    "itemIds": [
     "basic-white-sneakers",
-    "chocolate-knit-pencil-skirt",
-    "uniqlo-brown-knit-tee"
+    "mocha-rib-knit-tube-skirt",
+    "mocha-rib-knit-mock-neck-long-sleeve-top"
    ],
    "missing": [
-    "Brown knit top and pencil skirt (Style Arc Yoyo pattern) (your chocolate knit pencil skirt is the stand-in)"
+    "Brown knit top and pencil skirt (Style Arc Yoyo pattern) (your mocha rib-knit set is the stand-in)"
    ],
    "createdAt": 197
   },
@@ -86246,10 +86312,11 @@
    "summary": "Cropped oatmeal knit top, brown knit pencil midi skirt, nude heeled mules. (Sewing pattern)",
    "itemIds": [
     "basic-tan-kitten-heels",
-    "chocolate-knit-pencil-skirt"
+    "mocha-rib-knit-tube-skirt",
+    "mocha-rib-knit-sleeveless-mock-neck-top"
    ],
    "missing": [
-    "Brown knit pencil skirt and cropped top (Style Arc Yoyo pattern) (your chocolate knit pencil skirt is the stand-in)"
+    "Brown knit pencil skirt and cropped top (Style Arc Yoyo pattern) (your mocha rib-knit set is the stand-in)"
    ],
    "createdAt": 198
   },
@@ -86324,12 +86391,12 @@
    "itemIds": [
     "pink-wide-leg-sailor-trousers",
     "sussan-lime-fine-knit-crew-jumper",
-    "raspberry-eyelet-shoulder-tote"
+    "raspberry-leather-wristlet"
    ],
    "missing": [
     "Lime long-sleeve top (your Sussan lime fine-knit crew jumper is the stand-in)",
     "Green platform sandals",
-    "Magenta bag (your raspberry shoulder tote is the stand-in)"
+    "Magenta bag (your raspberry leather wristlet is the stand-in)"
    ],
    "createdAt": 203
   },
@@ -86424,10 +86491,10 @@
     "basic-black-loafers",
     "basic-black-crossbody",
     "uniqlo-black-tapered-trousers",
-    "black-cream-breton-stripe-jumper"
+    "black-white-stripe-mock-neck-long-sleeve-top"
    ],
    "missing": [
-    "Black and white stripe turtleneck jumper (your black and cream Breton stripe jumper is the stand-in)",
+    "Black and white stripe turtleneck jumper (your black and white stripe mock-neck long-sleeve top is the stand-in)",
     "Black leather trousers (your Uniqlo black tapered ankle trousers is the stand-in)"
    ],
    "createdAt": 209
@@ -86440,10 +86507,10 @@
    "itemIds": [
     "basic-white-straight-jeans-cropped",
     "basic-black-crossbody",
-    "black-cream-breton-stripe-jumper"
+    "black-white-stripe-mock-neck-long-sleeve-top"
    ],
    "missing": [
-    "Black and white stripe turtleneck jumper (your black and cream Breton stripe jumper is the stand-in)",
+    "Black and white stripe turtleneck jumper (your black and white stripe mock-neck long-sleeve top is the stand-in)",
     "Black clogs"
    ],
    "createdAt": 210
@@ -86457,10 +86524,10 @@
     "grey-marle-merino-vneck-jumper",
     "basic-black-straight-jeans",
     "black-leather-side-zip-ankle-boots",
-    "uniqlo-brown-knit-jacket"
+    "stone-belted-trench-coat"
    ],
    "missing": [
-    "Camel coat (your Uniqlo brown knit jacket is the stand-in)"
+    "Camel coat (your stone belted trench coat is the stand-in)"
    ],
    "createdAt": 211
   },
@@ -86530,10 +86597,11 @@
    "itemIds": [
     "basic-black-tee",
     "basic-white-straight-jeans-cropped",
-    "basic-black-crossbody"
+    "basic-black-crossbody",
+    "ckm-black-double-breasted-coat"
    ],
    "missing": [
-    "Long black mac",
+    "Long black mac (your cKM black double-breasted coat is the stand-in)",
     "Checkerboard slip-on sneakers"
    ],
    "createdAt": 216
@@ -87032,11 +87100,11 @@
     "chambray-shirt",
     "basic-white-tee",
     "basic-white-wide-jeans",
-    "basic-tan-flats",
-    "prada-cobalt-leather-tote"
+    "basic-tan-flats"
    ],
    "missing": [
-    "White flared jeans (your white wide jeans are the stand-in)"
+    "White flared jeans (your white wide jeans are the stand-in)",
+    "Cobalt blue tote"
    ],
    "createdAt": 249
   },
@@ -87213,14 +87281,14 @@
    "summary": "Navy crew jumper, beige car coat, dark straight jeans, red ballet flats, leopard bucket bag, burgundy bandana.",
    "itemIds": [
     "uniqlo-black-knit-tee",
-    "uniqlo-brown-knit-jacket",
+    "blush-car-coat",
     "basic-blue-straight-jeans",
     "basic-red-ballet-flats",
     "basic-tan-crossbody"
    ],
    "missing": [
     "Navy crew jumper (your Uniqlo black knit tee is the stand-in)",
-    "Beige car coat (your Uniqlo brown knit jacket is the stand-in)",
+    "Beige car coat (your blush pink car coat is the stand-in)",
     "Leopard bucket bag",
     "Burgundy bandana"
    ],
@@ -87292,12 +87360,12 @@
    "itemIds": [
     "zara-white-sleeveless-knit",
     "basic-white-wide-linen-pants",
-    "uniqlo-brown-knit-jacket",
+    "stone-belted-trench-coat",
     "basic-white-sneakers",
     "basic-tan-crossbody"
    ],
    "missing": [
-    "Short beige trench (your Uniqlo brown knit jacket is the stand-in)",
+    "Short beige trench (your stone belted trench coat is the stand-in)",
     "Brown slouchy shoulder bag (your tan leather flap crossbody is the stand-in)",
     "Burgundy cap"
    ],
@@ -87778,7 +87846,7 @@
     "basic-white-linen-shirt",
     "basic-denim-maxi-skirt",
     "basic-red-ballet-flats",
-    "red-croc-patent-tote"
+    "calvin-klein-red-camera-crossbody"
    ],
    "missing": [
     "Red neckerchief",
@@ -87799,10 +87867,11 @@
     "sussan-pink-fine-knit-crew-jumper",
     "basic-white-tee",
     "basic-white-sneakers",
-    "brick-red-leather-hobo"
+    "brick-red-leather-hobo",
+    "mocha-rib-knit-wide-pants"
    ],
    "missing": [
-    "Brown gingham wide trousers",
+    "Brown gingham wide trousers (your mocha rib-knit wide pants is the stand-in)",
     "Oxblood slouchy shoulder bag (your brick red leather hobo is the stand-in)",
     "Burgundy and cream sneakers"
    ],
@@ -88373,14 +88442,14 @@
     "emerald-rib-turtleneck-jumper",
     "green-wool-car-coat",
     "pink-cord-wide-leg-trousers",
-    "raspberry-leather-wristlet",
+    "mabel-lou-blush-tooled-leather-crossbody",
     "blush-leather-zip-ankle-boots"
    ],
    "missing": [
     "Green teddy coat (your green wool car coat is the stand-in)",
     "Pink, red and green stripe wide trousers (your pink cord wide-leg trousers are the stand-in)",
     "Magenta fedora",
-    "Pink chain bag (your raspberry wristlet is the stand-in)",
+    "Pink chain bag (your mabel & Lou blush floral tooled leather crossbody is the stand-in)",
     "Pink metallic pointed boots (your blush ankle boots are the stand-in)"
    ],
    "occasions": [
@@ -88395,12 +88464,12 @@
    "summary": "Orange short-sleeve cardigan with white running stitch, multicolour playing-card print bias maxi skirt in orange, lime, sky and pink, pink chain bag, cream baker boy cap, red neck scarf, white boots. Orange and lime colour story. From @andrea.colorful on Instagram.",
    "itemIds": [
     "red-orange-cropped-crew-cardigan",
-    "raspberry-leather-wristlet"
+    "mabel-lou-blush-tooled-leather-crossbody"
    ],
    "missing": [
     "Orange short-sleeve stitched cardigan (your red-orange cropped cardigan is the stand-in)",
     "Multicolour print bias maxi skirt",
-    "Pink chain bag (your raspberry wristlet is the stand-in)",
+    "Pink chain bag (your mabel & Lou blush floral tooled leather crossbody is the stand-in)",
     "Cream baker boy cap",
     "Red neck scarf",
     "White boots"
@@ -88418,14 +88487,13 @@
    "itemIds": [
     "decjuba-olive-rib-tank",
     "pink-white-wide-stripe-maxi-skirt",
-    "raspberry-leather-wristlet",
+    "marcs-baby-pink-crossbody",
     "basic-white-flats"
    ],
    "missing": [
     "Oversized olive tee (your olive rib tank is the stand-in)",
     "Pink and white wide stripe trousers (your pink and white stripe maxi skirt is the stand-in)",
     "Lilac fedora",
-    "Pink shoulder bag (your raspberry wristlet is the stand-in)",
     "White cap-toe pumps (your white flats are the stand-in)"
    ],
    "occasions": [
@@ -88479,12 +88547,11 @@
    "itemIds": [
     "basic-pink-cardigan",
     "red-a-line-midi-skirt",
-    "raspberry-eyelet-shoulder-tote",
+    "marcs-baby-pink-crossbody",
     "basic-tan-flats"
    ],
    "missing": [
-    "Red wide trousers (your red A-line midi skirt is the stand-in)",
-    "Pale pink shoulder bag (your raspberry eyelet tote is the stand-in)"
+    "Red wide trousers (your red A-line midi skirt is the stand-in)"
    ],
    "occasions": [
     "Everyday"
@@ -88674,12 +88741,12 @@
    "summary": "Burgundy leather jacket over a pale pink fluffy jumper, charcoal wide trousers, pink and silver sneakers. Pink and burgundy. From @the.parisian.wardrobe on Instagram.",
    "itemIds": [
     "burgundy-leather-zip-jacket",
-    "pink-textured-turtleneck-jumper",
+    "sportsgirl-pale-pink-cropped-knit-jumper",
     "basic-black-dress-pants",
     "adidas-gazelle-pink"
    ],
    "missing": [
-    "Pale pink fluffy crew jumper (your pale pink turtleneck is the stand-in)",
+    "Pale pink fluffy crew jumper (your sportsgirl pale pink cropped knit jumper is the stand-in)",
     "Charcoal wide trousers (your black dress pants are the stand-in)"
    ],
    "occasions": [
@@ -88693,11 +88760,11 @@
    "img": "img/inspo/inspo-334.webp",
    "summary": "Sky blue floral jacquard shift with puff sleeves, red croc clutch, red drop earrings, black cat-eye sunglasses. Sky blue and red. From @the.parisian.wardrobe on Instagram.",
    "itemIds": [
-    "red-croc-patent-tote"
+    "calvin-klein-red-camera-crossbody"
    ],
    "missing": [
     "Sky blue jacquard puff-sleeve dress",
-    "Red croc clutch (your red croc tote is the stand-in)",
+    "Red croc clutch (your Calvin Klein red camera crossbody is the stand-in)",
     "Red drop earrings"
    ],
    "occasions": [
@@ -88769,12 +88836,12 @@
    "itemIds": [
     "acciaio-mustard-cord-blazer",
     "basic-white-linen-shirt",
-    "boden-khaki-slim-cargo-pants",
+    "mocha-rib-knit-wide-pants",
     "basic-tan-crossbody"
    ],
    "missing": [
     "Butter yellow blazer (your mustard cord blazer is the stand-in)",
-    "Dark brown wide trousers (your khaki cargo pants are the stand-in)",
+    "Dark brown wide trousers (your mocha rib-knit wide pants is the stand-in)",
     "Brown vanity bag (your tan crossbody is the stand-in)"
    ],
    "occasions": [
@@ -88788,11 +88855,11 @@
    "img": "img/inspo/inspo-339.webp",
    "summary": "Long butter yellow waistcoat worn as a top, brown tailored shorts, brown bag, gold earrings. Yellow and brown. From @the.parisian.wardrobe on Instagram.",
    "itemIds": [
-    "brown-linen-mini-skirt"
+    "mocha-rib-knit-shorts"
    ],
    "missing": [
     "Long butter yellow waistcoat",
-    "Brown tailored shorts (your brown linen mini skirt is the stand-in)"
+    "Brown tailored shorts (your mocha rib-knit shorts is the stand-in)"
    ],
    "occasions": [
     "Smart casual"
@@ -88807,12 +88874,12 @@
    "itemIds": [
     "basic-yellow-cardigan",
     "basic-white-tee",
-    "boden-khaki-slim-cargo-pants",
+    "mocha-rib-knit-wide-pants",
     "basic-tan-crossbody"
    ],
    "missing": [
     "Pale yellow fluffy cardigan (your yellow cardigan is the stand-in)",
-    "Brown wide trousers (your khaki cargo pants are the stand-in)",
+    "Brown wide trousers (your mocha rib-knit wide pants is the stand-in)",
     "Brown suede slouch bag (your tan crossbody is the stand-in)"
    ],
    "occasions": [
@@ -88868,13 +88935,12 @@
    "img": "img/inspo/inspo-343.webp",
    "summary": "Audrey Hepburn look: black and white Breton long-sleeve, slim black trousers, black ballet flats, black quilted chain bag, gold hoops, red lipstick. From @the.parisian.wardrobe on Instagram.",
    "itemIds": [
-    "black-cream-breton-stripe-jumper",
+    "witchery-black-white-stripe-long-sleeve-tee",
     "uniqlo-black-tapered-trousers",
     "basic-black-flats",
     "black-leather-flap-crossbody"
    ],
    "missing": [
-    "Black and white Breton long-sleeve tee (your black and cream Breton jumper is the stand-in)",
     "Black quilted chain bag (your black leather flap crossbody is the stand-in)",
     "Gold hoops"
    ],
@@ -88913,10 +88979,11 @@
     "sussan-black-crew-knit-jumper",
     "uniqlo-black-tapered-trousers",
     "basic-black-flats",
-    "black-leather-flap-crossbody"
+    "black-leather-flap-crossbody",
+    "stone-belted-trench-coat"
    ],
    "missing": [
-    "Camel Peter Pan collar mac",
+    "Camel Peter Pan collar mac (your stone belted trench coat is the stand-in)",
     "Black quilted chain bag (your black leather flap crossbody is the stand-in)"
    ],
    "occasions": [
@@ -88970,13 +89037,12 @@
    "summary": "Grey knit vest, bright green wide trousers, cobalt quilted shoulder bag, sneakers, white cap. From @whatemilywore on Instagram, \"add colour to a neutral wardrobe\".",
    "itemIds": [
     "green-wide-leg-cords",
-    "prada-cobalt-leather-tote",
     "basic-white-sneakers"
    ],
    "missing": [
     "Grey knit vest",
     "Bright green wide trousers (your sage cords is the stand-in)",
-    "Cobalt quilted bag (your Prada cobalt tote is the stand-in)"
+    "Cobalt quilted bag"
    ],
    "occasions": [
     "Everyday"
@@ -89047,11 +89113,11 @@
    "itemIds": [
     "black-white-stripe-tee",
     "basic-black-wide-jeans",
-    "red-croc-patent-tote"
+    "calvin-klein-red-camera-crossbody"
    ],
    "missing": [
     "Charcoal barrel trousers (your black wide jeans is the stand-in)",
-    "Red slouchy bag (your red croc tote is the stand-in)",
+    "Red slouchy bag (your Calvin Klein red camera crossbody is the stand-in)",
     "Red clogs"
    ],
    "occasions": [
@@ -89249,14 +89315,13 @@
    "img": "img/inspo/inspo-363.webp",
    "summary": "Light denim shirt over a white satin midi skirt, red quilted bag, red trainers. From @thecolourroom on Instagram, \"wear more colour without feeling too colourful\".",
    "itemIds": [
-    "esprit-light-wash-denim-jacket",
+    "country-road-chambray-snap-shirt",
     "basic-red-sneakers",
-    "red-croc-patent-tote"
+    "calvin-klein-red-camera-crossbody"
    ],
    "missing": [
-    "Light denim shirt (your light-wash denim jacket is the stand-in)",
     "White satin midi skirt",
-    "Red quilted bag (your red croc tote is the stand-in)"
+    "Red quilted bag (your Calvin Klein red camera crossbody is the stand-in)"
    ],
    "occasions": [
     "Everyday"
@@ -89270,10 +89335,10 @@
    "summary": "Navy wool coat, slim navy trousers, orange tassel crossbody, colourful trainers. From @thecolourroom on Instagram, \"wear more colour without feeling too colourful\".",
    "itemIds": [
     "uniqlo-black-tapered-trousers",
-    "basic-white-sneakers"
+    "basic-white-sneakers",
+    "navy-bow-waist-ruched-collar-coat"
    ],
    "missing": [
-    "Navy wool coat",
     "Navy slim trousers (your black tailored trousers is the stand-in)",
     "Orange crossbody"
    ],
@@ -89290,10 +89355,10 @@
    "itemIds": [
     "basic-black-dress-pants",
     "cos-red-textured-crew-jumper",
-    "basic-tan-crossbody"
+    "basic-tan-crossbody",
+    "stone-belted-trench-coat"
    ],
    "missing": [
-    "Stone trench coat",
     "Red knit scarf (your red jumper, tied around the neck is the stand-in)"
    ],
    "occasions": [
@@ -89459,7 +89524,7 @@
    "itemIds": [
     "country-road-white-tank",
     "basic-grey-cardigan",
-    "red-croc-patent-tote",
+    "calvin-klein-red-camera-crossbody",
     "red-silk-heeled-mules"
    ],
    "missing": [
@@ -89476,10 +89541,9 @@
    "img": "img/inspo/inspo-375.webp",
    "summary": "Charcoal coat, cobalt rib scarf. From @thecolourroom on Instagram, \"wear more colour without feeling too colourful\".",
    "itemIds": [
-    "cue-charcoal-blazer"
+    "charcoal-hooded-zip-wool-coat"
    ],
    "missing": [
-    "Charcoal wool coat (your charcoal blazer is the stand-in)",
     "Cobalt rib scarf"
    ],
    "occasions": [
@@ -89771,7 +89835,7 @@
    "itemIds": [
     "black-white-stripe-tee",
     "basic-blue-wide-jeans",
-    "red-croc-patent-tote",
+    "calvin-klein-red-camera-crossbody",
     "basic-red-sneakers"
    ],
    "missing": [],
@@ -90230,13 +90294,12 @@
    "img": "img/inspo/inspo-413.webp",
    "summary": "Light denim shirt with a black and white floral neck scarf, black tapered trousers, black tote, Superstar sneakers. From @gidicas_ on Instagram.",
    "itemIds": [
-    "chambray-shirt",
+    "country-road-chambray-snap-shirt",
     "uniqlo-black-tapered-trousers",
     "black-leather-ring-handle-hobo",
     "basic-white-sneakers"
    ],
    "missing": [
-    "Light denim shirt (your chambray shirt is the stand-in)",
     "Black and white floral neck scarf"
    ],
    "occasions": [
@@ -90633,7 +90696,7 @@
    "itemIds": [
     "black-white-spot-boatneck-tee",
     "red-a-line-midi-skirt",
-    "red-croc-patent-tote",
+    "calvin-klein-red-camera-crossbody",
     "basic-red-sneakers"
    ],
    "missing": [
@@ -90652,7 +90715,7 @@
    "summary": "Black and white spot sundress, red belt, red top-handle bag, red platform sneakers. From a red colour-pairing carousel on Instagram.",
    "itemIds": [
     "black-white-spot-linen-shift-dress",
-    "red-croc-patent-tote",
+    "calvin-klein-red-camera-crossbody",
     "basic-red-sneakers"
    ],
    "missing": [
@@ -90753,7 +90816,7 @@
     "boden-navy-military-jacket",
     "red-knit-tee",
     "basic-black-belt",
-    "red-croc-patent-tote",
+    "calvin-klein-red-camera-crossbody",
     "basic-red-sneakers"
    ],
    "missing": [
@@ -90772,7 +90835,7 @@
    "summary": "Red shirt, navy satin midi skirt, red top-handle bag, red platform sneakers. From a red colour-pairing carousel on Instagram.",
    "itemIds": [
     "red-cotton-shirt",
-    "red-croc-patent-tote",
+    "calvin-klein-red-camera-crossbody",
     "basic-red-sneakers"
    ],
    "missing": [
@@ -90810,7 +90873,7 @@
    "itemIds": [
     "chambray-shirt",
     "basic-black-belt",
-    "red-croc-patent-tote",
+    "calvin-klein-red-camera-crossbody",
     "basic-red-sneakers"
    ],
    "missing": [
@@ -90890,7 +90953,7 @@
     "red-linen-button-vest",
     "basic-tan-belt",
     "khaki-straight-leg-utility-pants",
-    "red-croc-patent-tote",
+    "calvin-klein-red-camera-crossbody",
     "basic-red-sneakers"
    ],
    "missing": [
@@ -90928,7 +90991,7 @@
    "summary": "Pink chunky knit jumper, red tie-wrap skort, red bag, red platform sneakers. From a red colour-pairing carousel on Instagram.",
    "itemIds": [
     "esprit-pink-textured-crew-jumper",
-    "red-croc-patent-tote",
+    "calvin-klein-red-camera-crossbody",
     "basic-red-sneakers"
    ],
    "missing": [
@@ -90966,7 +91029,7 @@
    "itemIds": [
     "pink-cord-chore-jacket",
     "pink-wide-leg-sailor-trousers",
-    "red-croc-patent-tote",
+    "calvin-klein-red-camera-crossbody",
     "basic-red-sneakers"
    ],
    "missing": [
@@ -99997,19 +100060,19 @@
   },
   "w": {
    "it:basic-white-linen-shirt": 4.76,
-   "ip:basic-green-cardigan|basic-white-linen-shirt": 0.36,
-   "cp:green+white": 3.8,
+   "ip:basic-white-linen-shirt|forest-green-mock-neck-split-hem-jumper": 0.36,
+   "cp:forest+white": 3.63,
    "ip:basic-black-dress-pants|basic-white-linen-shirt": 0.65,
-   "cp:black+white": 8.01,
+   "cp:black+white": 8.12,
    "ip:basic-black-loafers|basic-white-linen-shirt": 0.91,
    "ip:basic-black-crossbody|basic-white-linen-shirt": 1.52,
    "ip:basic-white-linen-shirt|black-wool-collared-coat": 0.36,
-   "it:basic-green-cardigan": 0.65,
-   "ip:basic-black-dress-pants|basic-green-cardigan": 0.36,
-   "cp:black+green": 1.33,
-   "ip:basic-black-loafers|basic-green-cardigan": 0.36,
-   "ip:basic-black-crossbody|basic-green-cardigan": 0.36,
-   "ip:basic-green-cardigan|black-wool-collared-coat": 0.36,
+   "it:forest-green-mock-neck-split-hem-jumper": 0.36,
+   "ip:basic-black-dress-pants|forest-green-mock-neck-split-hem-jumper": 0.36,
+   "cp:black+forest": 2.64,
+   "ip:basic-black-loafers|forest-green-mock-neck-split-hem-jumper": 0.36,
+   "ip:basic-black-crossbody|forest-green-mock-neck-split-hem-jumper": 0.36,
+   "ip:black-wool-collared-coat|forest-green-mock-neck-split-hem-jumper": 0.36,
    "it:basic-black-dress-pants": 1.52,
    "ip:basic-black-dress-pants|basic-black-loafers": 0.65,
    "cp:black+black": 7.38,
@@ -100021,25 +100084,25 @@
    "it:basic-black-crossbody": 4.95,
    "ip:basic-black-crossbody|black-wool-collared-coat": 0.36,
    "it:black-wool-collared-coat": 0.91,
-   "pat:plain+plain+plain+plain": 3.07,
+   "pat:plain+plain+plain+plain": 3.27,
    "so:Everyday|heeled boots": 6.26,
    "it:basic-black-turtleneck": 1.13,
    "ip:basic-black-turtleneck|basic-blue-straight-jeans-cropped": 0.36,
-   "cp:black+denim": 5.62,
+   "cp:black+denim": 5.67,
    "ip:basic-black-loafers|basic-black-turtleneck": 0.36,
    "it:basic-blue-straight-jeans-cropped": 3.8,
    "ip:basic-black-loafers|basic-blue-straight-jeans-cropped": 0.36,
-   "pat:plain+plain": 8.77,
+   "pat:plain+plain": 8.58,
    "it:alessandra-colour-block-jumper": 0.36,
    "ip:alessandra-colour-block-jumper|basic-white-tee": 0.36,
-   "cp:tan+white": 9.4,
+   "cp:tan+white": 9.57,
    "cp:cream+white": 3.88,
    "ip:alessandra-colour-block-jumper|basic-blue-straight-jeans-cropped": 0.36,
-   "cp:denim+tan": 7.38,
+   "cp:denim+tan": 7.47,
    "cp:cream+denim": 2.97,
    "ip:alessandra-colour-block-jumper|basic-tan-flats": 0.36,
-   "cp:tan+tan": 6.51,
-   "cp:cream+tan": 3.63,
+   "cp:tan+tan": 6.75,
+   "cp:cream+tan": 3.88,
    "ip:alessandra-colour-block-jumper|basic-tan-crossbody": 0.36,
    "it:basic-white-tee": 6.26,
    "ip:basic-blue-straight-jeans-cropped|basic-white-tee": 1.33,
@@ -100051,37 +100114,37 @@
    "it:basic-tan-flats": 6.26,
    "ip:basic-tan-crossbody|basic-tan-flats": 3.36,
    "it:basic-tan-crossbody": 7.93,
-   "pat:plain+plain+plain": 7.89,
+   "pat:plain+plain+plain": 8.09,
    "so:Everyday|flats": 10.31,
    "it:cos-navy-stripe-tee-magenta-collar": 2.14,
    "ip:basic-black-midi-skirt|cos-navy-stripe-tee-magenta-collar": 0.36,
-   "cp:black+navy": 2.4,
+   "cp:black+navy": 2.64,
    "ip:basic-denim-jacket|cos-navy-stripe-tee-magenta-collar": 0.36,
-   "cp:denim+navy": 2.75,
+   "cp:denim+navy": 2.86,
    "ip:adidas-gazelle-pink|cos-navy-stripe-tee-magenta-collar": 0.36,
-   "cp:navy+pink": 1.33,
-   "cp:navy+white": 3.45,
-   "cp:pink+white": 5.33,
-   "cp:white+white": 7.76,
+   "cp:navy+pink": 1.52,
+   "cp:navy+white": 3.63,
+   "cp:pink+white": 5.44,
+   "cp:white+white": 7.8,
    "it:basic-black-midi-skirt": 1.69,
    "ip:basic-black-midi-skirt|basic-denim-jacket": 0.65,
    "ip:adidas-gazelle-pink|basic-black-midi-skirt": 0.36,
-   "cp:black+pink": 2.4,
+   "cp:black+pink": 2.64,
    "it:basic-denim-jacket": 3.45,
    "ip:adidas-gazelle-pink|basic-denim-jacket": 0.36,
-   "cp:denim+pink": 2.75,
+   "cp:denim+pink": 2.86,
    "it:adidas-gazelle-pink": 2,
-   "pat:plain+plain+stripe": 3.45,
+   "pat:plain+plain+stripe": 3.54,
    "so:Everyday|sneakers": 8.43,
    "it:gorman-red-strawberry-shirt": 0.65,
    "ip:basic-blue-wide-jeans|gorman-red-strawberry-shirt": 0.65,
-   "cp:denim+red": 5.73,
+   "cp:denim+red": 5.67,
    "ip:basic-black-kitten-heels|gorman-red-strawberry-shirt": 0.36,
    "cp:black+red": 5.14,
    "it:basic-blue-wide-jeans": 6.56,
    "ip:basic-black-kitten-heels|basic-blue-wide-jeans": 0.36,
    "it:basic-black-kitten-heels": 1.33,
-   "pat:plain+print": 2.52,
+   "pat:plain+print": 2.4,
    "it:zara-black-sleeveless-knit": 1.85,
    "ip:zara-black-sleeveless-knit|zara-white-sleeveless-knit": 0.36,
    "ip:basic-black-bamboo-wide-crop|zara-black-sleeveless-knit": 0.91,
@@ -100098,7 +100161,7 @@
    "ip:basic-black-crossbody|basic-black-flats": 2.27,
    "ip:basic-denim-jacket|zara-black-sleeveless-knit": 0.36,
    "ip:basic-tan-flats|zara-black-sleeveless-knit": 0.91,
-   "cp:black+tan": 5.14,
+   "cp:black+tan": 5.62,
    "ip:basic-tan-crossbody|zara-black-sleeveless-knit": 0.91,
    "ip:black-crossback-wide-leg-jumpsuit|zara-black-sleeveless-knit": 0.36,
    "ip:basic-black-bamboo-wide-crop|basic-denim-jacket": 0.36,
@@ -100116,7 +100179,7 @@
    "ip:basic-tan-flats|sussan-black-fine-stripe-tank": 0.36,
    "it:basic-black-wide-linen-pants": 1.69,
    "ip:basic-black-wide-linen-pants|basic-tan-flats": 0.36,
-   "pat:plain+stripe": 3.96,
+   "pat:plain+stripe": 3.88,
    "ip:basic-denim-jacket|navy-stripe-long-sleeve-top": 0.36,
    "ip:basic-black-wide-linen-pants|basic-denim-jacket": 0.36,
    "ip:basic-denim-jacket|basic-white-sneakers": 1.85,
@@ -100141,15 +100204,16 @@
    "ip:basic-grey-marle-jumper|basic-white-sneakers": 0.65,
    "cp:grey+white": 3.45,
    "ip:basic-grey-marle-jumper|basic-tan-crossbody": 0.36,
-   "cp:grey+tan": 2.14,
-   "it:green-wide-leg-cords": 1.33,
+   "cp:grey+tan": 2.27,
+   "it:green-wide-leg-cords": 1.13,
    "ip:basic-white-sneakers|green-wide-leg-cords": 0.91,
+   "cp:green+white": 3.63,
    "ip:basic-tan-crossbody|green-wide-leg-cords": 0.36,
-   "cp:green+tan": 3.07,
+   "cp:green+tan": 2.97,
    "ip:basic-tan-crossbody|basic-white-sneakers": 4.04,
    "ip:basic-blue-straight-jeans|cos-navy-stripe-tee-magenta-collar": 0.36,
    "ip:basic-red-ballet-flats|cos-navy-stripe-tee-magenta-collar": 0.36,
-   "cp:navy+red": 1.69,
+   "cp:navy+red": 1.85,
    "cp:red+white": 7.25,
    "it:basic-blue-straight-jeans": 4.76,
    "ip:basic-blue-straight-jeans|basic-red-ballet-flats": 0.91,
@@ -100158,7 +100222,6 @@
    "ip:basic-denim-jacket|decjuba-olive-rib-tank": 0.91,
    "cp:denim+forest": 3.07,
    "ip:basic-black-straight-jeans-cropped|decjuba-olive-rib-tank": 0.91,
-   "cp:black+forest": 2.52,
    "ip:basic-black-sneakers|decjuba-olive-rib-tank": 0.91,
    "ip:basic-black-straight-jeans-cropped|basic-denim-jacket": 0.65,
    "ip:basic-black-sneakers|basic-denim-jacket": 0.65,
@@ -100198,8 +100261,8 @@
    "cp:green+pink": 2.27,
    "cp:green+red": 2.14,
    "ip:pink-cord-wide-leg-trousers|pink-tulip-knit-vest": 0.36,
-   "cp:pink+pink": 2.52,
-   "cp:pink+red": 4.34,
+   "cp:pink+pink": 2.75,
+   "cp:pink+red": 4.41,
    "ip:adidas-gazelle-pink|pink-tulip-knit-vest": 0.36,
    "ip:green-leather-flap-messenger-bag|pink-tulip-knit-vest": 0.36,
    "it:green-breton-long-sleeve": 0.91,
@@ -100222,7 +100285,6 @@
    "ip:basic-green-sneakers|marcs-pink-gingham-tank": 0.36,
    "cp:coral+forest": 0.65,
    "cp:coral+sky": 0.36,
-   "cp:forest+white": 3.63,
    "cp:sky+white": 3.63,
    "ip:green-leather-flap-messenger-bag|marcs-pink-gingham-tank": 0.36,
    "ip:green-breton-long-sleeve|pink-wide-leg-sailor-trousers": 0.36,
@@ -100239,7 +100301,7 @@
    "pat:check+plain+stripe": 0.65,
    "it:red-blue-stripe-knit-vest": 0.91,
    "ip:chambray-shirt|red-blue-stripe-knit-vest": 0.36,
-   "cp:red+sky": 3.36,
+   "cp:red+sky": 3.45,
    "cp:sky+sky": 0.65,
    "ip:basic-blue-wide-jeans|red-blue-stripe-knit-vest": 0.36,
    "cp:denim+sky": 2.75,
@@ -100247,16 +100309,16 @@
    "cp:forest+red": 1.69,
    "cp:forest+sky": 1.13,
    "ip:basic-tan-crossbody|red-blue-stripe-knit-vest": 0.36,
-   "cp:red+tan": 5.5,
-   "cp:sky+tan": 3.17,
-   "it:chambray-shirt": 4.27,
+   "cp:red+tan": 5.56,
+   "cp:sky+tan": 3.27,
+   "it:chambray-shirt": 4.19,
    "ip:basic-blue-wide-jeans|chambray-shirt": 1.33,
    "ip:basic-green-sneakers|chambray-shirt": 0.36,
    "ip:basic-tan-crossbody|chambray-shirt": 1.69,
    "ip:basic-blue-wide-jeans|basic-green-sneakers": 0.65,
    "ip:basic-blue-wide-jeans|basic-tan-crossbody": 3.27,
    "ip:basic-green-sneakers|basic-tan-crossbody": 0.91,
-   "cp:forest+tan": 3.63,
+   "cp:forest+tan": 3.54,
    "ip:basic-white-tee|marcs-pink-gingham-tank": 0.36,
    "ip:basic-denim-skirt|marcs-pink-gingham-tank": 0.36,
    "cp:coral+denim": 0.65,
@@ -100272,31 +100334,25 @@
    "it:basic-white-flats": 2.75,
    "ip:basic-white-flats|mimco-raffia-clutch": 0.91,
    "it:mimco-raffia-clutch": 3.96,
-   "pat:check+plain+plain": 1.85,
+   "pat:check+plain+plain": 2,
    "it:green-geometric-knit-polo": 0.36,
    "ip:green-geometric-knit-polo|pink-wide-leg-sailor-trousers": 0.36,
    "cp:blue+pink": 1.13,
    "ip:basic-tan-flats|green-geometric-knit-polo": 0.36,
-   "cp:blue+tan": 2,
+   "cp:blue+tan": 1.69,
    "ip:basic-tan-flats|pink-wide-leg-sailor-trousers": 0.65,
-   "cp:pink+tan": 3.8,
+   "cp:pink+tan": 3.88,
    "ip:pale-blue-cutwork-puff-shirt|red-blue-stripe-knit-vest": 0.36,
    "ip:gorman-striped-skirt|red-blue-stripe-knit-vest": 0.65,
-   "cp:blue+red": 1.69,
-   "cp:blue+sky": 1.69,
+   "cp:blue+red": 1.52,
+   "cp:blue+sky": 1.33,
    "ip:basic-white-sneakers|red-blue-stripe-knit-vest": 0.65,
-   "ip:michael-kors-cobalt-satchel|red-blue-stripe-knit-vest": 0.36,
    "it:pale-blue-cutwork-puff-shirt": 0.91,
    "ip:gorman-striped-skirt|pale-blue-cutwork-puff-shirt": 0.65,
-   "cp:blue+white": 2.64,
+   "cp:blue+white": 2.27,
    "ip:basic-white-sneakers|pale-blue-cutwork-puff-shirt": 0.65,
-   "ip:michael-kors-cobalt-satchel|pale-blue-cutwork-puff-shirt": 0.65,
    "it:gorman-striped-skirt": 2.27,
    "ip:basic-white-sneakers|gorman-striped-skirt": 1.69,
-   "ip:gorman-striped-skirt|michael-kors-cobalt-satchel": 0.91,
-   "cp:blue+blue": 0.91,
-   "ip:basic-white-sneakers|michael-kors-cobalt-satchel": 0.91,
-   "it:michael-kors-cobalt-satchel": 0.91,
    "pat:print+stripe+stripe": 0.36,
    "ip:basic-denim-jacket|basic-white-tee": 1.13,
    "ip:basic-denim-jacket|gorman-striped-skirt": 0.36,
@@ -100306,8 +100362,8 @@
    "ip:basic-tan-crossbody|gorman-striped-skirt": 1.33,
    "it:uniqlo-blue-knit-tee": 1.13,
    "ip:gorman-striped-skirt|uniqlo-blue-knit-tee": 0.36,
+   "cp:blue+blue": 0.36,
    "ip:basic-white-sneakers|uniqlo-blue-knit-tee": 0.65,
-   "ip:michael-kors-cobalt-satchel|uniqlo-blue-knit-tee": 0.36,
    "ip:basic-white-tee|red-blue-stripe-knit-vest": 0.36,
    "ip:boden-navy-military-jacket|red-blue-stripe-knit-vest": 0.36,
    "cp:cream+red": 2.52,
@@ -100431,7 +100487,7 @@
    "pat:dot+plain": 1.52,
    "it:red-stripe-cropped-jacket": 0.36,
    "ip:black-big-spot-tie-skirt|red-stripe-cropped-jacket": 0.36,
-   "cp:black+cream": 2.97,
+   "cp:black+cream": 2.75,
    "ip:basic-white-tee|red-stripe-cropped-jacket": 0.36,
    "ip:basic-red-ballet-flats|red-stripe-cropped-jacket": 0.36,
    "ip:basic-tan-crossbody|red-stripe-cropped-jacket": 0.36,
@@ -100440,7 +100496,7 @@
    "pat:dot+plain+stripe": 0.36,
    "it:white-linen-orange-embroidered-shirt": 0.91,
    "ip:pink-wide-leg-sailor-trousers|white-linen-orange-embroidered-shirt": 0.36,
-   "cp:orange+pink": 0.36,
+   "cp:orange+pink": 0.65,
    "ip:black-square-toe-heeled-knee-boots|white-linen-orange-embroidered-shirt": 0.36,
    "cp:black+orange": 0.91,
    "ip:black-square-toe-heeled-knee-boots|pink-wide-leg-sailor-trousers": 0.36,
@@ -100459,12 +100515,12 @@
    "ip:basic-blue-wide-jeans|boden-embroidered-flower-tee": 0.36,
    "cp:denim+multi": 1.13,
    "ip:basic-green-sneakers|boden-embroidered-flower-tee": 0.36,
-   "cp:forest+multi": 0.65,
+   "cp:forest+multi": 0.91,
    "cp:multi+sky": 0.36,
    "pat:floral+plain": 1.52,
    "ip:basic-pale-pink-ls-tee|chambray-shirt": 0.65,
    "ip:chambray-shirt|red-a-line-midi-skirt": 1.33,
-   "ip:basic-white-sneakers|chambray-shirt": 1.52,
+   "ip:basic-white-sneakers|chambray-shirt": 1.33,
    "it:basic-pale-pink-ls-tee": 0.65,
    "ip:basic-pale-pink-ls-tee|red-a-line-midi-skirt": 0.65,
    "ip:basic-pale-pink-ls-tee|basic-white-sneakers": 0.36,
@@ -100474,14 +100530,9 @@
    "ip:basic-white-tee|chambray-shirt": 1.33,
    "ip:basic-white-wide-jeans|chambray-shirt": 0.65,
    "ip:basic-tan-flats|chambray-shirt": 1.13,
-   "ip:chambray-shirt|prada-cobalt-leather-tote": 0.65,
    "ip:basic-white-tee|basic-white-wide-jeans": 0.65,
-   "ip:basic-white-tee|prada-cobalt-leather-tote": 0.65,
    "it:basic-white-wide-jeans": 2.97,
    "ip:basic-tan-flats|basic-white-wide-jeans": 1.52,
-   "ip:basic-white-wide-jeans|prada-cobalt-leather-tote": 0.65,
-   "ip:basic-tan-flats|prada-cobalt-leather-tote": 0.65,
-   "it:prada-cobalt-leather-tote": 0.91,
    "ip:basic-denim-jacket|zara-white-sleeveless-knit": 0.36,
    "ip:basic-blue-wide-jeans|basic-denim-jacket": 0.65,
    "cp:denim+denim": 1.85,
@@ -100527,13 +100578,29 @@
    "ip:basic-tan-flats|basic-white-wide-linen-pants": 1.69,
    "ip:basic-blue-straight-jeans-cropped|cos-pink-funnel-neck-sweat": 0.36,
    "ip:adidas-gazelle-pink|cos-pink-funnel-neck-sweat": 0.36,
+   "ip:cos-pink-funnel-neck-sweat|marcs-baby-pink-crossbody": 0.36,
+   "ip:cos-pink-funnel-neck-sweat|tan-black-check-wool-coat": 0.36,
+   "cp:black+coral": 0.65,
    "ip:adidas-gazelle-pink|basic-blue-straight-jeans-cropped": 0.36,
+   "ip:basic-blue-straight-jeans-cropped|marcs-baby-pink-crossbody": 0.36,
+   "ip:basic-blue-straight-jeans-cropped|tan-black-check-wool-coat": 0.36,
    "ip:adidas-gazelle-pink|basic-tan-crossbody": 0.36,
+   "ip:adidas-gazelle-pink|marcs-baby-pink-crossbody": 0.36,
+   "ip:adidas-gazelle-pink|tan-black-check-wool-coat": 0.36,
+   "ip:basic-tan-crossbody|marcs-baby-pink-crossbody": 0.65,
+   "ip:basic-tan-crossbody|tan-black-check-wool-coat": 0.36,
+   "it:marcs-baby-pink-crossbody": 1.33,
+   "ip:marcs-baby-pink-crossbody|tan-black-check-wool-coat": 0.36,
+   "it:tan-black-check-wool-coat": 0.36,
    "ip:green-breton-long-sleeve|pink-green-knit-tee": 0.36,
    "ip:basic-tan-crossbody|pink-green-knit-tee": 0.36,
+   "ip:marcs-baby-pink-crossbody|pink-green-knit-tee": 0.36,
    "ip:basic-blue-wide-jeans|green-breton-long-sleeve": 0.36,
    "ip:basic-white-sneakers|green-breton-long-sleeve": 0.36,
    "ip:basic-tan-crossbody|green-breton-long-sleeve": 0.36,
+   "ip:green-breton-long-sleeve|marcs-baby-pink-crossbody": 0.36,
+   "ip:basic-blue-wide-jeans|marcs-baby-pink-crossbody": 0.36,
+   "ip:basic-white-sneakers|marcs-baby-pink-crossbody": 0.65,
    "pat:plain+print+stripe": 0.36,
    "it:zara-red-stripe-halter-knit": 0.65,
    "ip:basic-white-wide-linen-pants|zara-red-stripe-halter-knit": 0.36,
@@ -100564,16 +100631,17 @@
    "it:pink-folk-print-shorts": 0.65,
    "ip:basic-tan-flats|pink-folk-print-shorts": 0.36,
    "it:resort-white-embroidered-blouse": 1.33,
-   "ip:green-wide-leg-cords|resort-white-embroidered-blouse": 0.36,
+   "ip:olive-leaf-trim-wide-leg-jeans|resort-white-embroidered-blouse": 0.36,
    "ip:basic-patterned-belts|resort-white-embroidered-blouse": 0.36,
    "cp:multi+white": 1.85,
    "ip:basic-tan-flats|resort-white-embroidered-blouse": 0.91,
-   "ip:basic-patterned-belts|green-wide-leg-cords": 0.36,
-   "cp:green+multi": 0.36,
-   "ip:basic-tan-flats|green-wide-leg-cords": 0.36,
+   "it:olive-leaf-trim-wide-leg-jeans": 0.36,
+   "ip:basic-patterned-belts|olive-leaf-trim-wide-leg-jeans": 0.36,
+   "cp:cream+multi": 0.36,
+   "ip:basic-tan-flats|olive-leaf-trim-wide-leg-jeans": 0.36,
    "it:basic-patterned-belts": 1.13,
    "ip:basic-patterned-belts|basic-tan-flats": 0.65,
-   "cp:multi+tan": 0.91,
+   "cp:multi+tan": 1.13,
    "pat:floral+plain+print": 0.36,
    "ip:basic-white-tee|pink-wide-leg-sailor-trousers": 0.36,
    "ip:basic-black-flats|basic-white-tee": 1.85,
@@ -100584,87 +100652,100 @@
    "ip:basic-white-linen-shirt|red-moss-stitch-jumper": 0.36,
    "ip:basic-black-loafers|red-moss-stitch-jumper": 0.36,
    "ip:brick-red-leather-hobo|red-moss-stitch-jumper": 0.36,
+   "ip:navy-bow-waist-ruched-collar-coat|red-moss-stitch-jumper": 0.36,
    "ip:basic-blue-straight-jeans|basic-white-linen-shirt": 1.13,
    "ip:basic-white-linen-shirt|brick-red-leather-hobo": 0.36,
+   "ip:basic-white-linen-shirt|navy-bow-waist-ruched-collar-coat": 0.36,
    "ip:basic-black-loafers|basic-blue-straight-jeans": 0.91,
    "ip:basic-blue-straight-jeans|brick-red-leather-hobo": 0.36,
+   "ip:basic-blue-straight-jeans|navy-bow-waist-ruched-collar-coat": 0.36,
    "ip:basic-black-loafers|brick-red-leather-hobo": 0.36,
+   "ip:basic-black-loafers|navy-bow-waist-ruched-collar-coat": 0.36,
+   "ip:brick-red-leather-hobo|navy-bow-waist-ruched-collar-coat": 0.36,
+   "it:navy-bow-waist-ruched-collar-coat": 0.65,
    "ip:basic-blue-straight-jeans|basic-tan-crossbody": 3.17,
-   "ip:basic-blue-straight-jeans|uniqlo-brown-knit-jacket": 1.33,
-   "cp:brown+denim": 2.75,
-   "ip:basic-blue-straight-jeans|ivory-fine-knit-crew-jumper": 0.36,
-   "ip:basic-tan-crossbody|uniqlo-brown-knit-jacket": 1.69,
-   "cp:brown+tan": 3.54,
-   "ip:basic-tan-crossbody|ivory-fine-knit-crew-jumper": 0.36,
-   "it:uniqlo-brown-knit-jacket": 2.86,
-   "ip:ivory-fine-knit-crew-jumper|uniqlo-brown-knit-jacket": 0.36,
-   "cp:brown+cream": 0.65,
-   "it:ivory-fine-knit-crew-jumper": 0.36,
+   "ip:basic-blue-straight-jeans|stone-belted-trench-coat": 1.13,
+   "ip:basic-blue-straight-jeans|cream-shaker-rib-raglan-jumper": 0.36,
+   "ip:basic-tan-crossbody|stone-belted-trench-coat": 1.33,
+   "ip:basic-tan-crossbody|cream-shaker-rib-raglan-jumper": 0.36,
+   "it:stone-belted-trench-coat": 2.75,
+   "ip:cream-shaker-rib-raglan-jumper|stone-belted-trench-coat": 0.65,
+   "it:cream-shaker-rib-raglan-jumper": 0.65,
    "it:brown-mock-neck-long-sleeve": 0.36,
    "ip:basic-white-straight-jeans|brown-mock-neck-long-sleeve": 0.36,
-   "cp:brown+white": 3.07,
+   "cp:brown+white": 3.27,
    "ip:black-square-toe-heeled-knee-boots|brown-mock-neck-long-sleeve": 0.36,
-   "cp:black+brown": 2.4,
-   "ip:brown-mock-neck-long-sleeve|uniqlo-brown-knit-jacket": 0.36,
-   "cp:brown+brown": 1.13,
+   "cp:black+brown": 2,
+   "ip:brown-mock-neck-long-sleeve|stone-belted-trench-coat": 0.36,
+   "cp:brown+tan": 3.45,
    "it:basic-white-straight-jeans": 0.91,
    "ip:basic-white-straight-jeans|black-square-toe-heeled-knee-boots": 0.36,
-   "ip:basic-white-straight-jeans|uniqlo-brown-knit-jacket": 0.36,
-   "ip:black-square-toe-heeled-knee-boots|uniqlo-brown-knit-jacket": 0.36,
+   "ip:basic-white-straight-jeans|stone-belted-trench-coat": 0.36,
+   "ip:black-square-toe-heeled-knee-boots|stone-belted-trench-coat": 0.36,
+   "ip:chambray-shirt|stone-belted-trench-coat": 0.65,
+   "ip:basic-blue-wide-jeans|stone-belted-trench-coat": 0.36,
+   "ip:basic-white-sneakers|stone-belted-trench-coat": 1.33,
    "ip:basic-white-straight-jeans-cropped|chambray-shirt": 0.36,
    "it:basic-white-straight-jeans-cropped": 1.33,
    "ip:basic-tan-flats|basic-white-straight-jeans-cropped": 0.65,
    "ip:basic-tan-crossbody|basic-white-straight-jeans-cropped": 0.36,
+   "ip:basic-white-straight-jeans-cropped|stone-belted-trench-coat": 0.36,
+   "ip:basic-tan-flats|stone-belted-trench-coat": 0.91,
    "it:uniqlo-white-navy-stripe-crew-jumper": 0.36,
    "ip:basic-blue-straight-jeans|uniqlo-white-navy-stripe-crew-jumper": 0.36,
    "ip:basic-tan-flats|uniqlo-white-navy-stripe-crew-jumper": 0.36,
    "cp:navy+tan": 2.86,
-   "ip:uniqlo-brown-knit-jacket|uniqlo-white-navy-stripe-crew-jumper": 0.36,
-   "cp:brown+navy": 0.36,
+   "ip:stone-belted-trench-coat|uniqlo-white-navy-stripe-crew-jumper": 0.36,
    "ip:basic-blue-straight-jeans|basic-tan-flats": 1.85,
-   "ip:basic-tan-flats|uniqlo-brown-knit-jacket": 1.13,
    "ip:basic-black-midi-skirt|basic-black-turtleneck": 0.36,
    "ip:basic-black-turtleneck|red-silk-heeled-mules": 0.36,
    "ip:basic-black-crossbody|basic-black-turtleneck": 0.36,
-   "ip:basic-black-turtleneck|uniqlo-brown-knit-jacket": 0.36,
+   "ip:basic-black-turtleneck|stone-belted-trench-coat": 0.36,
    "ip:basic-black-turtleneck|witchery-navy-rib-knit-maxi-dress": 0.36,
    "ip:basic-black-midi-skirt|red-silk-heeled-mules": 0.36,
    "ip:basic-black-crossbody|basic-black-midi-skirt": 0.36,
-   "ip:basic-black-midi-skirt|uniqlo-brown-knit-jacket": 0.36,
+   "ip:basic-black-midi-skirt|stone-belted-trench-coat": 0.36,
    "ip:basic-black-midi-skirt|witchery-navy-rib-knit-maxi-dress": 0.36,
    "it:red-silk-heeled-mules": 2.75,
    "ip:basic-black-crossbody|red-silk-heeled-mules": 0.65,
-   "ip:red-silk-heeled-mules|uniqlo-brown-knit-jacket": 0.36,
-   "cp:brown+red": 1.69,
+   "ip:red-silk-heeled-mules|stone-belted-trench-coat": 0.36,
    "ip:red-silk-heeled-mules|witchery-navy-rib-knit-maxi-dress": 0.36,
-   "ip:basic-black-crossbody|uniqlo-brown-knit-jacket": 0.36,
+   "ip:basic-black-crossbody|stone-belted-trench-coat": 1.13,
    "ip:basic-black-crossbody|witchery-navy-rib-knit-maxi-dress": 0.36,
-   "ip:uniqlo-brown-knit-jacket|witchery-navy-rib-knit-maxi-dress": 0.36,
+   "ip:stone-belted-trench-coat|witchery-navy-rib-knit-maxi-dress": 0.36,
    "it:witchery-navy-rib-knit-maxi-dress": 0.36,
    "ip:basic-red-cardigan|basic-white-tee": 0.65,
    "ip:basic-blue-straight-jeans|basic-red-cardigan": 0.65,
    "ip:basic-red-cardigan|basic-tan-crossbody": 0.65,
    "ip:basic-red-cardigan|basic-white-sneakers": 0.36,
    "ip:basic-red-cardigan|uniqlo-brown-knit-jacket": 0.36,
+   "cp:brown+red": 1.33,
    "ip:basic-blue-straight-jeans|basic-white-tee": 2,
    "ip:basic-white-tee|uniqlo-brown-knit-jacket": 0.91,
-   "ip:basic-white-sneakers|uniqlo-brown-knit-jacket": 0.91,
+   "ip:basic-blue-straight-jeans|uniqlo-brown-knit-jacket": 0.36,
+   "cp:brown+denim": 2.27,
+   "ip:basic-tan-crossbody|uniqlo-brown-knit-jacket": 0.91,
+   "ip:basic-white-sneakers|uniqlo-brown-knit-jacket": 0.65,
+   "it:uniqlo-brown-knit-jacket": 1.85,
    "ip:basic-tan-flats|red-moss-stitch-jumper": 0.36,
    "ip:basic-tan-crossbody|red-moss-stitch-jumper": 0.36,
-   "ip:red-moss-stitch-jumper|uniqlo-brown-knit-jacket": 0.65,
+   "ip:red-moss-stitch-jumper|stone-belted-trench-coat": 0.36,
    "ip:basic-black-wide-jeans|basic-white-sneakers": 0.65,
    "ip:basic-black-wide-jeans|black-cream-breton-stripe-jumper": 0.36,
    "ip:basic-black-crossbody|basic-black-wide-jeans": 1.13,
+   "ip:basic-black-wide-jeans|stone-belted-trench-coat": 0.65,
    "ip:basic-white-sneakers|black-cream-breton-stripe-jumper": 0.36,
-   "it:black-cream-breton-stripe-jumper": 1.52,
-   "ip:basic-black-crossbody|black-cream-breton-stripe-jumper": 1.13,
+   "it:black-cream-breton-stripe-jumper": 0.91,
+   "ip:basic-black-crossbody|black-cream-breton-stripe-jumper": 0.65,
+   "ip:black-cream-breton-stripe-jumper|stone-belted-trench-coat": 0.36,
    "it:basic-black-straight-jeans": 1.52,
    "ip:basic-black-crossbody|basic-black-straight-jeans": 0.65,
    "ip:basic-black-flats|basic-black-straight-jeans": 0.91,
-   "ip:basic-black-straight-jeans|oatmeal-oversized-turtleneck-jumper": 0.36,
-   "ip:basic-black-crossbody|oatmeal-oversized-turtleneck-jumper": 0.36,
-   "ip:basic-black-flats|oatmeal-oversized-turtleneck-jumper": 0.36,
-   "it:oatmeal-oversized-turtleneck-jumper": 0.91,
+   "ip:basic-black-straight-jeans|cream-shaker-rib-raglan-jumper": 0.36,
+   "ip:basic-black-straight-jeans|stone-belted-trench-coat": 0.65,
+   "ip:basic-black-crossbody|cream-shaker-rib-raglan-jumper": 0.36,
+   "ip:basic-black-flats|cream-shaker-rib-raglan-jumper": 0.36,
+   "ip:basic-black-flats|stone-belted-trench-coat": 0.65,
    "it:taupe-leather-biker-jacket": 2.27,
    "ip:chambray-shirt|taupe-leather-biker-jacket": 0.36,
    "ip:basic-blue-straight-jeans|taupe-leather-biker-jacket": 0.91,
@@ -100748,7 +100829,7 @@
    "ip:basic-denim-jacket|resort-white-embroidered-blouse": 0.36,
    "ip:basic-blue-straight-jeans|resort-white-embroidered-blouse": 0.65,
    "ip:basic-tan-crossbody|resort-white-embroidered-blouse": 0.65,
-   "pat:plain+plain+print": 1.13,
+   "pat:plain+plain+print": 1.33,
    "ip:resort-white-embroidered-blouse|taupe-leather-biker-jacket": 0.36,
    "ip:basic-tan-kitten-heels|resort-white-embroidered-blouse": 0.36,
    "ip:basic-blue-straight-jeans|basic-tan-kitten-heels": 0.65,
@@ -100777,8 +100858,10 @@
    "ip:basic-tan-flats|brown-linen-popover-top": 0.65,
    "ip:basic-tan-crossbody|brown-linen-popover-top": 0.36,
    "ip:brown-linen-popover-top|uniqlo-brown-knit-jacket": 0.36,
+   "cp:brown+brown": 1.13,
+   "ip:basic-tan-flats|uniqlo-brown-knit-jacket": 0.65,
    "ip:basic-white-sneakers|zara-black-sleeveless-knit": 0.36,
-   "pat:plain": 5.33,
+   "pat:plain": 5.14,
    "ip:basic-denim-jacket|mimco-raffia-clutch": 0.91,
    "ip:basic-tan-flats|mimco-raffia-clutch": 1.69,
    "ip:khaki-straight-leg-utility-pants|zara-white-sleeveless-knit": 0.91,
@@ -100814,8 +100897,10 @@
    "ip:basic-tan-flats|zara-blue-embroidered-blouse": 0.36,
    "ip:mimco-raffia-clutch|zara-blue-embroidered-blouse": 0.65,
    "ip:basic-white-straight-jeans-cropped|mimco-raffia-clutch": 0.36,
+   "ip:basic-white-tee|stone-belted-trench-coat": 0.36,
    "ip:basic-black-belt|basic-blue-straight-jeans": 0.91,
    "ip:basic-black-belt|basic-white-sneakers": 1.33,
+   "ip:basic-black-belt|stone-belted-trench-coat": 0.36,
    "ip:basic-tan-flats|black-white-spot-linen-shift-dress": 0.36,
    "it:black-white-spot-linen-shift-dress": 0.65,
    "pat:dot": 0.65,
@@ -100852,6 +100937,10 @@
    "ip:basic-black-flats|white-linen-slip-midi-dress": 0.36,
    "it:white-linen-slip-midi-dress": 0.91,
    "ip:mimco-raffia-clutch|white-linen-slip-midi-dress": 0.36,
+   "ip:basic-white-tee|mocha-rib-knit-wide-pants": 0.91,
+   "ip:basic-tan-flats|mocha-rib-knit-wide-pants": 0.36,
+   "ip:basic-tan-crossbody|mocha-rib-knit-wide-pants": 0.91,
+   "it:mocha-rib-knit-wide-pants": 1.13,
    "ip:basic-white-sneakers|gorman-green-cord-jacket": 0.65,
    "ip:basic-black-crossbody|red-a-line-midi-skirt": 0.36,
    "ip:basic-black-flats|red-a-line-midi-skirt": 0.65,
@@ -100874,7 +100963,9 @@
    "so:Everyday|Docs": 0.65,
    "ip:cos-navy-stripe-tee-magenta-collar|rust-linen-a-line-maxi-skirt": 0.36,
    "cp:navy+orange": 0.36,
+   "ip:cos-navy-stripe-tee-magenta-collar|marcs-baby-pink-crossbody": 0.36,
    "ip:basic-white-sneakers|rust-linen-a-line-maxi-skirt": 0.36,
+   "ip:marcs-baby-pink-crossbody|rust-linen-a-line-maxi-skirt": 0.36,
    "it:white-linen-batwing-shirt": 0.36,
    "ip:basic-blue-wide-jeans|white-linen-batwing-shirt": 0.36,
    "ip:basic-tan-belt|white-linen-batwing-shirt": 0.36,
@@ -100964,7 +101055,7 @@
    "ip:black-wool-pocket-mini-skirt|brick-red-leather-hobo": 0.36,
    "ip:basic-white-linen-shirt|black-wool-pocket-mini-skirt": 0.36,
    "ip:basic-white-linen-shirt|black-cream-breton-stripe-jumper": 0.36,
-   "ip:basic-black-flats|black-cream-breton-stripe-jumper": 0.65,
+   "ip:basic-black-flats|black-cream-breton-stripe-jumper": 0.36,
    "ip:basic-black-crossbody|black-pointed-mary-jane-stilettos": 0.36,
    "ip:black-cream-breton-stripe-jumper|black-wool-pocket-mini-skirt": 0.36,
    "ip:black-pointed-mary-jane-stilettos|black-wool-pocket-mini-skirt": 0.36,
@@ -100981,7 +101072,7 @@
    "ip:basic-black-midi-skirt|black-leather-side-zip-ankle-boots": 0.36,
    "it:basic-black-cardigan": 0.91,
    "ip:basic-black-cardigan|brown-big-spot-a-line-skirt": 0.36,
-   "cp:brown+grey": 0.91,
+   "cp:brown+grey": 0.65,
    "ip:basic-black-cardigan|black-leather-side-zip-ankle-boots": 0.36,
    "it:brown-big-spot-a-line-skirt": 0.91,
    "ip:black-leather-side-zip-ankle-boots|brown-big-spot-a-line-skirt": 0.36,
@@ -101031,6 +101122,7 @@
    "ip:basic-black-wide-jeans|guns-n-roses-band-tee": 0.36,
    "ip:basic-white-sneakers|guns-n-roses-band-tee": 0.36,
    "ip:basic-black-crossbody|guns-n-roses-band-tee": 0.36,
+   "ip:guns-n-roses-band-tee|stone-belted-trench-coat": 0.36,
    "ip:chambray-shirt|zara-white-sleeveless-knit": 0.65,
    "ip:basic-black-leggings|zara-white-sleeveless-knit": 0.36,
    "ip:basic-black-flats|basic-black-leggings": 0.36,
@@ -101049,12 +101141,15 @@
    "ip:anko-white-tank-black-trim|basic-blue-wide-jeans": 0.36,
    "ip:basic-tan-flats|gorman-navy-rope-trim-playsuit": 0.36,
    "it:gorman-navy-rope-trim-playsuit": 0.36,
-   "ip:basic-white-sneakers|chocolate-knit-pencil-skirt": 0.36,
-   "ip:basic-white-sneakers|uniqlo-brown-knit-tee": 0.36,
-   "it:chocolate-knit-pencil-skirt": 0.65,
-   "ip:chocolate-knit-pencil-skirt|uniqlo-brown-knit-tee": 0.36,
-   "it:uniqlo-brown-knit-tee": 0.36,
-   "ip:basic-tan-kitten-heels|chocolate-knit-pencil-skirt": 0.36,
+   "ip:basic-white-sneakers|mocha-rib-knit-tube-skirt": 0.36,
+   "ip:basic-white-sneakers|mocha-rib-knit-mock-neck-long-sleeve-top": 0.36,
+   "it:mocha-rib-knit-tube-skirt": 0.65,
+   "ip:mocha-rib-knit-mock-neck-long-sleeve-top|mocha-rib-knit-tube-skirt": 0.36,
+   "it:mocha-rib-knit-mock-neck-long-sleeve-top": 0.36,
+   "ip:basic-tan-kitten-heels|mocha-rib-knit-tube-skirt": 0.36,
+   "ip:basic-tan-kitten-heels|mocha-rib-knit-sleeveless-mock-neck-top": 0.36,
+   "ip:mocha-rib-knit-sleeveless-mock-neck-top|mocha-rib-knit-tube-skirt": 0.36,
+   "it:mocha-rib-knit-sleeveless-mock-neck-top": 0.36,
    "ip:basic-white-wide-jeans|navy-stripe-long-sleeve-top": 0.36,
    "ip:mimco-raffia-clutch|navy-stripe-long-sleeve-top": 0.36,
    "ip:basic-white-tee|gorman-green-cord-jacket": 0.36,
@@ -101070,10 +101165,10 @@
    "ip:basic-black-bamboo-wide-crop|basic-white-tee": 0.36,
    "ip:pink-wide-leg-sailor-trousers|sussan-lime-fine-knit-crew-jumper": 0.36,
    "cp:pink+yellow": 1.13,
-   "ip:pink-wide-leg-sailor-trousers|raspberry-eyelet-shoulder-tote": 0.36,
+   "ip:pink-wide-leg-sailor-trousers|raspberry-leather-wristlet": 0.36,
    "it:sussan-lime-fine-knit-crew-jumper": 0.65,
-   "ip:raspberry-eyelet-shoulder-tote|sussan-lime-fine-knit-crew-jumper": 0.36,
-   "it:raspberry-eyelet-shoulder-tote": 0.65,
+   "ip:raspberry-leather-wristlet|sussan-lime-fine-knit-crew-jumper": 0.36,
+   "it:raspberry-leather-wristlet": 0.36,
    "ip:basic-blue-wide-jeans|sussan-lime-fine-knit-crew-jumper": 0.36,
    "cp:denim+yellow": 1.13,
    "it:marimekko-uniqlo-spot-tank": 0.36,
@@ -101101,18 +101196,19 @@
    "ip:basic-grey-turtleneck-jumper|basic-tan-crossbody": 0.36,
    "ip:basic-red-ballet-flats|basic-white-linen-shirt": 1.33,
    "ip:basic-black-loafers|uniqlo-black-tapered-trousers": 0.36,
-   "ip:basic-black-loafers|black-cream-breton-stripe-jumper": 0.36,
+   "ip:basic-black-loafers|black-white-stripe-mock-neck-long-sleeve-top": 0.36,
    "ip:basic-black-crossbody|uniqlo-black-tapered-trousers": 0.36,
+   "ip:basic-black-crossbody|black-white-stripe-mock-neck-long-sleeve-top": 0.65,
    "it:uniqlo-black-tapered-trousers": 1.52,
-   "ip:black-cream-breton-stripe-jumper|uniqlo-black-tapered-trousers": 0.65,
+   "ip:black-white-stripe-mock-neck-long-sleeve-top|uniqlo-black-tapered-trousers": 0.36,
+   "it:black-white-stripe-mock-neck-long-sleeve-top": 0.65,
    "ip:basic-black-crossbody|basic-white-straight-jeans-cropped": 0.91,
-   "ip:basic-white-straight-jeans-cropped|black-cream-breton-stripe-jumper": 0.36,
+   "ip:basic-white-straight-jeans-cropped|black-white-stripe-mock-neck-long-sleeve-top": 0.36,
    "it:grey-marle-merino-vneck-jumper": 0.65,
    "ip:basic-black-straight-jeans|grey-marle-merino-vneck-jumper": 0.36,
    "ip:black-leather-side-zip-ankle-boots|grey-marle-merino-vneck-jumper": 0.36,
-   "ip:grey-marle-merino-vneck-jumper|uniqlo-brown-knit-jacket": 0.36,
-   "ip:basic-black-straight-jeans|uniqlo-brown-knit-jacket": 0.36,
-   "ip:black-leather-side-zip-ankle-boots|uniqlo-brown-knit-jacket": 0.36,
+   "ip:grey-marle-merino-vneck-jumper|stone-belted-trench-coat": 0.36,
+   "ip:black-leather-side-zip-ankle-boots|stone-belted-trench-coat": 0.36,
    "ip:basic-black-docs|gorman-black-seersucker-puff-sleeve-dress": 0.36,
    "it:gorman-black-seersucker-puff-sleeve-dress": 0.36,
    "pat:check": 0.36,
@@ -101127,6 +101223,10 @@
    "ip:basic-black-crossbody|basic-white-denim-mini": 0.36,
    "it:basic-white-denim-mini": 0.65,
    "ip:basic-black-tee|basic-white-straight-jeans-cropped": 0.36,
+   "ip:basic-black-tee|ckm-black-double-breasted-coat": 0.36,
+   "ip:basic-white-straight-jeans-cropped|ckm-black-double-breasted-coat": 0.36,
+   "ip:basic-black-crossbody|ckm-black-double-breasted-coat": 0.36,
+   "it:ckm-black-double-breasted-coat": 0.36,
    "ip:basic-black-crossbody|black-crossback-wide-leg-jumpsuit": 0.36,
    "ip:basic-blue-straight-jeans-cropped|basic-grey-marle-jumper": 0.36,
    "ip:basic-white-tee|pink-cord-chore-jacket": 0.36,
@@ -101179,7 +101279,7 @@
    "ip:basic-white-flats|guns-n-roses-band-tee": 0.36,
    "ip:brown-linen-mini-skirt|guns-n-roses-band-tee": 0.36,
    "ip:basic-white-flats|brown-linen-mini-skirt": 0.36,
-   "it:brown-linen-mini-skirt": 0.65,
+   "it:brown-linen-mini-skirt": 0.36,
    "it:silver-croc-jewelled-clutch": 0.36,
    "ip:basic-tan-crossbody|green-grey-black-colour-block-dress": 0.36,
    "ip:basic-tan-flats|green-grey-black-colour-block-dress": 0.36,
@@ -101197,6 +101297,7 @@
    "ip:basic-blue-wide-jeans|basic-green-cardigan": 0.36,
    "ip:basic-green-cardigan|basic-tan-flats": 0.36,
    "ip:basic-green-cardigan|zara-white-sleeveless-knit": 0.36,
+   "it:basic-green-cardigan": 0.36,
    "it:boden-green-crochet-cardigan": 0.36,
    "ip:basic-white-fitted-tee|boden-green-crochet-cardigan": 0.36,
    "ip:basic-blue-wide-jeans|boden-green-crochet-cardigan": 0.36,
@@ -101222,7 +101323,7 @@
    "ip:red-a-line-midi-skirt|uniqlo-blue-knit-tee": 0.36,
    "ip:basic-black-kitten-heels|uniqlo-blue-knit-tee": 0.36,
    "ip:red-cream-gingham-wide-trousers|uniqlo-blue-knit-tee": 0.36,
-   "cp:blue+green": 0.65,
+   "cp:blue+green": 0.36,
    "ip:black-pointed-slingback-kitten-heels|uniqlo-blue-knit-tee": 0.36,
    "ip:hermes-black-birkin|uniqlo-blue-knit-tee": 0.36,
    "ip:basic-black-kitten-heels|red-a-line-midi-skirt": 0.36,
@@ -101230,6 +101331,7 @@
    "ip:black-pointed-slingback-kitten-heels|red-a-line-midi-skirt": 0.36,
    "ip:hermes-black-birkin|red-a-line-midi-skirt": 0.36,
    "ip:basic-black-kitten-heels|red-cream-gingham-wide-trousers": 0.36,
+   "cp:black+green": 1.13,
    "ip:basic-black-kitten-heels|black-pointed-slingback-kitten-heels": 0.65,
    "ip:basic-black-kitten-heels|hermes-black-birkin": 0.36,
    "ip:black-pointed-slingback-kitten-heels|red-cream-gingham-wide-trousers": 0.36,
@@ -101250,11 +101352,14 @@
    "ip:green-leather-flap-messenger-bag|red-silk-heeled-mules": 0.36,
    "ip:basic-black-crossbody|basic-blue-wide-jeans": 1.13,
    "it:uniqlo-black-knit-tee": 0.36,
-   "ip:uniqlo-black-knit-tee|uniqlo-brown-knit-jacket": 0.36,
+   "ip:blush-car-coat|uniqlo-black-knit-tee": 0.36,
    "ip:basic-blue-straight-jeans|uniqlo-black-knit-tee": 0.36,
    "ip:basic-red-ballet-flats|uniqlo-black-knit-tee": 0.36,
    "ip:basic-tan-crossbody|uniqlo-black-knit-tee": 0.36,
-   "ip:basic-red-ballet-flats|uniqlo-brown-knit-jacket": 0.36,
+   "it:blush-car-coat": 0.36,
+   "ip:basic-blue-straight-jeans|blush-car-coat": 0.36,
+   "ip:basic-red-ballet-flats|blush-car-coat": 0.36,
+   "ip:basic-tan-crossbody|blush-car-coat": 0.36,
    "ip:sussan-white-linen-jacket|zara-red-stripe-halter-knit": 0.36,
    "ip:basic-black-straight-jeans|zara-red-stripe-halter-knit": 0.36,
    "ip:basic-red-sneakers|zara-red-stripe-halter-knit": 0.36,
@@ -101275,19 +101380,20 @@
    "ip:basic-black-dress-pants|oatmeal-oversized-turtleneck-jumper": 0.36,
    "ip:basic-white-sneakers|oatmeal-oversized-turtleneck-jumper": 0.36,
    "ip:basic-tan-crossbody|oatmeal-oversized-turtleneck-jumper": 0.65,
+   "it:oatmeal-oversized-turtleneck-jumper": 0.65,
    "ip:basic-black-belt|chambray-shirt": 0.65,
    "ip:basic-black-loafers|chambray-shirt": 0.36,
    "ip:basic-black-loafers|basic-white-tee": 1.33,
    "ip:basic-black-belt|basic-black-loafers": 0.65,
    "ip:basic-white-wide-linen-pants|zara-white-sleeveless-knit": 0.36,
-   "ip:uniqlo-brown-knit-jacket|zara-white-sleeveless-knit": 0.36,
-   "ip:basic-white-wide-linen-pants|uniqlo-brown-knit-jacket": 0.36,
+   "ip:stone-belted-trench-coat|zara-white-sleeveless-knit": 0.36,
+   "ip:basic-white-wide-linen-pants|stone-belted-trench-coat": 0.36,
    "ip:basic-tan-crossbody|basic-white-wide-linen-pants": 0.65,
    "ip:basic-grey-tee|esprit-light-wash-denim-jacket": 0.36,
    "ip:basic-grey-tee|basic-white-wide-jeans": 0.36,
    "ip:basic-grey-tee|basic-white-sneakers": 0.36,
    "ip:basic-grey-tee|basic-tan-crossbody": 0.36,
-   "it:esprit-light-wash-denim-jacket": 0.65,
+   "it:esprit-light-wash-denim-jacket": 0.36,
    "ip:basic-white-wide-jeans|esprit-light-wash-denim-jacket": 0.36,
    "ip:basic-white-sneakers|esprit-light-wash-denim-jacket": 0.36,
    "ip:basic-tan-crossbody|esprit-light-wash-denim-jacket": 0.36,
@@ -101431,15 +101537,19 @@
    "ip:basic-red-white-stripe-belt|brick-red-leather-hobo": 0.36,
    "ip:brick-red-leather-hobo|red-silk-heeled-mules": 0.36,
    "ip:basic-denim-maxi-skirt|basic-white-linen-shirt": 0.36,
-   "ip:basic-white-linen-shirt|red-croc-patent-tote": 0.36,
+   "ip:basic-white-linen-shirt|calvin-klein-red-camera-crossbody": 0.36,
    "ip:basic-denim-maxi-skirt|basic-red-ballet-flats": 0.36,
-   "ip:basic-denim-maxi-skirt|red-croc-patent-tote": 0.36,
-   "ip:basic-red-ballet-flats|red-croc-patent-tote": 0.36,
-   "it:red-croc-patent-tote": 2.64,
+   "ip:basic-denim-maxi-skirt|calvin-klein-red-camera-crossbody": 0.36,
+   "ip:basic-red-ballet-flats|calvin-klein-red-camera-crossbody": 0.36,
+   "it:calvin-klein-red-camera-crossbody": 2.64,
    "it:sussan-pink-fine-knit-crew-jumper": 0.65,
    "ip:basic-white-tee|sussan-pink-fine-knit-crew-jumper": 0.36,
    "ip:basic-white-sneakers|sussan-pink-fine-knit-crew-jumper": 0.36,
    "ip:brick-red-leather-hobo|sussan-pink-fine-knit-crew-jumper": 0.36,
+   "ip:mocha-rib-knit-wide-pants|sussan-pink-fine-knit-crew-jumper": 0.36,
+   "cp:brown+pink": 0.65,
+   "ip:basic-white-sneakers|mocha-rib-knit-wide-pants": 0.36,
+   "ip:brick-red-leather-hobo|mocha-rib-knit-wide-pants": 0.36,
    "it:cos-red-textured-crew-jumper": 1.33,
    "ip:basic-white-linen-shirt|cos-red-textured-crew-jumper": 0.36,
    "ip:basic-blue-wide-jeans|cos-red-textured-crew-jumper": 0.91,
@@ -101472,12 +101582,13 @@
    "ip:chambray-shirt|red-moss-stitch-jumper": 0.36,
    "ip:basic-black-wide-jeans|red-moss-stitch-jumper": 0.36,
    "ip:basic-black-wide-jeans|chambray-shirt": 0.36,
+   "ip:red-moss-stitch-jumper|uniqlo-brown-knit-jacket": 0.36,
    "ip:basic-blue-wide-jeans|red-moss-stitch-jumper": 0.36,
    "ip:basic-tan-belt|red-moss-stitch-jumper": 0.36,
    "ip:basic-tan-belt|uniqlo-brown-knit-jacket": 0.36,
    "ip:basic-red-cardigan|basic-white-linen-shirt": 0.65,
    "ip:basic-red-ballet-flats|basic-red-cardigan": 0.36,
-   "it:pink-textured-turtleneck-jumper": 0.65,
+   "it:pink-textured-turtleneck-jumper": 0.36,
    "ip:khaki-straight-leg-utility-pants|pink-textured-turtleneck-jumper": 0.36,
    "ip:basic-tan-belt|pink-textured-turtleneck-jumper": 0.36,
    "ip:basic-tan-belt|khaki-straight-leg-utility-pants": 0.65,
@@ -101555,35 +101666,35 @@
    "it:emerald-rib-turtleneck-jumper": 0.36,
    "ip:emerald-rib-turtleneck-jumper|green-wool-car-coat": 0.36,
    "ip:emerald-rib-turtleneck-jumper|pink-cord-wide-leg-trousers": 0.36,
-   "ip:emerald-rib-turtleneck-jumper|raspberry-leather-wristlet": 0.36,
+   "ip:emerald-rib-turtleneck-jumper|mabel-lou-blush-tooled-leather-crossbody": 0.36,
    "ip:blush-leather-zip-ankle-boots|emerald-rib-turtleneck-jumper": 0.36,
    "it:green-wool-car-coat": 0.36,
    "ip:green-wool-car-coat|pink-cord-wide-leg-trousers": 0.36,
-   "ip:green-wool-car-coat|raspberry-leather-wristlet": 0.36,
+   "ip:green-wool-car-coat|mabel-lou-blush-tooled-leather-crossbody": 0.36,
    "ip:blush-leather-zip-ankle-boots|green-wool-car-coat": 0.36,
-   "ip:pink-cord-wide-leg-trousers|raspberry-leather-wristlet": 0.36,
+   "ip:mabel-lou-blush-tooled-leather-crossbody|pink-cord-wide-leg-trousers": 0.36,
    "ip:blush-leather-zip-ankle-boots|pink-cord-wide-leg-trousers": 0.36,
-   "it:raspberry-leather-wristlet": 0.91,
-   "ip:blush-leather-zip-ankle-boots|raspberry-leather-wristlet": 0.36,
+   "it:mabel-lou-blush-tooled-leather-crossbody": 0.65,
+   "ip:blush-leather-zip-ankle-boots|mabel-lou-blush-tooled-leather-crossbody": 0.36,
    "it:blush-leather-zip-ankle-boots": 0.36,
    "it:red-orange-cropped-crew-cardigan": 0.36,
-   "ip:raspberry-leather-wristlet|red-orange-cropped-crew-cardigan": 0.36,
+   "ip:mabel-lou-blush-tooled-leather-crossbody|red-orange-cropped-crew-cardigan": 0.36,
    "ip:decjuba-olive-rib-tank|pink-white-wide-stripe-maxi-skirt": 0.36,
-   "ip:decjuba-olive-rib-tank|raspberry-leather-wristlet": 0.36,
+   "ip:decjuba-olive-rib-tank|marcs-baby-pink-crossbody": 0.36,
    "ip:basic-white-flats|decjuba-olive-rib-tank": 0.36,
-   "ip:pink-white-wide-stripe-maxi-skirt|raspberry-leather-wristlet": 0.36,
+   "ip:marcs-baby-pink-crossbody|pink-white-wide-stripe-maxi-skirt": 0.36,
    "ip:basic-white-flats|pink-white-wide-stripe-maxi-skirt": 0.36,
-   "ip:basic-white-flats|raspberry-leather-wristlet": 0.36,
+   "ip:basic-white-flats|marcs-baby-pink-crossbody": 0.36,
    "it:newlook-pink-seersucker-ruffle": 0.36,
    "ip:newlook-pink-seersucker-ruffle|red-a-line-midi-skirt": 0.36,
    "ip:brick-red-leather-hobo|newlook-pink-seersucker-ruffle": 0.36,
    "ip:brick-red-leather-hobo|red-a-line-midi-skirt": 0.36,
    "it:basic-pink-cardigan": 0.36,
    "ip:basic-pink-cardigan|red-a-line-midi-skirt": 0.36,
-   "ip:basic-pink-cardigan|raspberry-eyelet-shoulder-tote": 0.36,
+   "ip:basic-pink-cardigan|marcs-baby-pink-crossbody": 0.36,
    "ip:basic-pink-cardigan|basic-tan-flats": 0.36,
-   "ip:raspberry-eyelet-shoulder-tote|red-a-line-midi-skirt": 0.36,
-   "ip:basic-tan-flats|raspberry-eyelet-shoulder-tote": 0.36,
+   "ip:marcs-baby-pink-crossbody|red-a-line-midi-skirt": 0.36,
+   "ip:basic-tan-flats|marcs-baby-pink-crossbody": 0.36,
    "it:esprit-pink-textured-crew-jumper": 0.65,
    "ip:esprit-pink-textured-crew-jumper|red-a-line-midi-skirt": 0.36,
    "ip:red-a-line-midi-skirt|sussan-pink-fine-knit-crew-jumper": 0.36,
@@ -101610,14 +101721,15 @@
    "ip:basic-black-belt|country-road-pink-linen-shirt": 0.36,
    "ip:basic-black-belt|green-leather-flap-messenger-bag": 0.36,
    "it:burgundy-leather-zip-jacket": 0.65,
-   "ip:burgundy-leather-zip-jacket|pink-textured-turtleneck-jumper": 0.36,
+   "ip:burgundy-leather-zip-jacket|sportsgirl-pale-pink-cropped-knit-jumper": 0.36,
    "cp:pink+wine": 0.36,
    "ip:basic-black-dress-pants|burgundy-leather-zip-jacket": 0.36,
    "cp:black+wine": 0.65,
    "ip:adidas-gazelle-pink|burgundy-leather-zip-jacket": 0.36,
    "cp:white+wine": 0.65,
-   "ip:basic-black-dress-pants|pink-textured-turtleneck-jumper": 0.36,
-   "ip:adidas-gazelle-pink|pink-textured-turtleneck-jumper": 0.36,
+   "it:sportsgirl-pale-pink-cropped-knit-jumper": 0.36,
+   "ip:basic-black-dress-pants|sportsgirl-pale-pink-cropped-knit-jumper": 0.36,
+   "ip:adidas-gazelle-pink|sportsgirl-pale-pink-cropped-knit-jumper": 0.36,
    "ip:adidas-gazelle-pink|basic-black-dress-pants": 0.36,
    "ip:chambray-shirt|red-embroidered-silk-mini-crossbody": 0.65,
    "ip:red-a-line-midi-skirt|red-embroidered-silk-mini-crossbody": 0.36,
@@ -101633,16 +101745,14 @@
    "it:black-leather-flap-crossbody": 1.52,
    "it:acciaio-mustard-cord-blazer": 0.36,
    "ip:acciaio-mustard-cord-blazer|basic-white-linen-shirt": 0.36,
-   "ip:acciaio-mustard-cord-blazer|boden-khaki-slim-cargo-pants": 0.36,
+   "ip:acciaio-mustard-cord-blazer|mocha-rib-knit-wide-pants": 0.36,
    "ip:acciaio-mustard-cord-blazer|basic-tan-crossbody": 0.36,
-   "ip:basic-white-linen-shirt|boden-khaki-slim-cargo-pants": 0.36,
-   "it:boden-khaki-slim-cargo-pants": 0.65,
-   "ip:basic-tan-crossbody|boden-khaki-slim-cargo-pants": 0.65,
+   "ip:basic-white-linen-shirt|mocha-rib-knit-wide-pants": 0.36,
+   "it:mocha-rib-knit-shorts": 0.36,
    "ip:basic-white-tee|basic-yellow-cardigan": 0.65,
-   "ip:basic-yellow-cardigan|boden-khaki-slim-cargo-pants": 0.36,
-   "cp:forest+yellow": 0.36,
+   "ip:basic-yellow-cardigan|mocha-rib-knit-wide-pants": 0.36,
+   "cp:brown+yellow": 0.36,
    "ip:basic-tan-crossbody|basic-yellow-cardigan": 0.65,
-   "ip:basic-white-tee|boden-khaki-slim-cargo-pants": 0.36,
    "ip:daisy-print-wrap-skirt|taupe-leather-biker-jacket": 0.36,
    "ip:basic-black-sneakers|taupe-leather-biker-jacket": 0.36,
    "ip:basic-white-tee|daisy-print-wrap-skirt": 0.36,
@@ -101653,13 +101763,19 @@
    "ip:basic-red-cardigan|red-cream-gingham-wide-trousers": 0.36,
    "ip:basic-red-cardigan|basic-tan-flats": 0.36,
    "ip:basic-white-linen-shirt|red-cream-gingham-wide-trousers": 0.65,
-   "ip:black-cream-breton-stripe-jumper|black-leather-flap-crossbody": 0.36,
+   "it:witchery-black-white-stripe-long-sleeve-tee": 0.36,
+   "ip:uniqlo-black-tapered-trousers|witchery-black-white-stripe-long-sleeve-tee": 0.36,
+   "ip:basic-black-flats|witchery-black-white-stripe-long-sleeve-tee": 0.36,
+   "ip:black-leather-flap-crossbody|witchery-black-white-stripe-long-sleeve-tee": 0.36,
    "ip:basic-black-flats|uniqlo-black-tapered-trousers": 0.65,
    "ip:black-leather-flap-crossbody|uniqlo-black-tapered-trousers": 0.65,
    "ip:basic-black-belt|cos-red-textured-crew-jumper": 0.36,
    "ip:sussan-black-crew-knit-jumper|uniqlo-black-tapered-trousers": 0.36,
    "ip:basic-black-flats|sussan-black-crew-knit-jumper": 0.36,
    "ip:black-leather-flap-crossbody|sussan-black-crew-knit-jumper": 0.36,
+   "ip:stone-belted-trench-coat|sussan-black-crew-knit-jumper": 0.36,
+   "ip:stone-belted-trench-coat|uniqlo-black-tapered-trousers": 0.36,
+   "ip:black-leather-flap-crossbody|stone-belted-trench-coat": 0.36,
    "ip:basic-white-flats|white-linen-shell-tank": 0.36,
    "it:basic-grey-relaxed-tee": 0.36,
    "ip:basic-grey-relaxed-tee|yellow-wool-a-line-mini": 0.36,
@@ -101669,16 +101785,14 @@
    "it:yellow-wool-a-line-mini": 0.36,
    "ip:basic-white-sneakers|yellow-wool-a-line-mini": 0.36,
    "ip:mimco-raffia-clutch|yellow-wool-a-line-mini": 0.36,
-   "ip:green-wide-leg-cords|prada-cobalt-leather-tote": 0.36,
-   "ip:basic-white-sneakers|prada-cobalt-leather-tote": 0.36,
    "ip:country-road-white-tank|green-leather-flap-messenger-bag": 0.36,
    "ip:basic-blue-wide-jeans|green-leather-flap-messenger-bag": 0.65,
    "ip:adidas-gazelle-pink|chambray-shirt": 0.36,
    "ip:adidas-gazelle-pink|khaki-straight-leg-utility-pants": 0.36,
    "ip:adidas-gazelle-pink|mimco-raffia-clutch": 0.36,
    "ip:basic-black-wide-jeans|black-white-stripe-tee": 0.36,
-   "ip:black-white-stripe-tee|red-croc-patent-tote": 0.65,
-   "ip:basic-black-wide-jeans|red-croc-patent-tote": 0.36,
+   "ip:black-white-stripe-tee|calvin-klein-red-camera-crossbody": 0.65,
+   "ip:basic-black-wide-jeans|calvin-klein-red-camera-crossbody": 0.36,
    "it:kelly-green-scoop-cardigan": 0.36,
    "ip:basic-blue-wide-jeans|kelly-green-scoop-cardigan": 0.36,
    "ip:basic-tan-crossbody|kelly-green-scoop-cardigan": 0.36,
@@ -101686,7 +101800,6 @@
    "ip:basic-white-tee|cos-pink-funnel-neck-sweat": 0.36,
    "ip:cos-pink-funnel-neck-sweat|khaki-straight-leg-utility-pants": 0.36,
    "ip:basic-black-sneakers|cos-pink-funnel-neck-sweat": 0.36,
-   "cp:black+coral": 0.36,
    "ip:basic-black-sneakers|khaki-straight-leg-utility-pants": 0.36,
    "ip:basic-blue-straight-jeans|uniqlo-yellow-knit-polo": 0.36,
    "it:orange-fluffy-crew-jumper": 0.36,
@@ -101715,11 +101828,16 @@
    "ip:basic-blue-straight-jeans|basic-red-sneakers": 0.36,
    "ip:basic-blue-straight-jeans|black-leather-flap-crossbody": 0.36,
    "ip:basic-red-sneakers|black-leather-flap-crossbody": 0.65,
-   "ip:basic-red-sneakers|esprit-light-wash-denim-jacket": 0.36,
-   "ip:esprit-light-wash-denim-jacket|red-croc-patent-tote": 0.36,
-   "ip:basic-red-sneakers|red-croc-patent-tote": 2.14,
+   "it:country-road-chambray-snap-shirt": 0.65,
+   "ip:basic-red-sneakers|country-road-chambray-snap-shirt": 0.36,
+   "ip:calvin-klein-red-camera-crossbody|country-road-chambray-snap-shirt": 0.36,
+   "ip:basic-red-sneakers|calvin-klein-red-camera-crossbody": 2.14,
    "ip:basic-white-sneakers|uniqlo-black-tapered-trousers": 0.65,
+   "ip:navy-bow-waist-ruched-collar-coat|uniqlo-black-tapered-trousers": 0.36,
+   "ip:basic-white-sneakers|navy-bow-waist-ruched-collar-coat": 0.36,
    "ip:basic-black-dress-pants|cos-red-textured-crew-jumper": 0.36,
+   "ip:basic-black-dress-pants|stone-belted-trench-coat": 0.36,
+   "ip:cos-red-textured-crew-jumper|stone-belted-trench-coat": 0.36,
    "ip:chambray-shirt|green-wide-leg-cords": 0.36,
    "ip:green-wide-leg-cords|mimco-raffia-clutch": 0.36,
    "ip:esprit-grey-cream-stripe-long-sleeve-top|orange-wide-linen-pants": 0.36,
@@ -101727,7 +101845,6 @@
    "cp:cream+orange": 0.36,
    "it:esprit-grey-cream-stripe-long-sleeve-top": 0.36,
    "ip:chocolate-zip-knit-cardigan|pink-wide-leg-sailor-trousers": 0.36,
-   "cp:brown+pink": 0.36,
    "ip:chambray-shirt|pink-wide-leg-sailor-trousers": 0.36,
    "it:chocolate-zip-knit-cardigan": 0.36,
    "ip:chambray-shirt|chocolate-zip-knit-cardigan": 0.36,
@@ -101743,11 +101860,11 @@
    "cp:grey+sky": 0.36,
    "ip:basic-black-bamboo-wide-crop|basic-green-sneakers": 0.36,
    "ip:basic-grey-cardigan|country-road-white-tank": 0.36,
-   "ip:country-road-white-tank|red-croc-patent-tote": 0.36,
-   "ip:basic-grey-cardigan|red-croc-patent-tote": 0.36,
+   "ip:calvin-klein-red-camera-crossbody|country-road-white-tank": 0.36,
+   "ip:basic-grey-cardigan|calvin-klein-red-camera-crossbody": 0.36,
    "ip:basic-grey-cardigan|red-silk-heeled-mules": 0.36,
-   "ip:red-croc-patent-tote|red-silk-heeled-mules": 0.36,
-   "it:cue-charcoal-blazer": 0.36,
+   "ip:calvin-klein-red-camera-crossbody|red-silk-heeled-mules": 0.36,
+   "it:charcoal-hooded-zip-wool-coat": 0.36,
    "ip:basic-black-blazer|basic-green-sneakers": 0.36,
    "ip:basic-blue-straight-jeans-cropped|basic-green-sneakers": 0.36,
    "ip:black-wool-collared-coat|green-leather-flap-messenger-bag": 0.36,
@@ -101804,7 +101921,7 @@
    "it:black-leather-round-toe-block-pumps": 0.65,
    "ip:basic-blue-wide-jeans|black-white-stripe-tee": 0.36,
    "ip:basic-red-sneakers|black-white-stripe-tee": 0.36,
-   "ip:basic-blue-wide-jeans|red-croc-patent-tote": 0.36,
+   "ip:basic-blue-wide-jeans|calvin-klein-red-camera-crossbody": 0.36,
    "ip:boden-red-gingham-shirt|red-a-line-midi-skirt": 0.36,
    "ip:boden-red-gingham-shirt|tan-woven-espadrille-slides": 0.36,
    "ip:red-a-line-midi-skirt|tan-woven-espadrille-slides": 0.36,
@@ -101884,6 +102001,7 @@
    "it:cream-rib-tank": 0.91,
    "ip:basic-tan-belt|cream-rib-tank": 0.65,
    "ip:birkenstock-brown-milano-sandals|cream-rib-tank": 0.36,
+   "cp:brown+cream": 0.36,
    "ip:basic-tan-belt|birkenstock-brown-milano-sandals": 0.36,
    "it:birkenstock-brown-milano-sandals": 0.91,
    "ip:basic-white-tee|pink-chino-shorts": 0.36,
@@ -101909,8 +102027,9 @@
    "ip:pink-cord-chore-jacket|uniqlo-white-fleece-turtleneck": 0.36,
    "ip:adidas-gazelle-pink|pink-cord-chore-jacket": 0.36,
    "ip:adidas-gazelle-pink|uniqlo-white-fleece-turtleneck": 0.36,
-   "ip:chambray-shirt|uniqlo-black-tapered-trousers": 0.36,
-   "ip:black-leather-ring-handle-hobo|chambray-shirt": 0.36,
+   "ip:country-road-chambray-snap-shirt|uniqlo-black-tapered-trousers": 0.36,
+   "ip:black-leather-ring-handle-hobo|country-road-chambray-snap-shirt": 0.36,
+   "ip:basic-white-sneakers|country-road-chambray-snap-shirt": 0.36,
    "ip:black-leather-ring-handle-hobo|uniqlo-black-tapered-trousers": 0.36,
    "ip:basic-white-sneakers|black-leather-ring-handle-hobo": 0.36,
    "ip:red-cream-gingham-wide-trousers|red-white-stripe-ruffle-top": 0.36,
@@ -101967,10 +102086,10 @@
    "ip:basic-white-linen-shirt|tan-woven-espadrille-slides": 0.36,
    "it:black-white-spot-boatneck-tee": 0.36,
    "ip:black-white-spot-boatneck-tee|red-a-line-midi-skirt": 0.36,
-   "ip:black-white-spot-boatneck-tee|red-croc-patent-tote": 0.36,
+   "ip:black-white-spot-boatneck-tee|calvin-klein-red-camera-crossbody": 0.36,
    "ip:basic-red-sneakers|black-white-spot-boatneck-tee": 0.36,
-   "ip:red-a-line-midi-skirt|red-croc-patent-tote": 0.36,
-   "ip:black-white-spot-linen-shift-dress|red-croc-patent-tote": 0.36,
+   "ip:calvin-klein-red-camera-crossbody|red-a-line-midi-skirt": 0.36,
+   "ip:black-white-spot-linen-shift-dress|calvin-klein-red-camera-crossbody": 0.36,
    "ip:basic-red-sneakers|black-white-spot-linen-shift-dress": 0.36,
    "ip:basic-black-belt|basic-red-cardigan": 0.36,
    "ip:basic-red-cardigan|black-leather-flap-crossbody": 0.36,
@@ -101989,12 +102108,12 @@
    "ip:basic-red-sneakers|cream-denim-tie-belt-midi-skirt": 0.36,
    "ip:boden-navy-military-jacket|red-knit-tee": 0.36,
    "ip:basic-black-belt|boden-navy-military-jacket": 0.36,
-   "ip:boden-navy-military-jacket|red-croc-patent-tote": 0.36,
+   "ip:boden-navy-military-jacket|calvin-klein-red-camera-crossbody": 0.36,
    "ip:basic-black-belt|red-knit-tee": 0.36,
-   "ip:red-croc-patent-tote|red-knit-tee": 0.36,
+   "ip:calvin-klein-red-camera-crossbody|red-knit-tee": 0.36,
    "ip:basic-red-sneakers|red-knit-tee": 0.36,
-   "ip:basic-black-belt|red-croc-patent-tote": 0.65,
-   "ip:red-cotton-shirt|red-croc-patent-tote": 0.36,
+   "ip:basic-black-belt|calvin-klein-red-camera-crossbody": 0.65,
+   "ip:calvin-klein-red-camera-crossbody|red-cotton-shirt": 0.36,
    "it:esprit-navy-tank-maxi-dress": 0.36,
    "ip:esprit-navy-tank-maxi-dress|uniqlo-cream-navy-stripe-crew-jumper": 0.36,
    "ip:esprit-navy-tank-maxi-dress|red-embroidered-silk-mini-crossbody": 0.36,
@@ -102002,7 +102121,7 @@
    "ip:red-embroidered-silk-mini-crossbody|uniqlo-cream-navy-stripe-crew-jumper": 0.36,
    "ip:basic-red-sneakers|uniqlo-cream-navy-stripe-crew-jumper": 0.36,
    "ip:basic-red-sneakers|red-embroidered-silk-mini-crossbody": 0.91,
-   "ip:chambray-shirt|red-croc-patent-tote": 0.36,
+   "ip:calvin-klein-red-camera-crossbody|chambray-shirt": 0.36,
    "it:pale-blue-tipped-knit-tank": 0.36,
    "ip:pale-blue-tipped-knit-tank|red-a-line-midi-skirt": 0.36,
    "ip:basic-red-sneakers|pale-blue-tipped-knit-tank": 0.36,
@@ -102011,21 +102130,21 @@
    "ip:basic-red-sneakers|decjuba-olive-rib-tank": 0.36,
    "ip:basic-tan-belt|red-linen-button-vest": 0.36,
    "ip:khaki-straight-leg-utility-pants|red-linen-button-vest": 0.36,
-   "ip:red-croc-patent-tote|red-linen-button-vest": 0.36,
+   "ip:calvin-klein-red-camera-crossbody|red-linen-button-vest": 0.36,
    "ip:basic-red-sneakers|red-linen-button-vest": 0.36,
-   "ip:basic-tan-belt|red-croc-patent-tote": 0.36,
-   "ip:khaki-straight-leg-utility-pants|red-croc-patent-tote": 0.36,
+   "ip:basic-tan-belt|calvin-klein-red-camera-crossbody": 0.36,
+   "ip:calvin-klein-red-camera-crossbody|khaki-straight-leg-utility-pants": 0.36,
    "ip:basic-red-sneakers|khaki-straight-leg-utility-pants": 0.36,
    "ip:basic-red-cardigan|country-road-white-tank": 0.36,
    "ip:basic-red-cardigan|red-embroidered-silk-mini-crossbody": 0.36,
    "ip:country-road-white-tank|red-embroidered-silk-mini-crossbody": 0.36,
    "ip:basic-red-sneakers|country-road-white-tank": 0.36,
-   "ip:esprit-pink-textured-crew-jumper|red-croc-patent-tote": 0.36,
+   "ip:calvin-klein-red-camera-crossbody|esprit-pink-textured-crew-jumper": 0.36,
    "ip:basic-red-sneakers|esprit-pink-textured-crew-jumper": 0.36,
    "ip:pink-cord-chore-jacket|pink-wide-leg-sailor-trousers": 0.36,
-   "ip:pink-cord-chore-jacket|red-croc-patent-tote": 0.36,
+   "ip:calvin-klein-red-camera-crossbody|pink-cord-chore-jacket": 0.36,
    "ip:basic-red-sneakers|pink-cord-chore-jacket": 0.36,
-   "ip:pink-wide-leg-sailor-trousers|red-croc-patent-tote": 0.36,
+   "ip:calvin-klein-red-camera-crossbody|pink-wide-leg-sailor-trousers": 0.36,
    "ip:basic-red-sneakers|pink-wide-leg-sailor-trousers": 0.36,
    "ip:black-white-stripe-tee|red-double-breasted-blazer": 0.36,
    "ip:basic-blue-straight-jeans|red-double-breasted-blazer": 0.36,
