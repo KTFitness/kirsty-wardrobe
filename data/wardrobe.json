@@ -8590,7 +8590,7 @@
     "Winter",
     "Spring"
    ],
-   "notes": "Roll turtleneck, long fitted sleeves, slim body. Your photo.",
+   "notes": "Soft jersey, fold-over roll neck, long fitted sleeves, slim body with side splits. Your photo.",
    "img": "img/black-fitted-turtleneck-top.webp"
   },
   {
@@ -13788,6 +13788,128 @@
    ],
    "notes": "Cotton jersey, crew neck, relaxed body, curved hem. Your photo.",
    "img": "img/raspberry-pink-long-sleeve-tee.webp"
+  },
+  {
+   "id": "adidas-black-zip-hoodie",
+   "name": "Adidas black zip hoodie",
+   "category": "activewear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Scuba-style knit, full zip, hood, zip pockets, thumbhole cuffs, deep hem band, tonal logo. Your photo.",
+   "img": "img/adidas-black-zip-hoodie.webp",
+   "sub": "ajacket",
+   "walkRole": "mid"
+  },
+  {
+   "id": "adidas-black-straight-trackpants",
+   "name": "Adidas black straight-leg trackpants",
+   "category": "activewear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Fleece, elastic waist with drawcord, zip pockets, straight leg with cuffed hem, tonal logo. Your photo.",
+   "img": "img/adidas-black-straight-trackpants.webp",
+   "sub": "abottom"
+  },
+  {
+   "id": "black-white-buffalo-check-linen-shorts",
+   "name": "Black and white check linen shorts",
+   "category": "shorts",
+   "colours": [
+    "black",
+    "white"
+   ],
+   "pattern": "large check",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Big buffalo check, slubby linen blend, elastic back waist, side pockets, mid-thigh. Your photo.",
+   "img": "img/black-white-buffalo-check-linen-shorts.webp",
+   "shape": "shorts"
+  },
+  {
+   "id": "navy-high-waist-leggings",
+   "name": "Navy high-waist leggings",
+   "category": "activewear",
+   "colours": [
+    "navy"
+   ],
+   "pattern": "solid",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Full length, wide high waistband, smooth matte fabric. Your photo.",
+   "img": "img/navy-high-waist-leggings.webp",
+   "sub": "abottom"
+  },
+  {
+   "id": "black-ponte-slim-pull-on-pants",
+   "name": "Black ponte slim pull-on pants",
+   "category": "trousers",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Thick ponte, flat front with pleats, side zip, slim ankle-length leg. Your photo.",
+   "img": "img/black-ponte-slim-pull-on-pants.webp",
+   "sub": "straight",
+   "hem": "full"
+  },
+  {
+   "id": "charcoal-rib-knit-wide-lounge-pants",
+   "name": "Charcoal rib-knit wide lounge pants",
+   "category": "activewear",
+   "colours": [
+    "charcoal grey"
+   ],
+   "pattern": "solid",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Soft rib knit, drawstring waist, side pockets, straight wide leg. Your photo.",
+   "img": "img/charcoal-rib-knit-wide-lounge-pants.webp",
+   "sub": "abottom"
+  },
+  {
+   "id": "charcoal-marle-long-sleeve-tee",
+   "name": "Charcoal marle long-sleeve tee",
+   "category": "tops",
+   "colours": [
+    "charcoal grey"
+   ],
+   "pattern": "solid",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Soft jersey, rib crew neck and cuffs, relaxed fit. Your photo.",
+   "img": "img/charcoal-marle-long-sleeve-tee.webp"
   }
  ],
  "outfits": [
