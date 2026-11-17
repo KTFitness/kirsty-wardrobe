@@ -14125,6 +14125,72 @@
    ],
    "notes": "Epaulettes, storm flap, navy buttons, tab cuffs, tie belt, knee length. Your photo.",
    "img": "img/edc-red-trench-coat.webp"
+  },
+  {
+   "id": "navy-bow-waist-ruched-collar-coat",
+   "name": "Navy wool coat with bow waist and ruched collar",
+   "category": "outerwear",
+   "colours": [
+    "navy"
+   ],
+   "pattern": "solid",
+   "fabric": "wool blend",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Gathered stand collar with pale blue lining, grosgrain bow band at the empire waist, chain-detail buttons, A-line, knee length. Your photo.",
+   "img": "img/navy-bow-waist-ruched-collar-coat.webp"
+  },
+  {
+   "id": "black-spot-hem-peter-pan-coat",
+   "name": "Black Peter Pan collar coat with white spot hem",
+   "category": "outerwear",
+   "colours": [
+    "black",
+    "white"
+   ],
+   "pattern": "large spot",
+   "fabric": "wool blend",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Peter Pan collar, filigree buttons, pleated empire waist, two rows of big white felt spots at the hem, raspberry lining, knee length. Your photo.",
+   "img": "img/black-spot-hem-peter-pan-coat.webp"
+  },
+  {
+   "id": "pink-tweed-flap-pocket-coat",
+   "name": "Pink tweed coat with flap pockets",
+   "category": "outerwear",
+   "colours": [
+    "dusty pink",
+    "cream"
+   ],
+   "pattern": "tweed",
+   "fabric": "wool blend",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Notch lapels, three buttons, big flap pockets, button cuff tabs, fitted, knee length. Your photo.",
+   "img": "img/pink-tweed-flap-pocket-coat.webp"
+  },
+  {
+   "id": "charcoal-hooded-zip-wool-coat",
+   "name": "Charcoal hooded zip wool coat",
+   "category": "outerwear",
+   "colours": [
+    "charcoal grey"
+   ],
+   "pattern": "solid",
+   "fabric": "wool blend",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Hood, two-way zip, side pockets, straight cut, below the knee. Your photo.",
+   "img": "img/charcoal-hooded-zip-wool-coat.webp"
   }
  ],
  "outfits": [
