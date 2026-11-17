@@ -13910,6 +13910,225 @@
    ],
    "notes": "Soft jersey, rib crew neck and cuffs, relaxed fit. Your photo.",
    "img": "img/charcoal-marle-long-sleeve-tee.webp"
+  },
+  {
+   "id": "mocha-rib-knit-tube-skirt",
+   "name": "Mocha rib-knit tube skirt",
+   "category": "skirts",
+   "colours": [
+    "mocha brown"
+   ],
+   "pattern": "rib",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Fitted rib-knit tube, no waistband, knee length. Part of a mocha rib-knit set (tube skirt, sleeveless top, long-sleeve top, shorts, wide pants). Your photo.",
+   "img": "img/mocha-rib-knit-tube-skirt.webp"
+  },
+  {
+   "id": "mocha-rib-knit-sleeveless-mock-neck-top",
+   "name": "Mocha rib-knit sleeveless mock-neck top",
+   "category": "tops",
+   "colours": [
+    "mocha brown"
+   ],
+   "pattern": "rib",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Mock neck, sleeveless, boxy cropped, raw edges. Part of a mocha rib-knit set (tube skirt, sleeveless top, long-sleeve top, shorts, wide pants). Your photo.",
+   "img": "img/mocha-rib-knit-sleeveless-mock-neck-top.webp"
+  },
+  {
+   "id": "mocha-rib-knit-mock-neck-long-sleeve-top",
+   "name": "Mocha rib-knit mock-neck long-sleeve top",
+   "category": "knitwear",
+   "colours": [
+    "mocha brown"
+   ],
+   "pattern": "rib",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Mock neck, long sleeves, side seams, boxy cropped, raw hem. Part of a mocha rib-knit set (tube skirt, sleeveless top, long-sleeve top, shorts, wide pants). Your photo.",
+   "img": "img/mocha-rib-knit-mock-neck-long-sleeve-top.webp"
+  },
+  {
+   "id": "mocha-rib-knit-shorts",
+   "name": "Mocha rib-knit shorts",
+   "category": "shorts",
+   "colours": [
+    "mocha brown"
+   ],
+   "pattern": "rib",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn"
+   ],
+   "notes": "Wide rib waistband, mid-thigh, raw hem. Part of a mocha rib-knit set (tube skirt, sleeveless top, long-sleeve top, shorts, wide pants). Your photo.",
+   "img": "img/mocha-rib-knit-shorts.webp",
+   "shape": "shorts"
+  },
+  {
+   "id": "mocha-rib-knit-wide-pants",
+   "name": "Mocha rib-knit wide pants",
+   "category": "trousers",
+   "colours": [
+    "mocha brown"
+   ],
+   "pattern": "rib",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Wide rib waistband with white cord, wide cropped leg, raw hem. A few dark marks on the front. Part of a mocha rib-knit set (tube skirt, sleeveless top, long-sleeve top, shorts, wide pants). Your photo.",
+   "img": "img/mocha-rib-knit-wide-pants.webp",
+   "sub": "wide",
+   "hem": "crop"
+  },
+  {
+   "id": "black-crepe-v-neck-maxi-dress",
+   "name": "Black crepe V-neck maxi dress",
+   "category": "dresses",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "seasons": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Wide straps, deep V front and back, princess seams, fitted to the hip, fishtail hem. Dressy. Your photo.",
+   "img": "img/black-crepe-v-neck-maxi-dress.webp",
+   "formality": 3
+  },
+  {
+   "id": "ckm-black-double-breasted-coat",
+   "name": "CKM black double-breasted coat",
+   "category": "outerwear",
+   "colours": [
+    "black"
+   ],
+   "pattern": "solid",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Notch lapels, double-breasted, fitted, tie belt, mid-thigh. Your photo.",
+   "img": "img/ckm-black-double-breasted-coat.webp"
+  },
+  {
+   "id": "stone-belted-trench-coat",
+   "name": "Stone belted trench coat",
+   "category": "outerwear",
+   "colours": [
+    "stone"
+   ],
+   "pattern": "solid",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Storm flap, puff shoulders, single-breasted, patch pockets, tab cuffs, belt with black buckle, knee length. Your photo.",
+   "img": "img/stone-belted-trench-coat.webp",
+   "walkRole": "rain-light"
+  },
+  {
+   "id": "sage-green-trench-coat",
+   "name": "Sage green single-breasted trench coat",
+   "category": "outerwear",
+   "colours": [
+    "sage green"
+   ],
+   "pattern": "solid",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Notch lapels, tortoiseshell buttons, buttoned cuffs, tie belt, fitted, knee length. Your photo.",
+   "img": "img/sage-green-trench-coat.webp",
+   "walkRole": "rain-light"
+  },
+  {
+   "id": "orange-cream-black-geometric-tweed-coat",
+   "name": "Orange, cream and black geometric tweed coat",
+   "category": "outerwear",
+   "colours": [
+    "cream",
+    "orange",
+    "black",
+    "tan"
+   ],
+   "pattern": "geometric",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Boucle tweed in a retro square pattern, small collar, wooden buttons, half belt at back, knee length. Your photo.",
+   "img": "img/orange-cream-black-geometric-tweed-coat.webp"
+  },
+  {
+   "id": "tan-black-check-wool-coat",
+   "name": "Tan and black check wool coat",
+   "category": "outerwear",
+   "colours": [
+    "tan",
+    "black",
+    "cream"
+   ],
+   "pattern": "check",
+   "seasons": [
+    "Autumn",
+    "Winter"
+   ],
+   "notes": "Classic collar, big dark buttons, straight cut, mid-thigh. Your photo.",
+   "img": "img/tan-black-check-wool-coat.webp"
+  },
+  {
+   "id": "blush-car-coat",
+   "name": "Blush pink car coat",
+   "category": "outerwear",
+   "colours": [
+    "blush pink"
+   ],
+   "pattern": "solid",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Cotton sateen, shirt collar, concealed button placket, raglan sleeves, deep cuffs, knee length. Your photo.",
+   "img": "img/blush-car-coat.webp"
+  },
+  {
+   "id": "edc-red-trench-coat",
+   "name": "edc red double-breasted trench coat",
+   "category": "outerwear",
+   "colours": [
+    "red"
+   ],
+   "pattern": "solid",
+   "seasons": [
+    "Autumn",
+    "Winter",
+    "Spring"
+   ],
+   "notes": "Epaulettes, storm flap, navy buttons, tab cuffs, tie belt, knee length. Your photo.",
+   "img": "img/edc-red-trench-coat.webp",
+   "walkRole": "rain-light"
   }
  ],
  "outfits": [
