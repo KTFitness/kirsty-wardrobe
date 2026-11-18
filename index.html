@@ -188,11 +188,11 @@ dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
 </nav>
 <dialog class="sheet" id="sheet"><div class="sheet-in" id="sheetBody"></div></dialog>
 
-<script src="style.js?v=202611181207"></script>
+<script src="style.js?v=202611181215"></script>
 <script>
 /* Home-screen apps hold on to old copies. On open, check version.txt; if a newer version is live, refresh the cached files and reload once. */
 if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{});});}
-const APPV="202611181207";
+const APPV="202611181215";
 fetch("version.txt",{cache:"no-store"}).then(r=>r.ok?r.text():"").then(v=>{v=v.trim();if(!v||v===APPV)return;
   let tried="";try{tried=sessionStorage.getItem("kw:upd")||"";}catch(e){}if(tried===v)return;try{sessionStorage.setItem("kw:upd",v);}catch(e){}
   Promise.all([fetch("index.html",{cache:"reload"}),fetch("./",{cache:"reload"})]).catch(()=>{}).then(()=>location.reload());}).catch(()=>{});
@@ -236,7 +236,7 @@ S.sort=LS.get("sort","colour");
 let trips=LS.get("trips",[]);S.isort=LS.get("isort","new");
 function saveTrips(t){if(t)t.updated=Date.now();LS.set("trips",trips);}
 let IDX=new Map();
-function applyGone(){for(const i of (D.all||[])){const f=catFix[i.id];if(f){if(!i._orig)i._orig={category:i.category,sub:i.sub};i.category=f.category;if(f.sub)i.sub=f.sub;else delete i.sub;}else if(i._orig){i.category=i._orig.category;if(i._orig.sub)i.sub=i._orig.sub;else delete i.sub;delete i._orig;}delete i._sk;delete i._fv;delete i._f;}
+function applyGone(){for(const i of (D.all||[])){const f=catFix[i.id];if(f){if(!i._orig)i._orig={category:i.category,sub:i.sub};i.category=f.category;if(f.sub)i.sub=f.sub;else delete i.sub;}else if(i._orig){i.category=i._orig.category;if(i._orig.sub)i.sub=i._orig.sub;else delete i.sub;delete i._orig;}delete i._sk;delete i._fv;delete i._f;delete i._st;}
   D.items=(D.all||[]).filter(i=>!gone.includes(i.id));IDX=new Map(D.items.map(i=>[i.id,i]));DV++;}
 
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -515,7 +515,7 @@ function vBuild(){
   ${(()=>{const q=(S.bq||"").trim().toLowerCase();S.bOpen=S.bOpen||{};
    return CATS.filter(([k])=>D.items.some(i=>dcat(i)===k)).map(([k,v])=>{
     const all=arrange(D.items.filter(i=>dcat(i)===k));
-    const list=q?all.filter(i=>(i.name+" "+(i.colours||[]).join(" ")+" "+(i.pattern||"")+" "+(i.fabric||"")+" "+subLabel(i)).toLowerCase().includes(q)):all;
+    const list=q?all.filter(i=>itemMatch(i,q)):all;
     if(q&&!list.length)return "";
     const chosen=all.filter(i=>b.itemIds.includes(i.id));const open=q?true:!!S.bOpen[k];
     return `<div class="catsec"><button type="button" class="cathead" data-bsec="${k}" aria-expanded="${open}"><span class="gn">${v}</span>
@@ -524,7 +524,7 @@ function vBuild(){
 }
 function pickGrid(){
   const q=S.q.trim().toLowerCase();
-  const own0=D.items.filter(i=>(S.pickCat==="basics"?i.basic:!i.basic)&&(S.pickCat==="all"||S.pickCat==="basics"||dcat(i)===S.pickCat)&&(!q||(i.name+" "+(i.colours||[]).join(" ")+" "+(i.pattern||"")+" "+subLabel(i)).toLowerCase().includes(q))).concat(S.pickCat==="outerwear"?D.items.filter(i=>i.overshirt&&!i.basic&&(!q||i.name.toLowerCase().includes(q))).map(asOver):[]);S.pfac=S.pfac||{};const own1=S.pickSub&&S.pickCat!=="all"&&S.pickCat!=="basics"?own0.filter(i=>subKey(i)===S.pickSub):own0;const own=arrange(S.pickCat!=="all"&&S.pickCat!=="basics"?facetFilter(S.pickCat,own1,S.pfac):own1);
+  const own0=D.items.filter(i=>(S.pickCat==="basics"?i.basic:!i.basic)&&(S.pickCat==="all"||S.pickCat==="basics"||dcat(i)===S.pickCat)&&(!q||itemMatch(i,q))).concat(S.pickCat==="outerwear"?D.items.filter(i=>i.overshirt&&!i.basic&&(!q||i.name.toLowerCase().includes(q))).map(asOver):[]);S.pfac=S.pfac||{};const own1=S.pickSub&&S.pickCat!=="all"&&S.pickCat!=="basics"?own0.filter(i=>subKey(i)===S.pickSub):own0;const own=arrange(S.pickCat!=="all"&&S.pickCat!=="basics"?facetFilter(S.pickCat,own1,S.pfac):own1);
   const counts={};D.items.filter(i=>!i.basic).forEach(i=>counts[dcat(i)]=(counts[dcat(i)]||0)+1);
   return `<h2>Style me</h2><p class="lede">Pick one piece and the app puts outfits together around it.</p>
   <label class="f">Search<input id="sq" type="search" value="${esc(S.q)}" placeholder="e.g. green, stripe, skirt"></label>
@@ -656,6 +656,10 @@ function devMerge(txt){const i=txt.indexOf("{");if(i<0)throw new Error("no data"
   const added=taste.liked.length+taste.disliked.length-before,ad2=mine.length-bm;
   return `Merged. ${added} new rating${added===1?"":"s"} and ${ad2} new saved outfit${ad2===1?"":"s"} added to this device${trips.length>bt?`, plus ${trips.length-bt} trip${trips.length-bt===1?"":"s"}`:""}.`;}
 /* Inspo search: every word must appear in the look's name, description, wishlist or the names, colours and patterns of its pieces. */
+const SYN={jumper:"jumper sweater pullover",sweater:"jumper sweater pullover",pant:"pant trouser",trouser:"pant trouser",tee:"tee t-shirt",tshirt:"tee t-shirt",cardi:"cardigan",coat:"coat jacket outerwear",jacket:"jacket coat blazer outerwear",shoe:"shoe sneaker boot sandal heel flat loafer",trainer:"trainer sneaker",sneaker:"sneaker trainer",grey:"grey gray",gray:"grey gray"};
+function qWords(q){return (q||"").toLowerCase().split(/[\s,]+/).filter(Boolean).map(w=>{w=w.replace(/'s$/,"");return w.length>3&&/s$/.test(w)&&!/(ss|us)$/.test(w)?w.slice(0,-1):w;});}
+function itemText(i){if(i._st)return i._st;let fam=[];try{fam=(Stylist.families(i)||[])}catch(e){}return i._st=[i.name,i.brand||"",(i.colours||[]).join(" "),[].concat(fam).join(" "),i.pattern||"",i.fabric||"",i.shape||"",subLabel(i),CATNAME[dcat(i)]||"",i.category||""].join(" ").toLowerCase();}
+function itemMatch(i,q){const ws=qWords(q);if(!ws.length)return true;const t=itemText(i);return ws.every(w=>(SYN[w]||w).split(" ").some(x=>t.includes(x)));}
 function inspoText(p){if(!p._t||p._tv!==JSON.stringify(inspoEdits[p.id]||"")){p._tv=JSON.stringify(inspoEdits[p.id]||"");p._t=[p.name,p.summary,(p.missing||[]).join(" "),iIds(p).map(byId).filter(Boolean).map(i=>[i.name,subLabel(i),facetsOf(dcat(i)).map(([k,l,o,fn])=>(o.find(x=>x[0]===fn(i))||[])[1]||"").join(" "),(i.colours||[]).join(" "),i.pattern||"",i.fabric||"",CATNAME[dcat(i)]||""].join(" ")).join(" ")].join(" ").toLowerCase();}return p._t;}
 function inspoList(){const q=(S.iq||"").toLowerCase().split(/[\s,]+/).filter(Boolean).map(w=>w.replace(/s$/,""));const f=S.ifilt||"all",LC=likedCores(),se=todaySeason();
   let L=D.inspo.map((p,k)=>({p,k})).filter(({p})=>!inspoGone.includes(p.id));
@@ -753,7 +757,7 @@ function addedMsg(t){sheetBody.innerHTML=`<div class="sheet-head"><h2>Added</h2>
   <div class="row"><button class="btn" type="button" data-tripgo="${esc(t.id)}">Open the trip</button><button class="btn ghost" type="button" data-close>Keep going</button></div>`;}
 function likedPicker(){const t=tripById(S.tripId);if(!t)return;const q=(S.tq||"").trim().toLowerCase();
   const L=allOutfits().filter(o=>isLiked(o)&&!hidden.includes(o.id)).reverse();
-  const M=q?L.filter(o=>(o.itemIds||[]).map(byId).filter(Boolean).some(i=>(i.name+" "+(i.colours||[]).join(" ")+" "+(i.pattern||"")).toLowerCase().includes(q))):L;
+  const M=q?L.filter(o=>(o.itemIds||[]).map(byId).filter(Boolean).some(i=>itemMatch(i,q))):L;
   return `<p class="status" style="margin:0">${q?M.length+" found":"Your "+L.length+" liked outfits, newest first"}. Tap one to add it to ${esc(t.name)}.</p>
    <div class="minigrid">${M.slice(0,90).map(o=>`<div role="button" tabindex="0" class="mini" data-pickliked="${esc(o.id)}">${collage(o.itemIds||[],keyPiece(o)&&keyPiece(o).id)}<span>${esc(o.name||"Outfit")}</span></div>`).join("")}</div>
    ${M.length>90?`<p class="status">Showing 90. Search for a piece to narrow it down.</p>`:""}`;}
@@ -862,7 +866,8 @@ document.addEventListener("change",e=>{const el=e.target;if(el.id==="mvCat"){con
     if(el.dataset.tpack){const s=new Set(tr.packed||[]);el.checked?s.add(el.dataset.tpack):s.delete(el.dataset.tpack);tr.packed=[...s];saveTrips(tr);return;}
     const l=tr.looks.find(x=>x.id===(el.dataset.tlabel||el.dataset.tday));if(!l)return;if(el.dataset.tlabel)l.label=el.value;else{l.day=el.value;}saveTrips(tr);if(el.dataset.tday)render();return;}
 if(e.target.id==="pairWith"){S.with=e.target.value||null;S.withFor=S.anchor;S.seed=1;S.shown=[];render();return;}if(e.target.id==="useRules"){useRules=e.target.checked;LS.set("useRules",useRules);render();}});
-document.addEventListener("input",e=>{if(e.target.id==="iq"){S.iq=e.target.value;clearTimeout(S.iqT);S.iqT=setTimeout(()=>{const cur=$("#iq"),pos=cur?cur.selectionStart:0;render();const el=$("#iq");if(el){el.focus();el.setSelectionRange(pos,pos);}},300);return;}if(e.target.id==="tq"){S.tq=e.target.value;const r=$("#tqRes");if(r)r.innerHTML=likedPicker();return;}if(e.target.id==="bq"){S.bq=e.target.value;const pos=e.target.selectionStart;render();const el=$("#bq");if(el){el.focus();el.setSelectionRange(pos,pos);}return;}if(e.target.id==="sq"){S.q=e.target.value;const pos=e.target.selectionStart;render();const el=$("#sq");if(el){el.focus();el.setSelectionRange(pos,pos);}}});
+document.addEventListener("keydown",e=>{if(e.key==="Enter"&&["sq","bq","iq","tq"].includes(e.target.id)){e.preventDefault();e.target.blur();clearTimeout(S.sqT);clearTimeout(S.bqT);clearTimeout(S.iqT);render();}});
+document.addEventListener("input",e=>{if(e.target.id==="iq"){S.iq=e.target.value;clearTimeout(S.iqT);S.iqT=setTimeout(()=>{const cur=$("#iq"),pos=cur?cur.selectionStart:0;render();const el=$("#iq");if(el){el.focus();el.setSelectionRange(pos,pos);}},300);return;}if(e.target.id==="tq"){S.tq=e.target.value;const r=$("#tqRes");if(r)r.innerHTML=likedPicker();return;}if(e.target.id==="bq"){S.bq=e.target.value;clearTimeout(S.bqT);S.bqT=setTimeout(()=>{const cur=$("#bq"),pos=cur?cur.selectionStart:0,had=document.activeElement===cur;render();const el=$("#bq");if(el&&had){el.focus();try{el.setSelectionRange(pos,pos)}catch(_){}}},350);return;}if(e.target.id==="sq"){S.q=e.target.value;clearTimeout(S.sqT);S.sqT=setTimeout(()=>{const cur=$("#sq"),pos=cur?cur.selectionStart:0,had=document.activeElement===cur;render();const el=$("#sq");if(el&&had){el.focus();try{el.setSelectionRange(pos,pos)}catch(_){}}},350);}});
 document.addEventListener("click",async e=>{
   const t=e.target.closest("button,[role=button]");if(!t)return;
   if(t.dataset.tab){if(t.closest("nav.tabs")&&t.dataset.tab==="trips"&&S.tab==="trips"){S.tripId=null;S.tripEdit=false;}S.tab=t.dataset.tab;render();window.scrollTo(0,0);return;}
