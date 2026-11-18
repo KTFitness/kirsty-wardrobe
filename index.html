@@ -188,11 +188,11 @@ dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
 </nav>
 <dialog class="sheet" id="sheet"><div class="sheet-in" id="sheetBody"></div></dialog>
 
-<script src="style.js?v=202611171146"></script>
+<script src="style.js?v=202611181207"></script>
 <script>
 /* Home-screen apps hold on to old copies. On open, check version.txt; if a newer version is live, refresh the cached files and reload once. */
 if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{});});}
-const APPV="202611171146";
+const APPV="202611181207";
 fetch("version.txt",{cache:"no-store"}).then(r=>r.ok?r.text():"").then(v=>{v=v.trim();if(!v||v===APPV)return;
   let tried="";try{tried=sessionStorage.getItem("kw:upd")||"";}catch(e){}if(tried===v)return;try{sessionStorage.setItem("kw:upd",v);}catch(e){}
   Promise.all([fetch("index.html",{cache:"reload"}),fetch("./",{cache:"reload"})]).catch(()=>{}).then(()=>location.reload());}).catch(()=>{});
@@ -614,7 +614,7 @@ function vStyle(){
   ${offSeason?`<div class="notice">This piece is usually a ${esc(a.seasons.join("/").toLowerCase())} piece, so these are stretch ideas.</div>`:""}
   ${S.lastRes.length?`<div class="ogrid">${S.lastRes.map((o,k)=>`<article class="ocard">${collage(o.itemIds,a.id)}<div class="meta"><div class="nm">${k===0&&res[0].set?"The matching set":"Idea "+(k+1)}</div>
    <p class="why">${esc(o.why)}</p>${(()=>{const t=Stylist.layerTip(o.itemIds.map(byId).filter(Boolean));return t?`<p class="tip">${esc(t)}</p>`:"";})()}<p class="why" style="font-size:12px">${esc([a.id].concat(o.itemIds.filter(id=>id!==a.id)).map(id=>byId(id)).filter(Boolean).map(i=>i.name).join(" · "))}</p>
-   ${accBar("g"+k,o)}<div class="row"><button class="btn" type="button" data-like="${k}">Like</button><button class="btn ghost" type="button" data-nope="${k}">Not for me</button>${addBtn(o.itemIds,o.name)}<button class="iconbtn" type="button" data-copygen="${k}">${S.copied===o.id?"Copied":"Copy for Claude"}</button></div></div></article>`).join("")}</div>
+   ${accBar("g"+k,o)}<div class="row"><button class="btn" type="button" data-like="${k}">Like</button><button class="btn ghost" type="button" data-nope="${k}">Not for me</button>${wornBtn(o)}${addBtn(o.itemIds,o.name)}<button class="iconbtn" type="button" data-copygen="${k}">${S.copied===o.id?"Copied":"Copy for Claude"}</button></div></div></article>`).join("")}</div>
    <div class="row"><button class="btn ghost" type="button" id="more">Show me different ideas</button></div>
    ${likedFor(a)}${nopedFor(a)}${blockedPanel()}`
    :`<div class="empty"><strong>No new ideas left for this piece</strong><span>You've rated every combination the app can make with it right now. Your liked ones are below, and the "Changed your mind?" list is at the bottom. Try another season or occasion, or pick a piece in "Pair it with".</span></div>${likedFor(a)}${nopedFor(a)}`}`;
@@ -819,7 +819,7 @@ function vRate(){
   <div class="chips" role="group" aria-label="Season" style="margin-top:6px">${chip("season","now","This season")}${chip("season","any","Any season")}</div>
   <p class="lede" style="margin:10px 0 6px">${Q.n} rated this session${Q.n?` · ${Q.likes} liked`:""}</p>
   ${o?`<article class="ocard qcard">${collage(o.itemIds)}<div class="meta"><div class="tags"><span class="tag">${esc(o.occasions[0])}</span><span class="tag">${esc(o.season)}</span></div>
-   <p class="why" style="margin:6px 0">${P.map(p=>esc(p.name)).join(" · ")}</p>${o.why?`<p class="why">${esc(o.why)}</p>`:""}${accBar("qr",o)}</div></article>
+   <p class="why" style="margin:6px 0">${P.map(p=>esc(p.name)).join(" · ")}</p>${o.why?`<p class="why">${esc(o.why)}</p>`:""}${accBar("qr",o)}<div class="row" style="margin-top:6px">${wornBtn(o)}</div></div></article>
    <div class="qbar"><button class="btn ghost" type="button" data-qrate="-1">Not for me</button><button class="btn ghost" type="button" data-qrate="0">Skip</button><button class="btn" type="button" data-qrate="1">Like</button></div>`
    :`<div class="empty"><strong>Nothing new to show with these settings.</strong> Try Any season or a different occasion.</div>`}
   <div class="row" style="margin-top:10px">${Q.hist.length?`<button class="iconbtn" type="button" id="qrUndo">Undo last</button>`:""}${Q.lastNo?`<button class="iconbtn" type="button" id="qrWhy">Say why I said no to the last one</button>`:""}</div>`;}

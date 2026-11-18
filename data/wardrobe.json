@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-17",
+ "updated": "2026-11-18",
  "occasions": [
   "Everyday",
   "Lunch out",
@@ -83288,6 +83288,19 @@
    ],
    "liked": true,
    "why": "You liked this in Style me."
+  },
+  {
+   "id": "liked-pink-seersucker-dusty-mini",
+   "name": "With the dusty pink A-line mini skirt",
+   "itemIds": [
+    "newlook-pink-seersucker-ruffle",
+    "dusty-pink-a-line-mini-skirt"
+   ],
+   "occasions": [
+    "Everyday"
+   ],
+   "liked": true,
+   "why": "Added by Kirsty."
   }
  ],
  "inspo": [
