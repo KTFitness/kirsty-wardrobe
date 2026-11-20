@@ -71,6 +71,16 @@ const isVest=it=>(it.category==="knitwear"&&/vest/.test(lc(it)))||/waistcoat/.te
 const longSleeve=it=>/long-sleeve|long sleeve|three-quarter sleeve|long balloon|turtleneck|jumper|sweat|funnel|cardigan|blazer|jacket|coat/.test(lc(it));
 // A busy piece (Ghanda checkerboard cardigan) only goes with block colours: no second pattern of any kind.
 const busyClash=ps=>{const cl=ps.filter(p=>p&&!["shoes","bags","accessories"].includes(p.category));return cl.some(p=>p.busy)&&cl.filter(p=>pkind(p)).length>1;};
+const HEAVY=/jumper|sweater|sweat|fleece|turtleneck|roll-neck|mock-neck|funnel|cardigan|blazer|jacket|coat|puffer|parka|poncho|cape|\bwool|\bcords?\b|corduroy|velvet|boucl|tweed|felt|ponte|boots?\b|clogs?\b|moccasin/;
+function tempOk(it,tmax){if(tmax==null||!it)return true;const c=it.category,t=lc(it);
+  if(["bags","accessories","activewear"].includes(c))return true;
+  if(tmax>=21){
+    if(c==="outerwear")return /shirt/.test(t)&&/linen|cotton|chambray/.test(t)&&tmax<24;
+    if(HEAVY.test(t)&&!(sleeveless(it)&&!/wool|fleece|boucl|velvet|cord/.test(t)))return false;
+    if(tmax>=22&&["tops","knitwear","dresses","playsuits"].includes(c)&&longSleeve(it)&&!/shirt|blouse/.test(t))return false;
+    if(tmax>=22&&/long-sleeve|long sleeve/.test(t)&&/knit|rib|tee/.test(t))return false;}
+  if(tmax<18&&c==="shorts")return false;
+  return true;}
 const isWarmLayer=it=>it.category==="outerwear"||(it.category==="knitwear"&&/cardigan/.test(lc(it)));
 const isUnder=it=>(it.category==="tops"||it.category==="knitwear")&&/basic-white-tee|basic-white-fitted-tee|basic-black-tee|basic-grey-tee|basic-black-relaxed-tee|basic-grey-relaxed-tee|basic-white-ls-crew|basic-pale-pink-ls|basic-white-linen|basic-black-turtleneck|fleece-turtleneck|uniqlo-light-blue-turtleneck|mock-neck|stripe long-sleeve|breton long-sleeve|navy-stripe-long/.test(it.id+" "+lc(it))&&!sleeveless(it);
 const inSeason=(it,season)=>!it.seasons||!it.seasons.length||it.seasons.includes(season);
@@ -268,7 +278,7 @@ function hairTip(pieces){const t=pieces.find(p=>p.category==="dresses")||pieces.
   return "";}
 
 const notActive=i=>i&&i.category!=="activewear";
-function suggest(anchor,items,ctx){if(!notActive(anchor))return [];items=items.filter(notActive);
+function suggest(anchor,items,ctx){if(!notActive(anchor))return [];items=items.filter(notActive);if(ctx&&ctx.tmax!=null)items=items.filter(i=>i===anchor||tempOk(i,ctx.tmax));
   const W=ctx.W||{};ctx.W=W;ctx.n=ctx.n||0;if(ctx.baseOnly)ctx.noAccessories=true;
   const seen={};(ctx.shown||[]).forEach(id=>seen[id]=(seen[id]||0)+1);
   const fresh=p=>p.reduce((t,x)=>t-(x.id!==anchor.id&&!['shoes','bags','accessories'].includes(x.category)?Math.min(seen[x.id]||0,4)*3:0),0);
@@ -484,5 +494,5 @@ const FACETS={
   ["bootH","Boot height",[["ankle","Ankle"],["calf","Calf"],["knee","Knee"]],i=>{if(i.bootH)return i.bootH;const t=txt(i);if(!/boot/.test(t))return null;if(/knee/.test(t))return "knee";if(/calf/.test(t))return "calf";return "ankle";}]]};
 
 const colFit=(x,y)=>{const A=mainFams(x),B=mainFams(y);if(!A.length||!B.length)return 0.5;let t=0;for(const a of A)for(const b of B)t+=pair(a,b);return t/(A.length*B.length);};
-window.Stylist={colFit,baseLayer,layerOk,layerTip,FACETS,subOf,SUBS,busyClash,addLayer,finish,coreKey:ps=>ps.filter(p=>!["shoes","bags","accessories"].includes(p.category)).map(p=>p.id).sort().join(","),suggest,features,families,pkind,formality,hemTip,hairTip,shoeTip};
+window.Stylist={tempOk,colFit,baseLayer,layerOk,layerTip,FACETS,subOf,SUBS,busyClash,addLayer,finish,coreKey:ps=>ps.filter(p=>!["shoes","bags","accessories"].includes(p.category)).map(p=>p.id).sort().join(","),suggest,features,families,pkind,formality,hemTip,hairTip,shoeTip};
 })();

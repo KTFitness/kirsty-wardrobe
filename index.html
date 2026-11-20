@@ -188,11 +188,11 @@ dialog.sheet::backdrop{background:rgba(10,14,20,.55)}
 </nav>
 <dialog class="sheet" id="sheet"><div class="sheet-in" id="sheetBody"></div></dialog>
 
-<script src="style.js?v=202611200911"></script>
+<script src="style.js?v=202611201153"></script>
 <script>
 /* Home-screen apps hold on to old copies. On open, check version.txt; if a newer version is live, refresh the cached files and reload once. */
 if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{});});}
-const APPV="202611200911";
+const APPV="202611201153";
 fetch("version.txt",{cache:"no-store"}).then(r=>r.ok?r.text():"").then(v=>{v=v.trim();if(!v||v===APPV)return;
   let tried="";try{tried=sessionStorage.getItem("kw:upd")||"";}catch(e){}if(tried===v)return;try{sessionStorage.setItem("kw:upd",v);}catch(e){}
   Promise.all([fetch("index.html",{cache:"reload"}),fetch("./",{cache:"reload"})]).catch(()=>{}).then(()=>location.reload());}).catch(()=>{});
@@ -245,10 +245,12 @@ const ALIAS={"miss-sofie-cream-leather-slides":"basic-white-flats","uniqlo-black
 const byId=id=>IDX.get(ALIAS[id]||id);
 const th=src=>/^img\/(?!basics\/).*\.webp$/.test(src||"")?"img/t/"+src.slice(4):src;
 const WX_CODES={0:"sunny",1:"mostly sunny",2:"partly cloudy",3:"cloudy",45:"foggy",48:"foggy",51:"drizzle",53:"drizzle",55:"drizzle",61:"light rain",63:"rain",65:"heavy rain",80:"showers",81:"showers",82:"heavy showers",95:"storms",96:"storms",99:"storms"};
-function wxSeason(w){const t=w.max;return t>=26?"Summer":t>=20?"Spring":t>=15?"Autumn":"Winter";}
+function wxSeason(w){const t=w.max;return t>=23?"Summer":t>=18?"Spring":t>=13?"Autumn":"Winter";}
+function wxT(){return S.wx?S.wx.max:null;}
+function tOk(o){const t=wxT();return t==null||(o.itemIds||[]).every(id=>Stylist.tempOk(byId(id),t));}
 function todaySeason(){return S.wx?wxSeason(S.wx):currentSeason();}
 function wxRain(){return !!(S.wx&&(S.wx.rain>=50||[51,53,55,61,63,65,80,81,82,95,96,99].includes(S.wx.code)));}
-function wxLine(){if(!S.wx)return "";const w=S.wx;const d=WX_CODES[w.code]||"";const feel={Summer:"a hot day",Spring:"a warm day",Autumn:"a mild day",Winter:"a cool day"}[wxSeason(w)];
+function wxLine(){if(!S.wx)return "";const w=S.wx;const d=WX_CODES[w.code]||"";const feel={Summer:"a warm day",Spring:"a mild day",Autumn:"a cool day",Winter:"a cold day"}[wxSeason(w)];
   return `<div class="wx"><span class="wxt">${Math.round(w.max)}°</span><span>Today in ${esc(w.place||"West Beach")}: ${esc(d)}, ${Math.round(w.min)} to ${Math.round(w.max)}°C${w.rain>=30?`, ${w.rain}% chance of rain`:""}.<br><span class="lede" style="font-size:13px">Showing pieces for ${feel}${wxRain()?(w.max>=24?", with closed shoes for the rain":", with a layer and closed shoes for the rain"):""}.</span></span></div>`;}
 /* Weather for wherever the phone is. Asks for location once; falls back to West Beach if refused or unavailable. */
 const HOME={lat:-34.95,lon:138.50,place:"West Beach"};
@@ -470,7 +472,7 @@ function vOutfits(){
   const liked=all.filter(isLiked),ideas=all.filter(o=>!isLiked(o)&&!o.liked);
   const se=todaySeason();
   const LC=new Set(liked.map(ckey)),NO=new Set(allDisliked());
-  const pool=liked.concat(inspoOutfits().filter(o=>!LC.has(ckey(o))&&!NO.has(ckey(o))&&!hidden.includes(o.id))).filter(o=>fitsSeason(o,se)).filter(o=>{const P=(o.itemIds||[]).map(byId).filter(Boolean);return P.every(l=>!((l.category==="outerwear"&&/shirt/i.test(l.name))||/cardigan/i.test(l.name+" "+l.id))||Stylist.layerOk(P,l));});
+  const pool=liked.concat(inspoOutfits().filter(o=>!LC.has(ckey(o))&&!NO.has(ckey(o))&&!hidden.includes(o.id))).filter(o=>fitsSeason(o,se)&&tOk(o)).filter(o=>{const P=(o.itemIds||[]).map(byId).filter(Boolean);return P.every(l=>!((l.category==="outerwear"&&/shirt/i.test(l.name))||/cardigan/i.test(l.name+" "+l.id))||Stylist.layerOk(P,l));});
   let today=[];if(pool.length){const r=rng(Number(new Date().toISOString().slice(0,10).replace(/-/g,''))+(S.todaySeed||0)*7919);const p=pool.slice();while(today.length<6&&p.length)today.push(p.splice(Math.floor(r()*p.length),1)[0]);}
   if(S.wx&&(S.wx.max<20||wxRain()))today=today.map(o=>{const P=(o.itemIds||[]).map(byId).filter(Boolean);const L=Stylist.addLayer(P,D.items,{season:se,rain:wxRain(),tmax:S.wx.max,W:tasteW()});return L?{...o,itemIds:o.itemIds.concat(L.id),addedLayer:L.name,why:`Add the ${L.name.toLowerCase()} for today's weather.`}:o;});
   const act=activeCombos(se,Number(new Date().toISOString().slice(0,10).replace(/-/g,''))*3+(S.actSeed||0)*104729);
@@ -805,11 +807,11 @@ function qrNext(){
   const Q=S.qr;const season=Q.season==="any"?["Spring","Summer","Autumn","Winter"][Math.floor(Math.random()*4)]:todaySeason();
   const ok=i=>!i.seasons||!i.seasons.length||i.seasons.includes(season);
   const cats=["tops","dresses","skirts","trousers","shorts","knitwear","outerwear","playsuits"];
-  const pool=D.items.filter(i=>cats.includes(i.category)&&ok(i)&&!(i.category==="outerwear"&&!Stylist.baseLayer(i)));
+  const tm=Q.season==="any"?null:wxT();const pool=D.items.filter(i=>cats.includes(i.category)&&ok(i)&&Stylist.tempOk(i,tm)&&!(i.category==="outerwear"&&!Stylist.baseLayer(i)));
   const ex=allDisliked().concat(ratingLists().liked,Q.seenKeys).map(k=>Stylist.coreKey(k.split(",").map(byId).filter(Boolean)));
   for(let t=0;t<10;t++){const a=pool[Math.floor(Math.random()*pool.length)];if(!a)break;
     const occ=Q.occ==="mixed"?QOCC[Math.floor(Math.random()*QOCC.length)]:Q.occ;
-    const res=Stylist.suggest(a,D.items,{occ,season,seed:Math.floor(Math.random()*1e6),count:4,W:tasteW(),n:tasteN(),rules:useRules,baseOnly:true,block:blockSets(),excludeCore:ex});
+    const res=Stylist.suggest(a,D.items,{occ,season,tmax:tm,seed:Math.floor(Math.random()*1e6),count:4,W:tasteW(),n:tasteN(),rules:useRules,baseOnly:true,block:blockSets(),excludeCore:ex});
     const fresh=res.filter(r=>!Q.seenKeys.includes(r.key));if(!fresh.length)continue;
     const r=pickLean(fresh);const ids=r.pieces.map(p=>p.id);
     Q.seenKeys.push(r.key);Q.cur={key:r.key,id:"q"+Date.now(),name:"Quick rate pick",base:ids,acc:null,itemIds:ids.slice(),occasions:[occ],why:r.why,season};return;}
@@ -847,10 +849,10 @@ const accBar=(pre,o)=>{const b=(k,l)=>`<button class="iconbtn" type="button" dat
 function surprise(){
   const season=S.season==="any"?todaySeason():S.season;
   const ok=i=>!i.seasons||!i.seasons.length||i.seasons.includes(season);
-  const pool=D.items.filter(i=>["tops","dresses","skirts","trousers","shorts"].includes(i.category)&&ok(i));
+  const tm=S.season==="any"?wxT():null;const pool=D.items.filter(i=>["tops","dresses","skirts","trousers","shorts"].includes(i.category)&&ok(i)&&Stylist.tempOk(i,tm));
   const ex=allDisliked().concat(ratingLists().liked).map(k=>Stylist.coreKey(k.split(",").map(byId).filter(Boolean)));
   let r=null;for(let t=0;t<8&&!r;t++){const a=pool[Math.floor(Math.random()*pool.length)];if(!a)break;
-    const res=Stylist.suggest(a,D.items,{occ:"Everyday",season,seed:Math.floor(Math.random()*1e6),count:3,W:tasteW(),n:tasteN(),baseOnly:true,block:blockSets(),excludeCore:ex});
+    const res=Stylist.suggest(a,D.items,{occ:"Everyday",season,tmax:tm,seed:Math.floor(Math.random()*1e6),count:3,W:tasteW(),n:tasteN(),baseOnly:true,block:blockSets(),excludeCore:ex});
     if(res.length)r=pickLean(res);}
   if(!r){S.surprise=null;return;}
   const ids=r.pieces.map(p=>p.id);
